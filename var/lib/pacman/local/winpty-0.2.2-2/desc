@@ -1,0 +1,36 @@
+%NAME%
+winpty
+
+%VERSION%
+0.2.2-2
+
+%DESC%
+A Windows software package providing an interface similar to a Unix pty-master for communicating with Windows console programs
+
+%URL%
+https://github.com/rprichard/winpty
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1463387508
+
+%INSTALLDATE%
+1469785343
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+3013632
+
+%LICENSE%
+MIT
+
+%VALIDATION%
+pgp
+
+%REPLACES%
+winpty-git
+

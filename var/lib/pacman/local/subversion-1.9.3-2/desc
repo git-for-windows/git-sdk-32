@@ -1,0 +1,50 @@
+%NAME%
+subversion
+
+%VERSION%
+1.9.3-2
+
+%DESC%
+A Modern Concurrent Version Control System
+
+%URL%
+https://subversion.apache.org/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1457683951
+
+%INSTALLDATE%
+1469785339
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+25195520
+
+%GROUPS%
+VCS
+
+%LICENSE%
+APACHE
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libsqlite
+file
+libserf
+libsasl
+
+%OPTDEPENDS%
+bash-completion: for svn bash completion
+python2: for some hook scripts
+ruby: for some hook scripts
+
+%PROVIDES%
+svn
+

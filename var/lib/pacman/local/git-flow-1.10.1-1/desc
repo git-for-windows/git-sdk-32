@@ -1,0 +1,37 @@
+%NAME%
+git-flow
+
+%VERSION%
+1.10.1-1
+
+%DESC%
+Git extensions to provide high-level repository operations for Vincent Driessen's branching model (AVH edition)
+
+%URL%
+https://github.com/petervanderdoes/gitflow-avh
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1473273369
+
+%INSTALLDATE%
+1475661971
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+226304
+
+%LICENSE%
+BSD
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+git
+util-linux
+

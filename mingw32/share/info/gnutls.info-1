@@ -1,6 +1,6 @@
-This is gnutls.info, produced by makeinfo version 6.0 from gnutls.texi.
+This is gnutls.info, produced by makeinfo version 6.1 from gnutls.texi.
 
-This manual is last updated 4 March 2015 for version 3.5.2 of GnuTLS.
+This manual is last updated 4 March 2015 for version 3.5.4 of GnuTLS.
 
 Copyright (C) 2001-2015 Free Software Foundation, Inc.\\ Copyright (C)
 2001-2015 Nikos Mavrogiannopoulos
@@ -32,7 +32,7 @@ File: gnutls.info,  Node: Top,  Next: Preface,  Up: (dir)
 GnuTLS
 ******
 
-This manual is last updated 4 March 2015 for version 3.5.2 of GnuTLS.
+This manual is last updated 4 March 2015 for version 3.5.4 of GnuTLS.
 
 Copyright (C) 2001-2015 Free Software Foundation, Inc.\\ Copyright (C)
 2001-2015 Nikos Mavrogiannopoulos
@@ -3355,6 +3355,8 @@ the obsolete PBES1 scheme cannot be decrypted.
      Some schemas distinguish between an empty and a NULL password.
 'GNUTLS_PKCS_PBES2_DES'
      PBES2 single DES.
+'GNUTLS_PKCS_PBES1_DES_MD5'
+     - undescribed -
 
 Figure 4.6: Encryption flags
 
@@ -4398,6 +4400,17 @@ certificate request or a self signed certificate follows.
      # key_purpose_oid = 2.5.29.37.0
 
      ### end of key purpose OIDs
+
+     ### Adding arbitrary extensions
+     # This requires to provide the extension OIDs, as well as the extension data in
+     # hex format. The following two options are available since GnuTLS 3.5.3.
+     #add_extension = "1.2.3.4 0x0AAB01ACFE"
+
+     # As above but encode the data as an octet string
+     #add_extension = "1.2.3.4 octet_string(0x0AAB01ACFE)"
+
+     # For portability critical extensions shouldn't be set to certificates.
+     #add_critical_extension = "5.6.7.8 0x1AAB01ACFE"
 
      # When generating a certificate from a certificate
      # request, then honor the extensions stored in the request
@@ -6624,11 +6637,9 @@ to 'more'.  Both will exit with a status code of 0.
                                      - disabled as '--no-mark-ca'
         -#, --mark-private         Marks the object to be written as private
                                      - disabled as '--no-mark-private'
-                                     - enabled by default
         -$, --trusted              an alias for the 'mark-trusted' option
         -%, --ca                   an alias for the 'mark-ca' option
         -&, --private              an alias for the 'mark-private' option
-                                     - enabled by default
         -', --secret-key=str       Provide a hex encoded secret key
         -(, --load-privkey=file    Private key file to use
                                      - file must pre-exist
@@ -6891,7 +6902,6 @@ This is the "marks the object to be written as private" option.
 
 This option has some usage constraints.  It:
    * can be disabled with -no-mark-private.
-   * It is enabled by default.
 
 Marks the object to be generated/written with the CKA_PRIVATE flag.  The
 written object will require a PIN to be used.

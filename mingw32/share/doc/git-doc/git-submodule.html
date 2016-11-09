@@ -436,8 +436,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <em>git submodule</em> [--quiet] init [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] deinit [-f|--force] (--all|[--] &lt;path&gt;&#8230;&#8203;)
 <em>git submodule</em> [--quiet] update [--init] [--remote] [-N|--no-fetch]
-	      [-f|--force] [--rebase|--merge] [--reference &lt;repository&gt;]
-	      [--depth &lt;depth&gt;] [--recursive] [--jobs &lt;n&gt;] [--] [&lt;path&gt;&#8230;&#8203;]
+	      [--[no-]recommend-shallow] [-f|--force] [--rebase|--merge]
+	      [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--recursive]
+	      [--jobs &lt;n&gt;] [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] summary [--cached|--files] [(-n|--summary-limit) &lt;n&gt;]
 	      [commit] [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] foreach [--recursive] &lt;command&gt;
@@ -885,6 +886,13 @@ in any nested submodules inside those submodules (and so on).</p>
 clone with a history truncated to the specified number of revisions.
 See <a href="git-clone.html">git-clone</a>(1)</p>
 </dd>
+<dt class="hdlist1">--[no-]recommend-shallow</dt>
+<dd>
+<p>This option is only valid for the update command.
+The initial clone of a submodule will use the recommended
+<code>submodule.&lt;name&gt;.shallow</code> as provided by the .gitmodules file
+by default. To ignore the suggestions use <code>--no-recommend-shallow</code>.</p>
+</dd>
 <dt class="hdlist1">-j &lt;n&gt;</dt>
 <dt class="hdlist1">--jobs &lt;n&gt;</dt>
 <dd>
@@ -925,7 +933,7 @@ for details.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-08-09 18:00:02 W. Europe Daylight Time
+Last updated 2016-10-04 16:59:16 W. Europe Daylight Time
 </div>
 </div>
 </body>

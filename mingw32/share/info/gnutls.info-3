@@ -1,6 +1,6 @@
-This is gnutls.info, produced by makeinfo version 6.0 from gnutls.texi.
+This is gnutls.info, produced by makeinfo version 6.1 from gnutls.texi.
 
-This manual is last updated 4 March 2015 for version 3.5.2 of GnuTLS.
+This manual is last updated 4 March 2015 for version 3.5.4 of GnuTLS.
 
 Copyright (C) 2001-2015 Free Software Foundation, Inc.\\ Copyright (C)
 2001-2015 Nikos Mavrogiannopoulos
@@ -1556,6 +1556,9 @@ expressions.
                                           is unknown.
 -110        GNUTLS_E_PREMATURE_TERMINATIONThe TLS connection was
                                           non-properly terminated.
+-111        GNUTLS_E_MALFORMED_CIDR       CIDR name constraint is
+                                          malformed in size or
+                                          structure.
 -201        GNUTLS_E_BASE64_ENCODING_ERRORBase64 encoding error.
 -202        GNUTLS_E_INCOMPATIBLE_GCRYPT_LIBRARYThe crypto library
                                           version is too old.
@@ -1700,6 +1703,9 @@ expressions.
                                           during a rehandshake.
 -407        GNUTLS_E_HANDSHAKE_DURING_FALSE_STARTAttempted handshake
                                           during false start.
+-408        GNUTLS_E_UNAVAILABLE_DURING_HANDSHAKECannot obtain resumption
+                                          parameters while
+                                          handshake is incomplete.
 
 
 File: gnutls.info,  Node: Supported ciphersuites,  Next: API reference,  Prev: Error codes,  Up: Top
@@ -2036,6 +2042,7 @@ Appendix E API reference
 * PKCS 11 API::
 * TPM API::
 * Abstract key API::
+* Socket specific API::
 * DANE API::
 * Cryptographic API::
 * Compatibility API::
@@ -2565,9 +2572,12 @@ gnutls_certificate_get_peers
 
      Get the peer's raw certificate (chain) as sent by the peer.  These
      certificates are in raw format (DER encoded for X.509).  In case of
-     a X.509 then a certificate list may be present.  The first
-     certificate in the list is the peer's certificate, following the
-     issuer's certificate, then the issuer's issuer etc.
+     a X.509 then a certificate list may be present.  The list is
+     provided as sent by the server; the server must send as first
+     certificate in the list its own certificate, following the issuer's
+     certificate, then the issuer's issuer etc.  However, there are
+     servers which violate this principle and thus on certain occasions
+     this may be an unsorted list.
 
      In case of OpenPGP keys a single key will be returned in raw
      format.
@@ -3523,19 +3533,21 @@ gnutls_certificate_verify_peers
      'GNUTLS_DT_RFC822NAME' and 'GNUTLS_DT_KEY_PURPOSE_OID' .  The
      former two accept as data a null-terminated hostname or email
      address, and the latter a null-terminated object identifier (e.g.,
-     'GNUTLS_KP_TLS_WWW_SERVER' ).  If a DNS hostname is provided then
-     this function will compare the hostname in the certificate against
-     the given.  If names do not match the
-     'GNUTLS_CERT_UNEXPECTED_OWNER' status flag will be set.  If a key
-     purpose OID is provided and the end-certificate contains the
-     extended key usage PKIX extension, it will be required to be have
-     the provided key purpose or be marked for any purpose, otherwise
-     verification will fail with
-     'GNUTLS_CERT_SIGNER_CONSTRAINTS_FAILURE' status.
+     'GNUTLS_KP_TLS_WWW_SERVER' ).
 
-     *Returns:* a negative error code on error and 'GNUTLS_E_SUCCESS'
-     (0) when the peer's certificate was successfully parsed,
-     irrespective of whether it was verified.
+     If a DNS hostname is provided then this function will compare the
+     hostname in the certificate against the given.  If names do not
+     match the 'GNUTLS_CERT_UNEXPECTED_OWNER' status flag will be set.
+     If a key purpose OID is provided and the end-certificate contains
+     the extended key usage PKIX extension, it will be required to be
+     have the provided key purpose or be marked for any purpose,
+     otherwise verification status will have the
+     'GNUTLS_CERT_SIGNER_CONSTRAINTS_FAILURE' flag set.
+
+     *Returns:* 'GNUTLS_E_SUCCESS' (0) when the validation is performed,
+     or a negative error code otherwise.  A sucessful error code means
+     that the 'status' parameter must be checked to obtain the
+     validation status.
 
      *Since:* 3.3.0
 
@@ -3571,9 +3583,10 @@ gnutls_certificate_verify_peers2
      'gnutls_x509_crt_check_hostname()' , or use
      'gnutls_certificate_verify_peers3()' .
 
-     *Returns:* a negative error code on error and 'GNUTLS_E_SUCCESS'
-     (0) when the peer's certificate was successfully parsed,
-     irrespective of whether it was verified.
+     *Returns:* 'GNUTLS_E_SUCCESS' (0) when the validation is performed,
+     or a negative error code otherwise.  A sucessful error code means
+     that the 'status' parameter must be checked to obtain the
+     validation status.
 
 gnutls_certificate_verify_peers3
 --------------------------------
@@ -3598,17 +3611,17 @@ gnutls_certificate_verify_peers3
      verification process.
 
      If the 'hostname' provided is non-NULL then this function will
-     compare the hostname in the certificate against the given.  The
-     comparison will be accurate for ascii names; non-ascii names are
-     compared byte-by-byte.  If names do not match the
+     compare the hostname in the certificate against it.  The comparison
+     will follow the RFC6125 recommendations.  If names do not match the
      'GNUTLS_CERT_UNEXPECTED_OWNER' status flag will be set.
 
      In order to verify the purpose of the end-certificate (by checking
      the extended key usage), use 'gnutls_certificate_verify_peers()' .
 
-     *Returns:* a negative error code on error and 'GNUTLS_E_SUCCESS'
-     (0) when the peer's certificate was successfully parsed,
-     irrespective of whether it was verified.
+     *Returns:* 'GNUTLS_E_SUCCESS' (0) when the validation is performed,
+     or a negative error code otherwise.  A sucessful error code means
+     that the 'status' parameter must be checked to obtain the
+     validation status.
 
      *Since:* 3.1.4
 
@@ -4656,7 +4669,7 @@ gnutls_fingerprint
 gnutls_fips140_mode_enabled
 ---------------------------
 
- -- Function: int gnutls_fips140_mode_enabled ( VOID)
+ -- Function: unsigned gnutls_fips140_mode_enabled ( VOID)
 
      Checks whether this library is in FIPS140 mode.
 
@@ -4672,10 +4685,20 @@ gnutls_global_deinit
      This function deinitializes the global data, that were initialized
      using 'gnutls_global_init()' .
 
+     Since GnuTLS 3.3.0 this function is no longer necessary to be
+     explicitly called.  GnuTLS will automatically deinitialize on
+     library destructor.  See 'gnutls_global_init()' for disabling the
+     implicit initialization/deinitialization.
+
 gnutls_global_init
 ------------------
 
  -- Function: int gnutls_global_init ( VOID)
+
+     Since GnuTLS 3.3.0 this function is no longer necessary to be
+     explicitly called.  To disable the implicit call (in a library
+     constructor) of this function set the environment variable
+     'GNUTLS_NO_EXPLICIT_INIT' to 1.
 
      This function performs any required precalculations, detects the
      supported CPU capabilities and initializes the underlying
@@ -4689,11 +4712,6 @@ gnutls_global_init
      when GnuTLS is used by more than one library in an application.
      This function can be called many times, but will only do something
      the first time.
-
-     Since GnuTLS 3.3.0 this function is automatically called on library
-     constructor.  Since the same version this function is also thread
-     safe.  The automatic initialization can be avoided if the
-     environment variable 'GNUTLS_NO_EXPLICIT_INIT' is set to be 1.
 
      A subsequent call of this function if the initial has failed will
      return the same error code.
@@ -5248,13 +5266,12 @@ gnutls_init
 
      FLAGS: indicate if this session is to be used for server or client.
 
-     This function initializes the current session to null.  Every
-     session must be initialized before use, so internal structures can
-     be allocated.  This function allocates structures which can only be
-     free'd by calling 'gnutls_deinit()' .  Returns 'GNUTLS_E_SUCCESS'
-     (0) on success.
+     This function initializes the provided session.  Every session must
+     be initialized before use, and must be deinitialized after used by
+     calling 'gnutls_deinit()' .
 
-     'flags' can be any of 'gnutls_init_flags_t' .
+     'flags' can be any combination of flags from 'gnutls_init_flags_t'
+     .
 
      Note that since version 3.1.2 this function enables some common TLS
      extensions such as session tickets and OCSP certificate status
@@ -5545,6 +5562,21 @@ gnutls_oid_to_ecc_curve
      specified OID, or 'GNUTLS_ECC_CURVE_INVALID' on error.
 
      *Since:* 3.4.3
+
+gnutls_oid_to_mac
+-----------------
+
+ -- Function: gnutls_mac_algorithm_t gnutls_oid_to_mac (const char *
+          OID)
+     OID: is an object identifier
+
+     Converts a textual object identifier typically from PKCS'5' values
+     to a 'gnutls_mac_algorithm_t' value.
+
+     *Returns:* a 'gnutls_mac_algorithm_t' id of the specified digest
+     algorithm, or 'GNUTLS_MAC_UNKNOWN' on failure.
+
+     *Since:* 3.5.4
 
 gnutls_oid_to_pk
 ----------------
@@ -5873,6 +5905,10 @@ gnutls_prf
      (e.g., a string used in user authentication).
 
      The output is placed in 'out' , which must be pre-allocated.
+
+     *Note:* This function produces identical output with
+     'gnutls_prf_rfc5705()' when 'server_random_first' is set to 0 and
+     'extra' is 'NULL' .
 
      *Returns:* 'GNUTLS_E_SUCCESS' on success, or an error code.
 
@@ -6782,7 +6818,7 @@ gnutls_record_recv
      server receiving this error code can only initiate a new handshake
      or terminate the session.
 
-     If 'EINTR' is returned by the internal push function (the default
+     If 'EINTR' is returned by the internal pull function (the default
      is 'recv()' ) then 'GNUTLS_E_INTERRUPTED' will be returned.  If
      'GNUTLS_E_INTERRUPTED' or 'GNUTLS_E_AGAIN' is returned, you must
      call this function again to get the data.  See also
@@ -7037,8 +7073,8 @@ gnutls_rehandshake
 gnutls_safe_renegotiation_status
 --------------------------------
 
- -- Function: int gnutls_safe_renegotiation_status (gnutls_session_t
-          SESSION)
+ -- Function: unsigned gnutls_safe_renegotiation_status
+          (gnutls_session_t SESSION)
      SESSION: is a 'gnutls_session_t' type.
 
      Can be used to check whether safe renegotiation is being used in
@@ -7258,6 +7294,10 @@ gnutls_session_get_data
      session data.  A session may be resumed later by calling
      'gnutls_session_set_data()' .
 
+     This function will fail if called prior to handshake completion.
+     In case of false start TLS, the handshake completes only after data
+     have been successfully received from the peer.
+
      *Returns:* On success, 'GNUTLS_E_SUCCESS' (0) is returned,
      otherwise an error code is returned.
 
@@ -7277,6 +7317,10 @@ gnutls_session_get_data2
 
      The returned 'data' are allocated and must be released using
      'gnutls_free()' .
+
+     This function will fail if called prior to handshake completion.
+     In case of false start TLS, the handshake completes only after data
+     have been successfully received from the peer.
 
      *Returns:* On success, 'GNUTLS_E_SUCCESS' (0) is returned,
      otherwise an error code is returned.
@@ -7489,6 +7533,8 @@ gnutls_session_set_id
 
      *Returns:* On success, 'GNUTLS_E_SUCCESS' (0) is returned,
      otherwise an error code is returned.
+
+     *Since:* 3.2.1
 
 gnutls_session_set_premaster
 ----------------------------
@@ -8707,13 +8753,17 @@ gnutls_transport_set_int
 ------------------------
 
  -- Function: void gnutls_transport_set_int (gnutls_session_t SESSION,
-          int I)
+          int FD)
      SESSION: is a 'gnutls_session_t' type.
 
-     I: is the value.
+     FD: is the socket descriptor for the connection.
 
-     Used to set the first argument of the transport function (for push
-     and pull callbacks) for berkeley style sockets.
+     This function sets the first argument of the transport function,
+     such as 'send()' and 'recv()' for the default callbacks using the
+     system's socket API.
+
+     This function is equivalent to calling 'gnutls_transport_set_ptr()'
+     with the descriptor, but requires no casts.
 
      *Since:* 3.1.9
 
@@ -8721,17 +8771,21 @@ gnutls_transport_set_int2
 -------------------------
 
  -- Function: void gnutls_transport_set_int2 (gnutls_session_t SESSION,
-          int RECV_INT, int SEND_INT)
+          int RECV_FD, int SEND_FD)
      SESSION: is a 'gnutls_session_t' type.
 
-     RECV_INT: is the value for the pull function
+     RECV_FD: is socket descriptor for the pull function
 
-     SEND_INT: is the value for the push function
+     SEND_FD: is socket descriptor for the push function
 
-     Used to set the first argument of the transport function (for push
-     and pull callbacks), when using the berkeley style sockets.  With
-     this function you can set two different pointers for receiving and
-     sending.
+     This function sets the first argument of the transport functions,
+     such as 'send()' and 'recv()' for the default callbacks using the
+     system's socket API. With this function you can set two different
+     descriptors for receiving and sending.
+
+     This function is equivalent to calling
+     'gnutls_transport_set_ptr2()' with the descriptors, but requires no
+     casts.
 
      *Since:* 3.1.9
 

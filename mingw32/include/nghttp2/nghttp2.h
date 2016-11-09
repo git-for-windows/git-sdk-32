@@ -668,6 +668,10 @@ typedef enum {
 /**
  * @macro
  *
+ * .. warning::
+ *
+ *   Deprecated.  The initial max concurrent streams is 0xffffffffu.
+ *
  * Default maximum number of incoming concurrent streams.  Use
  * `nghttp2_submit_settings()` with
  * :enum:`NGHTTP2_SETTINGS_MAX_CONCURRENT_STREAMS` to change the
@@ -1454,9 +1458,19 @@ typedef int (*nghttp2_on_data_chunk_recv_callback)(nghttp2_session *session,
  * `nghttp2_session_server_new()`.
  *
  * The implementation of this function must return 0 if it succeeds.
- * If nonzero is returned, it is treated as fatal error and
- * `nghttp2_session_send()` and `nghttp2_session_mem_send()` functions
- * immediately return :enum:`NGHTTP2_ERR_CALLBACK_FAILURE`.
+ * It can also return :enum:`NGHTTP2_ERR_CANCEL` to cancel the
+ * transmission of the given frame.
+ *
+ * If there is a fatal error while executing this callback, the
+ * implementation should return :enum:`NGHTTP2_ERR_CALLBACK_FAILURE`,
+ * which makes `nghttp2_session_send()` and
+ * `nghttp2_session_mem_send()` functions immediately return
+ * :enum:`NGHTTP2_ERR_CALLBACK_FAILURE`.
+ *
+ * If the other value is returned, it is treated as if
+ * :enum:`NGHTTP2_ERR_CALLBACK_FAILURE` is returned.  But the
+ * implementation should not rely on this since the library may define
+ * new return value to extend its capability.
  *
  * To set this callback to :type:`nghttp2_session_callbacks`, use
  * `nghttp2_session_callbacks_set_before_frame_send_callback()`.
@@ -1706,6 +1720,65 @@ typedef int (*nghttp2_on_header_callback2)(nghttp2_session *session,
                                            nghttp2_rcbuf *name,
                                            nghttp2_rcbuf *value, uint8_t flags,
                                            void *user_data);
+
+/**
+ * @functypedef
+ *
+ * Callback function invoked when a invalid header name/value pair is
+ * received for the |frame|.
+ *
+ * The parameter and behaviour are similar to
+ * :type:`nghttp2_on_header_callback`.  The difference is that this
+ * callback is only invoked when a invalid header name/value pair is
+ * received which is silently ignored if this callback is not set.
+ * Only invalid regular header field are passed to this callback.  In
+ * other words, invalid pseudo header field is not passed to this
+ * callback.  Also header fields which includes upper cased latter are
+ * also treated as error without passing them to this callback.
+ *
+ * This callback is only considered if HTTP messaging validation is
+ * turned on (which is on by default, see
+ * `nghttp2_option_set_no_http_messaging()`).
+ *
+ * With this callback, application inspects the incoming invalid
+ * field, and it also can reset stream from this callback by returning
+ * :enum:`NGHTTP2_ERR_TEMPORAL_CALLBACK_FAILURE`, or using
+ * `nghttp2_submit_rst_stream()` directly with the error code of
+ * choice.
+ */
+typedef int (*nghttp2_on_invalid_header_callback)(
+    nghttp2_session *session, const nghttp2_frame *frame, const uint8_t *name,
+    size_t namelen, const uint8_t *value, size_t valuelen, uint8_t flags,
+    void *user_data);
+
+/**
+ * @functypedef
+ *
+ * Callback function invoked when a invalid header name/value pair is
+ * received for the |frame|.
+ *
+ * The parameter and behaviour are similar to
+ * :type:`nghttp2_on_header_callback2`.  The difference is that this
+ * callback is only invoked when a invalid header name/value pair is
+ * received which is silently ignored if this callback is not set.
+ * Only invalid regular header field are passed to this callback.  In
+ * other words, invalid pseudo header field is not passed to this
+ * callback.  Also header fields which includes upper cased latter are
+ * also treated as error without passing them to this callback.
+ *
+ * This callback is only considered if HTTP messaging validation is
+ * turned on (which is on by default, see
+ * `nghttp2_option_set_no_http_messaging()`).
+ *
+ * With this callback, application inspects the incoming invalid
+ * field, and it also can reset stream from this callback by returning
+ * :enum:`NGHTTP2_ERR_TEMPORAL_CALLBACK_FAILURE`, or using
+ * `nghttp2_submit_rst_stream()` directly with the error code of
+ * choice.
+ */
+typedef int (*nghttp2_on_invalid_header_callback2)(
+    nghttp2_session *session, const nghttp2_frame *frame, nghttp2_rcbuf *name,
+    nghttp2_rcbuf *value, uint8_t flags, void *user_data);
 
 /**
  * @functypedef
@@ -2064,6 +2137,29 @@ NGHTTP2_EXTERN void nghttp2_session_callbacks_set_on_header_callback(
 NGHTTP2_EXTERN void nghttp2_session_callbacks_set_on_header_callback2(
     nghttp2_session_callbacks *cbs,
     nghttp2_on_header_callback2 on_header_callback2);
+
+/**
+ * @function
+ *
+ * Sets callback function invoked when a invalid header name/value
+ * pair is received.  If both
+ * `nghttp2_session_callbacks_set_on_invalid_header_callback()` and
+ * `nghttp2_session_callbacks_set_on_invalid_header_callback2()` are
+ * used to set callbacks, the latter takes the precedence.
+ */
+NGHTTP2_EXTERN void nghttp2_session_callbacks_set_on_invalid_header_callback(
+    nghttp2_session_callbacks *cbs,
+    nghttp2_on_invalid_header_callback on_invalid_header_callback);
+
+/**
+ * @function
+ *
+ * Sets callback function invoked when a invalid header name/value
+ * pair is received.
+ */
+NGHTTP2_EXTERN void nghttp2_session_callbacks_set_on_invalid_header_callback2(
+    nghttp2_session_callbacks *cbs,
+    nghttp2_on_invalid_header_callback2 on_invalid_header_callback2);
 
 /**
  * @function
@@ -2619,14 +2715,20 @@ NGHTTP2_EXTERN void nghttp2_session_del(nghttp2_session *session);
  *
  * 6. :type:`nghttp2_before_frame_send_callback` is invoked.
  *
- * 7. :type:`nghttp2_send_callback` is invoked one or more times to
+ * 7. If :enum:`NGHTTP2_ERR_CANCEL` is returned from
+ *    :type:`nghttp2_before_frame_send_callback`, the current frame
+ *    transmission is canceled, and
+ *    :type:`nghttp2_on_frame_not_send_callback` is invoked.  Abort
+ *    the following steps.
+ *
+ * 8. :type:`nghttp2_send_callback` is invoked one or more times to
  *    send the frame.
  *
- * 8. :type:`nghttp2_on_frame_send_callback` is invoked.
+ * 9. :type:`nghttp2_on_frame_send_callback` is invoked.
  *
- * 9. If the transmission of the frame triggers closure of the stream,
- *    the stream is closed and
- *    :type:`nghttp2_on_stream_close_callback` is invoked.
+ * 10. If the transmission of the frame triggers closure of the
+ *     stream, the stream is closed and
+ *     :type:`nghttp2_on_stream_close_callback` is invoked.
  *
  * This function returns 0 if it succeeds, or one of the following
  * negative error codes:
@@ -2718,12 +2820,13 @@ nghttp2_session_mem_send(nghttp2_session *session, const uint8_t **data_ptr);
  *       taken.  If the frame is either HEADERS or PUSH_PROMISE,
  *       :type:`nghttp2_on_begin_headers_callback` is invoked.  Then
  *       :type:`nghttp2_on_header_callback` is invoked for each header
- *       name/value pair.  After all name/value pairs are emitted
- *       successfully, :type:`nghttp2_on_frame_recv_callback` is
- *       invoked.  For other frames,
- *       :type:`nghttp2_on_frame_recv_callback` is invoked.  If the
- *       reception of the frame triggers the closure of the stream,
- *       :type:`nghttp2_on_stream_close_callback` is invoked.
+ *       name/value pair.  For invalid header field,
+ *       :type:`nghttp2_on_invalid_header_callback` is called.  After
+ *       all name/value pairs are emitted successfully,
+ *       :type:`nghttp2_on_frame_recv_callback` is invoked.  For other
+ *       frames, :type:`nghttp2_on_frame_recv_callback` is invoked.
+ *       If the reception of the frame triggers the closure of the
+ *       stream, :type:`nghttp2_on_stream_close_callback` is invoked.
  *
  *    3. If the received frame is unpacked but is interpreted as
  *       invalid, :type:`nghttp2_on_invalid_frame_recv_callback` is
@@ -3598,8 +3701,8 @@ nghttp2_submit_response(nghttp2_session *session, int32_t stream_id,
  *
  * The |nva| is an array of name/value pair :type:`nghttp2_nv` with
  * |nvlen| elements.  The application is responsible not to include
- * required pseudo-header fields (header field whose name starts with
- * ":") in |nva|.
+ * pseudo-header fields (header field whose name starts with ":") in
+ * |nva|.
  *
  * This function creates copies of all name/value pairs in |nva|.  It
  * also lower-cases all names in |nva|.  The order of elements in
@@ -3614,20 +3717,20 @@ nghttp2_submit_response(nghttp2_session *session, int32_t stream_id,
  * :type:`nghttp2_on_frame_not_send_callback` is called.
  *
  * For server, trailer fields must follow response HEADERS or response
- * DATA with END_STREAM flag set.  The library does not enforce this
- * requirement, and applications should do this for themselves.  If
- * `nghttp2_submit_trailer()` is called before any response HEADERS
+ * DATA without END_STREAM flat set.  The library does not enforce
+ * this requirement, and applications should do this for themselves.
+ * If `nghttp2_submit_trailer()` is called before any response HEADERS
  * submission (usually by `nghttp2_submit_response()`), the content of
  * |nva| will be sent as response headers, which will result in error.
  *
  * This function has the same effect with `nghttp2_submit_headers()`,
- * with flags = :enum:`NGHTTP2_FLAG_END_HEADERS` and both pri_spec and
+ * with flags = :enum:`NGHTTP2_FLAG_END_STREAM` and both pri_spec and
  * stream_user_data to NULL.
  *
  * To submit trailer fields after `nghttp2_submit_response()` is
  * called, the application has to specify
- * :type:`nghttp2_data_provider` to `nghttp2_submit_response()`.  In
- * side :type:`nghttp2_data_source_read_callback`, when setting
+ * :type:`nghttp2_data_provider` to `nghttp2_submit_response()`.
+ * Inside of :type:`nghttp2_data_source_read_callback`, when setting
  * :enum:`NGHTTP2_DATA_FLAG_EOF`, also set
  * :enum:`NGHTTP2_DATA_FLAG_NO_END_STREAM`.  After that, the
  * application can send trailer fields using
@@ -4086,7 +4189,7 @@ nghttp2_session_check_server_session(nghttp2_session *session);
  * that value as window_size_increment is queued.  If the
  * |window_size_increment| is larger than the received bytes from the
  * remote endpoint, the local window size is increased by that
- * difference.  If the sole intention is to increase the local window
+ * difference.  If the sole purpose is to increase the local window
  * size, consider to use `nghttp2_session_set_local_window_size()`.
  *
  * If the |window_size_increment| is negative, the local window size
@@ -4095,8 +4198,8 @@ nghttp2_session_check_server_session(nghttp2_session *session);
  * (`nghttp2_option_set_no_auto_window_update()`), and the library
  * decided that the WINDOW_UPDATE should be submitted, then
  * WINDOW_UPDATE is queued with the current received bytes count.  If
- * the sole intention is to decrease the local window size, consider
- * to use `nghttp2_session_set_local_window_size()`.
+ * the sole purpose is to decrease the local window size, consider to
+ * use `nghttp2_session_set_local_window_size()`.
  *
  * If the |window_size_increment| is 0, the function does nothing and
  * returns 0.
@@ -4499,6 +4602,37 @@ nghttp2_hd_deflate_hd(nghttp2_hd_deflater *deflater, uint8_t *buf,
 /**
  * @function
  *
+ * Deflates the |nva|, which has the |nvlen| name/value pairs, into
+ * the |veclen| size of buf vector |vec|.  The each size of buffer
+ * must be set in len field of :type:`nghttp2_vec`.  If and only if
+ * one chunk is filled up completely, next chunk will be used.  If
+ * |vec| is not large enough to store the deflated header block, this
+ * function fails with :enum:`NGHTTP2_ERR_INSUFF_BUFSIZE`.  The caller
+ * should use `nghttp2_hd_deflate_bound()` to know the upper bound of
+ * buffer size required to deflate given header name/value pairs.
+ *
+ * Once this function fails, subsequent call of this function always
+ * returns :enum:`NGHTTP2_ERR_HEADER_COMP`.
+ *
+ * After this function returns, it is safe to delete the |nva|.
+ *
+ * This function returns 0 if it succeeds, or one of the following
+ * negative error codes:
+ *
+ * :enum:`NGHTTP2_ERR_NOMEM`
+ *     Out of memory.
+ * :enum:`NGHTTP2_ERR_HEADER_COMP`
+ *     Deflation process has failed.
+ * :enum:`NGHTTP2_ERR_INSUFF_BUFSIZE`
+ *     The provided |buflen| size is too small to hold the output.
+ */
+NGHTTP2_EXTERN ssize_t
+nghttp2_hd_deflate_hd_vec(nghttp2_hd_deflater *deflater, const nghttp2_vec *vec,
+                          size_t veclen, const nghttp2_nv *nva, size_t nvlen);
+
+/**
+ * @function
+ *
  * Returns an upper bound on the compressed size after deflation of
  * |nva| of length |nvlen|.
  */
@@ -4748,10 +4882,14 @@ NGHTTP2_EXTERN ssize_t nghttp2_hd_inflate_hd(nghttp2_hd_inflater *inflater,
  *
  * The application should call this function repeatedly until the
  * ``(*inflate_flags) & NGHTTP2_HD_INFLATE_FINAL`` is nonzero and
- * return value is non-negative.  This means the all input values are
- * processed successfully.  Then the application must call
- * `nghttp2_hd_inflate_end_headers()` to prepare for the next header
- * block input.
+ * return value is non-negative.  If that happens, all given input
+ * data (|inlen| bytes) are processed successfully.  Then the
+ * application must call `nghttp2_hd_inflate_end_headers()` to prepare
+ * for the next header block input.
+ *
+ * In other words, if |in_final| is nonzero, and this function returns
+ * |inlen|, you can assert that :enum:`NGHTTP2_HD_INFLATE_FINAL` is
+ * set in |*inflate_flags|.
  *
  * The caller can feed complete compressed header block.  It also can
  * feed it in several chunks.  The caller must set |in_final| to

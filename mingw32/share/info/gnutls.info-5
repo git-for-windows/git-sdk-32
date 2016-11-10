@@ -1,9 +1,9 @@
 This is gnutls.info, produced by makeinfo version 6.1 from gnutls.texi.
 
-This manual is last updated 4 March 2015 for version 3.5.4 of GnuTLS.
+This manual is last updated 9 October 2016 for version 3.5.5 of GnuTLS.
 
-Copyright (C) 2001-2015 Free Software Foundation, Inc.\\ Copyright (C)
-2001-2015 Nikos Mavrogiannopoulos
+Copyright (C) 2001-2016 Free Software Foundation, Inc.\\ Copyright (C)
+2001-2016 Nikos Mavrogiannopoulos
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -4782,21 +4782,21 @@ gnutls_certificate_set_key
      This function sets a certificate/private key pair in the
      gnutls_certificate_credentials_t type.  This function may be called
      more than once, in case multiple keys/certificates exist for the
-     server.  For clients that wants to send more than its own end
-     entity certificate (e.g., also an intermediate CA cert) then put
-     the certificate chain in 'pcert_list' .
+     server.  For clients that want to send more than their own end-
+     entity certificate (e.g., also an intermediate CA cert), the full
+     certificate chain must be provided in 'pcert_list' .
 
      Note that the 'key' and the elements of 'pcert_list' will become
      part of the credentials structure and must not be deallocated.
-     They will be automatically deallocated when the 'res' type is
+     They will be automatically deallocated when the 'res' structure is
      deinitialized.
 
      If that function fails to load the 'res' structure is at an
      undefined state, it must not be reused to load other keys or
      certificates.
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
      *Since:* 3.0
 

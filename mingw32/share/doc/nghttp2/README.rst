@@ -58,6 +58,11 @@ To build the documentation, you need to install:
 
 * sphinx (http://sphinx-doc.org/)
 
+If you need libnghttp2 (C library) only, then the above packages are
+all you need.  Use ``--enable-lib-only`` to ensure that only
+libnghttp2 is built.  This avoids potential build error related to
+building bundled applications.
+
 To build and run the application programs (``nghttp``, ``nghttpd``,
 ``nghttpx`` and ``h2load``) in the ``src`` directory, the following packages
 are required:
@@ -1370,7 +1375,7 @@ The extension module is called ``nghttp2``.
 determined by the ``configure`` script.  If the detected Python version is not
 what you expect, specify a path to Python executable in a ``PYTHON``
 variable as an argument to configure script (e.g., ``./configure
-PYTHON=/usr/bin/python3.4``).
+PYTHON=/usr/bin/python3.5``).
 
 The following example code illustrates basic usage of the HPACK compressor
 and decompressor in Python:

@@ -55,13 +55,13 @@ extern "C" {
 #endif
 /* *INDENT-ON* */
 
-#define GNUTLS_VERSION "3.5.4"
+#define GNUTLS_VERSION "3.5.5"
 
 #define GNUTLS_VERSION_MAJOR 3
 #define GNUTLS_VERSION_MINOR 5
-#define GNUTLS_VERSION_PATCH 4
+#define GNUTLS_VERSION_PATCH 5
 
-#define GNUTLS_VERSION_NUMBER 0x030504
+#define GNUTLS_VERSION_NUMBER 0x030505
 
 #define GNUTLS_CIPHER_RIJNDAEL_128_CBC GNUTLS_CIPHER_AES_128_CBC
 #define GNUTLS_CIPHER_RIJNDAEL_256_CBC GNUTLS_CIPHER_AES_256_CBC
@@ -1128,7 +1128,7 @@ typedef struct mbuffer_st *gnutls_packet_t;
 
 ssize_t
 gnutls_record_recv_packet(gnutls_session_t session, 
-		   	  gnutls_packet_t *packet);
+			  gnutls_packet_t *packet);
 
 void gnutls_packet_get(gnutls_packet_t packet, gnutls_datum_t *data, unsigned char *sequence);
 void gnutls_packet_deinit(gnutls_packet_t packet);
@@ -1763,9 +1763,14 @@ gnutls_certificate_set_ocsp_status_request_function
 gnutls_status_request_ocsp_func ocsp_func, void *ptr);
 
 int
+gnutls_certificate_set_ocsp_status_request_function2
+(gnutls_certificate_credentials_t res, unsigned idx,
+gnutls_status_request_ocsp_func ocsp_func, void *ptr);
+
+int
 gnutls_certificate_set_ocsp_status_request_file
 (gnutls_certificate_credentials_t res, const char *response_file,
- unsigned int flags);
+ unsigned idx);
 
 int gnutls_ocsp_status_request_enable_client(gnutls_session_t session,
 					     gnutls_datum_t * responder_id,
@@ -2535,6 +2540,11 @@ int gnutls_ext_register(const char *name, int type, gnutls_ext_parse_type_t pars
 				gnutls_ext_deinit_data_func deinit_func, gnutls_ext_pack_func pack_func,
 				gnutls_ext_unpack_func unpack_func);
 
+int gnutls_session_ext_register(gnutls_session_t, const char *name, int type, gnutls_ext_parse_type_t parse_type,
+				gnutls_ext_recv_func recv_func, gnutls_ext_send_func send_func, 
+				gnutls_ext_deinit_data_func deinit_func, gnutls_ext_pack_func pack_func,
+				gnutls_ext_unpack_func unpack_func, unsigned flags);
+
 const char *gnutls_ext_get_name(unsigned int ext);
 
 /* Public supplemental data related functions */
@@ -2548,6 +2558,12 @@ int gnutls_supplemental_register(const char *name,
 				gnutls_supplemental_data_format_type_t type, 
 				gnutls_supp_recv_func supp_recv_func,
 				gnutls_supp_send_func supp_send_func);
+
+int gnutls_session_supplemental_register(gnutls_session_t session, const char *name,
+				gnutls_supplemental_data_format_type_t type, 
+				gnutls_supp_recv_func supp_recv_func,
+				gnutls_supp_send_func supp_send_func,
+				unsigned int flags);
 
 void gnutls_supplemental_recv(gnutls_session_t session, unsigned do_recv_supplemental);
 
@@ -2770,6 +2786,8 @@ unsigned gnutls_fips140_mode_enabled(void);
 #define GNUTLS_E_SESSION_USER_ID_CHANGED -406
 #define GNUTLS_E_HANDSHAKE_DURING_FALSE_START -407
 #define GNUTLS_E_UNAVAILABLE_DURING_HANDSHAKE -408
+#define GNUTLS_E_PK_INVALID_PUBKEY -409
+#define GNUTLS_E_PK_INVALID_PRIVKEY -410
 
 #define GNUTLS_E_UNIMPLEMENTED_FEATURE -1250
 

@@ -1,9 +1,9 @@
 This is gnutls.info, produced by makeinfo version 6.1 from gnutls.texi.
 
-This manual is last updated 4 March 2015 for version 3.5.4 of GnuTLS.
+This manual is last updated 9 October 2016 for version 3.5.5 of GnuTLS.
 
-Copyright (C) 2001-2015 Free Software Foundation, Inc.\\ Copyright (C)
-2001-2015 Nikos Mavrogiannopoulos
+Copyright (C) 2001-2016 Free Software Foundation, Inc.\\ Copyright (C)
+2001-2016 Nikos Mavrogiannopoulos
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -214,7 +214,6 @@ The next step is to add support for X.509.  First we generate a CA:
      $ echo 'cert_signing_key' >> ca.tmpl
      $ certtool --generate-self-signed --load-privkey x509-ca-key.pem \
        --template ca.tmpl --outfile x509-ca.pem
-     ...
 
 Then generate a server certificate.  Remember to change the dns_name
 value to the name of your server host, or skip that command to avoid the
@@ -230,7 +229,6 @@ field.
      $ certtool --generate-certificate --load-privkey x509-server-key.pem \
        --load-ca-certificate x509-ca.pem --load-ca-privkey x509-ca-key.pem \
        --template server.tmpl --outfile x509-server.pem
-     ...
 
 For use in the client, you may want to generate a client certificate as
 well.
@@ -243,7 +241,6 @@ well.
      $ certtool --generate-certificate --load-privkey x509-client-key.pem \
        --load-ca-certificate x509-ca.pem --load-ca-privkey x509-ca-key.pem \
        --template client.tmpl --outfile x509-client.pem
-     ...
 
 To be able to import the client key/certificate into some applications,
 you will need to convert them into a PKCS#12 structure.  This also
@@ -261,7 +258,6 @@ For icing, we'll create a proxy certificate for the client too.
        --load-ca-certificate x509-client.pem --load-ca-privkey x509-client-key.pem \
        --load-certificate x509-client.pem --template proxy.tmpl \
        --outfile x509-proxy.pem
-     ...
 
 Then start the server again:
 
@@ -281,12 +277,11 @@ used in the final example below.
      $ certtool --generate-certificate --load-privkey x509-server-key-dsa.pem \
        --load-ca-certificate x509-ca.pem --load-ca-privkey x509-ca-key.pem \
        --template server.tmpl --outfile x509-server-dsa.pem
-     ...
 
 The next step is to create OpenPGP credentials for the server.
 
      gpg --gen-key
-     ...enter whatever details you want, use 'test.gnutls.org' as name...
+     Enter whatever details you want, use 'test.gnutls.org' as name...
 
 Make a note of the OpenPGP key identifier of the newly generated key,
 here it was '5D1D14D8'.  You will need to export the key for GnuTLS to
@@ -623,8 +618,8 @@ the process to do so is not difficult.  Here are the steps you need to
 follow if you wish to do this yourself.  For sake of discussion, let's
 consider adding support for the hypothetical TLS extension 'foobar'.
 The following section is about adding an extension to GnuTLS, for custom
-application extensions you should check the exported function *note
-gnutls_ext_register::.
+application extensions you should check the exported functions *note
+gnutls_session_ext_register:: or *note gnutls_ext_register::.
 
 Add 'configure' option like '--enable-foobar' or '--disable-foobar'.
 ....................................................................
@@ -903,7 +898,8 @@ the supplemental data handshake message.
      }
 
 Afterwards, register the new supplemental data using *note
-gnutls_supplemental_register::, at some point in your program.
+gnutls_session_supplemental_register::, or *note
+gnutls_supplemental_register:: at some point in your program.
 
 
 File: gnutls.info,  Node: Cryptographic Backend,  Prev: TLS Extension Handling,  Up: Internal architecture of GnuTLS
@@ -1706,6 +1702,10 @@ expressions.
 -408        GNUTLS_E_UNAVAILABLE_DURING_HANDSHAKECannot obtain resumption
                                           parameters while
                                           handshake is incomplete.
+-409        GNUTLS_E_PK_INVALID_PUBKEY    The obtained public key
+                                          is invalid.
+-410        GNUTLS_E_PK_INVALID_PRIVKEY   The private key is
+                                          invalid.
 
 
 File: gnutls.info,  Node: Supported ciphersuites,  Next: API reference,  Prev: Error codes,  Up: Top
@@ -2508,7 +2508,8 @@ gnutls_certificate_get_crt_raw
      This function will return the DER encoded certificate of the server
      or any other certificate on its certificate chain (based on 'idx2'
      ).  The returned data should be treated as constant and only
-     accessible during the lifetime of 'sc' .
+     accessible during the lifetime of 'sc' .  The 'idx1' matches the
+     value 'gnutls_certificate_set_x509_key()' and friends functions.
 
      *Returns:* On success, 'GNUTLS_E_SUCCESS' (0) is returned,
      otherwise a negative error value.  In case the indexes are out of
@@ -2642,8 +2643,9 @@ gnutls_certificate_get_x509_crt
      'gnutls_x509_crt_deinit()' , and the list itself must be freed with
      'gnutls_free()' .
 
-     If there is no certificate with the given index,
-     'GNUTLS_E_REQUESTED_DATA_NOT_AVAILABLE' is returned.  If the
+     The 'index' matches the value 'gnutls_certificate_set_x509_key()'
+     and friends functions.  If there is no certificate with the given
+     index, 'GNUTLS_E_REQUESTED_DATA_NOT_AVAILABLE' is returned.  If the
      certificate with the given index is not a X.509 certificate,
      'GNUTLS_E_INVALID_REQUEST' is returned.  The returned certificates
      must be deinitialized after use, and the 'crt_list' pointer must be
@@ -2679,7 +2681,8 @@ gnutls_certificate_get_x509_key
      If there is no key with the given index,
      'GNUTLS_E_REQUESTED_DATA_NOT_AVAILABLE' is returned.  If the key
      with the given index is not a X.509 key, 'GNUTLS_E_INVALID_REQUEST'
-     is returned.
+     is returned.  The 'index' matches the value
+     'gnutls_certificate_set_x509_key()' and friends functions.
 
      *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
      code.
@@ -2756,19 +2759,25 @@ gnutls_certificate_set_ocsp_status_request_file
 
  -- Function: int gnutls_certificate_set_ocsp_status_request_file
           (gnutls_certificate_credentials_t SC, const char *
-          RESPONSE_FILE, unsigned int FLAGS)
+          RESPONSE_FILE, unsigned IDX)
      SC: is a credentials structure.
 
      RESPONSE_FILE: a filename of the OCSP response
 
-     FLAGS: should be zero
+     IDX: is a certificate index as returned by
+     'gnutls_certificate_set_key()' and friends
 
      This function sets the filename of an OCSP response, that will be
-     sent to the client if requests an OCSP certificate status.  This is
-     a convenience function which is inefficient on busy servers since
-     the file is opened on every access.  Use
-     'gnutls_certificate_set_ocsp_status_request_function()' to
+     sent to the client if requests an OCSP certificate status for the
+     certificate chain specified by 'idx' .
+
+     This is a convenience function which may be inefficient on busy
+     servers since the file is opened on every access.  Use
+     'gnutls_certificate_set_ocsp_status_request_function2()' to
      fine-tune file accesses.
+
+     *Note:* the ability to set multiple OCSP responses per credential
+     structure via 'idx' was added in version 3.5.5.
 
      *Returns:* On success, 'GNUTLS_E_SUCCESS' (0) is returned,
      otherwise a negative error code is returned.
@@ -2798,16 +2807,56 @@ gnutls_certificate_set_ocsp_status_request_function
      The callback will be invoked if the client requests an OCSP
      certificate status.  The callback may return
      'GNUTLS_E_NO_CERTIFICATE_STATUS' , if there is no recent OCSP
-     response.  If the callback returns 'GNUTLS_E_SUCCESS' , the server
-     will provide the client with the ocsp_response.
+     response.  If the callback returns 'GNUTLS_E_SUCCESS' , it is
+     expected to have the 'ocsp_response' field set with a valid
+     (DER-encoded) OCSP response.  The response must be a value
+     allocated using 'gnutls_malloc()' , and will be deinitialized by
+     the caller.
 
-     The response must be a value allocated using 'gnutls_malloc()' ,
-     and will be deinitialized when needed.
+     It is possible to set a specific callback for each provided
+     certificate using
+     'gnutls_certificate_set_ocsp_status_request_function2()' .
+
+     *Since:* 3.1.3
+
+gnutls_certificate_set_ocsp_status_request_function2
+----------------------------------------------------
+
+ -- Function: int gnutls_certificate_set_ocsp_status_request_function2
+          (gnutls_certificate_credentials_t SC, unsigned IDX,
+          gnutls_status_request_ocsp_func OCSP_FUNC, void * PTR)
+     SC: is a 'gnutls_certificate_credentials_t' type.
+
+     IDX: is a certificate index as returned by
+     'gnutls_certificate_set_key()' and friends
+
+     OCSP_FUNC: function pointer to OCSP status request callback.
+
+     PTR: opaque pointer passed to callback function
+
+     This function is to be used by server to register a callback to
+     handle OCSP status requests that correspond to the indexed
+     certificate from the client.  The callback will be invoked if the
+     client supplied a status-request OCSP extension.
+
+     The callback function prototype is:
+
+     typedef int (*gnutls_status_request_ocsp_func) (gnutls_session_t
+     session, void *ptr, gnutls_datum_t *ocsp_response);
+
+     The callback will be invoked if the client requests an OCSP
+     certificate status.  The callback may return
+     'GNUTLS_E_NO_CERTIFICATE_STATUS' , if there is no recent OCSP
+     response.  If the callback returns 'GNUTLS_E_SUCCESS' , it is
+     expected to have the 'ocsp_response' field set with a valid
+     (DER-encoded) OCSP response.  The response must be a value
+     allocated using 'gnutls_malloc()' , and will be deinitialized by
+     the caller.
 
      *Returns:* On success, 'GNUTLS_E_SUCCESS' (0) is returned,
      otherwise a negative error code is returned.
 
-     *Since:* 3.1.3
+     *Since:* 3.5.5
 
 gnutls_certificate_set_params_function
 --------------------------------------
@@ -3052,8 +3101,8 @@ gnutls_certificate_set_x509_key
      If that function fails to load the 'res' type is at an undefined
      state, it must not be reused to load other keys or certificates.
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
      *Since:* 2.4.0
 
@@ -3097,8 +3146,8 @@ gnutls_certificate_set_x509_key_file
      undefined state, it must not be reused to load other keys or
      certificates.
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
      *Since:* 3.1.11
 
@@ -3149,8 +3198,8 @@ gnutls_certificate_set_x509_key_file2
      undefined state, it must not be reused to load other keys or
      certificates.
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
 gnutls_certificate_set_x509_key_mem
 -----------------------------------
@@ -3183,8 +3232,8 @@ gnutls_certificate_set_x509_key_mem
      The 'key' may be 'NULL' if you are using a sign callback, see
      'gnutls_sign_callback_set()' .
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
 gnutls_certificate_set_x509_key_mem2
 ------------------------------------
@@ -3222,8 +3271,8 @@ gnutls_certificate_set_x509_key_mem2
      The 'key' may be 'NULL' if you are using a sign callback, see
      'gnutls_sign_callback_set()' .
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
 gnutls_certificate_set_x509_simple_pkcs12_file
 ----------------------------------------------
@@ -3263,8 +3312,8 @@ gnutls_certificate_set_x509_simple_pkcs12_file
      complexity that would make it harder to use this functionality at
      all.
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
 gnutls_certificate_set_x509_simple_pkcs12_mem
 ---------------------------------------------
@@ -3304,8 +3353,8 @@ gnutls_certificate_set_x509_simple_pkcs12_mem
      complexity that would make it harder to use this functionality at
      all.
 
-     *Returns:* 'GNUTLS_E_SUCCESS' (0) on success, or a negative error
-     code.
+     *Returns:* An index of the inserted certificate chain on success
+     (greater or equal to zero), or a negative error code.
 
      *Since:* 2.8.0
 
@@ -4940,11 +4989,14 @@ gnutls_handshake_set_max_packet_length
      This function will set the maximum size of all handshake messages.
      Handshakes over this size are rejected with
      'GNUTLS_E_HANDSHAKE_TOO_LARGE' error code.  The default value is
-     48kb which is typically large enough.  Set this to 0 if you do not
+     128kb which is typically large enough.  Set this to 0 if you do not
      want to set an upper limit.
 
      The reason for restricting the handshake message sizes are to limit
      Denial of Service attacks.
+
+     Note that the maximum handshake size was increased to 128kb from
+     48kb in GnuTLS 3.5.5.
 
 gnutls_handshake_set_post_client_hello_function
 -----------------------------------------------
@@ -6113,7 +6165,7 @@ gnutls_priority_init
      to provide quick access to common preferences.
 
      Unless there is a special need, use the "NORMAL" keyword to apply a
-     reasonable security level, or "NORMAL:'COMPAT' " for compatibility.
+     reasonable security level, or "NORMAL:%COMPAT" for compatibility.
 
      "PERFORMANCE" means all the "secure" ciphersuites are enabled,
      limited to 128 bit ciphers and sorted by terms of speed
@@ -6146,7 +6198,7 @@ gnutls_priority_init
      "NONE" means nothing is enabled.  This disables even protocols and
      compression methods.
 
-     " 'KEYWORD1' ,KEYWORD2,..."  The system administrator imposed
+     "@KEYWORD1,KEYWORD2,..."  The system administrator imposed
      settings.  The provided keyword(s) will be expanded from a
      configuration-time provided file - default is:
      /etc/gnutls/default-priorities.  Any attributes that follow it,
@@ -6185,7 +6237,7 @@ gnutls_priority_init
 
      "SECURE256:+SECURE128",
 
-     Note that "NORMAL:'COMPAT' " is the most compatible mode.
+     Note that "NORMAL:%COMPAT" is the most compatible mode.
 
      A 'NULL' 'priorities' string indicates the default priorities to be
      used (this is available since GnuTLS 3.3.0).
@@ -7266,6 +7318,52 @@ gnutls_session_ext_master_secret_status
      *Returns:* Non-zero if the negotiation was successful or zero
      otherwise.
 
+gnutls_session_ext_register
+---------------------------
+
+ -- Function: int gnutls_session_ext_register (gnutls_session_t SESSION,
+          const char * NAME, int TYPE, gnutls_ext_parse_type_t
+          PARSE_TYPE, gnutls_ext_recv_func RECV_FUNC,
+          gnutls_ext_send_func SEND_FUNC, gnutls_ext_deinit_data_func
+          DEINIT_FUNC, gnutls_ext_pack_func PACK_FUNC,
+          gnutls_ext_unpack_func UNPACK_FUNC, unsigned FLAGS)
+     SESSION: the session for which this extension will be set
+
+     NAME: the name of the extension to register
+
+     TYPE: the numeric id of the extension
+
+     PARSE_TYPE: the parse type of the extension (see
+     gnutls_ext_parse_type_t)
+
+     RECV_FUNC: a function to receive the data
+
+     SEND_FUNC: a function to send the data
+
+     DEINIT_FUNC: a function deinitialize any private data
+
+     PACK_FUNC: a function which serializes the extension's private data
+     (used on session packing for resumption)
+
+     UNPACK_FUNC: a function which will deserialize the extension's
+     private data
+
+     FLAGS: must be zero
+
+     This function will register a new extension type.  The extension
+     will be only usable within the registered session.  If the
+     extension type is already registered then
+     'GNUTLS_E_ALREADY_REGISTERED' will be returned.
+
+     Each registered extension can store temporary data into the
+     gnutls_session_t structure using 'gnutls_ext_set_data()' , and they
+     can be retrieved using 'gnutls_ext_get_data()' .
+
+     *Returns:* 'GNUTLS_E_SUCCESS' on success, otherwise a negative
+     error code.
+
+     *Since:* 3.5.5
+
 gnutls_session_force_valid
 --------------------------
 
@@ -7671,6 +7769,39 @@ gnutls_session_set_verify_function
      or non-zero to terminate.
 
      *Since:* 3.4.6
+
+gnutls_session_supplemental_register
+------------------------------------
+
+ -- Function: int gnutls_session_supplemental_register (gnutls_session_t
+          SESSION, const char * NAME,
+          gnutls_supplemental_data_format_type_t TYPE,
+          gnutls_supp_recv_func RECV_FUNC, gnutls_supp_send_func
+          SEND_FUNC, unsigned FLAGS)
+     SESSION: the session for which this will be registered
+
+     NAME: the name of the supplemental data to register
+
+     TYPE: the type of the supplemental data format
+
+     RECV_FUNC: the function to receive the data
+
+     SEND_FUNC: the function to send the data
+
+     FLAGS: must be zero
+
+     This function will register a new supplemental data type (rfc4680).
+     The registered supplemental functions will be used for that
+     specific session.  The provided 'type' must be an unassigned type
+     in 'gnutls_supplemental_data_format_type_t' .
+
+     If the type is already registered or handled by GnuTLS internally
+     'GNUTLS_E_ALREADY_REGISTERED' will be returned.
+
+     *Returns:* 'GNUTLS_E_SUCCESS' on success, otherwise a negative
+     error code.
+
+     *Since:* 3.5.5
 
 gnutls_session_ticket_enable_client
 -----------------------------------

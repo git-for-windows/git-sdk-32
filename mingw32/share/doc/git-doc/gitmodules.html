@@ -487,8 +487,11 @@ reasons.</p>
 <dt class="hdlist1">submodule.&lt;name&gt;.branch</dt>
 <dd>
 <p>A remote branch name for tracking updates in the upstream submodule.
-If the option is not specified, it defaults to <em>master</em>.  See the
-<code>--remote</code> documentation in <a href="git-submodule.html">git-submodule</a>(1) for details.</p>
+If the option is not specified, it defaults to <em>master</em>.  A special
+value of <code>.</code> is used to indicate that the name of the branch in the
+submodule should be the same name as the current branch in the
+current repository.  See the <code>--remote</code> documentation in
+<a href="git-submodule.html">git-submodule</a>(1) for details.</p>
 </dd>
 <dt class="hdlist1">submodule.&lt;name&gt;.fetchRecurseSubmodules</dt>
 <dd>
@@ -574,7 +577,7 @@ submodules a URL is specified which can be used for cloning the submodules.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-04 16:59:16 W. Europe Daylight Time
+Last updated 2016-11-02 12:02:52 W. Europe Standard Time
 </div>
 </div>
 </body>

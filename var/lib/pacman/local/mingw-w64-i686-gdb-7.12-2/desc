@@ -2,7 +2,7 @@
 mingw-w64-i686-gdb
 
 %VERSION%
-7.12-1
+7.12-2
 
 %BASE%
 mingw-w64-gdb
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gdb/
 any
 
 %BUILDDATE%
-1475939621
+1478884274
 
 %INSTALLDATE%
-1478711024
+1479034583
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-10454016
+10670080
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -42,4 +42,5 @@ mingw-w64-i686-expat
 mingw-w64-i686-libiconv
 mingw-w64-i686-python2
 mingw-w64-i686-zlib
+mingw-w64-i686-readline
 

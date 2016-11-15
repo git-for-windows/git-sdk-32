@@ -1,0 +1,39 @@
+%NAME%
+lemon
+
+%VERSION%
+3.8.7.0-1
+
+%DESC%
+The LEMON LALR Parser Generator used in SQLite 3.8.7.0 (MSYS2)
+
+%URL%
+http://www.sqlite.org
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1415811389
+
+%INSTALLDATE%
+1479220739
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+93184
+
+%GROUPS%
+base-devel
+
+%LICENSE%
+custom:Public Domain
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+gcc-libs
+

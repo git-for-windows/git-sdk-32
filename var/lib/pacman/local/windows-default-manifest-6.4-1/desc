@@ -1,0 +1,36 @@
+%NAME%
+windows-default-manifest
+
+%VERSION%
+6.4-1
+
+%DESC%
+Default Windows application manifest
+
+%URL%
+http://cygwin.com/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1414346444
+
+%INSTALLDATE%
+1479220707
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+2048
+
+%REASON%
+1
+
+%LICENSE%
+BSD
+
+%VALIDATION%
+pgp
+

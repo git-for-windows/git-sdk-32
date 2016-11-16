@@ -1,0 +1,14 @@
+prefix=/mingw32
+exec_prefix=/mingw32
+libdir=/mingw32/lib
+includedir=/mingw32/include
+
+Name: FreeType 2
+URL: http://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 18.6.12
+Requires:
+Requires.private: zlib, bzip2, libpng, harfbuzz >= 0.9.21
+Libs: -L${libdir} -lfreetype
+Libs.private: 
+Cflags: -I${includedir}/freetype2

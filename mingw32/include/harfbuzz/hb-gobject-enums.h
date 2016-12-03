@@ -74,6 +74,15 @@ HB_EXTERN GType hb_gobject_unicode_combining_class_get_type (void) G_GNUC_CONST;
 HB_EXTERN GType hb_gobject_ot_layout_glyph_class_get_type (void) G_GNUC_CONST;
 #define HB_GOBJECT_TYPE_OT_LAYOUT_GLYPH_CLASS (hb_gobject_ot_layout_glyph_class_get_type ())
 
+HB_EXTERN GType hb_gobject_ot_math_constant_get_type (void) G_GNUC_CONST;
+#define HB_GOBJECT_TYPE_OT_MATH_CONSTANT (hb_gobject_ot_math_constant_get_type ())
+
+HB_EXTERN GType hb_gobject_ot_math_kern_get_type (void) G_GNUC_CONST;
+#define HB_GOBJECT_TYPE_OT_MATH_KERN (hb_gobject_ot_math_kern_get_type ())
+
+HB_EXTERN GType hb_gobject_ot_math_glyph_part_flags_get_type (void) G_GNUC_CONST;
+#define HB_GOBJECT_TYPE_OT_MATH_GLYPH_PART_FLAGS (hb_gobject_ot_math_glyph_part_flags_get_type ())
+
 
 HB_END_DECLS
 

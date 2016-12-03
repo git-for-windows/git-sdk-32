@@ -103,13 +103,13 @@ Set to U+FFFD REPLACEMENT CHARACTER.</doc>
     <constant name="VERSION_MAJOR" value="1" c:type="HB_VERSION_MAJOR">
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="2" c:type="HB_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="3" c:type="HB_VERSION_MICRO">
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="VERSION_MINOR" value="3" c:type="HB_VERSION_MINOR">
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_STRING" value="1.3.2" c:type="HB_VERSION_STRING">
+    <constant name="VERSION_STRING" value="1.3.3" c:type="HB_VERSION_STRING">
       <type name="utf8" c:type="gchar*"/>
     </constant>
     <function name="blob_create"
@@ -4995,6 +4995,588 @@ the caller.</doc>
         </parameter>
       </parameters>
     </function>
+    <enumeration name="ot_math_constant_t"
+                 version="1.3.3"
+                 glib:type-name="hb_ot_math_constant_t"
+                 glib:get-type="hb_gobject_ot_math_constant_get_type"
+                 c:type="hb_ot_math_constant_t">
+      <member name="script_percent_scale_down"
+              value="0"
+              c:identifier="HB_OT_MATH_CONSTANT_SCRIPT_PERCENT_SCALE_DOWN"
+              glib:nick="script-percent-scale-down">
+      </member>
+      <member name="script_script_percent_scale_down"
+              value="1"
+              c:identifier="HB_OT_MATH_CONSTANT_SCRIPT_SCRIPT_PERCENT_SCALE_DOWN"
+              glib:nick="script-script-percent-scale-down">
+      </member>
+      <member name="delimited_sub_formula_min_height"
+              value="2"
+              c:identifier="HB_OT_MATH_CONSTANT_DELIMITED_SUB_FORMULA_MIN_HEIGHT"
+              glib:nick="delimited-sub-formula-min-height">
+      </member>
+      <member name="display_operator_min_height"
+              value="3"
+              c:identifier="HB_OT_MATH_CONSTANT_DISPLAY_OPERATOR_MIN_HEIGHT"
+              glib:nick="display-operator-min-height">
+      </member>
+      <member name="math_leading"
+              value="4"
+              c:identifier="HB_OT_MATH_CONSTANT_MATH_LEADING"
+              glib:nick="math-leading">
+      </member>
+      <member name="axis_height"
+              value="5"
+              c:identifier="HB_OT_MATH_CONSTANT_AXIS_HEIGHT"
+              glib:nick="axis-height">
+      </member>
+      <member name="accent_base_height"
+              value="6"
+              c:identifier="HB_OT_MATH_CONSTANT_ACCENT_BASE_HEIGHT"
+              glib:nick="accent-base-height">
+      </member>
+      <member name="flattened_accent_base_height"
+              value="7"
+              c:identifier="HB_OT_MATH_CONSTANT_FLATTENED_ACCENT_BASE_HEIGHT"
+              glib:nick="flattened-accent-base-height">
+      </member>
+      <member name="subscript_shift_down"
+              value="8"
+              c:identifier="HB_OT_MATH_CONSTANT_SUBSCRIPT_SHIFT_DOWN"
+              glib:nick="subscript-shift-down">
+      </member>
+      <member name="subscript_top_max"
+              value="9"
+              c:identifier="HB_OT_MATH_CONSTANT_SUBSCRIPT_TOP_MAX"
+              glib:nick="subscript-top-max">
+      </member>
+      <member name="subscript_baseline_drop_min"
+              value="10"
+              c:identifier="HB_OT_MATH_CONSTANT_SUBSCRIPT_BASELINE_DROP_MIN"
+              glib:nick="subscript-baseline-drop-min">
+      </member>
+      <member name="superscript_shift_up"
+              value="11"
+              c:identifier="HB_OT_MATH_CONSTANT_SUPERSCRIPT_SHIFT_UP"
+              glib:nick="superscript-shift-up">
+      </member>
+      <member name="superscript_shift_up_cramped"
+              value="12"
+              c:identifier="HB_OT_MATH_CONSTANT_SUPERSCRIPT_SHIFT_UP_CRAMPED"
+              glib:nick="superscript-shift-up-cramped">
+      </member>
+      <member name="superscript_bottom_min"
+              value="13"
+              c:identifier="HB_OT_MATH_CONSTANT_SUPERSCRIPT_BOTTOM_MIN"
+              glib:nick="superscript-bottom-min">
+      </member>
+      <member name="superscript_baseline_drop_max"
+              value="14"
+              c:identifier="HB_OT_MATH_CONSTANT_SUPERSCRIPT_BASELINE_DROP_MAX"
+              glib:nick="superscript-baseline-drop-max">
+      </member>
+      <member name="sub_superscript_gap_min"
+              value="15"
+              c:identifier="HB_OT_MATH_CONSTANT_SUB_SUPERSCRIPT_GAP_MIN"
+              glib:nick="sub-superscript-gap-min">
+      </member>
+      <member name="superscript_bottom_max_with_subscript"
+              value="16"
+              c:identifier="HB_OT_MATH_CONSTANT_SUPERSCRIPT_BOTTOM_MAX_WITH_SUBSCRIPT"
+              glib:nick="superscript-bottom-max-with-subscript">
+      </member>
+      <member name="space_after_script"
+              value="17"
+              c:identifier="HB_OT_MATH_CONSTANT_SPACE_AFTER_SCRIPT"
+              glib:nick="space-after-script">
+      </member>
+      <member name="upper_limit_gap_min"
+              value="18"
+              c:identifier="HB_OT_MATH_CONSTANT_UPPER_LIMIT_GAP_MIN"
+              glib:nick="upper-limit-gap-min">
+      </member>
+      <member name="upper_limit_baseline_rise_min"
+              value="19"
+              c:identifier="HB_OT_MATH_CONSTANT_UPPER_LIMIT_BASELINE_RISE_MIN"
+              glib:nick="upper-limit-baseline-rise-min">
+      </member>
+      <member name="lower_limit_gap_min"
+              value="20"
+              c:identifier="HB_OT_MATH_CONSTANT_LOWER_LIMIT_GAP_MIN"
+              glib:nick="lower-limit-gap-min">
+      </member>
+      <member name="lower_limit_baseline_drop_min"
+              value="21"
+              c:identifier="HB_OT_MATH_CONSTANT_LOWER_LIMIT_BASELINE_DROP_MIN"
+              glib:nick="lower-limit-baseline-drop-min">
+      </member>
+      <member name="stack_top_shift_up"
+              value="22"
+              c:identifier="HB_OT_MATH_CONSTANT_STACK_TOP_SHIFT_UP"
+              glib:nick="stack-top-shift-up">
+      </member>
+      <member name="stack_top_display_style_shift_up"
+              value="23"
+              c:identifier="HB_OT_MATH_CONSTANT_STACK_TOP_DISPLAY_STYLE_SHIFT_UP"
+              glib:nick="stack-top-display-style-shift-up">
+      </member>
+      <member name="stack_bottom_shift_down"
+              value="24"
+              c:identifier="HB_OT_MATH_CONSTANT_STACK_BOTTOM_SHIFT_DOWN"
+              glib:nick="stack-bottom-shift-down">
+      </member>
+      <member name="stack_bottom_display_style_shift_down"
+              value="25"
+              c:identifier="HB_OT_MATH_CONSTANT_STACK_BOTTOM_DISPLAY_STYLE_SHIFT_DOWN"
+              glib:nick="stack-bottom-display-style-shift-down">
+      </member>
+      <member name="stack_gap_min"
+              value="26"
+              c:identifier="HB_OT_MATH_CONSTANT_STACK_GAP_MIN"
+              glib:nick="stack-gap-min">
+      </member>
+      <member name="stack_display_style_gap_min"
+              value="27"
+              c:identifier="HB_OT_MATH_CONSTANT_STACK_DISPLAY_STYLE_GAP_MIN"
+              glib:nick="stack-display-style-gap-min">
+      </member>
+      <member name="stretch_stack_top_shift_up"
+              value="28"
+              c:identifier="HB_OT_MATH_CONSTANT_STRETCH_STACK_TOP_SHIFT_UP"
+              glib:nick="stretch-stack-top-shift-up">
+      </member>
+      <member name="stretch_stack_bottom_shift_down"
+              value="29"
+              c:identifier="HB_OT_MATH_CONSTANT_STRETCH_STACK_BOTTOM_SHIFT_DOWN"
+              glib:nick="stretch-stack-bottom-shift-down">
+      </member>
+      <member name="stretch_stack_gap_above_min"
+              value="30"
+              c:identifier="HB_OT_MATH_CONSTANT_STRETCH_STACK_GAP_ABOVE_MIN"
+              glib:nick="stretch-stack-gap-above-min">
+      </member>
+      <member name="stretch_stack_gap_below_min"
+              value="31"
+              c:identifier="HB_OT_MATH_CONSTANT_STRETCH_STACK_GAP_BELOW_MIN"
+              glib:nick="stretch-stack-gap-below-min">
+      </member>
+      <member name="fraction_numerator_shift_up"
+              value="32"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_NUMERATOR_SHIFT_UP"
+              glib:nick="fraction-numerator-shift-up">
+      </member>
+      <member name="fraction_numerator_display_style_shift_up"
+              value="33"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_NUMERATOR_DISPLAY_STYLE_SHIFT_UP"
+              glib:nick="fraction-numerator-display-style-shift-up">
+      </member>
+      <member name="fraction_denominator_shift_down"
+              value="34"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_DENOMINATOR_SHIFT_DOWN"
+              glib:nick="fraction-denominator-shift-down">
+      </member>
+      <member name="fraction_denominator_display_style_shift_down"
+              value="35"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_DENOMINATOR_DISPLAY_STYLE_SHIFT_DOWN"
+              glib:nick="fraction-denominator-display-style-shift-down">
+      </member>
+      <member name="fraction_numerator_gap_min"
+              value="36"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_NUMERATOR_GAP_MIN"
+              glib:nick="fraction-numerator-gap-min">
+      </member>
+      <member name="fraction_num_display_style_gap_min"
+              value="37"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_NUM_DISPLAY_STYLE_GAP_MIN"
+              glib:nick="fraction-num-display-style-gap-min">
+      </member>
+      <member name="fraction_rule_thickness"
+              value="38"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_RULE_THICKNESS"
+              glib:nick="fraction-rule-thickness">
+      </member>
+      <member name="fraction_denominator_gap_min"
+              value="39"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_DENOMINATOR_GAP_MIN"
+              glib:nick="fraction-denominator-gap-min">
+      </member>
+      <member name="fraction_denom_display_style_gap_min"
+              value="40"
+              c:identifier="HB_OT_MATH_CONSTANT_FRACTION_DENOM_DISPLAY_STYLE_GAP_MIN"
+              glib:nick="fraction-denom-display-style-gap-min">
+      </member>
+      <member name="skewed_fraction_horizontal_gap"
+              value="41"
+              c:identifier="HB_OT_MATH_CONSTANT_SKEWED_FRACTION_HORIZONTAL_GAP"
+              glib:nick="skewed-fraction-horizontal-gap">
+      </member>
+      <member name="skewed_fraction_vertical_gap"
+              value="42"
+              c:identifier="HB_OT_MATH_CONSTANT_SKEWED_FRACTION_VERTICAL_GAP"
+              glib:nick="skewed-fraction-vertical-gap">
+      </member>
+      <member name="overbar_vertical_gap"
+              value="43"
+              c:identifier="HB_OT_MATH_CONSTANT_OVERBAR_VERTICAL_GAP"
+              glib:nick="overbar-vertical-gap">
+      </member>
+      <member name="overbar_rule_thickness"
+              value="44"
+              c:identifier="HB_OT_MATH_CONSTANT_OVERBAR_RULE_THICKNESS"
+              glib:nick="overbar-rule-thickness">
+      </member>
+      <member name="overbar_extra_ascender"
+              value="45"
+              c:identifier="HB_OT_MATH_CONSTANT_OVERBAR_EXTRA_ASCENDER"
+              glib:nick="overbar-extra-ascender">
+      </member>
+      <member name="underbar_vertical_gap"
+              value="46"
+              c:identifier="HB_OT_MATH_CONSTANT_UNDERBAR_VERTICAL_GAP"
+              glib:nick="underbar-vertical-gap">
+      </member>
+      <member name="underbar_rule_thickness"
+              value="47"
+              c:identifier="HB_OT_MATH_CONSTANT_UNDERBAR_RULE_THICKNESS"
+              glib:nick="underbar-rule-thickness">
+      </member>
+      <member name="underbar_extra_descender"
+              value="48"
+              c:identifier="HB_OT_MATH_CONSTANT_UNDERBAR_EXTRA_DESCENDER"
+              glib:nick="underbar-extra-descender">
+      </member>
+      <member name="radical_vertical_gap"
+              value="49"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_VERTICAL_GAP"
+              glib:nick="radical-vertical-gap">
+      </member>
+      <member name="radical_display_style_vertical_gap"
+              value="50"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_DISPLAY_STYLE_VERTICAL_GAP"
+              glib:nick="radical-display-style-vertical-gap">
+      </member>
+      <member name="radical_rule_thickness"
+              value="51"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_RULE_THICKNESS"
+              glib:nick="radical-rule-thickness">
+      </member>
+      <member name="radical_extra_ascender"
+              value="52"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_EXTRA_ASCENDER"
+              glib:nick="radical-extra-ascender">
+      </member>
+      <member name="radical_kern_before_degree"
+              value="53"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_KERN_BEFORE_DEGREE"
+              glib:nick="radical-kern-before-degree">
+      </member>
+      <member name="radical_kern_after_degree"
+              value="54"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_KERN_AFTER_DEGREE"
+              glib:nick="radical-kern-after-degree">
+      </member>
+      <member name="radical_degree_bottom_raise_percent"
+              value="55"
+              c:identifier="HB_OT_MATH_CONSTANT_RADICAL_DEGREE_BOTTOM_RAISE_PERCENT"
+              glib:nick="radical-degree-bottom-raise-percent">
+      </member>
+    </enumeration>
+    <function name="ot_math_get_constant"
+              c:identifier="hb_ot_math_get_constant"
+              version="1.3.3">
+      <doc xml:space="preserve">This function returns the requested math constants as a #hb_position_t.
+If the request constant is HB_OT_MATH_CONSTANT_SCRIPT_PERCENT_SCALE_DOWN,
+HB_OT_MATH_CONSTANT_SCRIPT_SCRIPT_PERCENT_SCALE_DOWN or
+HB_OT_MATH_CONSTANT_SCRIPT_PERCENT_SCALE_DOWN then the return value is
+actually an integer between 0 and 100 representing that percentage.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">the requested constant or 0</doc>
+        <type name="position_t" c:type="hb_position_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the value</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="constant" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_ot_math_constant_t the constant to retrieve</doc>
+          <type name="ot_math_constant_t" c:type="hb_ot_math_constant_t"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_get_glyph_assembly"
+              c:identifier="hb_ot_math_get_glyph_assembly"
+              version="1.3.3">
+      <doc xml:space="preserve">This function tries to retrieve the GlyphAssembly for the specified font,
+glyph and direction. Note that only the value of #HB_DIRECTION_IS_HORIZONTAL
+is considered. It provides the information necessary to draw the glyph
+assembly as an array of #hb_ot_math_glyph_part_t.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">the total number of parts in the glyph assembly</doc>
+        <type name="guint" c:type="unsigned int"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the values</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="glyph" transfer-ownership="none">
+          <doc xml:space="preserve">index of the glyph to stretch</doc>
+          <type name="codepoint_t" c:type="hb_codepoint_t"/>
+        </parameter>
+        <parameter name="direction" transfer-ownership="none">
+          <doc xml:space="preserve">direction of the stretching</doc>
+          <type name="direction_t" c:type="hb_direction_t"/>
+        </parameter>
+        <parameter name="start_offset" transfer-ownership="none">
+          <doc xml:space="preserve">offset of the first glyph part to retrieve</doc>
+          <type name="guint" c:type="unsigned int"/>
+        </parameter>
+        <parameter name="parts_count" transfer-ownership="none">
+          <doc xml:space="preserve">maximum number of glyph parts to retrieve after start_offset
+(IN) and actual number of parts retrieved (OUT)</doc>
+          <type name="guint" c:type="unsigned int*"/>
+        </parameter>
+        <parameter name="parts" transfer-ownership="none">
+          <doc xml:space="preserve">array of size at least @parts_count to store the result</doc>
+          <type name="ot_math_glyph_part_t" c:type="hb_ot_math_glyph_part_t*"/>
+        </parameter>
+        <parameter name="italics_correction" transfer-ownership="none">
+          <doc xml:space="preserve">italic correction of the glyph assembly</doc>
+          <type name="position_t" c:type="hb_position_t*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_get_glyph_italics_correction"
+              c:identifier="hb_ot_math_get_glyph_italics_correction"
+              version="1.3.3">
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">the italics correction of the glyph or 0</doc>
+        <type name="position_t" c:type="hb_position_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the value</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="glyph" transfer-ownership="none">
+          <doc xml:space="preserve">glyph index from which to retrieve the value</doc>
+          <type name="codepoint_t" c:type="hb_codepoint_t"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_get_glyph_kerning"
+              c:identifier="hb_ot_math_get_glyph_kerning"
+              version="1.3.3">
+      <doc xml:space="preserve">This function tries to retrieve the MathKern table for the specified font,
+glyph and #hb_ot_math_kern_t. Then it browses the list of heights from the
+MathKern table to find one value that is greater or equal to specified
+correction_height. If one is found the corresponding value from the list of
+kerns is returned and otherwise the last kern value is returned.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">requested kerning or 0</doc>
+        <type name="position_t" c:type="hb_position_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the value</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="glyph" transfer-ownership="none">
+          <doc xml:space="preserve">glyph index from which to retrieve the value</doc>
+          <type name="codepoint_t" c:type="hb_codepoint_t"/>
+        </parameter>
+        <parameter name="kern" transfer-ownership="none">
+          <doc xml:space="preserve">the #hb_ot_math_kern_t from which to retrieve the value</doc>
+          <type name="ot_math_kern_t" c:type="hb_ot_math_kern_t"/>
+        </parameter>
+        <parameter name="correction_height" transfer-ownership="none">
+          <doc xml:space="preserve">the correction height to use to determine the kerning.</doc>
+          <type name="position_t" c:type="hb_position_t"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_get_glyph_top_accent_attachment"
+              c:identifier="hb_ot_math_get_glyph_top_accent_attachment"
+              version="1.3.3">
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">the top accent attachment of the glyph or 0</doc>
+        <type name="position_t" c:type="hb_position_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the value</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="glyph" transfer-ownership="none">
+          <doc xml:space="preserve">glyph index from which to retrieve the value</doc>
+          <type name="codepoint_t" c:type="hb_codepoint_t"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_get_glyph_variants"
+              c:identifier="hb_ot_math_get_glyph_variants"
+              version="1.3.3">
+      <doc xml:space="preserve">This function tries to retrieve the MathGlyphConstruction for the specified
+font, glyph and direction. Note that only the value of
+#HB_DIRECTION_IS_HORIZONTAL is considered. It provides the corresponding list
+of size variants as an array of hb_ot_math_glyph_variant_t structs.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">the total number of size variants available or 0</doc>
+        <type name="guint" c:type="unsigned int"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the values</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="glyph" transfer-ownership="none">
+          <doc xml:space="preserve">index of the glyph to stretch</doc>
+          <type name="codepoint_t" c:type="hb_codepoint_t"/>
+        </parameter>
+        <parameter name="direction" transfer-ownership="none">
+          <doc xml:space="preserve">direction of the stretching</doc>
+          <type name="direction_t" c:type="hb_direction_t"/>
+        </parameter>
+        <parameter name="start_offset" transfer-ownership="none">
+          <doc xml:space="preserve">offset of the first variant to retrieve</doc>
+          <type name="guint" c:type="unsigned int"/>
+        </parameter>
+        <parameter name="variants_count" transfer-ownership="none">
+          <doc xml:space="preserve">maximum number of variants to retrieve after start_offset
+(IN) and actual number of variants retrieved (OUT)</doc>
+          <type name="guint" c:type="unsigned int*"/>
+        </parameter>
+        <parameter name="variants" transfer-ownership="none">
+          <doc xml:space="preserve">array of size at least @variants_count to store the result</doc>
+          <type name="ot_math_glyph_variant_t"
+                c:type="hb_ot_math_glyph_variant_t*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_get_min_connector_overlap"
+              c:identifier="hb_ot_math_get_min_connector_overlap"
+              version="1.3.3">
+      <doc xml:space="preserve">This function tries to retrieve the MathVariants table for the specified
+font and returns the minimum overlap of connecting glyphs to draw a glyph
+assembly in the specified direction. Note that only the value of
+#HB_DIRECTION_IS_HORIZONTAL is considered.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">requested min connector overlap or 0</doc>
+        <type name="position_t" c:type="hb_position_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_font_t from which to retrieve the value</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="direction" transfer-ownership="none">
+          <doc xml:space="preserve">direction of the stretching</doc>
+          <type name="direction_t" c:type="hb_direction_t"/>
+        </parameter>
+      </parameters>
+    </function>
+    <bitfield name="ot_math_glyph_part_flags_t"
+              version="1.3.3"
+              glib:type-name="hb_ot_math_glyph_part_flags_t"
+              glib:get-type="hb_gobject_ot_math_glyph_part_flags_get_type"
+              c:type="hb_ot_math_glyph_part_flags_t">
+      <member name="extender"
+              value="1"
+              c:identifier="HB_MATH_GLYPH_PART_FLAG_EXTENDER"
+              glib:nick="extender">
+      </member>
+    </bitfield>
+    <record name="ot_math_glyph_part_t"
+            c:type="hb_ot_math_glyph_part_t"
+            version="1.3.3">
+      <field name="glyph" writable="1">
+        <type name="codepoint_t" c:type="hb_codepoint_t"/>
+      </field>
+      <field name="start_connector_length" writable="1">
+        <type name="position_t" c:type="hb_position_t"/>
+      </field>
+      <field name="end_connector_length" writable="1">
+        <type name="position_t" c:type="hb_position_t"/>
+      </field>
+      <field name="full_advance" writable="1">
+        <type name="position_t" c:type="hb_position_t"/>
+      </field>
+      <field name="flags" writable="1">
+        <type name="ot_math_glyph_part_flags_t"
+              c:type="hb_ot_math_glyph_part_flags_t"/>
+      </field>
+    </record>
+    <record name="ot_math_glyph_variant_t"
+            c:type="hb_ot_math_glyph_variant_t"
+            version="1.3.3">
+      <field name="glyph" writable="1">
+        <type name="codepoint_t" c:type="hb_codepoint_t"/>
+      </field>
+      <field name="advance" writable="1">
+        <type name="position_t" c:type="hb_position_t"/>
+      </field>
+    </record>
+    <function name="ot_math_has_data"
+              c:identifier="hb_ot_math_has_data"
+              version="1.3.3">
+      <doc xml:space="preserve">This function allows to verify the presence of an OpenType MATH table on the
+face. If so, such a table will be loaded into memory and sanitized. You can
+then safely call other functions for math layout and shaping.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">#TRUE if face has a MATH table and #FALSE otherwise</doc>
+        <type name="bool_t" c:type="hb_bool_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="face" transfer-ownership="none">
+          <doc xml:space="preserve">#hb_face_t to test</doc>
+          <type name="face_t" c:type="hb_face_t*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="ot_math_is_glyph_extended_shape"
+              c:identifier="hb_ot_math_is_glyph_extended_shape"
+              version="1.3.3">
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve">#TRUE if the glyph is an extended shape and #FALSE otherwise</doc>
+        <type name="bool_t" c:type="hb_bool_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="face" transfer-ownership="none">
+          <type name="face_t" c:type="hb_face_t*"/>
+        </parameter>
+        <parameter name="glyph" transfer-ownership="none">
+          <doc xml:space="preserve">a glyph index to test</doc>
+          <type name="codepoint_t" c:type="hb_codepoint_t"/>
+        </parameter>
+      </parameters>
+    </function>
+    <enumeration name="ot_math_kern_t"
+                 version="1.3.3"
+                 glib:type-name="hb_ot_math_kern_t"
+                 glib:get-type="hb_gobject_ot_math_kern_get_type"
+                 c:type="hb_ot_math_kern_t">
+      <member name="top_right"
+              value="0"
+              c:identifier="HB_OT_MATH_KERN_TOP_RIGHT"
+              glib:nick="top-right">
+      </member>
+      <member name="top_left"
+              value="1"
+              c:identifier="HB_OT_MATH_KERN_TOP_LEFT"
+              glib:nick="top-left">
+      </member>
+      <member name="bottom_right"
+              value="2"
+              c:identifier="HB_OT_MATH_KERN_BOTTOM_RIGHT"
+              glib:nick="bottom-right">
+      </member>
+      <member name="bottom_left"
+              value="3"
+              c:identifier="HB_OT_MATH_KERN_BOTTOM_LEFT"
+              glib:nick="bottom-left">
+      </member>
+    </enumeration>
     <function name="ot_shape_glyphs_closure"
               c:identifier="hb_ot_shape_glyphs_closure"
               version="0.9.2">

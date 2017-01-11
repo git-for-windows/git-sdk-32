@@ -2,7 +2,7 @@
 msys2-runtime-devel
 
 %VERSION%
-2.6.0.34694.8626feb-1
+2.6.1-2
 
 %BASE%
 msys2-runtime
@@ -17,16 +17,16 @@ https://www.cygwin.com/
 i686
 
 %BUILDDATE%
-1473406737
+1483816960
 
 %INSTALLDATE%
-1475660581
+1484105899
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-21439488
+21422080
 
 %GROUPS%
 MSYS2-devel
@@ -38,5 +38,5 @@ GPL
 sha256
 
 %DEPENDS%
-msys2-runtime=2.6.0.34694.8626feb
+msys2-runtime=2.6.1
 

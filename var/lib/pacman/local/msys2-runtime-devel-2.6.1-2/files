@@ -63,6 +63,7 @@ usr/include/cygwin/types.h
 usr/include/cygwin/utmp.h
 usr/include/cygwin/version.h
 usr/include/cygwin/wait.h
+usr/include/devctl.h
 usr/include/dirent.h
 usr/include/dlfcn.h
 usr/include/elf.h
@@ -157,6 +158,7 @@ usr/include/sys/
 usr/include/sys/_default_fcntl.h
 usr/include/sys/_intsup.h
 usr/include/sys/_locale.h
+usr/include/sys/_pthreadtypes.h
 usr/include/sys/_sigset.h
 usr/include/sys/_stdint.h
 usr/include/sys/_timespec.h

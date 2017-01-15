@@ -2,7 +2,7 @@
 msys2-runtime
 
 %VERSION%
-2.6.1-2
+2.6.1-3
 
 %BASE%
 msys2-runtime
@@ -17,10 +17,10 @@ https://www.cygwin.com/
 i686
 
 %BUILDDATE%
-1483816952
+1484382657
 
 %INSTALLDATE%
-1484105897
+1484445670
 
 %PACKAGER%
 Unknown Packager

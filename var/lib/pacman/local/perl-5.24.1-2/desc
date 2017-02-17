@@ -2,7 +2,7 @@
 perl
 
 %VERSION%
-5.24.1-1
+5.24.1-2
 
 %DESC%
 A highly capable, feature-rich programming language
@@ -14,10 +14,10 @@ http://www.perl.org
 i686
 
 %BUILDDATE%
-1487068477
+1487244322
 
 %INSTALLDATE%
-1487259250
+1487298293
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

@@ -9,7 +9,7 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Tue Feb 14 13:19:29 MSK 2017
+ * Configuration time: Thu Feb 16 14:10:55 MSK 2017
  * Configured by     : Alexx
  * Target system     : msys_nt-6.1-wow warlock 2.7.0(0.30653) 2017-02-14 08:26 i686 msys 
  */

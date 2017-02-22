@@ -17,6 +17,7 @@ usr/share/locale/ca.us-ascii/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/ca/
 usr/share/locale/ca/LC_MESSAGES/
 usr/share/locale/ca/LC_MESSAGES/texinfo.mo
+usr/share/locale/ca/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/cs/
 usr/share/locale/cs/LC_MESSAGES/
 usr/share/locale/cs/LC_MESSAGES/texinfo.mo
@@ -29,9 +30,14 @@ usr/share/locale/de.us-ascii/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/de/
 usr/share/locale/de/LC_MESSAGES/
 usr/share/locale/de/LC_MESSAGES/texinfo.mo
+usr/share/locale/de/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/de_AT/
 usr/share/locale/de_AT/LC_MESSAGES/
 usr/share/locale/de_AT/LC_MESSAGES/texinfo.mo
+usr/share/locale/el/
+usr/share/locale/el/LC_MESSAGES/
+usr/share/locale/el/LC_MESSAGES/texinfo.mo
+usr/share/locale/el/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/eo/
 usr/share/locale/eo/LC_MESSAGES/
 usr/share/locale/eo/LC_MESSAGES/texinfo.mo
@@ -50,6 +56,7 @@ usr/share/locale/he/LC_MESSAGES/texinfo.mo
 usr/share/locale/hr/
 usr/share/locale/hr/LC_MESSAGES/
 usr/share/locale/hr/LC_MESSAGES/texinfo.mo
+usr/share/locale/hr/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/hu/
 usr/share/locale/hu/LC_MESSAGES/
 usr/share/locale/hu/LC_MESSAGES/texinfo.mo
@@ -81,12 +88,16 @@ usr/share/locale/pl/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/pt.us-ascii/
 usr/share/locale/pt.us-ascii/LC_MESSAGES/
 usr/share/locale/pt.us-ascii/LC_MESSAGES/texinfo_document.mo
+usr/share/locale/pt/
+usr/share/locale/pt/LC_MESSAGES/
+usr/share/locale/pt/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/pt_BR.us-ascii/
 usr/share/locale/pt_BR.us-ascii/LC_MESSAGES/
 usr/share/locale/pt_BR.us-ascii/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/pt_BR/
 usr/share/locale/pt_BR/LC_MESSAGES/
 usr/share/locale/pt_BR/LC_MESSAGES/texinfo.mo
+usr/share/locale/pt_BR/LC_MESSAGES/texinfo_document.mo
 usr/share/locale/ro/
 usr/share/locale/ro/LC_MESSAGES/
 usr/share/locale/ro/LC_MESSAGES/texinfo.mo

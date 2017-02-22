@@ -1,8 +1,8 @@
 %NAME%
-texinfo
+info
 
 %VERSION%
-6.1-1
+6.3-1
 
 %BASE%
 texinfo
@@ -17,19 +17,19 @@ https://www.gnu.org/software/texinfo/
 i686
 
 %BUILDDATE%
-1472539875
+1487658724
 
 %INSTALLDATE%
-1479220751
+1487735681
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-7885824
+414720
 
 %GROUPS%
-base-devel
+base
 
 %LICENSE%
 GPL3
@@ -38,7 +38,7 @@ GPL3
 pgp
 
 %DEPENDS%
-info
-perl
-sh
+ncurses
+libintl
+gzip
 

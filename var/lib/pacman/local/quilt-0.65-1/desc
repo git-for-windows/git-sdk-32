@@ -2,7 +2,7 @@
 quilt
 
 %VERSION%
-0.64-1
+0.65-1
 
 %DESC%
 Manage large numbers of patches
@@ -14,16 +14,16 @@ http://savannah.nongnu.org/projects/quilt
 any
 
 %BUILDDATE%
-1463376506
+1487657288
 
 %INSTALLDATE%
-1479220743
+1487735696
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1249280
+1250304
 
 %GROUPS%
 base-devel

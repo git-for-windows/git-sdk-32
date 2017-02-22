@@ -2,28 +2,31 @@
 mingw-w64-i686-make
 
 %VERSION%
-4.1.2351.a80a8b8-1
+4.2.1-1
+
+%BASE%
+mingw-w64-make
 
 %DESC%
 GNU make utility to maintain groups of programs (mingw-w64)
 
 %URL%
-http://www.gnu.org/software/make
+https://www.gnu.org/software/make
 
 %ARCH%
 any
 
 %BUILDDATE%
-1435757731
+1487678592
 
 %INSTALLDATE%
-1469785473
+1487735696
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-247808
+290816
 
 %GROUPS%
 mingw-w64-i686-toolchain

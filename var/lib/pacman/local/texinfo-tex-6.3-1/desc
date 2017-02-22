@@ -2,7 +2,7 @@
 texinfo-tex
 
 %VERSION%
-6.1-1
+6.3-1
 
 %BASE%
 texinfo
@@ -17,10 +17,10 @@ https://www.gnu.org/software/texinfo/
 i686
 
 %BUILDDATE%
-1472539913
+1487658746
 
 %INSTALLDATE%
-1479220752
+1487735699
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

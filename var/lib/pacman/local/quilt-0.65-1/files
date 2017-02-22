@@ -1,10 +1,10 @@
 %FILES%
-etc/
-etc/quilt.quiltrc
 usr/
 usr/bin/
 usr/bin/guards
 usr/bin/quilt
+usr/etc/
+usr/etc/quilt.quiltrc
 usr/share/
 usr/share/bash-completion/
 usr/share/bash-completion/completions/

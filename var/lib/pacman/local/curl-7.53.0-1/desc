@@ -2,7 +2,7 @@
 curl
 
 %VERSION%
-7.52.1-1
+7.53.0-1
 
 %BASE%
 curl
@@ -17,16 +17,16 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1485329609
+1487781576
 
 %INSTALLDATE%
-1487259159
+1487816069
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Unknown Packager
 
 %SIZE%
-718848
+724992
 
 %REASON%
 1
@@ -38,7 +38,7 @@ base
 MIT
 
 %VALIDATION%
-pgp
+sha256
 
 %DEPENDS%
 ca-certificates

@@ -2,7 +2,7 @@
 libcurl
 
 %VERSION%
-7.52.1-1
+7.53.0-1
 
 %BASE%
 curl
@@ -17,16 +17,16 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1485329624
+1487781583
 
 %INSTALLDATE%
-1487259157
+1487816066
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Unknown Packager
 
 %SIZE%
-510976
+512000
 
 %REASON%
 1
@@ -38,7 +38,7 @@ libraries
 MIT
 
 %VALIDATION%
-pgp
+sha256
 
 %DEPENDS%
 ca-certificates

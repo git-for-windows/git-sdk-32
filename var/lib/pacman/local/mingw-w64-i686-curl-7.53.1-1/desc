@@ -2,7 +2,7 @@
 mingw-w64-i686-curl
 
 %VERSION%
-7.53.0-1
+7.53.1-1
 
 %BASE%
 mingw-w64-curl
@@ -17,10 +17,10 @@ https://curl.haxx.se
 any
 
 %BUILDDATE%
-1487763187
+1487931562
 
 %INSTALLDATE%
-1487816072
+1487988346
 
 %PACKAGER%
 Unknown Packager

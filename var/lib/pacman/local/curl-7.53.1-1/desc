@@ -2,7 +2,7 @@
 curl
 
 %VERSION%
-7.53.0-1
+7.53.1-1
 
 %BASE%
 curl
@@ -17,10 +17,10 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1487781576
+1487932695
 
 %INSTALLDATE%
-1487816069
+1487988343
 
 %PACKAGER%
 Unknown Packager

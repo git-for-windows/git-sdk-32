@@ -1268,6 +1268,7 @@ mingw32/i686-w64-mingw32/include/stdexcpt.h
 mingw32/i686-w64-mingw32/include/stdint.h
 mingw32/i686-w64-mingw32/include/stdio.h
 mingw32/i686-w64-mingw32/include/stdlib.h
+mingw32/i686-w64-mingw32/include/stdole2.tlb
 mingw32/i686-w64-mingw32/include/sti.h
 mingw32/i686-w64-mingw32/include/stierr.h
 mingw32/i686-w64-mingw32/include/stireg.h
@@ -1315,6 +1316,7 @@ mingw32/i686-w64-mingw32/include/tapi3ds.h
 mingw32/i686-w64-mingw32/include/tapi3err.h
 mingw32/i686-w64-mingw32/include/tapi3if.h
 mingw32/i686-w64-mingw32/include/taskschd.h
+mingw32/i686-w64-mingw32/include/taskschd.idl
 mingw32/i686-w64-mingw32/include/tbs.h
 mingw32/i686-w64-mingw32/include/tcerror.h
 mingw32/i686-w64-mingw32/include/tcguid.h

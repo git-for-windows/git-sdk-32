@@ -242,6 +242,7 @@ mingw32/share/doc/git-doc/RelNotes/2.10.2.txt
 mingw32/share/doc/git-doc/RelNotes/2.10.3.txt
 mingw32/share/doc/git-doc/RelNotes/2.11.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.11.1.txt
+mingw32/share/doc/git-doc/RelNotes/2.12.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.2.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.2.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.2.2.txt
@@ -521,7 +522,6 @@ mingw32/share/doc/git-doc/git-receive-pack.txt
 mingw32/share/doc/git-doc/git-reflog.html
 mingw32/share/doc/git-doc/git-reflog.txt
 mingw32/share/doc/git-doc/git-relink.html
-mingw32/share/doc/git-doc/git-relink.txt
 mingw32/share/doc/git-doc/git-remote-ext.html
 mingw32/share/doc/git-doc/git-remote-ext.txt
 mingw32/share/doc/git-doc/git-remote-fd.html

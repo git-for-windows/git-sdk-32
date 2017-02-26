@@ -2,7 +2,7 @@
 mingw-w64-i686-binutils
 
 %VERSION%
-2.27-4
+2.27-5
 
 %BASE%
 mingw-w64-binutils
@@ -17,16 +17,16 @@ http://www.gnu.org/software/binutils/
 any
 
 %BUILDDATE%
-1487657075
+1487920034
 
 %INSTALLDATE%
-1487735686
+1488074752
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-94109696
+94107648
 
 %GROUPS%
 mingw-w64-i686-toolchain

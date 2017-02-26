@@ -318,6 +318,7 @@ mingw32/i686-w64-mingw32/lib/libsxs.a
 mingw32/i686-w64-mingw32/lib/libsynchronization.a
 mingw32/i686-w64-mingw32/lib/libt2embed.a
 mingw32/i686-w64-mingw32/lib/libtapi32.a
+mingw32/i686-w64-mingw32/lib/libtaskschd.a
 mingw32/i686-w64-mingw32/lib/libtbs.a
 mingw32/i686-w64-mingw32/lib/libtdh.a
 mingw32/i686-w64-mingw32/lib/libtdi.a

@@ -2,7 +2,10 @@
 mingw-w64-i686-libtre-git
 
 %VERSION%
-r122.c2f5d13-4
+r128.6fb7206-1
+
+%BASE%
+mingw-w64-libtre-git
 
 %DESC%
 The approximate regex matching library and agrep command line tool (mingw-w64)
@@ -14,16 +17,16 @@ https://github.com/laurikari/tre
 any
 
 %BUILDDATE%
-1435578671
+1488458628
 
 %INSTALLDATE%
-1469785361
+1488534856
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-264192
+267264
 
 %REASON%
 1

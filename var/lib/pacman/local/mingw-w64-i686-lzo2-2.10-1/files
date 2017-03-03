@@ -20,6 +20,8 @@ mingw32/include/lzo/lzoutil.h
 mingw32/lib/
 mingw32/lib/liblzo2.a
 mingw32/lib/liblzo2.dll.a
+mingw32/lib/pkgconfig/
+mingw32/lib/pkgconfig/lzo2.pc
 mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/lzo/

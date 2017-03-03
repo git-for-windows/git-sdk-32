@@ -2,7 +2,10 @@
 mingw-w64-i686-libsystre
 
 %VERSION%
-1.0.1-2
+1.0.1-3
+
+%BASE%
+mingw-w64-libsystre
 
 %DESC%
 Wrapper library around TRE that provides POSIX API (mingw-w64)
@@ -14,10 +17,10 @@ Wrapper library around TRE that provides POSIX API (mingw-w64)
 any
 
 %BUILDDATE%
-1435578801
+1488458905
 
 %INSTALLDATE%
-1469785361
+1488534856
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

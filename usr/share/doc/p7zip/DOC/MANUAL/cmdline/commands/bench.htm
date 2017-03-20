@@ -57,8 +57,10 @@ That test shows the speed of CRC calculation in MB/s. The first column shows the
 The next column shows the speed of CRC calculation for one thread. The other columns are results
 for multi-threaded CRC calculation.</P> 
 
-<P>With -mm=* switch you can run a complex benchmark. It tests hash calcuation methods, 
-compression and encryption codecs of 7-Zip.</P> 
+<P>With -mm=* switch you can run a complex benchmark. It tests hash calculation methods, 
+compression and encryption codecs of 7-Zip.
+Note that the tests of LZMA have big weight in "total" results.
+And the results are normilized with AMD K8 cpu in complex benchmark.</P> 
                                                        
 <H4>Examples</H4>
 
@@ -76,6 +78,11 @@ runs benchmarking with one thread and 64 MB dictionary.
 7z b 30
 </PRE>
 <P>runs benchmarking with default settings for 30 iterations.</P>
+
+<PRE class="example">
+7z b -mm=*
+</PRE>
+<P>runs complex 7-Zip benchmark.</P>
 
 </BODY>
 </HTML>

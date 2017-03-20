@@ -239,13 +239,16 @@ So GZip supports only the following parameters: x, fb, pass.
     <TH> Description </TH> 
   </TR>
   <TR> <TD> <A class="parameter" href="#SevenZipX"> x=[0 | 1 | 3 | 5 | 7 | 9 ] </A> </TD> <TD align="center"> 5 </TD> <TD> Sets level of compression. </TD> </TR> 
+  <TR> <TD> <A class="parameter" href="#SevenZipYX"> yx=[0 | 1 | 3 | 5 | 7 | 9 ] </A> </TD> <TD align="center"> 5 </TD> <TD> Sets level of file analysis. </TD> </TR> 
   <TR> <TD> <A class="parameter" href="#Solid"> s=[off | on | [e] [{N}f] [{N}b | {N}k | {N}m | {N}g] </A> </TD>        <TD align="center"> on </TD> <TD> Sets solid mode. </TD> </TR>
+  <TR> <TD> <A class="parameter"> qs=[off | on] </A> </TD>        <TD align="center"> off </TD> <TD> Sort files by type in solid archives. </TD> </TR>
   <TR> <TD> <A class="parameter" href="#Filter"> f=[off | on | FilterID] </A> </TD> <TD align="center"> on </TD>  <TD>Enables or disables filters. FilterID: Delta:{N}, BCJ, BCJ2, ARM, ARMT, IA64, PPC, SPARC. </TD> </TR>
   <TR> <TD> <A class="parameter" href="#HeaderCompress"> hc=[off | on] </A> </TD> <TD align="center">on</TD>  <TD>Enables or disables archive header compressing. </TD> </TR>
   <TR> <TD> <A class="parameter" href="#HeaderEncrypt"> he=[off | on] </A> </TD> <TD align="center">off</TD>  <TD>Enables or disables archive header encryption. </TD> </TR>
-  <TR> <TD> <A class="parameter" href="#Bind">b{C1}[s{S1}]:{C2}[s{S2}] </A> </TD> <TD align="center"> </TD>  <TD>Sets binding beetwen coders.</TD> </TR>
+  <TR> <TD> <A class="parameter" href="#Bind">b{C1}[s{S1}]:{C2}[s{S2}] </A> </TD> <TD align="center"> </TD>  <TD>Sets binding between coders.</TD> </TR>
   <TR> <TD> <A class="parameter" href="#MethodID">{N}={MethodID}[:param1][:param2][..]</A></TD> <TD align="center">LZMA2</TD>  <TD>Sets a method: LZMA, LZMA2, PPMd, BZip2, Deflate, Delta, BCJ, BCJ2, Copy. </TD> </TR>
   <TR> <TD> <A class="parameter" href="#MultiThread"> mt=[off | on | {N}] </A> </TD> <TD align="center">on</TD> <TD> Sets multithreading mode. </TD> </TR>
+  <TR> <TD> <A class="parameter"> mtf=[off | on] </A> </TD> <TD align="center"> on </TD> <TD> Set multithreading mode for filters. </TD> </TR>
   <TR> <TD> <A class="parameter"> tm=[off | on] </A> </TD> <TD align="center"> on  </TD> <TD> Stores last Modified timestamps for files. </TD> </TR>
   <TR> <TD> <A class="parameter"> tc=[off | on] </A> </TD> <TD align="center"> off </TD> <TD> Stores Creation timestamps for files. </TD> </TR>
   <TR> <TD> <A class="parameter"> ta=[off | on] </A> </TD> <TD align="center"> off </TD> <TD> Stores last Access timestamps for files. </TD> </TR>
@@ -265,6 +268,32 @@ So GZip supports only the following parameters: x, fb, pass.
       <TR> <TD align="center">9</TD> <TD align="center">LZMA2</TD> <TD align="center">64 MB</TD> <TD align="center">64</TD> <TD align="center">BT4</TD> <TD align="center">BCJ2</TD><TD>Ultra compressing</TD> </TR>
     </TABLE>
     <P>Note: "x" works as "x=9".</P>
+  </DD>
+
+  <DT><A name="SevenZipYX"></A>yx=[0 | 1 | 3 | 5 | 7 | 9 ]</DT>
+  <DD>
+    <P>Sets level of file analysis</P>
+    <TABLE>
+      <TR> <TH>Level</TH> <TH>Description</TH> </TR>
+      <TR> <TD align="center">0</TD> <TD>No analysis.</TD> </TR>
+      <TR> <TD align="center">1 or more</TD> <TD>WAV file analysis (for Delta filter).</TD> </TR>
+      <TR> <TD align="center">7 or more</TD> <TD>EXE file analysis (for Executable filters).</TD> </TR>
+      <TR> <TD align="center">9 or more</TD> <TD>analysis of all files (Delta and executable filters).</TD> </TR>
+    </TABLE>
+    <P>Default level is 5: "yx=5".</P>
+    <P>"yx" works as "yx=9".</P>
+
+    <P>If the level of analysis is smaller than 9, 7-Zip analyses only files 
+       that have some file name extensions: EXE, DLL, WAV.
+       7-Zip reads small data block at the beginning of file and tries to parse 
+       the header. It supports only some formats: WAV, PE, ELF, Mach-O.
+       Then it can select filter that can increase compression ratio for that file.</P>
+        
+    <P>By default 7-Zip uses x86 filters (BCJ or BCJ2) for PE files (EXE, DLL).
+       7-Zip doesn't use analysis in default (yx=5) mode.
+       If (yx=7), then analysis is used for PE files, and it can increase compression 
+       ratio for files for non-x86 platforms like ARM.</P>
+
   </DD>
 
   <DT><A name="Solid"></A>s=[off | on | [e] [{N}f] [{N}b | {N}k | {N}m | {N}g)]</DT>
@@ -396,14 +425,14 @@ So GZip supports only the following parameters: x, fb, pass.
  <P> LZMA is an algorithm based on Lempel-Ziv algorithm.
    It provides very fast decompression (about 10-20 times faster than compression). 
    Memory requirements for compression and decompression also are different (see
-   <A class="parameter" href="#DictionarySize">d={Size}[b|k|m]</A> switch for details).</P>
+   <A class="parameter" href="#DictionarySize">d={Size}[b|k|m|g]</A> switch for details).</P>
 
  <TABLE>
    <TR> <TH width="80">Parameter</TH> <TH align="center">Default</TH> <TH>Description</TH> </TR>
 
    <TR> <TD><A class="parameter" href="#LZMAMode">a=[0|1]</A></TD> 
         <TD align="center">1</TD>  <TD>Sets compressing mode</TD> </TR>
-   <TR> <TD><A class="parameter" href="#DictionarySize">d={Size}[b|k|m]</A></TD> 
+   <TR> <TD><A class="parameter" href="#DictionarySize">d={Size}[b|k|m|g]</A></TD> 
         <TD align="center">24</TD>  <TD>Sets Dictionary size</TD> </TR>
    <TR> <TD><A class="parameter" href="#MatchFinder">mf={MF_ID}</A></TD> 
         <TD align="center">bt4</TD>  <TD>Sets Match Finder</TD> </TR>
@@ -426,15 +455,15 @@ So GZip supports only the following parameters: x, fb, pass.
     <P> Sets compression mode: 0 = fast, 1 = normal.
       Default value is 1.</P>
   </DD>
-  <DT><A name="DictionarySize"></A>d={Size}[b|k|m]</DT>
+  <DT><A name="DictionarySize"></A>d={Size}[b|k|m|g]</DT>
   <DD>
     <P> Sets Dictionary size for LZMA. You must specify the size in bytes, kilobytes, or megabytes.
-       The maximum value for dictionary size is 1 GB = 2^30 bytes, but 32-bit version of 7-Zip allows 
+       The maximum value for dictionary size is 1536 MB, but 32-bit version of 7-Zip allows 
        to specify up to 128 MB dictionary.
        Default values for LZMA
        are 24 (16 MB) in normal mode, 25 (32 MB) in maximum mode (-mx=7) 
        and 26 (64 MB) in ultra mode (-mx=9). 
-       If you do not specify any symbol from the set [b|k|m], the
+       If you do not specify any symbol from the set [b|k|m|g], the
        dictionary size will be calculated as DictionarySize = 2^Size bytes.
        For decompressing a file compressed by LZMA method with dictionary size N, you need
        about N bytes of memory (RAM) available.
@@ -515,11 +544,11 @@ So GZip supports only the following parameters: x, fb, pass.
  <TABLE>
    <TR> <TH width="80">Parameter</TH> <TH align="center">Default</TH> <TH>Description</TH> </TR>
 
-   <TR> <TD><A class="parameter" href="#ChunkSize">c={Size}[b|k|m]</A></TD> 
+   <TR> <TD><A class="parameter" href="#ChunkSize">c={Size}[b|k|m|g]</A></TD> 
         <TD align="center">dictSize * 4</TD>  <TD>Sets Chunk size</TD> </TR>
  </TABLE>
 
- <P>If you don't specify ChunkSize, LZMA2 sets it to DictionarySize * 4.</P>
+ <P>If you don't specify ChunkSize, LZMA2 sets it to max(DictionarySize, min(256M, max(1M, DictionarySize * 4))).</P>
 
  <P>LZMA2 also supports all LZMA parameters, but lp+lc cannot be larger than 4.</P>
  
@@ -538,17 +567,17 @@ So GZip supports only the following parameters: x, fb, pass.
  also are the same.</P>
  <TABLE>
    <TR> <TH width="80">Parameter</TH> <TH align="center">Default</TH> <TH>Description</TH> </TR>
-   <TR> <TD><A class="parameter" href="#MemorySize">mem={Size}[b|k|m]</A></TD> 
+   <TR> <TD><A class="parameter" href="#MemorySize">mem={Size}[b|k|m|g]</A></TD> 
         <TD align="center">24</TD>  <TD>Sets size of used memory for PPMd.</TD> </TR>
    <TR> <TD><A class="parameter" href="#Order">o={Size}</A></TD> 
         <TD align="center">6</TD>  <TD>Sets model order for PPMd.</TD> </TR>
  </TABLE>
  <DL>
-  <DT><A name="MemorySize"></A>mem={Size}[b|k|m]</DT>
+  <DT><A name="MemorySize"></A>mem={Size}[b|k|m|g]</DT>
   <DD>
     <P> Sets the size of memory used for PPMd. You must specify the size in bytes, kilobytes, or megabytes.
        The maximum value is 2GB = 2^31 bytes. The default value
-       is 24 (16MB). If you do not specify any symbol from the set [b|k|m], the
+       is 24 (16MB). If you do not specify any symbol from the set [b|k|m|g], the
        memory size will be calculated as (2^Size) bytes. PPMd uses the same 
        amount of memory for compression and decompression.</P>
   </DD>
@@ -572,6 +601,22 @@ So GZip supports only the following parameters: x, fb, pass.
  <P>If LZMA is used, the size of the dictionary for streams
     s1 and s2 can be much smaller (512 KB is enough for most cases) 
     than the dictionary size for stream s0.</P>
+
+ <P><B>Parameters:</B><P>
+ <DL>
+  <DT></A>d={Size}[b|k|m|g]</DT>
+  <DD>
+    <P> Sets section size for BCJ2 filter. Default section size is 64 MB.
+       If you do not specify any symbol from the set [b|k|m|g], the
+       section size will be calculated as SectionSize = 2^Size bytes.
+       This parameter doesn't affect memory consumption.
+       Compression ratio is better, if the section size is equal
+       or slightly larger than size of largest execution section in file.
+       Example: f=BCJ2:d9M, if largest executable section in files is smaller than 9 MB. 
+    </P>
+  </DD>
+ </DL>
+
 
  <H4><A name="Delta"></A>Delta</H4>
  <P>It's possible to set delta offset in bytes. For example, to compress 16-bit stereo 

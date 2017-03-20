@@ -2,28 +2,28 @@
 p7zip
 
 %VERSION%
-9.38.1-1
+16.02-1
 
 %DESC%
 Command-line version of the 7zip compressed file archiver
 
 %URL%
-http://p7zip.sourceforge.net/
+https://p7zip.sourceforge.io/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1438804196
+1489868582
 
 %INSTALLDATE%
-1469785343
+1489975501
 
 %PACKAGER%
-Alexpux <alexpux@jmail.com>
+Unknown Packager
 
 %SIZE%
-5030912
+5539840
 
 %GROUPS%
 compression
@@ -33,7 +33,7 @@ GPL
 custom
 
 %VALIDATION%
-pgp
+sha256
 
 %DEPENDS%
 gcc-libs

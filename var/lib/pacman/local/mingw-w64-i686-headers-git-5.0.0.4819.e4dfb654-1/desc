@@ -2,7 +2,7 @@
 mingw-w64-i686-headers-git
 
 %VERSION%
-5.0.0.4797.31e66d7e-1
+5.0.0.4819.e4dfb654-1
 
 %BASE%
 mingw-w64-headers-git
@@ -11,22 +11,22 @@ mingw-w64-headers-git
 MinGW-w64 headers for Windows
 
 %URL%
-http://mingw-w64.sourceforge.net
+https://mingw-w64.sourceforge.io/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1487920319
+1489985155
 
 %INSTALLDATE%
-1488074761
+1490063921
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-67512320
+67746816
 
 %GROUPS%
 mingw-w64-i686-toolchain

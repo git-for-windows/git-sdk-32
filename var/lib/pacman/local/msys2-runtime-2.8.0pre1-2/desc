@@ -1,14 +1,14 @@
 %NAME%
-msys2-runtime-devel
+msys2-runtime
 
 %VERSION%
-2.7.0-2
+2.8.0pre1-2
 
 %BASE%
 msys2-runtime
 
 %DESC%
-MSYS2 headers and libraries
+Posix emulation engine for Windows
 
 %URL%
 https://www.cygwin.com/
@@ -17,26 +17,23 @@ https://www.cygwin.com/
 i686
 
 %BUILDDATE%
-1487336858
+1490100613
 
 %INSTALLDATE%
-1487340348
+1490148800
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-27872256
+10772480
 
 %GROUPS%
-MSYS2-devel
+base
 
 %LICENSE%
 GPL
 
 %VALIDATION%
 sha256
-
-%DEPENDS%
-msys2-runtime=2.7.0
 

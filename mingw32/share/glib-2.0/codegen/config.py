@@ -22,4 +22,4 @@
 DATADIR = "${prefix}/share"
 DATADIR = DATADIR.replace(
     "${prefix}", "/mingw32")
-VERSION = "2.50.3"
+VERSION = "2.52.0"

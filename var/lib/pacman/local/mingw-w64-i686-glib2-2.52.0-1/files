@@ -254,6 +254,7 @@ mingw32/include/glib-2.0/glib/gtypes.h
 mingw32/include/glib-2.0/glib/gunicode.h
 mingw32/include/glib-2.0/glib/gurifuncs.h
 mingw32/include/glib-2.0/glib/gutils.h
+mingw32/include/glib-2.0/glib/guuid.h
 mingw32/include/glib-2.0/glib/gvariant.h
 mingw32/include/glib-2.0/glib/gvarianttype.h
 mingw32/include/glib-2.0/glib/gversion.h
@@ -321,8 +322,8 @@ mingw32/share/gdb/
 mingw32/share/gdb/auto-load/
 mingw32/share/gdb/auto-load/mingw32/
 mingw32/share/gdb/auto-load/mingw32/lib/
-mingw32/share/gdb/auto-load/mingw32/lib/libglib-2.0.so.0.5000.3-gdb.py
-mingw32/share/gdb/auto-load/mingw32/lib/libgobject-2.0.so.0.5000.3-gdb.py
+mingw32/share/gdb/auto-load/mingw32/lib/libglib-2.0.so.0.5200.0-gdb.py
+mingw32/share/gdb/auto-load/mingw32/lib/libgobject-2.0.so.0.5200.0-gdb.py
 mingw32/share/gettext/
 mingw32/share/gettext/its/
 mingw32/share/gettext/its/gschema.its
@@ -345,6 +346,8 @@ mingw32/share/glib-2.0/gettext/po/
 mingw32/share/glib-2.0/gettext/po/Makefile.in.in
 mingw32/share/glib-2.0/schemas/
 mingw32/share/glib-2.0/schemas/gschema.dtd
+mingw32/share/glib-2.0/valgrind/
+mingw32/share/glib-2.0/valgrind/glib.supp
 mingw32/share/licenses/
 mingw32/share/licenses/glib2/
 mingw32/share/licenses/glib2/COPYING
@@ -442,6 +445,9 @@ mingw32/share/locale/fi/LC_MESSAGES/glib20.mo
 mingw32/share/locale/fr/
 mingw32/share/locale/fr/LC_MESSAGES/
 mingw32/share/locale/fr/LC_MESSAGES/glib20.mo
+mingw32/share/locale/fur/
+mingw32/share/locale/fur/LC_MESSAGES/
+mingw32/share/locale/fur/LC_MESSAGES/glib20.mo
 mingw32/share/locale/ga/
 mingw32/share/locale/ga/LC_MESSAGES/
 mingw32/share/locale/ga/LC_MESSAGES/glib20.mo

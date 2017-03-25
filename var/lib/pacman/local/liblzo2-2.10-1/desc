@@ -2,7 +2,7 @@
 liblzo2
 
 %VERSION%
-2.09-1
+2.10-1
 
 %BASE%
 liblzo2
@@ -17,16 +17,16 @@ http://www.oberhumer.com/opensource/lzo
 i686
 
 %BUILDDATE%
-1423773722
+1490328919
 
 %INSTALLDATE%
-1469785239
+1490407272
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-192512
+194560
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 pkg-config
 
 %VERSION%
-0.29.1-1
+0.29.2-1
 
 %DESC%
 A system for managing library compile/link flags
@@ -14,16 +14,16 @@ https://www.freedesktop.org/wiki/Software/pkg-config/
 i686
 
 %BUILDDATE%
-1460180135
+1490339054
 
 %INSTALLDATE%
-1479220742
+1490407272
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-600064
+595968
 
 %GROUPS%
 base-devel
@@ -45,5 +45,5 @@ glib2
 pkgconfig
 
 %PROVIDES%
-pkgconfig=0.29.1
+pkgconfig=0.29.2
 

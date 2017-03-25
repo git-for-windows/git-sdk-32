@@ -2,28 +2,28 @@
 tzcode
 
 %VERSION%
-2015.e-1
+2017.b-1
 
 %DESC%
 Sources for time zone and daylight saving time data
 
 %URL%
-http://www.iana.org/time-zones
+https://www.iana.org/time-zones
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1434529707
+1490339770
 
 %INSTALLDATE%
-1469785250
+1490407280
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1722368
+1774592
 
 %GROUPS%
 base

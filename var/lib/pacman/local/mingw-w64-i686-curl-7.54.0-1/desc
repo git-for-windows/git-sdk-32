@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-curl-winssl-bin
+mingw-w64-i686-curl
 
 %VERSION%
-7.53.1-1
+7.54.0-1
 
 %BASE%
-mingw-w64-curl-winssl-bin
+mingw-w64-curl
 
 %DESC%
 An URL retrival utility and library. (mingw-w64)
@@ -17,16 +17,16 @@ https://curl.haxx.se
 any
 
 %BUILDDATE%
-1488312846
+1492617016
 
 %INSTALLDATE%
-1489659663
+1492681528
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-791552
+2345984
 
 %LICENSE%
 MIT
@@ -42,5 +42,7 @@ mingw-w64-i686-libmetalink
 mingw-w64-i686-libssh2
 mingw-w64-i686-zlib
 mingw-w64-i686-rtmpdump
-mingw-w64-i686-curl
+mingw-w64-i686-ca-certificates
+mingw-w64-i686-openssl
+mingw-w64-i686-nghttp2
 

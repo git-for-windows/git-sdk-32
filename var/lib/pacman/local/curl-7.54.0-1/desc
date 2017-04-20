@@ -1,14 +1,14 @@
 %NAME%
-libcurl
+curl
 
 %VERSION%
-7.53.1-1
+7.54.0-1
 
 %BASE%
 curl
 
 %DESC%
-Multi-protocol file transfer library (runtime)
+Multi-protocol file transfer utility
 
 %URL%
 https://curl.haxx.se
@@ -17,22 +17,22 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1487932698
+1492626747
 
 %INSTALLDATE%
-1487988342
+1492681523
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-512000
+732160
 
 %REASON%
 1
 
 %GROUPS%
-libraries
+base
 
 %LICENSE%
 MIT
@@ -42,11 +42,9 @@ sha256
 
 %DEPENDS%
 ca-certificates
-heimdal-libs
+libcurl
 libcrypt
-libidn
 libmetalink
-libssh2
 openssl
 zlib
 

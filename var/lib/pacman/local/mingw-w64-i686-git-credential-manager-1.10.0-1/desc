@@ -2,7 +2,7 @@
 mingw-w64-i686-git-credential-manager
 
 %VERSION%
-1.9.1-1
+1.10.0-1
 
 %BASE%
 mingw-w64-git-credential-manager
@@ -17,16 +17,16 @@ Credential Manager for Git for Windows
 any
 
 %BUILDDATE%
-1491402425
+1494444778
 
 %INSTALLDATE%
-1491440580
+1494464456
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-1067008
+1409024
 
 %GROUPS%
 VCS

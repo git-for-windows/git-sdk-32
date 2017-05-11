@@ -6,6 +6,7 @@ mingw32/doc/git-credential-manager/LICENSE.txt
 mingw32/doc/git-credential-manager/README.md
 mingw32/libexec/
 mingw32/libexec/git-core/
+mingw32/libexec/git-core/Bitbucket.Authentication.dll
 mingw32/libexec/git-core/GitHub.Authentication.exe
 mingw32/libexec/git-core/Microsoft.Alm.Authentication.dll
 mingw32/libexec/git-core/Microsoft.Alm.Git.dll

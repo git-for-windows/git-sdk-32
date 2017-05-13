@@ -2,7 +2,7 @@
 openssh
 
 %VERSION%
-7.3p1-2
+7.5p1-1
 
 %DESC%
 Free version of the SSH connectivity tools
@@ -14,16 +14,16 @@ http://www.openssh.org/portable.html
 i686
 
 %BUILDDATE%
-1476269214
+1494601523
 
 %INSTALLDATE%
-1478710906
+1494637389
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Unknown Packager
 
 %SIZE%
-4672512
+4979712
 
 %GROUPS%
 net-utils
@@ -32,7 +32,7 @@ net-utils
 custom:BSD
 
 %VALIDATION%
-pgp
+sha256
 
 %DEPENDS%
 heimdal

@@ -41,6 +41,7 @@ mingw32/include/freetype2/freetype/ftmodapi.h
 mingw32/include/freetype2/freetype/ftmoderr.h
 mingw32/include/freetype2/freetype/ftotval.h
 mingw32/include/freetype2/freetype/ftoutln.h
+mingw32/include/freetype2/freetype/ftpcfdrv.h
 mingw32/include/freetype2/freetype/ftpfr.h
 mingw32/include/freetype2/freetype/ftrender.h
 mingw32/include/freetype2/freetype/ftsizes.h

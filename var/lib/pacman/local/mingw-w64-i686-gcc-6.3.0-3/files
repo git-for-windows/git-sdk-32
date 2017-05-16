@@ -18,6 +18,8 @@ mingw32/bin/i686-w64-mingw32-gcc-ar.exe
 mingw32/bin/i686-w64-mingw32-gcc-nm.exe
 mingw32/bin/i686-w64-mingw32-gcc-ranlib.exe
 mingw32/bin/i686-w64-mingw32-gcc.exe
+mingw32/etc/
+mingw32/etc/gdbinit
 mingw32/include/
 mingw32/include/c++/
 mingw32/include/c++/6.3.0/

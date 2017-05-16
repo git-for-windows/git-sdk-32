@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-gcc-objc
+mingw-w64-i686-gcc-libs
 
 %VERSION%
-6.3.0-2
+6.3.0-3
 
 %BASE%
 mingw-w64-gcc
 
 %DESC%
-GNU Compiler Collection (ObjC,Obj-C++) for MinGW-w64
+GNU Compiler Collection (libraries) for MinGW-w64
 
 %URL%
 https://gcc.gnu.org
@@ -17,29 +17,31 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1488169567
+1494863723
 
 %INSTALLDATE%
-1488248695
+1494896554
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-45836288
+2458624
 
 %GROUPS%
 mingw-w64-i686-toolchain
 
 %LICENSE%
-GPL
-LGPL
-FDL
-custom
+GPL3+
+partial:GCCRLE
+partial:LGPL2+
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-mingw-w64-i686-gcc=6.3.0-2
+mingw-w64-i686-gmp
+mingw-w64-i686-mpc
+mingw-w64-i686-mpfr
+mingw-w64-i686-libwinpthread
 

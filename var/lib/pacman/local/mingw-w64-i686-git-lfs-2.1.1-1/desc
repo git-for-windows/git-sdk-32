@@ -2,7 +2,7 @@
 mingw-w64-i686-git-lfs
 
 %VERSION%
-2.1.0-1
+2.1.1-1
 
 %BASE%
 mingw-w64-git-lfs
@@ -17,16 +17,16 @@ https://github.com/git-lfs/git-lfs
 any
 
 %BUILDDATE%
-1493405163
+1495451863
 
 %INSTALLDATE%
-1493427655
+1495501247
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-5846016
+5856256
 
 %GROUPS%
 VCS

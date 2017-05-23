@@ -2,7 +2,7 @@
 mingw-w64-i686-jansson
 
 %VERSION%
-2.9-1
+2.10-1
 
 %BASE%
 mingw-w64-jansson
@@ -17,16 +17,16 @@ http://www.digip.org/jansson/
 any
 
 %BUILDDATE%
-1480314561
+1495451076
 
 %INSTALLDATE%
-1480730653
+1495501249
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-201728
+205824
 
 %LICENSE%
 MIT

@@ -2,7 +2,7 @@
 mingw-w64-i686-graphite2
 
 %VERSION%
-1.3.9-1
+1.3.10-1
 
 %BASE%
 mingw-w64-graphite2
@@ -17,16 +17,16 @@ https://github.com/silnrsi/graphite
 any
 
 %BUILDDATE%
-1479106938
+1495464260
 
 %INSTALLDATE%
-1480730522
+1495501248
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-729088
+732160
 
 %REASON%
 1

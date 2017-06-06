@@ -1,0 +1,36 @@
+%NAME%
+rcs
+
+%VERSION%
+5.9.4-2
+
+%DESC%
+Revision Control System: manages multiple revisions of files
+
+%URL%
+https://www.gnu.org/software/rcs/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1496296000
+
+%INSTALLDATE%
+1496785443
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+515072
+
+%GROUPS%
+base-devel
+
+%LICENSE%
+GPL3
+
+%VALIDATION%
+pgp
+

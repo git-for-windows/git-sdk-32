@@ -2,7 +2,7 @@
 mingw-w64-i686-openssl
 
 %VERSION%
-1.0.2.k-1
+1.0.2.l-1
 
 %BASE%
 mingw-w64-openssl
@@ -17,16 +17,16 @@ https://www.openssl.org
 any
 
 %BUILDDATE%
-1485839763
+1496984144
 
 %INSTALLDATE%
-1486173700
+1497537741
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-17298432
+17304576
 
 %LICENSE%
 BSD

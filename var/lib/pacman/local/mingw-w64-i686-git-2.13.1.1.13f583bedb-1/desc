@@ -2,7 +2,7 @@
 mingw-w64-i686-git
 
 %VERSION%
-2.13.0.1.eba7af3dbb-1
+2.13.1.1.13f583bedb-1
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://git-for-windows.github.io/
 any
 
 %BUILDDATE%
-1494396262
+1497350699
 
 %INSTALLDATE%
-1494464456
+1497537746
 
 %PACKAGER%
 Unknown Packager
 
 %SIZE%
-28463104
+28388352
 
 %LICENSE%
 GPL2

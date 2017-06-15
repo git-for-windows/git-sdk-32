@@ -108,6 +108,7 @@ mingw32/share/locale/rw/LC_MESSAGES/bfd.mo
 mingw32/share/locale/sr/
 mingw32/share/locale/sr/LC_MESSAGES/
 mingw32/share/locale/sr/LC_MESSAGES/bfd.mo
+mingw32/share/locale/sr/LC_MESSAGES/opcodes.mo
 mingw32/share/locale/sv/
 mingw32/share/locale/sv/LC_MESSAGES/
 mingw32/share/locale/sv/LC_MESSAGES/bfd.mo

@@ -2,7 +2,7 @@
 git-extra
 
 %VERSION%
-1.1.138.803787f-1
+1.1.140.f5cc31f-1
 
 %DESC%
 Git for Windows extra files
@@ -14,10 +14,10 @@ https://github.com/git-for-windows/build-extra
 i686
 
 %BUILDDATE%
-1497902498
+1497962651
 
 %INSTALLDATE%
-1497951027
+1497994017
 
 %PACKAGER%
 Unknown Packager

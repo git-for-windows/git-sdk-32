@@ -2,7 +2,7 @@
 mingw-w64-i686-curl
 
 %VERSION%
-7.54.1-1
+7.54.1-2
 
 %BASE%
 mingw-w64-curl
@@ -17,22 +17,22 @@ https://curl.haxx.se
 any
 
 %BUILDDATE%
-1497906406
+1501708716
 
 %INSTALLDATE%
-1497951004
+1501710282
 
 %PACKAGER%
-Unknown Packager
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-2376704
+2451456
 
 %LICENSE%
 MIT
 
 %VALIDATION%
-sha256
+pgp
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs

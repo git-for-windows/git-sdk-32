@@ -2,7 +2,7 @@
 git-extra
 
 %VERSION%
-1.1.171.a99a861-1
+1.1.175.5c4324d-1
 
 %DESC%
 Git for Windows extra files
@@ -14,10 +14,10 @@ https://github.com/git-for-windows/build-extra
 i686
 
 %BUILDDATE%
-1503394563
+1504880393
 
 %INSTALLDATE%
-1504832602
+1504881710
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>

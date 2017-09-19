@@ -948,6 +948,7 @@ mingw32/lib/terminfo/64/dwk
 mingw32/lib/terminfo/64/dwk-vt
 mingw32/lib/terminfo/65/
 mingw32/lib/terminfo/65/ecma+color
+mingw32/lib/terminfo/65/ecma+italics
 mingw32/lib/terminfo/65/ecma+sgr
 mingw32/lib/terminfo/65/ecma+strikeout
 mingw32/lib/terminfo/65/elks
@@ -1204,6 +1205,7 @@ mingw32/lib/terminfo/69/i3101
 mingw32/lib/terminfo/69/i3164
 mingw32/lib/terminfo/69/i400
 mingw32/lib/terminfo/69/iTerm.app
+mingw32/lib/terminfo/69/iTerm2.app
 mingw32/lib/terminfo/69/ibcs2
 mingw32/lib/terminfo/69/ibm+16color
 mingw32/lib/terminfo/69/ibm+color
@@ -1281,6 +1283,7 @@ mingw32/lib/terminfo/69/iris-ansi-net
 mingw32/lib/terminfo/69/iris-color
 mingw32/lib/terminfo/69/iris40
 mingw32/lib/terminfo/69/iterm
+mingw32/lib/terminfo/69/iterm2
 mingw32/lib/terminfo/6a/
 mingw32/lib/terminfo/6a/jaixterm
 mingw32/lib/terminfo/6a/jaixterm-m
@@ -4626,6 +4629,7 @@ mingw32/share/terminfo/64/dwk
 mingw32/share/terminfo/64/dwk-vt
 mingw32/share/terminfo/65/
 mingw32/share/terminfo/65/ecma+color
+mingw32/share/terminfo/65/ecma+italics
 mingw32/share/terminfo/65/ecma+sgr
 mingw32/share/terminfo/65/ecma+strikeout
 mingw32/share/terminfo/65/elks
@@ -4882,6 +4886,7 @@ mingw32/share/terminfo/69/i3101
 mingw32/share/terminfo/69/i3164
 mingw32/share/terminfo/69/i400
 mingw32/share/terminfo/69/iTerm.app
+mingw32/share/terminfo/69/iTerm2.app
 mingw32/share/terminfo/69/ibcs2
 mingw32/share/terminfo/69/ibm+16color
 mingw32/share/terminfo/69/ibm+color
@@ -4959,6 +4964,7 @@ mingw32/share/terminfo/69/iris-ansi-net
 mingw32/share/terminfo/69/iris-color
 mingw32/share/terminfo/69/iris40
 mingw32/share/terminfo/69/iterm
+mingw32/share/terminfo/69/iterm2
 mingw32/share/terminfo/6a/
 mingw32/share/terminfo/6a/jaixterm
 mingw32/share/terminfo/6a/jaixterm-m

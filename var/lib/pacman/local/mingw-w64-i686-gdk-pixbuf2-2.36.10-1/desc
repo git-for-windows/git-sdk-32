@@ -2,7 +2,7 @@
 mingw-w64-i686-gdk-pixbuf2
 
 %VERSION%
-2.36.9-1
+2.36.10-1
 
 %BASE%
 mingw-w64-gdk-pixbuf2
@@ -11,22 +11,22 @@ mingw-w64-gdk-pixbuf2
 An image loading library (mingw-w64)
 
 %URL%
-http://www.gtk.org
+https://www.gtk.org/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1504506765
+1505584720
 
 %INSTALLDATE%
-1505295867
+1505783082
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-4767744
+4749312
 
 %REASON%
 1

@@ -2006,7 +2006,7 @@ mingw32/lib/python2.7/keyword.py
 mingw32/lib/python2.7/keyword.pyc
 mingw32/lib/python2.7/keyword.pyo
 mingw32/lib/python2.7/lib-dynload/
-mingw32/lib/python2.7/lib-dynload/Python-2.7.13-py2.7.egg-info
+mingw32/lib/python2.7/lib-dynload/Python-2.7.14-py2.7.egg-info
 mingw32/lib/python2.7/lib-dynload/_bisect.pyd
 mingw32/lib/python2.7/lib-dynload/_codecs_cn.pyd
 mingw32/lib/python2.7/lib-dynload/_codecs_hk.pyd
@@ -2171,9 +2171,9 @@ mingw32/lib/python2.7/lib-tk/turtle.pyc
 mingw32/lib/python2.7/lib-tk/turtle.pyo
 mingw32/lib/python2.7/lib2to3/
 mingw32/lib/python2.7/lib2to3/Grammar.txt
-mingw32/lib/python2.7/lib2to3/Grammar2.7.13.final.0.pickle
+mingw32/lib/python2.7/lib2to3/Grammar2.7.14.final.0.pickle
 mingw32/lib/python2.7/lib2to3/PatternGrammar.txt
-mingw32/lib/python2.7/lib2to3/PatternGrammar2.7.13.final.0.pickle
+mingw32/lib/python2.7/lib2to3/PatternGrammar2.7.14.final.0.pickle
 mingw32/lib/python2.7/lib2to3/__init__.py
 mingw32/lib/python2.7/lib2to3/__init__.pyc
 mingw32/lib/python2.7/lib2to3/__init__.pyo
@@ -2830,6 +2830,9 @@ mingw32/lib/python2.7/test/Sine-1000Hz-300ms.aif
 mingw32/lib/python2.7/test/__init__.py
 mingw32/lib/python2.7/test/__init__.pyc
 mingw32/lib/python2.7/test/__init__.pyo
+mingw32/lib/python2.7/test/__main__.py
+mingw32/lib/python2.7/test/__main__.pyc
+mingw32/lib/python2.7/test/__main__.pyo
 mingw32/lib/python2.7/test/_mock_backport.py
 mingw32/lib/python2.7/test/_mock_backport.pyc
 mingw32/lib/python2.7/test/_mock_backport.pyo
@@ -2868,6 +2871,9 @@ mingw32/lib/python2.7/test/badsyntax_future7.py
 mingw32/lib/python2.7/test/badsyntax_future8.py
 mingw32/lib/python2.7/test/badsyntax_future9.py
 mingw32/lib/python2.7/test/badsyntax_nocaret.py
+mingw32/lib/python2.7/test/bisect.py
+mingw32/lib/python2.7/test/bisect.pyc
+mingw32/lib/python2.7/test/bisect.pyo
 mingw32/lib/python2.7/test/capath/
 mingw32/lib/python2.7/test/capath/0e4015b9.0
 mingw32/lib/python2.7/test/capath/4e1295a3.0
@@ -3118,6 +3124,9 @@ mingw32/lib/python2.7/test/math_testcases.txt
 mingw32/lib/python2.7/test/mp_fork_bomb.py
 mingw32/lib/python2.7/test/mp_fork_bomb.pyc
 mingw32/lib/python2.7/test/mp_fork_bomb.pyo
+mingw32/lib/python2.7/test/multibytecodec_support.py
+mingw32/lib/python2.7/test/multibytecodec_support.pyc
+mingw32/lib/python2.7/test/multibytecodec_support.pyo
 mingw32/lib/python2.7/test/nokia.pem
 mingw32/lib/python2.7/test/nullbytecert.pem
 mingw32/lib/python2.7/test/nullcert.pem
@@ -3143,6 +3152,9 @@ mingw32/lib/python2.7/test/pydocfodder.pyo
 mingw32/lib/python2.7/test/pystone.py
 mingw32/lib/python2.7/test/pystone.pyc
 mingw32/lib/python2.7/test/pystone.pyo
+mingw32/lib/python2.7/test/pythoninfo.py
+mingw32/lib/python2.7/test/pythoninfo.pyc
+mingw32/lib/python2.7/test/pythoninfo.pyo
 mingw32/lib/python2.7/test/randv2_32.pck
 mingw32/lib/python2.7/test/randv2_64.pck
 mingw32/lib/python2.7/test/randv3.pck
@@ -3196,6 +3208,13 @@ mingw32/lib/python2.7/test/subprocessdata/
 mingw32/lib/python2.7/test/subprocessdata/sigchild_ignore.py
 mingw32/lib/python2.7/test/subprocessdata/sigchild_ignore.pyc
 mingw32/lib/python2.7/test/subprocessdata/sigchild_ignore.pyo
+mingw32/lib/python2.7/test/support/
+mingw32/lib/python2.7/test/support/__init__.py
+mingw32/lib/python2.7/test/support/__init__.pyc
+mingw32/lib/python2.7/test/support/__init__.pyo
+mingw32/lib/python2.7/test/support/script_helper.py
+mingw32/lib/python2.7/test/support/script_helper.pyc
+mingw32/lib/python2.7/test/support/script_helper.pyo
 mingw32/lib/python2.7/test/symlink_support.py
 mingw32/lib/python2.7/test/symlink_support.pyc
 mingw32/lib/python2.7/test/symlink_support.pyo
@@ -3741,6 +3760,9 @@ mingw32/lib/python2.7/test/test_imp.pyo
 mingw32/lib/python2.7/test/test_import.py
 mingw32/lib/python2.7/test/test_import.pyc
 mingw32/lib/python2.7/test/test_import.pyo
+mingw32/lib/python2.7/test/test_import_magic.py
+mingw32/lib/python2.7/test/test_import_magic.pyc
+mingw32/lib/python2.7/test/test_import_magic.pyo
 mingw32/lib/python2.7/test/test_importhooks.py
 mingw32/lib/python2.7/test/test_importhooks.pyc
 mingw32/lib/python2.7/test/test_importhooks.pyo
@@ -3870,9 +3892,6 @@ mingw32/lib/python2.7/test/test_msilib.pyo
 mingw32/lib/python2.7/test/test_multibytecodec.py
 mingw32/lib/python2.7/test/test_multibytecodec.pyc
 mingw32/lib/python2.7/test/test_multibytecodec.pyo
-mingw32/lib/python2.7/test/test_multibytecodec_support.py
-mingw32/lib/python2.7/test/test_multibytecodec_support.pyc
-mingw32/lib/python2.7/test/test_multibytecodec_support.pyo
 mingw32/lib/python2.7/test/test_multifile.py
 mingw32/lib/python2.7/test/test_multifile.pyc
 mingw32/lib/python2.7/test/test_multifile.pyo
@@ -4041,6 +4060,9 @@ mingw32/lib/python2.7/test/test_re.pyo
 mingw32/lib/python2.7/test/test_readline.py
 mingw32/lib/python2.7/test/test_readline.pyc
 mingw32/lib/python2.7/test/test_readline.pyo
+mingw32/lib/python2.7/test/test_regrtest.py
+mingw32/lib/python2.7/test/test_regrtest.pyc
+mingw32/lib/python2.7/test/test_regrtest.pyo
 mingw32/lib/python2.7/test/test_repr.py
 mingw32/lib/python2.7/test/test_repr.pyc
 mingw32/lib/python2.7/test/test_repr.pyo
@@ -4218,6 +4240,9 @@ mingw32/lib/python2.7/test/test_telnetlib.pyo
 mingw32/lib/python2.7/test/test_tempfile.py
 mingw32/lib/python2.7/test/test_tempfile.pyc
 mingw32/lib/python2.7/test/test_tempfile.pyo
+mingw32/lib/python2.7/test/test_test_support.py
+mingw32/lib/python2.7/test/test_test_support.pyc
+mingw32/lib/python2.7/test/test_test_support.pyo
 mingw32/lib/python2.7/test/test_textwrap.py
 mingw32/lib/python2.7/test/test_textwrap.pyc
 mingw32/lib/python2.7/test/test_textwrap.pyo

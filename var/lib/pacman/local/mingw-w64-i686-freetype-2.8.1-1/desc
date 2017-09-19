@@ -2,7 +2,7 @@
 mingw-w64-i686-freetype
 
 %VERSION%
-2.8-1
+2.8.1-1
 
 %BASE%
 mingw-w64-freetype
@@ -11,22 +11,22 @@ mingw-w64-freetype
 TrueType font rendering library (mingw-w64)
 
 %URL%
-http://www.freetype.org/
+https://www.freetype.org/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1494746353
+1505713546
 
 %INSTALLDATE%
-1494810063
+1505783007
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2944000
+2968576
 
 %REASON%
 1

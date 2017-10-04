@@ -1,29 +1,32 @@
 %NAME%
-tig
+help2man
 
 %VERSION%
-2.2.2-1
+1.47.5-1
 
 %DESC%
-Text-mode interface for Git
+Conversion tool to create man files
 
 %URL%
-http://jonas.nitro.dk/tig/
+https://www.gnu.org/software/help2man/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1500017743
+1507012715
 
 %INSTALLDATE%
-1505938665
+1507078872
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-335872
+342016
+
+%GROUPS%
+base-devel
 
 %LICENSE%
 GPL
@@ -32,7 +35,6 @@ GPL
 pgp
 
 %DEPENDS%
-git
-libreadline
-ncurses
+perl-Locale-Gettext
+libintl
 

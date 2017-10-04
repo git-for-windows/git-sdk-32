@@ -2,7 +2,7 @@
 coreutils
 
 %VERSION%
-8.26-1
+8.26-2
 
 %DESC%
 The basic file, shell and text manipulation utilities of the GNU operating system
@@ -14,16 +14,16 @@ https://www.gnu.org/software/coreutils
 i686
 
 %BUILDDATE%
-1487061298
+1507020516
 
 %INSTALLDATE%
-1487259114
+1507078864
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-24236032
+24259584
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 libpsl
 
 %VERSION%
-0.18.0-1
+0.18.0-2
 
 %BASE%
 libpsl
@@ -17,10 +17,10 @@ https://github.com/rockdaboot/libpsl
 i686
 
 %BUILDDATE%
-1506669425
+1507014079
 
 %INSTALLDATE%
-1506733438
+1507078872
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
@@ -42,5 +42,5 @@ pgp
 
 %DEPENDS%
 libxslt
-icu>=55.1-1
+icu>=59.1
 

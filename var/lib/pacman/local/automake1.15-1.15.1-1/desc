@@ -1,29 +1,29 @@
 %NAME%
-help2man
+automake1.15
 
 %VERSION%
-1.47.3-1
+1.15.1-1
 
 %DESC%
-Conversion tool to create man files
+A GNU tool for automatically creating Makefiles
 
 %URL%
-http://www.gnu.org/software/help2man/
+https://www.gnu.org/software/automake
 
 %ARCH%
-i686
+any
 
 %BUILDDATE%
-1448260327
+1507012498
 
 %INSTALLDATE%
-1479220739
+1507078865
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-329728
+1553408
 
 %GROUPS%
 base-devel
@@ -35,6 +35,6 @@ GPL
 pgp
 
 %DEPENDS%
-perl-Locale-Gettext
-libintl
+perl
+bash
 

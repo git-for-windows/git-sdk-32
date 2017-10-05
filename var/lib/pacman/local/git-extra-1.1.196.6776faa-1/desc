@@ -17,7 +17,7 @@ i686
 1505938121
 
 %INSTALLDATE%
-1507165473
+1507167473
 
 %PACKAGER%
 Unknown Packager
@@ -32,7 +32,7 @@ VCS
 GPL
 
 %VALIDATION%
-none
+pgp
 
 %DEPENDS%
 git-for-windows-keyring

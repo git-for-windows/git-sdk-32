@@ -1,50 +1,42 @@
 %NAME%
-curl
+openssh
 
 %VERSION%
-7.55.1-1
-
-%BASE%
-curl
+7.6p1-1
 
 %DESC%
-Multi-protocol file transfer utility
+Free version of the SSH connectivity tools
 
 %URL%
-https://curl.haxx.se
+http://www.openssh.org/portable.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1502718279
+1507148015
 
 %INSTALLDATE%
-1502758944
+1507165468
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-772096
-
-%REASON%
-1
+5039104
 
 %GROUPS%
-base
+net-utils
 
 %LICENSE%
-MIT
+custom:BSD
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-ca-certificates
-libcurl
+heimdal
+libedit
 libcrypt
-libmetalink
 openssl
-zlib
 

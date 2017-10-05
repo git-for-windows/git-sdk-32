@@ -2,7 +2,7 @@
 mingw-w64-i686-curl
 
 %VERSION%
-7.55.1-3
+7.56.0-1
 
 %BASE%
 mingw-w64-curl
@@ -17,16 +17,16 @@ https://curl.haxx.se
 any
 
 %BUILDDATE%
-1504787222
+1507123150
 
 %INSTALLDATE%
-1504832601
+1507165467
 
 %PACKAGER%
-Johannes Schindelin <johannes.schindelin@gmx.de>
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2456576
+2528256
 
 %LICENSE%
 MIT

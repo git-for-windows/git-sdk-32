@@ -2,7 +2,7 @@
 libcurl
 
 %VERSION%
-7.55.1-1
+7.56.0-1
 
 %BASE%
 curl
@@ -17,16 +17,16 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1502718283
+1507127942
 
 %INSTALLDATE%
-1502758935
+1507165462
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-518144
+561152
 
 %REASON%
 1
@@ -44,8 +44,9 @@ pgp
 ca-certificates
 heimdal-libs
 libcrypt
-libidn
+libidn2
 libmetalink
+libnghttp2
 libssh2
 openssl
 zlib

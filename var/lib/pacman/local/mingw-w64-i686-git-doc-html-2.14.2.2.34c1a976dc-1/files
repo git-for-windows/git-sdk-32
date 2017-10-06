@@ -549,7 +549,6 @@ mingw32/share/doc/git-doc/git-receive-pack.html
 mingw32/share/doc/git-doc/git-receive-pack.txt
 mingw32/share/doc/git-doc/git-reflog.html
 mingw32/share/doc/git-doc/git-reflog.txt
-mingw32/share/doc/git-doc/git-relink.html
 mingw32/share/doc/git-doc/git-remote-ext.html
 mingw32/share/doc/git-doc/git-remote-ext.txt
 mingw32/share/doc/git-doc/git-remote-fd.html
@@ -765,10 +764,8 @@ mingw32/share/doc/git-doc/technical/api-gitattributes.html
 mingw32/share/doc/git-doc/technical/api-gitattributes.txt
 mingw32/share/doc/git-doc/technical/api-grep.html
 mingw32/share/doc/git-doc/technical/api-grep.txt
-mingw32/share/doc/git-doc/technical/api-hashmap.html
 mingw32/share/doc/git-doc/technical/api-history-graph.html
 mingw32/share/doc/git-doc/technical/api-history-graph.txt
-mingw32/share/doc/git-doc/technical/api-in-core-index.html
 mingw32/share/doc/git-doc/technical/api-index-skel.txt
 mingw32/share/doc/git-doc/technical/api-index.html
 mingw32/share/doc/git-doc/technical/api-index.txt
@@ -792,12 +789,10 @@ mingw32/share/doc/git-doc/technical/api-run-command.html
 mingw32/share/doc/git-doc/technical/api-run-command.txt
 mingw32/share/doc/git-doc/technical/api-setup.html
 mingw32/share/doc/git-doc/technical/api-setup.txt
-mingw32/share/doc/git-doc/technical/api-sha1-array.html
 mingw32/share/doc/git-doc/technical/api-sigchain.html
 mingw32/share/doc/git-doc/technical/api-sigchain.txt
 mingw32/share/doc/git-doc/technical/api-string-list.html
 mingw32/share/doc/git-doc/technical/api-string-list.txt
-mingw32/share/doc/git-doc/technical/api-sub-process.html
 mingw32/share/doc/git-doc/technical/api-submodule-config.html
 mingw32/share/doc/git-doc/technical/api-submodule-config.txt
 mingw32/share/doc/git-doc/technical/api-trace.html

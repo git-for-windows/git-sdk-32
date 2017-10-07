@@ -10,8 +10,7 @@ mingw32/bin/glib-compile-resources.exe
 mingw32/bin/glib-compile-schemas.exe
 mingw32/bin/glib-genmarshal-script.py
 mingw32/bin/glib-genmarshal.exe
-mingw32/bin/glib-gettextize-script.py
-mingw32/bin/glib-gettextize.exe
+mingw32/bin/glib-gettextize
 mingw32/bin/glib-mkenums-script.py
 mingw32/bin/glib-mkenums.exe
 mingw32/bin/gobject-query.exe
@@ -326,8 +325,8 @@ mingw32/share/gdb/
 mingw32/share/gdb/auto-load/
 mingw32/share/gdb/auto-load/mingw32/
 mingw32/share/gdb/auto-load/mingw32/lib/
-mingw32/share/gdb/auto-load/mingw32/lib/libglib-2.0.so.0.5400.0-gdb.py
-mingw32/share/gdb/auto-load/mingw32/lib/libgobject-2.0.so.0.5400.0-gdb.py
+mingw32/share/gdb/auto-load/mingw32/lib/libglib-2.0.so.0.5400.1-gdb.py
+mingw32/share/gdb/auto-load/mingw32/lib/libgobject-2.0.so.0.5400.1-gdb.py
 mingw32/share/gettext/
 mingw32/share/gettext/its/
 mingw32/share/gettext/its/gschema.its

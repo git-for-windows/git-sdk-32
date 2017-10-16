@@ -2,7 +2,7 @@
 mingw-w64-i686-libxml2
 
 %VERSION%
-2.9.5-2
+2.9.6-1
 
 %BASE%
 mingw-w64-libxml2
@@ -17,16 +17,16 @@ http://www.xmlsoft.org/
 any
 
 %BUILDDATE%
-1507022112
+1508095715
 
 %INSTALLDATE%
-1507338239
+1508115741
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-11669504
+11670528
 
 %REASON%
 1

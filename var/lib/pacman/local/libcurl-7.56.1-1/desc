@@ -2,7 +2,7 @@
 libcurl
 
 %VERSION%
-7.56.0-1
+7.56.1-1
 
 %BASE%
 curl
@@ -17,16 +17,16 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1507127942
+1508746933
 
 %INSTALLDATE%
-1507165462
+1508748966
 
 %PACKAGER%
-Johannes Schindelin <johannes.schindelin@gmx.de>
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-561152
+562176
 
 %REASON%
 1

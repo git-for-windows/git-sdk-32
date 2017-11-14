@@ -2,7 +2,7 @@
 mingw-w64-i686-gnutls
 
 %VERSION%
-3.6.0-2
+3.6.1-1
 
 %BASE%
 mingw-w64-gnutls
@@ -17,16 +17,16 @@ https://www.gnutls.org/
 any
 
 %BUILDDATE%
-1504791038
+1510570991
 
 %INSTALLDATE%
-1505264629
+1510624877
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-11075584
+11103232
 
 %LICENSE%
 GPL3

@@ -2,7 +2,7 @@
 mingw-w64-i686-libgsf
 
 %VERSION%
-1.14.41-1
+1.14.42-1
 
 %BASE%
 mingw-w64-libgsf
@@ -17,16 +17,16 @@ https://www.gnome.org/
 any
 
 %BUILDDATE%
-1484485054
+1510564246
 
 %INSTALLDATE%
-1505295874
+1510624878
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2865152
+2877440
 
 %REASON%
 1

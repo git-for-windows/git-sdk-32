@@ -1,43 +1,45 @@
 %NAME%
-mingw-w64-i686-nettle
+mingw-w64-i686-libxml2
 
 %VERSION%
-3.3-1
+2.9.7-1
 
 %BASE%
-mingw-w64-nettle
+mingw-w64-libxml2
 
 %DESC%
-A low-level cryptographic library (mingw-w64)
+XML parsing library, version 2 (mingw-w64)
 
 %URL%
-https://www.lysator.liu.se/~nisse/nettle
+http://www.xmlsoft.org/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1476345861
+1511949156
 
 %INSTALLDATE%
-1478710933
+1512093890
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2167808
+11669504
 
 %REASON%
 1
 
 %LICENSE%
-LGPL
+MIT
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs
-mingw-w64-i686-gmp
+mingw-w64-i686-gettext
+mingw-w64-i686-xz
+mingw-w64-i686-zlib
 

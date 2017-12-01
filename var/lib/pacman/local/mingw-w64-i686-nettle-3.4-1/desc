@@ -1,40 +1,43 @@
 %NAME%
-mingw-w64-i686-tcl
+mingw-w64-i686-nettle
 
 %VERSION%
-8.6.7-1
+3.4-1
 
 %BASE%
-mingw-w64-tcl
+mingw-w64-nettle
 
 %DESC%
-The Tcl scripting language (mingw-w64)
+A low-level cryptographic library (mingw-w64)
 
 %URL%
-https://tcl.sourceforge.io/
+https://www.lysator.liu.se/~nisse/nettle
 
 %ARCH%
 any
 
 %BUILDDATE%
-1502878674
+1511954809
 
 %INSTALLDATE%
-1502931900
+1512093892
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-11083776
+2210816
+
+%REASON%
+1
 
 %LICENSE%
-custom
+LGPL
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs
-mingw-w64-i686-zlib
+mingw-w64-i686-gmp
 

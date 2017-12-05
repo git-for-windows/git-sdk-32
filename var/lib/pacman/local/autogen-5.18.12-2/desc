@@ -2,7 +2,7 @@
 autogen
 
 %VERSION%
-5.18.12-1
+5.18.12-2
 
 %DESC%
 A tool designed to simplify the creation and maintenance of programs that contain large amounts of repetitious text
@@ -14,10 +14,10 @@ https://autogen.sourceforge.io/
 i686
 
 %BUILDDATE%
-1496380323
+1512369180
 
 %INSTALLDATE%
-1496785374
+1512439497
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

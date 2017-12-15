@@ -2,7 +2,7 @@
 mingw-w64-i686-harfbuzz
 
 %VERSION%
-1.7.1-1
+1.7.2-1
 
 %BASE%
 mingw-w64-harfbuzz
@@ -17,16 +17,16 @@ https://www.freedesktop.org/wiki/Software/HarfBuzz
 any
 
 %BUILDDATE%
-1510743043
+1513149556
 
 %INSTALLDATE%
-1510797680
+1513303296
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2817024
+2832384
 
 %REASON%
 1

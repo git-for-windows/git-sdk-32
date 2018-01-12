@@ -1,32 +1,32 @@
 %NAME%
-tar
+mintty
 
 %VERSION%
-1.29-1
+1~2.8.3-1
 
 %DESC%
-Utility used to store, backup, and transport files
+Terminal emulator with native Windows look and feel
 
 %URL%
-https://www.gnu.org/software/tar/tar.html
+https://mintty.github.io
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1465213082
+1515645986
 
 %INSTALLDATE%
-1469785277
+1515722563
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2700288
+669696
 
 %GROUPS%
-compression
+base
 
 %LICENSE%
 GPL3
@@ -35,8 +35,5 @@ GPL3
 pgp
 
 %DEPENDS%
-msys2-runtime
-libiconv
-libintl
 sh
 

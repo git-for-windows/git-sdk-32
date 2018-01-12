@@ -2,7 +2,7 @@
 gzip
 
 %VERSION%
-1.8-1
+1.9-1
 
 %DESC%
 GNU compression utility
@@ -14,16 +14,16 @@ https://www.gnu.org/software/gzip/
 i686
 
 %BUILDDATE%
-1477306304
+1515650219
 
 %INSTALLDATE%
-1478710888
+1515722567
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-165888
+166912
 
 %REASON%
 1

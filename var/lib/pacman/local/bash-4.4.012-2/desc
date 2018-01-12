@@ -2,7 +2,7 @@
 bash
 
 %VERSION%
-4.4.012-1
+4.4.012-2
 
 %BASE%
 bash
@@ -17,16 +17,16 @@ https://www.gnu.org/software/bash/bash.html
 i686
 
 %BUILDDATE%
-1487139130
+1515705325
 
 %INSTALLDATE%
-1487259026
+1515722563
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-10483712
+10491904
 
 %GROUPS%
 base

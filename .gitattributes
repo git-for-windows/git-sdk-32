@@ -1,0 +1,5 @@
+/usr/bin/* eol=lf
+/usr/bin/*.dll -text
+/usr/bin/*.exe -text
+/usr/bin/*.pdb -text
+/usr/bin/*.dbg -text

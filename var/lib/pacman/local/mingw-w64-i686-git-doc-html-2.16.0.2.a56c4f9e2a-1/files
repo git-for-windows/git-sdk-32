@@ -266,6 +266,8 @@ mingw32/share/doc/git-doc/RelNotes/2.14.2.txt
 mingw32/share/doc/git-doc/RelNotes/2.14.3.txt
 mingw32/share/doc/git-doc/RelNotes/2.15.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.15.1.txt
+mingw32/share/doc/git-doc/RelNotes/2.15.2.txt
+mingw32/share/doc/git-doc/RelNotes/2.16.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.2.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.2.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.2.2.txt
@@ -329,6 +331,8 @@ mingw32/share/doc/git-doc/RelNotes/2.9.2.txt
 mingw32/share/doc/git-doc/RelNotes/2.9.3.txt
 mingw32/share/doc/git-doc/RelNotes/2.9.4.txt
 mingw32/share/doc/git-doc/RelNotes/2.9.5.txt
+mingw32/share/doc/git-doc/SubmittingPatches.html
+mingw32/share/doc/git-doc/SubmittingPatches.txt
 mingw32/share/doc/git-doc/blame-options.txt
 mingw32/share/doc/git-doc/cmds-ancillaryinterrogators.txt
 mingw32/share/doc/git-doc/cmds-ancillarymanipulators.txt
@@ -741,6 +745,7 @@ mingw32/share/doc/git-doc/mergetools-merge.txt
 mingw32/share/doc/git-doc/pretty-formats.txt
 mingw32/share/doc/git-doc/pretty-options.txt
 mingw32/share/doc/git-doc/pull-fetch-param.txt
+mingw32/share/doc/git-doc/rebase-config.txt
 mingw32/share/doc/git-doc/rev-list-options.txt
 mingw32/share/doc/git-doc/revisions.txt
 mingw32/share/doc/git-doc/sequencer.txt
@@ -753,8 +758,6 @@ mingw32/share/doc/git-doc/technical/api-config.html
 mingw32/share/doc/git-doc/technical/api-config.txt
 mingw32/share/doc/git-doc/technical/api-credentials.html
 mingw32/share/doc/git-doc/technical/api-credentials.txt
-mingw32/share/doc/git-doc/technical/api-decorate.html
-mingw32/share/doc/git-doc/technical/api-decorate.txt
 mingw32/share/doc/git-doc/technical/api-diff.html
 mingw32/share/doc/git-doc/technical/api-diff.txt
 mingw32/share/doc/git-doc/technical/api-directory-listing.html
@@ -792,7 +795,6 @@ mingw32/share/doc/git-doc/technical/api-setup.html
 mingw32/share/doc/git-doc/technical/api-setup.txt
 mingw32/share/doc/git-doc/technical/api-sigchain.html
 mingw32/share/doc/git-doc/technical/api-sigchain.txt
-mingw32/share/doc/git-doc/technical/api-string-list.html
 mingw32/share/doc/git-doc/technical/api-submodule-config.html
 mingw32/share/doc/git-doc/technical/api-submodule-config.txt
 mingw32/share/doc/git-doc/technical/api-trace.html
@@ -814,6 +816,7 @@ mingw32/share/doc/git-doc/technical/pack-heuristics.html
 mingw32/share/doc/git-doc/technical/pack-heuristics.txt
 mingw32/share/doc/git-doc/technical/pack-protocol.html
 mingw32/share/doc/git-doc/technical/pack-protocol.txt
+mingw32/share/doc/git-doc/technical/partial-clone.txt
 mingw32/share/doc/git-doc/technical/protocol-capabilities.html
 mingw32/share/doc/git-doc/technical/protocol-capabilities.txt
 mingw32/share/doc/git-doc/technical/protocol-common.html

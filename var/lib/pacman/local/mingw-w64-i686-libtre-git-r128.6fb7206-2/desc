@@ -2,7 +2,7 @@
 mingw-w64-i686-libtre-git
 
 %VERSION%
-r128.6fb7206-1
+r128.6fb7206-2
 
 %BASE%
 mingw-w64-libtre-git
@@ -17,16 +17,16 @@ https://github.com/laurikari/tre
 any
 
 %BUILDDATE%
-1488458628
+1516179510
 
 %INSTALLDATE%
-1488534856
+1516327555
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-267264
+264192
 
 %REASON%
 1

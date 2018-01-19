@@ -385,6 +385,7 @@ mingw32/share/perl5/site_perl/Git.pm
 mingw32/share/perl5/site_perl/Git/
 mingw32/share/perl5/site_perl/Git/I18N.pm
 mingw32/share/perl5/site_perl/Git/IndexInfo.pm
+mingw32/share/perl5/site_perl/Git/Packet.pm
 mingw32/share/perl5/site_perl/Git/SVN.pm
 mingw32/share/perl5/site_perl/Git/SVN/
 mingw32/share/perl5/site_perl/Git/SVN/Editor.pm

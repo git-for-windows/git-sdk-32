@@ -2,28 +2,31 @@
 mingw-w64-i686-libyaml
 
 %VERSION%
-0.1.6-2
+0.1.7-1
+
+%BASE%
+mingw-w64-libyaml
 
 %DESC%
 YAML 1.1 library (mingw-w64)
 
 %URL%
-http://pyyaml.org/wiki/LibYAML
+http://yaml.org
 
 %ARCH%
 any
 
 %BUILDDATE%
-1435671048
+1516171224
 
 %INSTALLDATE%
-1475684034
+1516327555
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-369664
+367616
 
 %REASON%
 1

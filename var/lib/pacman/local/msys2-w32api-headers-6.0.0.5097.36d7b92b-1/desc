@@ -1,0 +1,36 @@
+%NAME%
+msys2-w32api-headers
+
+%VERSION%
+6.0.0.5097.36d7b92b-1
+
+%DESC%
+Win32 API headers for MSYS2 32bit toolchain
+
+%URL%
+https://mingw-w64.sourceforge.io/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1517219030
+
+%INSTALLDATE%
+1517364385
+
+%PACKAGER%
+Alexey Pavlov <alexpux@gmail.com>
+
+%SIZE%
+59672576
+
+%GROUPS%
+msys2-devel
+
+%LICENSE%
+custom
+
+%VALIDATION%
+pgp
+

@@ -2,7 +2,7 @@
 git-extra
 
 %VERSION%
-1.1.234.52ae071-1
+1.1.239.b06544d-1
 
 %DESC%
 Git for Windows extra files
@@ -14,16 +14,16 @@ https://github.com/git-for-windows/build-extra
 i686
 
 %BUILDDATE%
-1517415838
+1517490470
 
 %INSTALLDATE%
-1517450749
+1517490904
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-241664
+242688
 
 %GROUPS%
 VCS

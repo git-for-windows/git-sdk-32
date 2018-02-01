@@ -19,6 +19,7 @@ mingw32/bin/proxy-lookup.exe
 mingw32/libexec/
 mingw32/libexec/git-core/
 mingw32/libexec/git-core/git-update
+mingw32/libexec/git-core/git-update-git-for-windows
 usr/
 usr/bin/
 usr/bin/astextplain

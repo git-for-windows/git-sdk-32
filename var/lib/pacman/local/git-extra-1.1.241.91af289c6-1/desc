@@ -2,7 +2,7 @@
 git-extra
 
 %VERSION%
-1.1.239.b06544d-1
+1.1.241.91af289c6-1
 
 %DESC%
 Git for Windows extra files
@@ -14,13 +14,13 @@ https://github.com/git-for-windows/build-extra
 i686
 
 %BUILDDATE%
-1517490470
+1517920298
 
 %INSTALLDATE%
-1517796318
+1517922906
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
 242688

@@ -2,7 +2,7 @@
 perl
 
 %VERSION%
-5.26.1-1
+5.26.1-2
 
 %DESC%
 A highly capable, feature-rich programming language
@@ -14,16 +14,16 @@ https://www.perl.org/
 i686
 
 %BUILDDATE%
-1517256987
+1518467268
 
 %INSTALLDATE%
-1517267755
+1518469045
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-46854144
+46846976
 
 %GROUPS%
 base-devel

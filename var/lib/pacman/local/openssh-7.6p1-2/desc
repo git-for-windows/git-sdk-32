@@ -1,45 +1,42 @@
 %NAME%
-bash
+openssh
 
 %VERSION%
-4.4.012-2
-
-%BASE%
-bash
+7.6p1-2
 
 %DESC%
-The GNU Bourne Again shell
+Free version of the SSH connectivity tools
 
 %URL%
-https://www.gnu.org/software/bash/bash.html
+http://www.openssh.org/portable.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1515705325
+1518471701
 
 %INSTALLDATE%
-1515722563
+1518487560
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-10491904
+5035008
 
 %GROUPS%
-base
+net-utils
 
 %LICENSE%
-GPL
+custom:BSD
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-msys2-runtime
-
-%PROVIDES%
-sh
+heimdal
+libedit
+libcrypt
+openssl
 

@@ -9,7 +9,7 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Mon Feb 12 12:12:48 PST 2018
+ * Configuration time: Tue Feb 13 05:22:58 PST 2018
  * Configured by     : ContainerAdministrator
  * Target system     : msys_nt-10.0-wow ab2b9a2ab836 2.10.0(0.32553) 2018-02-12 08:26 i686 msys 
  */

@@ -1,48 +1,39 @@
 %NAME%
-perl-Net-SSLeay
+perl-TermReadKey
 
 %VERSION%
-1.84-1
+2.37-2
 
 %DESC%
-Perl extension for using OpenSSL
+Provides simple control over terminal driver modes
 
 %URL%
-http://search.cpan.org/dist/Net-SSLeay/
+http://search.cpan.org/~jstowe/TermReadKey/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1517925530
+1518535138
 
 %INSTALLDATE%
-1517925890
+1518573703
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-772096
-
-%REASON%
-1
+45056
 
 %GROUPS%
 perl-modules
 
 %LICENSE%
-custom:BSD
+custom
 
 %VALIDATION%
 pgp
 
-%REPLACES%
-net-ssleay
-
 %DEPENDS%
-openssl
-
-%PROVIDES%
-net-ssleay
+perl
 

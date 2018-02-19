@@ -2,28 +2,28 @@
 tftp-hpa
 
 %VERSION%
-5.2-1
+5.2-2
 
 %DESC%
 Official tftp server
 
 %URL%
-http://www.kernel.org/pub/software/network/tftp/tftp-hpa/
+https://www.kernel.org/pub/software/network/tftp/tftp-hpa/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1418384830
+1519017355
 
 %INSTALLDATE%
-1469785243
+1519057913
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-37888
+36864
 
 %GROUPS%
 base

@@ -2,7 +2,7 @@
 git
 
 %VERSION%
-2.16.1-1
+2.16.2-1
 
 %DESC%
 The fast distributed version control system
@@ -14,16 +14,16 @@ https://git-scm.com/
 i686
 
 %BUILDDATE%
-1516825104
+1518964460
 
 %INSTALLDATE%
-1516932322
+1519005862
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-30156800
+30154752
 
 %GROUPS%
 VCS

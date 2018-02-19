@@ -2,7 +2,7 @@
 gnupg
 
 %VERSION%
-1.4.22-2
+1.4.22-3
 
 %DESC%
 Complete and free implementation of the OpenPGP standard
@@ -14,10 +14,10 @@ https://gnupg.org/
 i686
 
 %BUILDDATE%
-1506672675
+1518961575
 
 %INSTALLDATE%
-1506733428
+1519005862
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

@@ -2,7 +2,7 @@
 gawk
 
 %VERSION%
-4.2.0-1
+4.2.1-1
 
 %DESC%
 GNU version of awk
@@ -14,16 +14,16 @@ https://www.gnu.org/software/gawk/
 i686
 
 %BUILDDATE%
-1517288924
+1519692920
 
 %INSTALLDATE%
-1517364372
+1519693796
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-3052544
+3065856
 
 %GROUPS%
 base

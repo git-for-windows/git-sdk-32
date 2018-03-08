@@ -2,7 +2,7 @@
 man-db
 
 %VERSION%
-2.7.6-2
+2.7.6-3
 
 %DESC%
 A utility for reading man pages
@@ -14,16 +14,16 @@ http://www.nongnu.org/man-db/
 i686
 
 %BUILDDATE%
-1518169729
+1520414599
 
 %INSTALLDATE%
-1518455160
+1520474505
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3236864
+3211264
 
 %GROUPS%
 base-devel

@@ -2,7 +2,7 @@
 libreadline
 
 %VERSION%
-7.0.003-1
+7.0.003-2
 
 %BASE%
 readline
@@ -11,22 +11,22 @@ readline
 GNU readline library
 
 %URL%
-http://tiswww.case.edu/php/chet/readline/rltop.html
+https://tiswww.case.edu/php/chet/readline/rltop.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1487052714
+1520411972
 
 %INSTALLDATE%
-1487259147
+1520474504
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-539648
+540672
 
 %REASON%
 1

@@ -3,6 +3,7 @@ mingw32/
 mingw32/bin/
 mingw32/bin/fc-cache.exe
 mingw32/bin/fc-cat.exe
+mingw32/bin/fc-conflist.exe
 mingw32/bin/fc-list.exe
 mingw32/bin/fc-match.exe
 mingw32/bin/fc-pattern.exe
@@ -79,9 +80,18 @@ mingw32/share/fontconfig/conf.avail/70-no-bitmaps.conf
 mingw32/share/fontconfig/conf.avail/70-yes-bitmaps.conf
 mingw32/share/fontconfig/conf.avail/80-delicious.conf
 mingw32/share/fontconfig/conf.avail/90-synthetic.conf
+mingw32/share/gettext/
+mingw32/share/gettext/its/
+mingw32/share/gettext/its/fontconfig.its
+mingw32/share/gettext/its/fontconfig.loc
 mingw32/share/licenses/
 mingw32/share/licenses/fontconfig/
 mingw32/share/licenses/fontconfig/COPYING
+mingw32/share/locale/
+mingw32/share/locale/zh_CN/
+mingw32/share/locale/zh_CN/LC_MESSAGES/
+mingw32/share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
+mingw32/share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
 mingw32/share/xml/
 mingw32/share/xml/fontconfig/
 mingw32/share/xml/fontconfig/fonts.dtd

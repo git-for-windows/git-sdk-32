@@ -2,7 +2,7 @@
 mingw-w64-i686-libzip
 
 %VERSION%
-1.5.0-1
+1.5.0-2
 
 %BASE%
 mingw-w64-libzip
@@ -17,16 +17,16 @@ https://www.nih.at/libzip/index.html
 any
 
 %BUILDDATE%
-1521022306
+1523269448
 
 %INSTALLDATE%
-1521684622
+1523409098
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-440320
+969728
 
 %LICENSE%
 BSD

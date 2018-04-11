@@ -9,6 +9,7 @@ mingw32/include/
 mingw32/include/zip.h
 mingw32/include/zipconf.h
 mingw32/lib/
+mingw32/lib/libzip.a
 mingw32/lib/libzip.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/libzip.pc

@@ -2,7 +2,7 @@
 mingw-w64-i686-gdk-pixbuf2
 
 %VERSION%
-2.36.11-2
+2.36.12-1
 
 %BASE%
 mingw-w64-gdk-pixbuf2
@@ -17,16 +17,16 @@ https://www.gtk.org/
 any
 
 %BUILDDATE%
-1517814885
+1523259240
 
 %INSTALLDATE%
-1517922890
+1523409094
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-5068800
+5058560
 
 %REASON%
 1

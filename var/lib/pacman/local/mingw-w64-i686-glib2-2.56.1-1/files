@@ -325,8 +325,8 @@ mingw32/share/gdb/
 mingw32/share/gdb/auto-load/
 mingw32/share/gdb/auto-load/mingw32/
 mingw32/share/gdb/auto-load/mingw32/lib/
-mingw32/share/gdb/auto-load/mingw32/lib/libglib-2.0.so.0.5600.0-gdb.py
-mingw32/share/gdb/auto-load/mingw32/lib/libgobject-2.0.so.0.5600.0-gdb.py
+mingw32/share/gdb/auto-load/mingw32/lib/libglib-2.0.so.0.5600.1-gdb.py
+mingw32/share/gdb/auto-load/mingw32/lib/libgobject-2.0.so.0.5600.1-gdb.py
 mingw32/share/gettext/
 mingw32/share/gettext/its/
 mingw32/share/gettext/its/gschema.its

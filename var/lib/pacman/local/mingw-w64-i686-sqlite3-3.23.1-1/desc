@@ -2,7 +2,7 @@
 mingw-w64-i686-sqlite3
 
 %VERSION%
-3.23.0-1
+3.23.1-1
 
 %BASE%
 mingw-w64-sqlite3
@@ -17,16 +17,16 @@ https://www.sqlite.org
 any
 
 %BUILDDATE%
-1523356757
+1523855018
 
 %INSTALLDATE%
-1523513544
+1523927809
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-5420032
+5610496
 
 %REASON%
 1

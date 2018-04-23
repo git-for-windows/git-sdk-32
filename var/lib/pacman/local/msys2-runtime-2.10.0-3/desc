@@ -2,7 +2,7 @@
 msys2-runtime
 
 %VERSION%
-2.10.0-2
+2.10.0-3
 
 %BASE%
 msys2-runtime
@@ -17,16 +17,16 @@ https://www.cygwin.com/
 i686
 
 %BUILDDATE%
-1521147868
+1524478396
 
 %INSTALLDATE%
-1521149630
+1524485228
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-10684416
+11514880
 
 %GROUPS%
 base

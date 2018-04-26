@@ -2,7 +2,7 @@
 mingw-w64-i686-c-ares
 
 %VERSION%
-1.13.0-4
+1.14.0-1
 
 %BASE%
 mingw-w64-c-ares
@@ -17,16 +17,16 @@ https://c-ares.haxx.se/
 any
 
 %BUILDDATE%
-1516193945
+1524633826
 
 %INSTALLDATE%
-1516327542
+1524705212
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-391168
+394240
 
 %REASON%
 1

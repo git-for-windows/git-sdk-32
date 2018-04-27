@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-gcc-fortran
+mingw-w64-i686-gcc-libs
 
 %VERSION%
-7.3.0-1
+7.3.0-2
 
 %BASE%
 mingw-w64-gcc
 
 %DESC%
-GNU Compiler Collection (Fortran) for MinGW-w64
+GNU Compiler Collection (libraries) for MinGW-w64
 
 %URL%
 https://gcc.gnu.org
@@ -17,30 +17,31 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1516968221
+1524652573
 
 %INSTALLDATE%
-1517018765
+1524791598
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-30977024
+2463744
 
 %GROUPS%
 mingw-w64-i686-toolchain
 
 %LICENSE%
-GPL
-LGPL
-FDL
-custom
+GPL3+
+partial:GCCRLE
+partial:LGPL2+
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-mingw-w64-i686-gcc=7.3.0-1
-mingw-w64-i686-gcc-libgfortran=7.3.0-1
+mingw-w64-i686-gmp
+mingw-w64-i686-mpc
+mingw-w64-i686-mpfr
+mingw-w64-i686-libwinpthread
 

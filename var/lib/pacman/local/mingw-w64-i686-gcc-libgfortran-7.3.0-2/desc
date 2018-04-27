@@ -2,7 +2,7 @@
 mingw-w64-i686-gcc-libgfortran
 
 %VERSION%
-7.3.0-1
+7.3.0-2
 
 %BASE%
 mingw-w64-gcc
@@ -17,10 +17,10 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1516968209
+1524652583
 
 %INSTALLDATE%
-1517018763
+1524791610
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
@@ -41,5 +41,5 @@ custom
 pgp
 
 %DEPENDS%
-mingw-w64-i686-gcc-libs=7.3.0-1
+mingw-w64-i686-gcc-libs=7.3.0-2
 

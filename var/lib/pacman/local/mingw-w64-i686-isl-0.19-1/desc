@@ -2,7 +2,7 @@
 mingw-w64-i686-isl
 
 %VERSION%
-0.18-1
+0.19-1
 
 %BASE%
 mingw-w64-isl
@@ -17,16 +17,16 @@ http://isl.gforge.inria.fr/
 any
 
 %BUILDDATE%
-1495445506
+1524724255
 
 %INSTALLDATE%
-1495501249
+1524791598
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2721792
+2732032
 
 %REASON%
 1

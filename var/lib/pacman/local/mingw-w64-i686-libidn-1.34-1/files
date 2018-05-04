@@ -80,6 +80,9 @@ mingw32/share/locale/ro/LC_MESSAGES/libidn.mo
 mingw32/share/locale/sr/
 mingw32/share/locale/sr/LC_MESSAGES/
 mingw32/share/locale/sr/LC_MESSAGES/libidn.mo
+mingw32/share/locale/sv/
+mingw32/share/locale/sv/LC_MESSAGES/
+mingw32/share/locale/sv/LC_MESSAGES/libidn.mo
 mingw32/share/locale/uk/
 mingw32/share/locale/uk/LC_MESSAGES/
 mingw32/share/locale/uk/LC_MESSAGES/libidn.mo

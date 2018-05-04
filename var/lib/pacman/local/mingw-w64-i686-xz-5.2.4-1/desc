@@ -2,7 +2,7 @@
 mingw-w64-i686-xz
 
 %VERSION%
-5.2.3-1
+5.2.4-1
 
 %BASE%
 mingw-w64-xz
@@ -11,22 +11,22 @@ mingw-w64-xz
 Library and command line tools for XZ and LZMA compressed files (mingw-w64)
 
 %URL%
-http://tukaani.org/xz
+https://tukaani.org/xz
 
 %ARCH%
 any
 
 %BUILDDATE%
-1484288879
+1525284517
 
 %INSTALLDATE%
-1505295864
+1525414818
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1549312
+1550336
 
 %REASON%
 1

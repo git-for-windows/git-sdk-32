@@ -2,7 +2,7 @@
 mingw-w64-i686-headers-git
 
 %VERSION%
-6.0.0.5132.5b6aebd5-1
+6.0.0.5136.897300fe-1
 
 %BASE%
 mingw-w64-headers-git
@@ -17,10 +17,10 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1524635494
+1526360965
 
 %INSTALLDATE%
-1524705215
+1526433117
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

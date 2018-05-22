@@ -2,7 +2,7 @@
 mingw-w64-i686-connect
 
 %VERSION%
-1.104-1
+1.105-1
 
 %BASE%
 mingw-w64-connect
@@ -17,16 +17,16 @@ https://bitbucket.org/gotoh/connect/overview
 any
 
 %BUILDDATE%
-1440163793
+1526972714
 
 %INSTALLDATE%
-1469785474
+1527022989
 
 %PACKAGER%
-Alexpux <alexpux@jmail.com>
+Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-142336
+143360
 
 %LICENSE%
 GPL2+

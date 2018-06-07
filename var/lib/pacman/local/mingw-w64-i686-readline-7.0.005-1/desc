@@ -2,7 +2,7 @@
 mingw-w64-i686-readline
 
 %VERSION%
-7.0.003-2
+7.0.005-1
 
 %BASE%
 mingw-w64-readline
@@ -17,10 +17,10 @@ https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
 any
 
 %BUILDDATE%
-1528092308
+1528263460
 
 %INSTALLDATE%
-1528161143
+1528333925
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

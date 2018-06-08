@@ -2,7 +2,7 @@
 bash-completion
 
 %VERSION%
-2.8-1
+2.8-2
 
 %DESC%
 Programmable completion for the bash shell
@@ -14,10 +14,10 @@ https://bash-completion.alioth.debian.org/
 any
 
 %BUILDDATE%
-1526292794
+1528362166
 
 %INSTALLDATE%
-1526346683
+1528420280
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

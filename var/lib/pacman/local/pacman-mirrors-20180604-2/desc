@@ -2,7 +2,7 @@
 pacman-mirrors
 
 %VERSION%
-20180604-1
+20180604-2
 
 %DESC%
 MSYS2 mirror list for use by pacman
@@ -14,10 +14,10 @@ https://msys2.sourceforge.io/
 any
 
 %BUILDDATE%
-1528092648
+1528359979
 
 %INSTALLDATE%
-1528161102
+1528420271
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

@@ -1,42 +1,45 @@
 %NAME%
-unrar
+gdbm
 
 %VERSION%
-5.6.4-1
+1.16-1
 
 %BASE%
-unrar
+gdbm
 
 %DESC%
-The RAR uncompression program
+GNU database library
 
 %URL%
-https://www.rarlab.com/rar_add.htm
+https://www.gnu.org/software/gdbm/gdbm.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1526287884
+1530178040
 
 %INSTALLDATE%
-1526346687
+1530241933
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-288768
+386048
+
+%REASON%
+1
 
 %GROUPS%
-base-devel
+Database
 
 %LICENSE%
-custom
+GPL3
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-gcc-libs
+libgdbm=1.16
 

@@ -2,7 +2,7 @@
 libpipeline
 
 %VERSION%
-1.4.1-1
+1.5.0-1
 
 %BASE%
 libpipeline
@@ -17,16 +17,16 @@ http://libpipeline.nongnu.org/
 i686
 
 %BUILDDATE%
-1496211767
+1530527455
 
 %INSTALLDATE%
-1496785427
+1530587447
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-533504
+553984
 
 %REASON%
 1

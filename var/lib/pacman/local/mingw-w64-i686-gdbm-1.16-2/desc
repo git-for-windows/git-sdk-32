@@ -2,7 +2,7 @@
 mingw-w64-i686-gdbm
 
 %VERSION%
-1.16-1
+1.16-2
 
 %BASE%
 mingw-w64-gdbm
@@ -17,10 +17,10 @@ https://www.gnu.org/software/gdbm/gdbm.html
 any
 
 %BUILDDATE%
-1530248129
+1531893631
 
 %INSTALLDATE%
-1531192287
+1531969892
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

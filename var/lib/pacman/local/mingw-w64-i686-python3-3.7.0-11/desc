@@ -2,7 +2,7 @@
 mingw-w64-i686-python3
 
 %VERSION%
-3.7.0-10
+3.7.0-11
 
 %BASE%
 mingw-w64-python3
@@ -17,16 +17,16 @@ https://www.python.org/
 any
 
 %BUILDDATE%
-1531561058
+1532926458
 
 %INSTALLDATE%
-1531845814
+1533093251
 
 %PACKAGER%
-Alexey Pavlov <alexey.pawlow@gmail.com>
+Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-112398336
+112440320
 
 %REASON%
 1

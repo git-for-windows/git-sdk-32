@@ -2,7 +2,10 @@
 help2man
 
 %VERSION%
-1.47.5-1
+1.47.6-1
+
+%BASE%
+help2man
 
 %DESC%
 Conversion tool to create man files
@@ -14,16 +17,16 @@ https://www.gnu.org/software/help2man/
 i686
 
 %BUILDDATE%
-1507012715
+1533120618
 
 %INSTALLDATE%
-1507078872
+1533204941
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-342016
+347136
 
 %GROUPS%
 base-devel

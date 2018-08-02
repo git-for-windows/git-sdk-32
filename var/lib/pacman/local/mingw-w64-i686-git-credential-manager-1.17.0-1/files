@@ -10,7 +10,7 @@ mingw32/libexec/git-core/Bitbucket.Authentication.dll
 mingw32/libexec/git-core/GitHub.Authentication.exe
 mingw32/libexec/git-core/Microsoft.Alm.Authentication.dll
 mingw32/libexec/git-core/Microsoft.IdentityModel.Clients.ActiveDirectory.dll
-mingw32/libexec/git-core/Microsoft.Vsts.Authentication.dll
+mingw32/libexec/git-core/VisualStudioTeamServices.Authentication.dll
 mingw32/libexec/git-core/git-askpass.exe
 mingw32/libexec/git-core/git-credential-manager.exe
 

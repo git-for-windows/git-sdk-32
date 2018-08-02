@@ -5,7 +5,7 @@ mingw32/bin/cjpeg.exe
 mingw32/bin/djpeg.exe
 mingw32/bin/jpegtran.exe
 mingw32/bin/libjpeg-8.dll
-mingw32/bin/libturbojpeg-0.dll
+mingw32/bin/libturbojpeg.dll
 mingw32/bin/rdjpgcom.exe
 mingw32/bin/tjbench.exe
 mingw32/bin/wrjpgcom.exe
@@ -31,9 +31,10 @@ mingw32/share/doc/libjpeg-turbo/
 mingw32/share/doc/libjpeg-turbo/LICENSE.md
 mingw32/share/doc/libjpeg-turbo/README.ijg
 mingw32/share/doc/libjpeg-turbo/README.md
-mingw32/share/doc/libjpeg-turbo/example.c
+mingw32/share/doc/libjpeg-turbo/example.txt
 mingw32/share/doc/libjpeg-turbo/libjpeg.txt
 mingw32/share/doc/libjpeg-turbo/structure.txt
+mingw32/share/doc/libjpeg-turbo/tjexample.c
 mingw32/share/doc/libjpeg-turbo/usage.txt
 mingw32/share/doc/libjpeg-turbo/wizard.txt
 mingw32/share/licenses/

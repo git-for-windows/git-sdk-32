@@ -2,7 +2,10 @@
 mintty
 
 %VERSION%
-1~2.8.5-1
+1~2.9.0-1
+
+%BASE%
+mintty
 
 %DESC%
 Terminal emulator with native Windows look and feel
@@ -14,16 +17,16 @@ https://mintty.github.io
 i686
 
 %BUILDDATE%
-1524129604
+1533194802
 
 %INSTALLDATE%
-1524228792
+1533204937
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-804864
+857088
 
 %GROUPS%
 base

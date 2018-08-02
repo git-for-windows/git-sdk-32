@@ -1,5 +1,5 @@
 /*
- * example.c
+ * example.txt
  *
  * This file illustrates how to use the IJG code as a subroutine library
  * to read or write JPEG image files.  You should look at this code in
@@ -11,6 +11,20 @@
  * We present these routines in the same coding style used in the JPEG code
  * (ANSI function definitions, etc); but you are of course free to code your
  * routines in a different style if you prefer.
+ */
+
+/* This example was part of the original libjpeg documentation and has been
+ * unchanged since 1994.  It is, as described in libjpeg.txt, "heavily
+ * commented skeleton code for calling the JPEG library."  It is not meant to
+ * be compiled as a standalone program, since it has no main() function and
+ * does not compress from/decompress to a real image buffer (corollary:
+ * put_scanline_someplace() is not a real function.)  First-time users of
+ * libjpeg-turbo would be better served by looking at tjexample.c, which uses
+ * the more straightforward TurboJPEG API, or at cjpeg.c and djpeg.c, which are
+ * examples of libjpeg API usage that can be (and are) compiled into standalone
+ * programs.  Note that this example, as well as the examples in cjpeg.c and
+ * djpeg.c, interleave disk I/O with JPEG compression/decompression, so none of
+ * these examples is suitable for benchmarking purposes.
  */
 
 #include <stdio.h>
@@ -69,7 +83,7 @@ extern int image_width;         /* Number of columns in image */
  */
 
 GLOBAL(void)
-write_JPEG_file (char *filename, int quality)
+write_JPEG_file(char *filename, int quality)
 {
   /* This struct contains the JPEG compression parameters and pointers to
    * working space (which is allocated as needed by the JPEG library).
@@ -158,8 +172,8 @@ write_JPEG_file (char *filename, int quality)
      * Here the array is only one element long, but you could pass
      * more than one scanline at a time if that's more convenient.
      */
-    row_pointer[0] = & image_buffer[cinfo.next_scanline * row_stride];
-    (void) jpeg_write_scanlines(&cinfo, row_pointer, 1);
+    row_pointer[0] = &image_buffer[cinfo.next_scanline * row_stride];
+    (void)jpeg_write_scanlines(&cinfo, row_pointer, 1);
   }
 
   /* Step 6: Finish compression */
@@ -260,10 +274,10 @@ typedef struct my_error_mgr *my_error_ptr;
  */
 
 METHODDEF(void)
-my_error_exit (j_common_ptr cinfo)
+my_error_exit(j_common_ptr cinfo)
 {
   /* cinfo->err really points to a my_error_mgr struct, so coerce pointer */
-  my_error_ptr myerr = (my_error_ptr) cinfo->err;
+  my_error_ptr myerr = (my_error_ptr)cinfo->err;
 
   /* Always display the message. */
   /* We could postpone this until after returning, if we chose. */
@@ -281,7 +295,7 @@ my_error_exit (j_common_ptr cinfo)
 
 
 GLOBAL(int)
-read_JPEG_file (char *filename)
+read_JPEG_file(char *filename)
 {
   /* This struct contains the JPEG decompression parameters and pointers to
    * working space (which is allocated as needed by the JPEG library).
@@ -331,7 +345,7 @@ read_JPEG_file (char *filename)
 
   /* Step 3: read file parameters with jpeg_read_header() */
 
-  (void) jpeg_read_header(&cinfo, TRUE);
+  (void)jpeg_read_header(&cinfo, TRUE);
   /* We can ignore the return value from jpeg_read_header since
    *   (a) suspension is not possible with the stdio data source, and
    *   (b) we passed TRUE to reject a tables-only JPEG file as an error.
@@ -346,7 +360,7 @@ read_JPEG_file (char *filename)
 
   /* Step 5: Start decompressor */
 
-  (void) jpeg_start_decompress(&cinfo);
+  (void)jpeg_start_decompress(&cinfo);
   /* We can ignore the return value since suspension is not possible
    * with the stdio data source.
    */
@@ -361,7 +375,7 @@ read_JPEG_file (char *filename)
   row_stride = cinfo.output_width * cinfo.output_components;
   /* Make a one-row-high sample array that will go away when done with image */
   buffer = (*cinfo.mem->alloc_sarray)
-                ((j_common_ptr) &cinfo, JPOOL_IMAGE, row_stride, 1);
+                ((j_common_ptr)&cinfo, JPOOL_IMAGE, row_stride, 1);
 
   /* Step 6: while (scan lines remain to be read) */
   /*           jpeg_read_scanlines(...); */
@@ -374,14 +388,14 @@ read_JPEG_file (char *filename)
      * Here the array is only one element long, but you could ask for
      * more than one scanline at a time if that's more convenient.
      */
-    (void) jpeg_read_scanlines(&cinfo, buffer, 1);
+    (void)jpeg_read_scanlines(&cinfo, buffer, 1);
     /* Assume put_scanline_someplace wants a pointer and sample count. */
     put_scanline_someplace(buffer[0], row_stride);
   }
 
   /* Step 7: Finish decompression */
 
-  (void) jpeg_finish_decompress(&cinfo);
+  (void)jpeg_finish_decompress(&cinfo);
   /* We can ignore the return value since suspension is not possible
    * with the stdio data source.
    */

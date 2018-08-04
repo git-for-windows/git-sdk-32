@@ -2,7 +2,10 @@
 sed
 
 %VERSION%
-4.4-2
+4.5-1
+
+%BASE%
+sed
 
 %DESC%
 GNU stream editor
@@ -14,16 +17,16 @@ https://www.gnu.org/software/sed
 i686
 
 %BUILDDATE%
-1487877747
+1533281322
 
 %INSTALLDATE%
-1487988341
+1533352266
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-657408
+685056
 
 %REASON%
 1

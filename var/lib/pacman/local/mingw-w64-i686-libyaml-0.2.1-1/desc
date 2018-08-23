@@ -1,32 +1,35 @@
 %NAME%
-mingw-w64-i686-expat
+mingw-w64-i686-libyaml
 
 %VERSION%
-2.2.5-1
+0.2.1-1
 
 %BASE%
-mingw-w64-expat
+mingw-w64-libyaml
 
 %DESC%
-An XML parser library (mingw-w64)
+YAML 1.1 library (mingw-w64)
 
 %URL%
-https://libexpat.github.io/
+http://yaml.org
 
 %ARCH%
 any
 
 %BUILDDATE%
-1511168606
+1534370811
 
 %INSTALLDATE%
-1511316094
+1534993858
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-693248
+367616
+
+%REASON%
+1
 
 %LICENSE%
 MIT

@@ -2,7 +2,7 @@
 mingw-w64-i686-libtiff
 
 %VERSION%
-4.0.9-1
+4.0.9-2
 
 %BASE%
 mingw-w64-libtiff
@@ -17,16 +17,16 @@ http://www.simplesystems.org/libtiff/
 any
 
 %BUILDDATE%
-1511177385
+1534963575
 
 %INSTALLDATE%
-1511316096
+1534993857
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-4237312
+4224000
 
 %REASON%
 1

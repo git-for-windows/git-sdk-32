@@ -15,6 +15,7 @@ mingw32/include/harfbuzz/hb-blob.h
 mingw32/include/harfbuzz/hb-buffer.h
 mingw32/include/harfbuzz/hb-common.h
 mingw32/include/harfbuzz/hb-deprecated.h
+mingw32/include/harfbuzz/hb-directwrite.h
 mingw32/include/harfbuzz/hb-face.h
 mingw32/include/harfbuzz/hb-font.h
 mingw32/include/harfbuzz/hb-ft.h
@@ -40,6 +41,7 @@ mingw32/include/harfbuzz/hb-subset-plan.hh
 mingw32/include/harfbuzz/hb-subset-private.hh
 mingw32/include/harfbuzz/hb-subset.h
 mingw32/include/harfbuzz/hb-unicode.h
+mingw32/include/harfbuzz/hb-uniscribe.h
 mingw32/include/harfbuzz/hb-version.h
 mingw32/include/harfbuzz/hb.h
 mingw32/lib/

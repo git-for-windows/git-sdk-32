@@ -1,6 +1,7 @@
 %FILES%
 mingw32/
 mingw32/bin/
+mingw32/bin/gdb-add-index.exe
 mingw32/bin/gdb.exe
 mingw32/bin/gdbserver.exe
 mingw32/include/
@@ -95,6 +96,9 @@ mingw32/share/locale/ja/LC_MESSAGES/bfd.mo
 mingw32/share/locale/nl/
 mingw32/share/locale/nl/LC_MESSAGES/
 mingw32/share/locale/nl/LC_MESSAGES/opcodes.mo
+mingw32/share/locale/pt/
+mingw32/share/locale/pt/LC_MESSAGES/
+mingw32/share/locale/pt/LC_MESSAGES/bfd.mo
 mingw32/share/locale/pt_BR/
 mingw32/share/locale/pt_BR/LC_MESSAGES/
 mingw32/share/locale/pt_BR/LC_MESSAGES/opcodes.mo

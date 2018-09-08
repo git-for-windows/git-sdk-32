@@ -1,11 +1,14 @@
 %NAME%
-msys2-w32api-runtime
+msys2-w32api-headers
 
 %VERSION%
-6.0.0.5141.696b37c3-1
+6.0.0.5223.7f9d8753-1
+
+%BASE%
+msys2-w32api-headers
 
 %DESC%
-Win32 API import libs for MSYS2 toolchain
+Win32 API headers for MSYS2 32bit toolchain
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -14,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 i686
 
 %BUILDDATE%
-1528869721
+1536296883
 
 %INSTALLDATE%
-1528997810
+1536376239
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-31188992
+59801600
 
 %GROUPS%
 msys2-devel
@@ -33,7 +36,4 @@ custom
 
 %VALIDATION%
 pgp
-
-%DEPENDS%
-msys2-w32api-headers
 

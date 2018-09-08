@@ -2,7 +2,7 @@
 libunrar
 
 %VERSION%
-5.6.5-1
+5.6.6-1
 
 %BASE%
 unrar
@@ -17,10 +17,10 @@ https://www.rarlab.com/rar_add.htm
 i686
 
 %BUILDDATE%
-1530185278
+1536303488
 
 %INSTALLDATE%
-1530241934
+1536376234
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

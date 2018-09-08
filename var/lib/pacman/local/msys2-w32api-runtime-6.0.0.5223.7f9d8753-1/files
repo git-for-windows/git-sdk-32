@@ -126,6 +126,7 @@ usr/lib/w32api/libdinput8.a
 usr/lib/w32api/libdlcapi.a
 usr/lib/w32api/libdmoguids.a
 usr/lib/w32api/libdnsapi.a
+usr/lib/w32api/libdpapi.a
 usr/lib/w32api/libdplayx.a
 usr/lib/w32api/libdpnaddr.a
 usr/lib/w32api/libdpnet.a
@@ -189,6 +190,7 @@ usr/lib/w32api/libmfcuia32.a
 usr/lib/w32api/libmfplat.a
 usr/lib/w32api/libmfuuid.a
 usr/lib/w32api/libmgmtapi.a
+usr/lib/w32api/libmincore.a
 usr/lib/w32api/libmpr.a
 usr/lib/w32api/libmprapi.a
 usr/lib/w32api/libmqrt.a

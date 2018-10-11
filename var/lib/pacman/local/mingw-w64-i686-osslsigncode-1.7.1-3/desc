@@ -2,7 +2,7 @@
 mingw-w64-i686-osslsigncode
 
 %VERSION%
-1.7.1-4
+1.7.1-3
 
 %BASE%
 mingw-w64-osslsigncode
@@ -17,22 +17,22 @@ https://sourceforge.net/projects/osslsigncode/
 any
 
 %BUILDDATE%
-1539151444
+1485972416
 
 %INSTALLDATE%
-1539227538
+1539263950
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-101376
+104448
 
 %LICENSE%
 GPL3
 
 %VALIDATION%
-pgp
+none
 
 %DEPENDS%
 mingw-w64-i686-curl

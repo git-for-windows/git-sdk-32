@@ -1,46 +1,39 @@
 %NAME%
-apr
+libltdl
 
 %VERSION%
-1.6.3-1
+2.4.6-5
 
 %BASE%
-apr
+libtool
 
 %DESC%
-The Apache Portable Runtime
+A system independent dlopen wrapper for GNU libtool
 
 %URL%
-https://apr.apache.org/
+https://www.gnu.org/software/libtool/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1529989561
+1539323841
 
 %INSTALLDATE%
-1530069070
+1539400196
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-181248
+149504
 
 %REASON%
 1
 
-%GROUPS%
-libraries
-
 %LICENSE%
-APACHE
+GPL
 
 %VALIDATION%
 pgp
-
-%DEPENDS%
-libcrypt
-libuuid
 

@@ -1,44 +1,46 @@
 %NAME%
-libtool
+apr
 
 %VERSION%
-2.4.6-4
+1.6.5-1
 
 %BASE%
-libtool
+apr
 
 %DESC%
-A generic library support script
+The Apache Portable Runtime
 
 %URL%
-https://www.gnu.org/software/libtool/
+https://apr.apache.org/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1531459091
+1539323327
 
 %INSTALLDATE%
-1531845784
+1539400196
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2208768
+181248
+
+%REASON%
+1
 
 %GROUPS%
-base-devel
+libraries
 
 %LICENSE%
-GPL
+APACHE
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-sh
-libltdl=2.4.6
-tar
+libcrypt
+libuuid
 

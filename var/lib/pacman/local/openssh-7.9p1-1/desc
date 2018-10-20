@@ -2,7 +2,10 @@
 openssh
 
 %VERSION%
-7.7p1-1
+7.9p1-1
+
+%BASE%
+openssh
 
 %DESC%
 Free version of the SSH connectivity tools
@@ -14,16 +17,16 @@ http://www.openssh.org/portable.html
 i686
 
 %BUILDDATE%
-1522745535
+1539925882
 
 %INSTALLDATE%
-1522747044
+1540005106
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-4593664
+4653056
 
 %GROUPS%
 net-utils

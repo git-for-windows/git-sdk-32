@@ -2,7 +2,7 @@
 mingw-w64-i686-cairo
 
 %VERSION%
-1.15.14-1
+1.16.0-1
 
 %BASE%
 mingw-w64-cairo
@@ -17,16 +17,16 @@ https://cairographics.org/
 any
 
 %BUILDDATE%
-1537798580
+1540065882
 
 %INSTALLDATE%
-1537931508
+1540177888
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-5552128
+5558272
 
 %REASON%
 1

@@ -26,12 +26,12 @@ mingw32/include/harfbuzz/hb-gobject.h
 mingw32/include/harfbuzz/hb-graphite2.h
 mingw32/include/harfbuzz/hb-icu.h
 mingw32/include/harfbuzz/hb-map.h
+mingw32/include/harfbuzz/hb-ot-color.h
 mingw32/include/harfbuzz/hb-ot-font.h
 mingw32/include/harfbuzz/hb-ot-layout.h
 mingw32/include/harfbuzz/hb-ot-math.h
 mingw32/include/harfbuzz/hb-ot-name.h
 mingw32/include/harfbuzz/hb-ot-shape.h
-mingw32/include/harfbuzz/hb-ot-tag.h
 mingw32/include/harfbuzz/hb-ot-var.h
 mingw32/include/harfbuzz/hb-ot.h
 mingw32/include/harfbuzz/hb-set.h

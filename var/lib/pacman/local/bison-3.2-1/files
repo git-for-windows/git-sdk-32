@@ -39,6 +39,12 @@ usr/share/doc/bison/
 usr/share/doc/bison/AUTHORS
 usr/share/doc/bison/COPYING
 usr/share/doc/bison/examples/
+usr/share/doc/bison/examples/c++/
+usr/share/doc/bison/examples/c++/Makefile
+usr/share/doc/bison/examples/c++/README
+usr/share/doc/bison/examples/c++/simple.yy
+usr/share/doc/bison/examples/c++/variant-11.yy
+usr/share/doc/bison/examples/c++/variant.yy
 usr/share/doc/bison/examples/calc++/
 usr/share/doc/bison/examples/calc++/calc++.cc
 usr/share/doc/bison/examples/calc++/driver.cc
@@ -53,7 +59,6 @@ usr/share/doc/bison/examples/mfcalc/mfcalc.y
 usr/share/doc/bison/examples/README
 usr/share/doc/bison/examples/rpcalc/
 usr/share/doc/bison/examples/rpcalc/rpcalc.y
-usr/share/doc/bison/examples/variant.yy
 usr/share/doc/bison/NEWS
 usr/share/doc/bison/README
 usr/share/doc/bison/THANKS

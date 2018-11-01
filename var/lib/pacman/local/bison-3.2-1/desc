@@ -2,7 +2,7 @@
 bison
 
 %VERSION%
-3.1-1
+3.2-1
 
 %BASE%
 bison
@@ -17,16 +17,16 @@ https://www.gnu.org/software/bison/bison.html
 i686
 
 %BUILDDATE%
-1538484892
+1540964377
 
 %INSTALLDATE%
-1538536263
+1541041848
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1983488
+2011136
 
 %GROUPS%
 base-devel

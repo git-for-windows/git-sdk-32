@@ -15,19 +15,24 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+%require "3.2"
 %debug
 %language "c++"
-%defines
 %define api.token.constructor
 %define api.value.type variant
+%define api.value.automove
+%define api.location.file none
 %define parse.assert
 %locations
 
 %code requires // *.hh
 {
+#include <memory> // std::unique_ptr
 #include <string>
 #include <vector>
-typedef std::vector<std::string> strings_type;
+
+  using string_uptr = std::unique_ptr<std::string>;
+  using string_uptrs = std::vector<string_uptr>;
 }
 
 %code // *.cc
@@ -37,49 +42,43 @@ typedef std::vector<std::string> strings_type;
 #include <iterator>
 #include <sstream>
 
-  // Prototype of the yylex function providing subsequent tokens.
   namespace yy
   {
+    // Prototype of the yylex function providing subsequent tokens.
     static parser::symbol_type yylex ();
-  }
 
-  // Printing a vector of strings.
-  // Koening look up will look into std, since that's an std::vector.
-  namespace std
-  {
+    // Print a vector of strings.
     std::ostream&
-    operator<< (std::ostream& o, const strings_type& ss)
+    operator<< (std::ostream& o, const string_uptrs& ss)
     {
       o << '{';
       const char *sep = "";
-      for (strings_type::const_iterator i = ss.begin(), end = ss.end();
-           i != end; ++i)
+      for (const auto& s: ss)
         {
-          o << sep << *i;
+          o << sep << *s;
           sep = ", ";
         }
       return o << '}';
     }
   }
 
-  // Conversion to string.
-  template <typename T>
-    std::string
-    string_cast (const T& t)
+  template <typename... Args>
+  string_uptr
+  make_string_uptr (Args&&... args)
   {
-    std::ostringstream o;
-    o << t;
-    return o.str ();
+    // std::make_unique is C++14.
+    return string_uptr (new std::string{std::forward<Args> (args)...});
   }
 }
 
-%token <::std::string> TEXT;
+%token <string_uptr> TEXT;
 %token <int> NUMBER;
 %printer { yyo << '(' << &$$ << ") " << $$; } <*>;
+%printer { yyo << *$$; } <string_uptr>;
 %token END_OF_FILE 0;
 
-%type <::std::string> item;
-%type <::std::vector<std::string>> list;
+%type <string_uptr> item;
+%type <string_uptrs> list;
 
 %%
 
@@ -89,14 +88,17 @@ result:
 
 list:
   %empty     { /* Generates an empty string list */ }
-| list item  { std::swap ($$, $1); $$.push_back ($2); }
+| list item  { $$ = $1; $$.emplace_back ($2); }
 ;
 
 item:
-  TEXT    { std::swap ($$, $1); }
-| NUMBER  { $$ = string_cast ($1); }
+  TEXT
+| NUMBER  { $$ = make_string_uptr (std::to_string ($1)); }
 ;
 %%
+
+// The last number return by the scanner is max - 1.
+int max = 4;
 
 namespace yy
 {
@@ -104,7 +106,8 @@ namespace yy
   // TEXT         "I have three numbers for you."
   // NUMBER       1
   // NUMBER       2
-  // NUMBER       3
+  // NUMBER       ...
+  // NUMBER       max - 1
   // TEXT         "And that's all!"
   // END_OF_FILE
 
@@ -112,22 +115,18 @@ namespace yy
   parser::symbol_type
   yylex ()
   {
-    static int stage = -1;
-    ++stage;
-    parser::location_type loc(YY_NULLPTR, stage + 1, stage + 1);
-    switch (stage)
-      {
-      case 0:
-        return parser::make_TEXT ("I have three numbers for you.", loc);
-      case 1:
-      case 2:
-      case 3:
-        return parser::make_NUMBER (stage, loc);
-      case 4:
-        return parser::make_TEXT ("And that's all!", loc);
-      default:
-        return parser::make_END_OF_FILE (loc);
-      }
+    static int count = 0;
+    const int stage = count;
+    ++count;
+    auto loc = parser::location_type{nullptr, unsigned (stage + 1), unsigned (stage + 1)};
+    if (stage == 0)
+      return parser::make_TEXT (make_string_uptr ("I have numbers for you."), std::move (loc));
+    else if (stage < max)
+      return parser::make_NUMBER (stage, std::move (loc));
+    else if (stage == max)
+      return parser::make_TEXT (make_string_uptr ("And that's all!"), std::move (loc));
+    else
+      return parser::make_END_OF_FILE (std::move (loc));
   }
 
   // Mandatory error function
@@ -139,9 +138,11 @@ namespace yy
 }
 
 int
-main ()
+main (int argc, const char *argv[])
 {
-  yy::parser p;
+  if (2 <= argc && isdigit (*argv[1]))
+    max = strtol (argv[1], nullptr, 10);
+  auto&& p = yy::parser{};
   p.set_debug_level (!!getenv ("YYDEBUG"));
   return p.parse ();
 }

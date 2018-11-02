@@ -2,7 +2,10 @@
 ca-certificates
 
 %VERSION%
-20170717-2
+20180409-1
+
+%BASE%
+ca-certificates
 
 %DESC%
 Common CA certificates
@@ -14,16 +17,16 @@ https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 any
 
 %BUILDDATE%
-1505205695
+1541048385
 
 %INSTALLDATE%
-1505351019
+1541128199
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1232896
+964608
 
 %REASON%
 1

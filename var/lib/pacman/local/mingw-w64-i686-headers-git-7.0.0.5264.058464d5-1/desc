@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-tools-git
+mingw-w64-i686-headers-git
 
 %VERSION%
-7.0.0.5242.1b29d1bc-1
+7.0.0.5264.058464d5-1
 
 %BASE%
-mingw-w64-tools-git
+mingw-w64-headers-git
 
 %DESC%
-MinGW-w64 tools
+MinGW-w64 headers for Windows
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1538248825
+1541594252
 
 %INSTALLDATE%
-1538259174
+1541733062
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-944128
+68956160
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,14 +38,11 @@ custom
 pgp
 
 %REPLACES%
-mingw-w64-i686-tools-svn
-
-%DEPENDS%
-mingw-w64-i686-gcc-libs
+mingw-w64-i686-headers-svn
 
 %CONFLICTS%
-mingw-w64-i686-tools
+mingw-w64-i686-headers
 
 %PROVIDES%
-mingw-w64-i686-tools
+mingw-w64-i686-headers
 

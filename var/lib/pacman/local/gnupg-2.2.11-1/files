@@ -7,6 +7,7 @@ usr/bin/dirmngr-client.exe
 usr/bin/dirmngr.exe
 usr/bin/gpg-agent.exe
 usr/bin/gpg-connect-agent.exe
+usr/bin/gpg-wks-server.exe
 usr/bin/gpg.exe
 usr/bin/gpgconf.exe
 usr/bin/gpgparsemail.exe

@@ -9,8 +9,6 @@ mingw32/i686-w64-mingw32/include/_mingw.h
 mingw32/i686-w64-mingw32/include/_mingw_dxhelper.h
 mingw32/i686-w64-mingw32/include/_mingw_mac.h
 mingw32/i686-w64-mingw32/include/_mingw_off_t.h
-mingw32/i686-w64-mingw32/include/_mingw_print_pop.h
-mingw32/i686-w64-mingw32/include/_mingw_print_push.h
 mingw32/i686-w64-mingw32/include/_mingw_secapi.h
 mingw32/i686-w64-mingw32/include/_mingw_stat64.h
 mingw32/i686-w64-mingw32/include/_mingw_stdarg.h

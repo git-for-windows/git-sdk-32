@@ -28,11 +28,11 @@ mingw32/lib/pkgconfig/libturbojpeg.pc
 mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/libjpeg-turbo/
+mingw32/share/doc/libjpeg-turbo/example.txt
+mingw32/share/doc/libjpeg-turbo/libjpeg.txt
 mingw32/share/doc/libjpeg-turbo/LICENSE.md
 mingw32/share/doc/libjpeg-turbo/README.ijg
 mingw32/share/doc/libjpeg-turbo/README.md
-mingw32/share/doc/libjpeg-turbo/example.txt
-mingw32/share/doc/libjpeg-turbo/libjpeg.txt
 mingw32/share/doc/libjpeg-turbo/structure.txt
 mingw32/share/doc/libjpeg-turbo/tjexample.c
 mingw32/share/doc/libjpeg-turbo/usage.txt

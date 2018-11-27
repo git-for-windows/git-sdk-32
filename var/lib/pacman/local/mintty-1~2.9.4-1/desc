@@ -1,35 +1,35 @@
 %NAME%
-bison
+mintty
 
 %VERSION%
-3.2-1
+1~2.9.4-1
 
 %BASE%
-bison
+mintty
 
 %DESC%
-The GNU general-purpose parser generator
+Terminal emulator with native Windows look and feel
 
 %URL%
-https://www.gnu.org/software/bison/bison.html
+https://mintty.github.io
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1540964377
+1543207469
 
 %INSTALLDATE%
-1541041848
+1543288241
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2011136
+890880
 
 %GROUPS%
-base-devel
+base
 
 %LICENSE%
 GPL3
@@ -38,6 +38,5 @@ GPL3
 pgp
 
 %DEPENDS%
-m4
 sh
 

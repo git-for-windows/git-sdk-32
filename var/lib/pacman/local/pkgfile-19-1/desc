@@ -2,7 +2,10 @@
 pkgfile
 
 %VERSION%
-17-1
+19-1
+
+%BASE%
+pkgfile
 
 %DESC%
 A pacman .files metadata explorer
@@ -14,16 +17,16 @@ https://github.com/falconindy/pkgfile
 i686
 
 %BUILDDATE%
-1496294400
+1543216705
 
 %INSTALLDATE%
-1496785443
+1543288245
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-51200
+52224
 
 %GROUPS%
 base

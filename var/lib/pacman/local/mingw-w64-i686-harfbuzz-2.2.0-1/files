@@ -11,6 +11,8 @@ mingw32/bin/libharfbuzz-icu-0.dll
 mingw32/bin/libharfbuzz-subset-0.dll
 mingw32/include/
 mingw32/include/harfbuzz/
+mingw32/include/harfbuzz/hb-aat-layout.h
+mingw32/include/harfbuzz/hb-aat.h
 mingw32/include/harfbuzz/hb-blob.h
 mingw32/include/harfbuzz/hb-buffer.h
 mingw32/include/harfbuzz/hb-common.h

@@ -1,8 +1,8 @@
 %NAME%
-heimdal
+heimdal-libs
 
 %VERSION%
-7.5.0-1
+7.5.0-2
 
 %BASE%
 heimdal
@@ -17,22 +17,22 @@ https://www.h5l.org/
 i686
 
 %BUILDDATE%
-1516886430
+1543740518
 
 %INSTALLDATE%
-1516932317
+1543784519
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2169856
+10558464
 
 %REASON%
 1
 
 %GROUPS%
-sys-utils
+libraries
 
 %LICENSE%
 custom
@@ -41,5 +41,8 @@ custom
 pgp
 
 %DEPENDS%
-heimdal-libs
+libcrypt
+libedit
+libsqlite
+libopenssl
 

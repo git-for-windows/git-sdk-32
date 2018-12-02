@@ -1,48 +1,42 @@
 %NAME%
-heimdal-libs
+mintty
 
 %VERSION%
-7.5.0-1
+1~2.9.4-2
 
 %BASE%
-heimdal
+mintty
 
 %DESC%
-Implementation of Kerberos V5 libraries
+Terminal emulator with native Windows look and feel
 
 %URL%
-https://www.h5l.org/
+https://mintty.github.io
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1516886455
+1543748925
 
 %INSTALLDATE%
-1516932311
+1543784516
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2636800
-
-%REASON%
-1
+890880
 
 %GROUPS%
-libraries
+base
 
 %LICENSE%
-custom
+GPL3
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-libcrypt
-libedit
-libsqlite
-libopenssl
+sh
 

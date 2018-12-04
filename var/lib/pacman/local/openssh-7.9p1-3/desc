@@ -1,45 +1,45 @@
 %NAME%
-heimdal
+openssh
 
 %VERSION%
-7.5.0-2
+7.9p1-3
 
 %BASE%
-heimdal
+openssh
 
 %DESC%
-Implementation of Kerberos V5 libraries
+Free version of the SSH connectivity tools
 
 %URL%
-https://www.h5l.org/
+http://www.openssh.org/portable.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1543740518
+1543870188
 
 %INSTALLDATE%
-1543784520
+1543893211
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2164736
-
-%REASON%
-1
+4642816
 
 %GROUPS%
-sys-utils
+net-utils
 
 %LICENSE%
-custom
+custom:BSD
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-heimdal-libs
+heimdal
+libedit
+libcrypt
+openssl
 

@@ -537,6 +537,7 @@ mingw32/i686-w64-mingw32/include/excpt.h
 mingw32/i686-w64-mingw32/include/exdisp.h
 mingw32/i686-w64-mingw32/include/exdisp.idl
 mingw32/i686-w64-mingw32/include/exdispid.h
+mingw32/i686-w64-mingw32/include/expandedresources.h
 mingw32/i686-w64-mingw32/include/fci.h
 mingw32/i686-w64-mingw32/include/fcntl.h
 mingw32/i686-w64-mingw32/include/fdi.h

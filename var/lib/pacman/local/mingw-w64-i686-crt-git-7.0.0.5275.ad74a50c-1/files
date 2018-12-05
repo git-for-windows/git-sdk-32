@@ -254,6 +254,7 @@ mingw32/i686-w64-mingw32/lib/libnetutils.a
 mingw32/i686-w64-mingw32/lib/libnewdev.a
 mingw32/i686-w64-mingw32/lib/libnormaliz.a
 mingw32/i686-w64-mingw32/lib/libntdll.a
+mingw32/i686-w64-mingw32/lib/libntdllcrt.a
 mingw32/i686-w64-mingw32/lib/libntdsapi.a
 mingw32/i686-w64-mingw32/lib/libntmsapi.a
 mingw32/i686-w64-mingw32/lib/libntoskrnl.a

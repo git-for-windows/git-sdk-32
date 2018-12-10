@@ -2,7 +2,7 @@
 libnettle
 
 %VERSION%
-3.4-1
+3.4.1-1
 
 %BASE%
 nettle
@@ -17,10 +17,10 @@ https://www.lysator.liu.se/~nisse/nettle/
 i686
 
 %BUILDDATE%
-1529586849
+1544167338
 
 %INSTALLDATE%
-1529723435
+1544411507
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

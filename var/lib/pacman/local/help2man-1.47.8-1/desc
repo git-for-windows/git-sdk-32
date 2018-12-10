@@ -2,7 +2,7 @@
 help2man
 
 %VERSION%
-1.47.7-1
+1.47.8-1
 
 %BASE%
 help2man
@@ -17,10 +17,10 @@ https://www.gnu.org/software/help2man/
 i686
 
 %BUILDDATE%
-1537939605
+1544342564
 
 %INSTALLDATE%
-1538017887
+1544411506
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

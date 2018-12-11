@@ -114,6 +114,7 @@ mingw32/libexec/git-core/git-mergetool
 mingw32/libexec/git-core/git-mergetool--lib
 mingw32/libexec/git-core/git-mktag.exe
 mingw32/libexec/git-core/git-mktree.exe
+mingw32/libexec/git-core/git-multi-pack-index.exe
 mingw32/libexec/git-core/git-mv.exe
 mingw32/libexec/git-core/git-name-rev.exe
 mingw32/libexec/git-core/git-notes.exe

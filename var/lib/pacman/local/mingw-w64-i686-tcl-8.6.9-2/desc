@@ -2,7 +2,7 @@
 mingw-w64-i686-tcl
 
 %VERSION%
-8.6.9-1
+8.6.9-2
 
 %BASE%
 mingw-w64-tcl
@@ -17,16 +17,16 @@ https://tcl.sourceforge.io/
 any
 
 %BUILDDATE%
-1544598812
+1544678470
 
 %INSTALLDATE%
-1544670694
+1544705190
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-11240448
+11238400
 
 %LICENSE%
 custom

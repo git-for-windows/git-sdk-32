@@ -2,7 +2,7 @@
 wget
 
 %VERSION%
-1.19.5-1
+1.20-1
 
 %BASE%
 wget
@@ -17,16 +17,16 @@ https://www.gnu.org/software/wget/
 i686
 
 %BUILDDATE%
-1536434060
+1544706017
 
 %INSTALLDATE%
-1536693564
+1544757103
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2861056
+3063808
 
 %REASON%
 1

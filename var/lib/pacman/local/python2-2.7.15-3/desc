@@ -1,48 +1,53 @@
 %NAME%
-libsasl
+python2
 
 %VERSION%
-2.1.27rc8-1
+2.7.15-3
 
 %BASE%
-cyrus-sasl
+python2
 
 %DESC%
-Cyrus Simple Authentication Service Layer (SASL) Library
+A high-level scripting language
 
 %URL%
-http://cyrusimap.web.cmu.edu/
+https://www.python.org/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1530095412
+1544715443
 
 %INSTALLDATE%
-1530155480
+1544757103
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-476160
+68553728
 
 %REASON%
 1
 
-%GROUPS%
-libraries
-
 %LICENSE%
-custom
+PSF
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-libcrypt
+gdbm
+libbz2
 libopenssl
-heimdal-libs
+zlib
+libexpat
 libsqlite
+libffi
+ncurses
+libreadline
+
+%CONFLICTS%
+python<3
 

@@ -1,32 +1,32 @@
 %NAME%
-libssh2
+libsasl
 
 %VERSION%
-1.8.0-1
+2.1.27-1
 
 %BASE%
-libssh2
+cyrus-sasl
 
 %DESC%
-Multi-protocol file transfer library (runtime)
+Cyrus Simple Authentication Service Layer (SASL) Library
 
 %URL%
-https://libssh2.org/
+http://cyrusimap.web.cmu.edu/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1504761314
+1544721345
 
 %INSTALLDATE%
-1505178192
+1544757071
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-263168
+477184
 
 %REASON%
 1
@@ -35,13 +35,14 @@ Alexey Pavlov <alexpux@gmail.com>
 libraries
 
 %LICENSE%
-BSD
+custom
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-ca-certificates
-openssl
-zlib
+libcrypt
+libopenssl
+heimdal-libs
+libsqlite
 

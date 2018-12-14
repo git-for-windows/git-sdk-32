@@ -2,7 +2,7 @@
 python
 
 %VERSION%
-3.7.1-1
+3.7.1-2
 
 %BASE%
 python3
@@ -17,16 +17,16 @@ https://www.python.org/
 i686
 
 %BUILDDATE%
-1540881096
+1544716438
 
 %INSTALLDATE%
-1540955594
+1544757090
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-108929024
+108932096
 
 %LICENSE%
 custom

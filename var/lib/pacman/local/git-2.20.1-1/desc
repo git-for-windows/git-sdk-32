@@ -2,7 +2,7 @@
 git
 
 %VERSION%
-2.20.0-2
+2.20.1-1
 
 %BASE%
 git
@@ -17,16 +17,16 @@ https://git-scm.com/
 i686
 
 %BUILDDATE%
-1544718860
+1544896283
 
 %INSTALLDATE%
-1544757071
+1545016281
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-32348160
+32378880
 
 %GROUPS%
 VCS

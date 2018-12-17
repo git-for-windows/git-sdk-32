@@ -2,7 +2,7 @@
 filesystem
 
 %VERSION%
-2018.08-1
+2018.12-1
 
 %BASE%
 filesystem
@@ -17,16 +17,16 @@ https://sourceforge.net/projects/msys2/
 i686
 
 %BUILDDATE%
-1533707375
+1544899550
 
 %INSTALLDATE%
-1533784228
+1545016270
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-96256
+98304
 
 %GROUPS%
 base

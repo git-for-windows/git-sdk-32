@@ -2,7 +2,7 @@
 libnghttp2
 
 %VERSION%
-1.34.0-1
+1.35.1-1
 
 %BASE%
 libnghttp2
@@ -17,10 +17,10 @@ https://nghttp2.org/
 i686
 
 %BUILDDATE%
-1540897450
+1544952000
 
 %INSTALLDATE%
-1540955564
+1545016277
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

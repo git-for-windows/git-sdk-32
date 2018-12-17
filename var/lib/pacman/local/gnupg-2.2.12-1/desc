@@ -2,7 +2,7 @@
 gnupg
 
 %VERSION%
-2.2.11-1
+2.2.12-1
 
 %BASE%
 gnupg
@@ -17,16 +17,16 @@ https://gnupg.org/
 i686
 
 %BUILDDATE%
-1541726547
+1544895704
 
 %INSTALLDATE%
-1541733053
+1545016282
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-9171968
+9322496
 
 %REASON%
 1
@@ -60,5 +60,5 @@ curl: gpg2keys_curl
 
 %PROVIDES%
 dirmngr
-gnupg2=2.2.11
+gnupg2=2.2.12
 

@@ -2,7 +2,7 @@
 sed
 
 %VERSION%
-4.5-1
+4.7-1
 
 %BASE%
 sed
@@ -17,16 +17,16 @@ https://www.gnu.org/software/sed
 i686
 
 %BUILDDATE%
-1533281322
+1545810161
 
 %INSTALLDATE%
-1533352266
+1545880260
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-685056
+715776
 
 %REASON%
 1

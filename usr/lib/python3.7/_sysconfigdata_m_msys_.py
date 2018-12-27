@@ -33,6 +33,7 @@ build_time_vars = {'ABIFLAGS': 'm',
                             '-Werror=implicit-function-declaration',
  'CONFIGURE_CPPFLAGS': '-I/usr/include/ncursesw',
  'CONFIGURE_LDFLAGS': '-pipe -L.',
+ 'CONFIGURE_LDFLAGS_NODIST': '',
  'CONFIG_ARGS': "'--prefix=/usr' '--build=i686-pc-msys' '--host=i686-pc-msys' "
                 "'--enable-shared' '--enable-ipv6' '--with-dbmliborder=gdbm' "
                 "'--with-libc=' '--with-libm=' '--with-system-expat' "
@@ -46,8 +47,8 @@ build_time_vars = {'ABIFLAGS': 'm',
  'CONFINCLUDEDIR': '/usr/include',
  'CONFINCLUDEPY': '/usr/include/python3.7m',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/msys_scripts/python3/src/Python-3.7.1/coverage.info',
- 'COVERAGE_REPORT': '/msys_scripts/python3/src/Python-3.7.1/lcov-report',
+ 'COVERAGE_INFO': '/msys_scripts/python3/src/Python-3.7.2/coverage.info',
+ 'COVERAGE_REPORT': '/msys_scripts/python3/src/Python-3.7.2/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--no-branch-coverage --title "CPython lcov '
                             'report"',
  'CPPFLAGS': '-I. -I./Include -I/usr/include/ncursesw  -I/usr/include/ncursesw',
@@ -502,6 +503,7 @@ build_time_vars = {'ABIFLAGS': 'm',
  'IO_OBJS': '\\',
  'LDCXXSHARED': 'g++ -shared -Wl,--enable-auto-image-base',
  'LDFLAGS': '-pipe -L. -pipe -L.',
+ 'LDFLAGS_NODIST': '',
  'LDLAST': '',
  'LDLIBRARY': 'libpython3.7m.dll.a',
  'LDLIBRARYDIR': '',
@@ -601,6 +603,15 @@ build_time_vars = {'ABIFLAGS': 'm',
  'PYTHON_FOR_REGEN': 'python3.7',
  'PYTHON_HEADERS': '\\',
  'PYTHON_OBJS': '\\',
+ 'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -g '
+                             '-fwrapv -O3 -Wall -march=i686 -mtune=generic -O2 '
+                             '-pipe -march=i686 -mtune=generic -O2 -pipe '
+                             '-march=i686 -mtune=generic -O2 -pipe -std=c99 '
+                             '-Wextra -Wno-unused-result -Wno-unused-parameter '
+                             '-Wno-missing-field-initializers '
+                             '-Werror=implicit-function-declaration -I. '
+                             '-I./Include -I/usr/include/ncursesw  '
+                             '-I/usr/include/ncursesw -DPy_BUILD_CORE_BUILTIN',
  'PY_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall '
               '-march=i686 -mtune=generic -O2 -pipe -march=i686 -mtune=generic '
               '-O2 -pipe -march=i686 -mtune=generic -O2 -pipe',
@@ -616,10 +627,12 @@ build_time_vars = {'ABIFLAGS': 'm',
                    '-Werror=implicit-function-declaration -I. -I./Include '
                    '-I/usr/include/ncursesw  -I/usr/include/ncursesw '
                    '-DPy_BUILD_CORE',
+ 'PY_CORE_LDFLAGS': '-pipe -L. -pipe -L.',
  'PY_CPPFLAGS': '-I. -I./Include -I/usr/include/ncursesw  '
                 '-I/usr/include/ncursesw',
  'PY_FORMAT_SIZE_T': '"z"',
  'PY_LDFLAGS': '-pipe -L. -pipe -L.',
+ 'PY_LDFLAGS_NODIST': '',
  'PY_SSL_DEFAULT_CIPHERS': 1,
  'PY_SSL_DEFAULT_CIPHER_STRING': 0,
  'PY_STDMODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv '
@@ -701,8 +714,8 @@ build_time_vars = {'ABIFLAGS': 'm',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 1,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/msys_scripts/python3/src/Python-3.7.1',
- 'abs_srcdir': '/msys_scripts/python3/src/Python-3.7.1',
+ 'abs_builddir': '/msys_scripts/python3/src/Python-3.7.2',
+ 'abs_srcdir': '/msys_scripts/python3/src/Python-3.7.2',
  'datarootdir': '/usr/share',
  'exec_prefix': '/usr',
  'prefix': '/usr',

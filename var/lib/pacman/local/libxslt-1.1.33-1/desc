@@ -1,43 +1,46 @@
 %NAME%
-diffutils
+libxslt
 
 %VERSION%
-3.6-1
+1.1.33-1
 
 %BASE%
-diffutils
+libxslt
 
 %DESC%
-Utility programs used for creating patch files
+XML stylesheet transformation library
 
 %URL%
-https://www.gnu.org/software/diffutils
+http://xmlsoft.org/XSLT/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1532600677
+1547537653
 
 %INSTALLDATE%
-1532661101
+1547694696
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1353728
+375808
+
+%REASON%
+1
 
 %GROUPS%
-base-devel
+libraries
 
 %LICENSE%
-GPL3
+custom
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-msys2-runtime
-sh
+libxml2
+libgcrypt
 

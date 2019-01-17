@@ -2,7 +2,7 @@
 perl-URI
 
 %VERSION%
-1.74-1
+1.76-1
 
 %BASE%
 perl-URI
@@ -17,10 +17,10 @@ http://search.cpan.org/dist/URI/
 any
 
 %BUILDDATE%
-1532597360
+1547616736
 
 %INSTALLDATE%
-1532661103
+1547694697
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

@@ -2,7 +2,7 @@
 mingw-w64-i686-crt-git
 
 %VERSION%
-7.0.0.5285.7b2baaf8-1
+7.0.0.5293.c1b14154-1
 
 %BASE%
 mingw-w64-crt-git
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1545908007
+1547701688
 
 %INSTALLDATE%
-1546053054
+1547781002
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-59415552
+59442176
 
 %GROUPS%
 mingw-w64-i686-toolchain

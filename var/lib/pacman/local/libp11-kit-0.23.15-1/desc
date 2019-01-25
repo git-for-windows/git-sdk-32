@@ -1,32 +1,32 @@
 %NAME%
-libxml2
+libp11-kit
 
 %VERSION%
-2.9.8-1
+0.23.15-1
 
 %BASE%
-libxml2
+p11-kit
 
 %DESC%
-XML parsing library, version 2
+Library to work with PKCS#11 modules
 
 %URL%
-http://www.xmlsoft.org/
+https://p11-glue.freedesktop.org/p11-kit.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1530001238
+1548309743
 
 %INSTALLDATE%
-1530069073
+1548385891
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1410048
+1028096
 
 %REASON%
 1
@@ -35,16 +35,14 @@ Alexey Pavlov <alexpux@gmail.com>
 libraries
 
 %LICENSE%
-MIT
+BSD
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-coreutils
-icu>=59.1
-liblzma
-libreadline
-ncurses
-zlib
+libffi
+libintl
+libtasn1
+glib2
 

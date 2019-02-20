@@ -1,32 +1,32 @@
 %NAME%
-libassuan
+libserf
 
 %VERSION%
-2.5.2-1
+1.3.9-4
 
 %BASE%
-libassuan
+serf
 
 %DESC%
-A IPC library used by some GnuPG related software
+High-performance asynchronous HTTP client library
 
 %URL%
-https://gnupg.org/related_software/libassuan
+https://serf.apache.org/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1544766810
+1550643819
 
 %INSTALLDATE%
-1544843529
+1550689805
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-156672
+105472
 
 %REASON%
 1
@@ -35,12 +35,13 @@ Alexey Pavlov <alexpux@gmail.com>
 libraries
 
 %LICENSE%
-GPL
+Apache
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-gcc-libs
-libgpg-error
+apr-util
+libopenssl
+zlib
 

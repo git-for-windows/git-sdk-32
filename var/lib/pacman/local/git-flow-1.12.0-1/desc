@@ -2,7 +2,10 @@
 git-flow
 
 %VERSION%
-1.11.0-1
+1.12.0-1
+
+%BASE%
+git-flow
 
 %DESC%
 Git extensions to provide high-level repository operations for Vincent Driessen's branching model (AVH edition)
@@ -14,22 +17,22 @@ https://github.com/petervanderdoes/gitflow-avh
 i686
 
 %BUILDDATE%
-1495448002
+1550675101
 
 %INSTALLDATE%
-1495501247
+1550689790
 
 %PACKAGER%
-Unknown Packager
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-229376
+230400
 
 %LICENSE%
 BSD
 
 %VALIDATION%
-sha256
+pgp
 
 %DEPENDS%
 git

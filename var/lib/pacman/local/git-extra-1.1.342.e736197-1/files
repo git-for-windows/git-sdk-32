@@ -14,6 +14,7 @@ mingw32/
 mingw32/bin/
 mingw32/bin/blocked-file-util.exe
 mingw32/bin/create-shortcut.exe
+mingw32/bin/git-askyesno.exe
 mingw32/bin/proxy-lookup.exe
 mingw32/bin/WhoUses.exe
 mingw32/libexec/

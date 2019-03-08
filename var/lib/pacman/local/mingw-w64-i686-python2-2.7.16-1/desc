@@ -2,7 +2,7 @@
 mingw-w64-i686-python2
 
 %VERSION%
-2.7.15-3
+2.7.16-1
 
 %BASE%
 mingw-w64-python2
@@ -17,16 +17,16 @@ https://www.python.org/
 any
 
 %BUILDDATE%
-1539260272
+1551941528
 
 %INSTALLDATE%
-1539313966
+1552014584
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-74420224
+74700800
 
 %REASON%
 1
@@ -44,7 +44,6 @@ mingw-w64-i686-bzip2
 mingw-w64-i686-libffi
 mingw-w64-i686-ncurses
 mingw-w64-i686-openssl
-mingw-w64-i686-readline
 mingw-w64-i686-tcl
 mingw-w64-i686-tk
 mingw-w64-i686-zlib

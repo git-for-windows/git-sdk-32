@@ -1442,8 +1442,8 @@ mingw32/lib/python2.7/ensurepip/__main__.py
 mingw32/lib/python2.7/ensurepip/__main__.pyc
 mingw32/lib/python2.7/ensurepip/__main__.pyo
 mingw32/lib/python2.7/ensurepip/_bundled/
-mingw32/lib/python2.7/ensurepip/_bundled/pip-9.0.3-py2.py3-none-any.whl
-mingw32/lib/python2.7/ensurepip/_bundled/setuptools-39.0.1-py2.py3-none-any.whl
+mingw32/lib/python2.7/ensurepip/_bundled/pip-18.1-py2.py3-none-any.whl
+mingw32/lib/python2.7/ensurepip/_bundled/setuptools-40.6.2-py2.py3-none-any.whl
 mingw32/lib/python2.7/ensurepip/_uninstall.py
 mingw32/lib/python2.7/ensurepip/_uninstall.pyc
 mingw32/lib/python2.7/ensurepip/_uninstall.pyo
@@ -1956,8 +1956,7 @@ mingw32/lib/python2.7/lib-dynload/math.pyd
 mingw32/lib/python2.7/lib-dynload/mmap.pyd
 mingw32/lib/python2.7/lib-dynload/parser.pyd
 mingw32/lib/python2.7/lib-dynload/pyexpat.pyd
-mingw32/lib/python2.7/lib-dynload/Python-2.7.15-py2.7.egg-info
-mingw32/lib/python2.7/lib-dynload/readline_failed.pyd
+mingw32/lib/python2.7/lib-dynload/Python-2.7.16-py2.7.egg-info
 mingw32/lib/python2.7/lib-dynload/select.pyd
 mingw32/lib/python2.7/lib-dynload/strop.pyd
 mingw32/lib/python2.7/lib-dynload/unicodedata.pyd
@@ -2003,6 +2002,9 @@ mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_images.pyo
 mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.py
 mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.pyc
 mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_loadtk.pyo
+mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_misc.py
+mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_misc.pyc
+mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_misc.pyo
 mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_text.py
 mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_text.pyc
 mingw32/lib/python2.7/lib-tk/test/test_tkinter/test_text.pyo
@@ -2247,7 +2249,7 @@ mingw32/lib/python2.7/lib2to3/fixes/fix_zip.py
 mingw32/lib/python2.7/lib2to3/fixes/fix_zip.pyc
 mingw32/lib/python2.7/lib2to3/fixes/fix_zip.pyo
 mingw32/lib/python2.7/lib2to3/Grammar.txt
-mingw32/lib/python2.7/lib2to3/Grammar2.7.15.final.0.pickle
+mingw32/lib/python2.7/lib2to3/Grammar2.7.16.final.0.pickle
 mingw32/lib/python2.7/lib2to3/main.py
 mingw32/lib/python2.7/lib2to3/main.pyc
 mingw32/lib/python2.7/lib2to3/main.pyo
@@ -2255,7 +2257,7 @@ mingw32/lib/python2.7/lib2to3/patcomp.py
 mingw32/lib/python2.7/lib2to3/patcomp.pyc
 mingw32/lib/python2.7/lib2to3/patcomp.pyo
 mingw32/lib/python2.7/lib2to3/PatternGrammar.txt
-mingw32/lib/python2.7/lib2to3/PatternGrammar2.7.15.final.0.pickle
+mingw32/lib/python2.7/lib2to3/PatternGrammar2.7.16.final.0.pickle
 mingw32/lib/python2.7/lib2to3/pgen2/
 mingw32/lib/python2.7/lib2to3/pgen2/__init__.py
 mingw32/lib/python2.7/lib2to3/pgen2/__init__.pyc
@@ -2790,9 +2792,9 @@ mingw32/lib/python2.7/test/badsyntax_future7.py
 mingw32/lib/python2.7/test/badsyntax_future8.py
 mingw32/lib/python2.7/test/badsyntax_future9.py
 mingw32/lib/python2.7/test/badsyntax_nocaret.py
-mingw32/lib/python2.7/test/bisect.py
-mingw32/lib/python2.7/test/bisect.pyc
-mingw32/lib/python2.7/test/bisect.pyo
+mingw32/lib/python2.7/test/bisect_cmd.py
+mingw32/lib/python2.7/test/bisect_cmd.pyc
+mingw32/lib/python2.7/test/bisect_cmd.pyo
 mingw32/lib/python2.7/test/capath/
 mingw32/lib/python2.7/test/capath/0e4015b9.0
 mingw32/lib/python2.7/test/capath/4e1295a3.0
@@ -2982,7 +2984,6 @@ mingw32/lib/python2.7/test/decimaltestdata/testall.decTest
 mingw32/lib/python2.7/test/decimaltestdata/tointegral.decTest
 mingw32/lib/python2.7/test/decimaltestdata/tointegralx.decTest
 mingw32/lib/python2.7/test/decimaltestdata/xor.decTest
-mingw32/lib/python2.7/test/dh1024.pem
 mingw32/lib/python2.7/test/doctest_aliases.py
 mingw32/lib/python2.7/test/doctest_aliases.pyc
 mingw32/lib/python2.7/test/doctest_aliases.pyo
@@ -2991,6 +2992,7 @@ mingw32/lib/python2.7/test/double_const.pyc
 mingw32/lib/python2.7/test/double_const.pyo
 mingw32/lib/python2.7/test/empty.vbs
 mingw32/lib/python2.7/test/exception_hierarchy.txt
+mingw32/lib/python2.7/test/ffdh3072.pem
 mingw32/lib/python2.7/test/floating_points.txt
 mingw32/lib/python2.7/test/fork_wait.py
 mingw32/lib/python2.7/test/fork_wait.pyc
@@ -3137,6 +3139,7 @@ mingw32/lib/python2.7/test/support/script_helper.pyo
 mingw32/lib/python2.7/test/symlink_support.py
 mingw32/lib/python2.7/test/symlink_support.pyc
 mingw32/lib/python2.7/test/symlink_support.pyo
+mingw32/lib/python2.7/test/talos-2019-0758.pem
 mingw32/lib/python2.7/test/test___all__.py
 mingw32/lib/python2.7/test/test___all__.pyc
 mingw32/lib/python2.7/test/test___all__.pyo
@@ -3203,6 +3206,9 @@ mingw32/lib/python2.7/test/test_base64.pyo
 mingw32/lib/python2.7/test/test_bastion.py
 mingw32/lib/python2.7/test/test_bastion.pyc
 mingw32/lib/python2.7/test/test_bastion.pyo
+mingw32/lib/python2.7/test/test_bdb.py
+mingw32/lib/python2.7/test/test_bdb.pyc
+mingw32/lib/python2.7/test/test_bdb.pyo
 mingw32/lib/python2.7/test/test_bigaddrspace.py
 mingw32/lib/python2.7/test/test_bigaddrspace.pyc
 mingw32/lib/python2.7/test/test_bigaddrspace.pyo
@@ -4393,7 +4399,6 @@ mingw32/lib/python2.7/test/warning_tests.pyo
 mingw32/lib/python2.7/test/win_console_handler.py
 mingw32/lib/python2.7/test/win_console_handler.pyc
 mingw32/lib/python2.7/test/win_console_handler.pyo
-mingw32/lib/python2.7/test/wrongcert.pem
 mingw32/lib/python2.7/test/xmltestdata/
 mingw32/lib/python2.7/test/xmltestdata/expat224_utf8_bug.xml
 mingw32/lib/python2.7/test/xmltestdata/simple-ns.xml

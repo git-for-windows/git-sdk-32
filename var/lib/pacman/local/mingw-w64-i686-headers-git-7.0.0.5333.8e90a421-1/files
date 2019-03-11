@@ -898,6 +898,7 @@ mingw32/i686-w64-mingw32/include/msinkaut.idl
 mingw32/i686-w64-mingw32/include/msinkaut_i.c
 mingw32/i686-w64-mingw32/include/msiquery.h
 mingw32/i686-w64-mingw32/include/msoav.h
+mingw32/i686-w64-mingw32/include/msoledbsql.h
 mingw32/i686-w64-mingw32/include/msopc.h
 mingw32/i686-w64-mingw32/include/msopc.idl
 mingw32/i686-w64-mingw32/include/msp.h

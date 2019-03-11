@@ -12,6 +12,8 @@ mingw32/include/zstd_errors.h
 mingw32/lib/
 mingw32/lib/libzstd.a
 mingw32/lib/libzstd.dll.a
+mingw32/lib/pkgconfig/
+mingw32/lib/pkgconfig/libzstd.pc
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/zstd/

@@ -129,6 +129,7 @@ mingw32/i686-w64-mingw32/lib/libdavclnt.a
 mingw32/i686-w64-mingw32/lib/libdavhlpr.a
 mingw32/i686-w64-mingw32/lib/libdbgeng.a
 mingw32/i686-w64-mingw32/lib/libdbghelp.a
+mingw32/i686-w64-mingw32/lib/libdcomp.a
 mingw32/i686-w64-mingw32/lib/libddraw.a
 mingw32/i686-w64-mingw32/lib/libdelayimp.a
 mingw32/i686-w64-mingw32/lib/libdevmgr.a
@@ -229,6 +230,7 @@ mingw32/i686-w64-mingw32/lib/libmshtml.a
 mingw32/i686-w64-mingw32/lib/libmshtmled.a
 mingw32/i686-w64-mingw32/lib/libmsi.a
 mingw32/i686-w64-mingw32/lib/libmsimg32.a
+mingw32/i686-w64-mingw32/lib/libmsoledbsql.a
 mingw32/i686-w64-mingw32/lib/libmstask.a
 mingw32/i686-w64-mingw32/lib/libmsvcp120_app.a
 mingw32/i686-w64-mingw32/lib/libmsvcp60.a

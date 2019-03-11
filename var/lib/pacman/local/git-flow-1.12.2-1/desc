@@ -2,7 +2,7 @@
 git-flow
 
 %VERSION%
-1.12.1-1
+1.12.2-1
 
 %BASE%
 git-flow
@@ -17,10 +17,10 @@ https://github.com/petervanderdoes/gitflow-avh
 i686
 
 %BUILDDATE%
-1551380914
+1552250375
 
 %INSTALLDATE%
-1551409722
+1552273749
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>

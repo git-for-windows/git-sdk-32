@@ -667,8 +667,8 @@
 #define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
 #define _INC_STDIO 
 #define _INC_CRTDEFS 
+#define _INC_CORECRT 
 #define _INC__MINGW_H 
-#define MINGW_HAS_SECURE_API 1
 #define _INC_CRTDEFS_MACRO 
 #define __STRINGIFY(x) #x
 #define __MINGW64_STRINGIFY(x) __STRINGIFY(x)
@@ -780,6 +780,7 @@
 #define __nothrow 
 #define _INC_VADEFS 
 #define MINGW_SDK_INIT 
+#define MINGW_HAS_SECURE_API 1
 #define __STDC_SECURE_LIB__ 200411L
 #define __GOT_SECURE_LIB__ __STDC_SECURE_LIB__
 #define __MINGW_HAS_DXSDK 1
@@ -1868,9 +1869,13 @@ typedef unsigned long _sigset_t;
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcsnset_s(wchar_t *_Dst,size_t _DstSizeInWords,wchar_t _Val,size_t _MaxCount);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcsset_s(wchar_t *_Str,size_t _SizeInWords,wchar_t _Val);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcslwr_s(wchar_t *_Str,size_t _SizeInWords);
+ 
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcslwr_s_l(wchar_t *_Str,size_t _SizeInWords,_locale_t _Locale);
+ 
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcsupr_s(wchar_t *_Str,size_t _Size);
+ 
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcsupr_s_l(wchar_t *_Str,size_t _Size,_locale_t _Locale);
+ 
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) wcscpy_s(wchar_t *_Dst, rsize_t _SizeInWords, const wchar_t *_Src);
  
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) wcscat_s(wchar_t * _Dst, rsize_t _SizeInWords, const wchar_t *_Src);
@@ -2302,6 +2307,25 @@ extern inline __attribute__((__gnu_inline__)) int __attribute__((__cdecl__))
 #define fstat _fstat64
 #pragma pack(pop)
 #define _INC_STDLIB 
+#define _INC_CORECRT_WSTDLIB 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _itow_s (int _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
+ 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ltow_s (long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
+ 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ultow_s (unsigned long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
+ 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wgetenv_s(size_t *_ReturnSize,wchar_t *_DstBuf,size_t _DstSizeInWords,const wchar_t *_VarName);
+ 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wdupenv_s(wchar_t **_Buffer,size_t *_BufferSizeInWords,const wchar_t *_VarName);
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _i64tow_s(long long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ui64tow_s(unsigned long long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wmakepath_s(wchar_t *_PathResult,size_t _SizeInWords,const wchar_t *_Drive,const wchar_t *_Dir,const wchar_t *_Filename,const wchar_t *_Ext);
+ 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wputenv_s(const wchar_t *_Name,const wchar_t *_Value);
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wsearchenv_s(const wchar_t *_Filename,const wchar_t *_EnvVar,wchar_t *_ResultPath,size_t _SizeInWords);
+ 
+  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wsplitpath_s(const wchar_t *_FullPath,wchar_t *_Drive,size_t _DriveSizeInWords,wchar_t *_Dir,size_t _DirSizeInWords,wchar_t *_Filename,size_t _FilenameSizeInWords,wchar_t *_Ext,size_t _ExtSizeInWords);
+ 
 #define _GCC_LIMITS_H_ 
 #define _GCC_NEXT_LIMITS_H 
 #define _INC_LIMITS 
@@ -2746,14 +2770,6 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wctomb_s_l(int *_SizeConverted,char *_MbCh,size_t _SizeInBytes,wchar_t _WCh,_locale_t _Locale);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) wcstombs_s(size_t *_PtNumOfCharConverted,char *_Dst,size_t _DstSizeInBytes,const wchar_t *_Src,size_t _MaxCountInBytes);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wcstombs_s_l(size_t *_PtNumOfCharConverted,char *_Dst,size_t _DstSizeInBytes,const wchar_t *_Src,size_t _MaxCountInBytes,_locale_t _Locale);
-#define _WSTDLIB_S_DEFINED 
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _itow_s (int _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ltow_s (long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ultow_s (unsigned long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wgetenv_s(size_t *_ReturnSize,wchar_t *_DstBuf,size_t _DstSizeInWords,const wchar_t *_VarName);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wdupenv_s(wchar_t **_Buffer,size_t *_BufferSizeInWords,const wchar_t *_VarName);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _i64tow_s(long long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ui64tow_s(unsigned long long _Val,wchar_t *_DstBuf,size_t _SizeInWords,int _Radix);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _ecvt_s(char *_DstBuf,size_t _Size,double _Val,int _NumOfDights,int *_PtDec,int *_PtSign);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _fcvt_s(char *_DstBuf,size_t _Size,double _Val,int _NumOfDec,int *_PtDec,int *_PtSign);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _gcvt_s(char *_DstBuf,size_t _Size,double _Val,int _NumOfDigits);
@@ -2761,12 +2777,6 @@ unsigned long __attribute__((__cdecl__)) _lrotr(unsigned long,int);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _putenv_s(const char *_Name,const char *_Value);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _searchenv_s(const char *_Filename,const char *_EnvVar,char *_ResultPath,size_t _SizeInBytes);
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _splitpath_s(const char *_FullPath,char *_Drive,size_t _DriveSize,char *_Dir,size_t _DirSize,char *_Filename,size_t _FilenameSize,char *_Ext,size_t _ExtSize);
- 
-#define _WSTDLIBP_S_DEFINED 
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wmakepath_s(wchar_t *_PathResult,size_t _SizeInWords,const wchar_t *_Drive,const wchar_t *_Dir,const wchar_t *_Filename,const wchar_t *_Ext);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wputenv_s(const wchar_t *_Name,const wchar_t *_Value);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wsearchenv_s(const wchar_t *_Filename,const wchar_t *_EnvVar,wchar_t *_ResultPath,size_t _SizeInWords);
-  __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _wsplitpath_s(const wchar_t *_FullPath,wchar_t *_Drive,size_t _DriveSizeInWords,wchar_t *_Dir,size_t _DirSizeInWords,wchar_t *_Filename,size_t _FilenameSizeInWords,wchar_t *_Ext,size_t _ExtSizeInWords);
  
 #define _QSORT_S_DEFINED 
   __attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) qsort_s(void *_Base,size_t _NumOfElements,size_t _SizeOfElements,int (__attribute__((__cdecl__)) *_PtFuncCompare)(void *,const void *,const void *),void *_Context);
@@ -12019,26 +12029,26 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
     DWORD nFileIndexLow;
   } BY_HANDLE_FILE_INFORMATION, *PBY_HANDLE_FILE_INFORMATION,
     *LPBY_HANDLE_FILE_INFORMATION;
-  __attribute__((dllimport)) LONG __attribute__((__stdcall__)) CompareFileTime (const FILETIME *lpFileTime1, const FILETIME *lpFileTime2);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) CreateFileA (LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) DefineDosDeviceW (DWORD dwFlags, LPCWSTR lpDeviceName, LPCWSTR lpTargetPath);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) DeleteVolumeMountPointW (LPCWSTR lpszVolumeMountPoint);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FileTimeToLocalFileTime (const FILETIME *lpFileTime, LPFILETIME lpLocalFileTime);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FindCloseChangeNotification (HANDLE hChangeHandle);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstChangeNotificationA (LPCSTR lpPathName, WINBOOL bWatchSubtree, DWORD dwNotifyFilter);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstChangeNotificationW (LPCWSTR lpPathName, WINBOOL bWatchSubtree, DWORD dwNotifyFilter);
-  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileA (LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData);
-  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileW (LPCWSTR lpFileName, LPWIN32_FIND_DATAW lpFindFileData);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstVolumeW (LPWSTR lpszVolumeName, DWORD cchBufferLength);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FindNextChangeNotification (HANDLE hChangeHandle);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FindNextVolumeW (HANDLE hFindVolume, LPWSTR lpszVolumeName, DWORD cchBufferLength);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FindVolumeClose (HANDLE hFindVolume);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileInformationByHandle (HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation);
+  __attribute__((dllimport)) LONG __attribute__((__stdcall__)) CompareFileTime (const FILETIME *lpFileTime1, const FILETIME *lpFileTime2);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) DeleteVolumeMountPointW (LPCWSTR lpszVolumeMountPoint);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FileTimeToLocalFileTime (const FILETIME *lpFileTime, LPFILETIME lpLocalFileTime);
+  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileA (LPCSTR lpFileName, LPWIN32_FIND_DATAA lpFindFileData);
+  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileW (LPCWSTR lpFileName, LPWIN32_FIND_DATAW lpFindFileData);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetDiskFreeSpaceA (LPCSTR lpRootPathName, LPDWORD lpSectorsPerCluster, LPDWORD lpBytesPerSector, LPDWORD lpNumberOfFreeClusters, LPDWORD lpTotalNumberOfClusters);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetDiskFreeSpaceW (LPCWSTR lpRootPathName, LPDWORD lpSectorsPerCluster, LPDWORD lpBytesPerSector, LPDWORD lpNumberOfFreeClusters, LPDWORD lpTotalNumberOfClusters);
   __attribute__((dllimport)) UINT __attribute__((__stdcall__)) GetDriveTypeA (LPCSTR lpRootPathName);
   __attribute__((dllimport)) UINT __attribute__((__stdcall__)) GetDriveTypeW (LPCWSTR lpRootPathName);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetFileAttributesA (LPCSTR lpFileName);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileInformationByHandle (HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileSizeEx (HANDLE hFile, PLARGE_INTEGER lpFileSize);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileTime (HANDLE hFile, LPFILETIME lpCreationTime, LPFILETIME lpLastAccessTime, LPFILETIME lpLastWriteTime);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetFileType (HANDLE hFile);
@@ -62720,7 +62730,6 @@ LONG __attribute__((__stdcall__)) RtlIpv6StringToAddressExW(PCWSTR AddressString
 #define PADDRINFOEX __MINGW_NAME_AW(PADDRINFOEX)
 #define GetAddrInfoEx __MINGW_NAME_AW(GetAddrInfoEx)
 #define SetAddrInfoEx __MINGW_NAME_AW(SetAddrInfoEx)
-#define FreeAddrInfoEx __MINGW_NAME_AW(FreeAddrInfoEx)
   typedef struct addrinfoExA {
     int ai_flags;
     int ai_family;
@@ -62768,8 +62777,9 @@ __attribute__((dllimport)) int __attribute__((__stdcall__)) SetAddrInfoExW(PCWST
            LPGUID lpNspId,PTIMEVAL timeout,LPOVERLAPPED lpOverlapped,
            LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine,
            LPHANDLE lpNameHandle);
-__attribute__((dllimport)) void __attribute__((__stdcall__)) FreeAddrInfoExA(PADDRINFOEXA pAddrInfo);
+__attribute__((dllimport)) void __attribute__((__stdcall__)) FreeAddrInfoEx(PADDRINFOEXA pAddrInfo);
 __attribute__((dllimport)) void __attribute__((__stdcall__)) FreeAddrInfoExW(PADDRINFOEXW pAddrInfo);
+#define FreeAddrInfoExA FreeAddrInfoEx
 __attribute__((dllimport)) int __attribute__((__stdcall__)) WSAImpersonateSocketPeer(
   SOCKET Socket,
   const struct sockaddr *PeerAddress,
@@ -67908,13 +67918,6 @@ typedef struct _IPV6_ADDRESS_EX {
   errno_t __attribute__((__cdecl__)) _wctime_s(wchar_t *, size_t, const time_t *);
   extern inline __attribute__((__gnu_inline__)) errno_t __attribute__((__cdecl__)) _wctime_s (wchar_t *_Buffer,size_t _SizeInWords,const time_t *_Time) { return _wctime64_s (_Buffer,_SizeInWords,_Time); }
 #define _WTIME_DEFINED 
-double __attribute__((__cdecl__)) difftime(time_t _Time1,time_t _Time2);
-char *__attribute__((__cdecl__)) ctime(const time_t *_Time) ;
-struct tm *__attribute__((__cdecl__)) gmtime(const time_t *_Time) ;
-struct tm *__attribute__((__cdecl__)) localtime(const time_t *_Time) ;
-time_t __attribute__((__cdecl__)) mktime(struct tm *_Tm);
-time_t __attribute__((__cdecl__)) _mkgmtime(struct tm *_Tm);
-time_t __attribute__((__cdecl__)) time(time_t *_Time);
 #define __TIME_INLINE __CRT_INLINE
 extern inline __attribute__((__gnu_inline__)) double __attribute__((__cdecl__)) difftime(time_t _Time1,time_t _Time2)
   { return _difftime64(_Time1,_Time2); }
@@ -76179,7 +76182,7 @@ int rb_singleton_class_internal_p(VALUE sklass);
 static inline void
 RCLASS_SET_ORIGIN(VALUE klass, VALUE origin)
 {
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.6.1/internal.h", 1006);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.6.2/internal.h", 1006);
     if (klass != origin) ((!(((VALUE)(origin) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(origin) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(origin))->flags & RUBY_T_MASK) != RUBY_T_NODE) ? (void)(((struct RBasic*)(origin))->flags |= (((VALUE)RUBY_FL_USER5))) : (void)0);
 }
 #undef RCLASS_SUPER
@@ -76195,7 +76198,7 @@ RCLASS_SET_SUPER(VALUE klass, VALUE super)
  rb_class_remove_from_super_subclasses(klass);
  rb_class_subclass_add(super, klass);
     }
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.6.1/internal.h", 1024);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.6.2/internal.h", 1024);
     return super;
 }
 #define IMEMO_DEBUG 0
@@ -78035,8 +78038,8 @@ static inline void list_del_init_(struct list_node *n, const char *abortstr)
 }
 static inline void list_del_from(struct list_head *h, struct list_node *n)
 {
- (void) ((!!(!list_empty_(h, "../ruby-2.6.1/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.6.1/ccan/list/list.h",328),0));
- list_del_(n, "../ruby-2.6.1/ccan/list/list.h" ":" "329");
+ (void) ((!!(!list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.6.2/ccan/list/list.h",328),0));
+ list_del_(n, "../ruby-2.6.2/ccan/list/list.h" ":" "329");
 }
 #define list_swap(o,n) list_swap_(o, n, LIST_LOC)
 static inline void list_swap_(struct list_node *o,
@@ -78052,7 +78055,7 @@ static inline void list_swap_(struct list_node *o,
 #define list_top(h,type,member) ((type *)list_top_((h), list_off_(type, member)))
 static inline const void *list_top_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.6.1/ccan/list/list.h" ":" "399"))
+ if (list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "399"))
   return ((void *)0);
  return (const char *)h->n.next - off;
 }
@@ -78060,16 +78063,16 @@ static inline const void *list_top_(const struct list_head *h, size_t off)
 static inline const void *list_pop_(const struct list_head *h, size_t off)
 {
  struct list_node *n;
- if (list_empty_(h, "../ruby-2.6.1/ccan/list/list.h" ":" "425"))
+ if (list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "425"))
   return ((void *)0);
  n = h->n.next;
- list_del_(n, "../ruby-2.6.1/ccan/list/list.h" ":" "428");
+ list_del_(n, "../ruby-2.6.2/ccan/list/list.h" ":" "428");
  return (const char *)n - off;
 }
 #define list_tail(h,type,member) ((type *)list_tail_((h), list_off_(type, member)))
 static inline const void *list_tail_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.6.1/ccan/list/list.h" ":" "451"))
+ if (list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "451"))
   return ((void *)0);
  return (const char *)h->n.prev - off;
 }
@@ -78090,7 +78093,7 @@ static inline void list_append_list_(struct list_head *to,
  from_tail->next = &to->n;
  to_tail->next = &from->n;
  from->n.prev = to_tail;
- list_del_(&from->n, "../ruby-2.6.1/ccan/list/list.h" ":" "600");
+ list_del_(&from->n, "../ruby-2.6.2/ccan/list/list.h" ":" "600");
  list_head_init(from);
 }
 #define list_prepend_list(t,f) list_prepend_list_(t, f, LIST_LOC)
@@ -78104,7 +78107,7 @@ static inline void list_prepend_list_(struct list_head *to,
  from->n.prev = &to->n;
  to_head->prev = from_tail;
  from_tail->next = to_head;
- list_del_(&from->n, "../ruby-2.6.1/ccan/list/list.h" ":" "632");
+ list_del_(&from->n, "../ruby-2.6.2/ccan/list/list.h" ":" "632");
  list_head_init(from);
 }
 #define list_for_each_off_dir_(h,i,off,dir) for (i = list_node_to_off_(list_debug(h, LIST_LOC)->n.dir, (off)); list_node_from_off_((void *)i, (off)) != &(h)->n; i = list_node_to_off_(list_node_from_off_((void *)i, (off))->dir, (off)))
@@ -79234,13 +79237,13 @@ rb_vm_living_threads_init(rb_vm_t *vm)
 static inline void
 rb_vm_living_threads_insert(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.6.1/vm_core.h" ":" "1648");
+    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.6.2/vm_core.h" ":" "1648");
     vm->living_thread_num++;
 }
 static inline void
 rb_vm_living_threads_remove(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_del_(&th->vmlt_node, "../ruby-2.6.1/vm_core.h" ":" "1655");
+    list_del_(&th->vmlt_node, "../ruby-2.6.2/vm_core.h" ":" "1655");
     vm->living_thread_num--;
 }
 typedef int rb_backtrace_iter_func(void *, VALUE, int, VALUE);
@@ -79732,7 +79735,7 @@ CREF_REFINEMENTS(const rb_cref_t *cref)
 static inline void
 CREF_REFINEMENTS_SET(rb_cref_t *cref, VALUE refs)
 {
-    rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.6.1/eval_intern.h", 237);
+    rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.6.2/eval_intern.h", 237);
 }
 static inline int
 CREF_PUSHED_BY_EVAL(const rb_cref_t *cref)
@@ -80032,13 +80035,13 @@ void
 rb_vm_block_ep_update(VALUE obj, const struct rb_block *dst, const VALUE *ep)
 {
     *((const VALUE **)&dst->as.captured.ep) = ep;
-    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.6.1/vm.c", 292);
+    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.6.2/vm.c", 292);
 }
 static void
 vm_bind_update_env(VALUE bindval, rb_binding_t *bind, VALUE envval)
 {
     const rb_env_t *env = (rb_env_t *)envval;
-    rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.6.1/vm.c", 299);
+    rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.6.2/vm.c", 299);
     rb_vm_block_ep_update(bindval, &bind->block, env->ep);
 }
 static VALUE vm_make_env_object(const rb_execution_context_t *ec, rb_control_frame_t *cfp);
@@ -80846,7 +80849,7 @@ lep_svar_write(const rb_execution_context_t *ec, const VALUE *lep, const struct 
  vm_env_write(lep, (-2), (VALUE)svar);
     }
     else {
- rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.6.1/vm_insnhelper.c", 441);
+ rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.6.2/vm_insnhelper.c", 441);
     }
 }
 static VALUE
@@ -80884,15 +80887,15 @@ lep_svar_set(const rb_execution_context_t *ec, const VALUE *lep, rb_num_t key, V
     }
     switch (key) {
       case VM_SVAR_LASTLINE:
- rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.6.1/vm_insnhelper.c", 487);
+ rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 487);
  return;
       case VM_SVAR_BACKREF:
- rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.6.1/vm_insnhelper.c", 490);
+ rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 490);
  return;
       default: {
  VALUE ary = svar->others;
  if (!((VALUE)(ary) != ((VALUE)RUBY_Qnil))) {
-     rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.6.1/vm_insnhelper.c", 496);
+     rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.6.2/vm_insnhelper.c", 496);
  }
  rb_ary_store(ary, key - VM_SVAR_EXTRA_START, val);
       }
@@ -81033,7 +81036,7 @@ cref_replace_with_duplicated_cref_each_frame(const VALUE *vptr, int can_be_svar,
      cref = (rb_cref_t *)v;
      new_cref = vm_cref_dup(cref);
      if (parent) {
-  rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.6.1/vm_insnhelper.c", 671);
+  rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.6.2/vm_insnhelper.c", 671);
      }
      else {
   VM_FORCE_WRITE(vptr, (VALUE)new_cref);
@@ -81334,7 +81337,7 @@ vm_setivar(VALUE obj, ID id, VALUE val, IC ic, struct rb_call_cache *cc, int is_
      VALUE *ptr = ((((struct RBasic*)(obj))->flags & ROBJECT_EMBED) ? ((struct RObject*)(obj))->as.ary : ((struct RObject*)(obj))->as.heap.ivptr);
      index = !is_attr ? ic->ic_value.index : cc->aux.index-1;
      if ((index < ((((struct RBasic*)(obj))->flags & ROBJECT_EMBED) ? ROBJECT_EMBED_LEN_MAX : ((struct RObject*)(obj))->as.heap.numiv))) {
-  rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.6.1/vm_insnhelper.c", 1025);
+  rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 1025);
   ((void)0);
   return val;
      }
@@ -81892,7 +81895,7 @@ args_copy(struct args_info *args)
  args->argc = 0;
         arg_rest_dup(args);
  while (args->rest_index > 0 && argc > 0) {
-     do { const VALUE _ary = (args->rest); const VALUE _v = (args->argv[--argc]); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.6.1/vm_args.c", 150); rb_array_ptr_use_end(_ary, 1); } while (0);
+     do { const VALUE _ary = (args->rest); const VALUE _v = (args->argv[--argc]); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 150); rb_array_ptr_use_end(_ary, 1); } while (0);
  }
  while (argc > 0) {
      rb_ary_unshift(args->rest, args->argv[--argc]);
@@ -81963,7 +81966,7 @@ args_pop_keyword_hash(struct args_info *args, VALUE *kw_hash_ptr)
      *kw_hash_ptr = (rb_array_const_ptr_transient(args->rest)[len - 1]);
      if (keyword_hash_p(kw_hash_ptr, &rest_hash)) {
   if (rest_hash) {
-      do { const VALUE _ary = (args->rest); const VALUE _v = (rest_hash); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.6.1/vm_args.c", 231); rb_array_ptr_use_end(_ary, 1); } while (0);
+      do { const VALUE _ary = (args->rest); const VALUE _v = (rest_hash); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 231); rb_array_ptr_use_end(_ary, 1); } while (0);
   }
   else {
       arg_rest_dup(args);
@@ -82521,8 +82524,8 @@ vm_caller_setup_arg_block(const rb_execution_context_t *ec, rb_control_frame_t *
   VALUE func = rb_hash_lookup(ref, block_code);
   if (!((VALUE)(func) != ((VALUE)RUBY_Qnil))) {
                     VALUE callback_arg = rb_ary_tmp_new(2);
-                    do { const VALUE _ary = (callback_arg); const VALUE _v = (block_code); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[0]), (VALUE)(_v), "../ruby-2.6.1/vm_args.c", 903); rb_array_ptr_use_end(_ary, 1); } while (0);
-                    do { const VALUE _ary = (callback_arg); const VALUE _v = (ref); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[1]), (VALUE)(_v), "../ruby-2.6.1/vm_args.c", 904); rb_array_ptr_use_end(_ary, 1); } while (0);
+                    do { const VALUE _ary = (callback_arg); const VALUE _v = (block_code); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[0]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 903); rb_array_ptr_use_end(_ary, 1); } while (0);
+                    do { const VALUE _ary = (callback_arg); const VALUE _v = (ref); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[1]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 904); rb_array_ptr_use_end(_ary, 1); } while (0);
                     (void)(((struct RBasic*)(callback_arg))->flags |= RUBY_FL_FREEZE);
                     func = rb_func_proc_new(refine_sym_proc_call, callback_arg);
       rb_hash_aset(ref, block_code, func);
@@ -83022,7 +83025,7 @@ aliased_callable_method_entry(const rb_callable_method_entry_t *me)
  ((void)0);
  cme = rb_method_entry_complement_defined_class(orig_me, me->called_id, defined_class);
  if (me->def->alias_count + me->def->complemented_count == 0) {
-     rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.6.1/vm_insnhelper.c", 2195);
+     rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.6.2/vm_insnhelper.c", 2195);
  }
  else {
      rb_method_definition_t *def =
@@ -83956,7 +83959,7 @@ vm_once_dispatch(rb_execution_context_t *ec, ISEQ iseq, ISE is)
  VALUE val;
  is->once.running_thread = th;
  val = rb_ensure(vm_once_exec, (VALUE)iseq, vm_once_clear, (VALUE)is);
- rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.6.1/vm_insnhelper.c", 3291);
+ rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 3291);
  is->once.running_thread = RUNNING_THREAD_ONCE_DONE;
  return val;
     }

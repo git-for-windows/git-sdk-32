@@ -23,7 +23,6 @@ mingw32/share/man/man1/zipcmp.1.gz
 mingw32/share/man/man1/zipmerge.1.gz
 mingw32/share/man/man1/ziptool.1.gz
 mingw32/share/man/man3/
-mingw32/share/man/man3/ZIP_SOURCE_GET_ARGS.3.gz
 mingw32/share/man/man3/libzip.3.gz
 mingw32/share/man/man3/zip_add.3.gz
 mingw32/share/man/man3/zip_add_dir.3.gz
@@ -111,6 +110,7 @@ mingw32/share/man/man3/zip_source_filep_create.3.gz
 mingw32/share/man/man3/zip_source_free.3.gz
 mingw32/share/man/man3/zip_source_function.3.gz
 mingw32/share/man/man3/zip_source_function_create.3.gz
+mingw32/share/man/man3/ZIP_SOURCE_GET_ARGS.3.gz
 mingw32/share/man/man3/zip_source_is_deleted.3.gz
 mingw32/share/man/man3/zip_source_keep.3.gz
 mingw32/share/man/man3/zip_source_make_command_bitmap.3.gz

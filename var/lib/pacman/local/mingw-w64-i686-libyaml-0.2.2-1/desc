@@ -2,7 +2,7 @@
 mingw-w64-i686-libyaml
 
 %VERSION%
-0.2.1-1
+0.2.2-1
 
 %BASE%
 mingw-w64-libyaml
@@ -17,10 +17,10 @@ http://yaml.org
 any
 
 %BUILDDATE%
-1534370811
+1552540457
 
 %INSTALLDATE%
-1534993858
+1552705773
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

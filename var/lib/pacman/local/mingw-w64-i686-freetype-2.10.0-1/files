@@ -21,6 +21,7 @@ mingw32/include/freetype2/freetype/ftbzip2.h
 mingw32/include/freetype2/freetype/ftcache.h
 mingw32/include/freetype2/freetype/ftchapters.h
 mingw32/include/freetype2/freetype/ftcid.h
+mingw32/include/freetype2/freetype/ftcolor.h
 mingw32/include/freetype2/freetype/ftdriver.h
 mingw32/include/freetype2/freetype/fterrdef.h
 mingw32/include/freetype2/freetype/fterrors.h

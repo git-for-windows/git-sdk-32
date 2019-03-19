@@ -2,7 +2,7 @@
 mingw-w64-i686-freetype
 
 %VERSION%
-2.9.1-1
+2.10.0-1
 
 %BASE%
 mingw-w64-freetype
@@ -17,16 +17,16 @@ https://www.freetype.org/
 any
 
 %BUILDDATE%
-1525325377
+1552900634
 
 %INSTALLDATE%
-1525414819
+1552964996
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3014656
+2596864
 
 %REASON%
 1

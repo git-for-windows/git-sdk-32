@@ -2,7 +2,7 @@
 mingw-w64-i686-libssh2
 
 %VERSION%
-1.8.0-3
+1.8.1-1
 
 %BASE%
 mingw-w64-libssh2
@@ -17,16 +17,16 @@ https://libssh2.org
 any
 
 %BUILDDATE%
-1540285926
+1552979295
 
 %INSTALLDATE%
-1540350779
+1553051436
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-694272
+701440
 
 %REASON%
 1

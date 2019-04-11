@@ -2,7 +2,7 @@
 mingw-w64-i686-pixman
 
 %VERSION%
-0.38.0-1
+0.38.2-1
 
 %BASE%
 mingw-w64-pixman
@@ -17,16 +17,16 @@ https://xorg.freedesktop.org/
 any
 
 %BUILDDATE%
-1550468678
+1554798946
 
 %INSTALLDATE%
-1550545641
+1554956249
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1703936
+1701888
 
 %REASON%
 1

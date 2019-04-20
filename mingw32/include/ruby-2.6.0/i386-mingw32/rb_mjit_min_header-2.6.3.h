@@ -3242,14 +3242,14 @@ __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _execute_onexit_t
   intptr_t __attribute__((__cdecl__)) spawnlpe(int,const char *_Filename,const char *_ArgList,...) ;
 #define _CRT_GETPID_DEFINED 
   int __attribute__((__cdecl__)) getpid(void) ;
-  int __attribute__((__cdecl__)) execv(const char *_Filename,char *const _ArgList[]) ;
-  int __attribute__((__cdecl__)) execve(const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
-  int __attribute__((__cdecl__)) execvp(const char *_Filename,char *const _ArgList[]) ;
-  int __attribute__((__cdecl__)) execvpe(const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
-  intptr_t __attribute__((__cdecl__)) spawnv(int,const char *_Filename,char *const _ArgList[]) ;
-  intptr_t __attribute__((__cdecl__)) spawnve(int,const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
-  intptr_t __attribute__((__cdecl__)) spawnvp(int,const char *_Filename,char *const _ArgList[]) ;
-  intptr_t __attribute__((__cdecl__)) spawnvpe(int,const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
+  __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) execv(const char *_Filename,char *const _ArgList[]) ;
+  __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) execve(const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
+  __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) execvp(const char *_Filename,char *const _ArgList[]) ;
+  __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) execvpe(const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
+  __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) spawnv(int,const char *_Filename,char *const _ArgList[]) ;
+  __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) spawnve(int,const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
+  __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) spawnvp(int,const char *_Filename,char *const _ArgList[]) ;
+  __attribute__ ((__dllimport__)) intptr_t __attribute__((__cdecl__)) spawnvpe(int,const char *_Filename,char *const _ArgList[],char *const _Env[]) ;
 #define __GETOPT_H__ 
 extern int optind;
 extern int optopt;
@@ -12059,6 +12059,7 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetLongPathNameA (LPCSTR lpszShortPath, LPSTR lpszLongPath, DWORD cchBuffer);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetLongPathNameW (LPCWSTR lpszShortPath, LPWSTR lpszLongPath, DWORD cchBuffer);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetShortPathNameW (LPCWSTR lpszLongPath, LPWSTR lpszShortPath, DWORD cchBuffer);
+  __attribute__((dllimport)) UINT __attribute__((__stdcall__)) GetTempFileNameA (LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName);
   __attribute__((dllimport)) UINT __attribute__((__stdcall__)) GetTempFileNameW (LPCWSTR lpPathName, LPCWSTR lpPrefixString, UINT uUnique, LPWSTR lpTempFileName);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetVolumeInformationW (LPCWSTR lpRootPathName, LPWSTR lpVolumeNameBuffer, DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPWSTR lpFileSystemNameBuffer, DWORD nFileSystemNameSize);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetVolumePathNameW (LPCWSTR lpszFileName, LPWSTR lpszVolumePathName, DWORD cchBufferLength);
@@ -12074,12 +12075,16 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) WriteFileGather (HANDLE hFile, FILE_SEGMENT_ELEMENT aSegmentArray[], DWORD nNumberOfBytesToWrite, LPDWORD lpReserved, LPOVERLAPPED lpOverlapped);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetVolumeNameForVolumeMountPointW (LPCWSTR lpszVolumeMountPoint, LPWSTR lpszVolumeName, DWORD cchBufferLength);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetVolumePathNamesForVolumeNameW (LPCWSTR lpszVolumeName, LPWCH lpszVolumePathNames, DWORD cchBufferLength, PDWORD lpcchReturnLength);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetTempPathA (DWORD nBufferLength, LPSTR lpBuffer);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetTempPathW (DWORD nBufferLength, LPWSTR lpBuffer);
 #define FindFirstChangeNotification __MINGW_NAME_AW(FindFirstChangeNotification)
 #define FindFirstFile __MINGW_NAME_AW(FindFirstFile)
 #define GetDiskFreeSpace __MINGW_NAME_AW(GetDiskFreeSpace)
 #define GetDriveType __MINGW_NAME_AW(GetDriveType)
 #define GetFullPathName __MINGW_NAME_AW(GetFullPathName)
 #define GetLongPathName __MINGW_NAME_AW(GetLongPathName)
+#define GetTempPath __MINGW_NAME_AW(GetTempPath)
+#define GetTempFileName __MINGW_NAME_AW(GetTempFileName)
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetFinalPathNameByHandleA (HANDLE hFile, LPSTR lpszFilePath, DWORD cchFilePath, DWORD dwFlags);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetFinalPathNameByHandleW (HANDLE hFile, LPWSTR lpszFilePath, DWORD cchFilePath, DWORD dwFlags);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetVolumeInformationByHandleW (HANDLE hFile, LPWSTR lpVolumeNameBuffer, DWORD nVolumeNameSize, LPDWORD lpVolumeSerialNumber, LPDWORD lpMaximumComponentLength, LPDWORD lpFileSystemFlags, LPWSTR lpFileSystemNameBuffer, DWORD nFileSystemNameSize);
@@ -12107,7 +12112,6 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetFileType (HANDLE hFile);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileAttributesExA (LPCSTR lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, LPVOID lpFileInformation);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileAttributesExW (LPCWSTR lpFileName, GET_FILEEX_INFO_LEVELS fInfoLevelId, LPVOID lpFileInformation);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetTempPathW (DWORD nBufferLength, LPWSTR lpBuffer);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) LockFileEx (HANDLE hFile, DWORD dwFlags, DWORD dwReserved, DWORD nNumberOfBytesToLockLow, DWORD nNumberOfBytesToLockHigh, LPOVERLAPPED lpOverlapped);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReadFile (HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) RemoveDirectoryA (LPCSTR lpPathName);
@@ -12165,10 +12169,10 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) PostQueuedCompletionStatus (HANDLE CompletionPort, DWORD dwNumberOfBytesTransferred, ULONG_PTR dwCompletionKey, LPOVERLAPPED lpOverlapped);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) DeviceIoControl (HANDLE hDevice, DWORD dwIoControlCode, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CancelIo (HANDLE hFile);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetOverlappedResultEx (HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, DWORD dwMilliseconds, WINBOOL bAlertable);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetQueuedCompletionStatusEx (HANDLE CompletionPort, LPOVERLAPPED_ENTRY lpCompletionPortEntries, ULONG ulCount, PULONG ulNumEntriesRemoved, DWORD dwMilliseconds, WINBOOL fAlertable);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CancelIoEx (HANDLE hFile, LPOVERLAPPED lpOverlapped);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CancelSynchronousIo (HANDLE hThread);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetOverlappedResultEx (HANDLE hFile, LPOVERLAPPED lpOverlapped, LPDWORD lpNumberOfBytesTransferred, DWORD dwMilliseconds, WINBOOL bAlertable);
 #define _INTERLOCKAPI_H_ 
   __attribute__((dllimport)) void __attribute__((__stdcall__)) InitializeSListHead (PSLIST_HEADER ListHead);
   __attribute__((dllimport)) PSLIST_ENTRY __attribute__((__stdcall__)) InterlockedPopEntrySList (PSLIST_HEADER ListHead);
@@ -12326,23 +12330,9 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) AddSIDToBoundaryDescriptor (HANDLE *BoundaryDescriptor, PSID RequiredSid);
   __attribute__((dllimport)) void __attribute__((__stdcall__)) DeleteBoundaryDescriptor (HANDLE BoundaryDescriptor);
 #define _PROCESSENV_ 
-  __attribute__((dllimport)) LPCH __attribute__((__stdcall__)) GetEnvironmentStrings (void);
-  __attribute__((dllimport)) LPWCH __attribute__((__stdcall__)) GetEnvironmentStringsW (void);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetEnvironmentStringsW (LPWCH NewEnvironment);
-#define GetEnvironmentStringsA GetEnvironmentStrings
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FreeEnvironmentStringsA (LPCH penv);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FreeEnvironmentStringsW (LPWCH penv);
-  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) GetStdHandle (DWORD nStdHandle);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetStdHandle (DWORD nStdHandle, HANDLE hHandle);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetStdHandleEx (DWORD nStdHandle, HANDLE hHandle, PHANDLE phPrevValue);
   __attribute__((dllimport)) LPSTR __attribute__((__stdcall__)) GetCommandLineA (void);
   __attribute__((dllimport)) LPWSTR __attribute__((__stdcall__)) GetCommandLineW (void);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetEnvironmentVariableA (LPCSTR lpName, LPSTR lpBuffer, DWORD nSize);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetEnvironmentVariableW (LPCWSTR lpName, LPWSTR lpBuffer, DWORD nSize);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetEnvironmentVariableA (LPCSTR lpName, LPCSTR lpValue);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetEnvironmentVariableW (LPCWSTR lpName, LPCWSTR lpValue);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) ExpandEnvironmentStringsA (LPCSTR lpSrc, LPSTR lpDst, DWORD nSize);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) ExpandEnvironmentStringsW (LPCWSTR lpSrc, LPWSTR lpDst, DWORD nSize);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetCurrentDirectoryA (LPCSTR lpPathName);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetCurrentDirectoryW (LPCWSTR lpPathName);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetCurrentDirectoryA (DWORD nBufferLength, LPSTR lpBuffer);
@@ -12351,24 +12341,59 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SetFilePointer (HA
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) SearchPathA (LPCSTR lpPath, LPCSTR lpFileName, LPCSTR lpExtension, DWORD nBufferLength, LPSTR lpBuffer, LPSTR *lpFilePart);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) NeedCurrentDirectoryForExePathA (LPCSTR ExeName);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) NeedCurrentDirectoryForExePathW (LPCWSTR ExeName);
-#define ExpandEnvironmentStrings __MINGW_NAME_AW(ExpandEnvironmentStrings)
-#define FreeEnvironmentStrings __MINGW_NAME_AW(FreeEnvironmentStrings)
 #define GetCommandLine __MINGW_NAME_AW(GetCommandLine)
 #define GetCurrentDirectory __MINGW_NAME_AW(GetCurrentDirectory)
-#define GetEnvironmentVariable __MINGW_NAME_AW(GetEnvironmentVariable)
 #define NeedCurrentDirectoryForExePath __MINGW_NAME_AW(NeedCurrentDirectoryForExePath)
 #define SearchPath __MINGW_NAME_AW(SearchPath)
 #define SetCurrentDirectory __MINGW_NAME_AW(SetCurrentDirectory)
+  __attribute__((dllimport)) LPCH __attribute__((__stdcall__)) GetEnvironmentStrings (void);
+  __attribute__((dllimport)) LPWCH __attribute__((__stdcall__)) GetEnvironmentStringsW (void);
+#define GetEnvironmentStringsA GetEnvironmentStrings
+  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) GetStdHandle (DWORD nStdHandle);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) ExpandEnvironmentStringsA (LPCSTR lpSrc, LPSTR lpDst, DWORD nSize);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) ExpandEnvironmentStringsW (LPCWSTR lpSrc, LPWSTR lpDst, DWORD nSize);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FreeEnvironmentStringsA (LPCH penv);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FreeEnvironmentStringsW (LPWCH penv);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetEnvironmentVariableA (LPCSTR lpName, LPSTR lpBuffer, DWORD nSize);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetEnvironmentVariableW (LPCWSTR lpName, LPWSTR lpBuffer, DWORD nSize);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetEnvironmentVariableA (LPCSTR lpName, LPCSTR lpValue);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetEnvironmentVariableW (LPCWSTR lpName, LPCWSTR lpValue);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetStdHandle (DWORD nStdHandle, HANDLE hHandle);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetStdHandleEx (DWORD nStdHandle, HANDLE hHandle, PHANDLE phPrevValue);
+#define ExpandEnvironmentStrings __MINGW_NAME_AW(ExpandEnvironmentStrings)
+#define FreeEnvironmentStrings __MINGW_NAME_AW(FreeEnvironmentStrings)
+#define GetEnvironmentVariable __MINGW_NAME_AW(GetEnvironmentVariable)
 #define SetEnvironmentVariable __MINGW_NAME_AW(SetEnvironmentVariable)
 #define _PROCESSTHREADSAPI_H_ 
 #define TLS_OUT_OF_INDEXES ((DWORD)0xffffffff)
 __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess (HANDLE hProcess, UINT uExitCode);
+  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) OpenProcess (DWORD dwDesiredAccess, WINBOOL bInheritHandle, DWORD dwProcessId);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) QueueUserAPC (PAPCFUNC pfnAPC, HANDLE hThread, ULONG_PTR dwData);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetProcessTimes (HANDLE hProcess, LPFILETIME lpCreationTime, LPFILETIME lpExitTime, LPFILETIME lpKernelTime, LPFILETIME lpUserTime);
+  __attribute__((dllimport)) __attribute__((noreturn)) void __attribute__((__stdcall__)) ExitProcess (UINT uExitCode);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetExitCodeProcess (HANDLE hProcess, LPDWORD lpExitCode);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SwitchToThread (void);
+  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) OpenThread (DWORD dwDesiredAccess, WINBOOL bInheritHandle, DWORD dwThreadId);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetThreadPriorityBoost (HANDLE hThread, WINBOOL bDisablePriorityBoost);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetThreadPriorityBoost (HANDLE hThread, PBOOL pDisablePriorityBoost);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetThreadToken (PHANDLE Thread, HANDLE Token);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) OpenProcessToken (HANDLE ProcessHandle, DWORD DesiredAccess, PHANDLE TokenHandle);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) OpenThreadToken (HANDLE ThreadHandle, DWORD DesiredAccess, WINBOOL OpenAsSelf, PHANDLE TokenHandle);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetPriorityClass (HANDLE hProcess, DWORD dwPriorityClass);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetPriorityClass (HANDLE hProcess);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetProcessId (HANDLE Process);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetThreadId (HANDLE Thread);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetThreadContext (HANDLE hThread, LPCONTEXT lpContext);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FlushInstructionCache (HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetThreadTimes (HANDLE hThread, LPFILETIME lpCreationTime, LPFILETIME lpExitTime, LPFILETIME lpKernelTime, LPFILETIME lpUserTime);
+  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetCurrentProcessorNumber (void);
   typedef struct _PROCESS_INFORMATION {
     HANDLE hProcess;
     HANDLE hThread;
     DWORD dwProcessId;
     DWORD dwThreadId;
   } PROCESS_INFORMATION, *PPROCESS_INFORMATION, *LPPROCESS_INFORMATION;
+  typedef struct _PROC_THREAD_ATTRIBUTE_LIST *PPROC_THREAD_ATTRIBUTE_LIST, *LPPROC_THREAD_ATTRIBUTE_LIST;
   typedef struct _STARTUPINFOA {
     DWORD cb;
     LPSTR lpReserved;
@@ -12411,37 +12436,16 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
   } STARTUPINFOW, *LPSTARTUPINFOW;
   typedef STARTUPINFOA STARTUPINFO;
   typedef LPSTARTUPINFOA LPSTARTUPINFO;
-  typedef struct _PROC_THREAD_ATTRIBUTE_LIST *PPROC_THREAD_ATTRIBUTE_LIST, *LPPROC_THREAD_ATTRIBUTE_LIST;
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) QueueUserAPC (PAPCFUNC pfnAPC, HANDLE hThread, ULONG_PTR dwData);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetProcessTimes (HANDLE hProcess, LPFILETIME lpCreationTime, LPFILETIME lpExitTime, LPFILETIME lpKernelTime, LPFILETIME lpUserTime);
-  __attribute__((dllimport)) __attribute__((noreturn)) void __attribute__((__stdcall__)) ExitProcess (UINT uExitCode);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetExitCodeProcess (HANDLE hProcess, LPDWORD lpExitCode);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SwitchToThread (void);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) CreateRemoteThread (HANDLE hProcess, LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);
-  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) OpenThread (DWORD dwDesiredAccess, WINBOOL bInheritHandle, DWORD dwThreadId);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetThreadPriorityBoost (HANDLE hThread, WINBOOL bDisablePriorityBoost);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetThreadPriorityBoost (HANDLE hThread, PBOOL pDisablePriorityBoost);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateThread (HANDLE hThread, DWORD dwExitCode);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetProcessShutdownParameters (DWORD dwLevel, DWORD dwFlags);
   __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetProcessVersion (DWORD ProcessId);
   __attribute__((dllimport)) void __attribute__((__stdcall__)) GetStartupInfoW (LPSTARTUPINFOW lpStartupInfo);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetThreadToken (PHANDLE Thread, HANDLE Token);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) OpenProcessToken (HANDLE ProcessHandle, DWORD DesiredAccess, PHANDLE TokenHandle);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) OpenThreadToken (HANDLE ThreadHandle, DWORD DesiredAccess, WINBOOL OpenAsSelf, PHANDLE TokenHandle);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetPriorityClass (HANDLE hProcess, DWORD dwPriorityClass);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetThreadStackGuarantee (PULONG StackSizeInBytes);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetPriorityClass (HANDLE hProcess);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ProcessIdToSessionId (DWORD dwProcessId, DWORD *pSessionId);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetProcessId (HANDLE Process);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetThreadId (HANDLE Thread);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) CreateRemoteThreadEx (HANDLE hProcess, LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList, LPDWORD lpThreadId);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetThreadContext (HANDLE hThread, LPCONTEXT lpContext);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetThreadContext (HANDLE hThread, const CONTEXT *lpContext);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FlushInstructionCache (HANDLE hProcess, LPCVOID lpBaseAddress, SIZE_T dwSize);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetThreadTimes (HANDLE hThread, LPFILETIME lpCreationTime, LPFILETIME lpExitTime, LPFILETIME lpKernelTime, LPFILETIME lpUserTime);
-  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) OpenProcess (DWORD dwDesiredAccess, WINBOOL bInheritHandle, DWORD dwProcessId);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetProcessHandleCount (HANDLE hProcess, PDWORD pdwHandleCount);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetCurrentProcessorNumber (void);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CreateProcessA (LPCSTR lpApplicationName, LPSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, WINBOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCSTR lpCurrentDirectory, LPSTARTUPINFOA lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CreateProcessW (LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, WINBOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCWSTR lpCurrentDirectory, LPSTARTUPINFOW lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
 #define CreateProcess __MINGW_NAME_AW(CreateProcess)
@@ -13778,12 +13782,8 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetPrivateProfileStructW (LPCWSTR lpszSection, LPCWSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCWSTR szFile);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) WritePrivateProfileStructA (LPCSTR lpszSection, LPCSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCSTR szFile);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) WritePrivateProfileStructW (LPCWSTR lpszSection, LPCWSTR lpszKey, LPVOID lpStruct, UINT uSizeStruct, LPCWSTR szFile);
-  __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) GetTempPathA (DWORD nBufferLength, LPSTR lpBuffer);
-  __attribute__((dllimport)) UINT __attribute__((__stdcall__)) GetTempFileNameA (LPCSTR lpPathName, LPCSTR lpPrefixString, UINT uUnique, LPSTR lpTempFileName);
 #define GetStartupInfo GetStartupInfoA
 #define FindResourceEx FindResourceExA
-#define GetTempPath GetTempPathA
-#define GetTempFileName GetTempFileNameA
 #define FatalAppExit __MINGW_NAME_AW(FatalAppExit)
 #define GetFirmwareEnvironmentVariable __MINGW_NAME_AW(GetFirmwareEnvironmentVariable)
 #define SetFirmwareEnvironmentVariable __MINGW_NAME_AW(SetFirmwareEnvironmentVariable)
@@ -13882,12 +13882,13 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
 #define DeleteFileTransacted __MINGW_NAME_AW(DeleteFileTransacted)
 #define GetCompressedFileSizeTransacted __MINGW_NAME_AW(GetCompressedFileSizeTransacted)
   typedef DWORD (__attribute__((__stdcall__)) *LPPROGRESS_ROUTINE) (LARGE_INTEGER TotalFileSize, LARGE_INTEGER TotalBytesTransferred, LARGE_INTEGER StreamSize, LARGE_INTEGER StreamBytesTransferred, DWORD dwStreamNumber, DWORD dwCallbackReason, HANDLE hSourceFile, HANDLE hDestinationFile, LPVOID lpData);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileExA (LPCSTR lpExistingFileName, LPCSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, LPVOID lpData, LPBOOL pbCancel, DWORD dwCopyFlags);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileExW (LPCWSTR lpExistingFileName, LPCWSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, LPVOID lpData, LPBOOL pbCancel, DWORD dwCopyFlags);
+#define CopyFileEx __MINGW_NAME_AW(CopyFileEx)
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CheckNameLegalDOS8Dot3A (LPCSTR lpName, LPSTR lpOemName, DWORD OemNameSize, PBOOL pbNameContainsSpaces, PBOOL pbNameLegal);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CheckNameLegalDOS8Dot3W (LPCWSTR lpName, LPSTR lpOemName, DWORD OemNameSize, PBOOL pbNameContainsSpaces, PBOOL pbNameLegal);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileA (LPCSTR lpExistingFileName, LPCSTR lpNewFileName, WINBOOL bFailIfExists);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileW (LPCWSTR lpExistingFileName, LPCWSTR lpNewFileName, WINBOOL bFailIfExists);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileExA (LPCSTR lpExistingFileName, LPCSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, LPVOID lpData, LPBOOL pbCancel, DWORD dwCopyFlags);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileExW (LPCWSTR lpExistingFileName, LPCWSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, LPVOID lpData, LPBOOL pbCancel, DWORD dwCopyFlags);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileTransactedA (LPCSTR lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, LPVOID lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, LPVOID lpSearchFilter, DWORD dwAdditionalFlags, HANDLE hTransaction);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileTransactedW (LPCWSTR lpFileName, FINDEX_INFO_LEVELS fInfoLevelId, LPVOID lpFindFileData, FINDEX_SEARCH_OPS fSearchOp, LPVOID lpSearchFilter, DWORD dwAdditionalFlags, HANDLE hTransaction);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CopyFileTransactedA (LPCSTR lpExistingFileName, LPCSTR lpNewFileName, LPPROGRESS_ROUTINE lpProgressRoutine, LPVOID lpData, LPBOOL pbCancel, DWORD dwCopyFlags, HANDLE hTransaction);
@@ -13896,7 +13897,6 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
 #define CopyFileTransacted __MINGW_NAME_AW(CopyFileTransacted)
 #define CheckNameLegalDOS8Dot3 __MINGW_NAME_AW(CheckNameLegalDOS8Dot3)
 #define CopyFile __MINGW_NAME_AW(CopyFile)
-#define CopyFileEx __MINGW_NAME_AW(CopyFileEx)
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) MoveFileA (LPCSTR lpExistingFileName, LPCSTR lpNewFileName);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) MoveFileW (LPCWSTR lpExistingFileName, LPCWSTR lpNewFileName);
 #define MoveFile __MINGW_NAME_AW(MoveFile)
@@ -13915,6 +13915,15 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
 #define MOVEFILE_WRITE_THROUGH 0x00000008
 #define MOVEFILE_CREATE_HARDLINK 0x00000010
 #define MOVEFILE_FAIL_IF_NOT_TRACKABLE 0x00000020
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeClientComputerNameA (HANDLE Pipe, LPSTR ClientComputerName, ULONG ClientComputerNameLength);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeHandleStateA (HANDLE hNamedPipe, LPDWORD lpState, LPDWORD lpCurInstances, LPDWORD lpMaxCollectionCount, LPDWORD lpCollectDataTimeout, LPSTR lpUserName, DWORD nMaxUserNameSize);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) WaitNamedPipeA (LPCSTR lpNamedPipeName, DWORD nTimeOut);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CallNamedPipeA (LPCSTR lpNamedPipeName, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesRead, DWORD nTimeOut);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CallNamedPipeW (LPCWSTR lpNamedPipeName, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesRead, DWORD nTimeOut);
+  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) CreateNamedPipeA (LPCSTR lpName, DWORD dwOpenMode, DWORD dwPipeMode, DWORD nMaxInstances, DWORD nOutBufferSize, DWORD nInBufferSize, DWORD nDefaultTimeOut, LPSECURITY_ATTRIBUTES lpSecurityAttributes);
+#define WaitNamedPipe WaitNamedPipeA
+#define CreateNamedPipe CreateNamedPipeA
+#define CallNamedPipe __MINGW_NAME_AW(CallNamedPipe)
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReplaceFileA (LPCSTR lpReplacedFileName, LPCSTR lpReplacementFileName, LPCSTR lpBackupFileName, DWORD dwReplaceFlags, LPVOID lpExclude, LPVOID lpReserved);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReplaceFileW (LPCWSTR lpReplacedFileName, LPCWSTR lpReplacementFileName, LPCWSTR lpBackupFileName, DWORD dwReplaceFlags, LPVOID lpExclude, LPVOID lpReserved);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CreateHardLinkA (LPCSTR lpFileName, LPCSTR lpExistingFileName, LPSECURITY_ATTRIBUTES lpSecurityAttributes);
@@ -13938,19 +13947,13 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileNameW (LPCWSTR lpFileName, DWORD dwFlags, LPDWORD StringLength, PWSTR LinkName);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) FindNextFileNameW (HANDLE hFindStream, LPDWORD StringLength, PWSTR LinkName);
   __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) FindFirstFileNameTransactedW (LPCWSTR lpFileName, DWORD dwFlags, LPDWORD StringLength, PWSTR LinkName, HANDLE hTransaction);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeClientComputerNameA (HANDLE Pipe, LPSTR ClientComputerName, ULONG ClientComputerNameLength);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeClientProcessId (HANDLE Pipe, PULONG ClientProcessId);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeClientSessionId (HANDLE Pipe, PULONG ClientSessionId);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeServerProcessId (HANDLE Pipe, PULONG ServerProcessId);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeServerSessionId (HANDLE Pipe, PULONG ServerSessionId);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetFileBandwidthReservation (HANDLE hFile, DWORD nPeriodMilliseconds, DWORD nBytesPerPeriod, WINBOOL bDiscardable, LPDWORD lpTransferSize, LPDWORD lpNumOutstandingRequests);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileBandwidthReservation (HANDLE hFile, LPDWORD lpPeriodMilliseconds, LPDWORD lpBytesPerPeriod, LPBOOL pDiscardable, LPDWORD lpTransferSize, LPDWORD lpNumOutstandingRequests);
-  __attribute__((dllimport)) HANDLE __attribute__((__stdcall__)) CreateNamedPipeA (LPCSTR lpName, DWORD dwOpenMode, DWORD dwPipeMode, DWORD nMaxInstances, DWORD nOutBufferSize, DWORD nInBufferSize, DWORD nDefaultTimeOut, LPSECURITY_ATTRIBUTES lpSecurityAttributes);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeHandleStateA (HANDLE hNamedPipe, LPDWORD lpState, LPDWORD lpCurInstances, LPDWORD lpMaxCollectionCount, LPDWORD lpCollectDataTimeout, LPSTR lpUserName, DWORD nMaxUserNameSize);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetNamedPipeHandleStateW (HANDLE hNamedPipe, LPDWORD lpState, LPDWORD lpCurInstances, LPDWORD lpMaxCollectionCount, LPDWORD lpCollectDataTimeout, LPWSTR lpUserName, DWORD nMaxUserNameSize);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CallNamedPipeA (LPCSTR lpNamedPipeName, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesRead, DWORD nTimeOut);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) CallNamedPipeW (LPCWSTR lpNamedPipeName, LPVOID lpInBuffer, DWORD nInBufferSize, LPVOID lpOutBuffer, DWORD nOutBufferSize, LPDWORD lpBytesRead, DWORD nTimeOut);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) WaitNamedPipeA (LPCSTR lpNamedPipeName, DWORD nTimeOut);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetVolumeLabelA (LPCSTR lpRootPathName, LPCSTR lpVolumeName);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetVolumeLabelW (LPCWSTR lpRootPathName, LPCWSTR lpVolumeName);
   __attribute__((dllimport)) void __attribute__((__stdcall__)) SetFileApisToOEM (void);
@@ -13976,11 +13979,8 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReadEventLogW (HANDLE hEventLog, DWORD dwReadFlags, DWORD dwRecordOffset, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, DWORD *pnBytesRead, DWORD *pnMinNumberOfBytesNeeded);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReportEventA (HANDLE hEventLog, WORD wType, WORD wCategory, DWORD dwEventID, PSID lpUserSid, WORD wNumStrings, DWORD dwDataSize, LPCSTR *lpStrings, LPVOID lpRawData);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReportEventW (HANDLE hEventLog, WORD wType, WORD wCategory, DWORD dwEventID, PSID lpUserSid, WORD wNumStrings, DWORD dwDataSize, LPCWSTR *lpStrings, LPVOID lpRawData);
-#define CreateNamedPipe CreateNamedPipeA
-#define WaitNamedPipe WaitNamedPipeA
 #define GetVolumeInformation GetVolumeInformationA
 #define GetNamedPipeHandleState __MINGW_NAME_AW(GetNamedPipeHandleState)
-#define CallNamedPipe __MINGW_NAME_AW(CallNamedPipe)
 #define SetVolumeLabel __MINGW_NAME_AW(SetVolumeLabel)
 #define ClearEventLog __MINGW_NAME_AW(ClearEventLog)
 #define BackupEventLog __MINGW_NAME_AW(BackupEventLog)
@@ -13995,6 +13995,7 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
     DWORD dwFull;
   } EVENTLOG_FULL_INFORMATION,*LPEVENTLOG_FULL_INFORMATION;
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetEventLogInformation (HANDLE hEventLog, DWORD dwInfoLevel, LPVOID lpBuffer, DWORD cbBufSize, LPDWORD pcbBytesNeeded);
+  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReadDirectoryChangesW (HANDLE hDirectory, LPVOID lpBuffer, DWORD nBufferLength, WINBOOL bWatchSubtree, DWORD dwNotifyFilter, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped, LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) AccessCheckAndAuditAlarmA (LPCSTR SubsystemName, LPVOID HandleId, LPSTR ObjectTypeName, LPSTR ObjectName, PSECURITY_DESCRIPTOR SecurityDescriptor, DWORD DesiredAccess, PGENERIC_MAPPING GenericMapping, WINBOOL ObjectCreation, LPDWORD GrantedAccess, LPBOOL AccessStatus, LPBOOL pfGenerateOnClose);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) AccessCheckByTypeAndAuditAlarmA (LPCSTR SubsystemName, LPVOID HandleId, LPCSTR ObjectTypeName, LPCSTR ObjectName, PSECURITY_DESCRIPTOR SecurityDescriptor, PSID PrincipalSelfSid, DWORD DesiredAccess, AUDIT_EVENT_TYPE AuditType, DWORD Flags, POBJECT_TYPE_LIST ObjectTypeList, DWORD ObjectTypeListLength, PGENERIC_MAPPING GenericMapping, WINBOOL ObjectCreation, LPDWORD GrantedAccess, LPBOOL AccessStatus, LPBOOL pfGenerateOnClose);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) AccessCheckByTypeResultListAndAuditAlarmA (LPCSTR SubsystemName, LPVOID HandleId, LPCSTR ObjectTypeName, LPCSTR ObjectName, PSECURITY_DESCRIPTOR SecurityDescriptor, PSID PrincipalSelfSid, DWORD DesiredAccess, AUDIT_EVENT_TYPE AuditType, DWORD Flags, POBJECT_TYPE_LIST ObjectTypeList, DWORD ObjectTypeListLength, PGENERIC_MAPPING GenericMapping, WINBOOL ObjectCreation, LPDWORD GrantedAccess, LPDWORD AccessStatusList, LPBOOL pfGenerateOnClose);
@@ -14006,7 +14007,6 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) TerminateProcess
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) PrivilegedServiceAuditAlarmA (LPCSTR SubsystemName, LPCSTR ServiceName, HANDLE ClientToken, PPRIVILEGE_SET Privileges, WINBOOL AccessGranted);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetFileSecurityA (LPCSTR lpFileName, SECURITY_INFORMATION SecurityInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) GetFileSecurityA (LPCSTR lpFileName, SECURITY_INFORMATION RequestedInformation, PSECURITY_DESCRIPTOR pSecurityDescriptor, DWORD nLength, LPDWORD lpnLengthNeeded);
-  __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) ReadDirectoryChangesW (HANDLE hDirectory, LPVOID lpBuffer, DWORD nBufferLength, WINBOOL bWatchSubtree, DWORD dwNotifyFilter, LPDWORD lpBytesReturned, LPOVERLAPPED lpOverlapped, LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) IsBadReadPtr (const void *lp, UINT_PTR ucb);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) IsBadWritePtr (LPVOID lp, UINT_PTR ucb);
   __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) IsBadHugeReadPtr (const void *lp, UINT_PTR ucb);
@@ -67867,13 +67867,13 @@ typedef struct _IPV6_ADDRESS_EX {
   __attribute__ ((__dllimport__)) errno_t __attribute__((__cdecl__)) _get_tzname(size_t *_ReturnValue,char *_Buffer,size_t _SizeInBytes,int _Index);
   char *__attribute__((__cdecl__)) asctime(const struct tm *_Tm) ;
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) asctime_s (char *_Buf,size_t _SizeInWords,const struct tm *_Tm);
-  char *__attribute__((__cdecl__)) _ctime32(const __time32_t *_Time) ;
+  __attribute__ ((__dllimport__)) char *__attribute__((__cdecl__)) _ctime32(const __time32_t *_Time) ;
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _ctime32_s (char *_Buf,size_t _SizeInBytes,const __time32_t *_Time);
   clock_t __attribute__((__cdecl__)) clock(void);
-  double __attribute__((__cdecl__)) _difftime32(__time32_t _Time1,__time32_t _Time2);
-  struct tm *__attribute__((__cdecl__)) _gmtime32(const __time32_t *_Time) ;
+  __attribute__ ((__dllimport__)) double __attribute__((__cdecl__)) _difftime32(__time32_t _Time1,__time32_t _Time2);
+  __attribute__ ((__dllimport__)) struct tm *__attribute__((__cdecl__)) _gmtime32(const __time32_t *_Time) ;
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _gmtime32_s (struct tm *_Tm,const __time32_t *_Time);
-  struct tm *__attribute__((__cdecl__)) _localtime32(const __time32_t *_Time) ;
+  __attribute__ ((__dllimport__)) struct tm *__attribute__((__cdecl__)) _localtime32(const __time32_t *_Time) ;
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _localtime32_s (struct tm *_Tm,const __time32_t *_Time);
   size_t __attribute__((__cdecl__)) strftime(char * __restrict__ _Buf,size_t _SizeInBytes,const char * __restrict__ _Format,const struct tm * __restrict__ _Tm);
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _strftime_l(char * __restrict__ _Buf,size_t _Max_size,const char * __restrict__ _Format,const struct tm * __restrict__ _Tm,_locale_t _Locale);
@@ -67881,13 +67881,13 @@ typedef struct _IPV6_ADDRESS_EX {
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _strdate_s (char *_Buf,size_t _SizeInBytes);
   __attribute__ ((__dllimport__)) char *__attribute__((__cdecl__)) _strtime(char *_Buffer) ;
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _strtime_s (char *_Buf ,size_t _SizeInBytes);
-  __time32_t __attribute__((__cdecl__)) _time32(__time32_t *_Time);
-  __time32_t __attribute__((__cdecl__)) _mktime32(struct tm *_Tm);
-  __time32_t __attribute__((__cdecl__)) _mkgmtime32(struct tm *_Tm);
+  __attribute__ ((__dllimport__)) __time32_t __attribute__((__cdecl__)) _time32(__time32_t *_Time);
+  __attribute__ ((__dllimport__)) __time32_t __attribute__((__cdecl__)) _mktime32(struct tm *_Tm);
+  __attribute__ ((__dllimport__)) __time32_t __attribute__((__cdecl__)) _mkgmtime32(struct tm *_Tm);
   void __attribute__((__cdecl__)) tzset(void) ;
   __attribute__ ((__dllimport__))
   void __attribute__((__cdecl__)) _tzset(void);
-  double __attribute__((__cdecl__)) _difftime64(__time64_t _Time1,__time64_t _Time2);
+  __attribute__ ((__dllimport__)) double __attribute__((__cdecl__)) _difftime64(__time64_t _Time1,__time64_t _Time2);
   __attribute__ ((__dllimport__)) char *__attribute__((__cdecl__)) _ctime64(const __time64_t *_Time) ;
   __attribute__((dllimport)) errno_t __attribute__((__cdecl__)) _ctime64_s (char *_Buf,size_t _SizeInBytes,const __time64_t *_Time);
   __attribute__ ((__dllimport__)) struct tm *__attribute__((__cdecl__)) _gmtime64(const __time64_t *_Time) ;
@@ -67918,18 +67918,16 @@ typedef struct _IPV6_ADDRESS_EX {
   errno_t __attribute__((__cdecl__)) _wctime_s(wchar_t *, size_t, const time_t *);
   extern inline __attribute__((__gnu_inline__)) errno_t __attribute__((__cdecl__)) _wctime_s (wchar_t *_Buffer,size_t _SizeInWords,const time_t *_Time) { return _wctime64_s (_Buffer,_SizeInWords,_Time); }
 #define _WTIME_DEFINED 
-#define __TIME_INLINE __CRT_INLINE
-extern inline __attribute__((__gnu_inline__)) double __attribute__((__cdecl__)) difftime(time_t _Time1,time_t _Time2)
-  { return _difftime64(_Time1,_Time2); }
-extern inline __attribute__((__gnu_inline__)) char *__attribute__((__cdecl__)) ctime(const time_t *_Time) { return _ctime64(_Time); }
-extern inline __attribute__((__gnu_inline__)) struct tm *__attribute__((__cdecl__)) gmtime(const time_t *_Time) { return _gmtime64(_Time); }
-extern inline __attribute__((__gnu_inline__)) struct tm *__attribute__((__cdecl__)) localtime(const time_t *_Time) { return _localtime64(_Time); }
-extern inline __attribute__((__gnu_inline__)) time_t __attribute__((__cdecl__)) mktime(struct tm *_Tm) { return _mktime64(_Tm); }
-extern inline __attribute__((__gnu_inline__)) time_t __attribute__((__cdecl__)) _mkgmtime(struct tm *_Tm) { return _mkgmtime64(_Tm); }
-extern inline __attribute__((__gnu_inline__)) time_t __attribute__((__cdecl__)) time(time_t *_Time) { return _time64(_Time); }
-extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) errno_t __attribute__((__cdecl__)) localtime_s(struct tm *_Tm,const time_t *_Time) { return _localtime64_s(_Tm,_Time); }
-extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) errno_t __attribute__((__cdecl__)) gmtime_s(struct tm *_Tm, const time_t *_Time) { return _gmtime64_s(_Tm, _Time); }
-extern __inline__ __attribute__((__always_inline__,__gnu_inline__)) errno_t __attribute__((__cdecl__)) ctime_s(char *_Buf,size_t _SizeInBytes,const time_t *_Time) { return _ctime64_s(_Buf,_SizeInBytes,_Time); }
+static __inline time_t __attribute__((__cdecl__)) time(time_t *_Time) { return _time64(_Time); }
+static __inline double __attribute__((__cdecl__)) difftime(time_t _Time1,time_t _Time2) { return _difftime64(_Time1,_Time2); }
+static __inline struct tm *__attribute__((__cdecl__)) localtime(const time_t *_Time) { return _localtime64(_Time); }
+static __inline errno_t __attribute__((__cdecl__)) localtime_s(struct tm *_Tm,const time_t *_Time) { return _localtime64_s(_Tm,_Time); }
+static __inline struct tm *__attribute__((__cdecl__)) gmtime(const time_t *_Time) { return _gmtime64(_Time); }
+static __inline errno_t __attribute__((__cdecl__)) gmtime_s(struct tm *_Tm, const time_t *_Time) { return _gmtime64_s(_Tm, _Time); }
+static __inline char *__attribute__((__cdecl__)) ctime(const time_t *_Time) { return _ctime64(_Time); }
+static __inline errno_t __attribute__((__cdecl__)) ctime_s(char *_Buf,size_t _SizeInBytes,const time_t *_Time) { return _ctime64_s(_Buf,_SizeInBytes,_Time); }
+static __inline time_t __attribute__((__cdecl__)) mktime(struct tm *_Tm) { return _mktime64(_Tm); }
+static __inline time_t __attribute__((__cdecl__)) _mkgmtime(struct tm *_Tm) { return _mkgmtime64(_Tm); }
 #define CLK_TCK CLOCKS_PER_SEC
 #define __MINGW_ATTRIB_DEPRECATED_UCRT 
   __attribute__ ((__dllimport__)) extern int daylight ;
@@ -76182,7 +76180,7 @@ int rb_singleton_class_internal_p(VALUE sklass);
 static inline void
 RCLASS_SET_ORIGIN(VALUE klass, VALUE origin)
 {
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.6.2/internal.h", 1006);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.6.3/internal.h", 1006);
     if (klass != origin) ((!(((VALUE)(origin) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(origin) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(origin))->flags & RUBY_T_MASK) != RUBY_T_NODE) ? (void)(((struct RBasic*)(origin))->flags |= (((VALUE)RUBY_FL_USER5))) : (void)0);
 }
 #undef RCLASS_SUPER
@@ -76198,7 +76196,7 @@ RCLASS_SET_SUPER(VALUE klass, VALUE super)
  rb_class_remove_from_super_subclasses(klass);
  rb_class_subclass_add(super, klass);
     }
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.6.2/internal.h", 1024);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.6.3/internal.h", 1024);
     return super;
 }
 #define IMEMO_DEBUG 0
@@ -77930,10 +77928,8 @@ typedef unsigned int rb_atomic_t;
 #define CCAN_LIST_H 
 #undef assert
 #define __ASSERT_H_ 
-extern void __attribute__((__cdecl__))
-_wassert(const wchar_t *_Message,const wchar_t *_File,unsigned _Line);
-extern void __attribute__((__cdecl__))
-_assert (const char *_Message, const char *_File, unsigned _Line);
+__attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _wassert(const wchar_t *_Message,const wchar_t *_File,unsigned _Line);
+__attribute__ ((__dllimport__)) void __attribute__((__cdecl__)) _assert (const char *_Message, const char *_File, unsigned _Line);
 #undef static_assert
 #define static_assert _Static_assert
 #define assert(_Expression) (void) ((!!(_Expression)) || (_assert(#_Expression,__FILE__,__LINE__),0))
@@ -78038,8 +78034,8 @@ static inline void list_del_init_(struct list_node *n, const char *abortstr)
 }
 static inline void list_del_from(struct list_head *h, struct list_node *n)
 {
- (void) ((!!(!list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.6.2/ccan/list/list.h",328),0));
- list_del_(n, "../ruby-2.6.2/ccan/list/list.h" ":" "329");
+ (void) ((!!(!list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.6.3/ccan/list/list.h",328),0));
+ list_del_(n, "../ruby-2.6.3/ccan/list/list.h" ":" "329");
 }
 #define list_swap(o,n) list_swap_(o, n, LIST_LOC)
 static inline void list_swap_(struct list_node *o,
@@ -78055,7 +78051,7 @@ static inline void list_swap_(struct list_node *o,
 #define list_top(h,type,member) ((type *)list_top_((h), list_off_(type, member)))
 static inline const void *list_top_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "399"))
+ if (list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "399"))
   return ((void *)0);
  return (const char *)h->n.next - off;
 }
@@ -78063,16 +78059,16 @@ static inline const void *list_top_(const struct list_head *h, size_t off)
 static inline const void *list_pop_(const struct list_head *h, size_t off)
 {
  struct list_node *n;
- if (list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "425"))
+ if (list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "425"))
   return ((void *)0);
  n = h->n.next;
- list_del_(n, "../ruby-2.6.2/ccan/list/list.h" ":" "428");
+ list_del_(n, "../ruby-2.6.3/ccan/list/list.h" ":" "428");
  return (const char *)n - off;
 }
 #define list_tail(h,type,member) ((type *)list_tail_((h), list_off_(type, member)))
 static inline const void *list_tail_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.6.2/ccan/list/list.h" ":" "451"))
+ if (list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "451"))
   return ((void *)0);
  return (const char *)h->n.prev - off;
 }
@@ -78093,7 +78089,7 @@ static inline void list_append_list_(struct list_head *to,
  from_tail->next = &to->n;
  to_tail->next = &from->n;
  from->n.prev = to_tail;
- list_del_(&from->n, "../ruby-2.6.2/ccan/list/list.h" ":" "600");
+ list_del_(&from->n, "../ruby-2.6.3/ccan/list/list.h" ":" "600");
  list_head_init(from);
 }
 #define list_prepend_list(t,f) list_prepend_list_(t, f, LIST_LOC)
@@ -78107,7 +78103,7 @@ static inline void list_prepend_list_(struct list_head *to,
  from->n.prev = &to->n;
  to_head->prev = from_tail;
  from_tail->next = to_head;
- list_del_(&from->n, "../ruby-2.6.2/ccan/list/list.h" ":" "632");
+ list_del_(&from->n, "../ruby-2.6.3/ccan/list/list.h" ":" "632");
  list_head_init(from);
 }
 #define list_for_each_off_dir_(h,i,off,dir) for (i = list_node_to_off_(list_debug(h, LIST_LOC)->n.dir, (off)); list_node_from_off_((void *)i, (off)) != &(h)->n; i = list_node_to_off_(list_node_from_off_((void *)i, (off))->dir, (off)))
@@ -78190,12 +78186,11 @@ typedef struct rb_global_vm_lock_struct {
   } _JUMP_BUFFER;
   typedef int jmp_buf[16];
 #define _JMP_BUF_DEFINED 
+__attribute__ ((__dllimport__)) __attribute__ ((__noreturn__)) __attribute__ ((__nothrow__)) void __attribute__((__cdecl__)) longjmp(jmp_buf _Buf,int _Value);
 void * __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) mingw_getsp (void);
 #define setjmp(BUF) _setjmp3((BUF), NULL)
   int __attribute__((__cdecl__)) __attribute__ ((__nothrow__,__returns_twice__)) _setjmp(jmp_buf _Buf, void *_Ctx);
   int __attribute__((__cdecl__)) __attribute__ ((__nothrow__,__returns_twice__)) _setjmp3(jmp_buf _Buf, void *_Ctx);
-  __attribute__ ((__noreturn__)) __attribute__ ((__nothrow__)) void __attribute__((__cdecl__)) ms_longjmp(jmp_buf _Buf,int _Value) ;
-  __attribute__ ((__noreturn__)) __attribute__ ((__nothrow__)) void __attribute__((__cdecl__)) longjmp(jmp_buf _Buf,int _Value);
 #pragma pack(pop)
 #define RUBY_NSIG NSIG
 #define RUBY_SIGCHLD (0)
@@ -79237,13 +79232,13 @@ rb_vm_living_threads_init(rb_vm_t *vm)
 static inline void
 rb_vm_living_threads_insert(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.6.2/vm_core.h" ":" "1648");
+    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.6.3/vm_core.h" ":" "1648");
     vm->living_thread_num++;
 }
 static inline void
 rb_vm_living_threads_remove(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_del_(&th->vmlt_node, "../ruby-2.6.2/vm_core.h" ":" "1655");
+    list_del_(&th->vmlt_node, "../ruby-2.6.3/vm_core.h" ":" "1655");
     vm->living_thread_num--;
 }
 typedef int rb_backtrace_iter_func(void *, VALUE, int, VALUE);
@@ -79735,7 +79730,7 @@ CREF_REFINEMENTS(const rb_cref_t *cref)
 static inline void
 CREF_REFINEMENTS_SET(rb_cref_t *cref, VALUE refs)
 {
-    rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.6.2/eval_intern.h", 237);
+    rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.6.3/eval_intern.h", 237);
 }
 static inline int
 CREF_PUSHED_BY_EVAL(const rb_cref_t *cref)
@@ -80035,13 +80030,13 @@ void
 rb_vm_block_ep_update(VALUE obj, const struct rb_block *dst, const VALUE *ep)
 {
     *((const VALUE **)&dst->as.captured.ep) = ep;
-    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.6.2/vm.c", 292);
+    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.6.3/vm.c", 292);
 }
 static void
 vm_bind_update_env(VALUE bindval, rb_binding_t *bind, VALUE envval)
 {
     const rb_env_t *env = (rb_env_t *)envval;
-    rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.6.2/vm.c", 299);
+    rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.6.3/vm.c", 299);
     rb_vm_block_ep_update(bindval, &bind->block, env->ep);
 }
 static VALUE vm_make_env_object(const rb_execution_context_t *ec, rb_control_frame_t *cfp);
@@ -80849,7 +80844,7 @@ lep_svar_write(const rb_execution_context_t *ec, const VALUE *lep, const struct 
  vm_env_write(lep, (-2), (VALUE)svar);
     }
     else {
- rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.6.2/vm_insnhelper.c", 441);
+ rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.6.3/vm_insnhelper.c", 441);
     }
 }
 static VALUE
@@ -80887,15 +80882,15 @@ lep_svar_set(const rb_execution_context_t *ec, const VALUE *lep, rb_num_t key, V
     }
     switch (key) {
       case VM_SVAR_LASTLINE:
- rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 487);
+ rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 487);
  return;
       case VM_SVAR_BACKREF:
- rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 490);
+ rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 490);
  return;
       default: {
  VALUE ary = svar->others;
  if (!((VALUE)(ary) != ((VALUE)RUBY_Qnil))) {
-     rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.6.2/vm_insnhelper.c", 496);
+     rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.6.3/vm_insnhelper.c", 496);
  }
  rb_ary_store(ary, key - VM_SVAR_EXTRA_START, val);
       }
@@ -81036,7 +81031,7 @@ cref_replace_with_duplicated_cref_each_frame(const VALUE *vptr, int can_be_svar,
      cref = (rb_cref_t *)v;
      new_cref = vm_cref_dup(cref);
      if (parent) {
-  rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.6.2/vm_insnhelper.c", 671);
+  rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.6.3/vm_insnhelper.c", 671);
      }
      else {
   VM_FORCE_WRITE(vptr, (VALUE)new_cref);
@@ -81337,7 +81332,7 @@ vm_setivar(VALUE obj, ID id, VALUE val, IC ic, struct rb_call_cache *cc, int is_
      VALUE *ptr = ((((struct RBasic*)(obj))->flags & ROBJECT_EMBED) ? ((struct RObject*)(obj))->as.ary : ((struct RObject*)(obj))->as.heap.ivptr);
      index = !is_attr ? ic->ic_value.index : cc->aux.index-1;
      if ((index < ((((struct RBasic*)(obj))->flags & ROBJECT_EMBED) ? ROBJECT_EMBED_LEN_MAX : ((struct RObject*)(obj))->as.heap.numiv))) {
-  rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 1025);
+  rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 1025);
   ((void)0);
   return val;
      }
@@ -81895,7 +81890,7 @@ args_copy(struct args_info *args)
  args->argc = 0;
         arg_rest_dup(args);
  while (args->rest_index > 0 && argc > 0) {
-     do { const VALUE _ary = (args->rest); const VALUE _v = (args->argv[--argc]); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 150); rb_array_ptr_use_end(_ary, 1); } while (0);
+     do { const VALUE _ary = (args->rest); const VALUE _v = (args->argv[--argc]); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 150); rb_array_ptr_use_end(_ary, 1); } while (0);
  }
  while (argc > 0) {
      rb_ary_unshift(args->rest, args->argv[--argc]);
@@ -81966,7 +81961,7 @@ args_pop_keyword_hash(struct args_info *args, VALUE *kw_hash_ptr)
      *kw_hash_ptr = (rb_array_const_ptr_transient(args->rest)[len - 1]);
      if (keyword_hash_p(kw_hash_ptr, &rest_hash)) {
   if (rest_hash) {
-      do { const VALUE _ary = (args->rest); const VALUE _v = (rest_hash); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 231); rb_array_ptr_use_end(_ary, 1); } while (0);
+      do { const VALUE _ary = (args->rest); const VALUE _v = (rest_hash); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 231); rb_array_ptr_use_end(_ary, 1); } while (0);
   }
   else {
       arg_rest_dup(args);
@@ -82524,8 +82519,8 @@ vm_caller_setup_arg_block(const rb_execution_context_t *ec, rb_control_frame_t *
   VALUE func = rb_hash_lookup(ref, block_code);
   if (!((VALUE)(func) != ((VALUE)RUBY_Qnil))) {
                     VALUE callback_arg = rb_ary_tmp_new(2);
-                    do { const VALUE _ary = (callback_arg); const VALUE _v = (block_code); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[0]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 903); rb_array_ptr_use_end(_ary, 1); } while (0);
-                    do { const VALUE _ary = (callback_arg); const VALUE _v = (ref); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[1]), (VALUE)(_v), "../ruby-2.6.2/vm_args.c", 904); rb_array_ptr_use_end(_ary, 1); } while (0);
+                    do { const VALUE _ary = (callback_arg); const VALUE _v = (block_code); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[0]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 903); rb_array_ptr_use_end(_ary, 1); } while (0);
+                    do { const VALUE _ary = (callback_arg); const VALUE _v = (ref); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[1]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 904); rb_array_ptr_use_end(_ary, 1); } while (0);
                     (void)(((struct RBasic*)(callback_arg))->flags |= RUBY_FL_FREEZE);
                     func = rb_func_proc_new(refine_sym_proc_call, callback_arg);
       rb_hash_aset(ref, block_code, func);
@@ -83025,7 +83020,7 @@ aliased_callable_method_entry(const rb_callable_method_entry_t *me)
  ((void)0);
  cme = rb_method_entry_complement_defined_class(orig_me, me->called_id, defined_class);
  if (me->def->alias_count + me->def->complemented_count == 0) {
-     rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.6.2/vm_insnhelper.c", 2195);
+     rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.6.3/vm_insnhelper.c", 2195);
  }
  else {
      rb_method_definition_t *def =
@@ -83959,7 +83954,7 @@ vm_once_dispatch(rb_execution_context_t *ec, ISEQ iseq, ISE is)
  VALUE val;
  is->once.running_thread = th;
  val = rb_ensure(vm_once_exec, (VALUE)iseq, vm_once_clear, (VALUE)is);
- rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.6.2/vm_insnhelper.c", 3291);
+ rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 3291);
  is->once.running_thread = RUNNING_THREAD_ONCE_DONE;
  return val;
     }

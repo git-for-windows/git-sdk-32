@@ -2,7 +2,7 @@
 mingw-w64-i686-nghttp2
 
 %VERSION%
-1.37.0-1
+1.38.0-1
 
 %BASE%
 mingw-w64-nghttp2
@@ -17,16 +17,16 @@ https://nghttp2.org/
 any
 
 %BUILDDATE%
-1552283128
+1555781562
 
 %INSTALLDATE%
-1552336169
+1555902688
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-925696
+924672
 
 %LICENSE%
 MIT

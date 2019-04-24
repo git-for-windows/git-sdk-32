@@ -2,7 +2,7 @@
 mingw-w64-i686-libpng
 
 %VERSION%
-1.6.37-2
+1.6.37-3
 
 %BASE%
 mingw-w64-libpng
@@ -17,10 +17,10 @@ http://www.libpng.org/pub/png/libpng.html
 any
 
 %BUILDDATE%
-1555568506
+1556011592
 
 %INSTALLDATE%
-1555643493
+1556075424
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

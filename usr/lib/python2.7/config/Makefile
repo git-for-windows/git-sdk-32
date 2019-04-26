@@ -28,8 +28,8 @@ MODLIBS=        $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	2.7
 srcdir=		.
 
-abs_srcdir=	/msys_scripts/python2/src/Python-2.7.15
-abs_builddir=	/msys_scripts/python2/src/Python-2.7.15
+abs_srcdir=	/msys_scripts/python2/src/Python-2.7.16
+abs_builddir=	/msys_scripts/python2/src/Python-2.7.16
 build=		i686-pc-msys
 host=		i686-pc-msys
 

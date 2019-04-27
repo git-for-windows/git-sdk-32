@@ -1,39 +1,45 @@
 %NAME%
-diffstat
+libpcre2_8
 
 %VERSION%
-1.61-1
+10.33-1
+
+%BASE%
+pcre2
 
 %DESC%
-Display a histogram of diff changes
+A library that implements Perl 5-style regular expressions
 
 %URL%
-http://invisible-island.net/diffstat
+https://www.pcre.org/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1496342759
+1556401292
 
 %INSTALLDATE%
-1496785380
+1556409470
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-50176
+358400
+
+%REASON%
+1
 
 %GROUPS%
-base-devel
+libraries
 
 %LICENSE%
-MIT
+BSD
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-msys2-runtime
+gcc-libs
 

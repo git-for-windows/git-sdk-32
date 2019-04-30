@@ -1,42 +1,44 @@
 %NAME%
-vim
+tzcode
 
 %VERSION%
-8.1.0877-1
+2019.a-1
 
 %BASE%
-vim
+tzcode
 
 %DESC%
-
+Sources for time zone and daylight saving time data
 
 %URL%
-http://www.vim.org
+https://www.iana.org/time-zones
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1549540400
+1556516339
 
 %INSTALLDATE%
-1549595390
+1556593832
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-46617600
+1903616
 
 %GROUPS%
-editors
+base
 
 %LICENSE%
-custom:vim
+GPL
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-ncurses
+coreutils
+gawk
+sed
 

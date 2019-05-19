@@ -3,3 +3,9 @@
 /usr/bin/*.exe -text
 /usr/bin/*.pdb -text
 /usr/bin/*.dbg -text
+
+/etc/gdbinit eol=lf
+*.py eol=lf
+*.xml eol=lf
+/var/lib/pacman/local/*/desc eol=lf
+/var/lib/pacman/local/*/files eol=lf

@@ -2,7 +2,7 @@
 mingw-w64-i686-zlib
 
 %VERSION%
-1.2.11-5
+1.2.11-7
 
 %BASE%
 mingw-w64-zlib
@@ -17,16 +17,16 @@ https://www.zlib.net/
 any
 
 %BUILDDATE%
-1541058099
+1558526830
 
 %INSTALLDATE%
-1541128201
+1558581088
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-913408
+377856
 
 %REASON%
 1
@@ -36,16 +36,4 @@ ZLIB
 
 %VALIDATION%
 pgp
-
-%REPLACES%
-mingw-w64-i686-minizip
-
-%DEPENDS%
-mingw-w64-i686-bzip2
-
-%CONFLICTS%
-mingw-w64-i686-minizip
-
-%PROVIDES%
-mingw-w64-i686-minizip
 

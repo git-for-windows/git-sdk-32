@@ -2,7 +2,7 @@
 mingw-w64-i686-curl
 
 %VERSION%
-7.64.1-1
+7.65.0-1
 
 %BASE%
 mingw-w64-curl
@@ -17,16 +17,16 @@ https://curl.haxx.se
 any
 
 %BUILDDATE%
-1553685130
+1558510576
 
 %INSTALLDATE%
-1553742705
+1558581089
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2635776
+2616320
 
 %LICENSE%
 MIT

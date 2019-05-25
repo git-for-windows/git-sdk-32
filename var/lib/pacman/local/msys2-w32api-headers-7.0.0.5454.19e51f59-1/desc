@@ -2,7 +2,7 @@
 msys2-w32api-headers
 
 %VERSION%
-7.0.0.5418.1b5ae4b5-1
+7.0.0.5454.19e51f59-1
 
 %BASE%
 msys2-w32api-headers
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 i686
 
 %BUILDDATE%
-1556086575
+1558697069
 
 %INSTALLDATE%
-1556161914
+1558753866
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-57585664
+57943040
 
 %GROUPS%
 msys2-devel

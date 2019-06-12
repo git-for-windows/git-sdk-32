@@ -2,7 +2,7 @@
 less
 
 %VERSION%
-550-1
+551-1
 
 %BASE%
 less
@@ -17,10 +17,10 @@ http://www.greenwoodsoftware.com/less
 i686
 
 %BUILDDATE%
-1559886903
+1560287880
 
 %INSTALLDATE%
-1559934329
+1560309175
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

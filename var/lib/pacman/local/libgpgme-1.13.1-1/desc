@@ -2,7 +2,7 @@
 libgpgme
 
 %VERSION%
-1.13.0-1
+1.13.1-1
 
 %BASE%
 gpgme
@@ -17,16 +17,16 @@ https://gnupg.org/related_software/gpgme/
 i686
 
 %BUILDDATE%
-1555318625
+1560459167
 
 %INSTALLDATE%
-1555384260
+1560481893
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-886784
+893952
 
 %REASON%
 1

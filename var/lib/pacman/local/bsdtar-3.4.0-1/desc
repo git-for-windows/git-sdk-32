@@ -1,8 +1,8 @@
 %NAME%
-bsdcpio
+bsdtar
 
 %VERSION%
-3.3.3-3
+3.4.0-1
 
 %BASE%
 libarchive
@@ -17,16 +17,16 @@ https://libarchive.org/
 i686
 
 %BUILDDATE%
-1536498684
+1560458306
 
 %INSTALLDATE%
-1536693540
+1560481893
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2969600
+3361792
 
 %GROUPS%
 base

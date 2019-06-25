@@ -1,8 +1,8 @@
 %NAME%
-libexpat
+expat
 
 %VERSION%
-2.2.6-1
+2.2.7-1
 
 %BASE%
 expat
@@ -17,29 +17,23 @@ https://expat.sourceforge.io/
 i686
 
 %BUILDDATE%
-1538481603
+1561351840
 
 %INSTALLDATE%
-1538536264
+1561432217
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-181248
+64512
 
 %REASON%
 1
-
-%GROUPS%
-libraries
 
 %LICENSE%
 custom
 
 %VALIDATION%
 pgp
-
-%DEPENDS%
-gcc-libs
 

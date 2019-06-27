@@ -2,7 +2,7 @@
 mingw-w64-i686-rtmpdump-git
 
 %VERSION%
-r512.fa8646d-3
+r514.c5f04a5-1
 
 %BASE%
 mingw-w64-rtmpdump-git
@@ -11,22 +11,22 @@ mingw-w64-rtmpdump-git
 A tool to download rtmp streams (mingw-w64)
 
 %URL%
-http://rtmpdump.mplayerhq.hu/
+https://rtmpdump.mplayerhq.hu/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1488458071
+1561538265
 
 %INSTALLDATE%
-1488534856
+1561605161
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-708608
+686080
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 mingw-w64-i686-make
 
 %VERSION%
-4.2.1-2
+4.2.1-3
 
 %BASE%
 mingw-w64-make
@@ -17,16 +17,16 @@ https://www.gnu.org/software/make
 any
 
 %BUILDDATE%
-1515483968
+1561964736
 
 %INSTALLDATE%
-1515636327
+1562037100
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-291840
+288768
 
 %GROUPS%
 mingw-w64-i686-toolchain

@@ -2,7 +2,7 @@
 bsdtar
 
 %VERSION%
-3.4.0-1
+3.4.0-2
 
 %BASE%
 libarchive
@@ -17,16 +17,16 @@ https://libarchive.org/
 i686
 
 %BUILDDATE%
-1560458306
+1561983539
 
 %INSTALLDATE%
-1560481893
+1562037097
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3361792
+3298304
 
 %GROUPS%
 base

@@ -1,35 +1,39 @@
 %NAME%
-mingw-w64-i686-bzip2
+bzip2
 
 %VERSION%
-1.0.6-6
+1.0.7-1
 
 %BASE%
-mingw-w64-bzip2
+bzip2
 
 %DESC%
-A high-quality data compression program (mingw-w64)
+A high-quality data compression program
 
 %URL%
 http://www.bzip.org
 
 %ARCH%
-any
+i686
 
 %BUILDDATE%
-1484487506
+1561983368
 
 %INSTALLDATE%
-1485655727
+1562037097
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-368640
+317440
 
 %REASON%
 1
+
+%GROUPS%
+base
+compression
 
 %LICENSE%
 custom
@@ -38,5 +42,5 @@ custom
 pgp
 
 %DEPENDS%
-mingw-w64-i686-gcc-libs
+libbz2
 

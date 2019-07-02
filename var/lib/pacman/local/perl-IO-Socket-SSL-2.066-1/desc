@@ -2,7 +2,7 @@
 perl-IO-Socket-SSL
 
 %VERSION%
-2.060-1
+2.066-1
 
 %BASE%
 perl-IO-Socket-SSL
@@ -17,16 +17,16 @@ http://search.cpan.org/dist/IO-Socket-SSL/
 any
 
 %BUILDDATE%
-1540875936
+1561984154
 
 %INSTALLDATE%
-1540955564
+1562037100
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-389120
+403456
 
 %REASON%
 1

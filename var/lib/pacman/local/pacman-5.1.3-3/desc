@@ -2,7 +2,7 @@
 pacman
 
 %VERSION%
-5.1.3-2
+5.1.3-3
 
 %BASE%
 pacman
@@ -17,16 +17,16 @@ https://www.archlinux.org/pacman/
 i686
 
 %BUILDDATE%
-1559078695
+1561994673
 
 %INSTALLDATE%
-1559123951
+1562037092
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-50724864
+51054592
 
 %GROUPS%
 base

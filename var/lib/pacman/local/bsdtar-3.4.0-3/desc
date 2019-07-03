@@ -1,8 +1,8 @@
 %NAME%
-libarchive
+bsdtar
 
 %VERSION%
-3.4.0-2
+3.4.0-3
 
 %BASE%
 libarchive
@@ -17,19 +17,19 @@ https://libarchive.org/
 i686
 
 %BUILDDATE%
-1561983539
+1562052279
 
 %INSTALLDATE%
-1562037097
+1562123510
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3198976
+3297280
 
 %GROUPS%
-libraries
+base
 
 %LICENSE%
 BSD

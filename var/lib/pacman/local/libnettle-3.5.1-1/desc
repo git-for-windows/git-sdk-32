@@ -1,8 +1,8 @@
 %NAME%
-libhogweed
+libnettle
 
 %VERSION%
-3.4.1-1
+3.5.1-1
 
 %BASE%
 nettle
@@ -17,16 +17,16 @@ https://www.lysator.liu.se/~nisse/nettle/
 i686
 
 %BUILDDATE%
-1544167338
+1562051905
 
 %INSTALLDATE%
-1544411507
+1562123509
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-211968
+239616
 
 %REASON%
 1
@@ -41,5 +41,5 @@ GPL2
 pgp
 
 %DEPENDS%
-gmp
+libhogweed
 

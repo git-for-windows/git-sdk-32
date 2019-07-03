@@ -1,42 +1,45 @@
 %NAME%
-vim
+nettle
 
 %VERSION%
-8.1.1561-1
+3.5.1-1
 
 %BASE%
-vim
+nettle
 
 %DESC%
-
+A low-level cryptographic library
 
 %URL%
-http://www.vim.org
+https://www.lysator.liu.se/~nisse/nettle/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1561051539
+1562051905
 
 %INSTALLDATE%
-1561086718
+1562123511
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-47597568
+163840
+
+%REASON%
+1
 
 %GROUPS%
-editors
+net-utils
 
 %LICENSE%
-custom:vim
+GPL2
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-ncurses
+libnettle
 

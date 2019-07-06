@@ -191,6 +191,7 @@ mingw32/i686-w64-mingw32/include/compressapi.h
 mingw32/i686-w64-mingw32/include/compstui.h
 mingw32/i686-w64-mingw32/include/comsvcs.h
 mingw32/i686-w64-mingw32/include/comutil.h
+mingw32/i686-w64-mingw32/include/concurrencysal.h
 mingw32/i686-w64-mingw32/include/confpriv.h
 mingw32/i686-w64-mingw32/include/conio.h
 mingw32/i686-w64-mingw32/include/control.h
@@ -626,6 +627,7 @@ mingw32/i686-w64-mingw32/include/GL/glcorearb.h
 mingw32/i686-w64-mingw32/include/GL/glext.h
 mingw32/i686-w64-mingw32/include/GL/glu.h
 mingw32/i686-w64-mingw32/include/GL/glxext.h
+mingw32/i686-w64-mingw32/include/GL/wgl.h
 mingw32/i686-w64-mingw32/include/GL/wglext.h
 mingw32/i686-w64-mingw32/include/gpedit.h
 mingw32/i686-w64-mingw32/include/gpio.h
@@ -731,6 +733,8 @@ mingw32/i686-w64-mingw32/include/ivec.h
 mingw32/i686-w64-mingw32/include/iwamreg.h
 mingw32/i686-w64-mingw32/include/jobapi.h
 mingw32/i686-w64-mingw32/include/kcom.h
+mingw32/i686-w64-mingw32/include/KHR/
+mingw32/i686-w64-mingw32/include/KHR/khrplatform.h
 mingw32/i686-w64-mingw32/include/knownfolders.h
 mingw32/i686-w64-mingw32/include/ks.h
 mingw32/i686-w64-mingw32/include/ksdebug.h
@@ -979,6 +983,7 @@ mingw32/i686-w64-mingw32/include/netfw.h
 mingw32/i686-w64-mingw32/include/netfw.idl
 mingw32/i686-w64-mingw32/include/netioapi.h
 mingw32/i686-w64-mingw32/include/netlistmgr.h
+mingw32/i686-w64-mingw32/include/netlistmgr.idl
 mingw32/i686-w64-mingw32/include/netmon.h
 mingw32/i686-w64-mingw32/include/netprov.h
 mingw32/i686-w64-mingw32/include/nettypes.h

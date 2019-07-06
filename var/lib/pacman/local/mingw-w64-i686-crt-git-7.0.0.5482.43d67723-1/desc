@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-headers-git
+mingw-w64-i686-crt-git
 
 %VERSION%
-7.0.0.5449.a0647123-1
+7.0.0.5482.43d67723-1
 
 %BASE%
-mingw-w64-headers-git
+mingw-w64-crt-git
 
 %DESC%
-MinGW-w64 headers for Windows
+MinGW-w64 CRT for Windows
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1558074349
+1562324299
 
 %INSTALLDATE%
-1558149084
+1562382618
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-66793472
+60966912
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,11 +38,14 @@ custom
 pgp
 
 %REPLACES%
-mingw-w64-i686-headers-svn
+mingw-w64-i686-crt-svn
+
+%DEPENDS%
+mingw-w64-i686-headers-git
 
 %CONFLICTS%
-mingw-w64-i686-headers
+mingw-w64-i686-crt
 
 %PROVIDES%
-mingw-w64-i686-headers
+mingw-w64-i686-crt
 

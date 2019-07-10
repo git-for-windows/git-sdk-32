@@ -7,7 +7,7 @@ exit_with_usage ()
 }
 
 # Really, python-config.py (and thus .sh) should be called directly, but
-# sometimes software (e.g. GDB) calls python-config.sh as if it were the
+# sometimes software (e.g. GDB) calls python2-config.sh as if it were the
 # Python executable, passing python-config.py as the first argument.
 # Work around that oddness by ignoring any .py passed as first arg.
 case "$1" in

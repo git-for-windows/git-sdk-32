@@ -1,14 +1,14 @@
 %NAME%
-curl
+libcurl
 
 %VERSION%
-7.65.2-1
+7.65.3-1
 
 %BASE%
 curl
 
 %DESC%
-Multi-protocol file transfer utility
+Multi-protocol file transfer library (runtime)
 
 %URL%
 https://curl.haxx.se
@@ -17,22 +17,22 @@ https://curl.haxx.se
 i686
 
 %BUILDDATE%
-1563353509
+1563544711
 
 %INSTALLDATE%
-1563419552
+1563592350
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-873472
+605184
 
 %REASON%
 1
 
 %GROUPS%
-base
+libraries
 
 %LICENSE%
 MIT
@@ -42,11 +42,13 @@ pgp
 
 %DEPENDS%
 ca-certificates
-libcurl
+heimdal-libs
 libcrypt
+libidn2
 libmetalink
 libnghttp2
 libpsl
+libssh2
 openssl
 zlib
 

@@ -1,8 +1,8 @@
 %NAME%
-bsdtar
+libarchive
 
 %VERSION%
-3.4.0-3
+3.4.0-4
 
 %BASE%
 libarchive
@@ -17,19 +17,19 @@ https://libarchive.org/
 i686
 
 %BUILDDATE%
-1562052279
+1563774151
 
 %INSTALLDATE%
-1562123510
+1563851539
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3297280
+3670016
 
 %GROUPS%
-base
+libraries
 
 %LICENSE%
 BSD
@@ -47,5 +47,6 @@ liblz4
 liblzo2
 libnettle
 libxml2
+libzstd
 zlib
 

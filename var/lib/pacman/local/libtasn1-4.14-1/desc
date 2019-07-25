@@ -2,7 +2,7 @@
 libtasn1
 
 %VERSION%
-4.13-1
+4.14-1
 
 %BASE%
 libtasn1
@@ -17,16 +17,16 @@ https://www.gnu.org/software/libtasn1/
 i686
 
 %BUILDDATE%
-1518116393
+1563958582
 
 %INSTALLDATE%
-1518455158
+1564024344
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-131072
+132096
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 libgnutls
 
 %VERSION%
-3.6.8-2
+3.6.9-1
 
 %BASE%
 gnutls
@@ -17,16 +17,16 @@ https://www.gnutls.org/
 i686
 
 %BUILDDATE%
-1562052832
+1564482364
 
 %INSTALLDATE%
-1562123510
+1564542705
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2563072
+2587648
 
 %REASON%
 1

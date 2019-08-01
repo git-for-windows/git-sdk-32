@@ -2,7 +2,7 @@
 mingw-w64-i686-termcap
 
 %VERSION%
-1.3.1-4
+1.3.1-5
 
 %BASE%
 mingw-w64-termcap
@@ -11,16 +11,16 @@ mingw-w64-termcap
 Terminal feature database (mingw-w64)
 
 %URL%
-https://www.gnu.org/gnu/termcap/
+https://www.gnu.org/software/termutils/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1562417478
+1564567807
 
 %INSTALLDATE%
-1562555507
+1564629164
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>

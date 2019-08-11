@@ -2,7 +2,7 @@
 mingw-w64-i686-glib2
 
 %VERSION%
-2.60.4-2
+2.60.6-1
 
 %BASE%
 mingw-w64-glib2
@@ -17,16 +17,16 @@ https://www.gtk.org/
 any
 
 %BUILDDATE%
-1560748050
+1565434042
 
 %INSTALLDATE%
-1560827519
+1565493121
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-42958848
+42977280
 
 %REASON%
 1

@@ -33,6 +33,8 @@ mingw32/include/harfbuzz/hb-ot-deprecated.h
 mingw32/include/harfbuzz/hb-ot-font.h
 mingw32/include/harfbuzz/hb-ot-layout.h
 mingw32/include/harfbuzz/hb-ot-math.h
+mingw32/include/harfbuzz/hb-ot-meta.h
+mingw32/include/harfbuzz/hb-ot-metrics.h
 mingw32/include/harfbuzz/hb-ot-name.h
 mingw32/include/harfbuzz/hb-ot-shape.h
 mingw32/include/harfbuzz/hb-ot-var.h

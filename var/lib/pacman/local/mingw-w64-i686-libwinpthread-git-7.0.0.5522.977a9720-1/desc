@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-headers-git
+mingw-w64-i686-libwinpthread-git
 
 %VERSION%
-7.0.0.5490.9ec54ed1-1
+7.0.0.5522.977a9720-1
 
 %BASE%
-mingw-w64-headers-git
+mingw-w64-winpthreads-git
 
 %DESC%
-MinGW-w64 headers for Windows
+MinGW-w64 winpthreads library
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,32 +17,33 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1564032312
+1567062461
 
 %INSTALLDATE%
-1564110729
+1567394053
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-67173376
+72704
 
 %GROUPS%
 mingw-w64-i686-toolchain
 
 %LICENSE%
-custom
+MIT
+BSD
 
 %VALIDATION%
 pgp
 
 %REPLACES%
-mingw-w64-i686-headers-svn
+mingw-w64-i686-libwinpthread-svn
 
 %CONFLICTS%
-mingw-w64-i686-headers
+mingw-w64-i686-libwinpthread
 
 %PROVIDES%
-mingw-w64-i686-headers
+mingw-w64-i686-libwinpthread
 

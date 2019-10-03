@@ -2,7 +2,7 @@
 mingw-w64-i686-zstd
 
 %VERSION%
-1.4.2-1
+1.4.3-1
 
 %BASE%
 mingw-w64-zstd
@@ -17,16 +17,16 @@ https://facebook.github.io/zstd/
 any
 
 %BUILDDATE%
-1564375306
+1569993862
 
 %INSTALLDATE%
-1564456402
+1570072387
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2743296
+2811904
 
 %REASON%
 1

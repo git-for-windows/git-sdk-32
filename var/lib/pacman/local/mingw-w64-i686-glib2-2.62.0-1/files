@@ -119,6 +119,7 @@ mingw32/include/glib-2.0/gio/gmenuexporter.h
 mingw32/include/glib-2.0/gio/gmenumodel.h
 mingw32/include/glib-2.0/gio/gmount.h
 mingw32/include/glib-2.0/gio/gmountoperation.h
+mingw32/include/glib-2.0/gio/gnativesocketaddress.h
 mingw32/include/glib-2.0/gio/gnativevolumemonitor.h
 mingw32/include/glib-2.0/gio/gnetworkaddress.h
 mingw32/include/glib-2.0/gio/gnetworking.h
@@ -493,7 +494,6 @@ mingw32/share/gtk-doc/html/gio/gio-GUnixFDMessage.html
 mingw32/share/gtk-doc/html/gio/gio-GUnixInputStream.html
 mingw32/share/gtk-doc/html/gio/gio-GUnixOutputStream.html
 mingw32/share/gtk-doc/html/gio/gio-GUnixSocketAddress.html
-mingw32/share/gtk-doc/html/gio/gio-GWin32RegistryKey.html
 mingw32/share/gtk-doc/html/gio/gio-hierarchy.html
 mingw32/share/gtk-doc/html/gio/gio-Owning-Bus-Names.html
 mingw32/share/gtk-doc/html/gio/gio-querymodules.html
@@ -514,6 +514,7 @@ mingw32/share/gtk-doc/html/gio/GMenu.html
 mingw32/share/gtk-doc/html/gio/GMenuModel.html
 mingw32/share/gtk-doc/html/gio/GMount.html
 mingw32/share/gtk-doc/html/gio/GMountOperation.html
+mingw32/share/gtk-doc/html/gio/GNativeSocketAddress.html
 mingw32/share/gtk-doc/html/gio/GNetworkAddress.html
 mingw32/share/gtk-doc/html/gio/GNetworkMonitor.html
 mingw32/share/gtk-doc/html/gio/GNetworkService.html
@@ -572,8 +573,6 @@ mingw32/share/gtk-doc/html/gio/gvfs-overview.png
 mingw32/share/gtk-doc/html/gio/GVfs.html
 mingw32/share/gtk-doc/html/gio/GVolume.html
 mingw32/share/gtk-doc/html/gio/GVolumeMonitor.html
-mingw32/share/gtk-doc/html/gio/GWin32InputStream.html
-mingw32/share/gtk-doc/html/gio/GWin32OutputStream.html
 mingw32/share/gtk-doc/html/gio/GZlibCompressor.html
 mingw32/share/gtk-doc/html/gio/GZlibDecompressor.html
 mingw32/share/gtk-doc/html/gio/highlevel-socket.html
@@ -589,7 +588,6 @@ mingw32/share/gtk-doc/html/gio/networking.html
 mingw32/share/gtk-doc/html/gio/permissions.html
 mingw32/share/gtk-doc/html/gio/pt01.html
 mingw32/share/gtk-doc/html/gio/pt02.html
-mingw32/share/gtk-doc/html/gio/registry.html
 mingw32/share/gtk-doc/html/gio/resolver.html
 mingw32/share/gtk-doc/html/gio/resources.html
 mingw32/share/gtk-doc/html/gio/right-insensitive.png
@@ -607,6 +605,7 @@ mingw32/share/gtk-doc/html/gio/up-insensitive.png
 mingw32/share/gtk-doc/html/gio/up.png
 mingw32/share/gtk-doc/html/gio/utils.html
 mingw32/share/gtk-doc/html/gio/volume_mon.html
+mingw32/share/gtk-doc/html/gio/win32-support.html
 mingw32/share/gtk-doc/html/glib/
 mingw32/share/gtk-doc/html/glib/annotation-glossary.html
 mingw32/share/gtk-doc/html/glib/api-index-2-10.html
@@ -638,9 +637,11 @@ mingw32/share/gtk-doc/html/glib/api-index-2-56.html
 mingw32/share/gtk-doc/html/glib/api-index-2-58.html
 mingw32/share/gtk-doc/html/glib/api-index-2-6.html
 mingw32/share/gtk-doc/html/glib/api-index-2-60.html
+mingw32/share/gtk-doc/html/glib/api-index-2-62.html
 mingw32/share/gtk-doc/html/glib/api-index-2-8.html
 mingw32/share/gtk-doc/html/glib/api-index-deprecated.html
 mingw32/share/gtk-doc/html/glib/api-index-full.html
+mingw32/share/gtk-doc/html/glib/deprecated-tools.html
 mingw32/share/gtk-doc/html/glib/deprecated.html
 mingw32/share/gtk-doc/html/glib/file-name-encodings.png
 mingw32/share/gtk-doc/html/glib/glib-Arrays.html
@@ -776,6 +777,7 @@ mingw32/share/gtk-doc/html/gobject/api-index-2-46.html
 mingw32/share/gtk-doc/html/gobject/api-index-2-54.html
 mingw32/share/gtk-doc/html/gobject/api-index-2-56.html
 mingw32/share/gtk-doc/html/gobject/api-index-2-6.html
+mingw32/share/gtk-doc/html/gobject/api-index-2-62.html
 mingw32/share/gtk-doc/html/gobject/api-index-2-8.html
 mingw32/share/gtk-doc/html/gobject/api-index-deprecated.html
 mingw32/share/gtk-doc/html/gobject/api-index-full.html

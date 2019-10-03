@@ -2,7 +2,7 @@
 mingw-w64-i686-ruby
 
 %VERSION%
-2.6.3-4
+2.6.5-1
 
 %BASE%
 mingw-w64-ruby
@@ -17,16 +17,16 @@ https://www.ruby-lang.org/en
 any
 
 %BUILDDATE%
-1562445543
+1570032383
 
 %INSTALLDATE%
-1562555538
+1570072387
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-24358912
+24435712
 
 %REASON%
 1

@@ -4,9 +4,9 @@
 #define __STDC_UTF_32__ 1
 #define __STDC_HOSTED__ 1
 #define __GNUC__ 9
-#define __GNUC_MINOR__ 1
+#define __GNUC_MINOR__ 2
 #define __GNUC_PATCHLEVEL__ 0
-#define __VERSION__ "9.1.0"
+#define __VERSION__ "9.2.0"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -347,7 +347,6 @@
 #define _FORTIFY_SOURCE 2
 #define RUBY_EXPORT 1
 #define CANONICALIZATION_FOR_MATHN 1
-#define _FORTIFY_SOURCE 2
 #define __USE_MINGW_ANSI_STDIO 1
 #define FD_SETSIZE 2048
 #define _WIN32_WINNT 0x0600
@@ -11739,11 +11738,11 @@ typedef struct tagPOINTS {
     ULONG_PTR Internal;
     ULONG_PTR InternalHigh;
     __extension__ union {
-      struct {
- DWORD Offset;
- DWORD OffsetHigh;
-      } ;
-      PVOID Pointer;
+        struct {
+            DWORD Offset;
+            DWORD OffsetHigh;
+        } ;
+        PVOID Pointer;
     } ;
     HANDLE hEvent;
   } OVERLAPPED, *LPOVERLAPPED;
@@ -11825,6 +11824,8 @@ typedef struct tagPOINTS {
     FileRemoteProtocolInfo,
     FileFullDirectoryInfo,
     FileFullDirectoryRestartInfo,
+    FileCaseSensitiveInfo,
+    FileNormalizedNameInfo,
     MaximumFileInfoByHandleClass
   } FILE_INFO_BY_HANDLE_CLASS, *PFILE_INFO_BY_HANDLE_CLASS;
   typedef RTL_CRITICAL_SECTION CRITICAL_SECTION;
@@ -11843,34 +11844,35 @@ typedef struct tagPOINTS {
     BYTE iRegionIndex;
     WORD wFlags;
     __extension__ union {
-      struct {
- HANDLE hMem;
- DWORD dwReserved[3];
-      } Block;
-      struct {
- DWORD dwCommittedSize;
- DWORD dwUnCommittedSize;
- LPVOID lpFirstBlock;
- LPVOID lpLastBlock;
-      } Region;
+        struct {
+            HANDLE hMem;
+            DWORD dwReserved[3];
+        } Block;
+        struct {
+            DWORD dwCommittedSize;
+            DWORD dwUnCommittedSize;
+            LPVOID lpFirstBlock;
+            LPVOID lpLastBlock;
+        } Region;
     } ;
   } PROCESS_HEAP_ENTRY,*LPPROCESS_HEAP_ENTRY,*PPROCESS_HEAP_ENTRY;
 #define PROCESS_HEAP_REGION 0x1
 #define PROCESS_HEAP_UNCOMMITTED_RANGE 0x2
 #define PROCESS_HEAP_ENTRY_BUSY 0x4
+#define PROCESS_HEAP_SEG_ALLOC 0x8
 #define PROCESS_HEAP_ENTRY_MOVEABLE 0x10
 #define PROCESS_HEAP_ENTRY_DDESHARE 0x20
   typedef struct _REASON_CONTEXT {
     ULONG Version;
     DWORD Flags;
     union {
-      struct {
- HMODULE LocalizedReasonModule;
- ULONG LocalizedReasonId;
- ULONG ReasonStringCount;
- LPWSTR *ReasonStrings;
-      } Detailed;
-      LPWSTR SimpleReasonString;
+        struct {
+            HMODULE LocalizedReasonModule;
+            ULONG LocalizedReasonId;
+            ULONG ReasonStringCount;
+            LPWSTR *ReasonStrings;
+        } Detailed;
+        LPWSTR SimpleReasonString;
     } Reason;
   } REASON_CONTEXT, *PREASON_CONTEXT;
 #define EXCEPTION_DEBUG_EVENT 1
@@ -11884,6 +11886,8 @@ typedef struct tagPOINTS {
 #define RIP_EVENT 9
   typedef DWORD (__attribute__((__stdcall__)) *PTHREAD_START_ROUTINE) (LPVOID lpThreadParameter);
   typedef PTHREAD_START_ROUTINE LPTHREAD_START_ROUTINE;
+  typedef LPVOID (__attribute__((__stdcall__)) *PENCLAVE_ROUTINE) (LPVOID lpThreadParameter);
+  typedef PENCLAVE_ROUTINE LPENCLAVE_ROUTINE;
   typedef struct _EXCEPTION_DEBUG_INFO {
     EXCEPTION_RECORD ExceptionRecord;
     DWORD dwFirstChance;
@@ -11989,6 +11993,7 @@ typedef struct tagPOINTS {
 #define LocalDiscard(h) LocalReAlloc ((h), 0, LMEM_MOVEABLE)
 #define LMEM_DISCARDED 0x4000
 #define LMEM_LOCKCOUNT 0xff
+#define NUMA_NO_PREFERRED_NODE ((DWORD) -1)
 #define _BEM_H_ 
   typedef struct _CONTRACT_DESCRIPTION CONTRACT_DESCRIPTION;
   typedef struct _BEM_REFERENCE BEM_REFERENCE;
@@ -27175,6 +27180,7 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetCurrentConsol
 #define RRF_RT_ANY 0x0000ffff
 #define RRF_NOEXPAND 0x10000000
 #define RRF_ZEROONFAILURE 0x20000000
+#define REG_PROCESS_APPKEY 0x00000001
   typedef ACCESS_MASK REGSAM;
   typedef LONG LSTATUS;
 #define HKEY_CLASSES_ROOT ((HKEY) (ULONG_PTR)((LONG)0x80000000))
@@ -27186,7 +27192,7 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetCurrentConsol
 #define HKEY_PERFORMANCE_NLSTEXT ((HKEY) (ULONG_PTR)((LONG)0x80000060))
 #define HKEY_CURRENT_CONFIG ((HKEY) (ULONG_PTR)((LONG)0x80000005))
 #define HKEY_DYN_DATA ((HKEY) (ULONG_PTR)((LONG)0x80000006))
-#define REG_SECURE_CONNECTION 1
+#define HKEY_CURRENT_USER_LOCAL_SETTINGS ((HKEY) (ULONG_PTR)((LONG)0x80000007))
 #define _PROVIDER_STRUCTS_DEFINED 
 #define PROVIDER_KEEPS_VALUE_LENGTH 0x1
   struct val_context {
@@ -27235,6 +27241,8 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetCurrentConsol
   typedef VALENTA VALENT;
   typedef PVALENTA PVALENT;
 #define WIN31_CLASS NULL
+#define REG_MUI_STRING_TRUNCATE 0x00000001
+#define REG_SECURE_CONNECTION 1
 #define RegConnectRegistry __MINGW_NAME_AW(RegConnectRegistry)
 #define RegConnectRegistryEx __MINGW_NAME_AW(RegConnectRegistryEx)
 #define RegCreateKey __MINGW_NAME_AW(RegCreateKey)
@@ -27266,6 +27274,7 @@ __attribute__((dllimport)) WINBOOL __attribute__((__stdcall__)) SetCurrentConsol
   __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegOpenUserClassesRoot(HANDLE hToken,DWORD dwOptions,REGSAM samDesired,PHKEY phkResult);
   __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegOpenCurrentUser(REGSAM samDesired,PHKEY phkResult);
   __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegDisablePredefinedCache(void);
+  __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegDisablePredefinedCacheEx(void);
   __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegConnectRegistryA(LPCSTR lpMachineName,HKEY hKey,PHKEY phkResult);
   __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegConnectRegistryW(LPCWSTR lpMachineName,HKEY hKey,PHKEY phkResult);
   __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegConnectRegistryExA(LPCSTR lpMachineName,HKEY hKey,ULONG Flags,PHKEY phkResult);
@@ -27484,7 +27493,6 @@ __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegDeleteTreeW(
   HKEY hKey,
   LPCWSTR lpSubKey
 );
-__attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegDisablePredefinedCacheEx(void);
 __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegLoadAppKeyA(
   LPCSTR lpFile,
   PHKEY phkResult,
@@ -27521,6 +27529,10 @@ __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegOpenKeyTransacte
   HANDLE hTransaction,
   PVOID pExtendedParameter
 );
+__attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegRenameKey(
+  HKEY hKey,
+  LPCWSTR lpSubKeyName,
+  LPCWSTR lpNewKeyName);
 #define RegOpenKeyTransacted __MINGW_NAME_AW(RegOpenKeyTransacted)
 __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegSetKeyValueA(
   HKEY hKey,
@@ -27547,7 +27559,12 @@ __attribute__((dllimport)) LONG __attribute__((__stdcall__)) RegSetKeyValueW(
 #define SHUTDOWN_GRACE_OVERRIDE 0x00000020
 #define SHUTDOWN_INSTALL_UPDATES 0x00000040
 #define SHUTDOWN_RESTARTAPPS 0x00000080
+#define SHUTDOWN_SKIP_SVC_PRESHUTDOWN 0x00000100
 #define SHUTDOWN_HYBRID 0x00000200
+#define SHUTDOWN_RESTART_BOOTOPTIONS 0x00000400
+#define SHUTDOWN_SOFT_REBOOT 0x00000800
+#define SHUTDOWN_MOBILE_UI 0x00001000
+#define SHUTDOWN_ARSO 0x00002000
 __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) InitiateShutdownA(
   LPSTR lpMachineName,
   LPSTR lpMessage,
@@ -27563,6 +27580,10 @@ __attribute__((dllimport)) DWORD __attribute__((__stdcall__)) InitiateShutdownW(
   DWORD dwReason
 );
 #define InitiateShutdown __MINGW_NAME_AW(InitiateShutdown)
+__attribute__((dllimport)) DWORD __attribute__((__stdcall__)) CheckForHiberboot(
+  PBOOLEAN pHiberboot,
+  BOOLEAN bClearFlag
+);
 #define _WINNETWK_ 
 #define _WNNC_ 
 #define WNNC_NET_MSNET 0x00010000
@@ -38659,136 +38680,69 @@ extern const GUID IID_IUnknown;
 typedef struct IUnknownVtbl {
    
     HRESULT (__attribute__((__stdcall__)) *QueryInterface)(
-        IUnknown* This,
+        IUnknown *This,
         const IID *const riid,
         void **ppvObject);
     ULONG (__attribute__((__stdcall__)) *AddRef)(
-        IUnknown* This);
+        IUnknown *This);
     ULONG (__attribute__((__stdcall__)) *Release)(
-        IUnknown* This);
+        IUnknown *This);
    
 } IUnknownVtbl;
 struct IUnknown {
     IUnknownVtbl* lpVtbl;
 };
-HRESULT __attribute__((__stdcall__)) IUnknown_QueryInterface_Proxy(
-    IUnknown* This,
-    const IID *const riid,
-    void **ppvObject);
-void __attribute__((__stdcall__)) IUnknown_QueryInterface_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-ULONG __attribute__((__stdcall__)) IUnknown_AddRef_Proxy(
-    IUnknown* This);
-void __attribute__((__stdcall__)) IUnknown_AddRef_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-ULONG __attribute__((__stdcall__)) IUnknown_Release_Proxy(
-    IUnknown* This);
-void __attribute__((__stdcall__)) IUnknown_Release_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
 #define __AsyncIUnknown_INTERFACE_DEFINED__ 
 extern const GUID IID_AsyncIUnknown;
 typedef struct AsyncIUnknownVtbl {
    
     HRESULT (__attribute__((__stdcall__)) *QueryInterface)(
-        AsyncIUnknown* This,
+        AsyncIUnknown *This,
         const IID *const riid,
         void **ppvObject);
     ULONG (__attribute__((__stdcall__)) *AddRef)(
-        AsyncIUnknown* This);
+        AsyncIUnknown *This);
     ULONG (__attribute__((__stdcall__)) *Release)(
-        AsyncIUnknown* This);
+        AsyncIUnknown *This);
     HRESULT (__attribute__((__stdcall__)) *Begin_QueryInterface)(
-        AsyncIUnknown* This,
+        AsyncIUnknown *This,
         const IID *const riid);
     HRESULT (__attribute__((__stdcall__)) *Finish_QueryInterface)(
-        AsyncIUnknown* This,
+        AsyncIUnknown *This,
         void **ppvObject);
     HRESULT (__attribute__((__stdcall__)) *Begin_AddRef)(
-        AsyncIUnknown* This);
+        AsyncIUnknown *This);
     ULONG (__attribute__((__stdcall__)) *Finish_AddRef)(
-        AsyncIUnknown* This);
+        AsyncIUnknown *This);
     HRESULT (__attribute__((__stdcall__)) *Begin_Release)(
-        AsyncIUnknown* This);
+        AsyncIUnknown *This);
     ULONG (__attribute__((__stdcall__)) *Finish_Release)(
-        AsyncIUnknown* This);
+        AsyncIUnknown *This);
    
 } AsyncIUnknownVtbl;
 struct AsyncIUnknown {
     AsyncIUnknownVtbl* lpVtbl;
 };
-HRESULT __attribute__((__stdcall__)) AsyncIUnknown_Begin_QueryInterface_Proxy(
-    AsyncIUnknown* This,
-    const IID *const riid);
-void __attribute__((__stdcall__)) AsyncIUnknown_Begin_QueryInterface_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-HRESULT __attribute__((__stdcall__)) AsyncIUnknown_Finish_QueryInterface_Proxy(
-    AsyncIUnknown* This,
-    void **ppvObject);
-void __attribute__((__stdcall__)) AsyncIUnknown_Finish_QueryInterface_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-HRESULT __attribute__((__stdcall__)) AsyncIUnknown_Begin_AddRef_Proxy(
-    AsyncIUnknown* This);
-void __attribute__((__stdcall__)) AsyncIUnknown_Begin_AddRef_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-ULONG __attribute__((__stdcall__)) AsyncIUnknown_Finish_AddRef_Proxy(
-    AsyncIUnknown* This);
-void __attribute__((__stdcall__)) AsyncIUnknown_Finish_AddRef_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-HRESULT __attribute__((__stdcall__)) AsyncIUnknown_Begin_Release_Proxy(
-    AsyncIUnknown* This);
-void __attribute__((__stdcall__)) AsyncIUnknown_Begin_Release_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
-ULONG __attribute__((__stdcall__)) AsyncIUnknown_Finish_Release_Proxy(
-    AsyncIUnknown* This);
-void __attribute__((__stdcall__)) AsyncIUnknown_Finish_Release_Stub(
-    IRpcStubBuffer* This,
-    IRpcChannelBuffer* pRpcChannelBuffer,
-    PRPC_MESSAGE pRpcMessage,
-    DWORD* pdwStubPhase);
 #define __IClassFactory_INTERFACE_DEFINED__ 
 typedef IClassFactory *LPCLASSFACTORY;
 extern const GUID IID_IClassFactory;
 typedef struct IClassFactoryVtbl {
    
     HRESULT (__attribute__((__stdcall__)) *QueryInterface)(
-        IClassFactory* This,
+        IClassFactory *This,
         const IID *const riid,
         void **ppvObject);
     ULONG (__attribute__((__stdcall__)) *AddRef)(
-        IClassFactory* This);
+        IClassFactory *This);
     ULONG (__attribute__((__stdcall__)) *Release)(
-        IClassFactory* This);
+        IClassFactory *This);
     HRESULT (__attribute__((__stdcall__)) *CreateInstance)(
-        IClassFactory* This,
+        IClassFactory *This,
         IUnknown *pUnkOuter,
         const IID *const riid,
         void **ppvObject);
     HRESULT (__attribute__((__stdcall__)) *LockServer)(
-        IClassFactory* This,
+        IClassFactory *This,
         WINBOOL fLock);
    
 } IClassFactoryVtbl;
@@ -76205,7 +76159,7 @@ int rb_singleton_class_internal_p(VALUE sklass);
 static inline void
 RCLASS_SET_ORIGIN(VALUE klass, VALUE origin)
 {
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.6.3/internal.h", 1006);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.6.5/internal.h", 1006);
     if (klass != origin) ((!(((VALUE)(origin) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(origin) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(origin))->flags & RUBY_T_MASK) != RUBY_T_NODE) ? (void)(((struct RBasic*)(origin))->flags |= (((VALUE)RUBY_FL_USER5))) : (void)0);
 }
 #undef RCLASS_SUPER
@@ -76221,7 +76175,7 @@ RCLASS_SET_SUPER(VALUE klass, VALUE super)
  rb_class_remove_from_super_subclasses(klass);
  rb_class_subclass_add(super, klass);
     }
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.6.3/internal.h", 1024);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.6.5/internal.h", 1024);
     return super;
 }
 #define IMEMO_DEBUG 0
@@ -76861,6 +76815,7 @@ long rb_reg_search0(VALUE, VALUE, long, int, int);
 VALUE rb_reg_match_p(VALUE re, VALUE str, long pos);
 _Bool rb_reg_start_with_p(VALUE re, VALUE str);
 void rb_backref_set_string(VALUE string, long pos, long len);
+void rb_match_unbusy(VALUE);
 int rb_match_count(VALUE match);
 int rb_match_nth_defined(int nth, VALUE match);
 VALUE rb_reg_new_ary(VALUE ary, int options);
@@ -78059,8 +78014,8 @@ static inline void list_del_init_(struct list_node *n, const char *abortstr)
 }
 static inline void list_del_from(struct list_head *h, struct list_node *n)
 {
- (void) ((!!(!list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.6.3/ccan/list/list.h",328),0));
- list_del_(n, "../ruby-2.6.3/ccan/list/list.h" ":" "329");
+ (void) ((!!(!list_empty_(h, "../ruby-2.6.5/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.6.5/ccan/list/list.h",328),0));
+ list_del_(n, "../ruby-2.6.5/ccan/list/list.h" ":" "329");
 }
 #define list_swap(o,n) list_swap_(o, n, LIST_LOC)
 static inline void list_swap_(struct list_node *o,
@@ -78076,7 +78031,7 @@ static inline void list_swap_(struct list_node *o,
 #define list_top(h,type,member) ((type *)list_top_((h), list_off_(type, member)))
 static inline const void *list_top_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "399"))
+ if (list_empty_(h, "../ruby-2.6.5/ccan/list/list.h" ":" "399"))
   return ((void *)0);
  return (const char *)h->n.next - off;
 }
@@ -78084,16 +78039,16 @@ static inline const void *list_top_(const struct list_head *h, size_t off)
 static inline const void *list_pop_(const struct list_head *h, size_t off)
 {
  struct list_node *n;
- if (list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "425"))
+ if (list_empty_(h, "../ruby-2.6.5/ccan/list/list.h" ":" "425"))
   return ((void *)0);
  n = h->n.next;
- list_del_(n, "../ruby-2.6.3/ccan/list/list.h" ":" "428");
+ list_del_(n, "../ruby-2.6.5/ccan/list/list.h" ":" "428");
  return (const char *)n - off;
 }
 #define list_tail(h,type,member) ((type *)list_tail_((h), list_off_(type, member)))
 static inline const void *list_tail_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.6.3/ccan/list/list.h" ":" "451"))
+ if (list_empty_(h, "../ruby-2.6.5/ccan/list/list.h" ":" "451"))
   return ((void *)0);
  return (const char *)h->n.prev - off;
 }
@@ -78114,7 +78069,7 @@ static inline void list_append_list_(struct list_head *to,
  from_tail->next = &to->n;
  to_tail->next = &from->n;
  from->n.prev = to_tail;
- list_del_(&from->n, "../ruby-2.6.3/ccan/list/list.h" ":" "600");
+ list_del_(&from->n, "../ruby-2.6.5/ccan/list/list.h" ":" "600");
  list_head_init(from);
 }
 #define list_prepend_list(t,f) list_prepend_list_(t, f, LIST_LOC)
@@ -78128,7 +78083,7 @@ static inline void list_prepend_list_(struct list_head *to,
  from->n.prev = &to->n;
  to_head->prev = from_tail;
  from_tail->next = to_head;
- list_del_(&from->n, "../ruby-2.6.3/ccan/list/list.h" ":" "632");
+ list_del_(&from->n, "../ruby-2.6.5/ccan/list/list.h" ":" "632");
  list_head_init(from);
 }
 #define list_for_each_off_dir_(h,i,off,dir) for (i = list_node_to_off_(list_debug(h, LIST_LOC)->n.dir, (off)); list_node_from_off_((void *)i, (off)) != &(h)->n; i = list_node_to_off_(list_node_from_off_((void *)i, (off))->dir, (off)))
@@ -79261,13 +79216,13 @@ rb_vm_living_threads_init(rb_vm_t *vm)
 static inline void
 rb_vm_living_threads_insert(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.6.3/vm_core.h" ":" "1648");
+    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.6.5/vm_core.h" ":" "1648");
     vm->living_thread_num++;
 }
 static inline void
 rb_vm_living_threads_remove(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_del_(&th->vmlt_node, "../ruby-2.6.3/vm_core.h" ":" "1655");
+    list_del_(&th->vmlt_node, "../ruby-2.6.5/vm_core.h" ":" "1655");
     vm->living_thread_num--;
 }
 typedef int rb_backtrace_iter_func(void *, VALUE, int, VALUE);
@@ -79759,7 +79714,7 @@ CREF_REFINEMENTS(const rb_cref_t *cref)
 static inline void
 CREF_REFINEMENTS_SET(rb_cref_t *cref, VALUE refs)
 {
-    rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.6.3/eval_intern.h", 237);
+    rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.6.5/eval_intern.h", 237);
 }
 static inline int
 CREF_PUSHED_BY_EVAL(const rb_cref_t *cref)
@@ -80059,13 +80014,13 @@ void
 rb_vm_block_ep_update(VALUE obj, const struct rb_block *dst, const VALUE *ep)
 {
     *((const VALUE **)&dst->as.captured.ep) = ep;
-    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.6.3/vm.c", 292);
+    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.6.5/vm.c", 292);
 }
 static void
 vm_bind_update_env(VALUE bindval, rb_binding_t *bind, VALUE envval)
 {
     const rb_env_t *env = (rb_env_t *)envval;
-    rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.6.3/vm.c", 299);
+    rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.6.5/vm.c", 299);
     rb_vm_block_ep_update(bindval, &bind->block, env->ep);
 }
 static VALUE vm_make_env_object(const rb_execution_context_t *ec, rb_control_frame_t *cfp);
@@ -80873,7 +80828,7 @@ lep_svar_write(const rb_execution_context_t *ec, const VALUE *lep, const struct 
  vm_env_write(lep, (-2), (VALUE)svar);
     }
     else {
- rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.6.3/vm_insnhelper.c", 441);
+ rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.6.5/vm_insnhelper.c", 441);
     }
 }
 static VALUE
@@ -80911,15 +80866,15 @@ lep_svar_set(const rb_execution_context_t *ec, const VALUE *lep, rb_num_t key, V
     }
     switch (key) {
       case VM_SVAR_LASTLINE:
- rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 487);
+ rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.6.5/vm_insnhelper.c", 487);
  return;
       case VM_SVAR_BACKREF:
- rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 490);
+ rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.6.5/vm_insnhelper.c", 490);
  return;
       default: {
  VALUE ary = svar->others;
  if (!((VALUE)(ary) != ((VALUE)RUBY_Qnil))) {
-     rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.6.3/vm_insnhelper.c", 496);
+     rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.6.5/vm_insnhelper.c", 496);
  }
  rb_ary_store(ary, key - VM_SVAR_EXTRA_START, val);
       }
@@ -81060,7 +81015,7 @@ cref_replace_with_duplicated_cref_each_frame(const VALUE *vptr, int can_be_svar,
      cref = (rb_cref_t *)v;
      new_cref = vm_cref_dup(cref);
      if (parent) {
-  rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.6.3/vm_insnhelper.c", 671);
+  rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.6.5/vm_insnhelper.c", 671);
      }
      else {
   VM_FORCE_WRITE(vptr, (VALUE)new_cref);
@@ -81361,7 +81316,7 @@ vm_setivar(VALUE obj, ID id, VALUE val, IC ic, struct rb_call_cache *cc, int is_
      VALUE *ptr = ((((struct RBasic*)(obj))->flags & ROBJECT_EMBED) ? ((struct RObject*)(obj))->as.ary : ((struct RObject*)(obj))->as.heap.ivptr);
      index = !is_attr ? ic->ic_value.index : cc->aux.index-1;
      if ((index < ((((struct RBasic*)(obj))->flags & ROBJECT_EMBED) ? ROBJECT_EMBED_LEN_MAX : ((struct RObject*)(obj))->as.heap.numiv))) {
-  rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 1025);
+  rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.6.5/vm_insnhelper.c", 1025);
   ((void)0);
   return val;
      }
@@ -81919,7 +81874,7 @@ args_copy(struct args_info *args)
  args->argc = 0;
         arg_rest_dup(args);
  while (args->rest_index > 0 && argc > 0) {
-     do { const VALUE _ary = (args->rest); const VALUE _v = (args->argv[--argc]); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 150); rb_array_ptr_use_end(_ary, 1); } while (0);
+     do { const VALUE _ary = (args->rest); const VALUE _v = (args->argv[--argc]); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.6.5/vm_args.c", 150); rb_array_ptr_use_end(_ary, 1); } while (0);
  }
  while (argc > 0) {
      rb_ary_unshift(args->rest, args->argv[--argc]);
@@ -81990,7 +81945,7 @@ args_pop_keyword_hash(struct args_info *args, VALUE *kw_hash_ptr)
      *kw_hash_ptr = (rb_array_const_ptr_transient(args->rest)[len - 1]);
      if (keyword_hash_p(kw_hash_ptr, &rest_hash)) {
   if (rest_hash) {
-      do { const VALUE _ary = (args->rest); const VALUE _v = (rest_hash); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 231); rb_array_ptr_use_end(_ary, 1); } while (0);
+      do { const VALUE _ary = (args->rest); const VALUE _v = (rest_hash); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.6.5/vm_args.c", 231); rb_array_ptr_use_end(_ary, 1); } while (0);
   }
   else {
       arg_rest_dup(args);
@@ -82548,8 +82503,8 @@ vm_caller_setup_arg_block(const rb_execution_context_t *ec, rb_control_frame_t *
   VALUE func = rb_hash_lookup(ref, block_code);
   if (!((VALUE)(func) != ((VALUE)RUBY_Qnil))) {
                     VALUE callback_arg = rb_ary_tmp_new(2);
-                    do { const VALUE _ary = (callback_arg); const VALUE _v = (block_code); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[0]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 903); rb_array_ptr_use_end(_ary, 1); } while (0);
-                    do { const VALUE _ary = (callback_arg); const VALUE _v = (ref); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[1]), (VALUE)(_v), "../ruby-2.6.3/vm_args.c", 904); rb_array_ptr_use_end(_ary, 1); } while (0);
+                    do { const VALUE _ary = (callback_arg); const VALUE _v = (block_code); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[0]), (VALUE)(_v), "../ruby-2.6.5/vm_args.c", 903); rb_array_ptr_use_end(_ary, 1); } while (0);
+                    do { const VALUE _ary = (callback_arg); const VALUE _v = (ref); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[1]), (VALUE)(_v), "../ruby-2.6.5/vm_args.c", 904); rb_array_ptr_use_end(_ary, 1); } while (0);
                     (void)(((struct RBasic*)(callback_arg))->flags |= RUBY_FL_FREEZE);
                     func = rb_func_proc_new(refine_sym_proc_call, callback_arg);
       rb_hash_aset(ref, block_code, func);
@@ -83049,7 +83004,7 @@ aliased_callable_method_entry(const rb_callable_method_entry_t *me)
  ((void)0);
  cme = rb_method_entry_complement_defined_class(orig_me, me->called_id, defined_class);
  if (me->def->alias_count + me->def->complemented_count == 0) {
-     rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.6.3/vm_insnhelper.c", 2195);
+     rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.6.5/vm_insnhelper.c", 2195);
  }
  else {
      rb_method_definition_t *def =
@@ -83152,7 +83107,10 @@ vm_call_method_each_type(rb_execution_context_t *ec, rb_control_frame_t *cfp, st
       goto no_refinement_dispatch;
   }
      }
-     cc->me = ref_me;
+            if (cc->me->def->type != VM_METHOD_TYPE_REFINED ||
+                 cc->me->def != ref_me->def) {
+                 cc->me = ref_me;
+            }
      if (ref_me->def->type != VM_METHOD_TYPE_REFINED) {
   return vm_call_method(ec, cfp, calling, ci, cc);
      }
@@ -83983,7 +83941,7 @@ vm_once_dispatch(rb_execution_context_t *ec, ISEQ iseq, ISE is)
  VALUE val;
  is->once.running_thread = th;
  val = rb_ensure(vm_once_exec, (VALUE)iseq, vm_once_clear, (VALUE)is);
- rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.6.3/vm_insnhelper.c", 3291);
+ rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.6.5/vm_insnhelper.c", 3294);
  is->once.running_thread = RUNNING_THREAD_ONCE_DONE;
  return val;
     }

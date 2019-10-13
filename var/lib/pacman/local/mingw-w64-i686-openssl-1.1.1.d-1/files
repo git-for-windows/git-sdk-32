@@ -775,6 +775,7 @@ mingw32/share/doc/openssl/html/man3/CRYPTO_mem_debug_push.html
 mingw32/share/doc/openssl/html/man3/CRYPTO_mem_leaks.html
 mingw32/share/doc/openssl/html/man3/CRYPTO_mem_leaks_cb.html
 mingw32/share/doc/openssl/html/man3/CRYPTO_mem_leaks_fp.html
+mingw32/share/doc/openssl/html/man3/CRYPTO_memcmp.html
 mingw32/share/doc/openssl/html/man3/CRYPTO_new_ex_data.html
 mingw32/share/doc/openssl/html/man3/CRYPTO_realloc.html
 mingw32/share/doc/openssl/html/man3/CRYPTO_secure_clear_free.html
@@ -3672,11 +3673,13 @@ mingw32/share/doc/openssl/html/man3/X509_check_issued.html
 mingw32/share/doc/openssl/html/man3/X509_check_private_key.html
 mingw32/share/doc/openssl/html/man3/X509_CINF_free.html
 mingw32/share/doc/openssl/html/man3/X509_CINF_new.html
+mingw32/share/doc/openssl/html/man3/X509_cmp.html
 mingw32/share/doc/openssl/html/man3/X509_cmp_current_time.html
 mingw32/share/doc/openssl/html/man3/X509_cmp_time.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_add0_revoked.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_add1_ext_i2d.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_add_ext.html
+mingw32/share/doc/openssl/html/man3/X509_CRL_cmp.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_delete_ext.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_digest.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_dup.html
@@ -3699,6 +3702,7 @@ mingw32/share/doc/openssl/html/man3/X509_CRL_get_signature_nid.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_get_version.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_INFO_free.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_INFO_new.html
+mingw32/share/doc/openssl/html/man3/X509_CRL_match.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_new.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_set1_lastUpdate.html
 mingw32/share/doc/openssl/html/man3/X509_CRL_set1_nextUpdate.html
@@ -3723,7 +3727,9 @@ mingw32/share/doc/openssl/html/man3/X509_EXTENSION_set_critical.html
 mingw32/share/doc/openssl/html/man3/X509_EXTENSION_set_data.html
 mingw32/share/doc/openssl/html/man3/X509_EXTENSION_set_object.html
 mingw32/share/doc/openssl/html/man3/X509_free.html
+mingw32/share/doc/openssl/html/man3/X509_get0_authority_issuer.html
 mingw32/share/doc/openssl/html/man3/X509_get0_authority_key_id.html
+mingw32/share/doc/openssl/html/man3/X509_get0_authority_serial.html
 mingw32/share/doc/openssl/html/man3/X509_get0_extensions.html
 mingw32/share/doc/openssl/html/man3/X509_get0_notAfter.html
 mingw32/share/doc/openssl/html/man3/X509_get0_notBefore.html
@@ -3756,6 +3762,8 @@ mingw32/share/doc/openssl/html/man3/X509_get_version.html
 mingw32/share/doc/openssl/html/man3/X509_get_X509_PUBKEY.html
 mingw32/share/doc/openssl/html/man3/X509_getm_notAfter.html
 mingw32/share/doc/openssl/html/man3/X509_getm_notBefore.html
+mingw32/share/doc/openssl/html/man3/X509_issuer_and_serial_cmp.html
+mingw32/share/doc/openssl/html/man3/X509_issuer_name_cmp.html
 mingw32/share/doc/openssl/html/man3/X509_load_cert_crl_file.html
 mingw32/share/doc/openssl/html/man3/X509_load_cert_file.html
 mingw32/share/doc/openssl/html/man3/X509_load_crl_file.html
@@ -3793,6 +3801,7 @@ mingw32/share/doc/openssl/html/man3/X509_NAME_add_entry.html
 mingw32/share/doc/openssl/html/man3/X509_NAME_add_entry_by_NID.html
 mingw32/share/doc/openssl/html/man3/X509_NAME_add_entry_by_OBJ.html
 mingw32/share/doc/openssl/html/man3/X509_NAME_add_entry_by_txt.html
+mingw32/share/doc/openssl/html/man3/X509_NAME_cmp.html
 mingw32/share/doc/openssl/html/man3/X509_NAME_delete_entry.html
 mingw32/share/doc/openssl/html/man3/X509_NAME_digest.html
 mingw32/share/doc/openssl/html/man3/X509_NAME_dup.html
@@ -3982,6 +3991,7 @@ mingw32/share/doc/openssl/html/man3/X509_STORE_set_verify_cb_func.html
 mingw32/share/doc/openssl/html/man3/X509_STORE_set_verify_func.html
 mingw32/share/doc/openssl/html/man3/X509_STORE_unlock.html
 mingw32/share/doc/openssl/html/man3/X509_STORE_up_ref.html
+mingw32/share/doc/openssl/html/man3/X509_subject_name_cmp.html
 mingw32/share/doc/openssl/html/man3/X509_time_adj.html
 mingw32/share/doc/openssl/html/man3/X509_time_adj_ex.html
 mingw32/share/doc/openssl/html/man3/X509_up_ref.html
@@ -4699,6 +4709,7 @@ mingw32/share/man/man3/CRYPTO_mem_debug_push.3ssl.gz
 mingw32/share/man/man3/CRYPTO_mem_leaks.3ssl.gz
 mingw32/share/man/man3/CRYPTO_mem_leaks_cb.3ssl.gz
 mingw32/share/man/man3/CRYPTO_mem_leaks_fp.3ssl.gz
+mingw32/share/man/man3/CRYPTO_memcmp.3ssl.gz
 mingw32/share/man/man3/CRYPTO_new_ex_data.3ssl.gz
 mingw32/share/man/man3/CRYPTO_realloc.3ssl.gz
 mingw32/share/man/man3/CRYPTO_secure_clear_free.3ssl.gz
@@ -7596,11 +7607,13 @@ mingw32/share/man/man3/X509_check_issued.3ssl.gz
 mingw32/share/man/man3/X509_check_private_key.3ssl.gz
 mingw32/share/man/man3/X509_CINF_free.3ssl.gz
 mingw32/share/man/man3/X509_CINF_new.3ssl.gz
+mingw32/share/man/man3/X509_cmp.3ssl.gz
 mingw32/share/man/man3/X509_cmp_current_time.3ssl.gz
 mingw32/share/man/man3/X509_cmp_time.3ssl.gz
 mingw32/share/man/man3/X509_CRL_add0_revoked.3ssl.gz
 mingw32/share/man/man3/X509_CRL_add1_ext_i2d.3ssl.gz
 mingw32/share/man/man3/X509_CRL_add_ext.3ssl.gz
+mingw32/share/man/man3/X509_CRL_cmp.3ssl.gz
 mingw32/share/man/man3/X509_CRL_delete_ext.3ssl.gz
 mingw32/share/man/man3/X509_CRL_digest.3ssl.gz
 mingw32/share/man/man3/X509_CRL_dup.3ssl.gz
@@ -7623,6 +7636,7 @@ mingw32/share/man/man3/X509_CRL_get_signature_nid.3ssl.gz
 mingw32/share/man/man3/X509_CRL_get_version.3ssl.gz
 mingw32/share/man/man3/X509_CRL_INFO_free.3ssl.gz
 mingw32/share/man/man3/X509_CRL_INFO_new.3ssl.gz
+mingw32/share/man/man3/X509_CRL_match.3ssl.gz
 mingw32/share/man/man3/X509_CRL_new.3ssl.gz
 mingw32/share/man/man3/X509_CRL_set1_lastUpdate.3ssl.gz
 mingw32/share/man/man3/X509_CRL_set1_nextUpdate.3ssl.gz
@@ -7647,7 +7661,9 @@ mingw32/share/man/man3/X509_EXTENSION_set_critical.3ssl.gz
 mingw32/share/man/man3/X509_EXTENSION_set_data.3ssl.gz
 mingw32/share/man/man3/X509_EXTENSION_set_object.3ssl.gz
 mingw32/share/man/man3/X509_free.3ssl.gz
+mingw32/share/man/man3/X509_get0_authority_issuer.3ssl.gz
 mingw32/share/man/man3/X509_get0_authority_key_id.3ssl.gz
+mingw32/share/man/man3/X509_get0_authority_serial.3ssl.gz
 mingw32/share/man/man3/X509_get0_extensions.3ssl.gz
 mingw32/share/man/man3/X509_get0_notAfter.3ssl.gz
 mingw32/share/man/man3/X509_get0_notBefore.3ssl.gz
@@ -7680,6 +7696,8 @@ mingw32/share/man/man3/X509_get_version.3ssl.gz
 mingw32/share/man/man3/X509_get_X509_PUBKEY.3ssl.gz
 mingw32/share/man/man3/X509_getm_notAfter.3ssl.gz
 mingw32/share/man/man3/X509_getm_notBefore.3ssl.gz
+mingw32/share/man/man3/X509_issuer_and_serial_cmp.3ssl.gz
+mingw32/share/man/man3/X509_issuer_name_cmp.3ssl.gz
 mingw32/share/man/man3/X509_load_cert_crl_file.3ssl.gz
 mingw32/share/man/man3/X509_load_cert_file.3ssl.gz
 mingw32/share/man/man3/X509_load_crl_file.3ssl.gz
@@ -7717,6 +7735,7 @@ mingw32/share/man/man3/X509_NAME_add_entry.3ssl.gz
 mingw32/share/man/man3/X509_NAME_add_entry_by_NID.3ssl.gz
 mingw32/share/man/man3/X509_NAME_add_entry_by_OBJ.3ssl.gz
 mingw32/share/man/man3/X509_NAME_add_entry_by_txt.3ssl.gz
+mingw32/share/man/man3/X509_NAME_cmp.3ssl.gz
 mingw32/share/man/man3/X509_NAME_delete_entry.3ssl.gz
 mingw32/share/man/man3/X509_NAME_digest.3ssl.gz
 mingw32/share/man/man3/X509_NAME_dup.3ssl.gz
@@ -7906,6 +7925,7 @@ mingw32/share/man/man3/X509_STORE_set_verify_cb_func.3ssl.gz
 mingw32/share/man/man3/X509_STORE_set_verify_func.3ssl.gz
 mingw32/share/man/man3/X509_STORE_unlock.3ssl.gz
 mingw32/share/man/man3/X509_STORE_up_ref.3ssl.gz
+mingw32/share/man/man3/X509_subject_name_cmp.3ssl.gz
 mingw32/share/man/man3/X509_time_adj.3ssl.gz
 mingw32/share/man/man3/X509_time_adj_ex.3ssl.gz
 mingw32/share/man/man3/X509_up_ref.3ssl.gz

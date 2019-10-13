@@ -655,6 +655,7 @@ usr/share/doc/openssl/html/man3/CRYPTO_mem_debug_push.html
 usr/share/doc/openssl/html/man3/CRYPTO_mem_leaks.html
 usr/share/doc/openssl/html/man3/CRYPTO_mem_leaks_cb.html
 usr/share/doc/openssl/html/man3/CRYPTO_mem_leaks_fp.html
+usr/share/doc/openssl/html/man3/CRYPTO_memcmp.html
 usr/share/doc/openssl/html/man3/CRYPTO_new_ex_data.html
 usr/share/doc/openssl/html/man3/CRYPTO_realloc.html
 usr/share/doc/openssl/html/man3/CRYPTO_secure_clear_free.html
@@ -3552,11 +3553,13 @@ usr/share/doc/openssl/html/man3/X509_check_issued.html
 usr/share/doc/openssl/html/man3/X509_check_private_key.html
 usr/share/doc/openssl/html/man3/X509_CINF_free.html
 usr/share/doc/openssl/html/man3/X509_CINF_new.html
+usr/share/doc/openssl/html/man3/X509_cmp.html
 usr/share/doc/openssl/html/man3/X509_cmp_current_time.html
 usr/share/doc/openssl/html/man3/X509_cmp_time.html
 usr/share/doc/openssl/html/man3/X509_CRL_add0_revoked.html
 usr/share/doc/openssl/html/man3/X509_CRL_add1_ext_i2d.html
 usr/share/doc/openssl/html/man3/X509_CRL_add_ext.html
+usr/share/doc/openssl/html/man3/X509_CRL_cmp.html
 usr/share/doc/openssl/html/man3/X509_CRL_delete_ext.html
 usr/share/doc/openssl/html/man3/X509_CRL_digest.html
 usr/share/doc/openssl/html/man3/X509_CRL_dup.html
@@ -3579,6 +3582,7 @@ usr/share/doc/openssl/html/man3/X509_CRL_get_signature_nid.html
 usr/share/doc/openssl/html/man3/X509_CRL_get_version.html
 usr/share/doc/openssl/html/man3/X509_CRL_INFO_free.html
 usr/share/doc/openssl/html/man3/X509_CRL_INFO_new.html
+usr/share/doc/openssl/html/man3/X509_CRL_match.html
 usr/share/doc/openssl/html/man3/X509_CRL_new.html
 usr/share/doc/openssl/html/man3/X509_CRL_set1_lastUpdate.html
 usr/share/doc/openssl/html/man3/X509_CRL_set1_nextUpdate.html
@@ -3603,7 +3607,9 @@ usr/share/doc/openssl/html/man3/X509_EXTENSION_set_critical.html
 usr/share/doc/openssl/html/man3/X509_EXTENSION_set_data.html
 usr/share/doc/openssl/html/man3/X509_EXTENSION_set_object.html
 usr/share/doc/openssl/html/man3/X509_free.html
+usr/share/doc/openssl/html/man3/X509_get0_authority_issuer.html
 usr/share/doc/openssl/html/man3/X509_get0_authority_key_id.html
+usr/share/doc/openssl/html/man3/X509_get0_authority_serial.html
 usr/share/doc/openssl/html/man3/X509_get0_extensions.html
 usr/share/doc/openssl/html/man3/X509_get0_notAfter.html
 usr/share/doc/openssl/html/man3/X509_get0_notBefore.html
@@ -3636,6 +3642,8 @@ usr/share/doc/openssl/html/man3/X509_get_version.html
 usr/share/doc/openssl/html/man3/X509_get_X509_PUBKEY.html
 usr/share/doc/openssl/html/man3/X509_getm_notAfter.html
 usr/share/doc/openssl/html/man3/X509_getm_notBefore.html
+usr/share/doc/openssl/html/man3/X509_issuer_and_serial_cmp.html
+usr/share/doc/openssl/html/man3/X509_issuer_name_cmp.html
 usr/share/doc/openssl/html/man3/X509_load_cert_crl_file.html
 usr/share/doc/openssl/html/man3/X509_load_cert_file.html
 usr/share/doc/openssl/html/man3/X509_load_crl_file.html
@@ -3673,6 +3681,7 @@ usr/share/doc/openssl/html/man3/X509_NAME_add_entry.html
 usr/share/doc/openssl/html/man3/X509_NAME_add_entry_by_NID.html
 usr/share/doc/openssl/html/man3/X509_NAME_add_entry_by_OBJ.html
 usr/share/doc/openssl/html/man3/X509_NAME_add_entry_by_txt.html
+usr/share/doc/openssl/html/man3/X509_NAME_cmp.html
 usr/share/doc/openssl/html/man3/X509_NAME_delete_entry.html
 usr/share/doc/openssl/html/man3/X509_NAME_digest.html
 usr/share/doc/openssl/html/man3/X509_NAME_dup.html
@@ -3862,6 +3871,7 @@ usr/share/doc/openssl/html/man3/X509_STORE_set_verify_cb_func.html
 usr/share/doc/openssl/html/man3/X509_STORE_set_verify_func.html
 usr/share/doc/openssl/html/man3/X509_STORE_unlock.html
 usr/share/doc/openssl/html/man3/X509_STORE_up_ref.html
+usr/share/doc/openssl/html/man3/X509_subject_name_cmp.html
 usr/share/doc/openssl/html/man3/X509_time_adj.html
 usr/share/doc/openssl/html/man3/X509_time_adj_ex.html
 usr/share/doc/openssl/html/man3/X509_up_ref.html
@@ -4579,6 +4589,7 @@ usr/share/man/man3/CRYPTO_mem_debug_push.3ssl.gz
 usr/share/man/man3/CRYPTO_mem_leaks.3ssl.gz
 usr/share/man/man3/CRYPTO_mem_leaks_cb.3ssl.gz
 usr/share/man/man3/CRYPTO_mem_leaks_fp.3ssl.gz
+usr/share/man/man3/CRYPTO_memcmp.3ssl.gz
 usr/share/man/man3/CRYPTO_new_ex_data.3ssl.gz
 usr/share/man/man3/CRYPTO_realloc.3ssl.gz
 usr/share/man/man3/CRYPTO_secure_clear_free.3ssl.gz
@@ -7476,11 +7487,13 @@ usr/share/man/man3/X509_check_issued.3ssl.gz
 usr/share/man/man3/X509_check_private_key.3ssl.gz
 usr/share/man/man3/X509_CINF_free.3ssl.gz
 usr/share/man/man3/X509_CINF_new.3ssl.gz
+usr/share/man/man3/X509_cmp.3ssl.gz
 usr/share/man/man3/X509_cmp_current_time.3ssl.gz
 usr/share/man/man3/X509_cmp_time.3ssl.gz
 usr/share/man/man3/X509_CRL_add0_revoked.3ssl.gz
 usr/share/man/man3/X509_CRL_add1_ext_i2d.3ssl.gz
 usr/share/man/man3/X509_CRL_add_ext.3ssl.gz
+usr/share/man/man3/X509_CRL_cmp.3ssl.gz
 usr/share/man/man3/X509_CRL_delete_ext.3ssl.gz
 usr/share/man/man3/X509_CRL_digest.3ssl.gz
 usr/share/man/man3/X509_CRL_dup.3ssl.gz
@@ -7503,6 +7516,7 @@ usr/share/man/man3/X509_CRL_get_signature_nid.3ssl.gz
 usr/share/man/man3/X509_CRL_get_version.3ssl.gz
 usr/share/man/man3/X509_CRL_INFO_free.3ssl.gz
 usr/share/man/man3/X509_CRL_INFO_new.3ssl.gz
+usr/share/man/man3/X509_CRL_match.3ssl.gz
 usr/share/man/man3/X509_CRL_new.3ssl.gz
 usr/share/man/man3/X509_CRL_set1_lastUpdate.3ssl.gz
 usr/share/man/man3/X509_CRL_set1_nextUpdate.3ssl.gz
@@ -7527,7 +7541,9 @@ usr/share/man/man3/X509_EXTENSION_set_critical.3ssl.gz
 usr/share/man/man3/X509_EXTENSION_set_data.3ssl.gz
 usr/share/man/man3/X509_EXTENSION_set_object.3ssl.gz
 usr/share/man/man3/X509_free.3ssl.gz
+usr/share/man/man3/X509_get0_authority_issuer.3ssl.gz
 usr/share/man/man3/X509_get0_authority_key_id.3ssl.gz
+usr/share/man/man3/X509_get0_authority_serial.3ssl.gz
 usr/share/man/man3/X509_get0_extensions.3ssl.gz
 usr/share/man/man3/X509_get0_notAfter.3ssl.gz
 usr/share/man/man3/X509_get0_notBefore.3ssl.gz
@@ -7560,6 +7576,8 @@ usr/share/man/man3/X509_get_version.3ssl.gz
 usr/share/man/man3/X509_get_X509_PUBKEY.3ssl.gz
 usr/share/man/man3/X509_getm_notAfter.3ssl.gz
 usr/share/man/man3/X509_getm_notBefore.3ssl.gz
+usr/share/man/man3/X509_issuer_and_serial_cmp.3ssl.gz
+usr/share/man/man3/X509_issuer_name_cmp.3ssl.gz
 usr/share/man/man3/X509_load_cert_crl_file.3ssl.gz
 usr/share/man/man3/X509_load_cert_file.3ssl.gz
 usr/share/man/man3/X509_load_crl_file.3ssl.gz
@@ -7597,6 +7615,7 @@ usr/share/man/man3/X509_NAME_add_entry.3ssl.gz
 usr/share/man/man3/X509_NAME_add_entry_by_NID.3ssl.gz
 usr/share/man/man3/X509_NAME_add_entry_by_OBJ.3ssl.gz
 usr/share/man/man3/X509_NAME_add_entry_by_txt.3ssl.gz
+usr/share/man/man3/X509_NAME_cmp.3ssl.gz
 usr/share/man/man3/X509_NAME_delete_entry.3ssl.gz
 usr/share/man/man3/X509_NAME_digest.3ssl.gz
 usr/share/man/man3/X509_NAME_dup.3ssl.gz
@@ -7786,6 +7805,7 @@ usr/share/man/man3/X509_STORE_set_verify_cb_func.3ssl.gz
 usr/share/man/man3/X509_STORE_set_verify_func.3ssl.gz
 usr/share/man/man3/X509_STORE_unlock.3ssl.gz
 usr/share/man/man3/X509_STORE_up_ref.3ssl.gz
+usr/share/man/man3/X509_subject_name_cmp.3ssl.gz
 usr/share/man/man3/X509_time_adj.3ssl.gz
 usr/share/man/man3/X509_time_adj_ex.3ssl.gz
 usr/share/man/man3/X509_up_ref.3ssl.gz

@@ -1,39 +1,45 @@
 %NAME%
-expat
+libreadline
 
 %VERSION%
-2.2.7-1
+8.0.001-1
 
 %BASE%
-expat
+readline
 
 %DESC%
-An XML parser library
+GNU readline library
 
 %URL%
-https://expat.sourceforge.io/
+https://tiswww.case.edu/php/chet/readline/rltop.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1561351840
+1571028851
 
 %INSTALLDATE%
-1561432217
+1571109174
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-64512
+558080
 
 %REASON%
 1
 
+%GROUPS%
+libraries
+
 %LICENSE%
-custom
+GPL
 
 %VALIDATION%
 pgp
+
+%DEPENDS%
+ncurses
 

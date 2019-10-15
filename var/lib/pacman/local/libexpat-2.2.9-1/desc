@@ -1,43 +1,45 @@
 %NAME%
-bison
+libexpat
 
 %VERSION%
-3.4.1-1
+2.2.9-1
 
 %BASE%
-bison
+expat
 
 %DESC%
-The GNU general-purpose parser generator
+An XML parser library
 
 %URL%
-https://www.gnu.org/software/bison/bison.html
+https://expat.sourceforge.io/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1558702253
+1571034583
 
 %INSTALLDATE%
-1559013047
+1571109174
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2120704
+154624
+
+%REASON%
+1
 
 %GROUPS%
-base-devel
+libraries
 
 %LICENSE%
-GPL3
+custom
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-m4
-sh
+gcc-libs
 

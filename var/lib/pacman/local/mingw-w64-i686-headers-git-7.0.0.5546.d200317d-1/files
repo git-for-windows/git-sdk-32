@@ -749,6 +749,7 @@ mingw32/i686-w64-mingw32/include/kxia64.h
 mingw32/i686-w64-mingw32/include/l2cmn.h
 mingw32/i686-w64-mingw32/include/libgen.h
 mingw32/i686-w64-mingw32/include/libloaderapi.h
+mingw32/i686-w64-mingw32/include/libloaderapi2.h
 mingw32/i686-w64-mingw32/include/limits.h
 mingw32/i686-w64-mingw32/include/lm.h
 mingw32/i686-w64-mingw32/include/lmaccess.h

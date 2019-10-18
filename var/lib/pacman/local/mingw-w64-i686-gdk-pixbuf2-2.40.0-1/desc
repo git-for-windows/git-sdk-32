@@ -2,7 +2,7 @@
 mingw-w64-i686-gdk-pixbuf2
 
 %VERSION%
-2.38.2-1
+2.40.0-1
 
 %BASE%
 mingw-w64-gdk-pixbuf2
@@ -17,16 +17,16 @@ https://wiki.gnome.org/Projects/GdkPixbuf
 any
 
 %BUILDDATE%
-1569930872
+1571287770
 
 %INSTALLDATE%
-1569985935
+1571368709
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-4488192
+4512768
 
 %REASON%
 1

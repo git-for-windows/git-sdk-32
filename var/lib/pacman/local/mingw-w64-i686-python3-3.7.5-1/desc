@@ -2,7 +2,7 @@
 mingw-w64-i686-python3
 
 %VERSION%
-3.7.4-7
+3.7.5-1
 
 %BASE%
 mingw-w64-python3
@@ -17,16 +17,16 @@ https://www.python.org/
 any
 
 %BUILDDATE%
-1565894822
+1571303965
 
 %INSTALLDATE%
-1566011590
+1571368709
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-114783232
+115982336
 
 %REASON%
 1
@@ -36,9 +36,6 @@ PSF
 
 %VALIDATION%
 pgp
-
-%REPLACES%
-mingw-w64-i686-python3-virtualenv
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs
@@ -55,9 +52,5 @@ mingw-w64-i686-zlib
 mingw-w64-i686-xz
 
 %CONFLICTS%
-mingw-w64-i686-python3-virtualenv
 mingw-w64-i686-python2<2.7.16-7
-
-%PROVIDES%
-mingw-w64-i686-python3-virtualenv
 

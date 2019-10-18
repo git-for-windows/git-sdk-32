@@ -2194,8 +2194,8 @@ mingw32/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/ensurepip/__pycache__/_uninstall.cpython-37.pyc
 mingw32/lib/python3.7/ensurepip/_bundled/
-mingw32/lib/python3.7/ensurepip/_bundled/pip-19.0.3-py2.py3-none-any.whl
-mingw32/lib/python3.7/ensurepip/_bundled/setuptools-40.8.0-py2.py3-none-any.whl
+mingw32/lib/python3.7/ensurepip/_bundled/pip-19.2.3-py2.py3-none-any.whl
+mingw32/lib/python3.7/ensurepip/_bundled/setuptools-41.2.0-py2.py3-none-any.whl
 mingw32/lib/python3.7/ensurepip/_uninstall.py
 mingw32/lib/python3.7/enum.py
 mingw32/lib/python3.7/filecmp.py
@@ -2317,6 +2317,9 @@ mingw32/lib/python3.7/idlelib/__pycache__/editor.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/filelist.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/filelist.cpython-37.pyc
+mingw32/lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-1.pyc
+mingw32/lib/python3.7/idlelib/__pycache__/format.cpython-37.opt-2.pyc
+mingw32/lib/python3.7/idlelib/__pycache__/format.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/grep.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/grep.cpython-37.pyc
@@ -2350,9 +2353,6 @@ mingw32/lib/python3.7/idlelib/__pycache__/multicall.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/outwin.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/outwin.cpython-37.pyc
-mingw32/lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-1.pyc
-mingw32/lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.opt-2.pyc
-mingw32/lib/python3.7/idlelib/__pycache__/paragraph.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/parenmatch.cpython-37.pyc
@@ -2380,9 +2380,6 @@ mingw32/lib/python3.7/idlelib/__pycache__/replace.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/rpc.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/rpc.cpython-37.pyc
-mingw32/lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-1.pyc
-mingw32/lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.opt-2.pyc
-mingw32/lib/python3.7/idlelib/__pycache__/rstrip.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/run.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/run.cpython-37.pyc
@@ -2401,6 +2398,9 @@ mingw32/lib/python3.7/idlelib/__pycache__/searchbase.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/searchengine.cpython-37.pyc
+mingw32/lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-1.pyc
+mingw32/lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.opt-2.pyc
+mingw32/lib/python3.7/idlelib/__pycache__/sidebar.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/__pycache__/squeezer.cpython-37.pyc
@@ -2457,6 +2457,7 @@ mingw32/lib/python3.7/idlelib/dynoption.py
 mingw32/lib/python3.7/idlelib/editor.py
 mingw32/lib/python3.7/idlelib/extend.txt
 mingw32/lib/python3.7/idlelib/filelist.py
+mingw32/lib/python3.7/idlelib/format.py
 mingw32/lib/python3.7/idlelib/grep.py
 mingw32/lib/python3.7/idlelib/help.html
 mingw32/lib/python3.7/idlelib/help.py
@@ -2557,6 +2558,9 @@ mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_editor.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_filelist.cpython-37.pyc
+mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-1.pyc
+mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.opt-2.pyc
+mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_format.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_grep.cpython-37.pyc
@@ -2587,9 +2591,6 @@ mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_multicall.cpython-37.py
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_outwin.cpython-37.pyc
-mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-1.pyc
-mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.opt-2.pyc
-mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_paragraph.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_parenmatch.cpython-37.pyc
@@ -2617,9 +2618,6 @@ mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_replace.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_rpc.cpython-37.pyc
-mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-1.pyc
-mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.opt-2.pyc
-mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_rstrip.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_run.cpython-37.pyc
@@ -2638,6 +2636,9 @@ mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_searchbase.cpython-37.p
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_searchengine.cpython-37.pyc
+mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-1.pyc
+mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.opt-2.pyc
+mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_sidebar.cpython-37.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-1.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.opt-2.pyc
 mingw32/lib/python3.7/idlelib/idle_test/__pycache__/test_squeezer.cpython-37.pyc
@@ -2695,6 +2696,7 @@ mingw32/lib/python3.7/idlelib/idle_test/test_delegator.py
 mingw32/lib/python3.7/idlelib/idle_test/test_editmenu.py
 mingw32/lib/python3.7/idlelib/idle_test/test_editor.py
 mingw32/lib/python3.7/idlelib/idle_test/test_filelist.py
+mingw32/lib/python3.7/idlelib/idle_test/test_format.py
 mingw32/lib/python3.7/idlelib/idle_test/test_grep.py
 mingw32/lib/python3.7/idlelib/idle_test/test_help.py
 mingw32/lib/python3.7/idlelib/idle_test/test_help_about.py
@@ -2705,7 +2707,6 @@ mingw32/lib/python3.7/idlelib/idle_test/test_macosx.py
 mingw32/lib/python3.7/idlelib/idle_test/test_mainmenu.py
 mingw32/lib/python3.7/idlelib/idle_test/test_multicall.py
 mingw32/lib/python3.7/idlelib/idle_test/test_outwin.py
-mingw32/lib/python3.7/idlelib/idle_test/test_paragraph.py
 mingw32/lib/python3.7/idlelib/idle_test/test_parenmatch.py
 mingw32/lib/python3.7/idlelib/idle_test/test_pathbrowser.py
 mingw32/lib/python3.7/idlelib/idle_test/test_percolator.py
@@ -2715,13 +2716,13 @@ mingw32/lib/python3.7/idlelib/idle_test/test_query.py
 mingw32/lib/python3.7/idlelib/idle_test/test_redirector.py
 mingw32/lib/python3.7/idlelib/idle_test/test_replace.py
 mingw32/lib/python3.7/idlelib/idle_test/test_rpc.py
-mingw32/lib/python3.7/idlelib/idle_test/test_rstrip.py
 mingw32/lib/python3.7/idlelib/idle_test/test_run.py
 mingw32/lib/python3.7/idlelib/idle_test/test_runscript.py
 mingw32/lib/python3.7/idlelib/idle_test/test_scrolledlist.py
 mingw32/lib/python3.7/idlelib/idle_test/test_search.py
 mingw32/lib/python3.7/idlelib/idle_test/test_searchbase.py
 mingw32/lib/python3.7/idlelib/idle_test/test_searchengine.py
+mingw32/lib/python3.7/idlelib/idle_test/test_sidebar.py
 mingw32/lib/python3.7/idlelib/idle_test/test_squeezer.py
 mingw32/lib/python3.7/idlelib/idle_test/test_stackviewer.py
 mingw32/lib/python3.7/idlelib/idle_test/test_statusbar.py
@@ -2740,7 +2741,6 @@ mingw32/lib/python3.7/idlelib/multicall.py
 mingw32/lib/python3.7/idlelib/NEWS.txt
 mingw32/lib/python3.7/idlelib/NEWS2x.txt
 mingw32/lib/python3.7/idlelib/outwin.py
-mingw32/lib/python3.7/idlelib/paragraph.py
 mingw32/lib/python3.7/idlelib/parenmatch.py
 mingw32/lib/python3.7/idlelib/pathbrowser.py
 mingw32/lib/python3.7/idlelib/percolator.py
@@ -2751,13 +2751,13 @@ mingw32/lib/python3.7/idlelib/README.txt
 mingw32/lib/python3.7/idlelib/redirector.py
 mingw32/lib/python3.7/idlelib/replace.py
 mingw32/lib/python3.7/idlelib/rpc.py
-mingw32/lib/python3.7/idlelib/rstrip.py
 mingw32/lib/python3.7/idlelib/run.py
 mingw32/lib/python3.7/idlelib/runscript.py
 mingw32/lib/python3.7/idlelib/scrolledlist.py
 mingw32/lib/python3.7/idlelib/search.py
 mingw32/lib/python3.7/idlelib/searchbase.py
 mingw32/lib/python3.7/idlelib/searchengine.py
+mingw32/lib/python3.7/idlelib/sidebar.py
 mingw32/lib/python3.7/idlelib/squeezer.py
 mingw32/lib/python3.7/idlelib/stackviewer.py
 mingw32/lib/python3.7/idlelib/statusbar.py
@@ -3146,11 +3146,11 @@ mingw32/lib/python3.7/lib2to3/fixes/fix_xrange.py
 mingw32/lib/python3.7/lib2to3/fixes/fix_xreadlines.py
 mingw32/lib/python3.7/lib2to3/fixes/fix_zip.py
 mingw32/lib/python3.7/lib2to3/Grammar.txt
-mingw32/lib/python3.7/lib2to3/Grammar3.7.4.final.0.pickle
+mingw32/lib/python3.7/lib2to3/Grammar3.7.5.final.0.pickle
 mingw32/lib/python3.7/lib2to3/main.py
 mingw32/lib/python3.7/lib2to3/patcomp.py
 mingw32/lib/python3.7/lib2to3/PatternGrammar.txt
-mingw32/lib/python3.7/lib2to3/PatternGrammar3.7.4.final.0.pickle
+mingw32/lib/python3.7/lib2to3/PatternGrammar3.7.5.final.0.pickle
 mingw32/lib/python3.7/lib2to3/pgen2/
 mingw32/lib/python3.7/lib2to3/pgen2/__init__.py
 mingw32/lib/python3.7/lib2to3/pgen2/__pycache__/

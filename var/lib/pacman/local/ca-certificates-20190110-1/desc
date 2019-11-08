@@ -2,7 +2,7 @@
 ca-certificates
 
 %VERSION%
-20180409-1
+20190110-1
 
 %BASE%
 ca-certificates
@@ -17,16 +17,16 @@ https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 any
 
 %BUILDDATE%
-1541048385
+1573155062
 
 %INSTALLDATE%
-1541128199
+1573182747
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-964608
+951922
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 vim
 
 %VERSION%
-8.1.2104-1
+8.1.2292-1
 
 %BASE%
 vim
@@ -17,16 +17,16 @@ http://www.vim.org
 i686
 
 %BUILDDATE%
-1569908360
+1573546296
 
 %INSTALLDATE%
-1569985942
+1573614793
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-47671296
+47981627
 
 %GROUPS%
 editors

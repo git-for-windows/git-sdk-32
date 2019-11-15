@@ -1262,6 +1262,7 @@ mingw32/i686-w64-mingw32/include/share.h
 mingw32/i686-w64-mingw32/include/shdeprecated.h
 mingw32/i686-w64-mingw32/include/shdispid.h
 mingw32/i686-w64-mingw32/include/shellapi.h
+mingw32/i686-w64-mingw32/include/shellscalingapi.h
 mingw32/i686-w64-mingw32/include/sherrors.h
 mingw32/i686-w64-mingw32/include/shfolder.h
 mingw32/i686-w64-mingw32/include/shldisp.h

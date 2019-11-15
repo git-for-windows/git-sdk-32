@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-tools-git
+mingw-w64-i686-libmangle-git
 
 %VERSION%
-7.0.0.5479.8db8dd5a-1
+8.0.0.5573.a4de8df4-1
 
 %BASE%
-mingw-w64-tools-git
+mingw-w64-libmangle-git
 
 %DESC%
-MinGW-w64 tools
+MinGW-w64 libmangle
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1562325444
+1573712953
 
 %INSTALLDATE%
-1562382618
+1573787542
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-951296
+46657
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,14 +38,11 @@ custom
 pgp
 
 %REPLACES%
-mingw-w64-i686-tools-svn
-
-%DEPENDS%
-mingw-w64-i686-gcc-libs
+mingw-w64-i686-libmangle-svn
 
 %CONFLICTS%
-mingw-w64-i686-tools
+mingw-w64-i686-libmangle
 
 %PROVIDES%
-mingw-w64-i686-tools
+mingw-w64-i686-libmangle
 

@@ -309,6 +309,7 @@ mingw32/i686-w64-mingw32/lib/libsecur32.a
 mingw32/i686-w64-mingw32/lib/libsecurity.a
 mingw32/i686-w64-mingw32/lib/libsensorsapi.a
 mingw32/i686-w64-mingw32/lib/libsetupapi.a
+mingw32/i686-w64-mingw32/lib/libshcore.a
 mingw32/i686-w64-mingw32/lib/libshell32.a
 mingw32/i686-w64-mingw32/lib/libshfolder.a
 mingw32/i686-w64-mingw32/lib/libshlwapi.a

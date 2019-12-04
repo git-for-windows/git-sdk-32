@@ -2,7 +2,7 @@
 mingw-w64-i686-wineditline
 
 %VERSION%
-2.205-2
+2.205-3
 
 %BASE%
 mingw-w64-wineditline
@@ -17,16 +17,16 @@ https://mingweditline.sourceforge.io/
 any
 
 %BUILDDATE%
-1562137740
+1575349982
 
 %INSTALLDATE%
-1562209891
+1575429192
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-202752
+196688
 
 %REASON%
 1

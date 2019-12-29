@@ -63,12 +63,6 @@ mingw32/lib/libxml2.a
 mingw32/lib/libxml2.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/libxml-2.0.pc
-mingw32/lib/python2.7/
-mingw32/lib/python2.7/site-packages/
-mingw32/lib/python2.7/site-packages/drv_libxml2.py
-mingw32/lib/python2.7/site-packages/libxml2.py
-mingw32/lib/python2.7/site-packages/libxml2mod.dll.a
-mingw32/lib/python2.7/site-packages/libxml2mod.pyd
 mingw32/lib/python3.8/
 mingw32/lib/python3.8/site-packages/
 mingw32/lib/python3.8/site-packages/drv_libxml2.py

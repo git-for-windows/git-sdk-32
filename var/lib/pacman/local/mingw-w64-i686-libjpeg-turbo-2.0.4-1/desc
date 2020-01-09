@@ -2,7 +2,7 @@
 mingw-w64-i686-libjpeg-turbo
 
 %VERSION%
-2.0.3-1
+2.0.4-1
 
 %BASE%
 mingw-w64-libjpeg-turbo
@@ -17,16 +17,16 @@ https://libjpeg-turbo.virtualgl.org/
 any
 
 %BUILDDATE%
-1569933266
+1578500704
 
 %INSTALLDATE%
-1569985935
+1578602145
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3792896
+3787128
 
 %REASON%
 1

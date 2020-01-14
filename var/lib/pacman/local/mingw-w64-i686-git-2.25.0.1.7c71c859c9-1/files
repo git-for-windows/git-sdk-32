@@ -163,6 +163,7 @@ mingw32/libexec/git-core/git-show-branch.exe
 mingw32/libexec/git-core/git-show-index.exe
 mingw32/libexec/git-core/git-show-ref.exe
 mingw32/libexec/git-core/git-show.exe
+mingw32/libexec/git-core/git-sparse-checkout.exe
 mingw32/libexec/git-core/git-stage.exe
 mingw32/libexec/git-core/git-stash.exe
 mingw32/libexec/git-core/git-status.exe
@@ -252,6 +253,7 @@ mingw32/share/git-gui/lib/checkout_op.tcl
 mingw32/share/git-gui/lib/choose_font.tcl
 mingw32/share/git-gui/lib/choose_repository.tcl
 mingw32/share/git-gui/lib/choose_rev.tcl
+mingw32/share/git-gui/lib/chord.tcl
 mingw32/share/git-gui/lib/class.tcl
 mingw32/share/git-gui/lib/commit.tcl
 mingw32/share/git-gui/lib/console.tcl
@@ -374,6 +376,9 @@ mingw32/share/locale/vi/LC_MESSAGES/git.mo
 mingw32/share/locale/zh_CN/
 mingw32/share/locale/zh_CN/LC_MESSAGES/
 mingw32/share/locale/zh_CN/LC_MESSAGES/git.mo
+mingw32/share/locale/zh_TW/
+mingw32/share/locale/zh_TW/LC_MESSAGES/
+mingw32/share/locale/zh_TW/LC_MESSAGES/git.mo
 mingw32/share/perl5/
 mingw32/share/perl5/FromCPAN/
 mingw32/share/perl5/FromCPAN/Error.pm

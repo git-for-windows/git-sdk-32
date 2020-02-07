@@ -1,45 +1,43 @@
 %NAME%
-filesystem
+bison
 
 %VERSION%
-2020.01-1
+3.5.1-1
 
 %BASE%
-filesystem
+bison
 
 %DESC%
-Base filesystem
+The GNU general-purpose parser generator
 
 %URL%
-https://sourceforge.net/projects/msys2/
+https://www.gnu.org/software/bison/bison.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1579150376
+1580967882
 
 %INSTALLDATE%
-1579230772
+1581067787
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-98147
+2154333
 
 %GROUPS%
-base
+base-devel
 
 %LICENSE%
-BSD
+GPL3
 
 %VALIDATION%
 pgp
 
-%REPLACES%
-msys2-base
-
-%PROVIDES%
-msys2-base
+%DEPENDS%
+m4
+sh
 

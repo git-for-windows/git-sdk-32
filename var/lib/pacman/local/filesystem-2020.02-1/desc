@@ -1,42 +1,45 @@
 %NAME%
-libunrar
+filesystem
 
 %VERSION%
-5.8.5-1
+2020.02-1
 
 %BASE%
-unrar
+filesystem
 
 %DESC%
-Library file for applications that use libunrar
+Base filesystem
 
 %URL%
-https://www.rarlab.com/rar_add.htm
+https://sourceforge.net/projects/msys2/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1576134276
+1580966483
 
 %INSTALLDATE%
-1576206780
+1581067782
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-272463
+99290
 
 %GROUPS%
-base-devel
+base
 
 %LICENSE%
-custom
+BSD
 
 %VALIDATION%
 pgp
 
-%DEPENDS%
-gcc-libs
+%REPLACES%
+msys2-base
+
+%PROVIDES%
+msys2-base
 

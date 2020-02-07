@@ -1,8 +1,8 @@
 %NAME%
-p11-kit
+libp11-kit
 
 %VERSION%
-0.23.19-1
+0.23.20-1
 
 %BASE%
 p11-kit
@@ -17,19 +17,22 @@ https://p11-glue.freedesktop.org/p11-kit.html
 i686
 
 %BUILDDATE%
-1579762457
+1580975318
 
 %INSTALLDATE%
-1579835654
+1581067788
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-1381691
+989254
 
 %REASON%
 1
+
+%GROUPS%
+libraries
 
 %LICENSE%
 BSD
@@ -38,5 +41,8 @@ BSD
 pgp
 
 %DEPENDS%
-libp11-kit=0.23.19
+libffi
+libintl
+libtasn1
+glib2
 

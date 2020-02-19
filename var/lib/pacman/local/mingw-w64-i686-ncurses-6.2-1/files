@@ -925,6 +925,7 @@ mingw32/lib/terminfo/64/dmd1
 mingw32/lib/terminfo/64/dmdt80
 mingw32/lib/terminfo/64/dmdt80w
 mingw32/lib/terminfo/64/dmterm
+mingw32/lib/terminfo/64/domterm
 mingw32/lib/terminfo/64/dp3360
 mingw32/lib/terminfo/64/dp8242
 mingw32/lib/terminfo/64/ds40
@@ -2001,6 +2002,7 @@ mingw32/lib/terminfo/73/spinwriter
 mingw32/lib/terminfo/73/st
 mingw32/lib/terminfo/73/st-0.6
 mingw32/lib/terminfo/73/st-0.7
+mingw32/lib/terminfo/73/st-0.8
 mingw32/lib/terminfo/73/st-16color
 mingw32/lib/terminfo/73/st-256color
 mingw32/lib/terminfo/73/st-direct
@@ -2825,6 +2827,7 @@ mingw32/lib/terminfo/78/xterm-color
 mingw32/lib/terminfo/78/xterm-direct
 mingw32/lib/terminfo/78/xterm-direct2
 mingw32/lib/terminfo/78/xterm-hp
+mingw32/lib/terminfo/78/xterm-mono
 mingw32/lib/terminfo/78/xterm-new
 mingw32/lib/terminfo/78/xterm-nic
 mingw32/lib/terminfo/78/xterm-noapp
@@ -2848,6 +2851,7 @@ mingw32/lib/terminfo/78/xterm-xf86-v43
 mingw32/lib/terminfo/78/xterm-xf86-v44
 mingw32/lib/terminfo/78/xterm-xfree86
 mingw32/lib/terminfo/78/xterm-xi
+mingw32/lib/terminfo/78/xterm.js
 mingw32/lib/terminfo/78/xterm1
 mingw32/lib/terminfo/78/xtermc
 mingw32/lib/terminfo/78/xtermm
@@ -3050,6 +3054,7 @@ mingw32/share/man/man3/curs_util.3x.gz
 mingw32/share/man/man3/curs_variables.3x.gz
 mingw32/share/man/man3/curs_window.3x.gz
 mingw32/share/man/man3/curscr.3x.gz
+mingw32/share/man/man3/curses_trace.3x.gz
 mingw32/share/man/man3/curses_version.3x.gz
 mingw32/share/man/man3/data_ahead.3x.gz
 mingw32/share/man/man3/data_behind.3x.gz
@@ -3086,6 +3091,8 @@ mingw32/share/man/man3/erasechar.3x.gz
 mingw32/share/man/man3/erasechar_sp.3x.gz
 mingw32/share/man/man3/erasewchar.3x.gz
 mingw32/share/man/man3/ESCDELAY.3x.gz
+mingw32/share/man/man3/exit_curses.3x.gz
+mingw32/share/man/man3/exit_terminfo.3x.gz
 mingw32/share/man/man3/extended_color_content.3x.gz
 mingw32/share/man/man3/extended_color_content_sp.3x.gz
 mingw32/share/man/man3/extended_pair_content.3x.gz
@@ -4658,6 +4665,7 @@ mingw32/share/terminfo/64/dmd1
 mingw32/share/terminfo/64/dmdt80
 mingw32/share/terminfo/64/dmdt80w
 mingw32/share/terminfo/64/dmterm
+mingw32/share/terminfo/64/domterm
 mingw32/share/terminfo/64/dp3360
 mingw32/share/terminfo/64/dp8242
 mingw32/share/terminfo/64/ds40
@@ -5734,6 +5742,7 @@ mingw32/share/terminfo/73/spinwriter
 mingw32/share/terminfo/73/st
 mingw32/share/terminfo/73/st-0.6
 mingw32/share/terminfo/73/st-0.7
+mingw32/share/terminfo/73/st-0.8
 mingw32/share/terminfo/73/st-16color
 mingw32/share/terminfo/73/st-256color
 mingw32/share/terminfo/73/st-direct
@@ -6558,6 +6567,7 @@ mingw32/share/terminfo/78/xterm-color
 mingw32/share/terminfo/78/xterm-direct
 mingw32/share/terminfo/78/xterm-direct2
 mingw32/share/terminfo/78/xterm-hp
+mingw32/share/terminfo/78/xterm-mono
 mingw32/share/terminfo/78/xterm-new
 mingw32/share/terminfo/78/xterm-nic
 mingw32/share/terminfo/78/xterm-noapp
@@ -6581,6 +6591,7 @@ mingw32/share/terminfo/78/xterm-xf86-v43
 mingw32/share/terminfo/78/xterm-xf86-v44
 mingw32/share/terminfo/78/xterm-xfree86
 mingw32/share/terminfo/78/xterm-xi
+mingw32/share/terminfo/78/xterm.js
 mingw32/share/terminfo/78/xterm1
 mingw32/share/terminfo/78/xtermc
 mingw32/share/terminfo/78/xtermm

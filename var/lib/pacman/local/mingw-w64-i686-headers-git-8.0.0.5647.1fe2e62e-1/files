@@ -1222,7 +1222,6 @@ mingw32/i686-w64-mingw32/include/sddl.h
 mingw32/i686-w64-mingw32/include/sdkddkver.h
 mingw32/i686-w64-mingw32/include/sdks/
 mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h
-mingw32/i686-w64-mingw32/include/sdks/_mingw_directx.h
 mingw32/i686-w64-mingw32/include/sdoias.h
 mingw32/i686-w64-mingw32/include/sdpblb.h
 mingw32/i686-w64-mingw32/include/sdperr.h
@@ -1374,6 +1373,8 @@ mingw32/i686-w64-mingw32/include/textstor.h
 mingw32/i686-w64-mingw32/include/textstor.idl
 mingw32/i686-w64-mingw32/include/threadpoolapiset.h
 mingw32/i686-w64-mingw32/include/threadpoollegacyapiset.h
+mingw32/i686-w64-mingw32/include/thumbcache.h
+mingw32/i686-w64-mingw32/include/thumbcache.idl
 mingw32/i686-w64-mingw32/include/time.h
 mingw32/i686-w64-mingw32/include/timeprov.h
 mingw32/i686-w64-mingw32/include/timezoneapi.h
@@ -1541,6 +1542,9 @@ mingw32/i686-w64-mingw32/include/winerror.h
 mingw32/i686-w64-mingw32/include/winevt.h
 mingw32/i686-w64-mingw32/include/wingdi.h
 mingw32/i686-w64-mingw32/include/winhttp.h
+mingw32/i686-w64-mingw32/include/winhvemulation.h
+mingw32/i686-w64-mingw32/include/winhvplatform.h
+mingw32/i686-w64-mingw32/include/winhvplatformdefs.h
 mingw32/i686-w64-mingw32/include/wininet.h
 mingw32/i686-w64-mingw32/include/winineti.h
 mingw32/i686-w64-mingw32/include/winioctl.h
@@ -1684,7 +1688,8 @@ mingw32/i686-w64-mingw32/include/zmouse.h
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/headers/
+mingw32/share/licenses/headers/COPYING
+mingw32/share/licenses/headers/COPYING.MinGW-w64-runtime.txt
+mingw32/share/licenses/headers/COPYING.MinGW-w64.txt
 mingw32/share/licenses/headers/ddk-readme.txt
-mingw32/share/licenses/headers/direct-x-COPYING.LIB
-mingw32/share/licenses/headers/direct-x-readme.txt
 

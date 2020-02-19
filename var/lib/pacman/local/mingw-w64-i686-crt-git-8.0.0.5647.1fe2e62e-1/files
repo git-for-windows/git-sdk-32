@@ -64,7 +64,9 @@ mingw32/i686-w64-mingw32/lib/libcryptxml.a
 mingw32/i686-w64-mingw32/lib/libcscapi.a
 mingw32/i686-w64-mingw32/lib/libctl3d32.a
 mingw32/i686-w64-mingw32/lib/libd2d1.a
+mingw32/i686-w64-mingw32/lib/libd3d10.a
 mingw32/i686-w64-mingw32/lib/libd3d11.a
+mingw32/i686-w64-mingw32/lib/libd3d12.a
 mingw32/i686-w64-mingw32/lib/libd3d8.a
 mingw32/i686-w64-mingw32/lib/libd3d9.a
 mingw32/i686-w64-mingw32/lib/libd3dcompiler.a
@@ -210,6 +212,7 @@ mingw32/i686-w64-mingw32/lib/libmcd.a
 mingw32/i686-w64-mingw32/lib/libmf.a
 mingw32/i686-w64-mingw32/lib/libmfcuia32.a
 mingw32/i686-w64-mingw32/lib/libmfplat.a
+mingw32/i686-w64-mingw32/lib/libmfreadwrite.a
 mingw32/i686-w64-mingw32/lib/libmfuuid.a
 mingw32/i686-w64-mingw32/lib/libmgmtapi.a
 mingw32/i686-w64-mingw32/lib/libmincore.a
@@ -294,7 +297,7 @@ mingw32/i686-w64-mingw32/lib/librpcdiag.a
 mingw32/i686-w64-mingw32/lib/librpchttp.a
 mingw32/i686-w64-mingw32/lib/librpcns4.a
 mingw32/i686-w64-mingw32/lib/librpcrt4.a
-mingw32/i686-w64-mingw32/lib/librstrmgr.a
+mingw32/i686-w64-mingw32/lib/librstrtmgr.a
 mingw32/i686-w64-mingw32/lib/librtm.a
 mingw32/i686-w64-mingw32/lib/librtutils.a
 mingw32/i686-w64-mingw32/lib/libruntimeobject.a
@@ -361,6 +364,7 @@ mingw32/i686-w64-mingw32/lib/libwdsimage.a
 mingw32/i686-w64-mingw32/lib/libwdstptc.a
 mingw32/i686-w64-mingw32/lib/libwdsupgcompl.a
 mingw32/i686-w64-mingw32/lib/libwdsutil.a
+mingw32/i686-w64-mingw32/lib/libwebsocket.a
 mingw32/i686-w64-mingw32/lib/libwecapi.a
 mingw32/i686-w64-mingw32/lib/libwer.a
 mingw32/i686-w64-mingw32/lib/libwevtapi.a
@@ -416,4 +420,10 @@ mingw32/i686-w64-mingw32/lib/libxinput1_3.a
 mingw32/i686-w64-mingw32/lib/libxinput1_4.a
 mingw32/i686-w64-mingw32/lib/libxinput9_1_0.a
 mingw32/i686-w64-mingw32/lib/txtmode.o
+mingw32/share/
+mingw32/share/licenses/
+mingw32/share/licenses/crt/
+mingw32/share/licenses/crt/COPYING
+mingw32/share/licenses/crt/COPYING.MinGW-w64-runtime.txt
+mingw32/share/licenses/crt/COPYING.MinGW-w64.txt
 

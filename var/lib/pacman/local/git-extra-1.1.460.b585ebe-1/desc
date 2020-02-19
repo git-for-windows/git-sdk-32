@@ -20,7 +20,7 @@ i686
 1580075330
 
 %INSTALLDATE%
-1581995544
+1582081940
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
@@ -35,7 +35,7 @@ VCS
 GPL
 
 %VALIDATION%
-none
+pgp
 
 %DEPENDS%
 git-for-windows-keyring

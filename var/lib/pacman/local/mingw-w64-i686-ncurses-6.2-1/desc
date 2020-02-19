@@ -2,7 +2,7 @@
 mingw-w64-i686-ncurses
 
 %VERSION%
-6.1.20190630-1
+6.2-1
 
 %BASE%
 mingw-w64-ncurses
@@ -17,16 +17,16 @@ https://www.gnu.org/software/ncurses/
 any
 
 %BUILDDATE%
-1562418187
+1581941062
 
 %INSTALLDATE%
-1562555507
+1582081937
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-16740352
+17090801
 
 %REASON%
 1

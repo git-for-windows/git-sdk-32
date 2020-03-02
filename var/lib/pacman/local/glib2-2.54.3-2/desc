@@ -2,7 +2,7 @@
 glib2
 
 %VERSION%
-2.54.3-1
+2.54.3-2
 
 %BASE%
 glib2
@@ -17,16 +17,16 @@ https://www.gtk.org/
 i686
 
 %BUILDDATE%
-1529997353
+1583138543
 
 %INSTALLDATE%
-1530069073
+1583163863
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-11399168
+11355470
 
 %REASON%
 1
@@ -46,5 +46,5 @@ zlib
 
 %OPTDEPENDS%
 gamin: for gio fam module
-python2: for gdbus-codegen and gtester-report
+python3: for gdbus-codegen and gtester-report
 

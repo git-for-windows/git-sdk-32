@@ -2,7 +2,7 @@
 man-db
 
 %VERSION%
-2.9.0-1
+2.9.1-1
 
 %BASE%
 man-db
@@ -17,16 +17,16 @@ https://www.nongnu.org/man-db/
 i686
 
 %BUILDDATE%
-1572770950
+1583149084
 
 %INSTALLDATE%
-1573041825
+1583163864
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-3916800
+3920951
 
 %GROUPS%
 base-devel

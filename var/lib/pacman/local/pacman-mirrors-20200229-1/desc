@@ -1,45 +1,42 @@
 %NAME%
-file
+pacman-mirrors
 
 %VERSION%
-5.38-1
+20200229-1
 
 %BASE%
-file
+pacman-mirrors
 
 %DESC%
-File type identification utility
+MSYS2 mirror list for use by pacman
 
 %URL%
-https://www.darwinsys.com/file/
+https://msys2.sourceforge.io/
 
 %ARCH%
-i686
+any
 
 %BUILDDATE%
-1579078200
+1583148897
 
 %INSTALLDATE%
-1579230803
+1583163859
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-9464258
+1477
+
+%REASON%
+1
 
 %GROUPS%
 base
-base-devel
 
 %LICENSE%
-custom
+GPL
 
 %VALIDATION%
 pgp
-
-%DEPENDS%
-gcc-libs
-msys2-runtime
-zlib
 

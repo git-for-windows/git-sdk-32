@@ -2,7 +2,7 @@
 mingw-w64-i686-pcre
 
 %VERSION%
-8.43-1
+8.44-1
 
 %BASE%
 mingw-w64-pcre
@@ -17,16 +17,16 @@ https://pcre.org/
 any
 
 %BUILDDATE%
-1551161149
+1583771493
 
 %INSTALLDATE%
-1551207901
+1583895966
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-4343808
+4323139
 
 %LICENSE%
 BSD

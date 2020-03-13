@@ -317,11 +317,6 @@ mingw32/lib/pkgconfig/gmodule-export-2.0.pc
 mingw32/lib/pkgconfig/gmodule-no-export-2.0.pc
 mingw32/lib/pkgconfig/gobject-2.0.pc
 mingw32/lib/pkgconfig/gthread-2.0.pc
-mingw32/libexec/
-mingw32/libexec/installed-tests/
-mingw32/libexec/installed-tests/glib/
-mingw32/libexec/installed-tests/glib/memory-monitor-dbus.py
-mingw32/libexec/installed-tests/glib/memory-monitor-portal.py
 mingw32/share/
 mingw32/share/aclocal/
 mingw32/share/aclocal/glib-2.0.m4
@@ -356,10 +351,6 @@ mingw32/share/glib-2.0/gettext/po/
 mingw32/share/glib-2.0/gettext/po/Makefile.in.in
 mingw32/share/glib-2.0/schemas/
 mingw32/share/glib-2.0/schemas/gschema.dtd
-mingw32/share/installed-tests/
-mingw32/share/installed-tests/glib/
-mingw32/share/installed-tests/glib/memory-monitor-dbus.test
-mingw32/share/installed-tests/glib/memory-monitor-portal.test
 mingw32/share/licenses/
 mingw32/share/licenses/glib2/
 mingw32/share/licenses/glib2/COPYING

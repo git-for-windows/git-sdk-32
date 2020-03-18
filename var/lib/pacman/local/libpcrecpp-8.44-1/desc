@@ -1,8 +1,8 @@
 %NAME%
-libpcre
+libpcrecpp
 
 %VERSION%
-8.43-2
+8.44-1
 
 %BASE%
 pcre
@@ -17,16 +17,16 @@ https://www.pcre.org/
 i686
 
 %BUILDDATE%
-1556605191
+1584438982
 
 %INSTALLDATE%
-1556888903
+1584500740
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-290816
+33294
 
 %REASON%
 1
@@ -41,5 +41,6 @@ BSD
 pgp
 
 %DEPENDS%
+libpcre
 gcc-libs
 

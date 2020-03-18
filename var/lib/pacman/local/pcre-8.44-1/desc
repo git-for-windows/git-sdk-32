@@ -1,8 +1,8 @@
 %NAME%
-libpcreposix
+pcre
 
 %VERSION%
-8.43-2
+8.44-1
 
 %BASE%
 pcre
@@ -17,22 +17,19 @@ https://www.pcre.org/
 i686
 
 %BUILDDATE%
-1556605191
+1584438982
 
 %INSTALLDATE%
-1556888903
+1584500743
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-11264
+2140205
 
 %REASON%
 1
-
-%GROUPS%
-libraries
 
 %LICENSE%
 BSD
@@ -41,5 +38,12 @@ BSD
 pgp
 
 %DEPENDS%
+libreadline
+libbz2
+zlib
 libpcre
+libpcre16
+libpcre32
+libpcrecpp
+libpcreposix
 

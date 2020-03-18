@@ -1,45 +1,43 @@
 %NAME%
-libpcre16
+bison
 
 %VERSION%
-8.43-2
+3.5.3-1
 
 %BASE%
-pcre
+bison
 
 %DESC%
-A library that implements Perl 5-style regular expressions
+The GNU general-purpose parser generator
 
 %URL%
-https://www.pcre.org/
+https://www.gnu.org/software/bison/bison.html
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1556605191
+1584437652
 
 %INSTALLDATE%
-1556888903
+1584500739
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-264192
-
-%REASON%
-1
+2160595
 
 %GROUPS%
-libraries
+base-devel
 
 %LICENSE%
-BSD
+GPL3
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-gcc-libs
+m4
+sh
 

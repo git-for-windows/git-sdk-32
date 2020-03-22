@@ -2,7 +2,7 @@
 gnupg
 
 %VERSION%
-2.2.19-1
+2.2.20-1
 
 %BASE%
 gnupg
@@ -17,16 +17,16 @@ https://gnupg.org/
 i686
 
 %BUILDDATE%
-1576015414
+1584775619
 
 %INSTALLDATE%
-1576033982
+1584846356
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-9373231
+9199112
 
 %REASON%
 1
@@ -60,5 +60,5 @@ curl: gpg2keys_curl
 
 %PROVIDES%
 dirmngr
-gnupg2=2.2.19
+gnupg2=2.2.20
 

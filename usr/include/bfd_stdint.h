@@ -1,4 +1,4 @@
-/* generated for  i686-pc-msys-gcc (GCC) 9.1.0 */
+/* generated for  i686-pc-msys-gcc (GCC) 9.3.0 */
 
 #ifndef GCC_GENERATED_STDINT_H
 #define GCC_GENERATED_STDINT_H 1

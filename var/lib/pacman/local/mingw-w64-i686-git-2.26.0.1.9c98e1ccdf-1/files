@@ -370,6 +370,9 @@ mingw32/share/locale/ru/LC_MESSAGES/git.mo
 mingw32/share/locale/sv/
 mingw32/share/locale/sv/LC_MESSAGES/
 mingw32/share/locale/sv/LC_MESSAGES/git.mo
+mingw32/share/locale/tr/
+mingw32/share/locale/tr/LC_MESSAGES/
+mingw32/share/locale/tr/LC_MESSAGES/git.mo
 mingw32/share/locale/vi/
 mingw32/share/locale/vi/LC_MESSAGES/
 mingw32/share/locale/vi/LC_MESSAGES/git.mo

@@ -1,14 +1,14 @@
 %NAME%
-util-linux
+libutil-linux
 
 %VERSION%
-2.35-1
+2.35.1-1
 
 %BASE%
 util-linux
 
 %DESC%
-Collection of basic system utilities
+Block device ID and Universally Unique ID libraries
 
 %URL%
 https://www.kernel.org/pub/linux/utils/util-linux/
@@ -17,19 +17,19 @@ https://www.kernel.org/pub/linux/utils/util-linux/
 i686
 
 %BUILDDATE%
-1579764616
+1585136202
 
 %INSTALLDATE%
-1579835656
+1585191965
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-9439068
+832568
 
-%GROUPS%
-base
+%REASON%
+1
 
 %LICENSE%
 GPL3
@@ -37,17 +37,13 @@ GPL3
 %VALIDATION%
 pgp
 
-%REPLACES%
-getopt
-
 %DEPENDS%
-coreutils
-libutil-linux
-libiconv
-
-%CONFLICTS%
-getopt
+gcc-libs
+libintl
+msys2-runtime
 
 %PROVIDES%
-getopt
+libblkid
+libuuid
+libsmartcols
 

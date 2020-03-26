@@ -2,7 +2,7 @@
 nano
 
 %VERSION%
-4.8-1
+4.9-1
 
 %BASE%
 nano
@@ -17,16 +17,16 @@ https://www.nano-editor.org
 i686
 
 %BUILDDATE%
-1581936409
+1585138064
 
 %INSTALLDATE%
-1581995535
+1585191965
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-2599499
+2606659
 
 %GROUPS%
 editors

@@ -4,9 +4,9 @@
 #define __STDC_UTF_32__ 1
 #define __STDC_HOSTED__ 1
 #define __GNUC__ 9
-#define __GNUC_MINOR__ 2
+#define __GNUC_MINOR__ 3
 #define __GNUC_PATCHLEVEL__ 0
-#define __VERSION__ "9.2.0"
+#define __VERSION__ "9.3.0"
 #define __ATOMIC_RELAXED 0
 #define __ATOMIC_SEQ_CST 5
 #define __ATOMIC_ACQUIRE 2
@@ -669,7 +669,7 @@
 #define RB_GNUC_EXTENSION __extension__
 #define RB_GNUC_EXTENSION_BLOCK(x) __extension__ ({ x; })
 #define _INC_STDIO 
-#define _INC_CRTDEFS 
+#define _STDIO_CONFIG_DEFINED 
 #define _INC_CORECRT 
 #define _INC__MINGW_H 
 #define _INC_CRTDEFS_MACRO 
@@ -973,6 +973,16 @@ typedef struct threadlocaleinfostruct {
 } threadlocinfo;
 #define __crt_typefix(ctype) 
 #pragma pack(pop)
+#define _CRT_INTERNAL_PRINTF_LEGACY_VSPRINTF_NULL_TERMINATION 0x0001ULL
+#define _CRT_INTERNAL_PRINTF_STANDARD_SNPRINTF_BEHAVIOR 0x0002ULL
+#define _CRT_INTERNAL_PRINTF_LEGACY_WIDE_SPECIFIERS 0x0004ULL
+#define _CRT_INTERNAL_PRINTF_LEGACY_MSVCRT_COMPATIBILITY 0x0008ULL
+#define _CRT_INTERNAL_PRINTF_LEGACY_THREE_DIGIT_EXPONENTS 0x0010ULL
+#define _CRT_INTERNAL_SCANF_SECURECRT 0x0001ULL
+#define _CRT_INTERNAL_SCANF_LEGACY_WIDE_SPECIFIERS 0x0002ULL
+#define _CRT_INTERNAL_SCANF_LEGACY_MSVCRT_COMPATIBILITY 0x0004ULL
+#define _CRT_INTERNAL_LOCAL_PRINTF_OPTIONS _CRT_INTERNAL_PRINTF_LEGACY_WIDE_SPECIFIERS
+#define _CRT_INTERNAL_LOCAL_SCANF_OPTIONS _CRT_INTERNAL_SCANF_LEGACY_WIDE_SPECIFIERS
 #pragma pack(push,_CRT_PACKING)
 #define BUFSIZ 512
 #define _NFILE _NSTREAM_
@@ -1692,6 +1702,7 @@ void __attribute__((__cdecl__)) __mingw_str_free(void *ptr);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wscanf_l(const wchar_t *_Format,_locale_t _Locale,...);
   __attribute__ ((__dllimport__)) size_t __attribute__((__cdecl__)) _fread_nolock_s(void *_DstBuf,size_t _DstSize,size_t _ElementSize,size_t _Count,FILE *_File);
 #define _INC_TYPES 
+#define _INC_CRTDEFS 
 #define _INO_T_DEFINED 
 typedef unsigned short _ino_t;
 typedef unsigned short ino_t;
@@ -2044,8 +2055,8 @@ __attribute__ ((__dllimport__)) char* __attribute__((__cdecl__)) _getcwd (char*,
   extern inline __attribute__((__gnu_inline__)) int __attribute__((__cdecl__)) _findnext64i32(intptr_t _FindHandle,struct _finddata64i32_t *_FindData)
   {
     struct __finddata64_t fd;
-    int ret = _findnext64(_FindHandle,&fd);
-    if (ret == -1) {
+    int __ret = _findnext64(_FindHandle,&fd);
+    if (__ret == -1) {
       memset(_FindData,0,sizeof(struct _finddata64i32_t));
       return -1;
     }
@@ -2055,7 +2066,7 @@ __attribute__ ((__dllimport__)) char* __attribute__((__cdecl__)) _getcwd (char*,
     _FindData->time_write=fd.time_write;
     _FindData->size=(_fsize_t) fd.size;
     strncpy(_FindData->name,fd.name,260);
-    return ret;
+    return __ret;
   }
   __extension__ long long __attribute__((__cdecl__)) _lseeki64(int _FileHandle,long long _Offset,int _Origin);
   __extension__ long long __attribute__((__cdecl__)) _telli64(int _FileHandle);
@@ -2207,8 +2218,8 @@ __attribute__ ((__dllimport__)) char* __attribute__((__cdecl__)) _getcwd (char*,
   extern inline __attribute__((__gnu_inline__)) int __attribute__((__cdecl__)) _fstat64i32(int _FileDes,struct _stat64i32 *_Stat)
   {
     struct _stat64 st;
-    int ret=_fstat64(_FileDes,&st);
-    if (ret == -1) {
+    int __ret=_fstat64(_FileDes,&st);
+    if (__ret == -1) {
       memset(_Stat,0,sizeof(struct _stat64i32));
       return -1;
     }
@@ -2223,7 +2234,7 @@ __attribute__ ((__dllimport__)) char* __attribute__((__cdecl__)) _getcwd (char*,
     _Stat->st_atime=st.st_atime;
     _Stat->st_mtime=st.st_mtime;
     _Stat->st_ctime=st.st_ctime;
-    return ret;
+    return __ret;
   }
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _stat64(const char *_Name,struct _stat64 *_Stat);
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _stat32i64(const char *_Name,struct _stat32i64 *_Stat);
@@ -2231,8 +2242,8 @@ __attribute__ ((__dllimport__)) char* __attribute__((__cdecl__)) _getcwd (char*,
   extern inline __attribute__((__gnu_inline__)) int __attribute__((__cdecl__)) _stat64i32(const char *_Name,struct _stat64i32 *_Stat)
   {
     struct _stat64 st;
-    int ret=_stat64(_Name,&st);
-    if (ret == -1) {
+    int __ret=_stat64(_Name,&st);
+    if (__ret == -1) {
       memset(_Stat,0,sizeof(struct _stat64i32));
       return -1;
     }
@@ -2247,7 +2258,7 @@ __attribute__ ((__dllimport__)) char* __attribute__((__cdecl__)) _getcwd (char*,
     _Stat->st_atime=st.st_atime;
     _Stat->st_mtime=st.st_mtime;
     _Stat->st_ctime=st.st_ctime;
-    return ret;
+    return __ret;
   }
 #define _WSTAT_DEFINED 
   __attribute__ ((__dllimport__)) int __attribute__((__cdecl__)) _wstat32(const wchar_t *_Name,struct _stat32 *_Stat);
@@ -2291,8 +2302,8 @@ int __attribute__((__cdecl__)) wstat(const wchar_t *_Filename,struct stat *_Stat
 extern inline __attribute__((__gnu_inline__)) int __attribute__((__cdecl__))
  fstat(int _Desc,struct stat *_Stat) {
   struct _stat64 st;
-  int ret=_fstat64(_Desc,&st);
-  if (ret == -1) {
+  int __ret=_fstat64(_Desc,&st);
+  if (__ret == -1) {
     memset(_Stat,0,sizeof(struct stat));
     return -1;
   }
@@ -2307,7 +2318,7 @@ extern inline __attribute__((__gnu_inline__)) int __attribute__((__cdecl__))
   _Stat->st_atime=st.st_atime;
   _Stat->st_mtime=st.st_mtime;
   _Stat->st_ctime=st.st_ctime;
-  return ret;
+  return __ret;
 }
 #define stat _stat64
 #define fstat _fstat64
@@ -76765,13 +76776,13 @@ int rb_singleton_class_internal_p(VALUE sklass);
 static inline void
 RCLASS_SET_ORIGIN(VALUE klass, VALUE origin)
 {
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.7.0/internal.h", 1091);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((((struct RClass*)(klass))->ptr)->origin_)), (VALUE)(origin), "../ruby-2.7.1/internal.h", 1091);
     if (klass != origin) ((!(((VALUE)(origin) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(origin) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(origin))->flags & RUBY_T_MASK) != RUBY_T_NODE) ? (void)(((struct RBasic*)(origin))->flags |= (((VALUE)RUBY_FL_USER5))) : (void)0);
 }
 static inline void
 RCLASS_SET_INCLUDER(VALUE iclass, VALUE klass)
 {
-    rb_obj_write((VALUE)(iclass), (VALUE *)(&((((struct RClass*)(iclass))->ptr)->includer)), (VALUE)(klass), "../ruby-2.7.0/internal.h", 1098);
+    rb_obj_write((VALUE)(iclass), (VALUE *)(&((((struct RClass*)(iclass))->ptr)->includer)), (VALUE)(klass), "../ruby-2.7.1/internal.h", 1098);
 }
 #undef RCLASS_SUPER
 static inline VALUE
@@ -76786,7 +76797,7 @@ RCLASS_SET_SUPER(VALUE klass, VALUE super)
  rb_class_remove_from_super_subclasses(klass);
  rb_class_subclass_add(super, klass);
     }
-    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.7.0/internal.h", 1115);
+    rb_obj_write((VALUE)(klass), (VALUE *)(&((struct RClass*)(klass))->super), (VALUE)(super), "../ruby-2.7.1/internal.h", 1115);
     return super;
 }
 #define IMEMO_DEBUG 0
@@ -77036,9 +77047,11 @@ VALUE rb_insns_name_array(void);
 int rb_vm_insn_addr2insn(const void *);
 VALUE rb_dbl_complex_new_polar_pi(double abs, double ang);
 struct rb_thread_struct;
+struct rb_fiber_struct;
 VALUE rb_obj_is_fiber(VALUE);
 void rb_fiber_reset_root_local_storage(struct rb_thread_struct *);
 void ruby_register_rollback_func_for_ensure(VALUE (*ensure_func)(VALUE), VALUE (*rollback_func)(VALUE));
+void rb_fiber_init_mjit_cont(struct rb_fiber_struct *fiber);
 void ruby_debug_printf(const char*, ...) __attribute__((format(printf, 1, 2)));
 VALUE rb_dir_getwd_ospath(void);
 void Init_enc(void);
@@ -77109,10 +77122,13 @@ __attribute__ ((__noreturn__)) void rb_syserr_fail_path_in(const char *func_name
 #define rb_syserr_fail_path(err,path) rb_syserr_fail_path_in(RUBY_FUNCTION_NAME_STRING, (err), (path))
 extern VALUE *ruby_initial_gc_stress_ptr;
 extern int ruby_disable_gc;
+struct rb_objspace;
 void Init_heap(void);
 void *ruby_mimmalloc(size_t size) __attribute__((__malloc__));
 void ruby_mimfree(void *ptr);
 void rb_objspace_set_event_hook(const rb_event_flag_t event);
+VALUE rb_objspace_gc_enable(struct rb_objspace *);
+VALUE rb_objspace_gc_disable(struct rb_objspace *);
 void rb_gc_writebarrier_remember(VALUE obj);
 void ruby_gc_set_params(void);
 void rb_copy_wb_protected_attribute(VALUE dest, VALUE obj);
@@ -78781,8 +78797,8 @@ static inline void list_del_init_(struct list_node *n, const char *abortstr)
 }
 static inline void list_del_from(struct list_head *h, struct list_node *n)
 {
- (void) ((!!(!list_empty_(h, "../ruby-2.7.0/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.7.0/ccan/list/list.h",328),0));
- list_del_(n, "../ruby-2.7.0/ccan/list/list.h" ":" "329");
+ (void) ((!!(!list_empty_(h, "../ruby-2.7.1/ccan/list/list.h" ":" "328"))) || (_assert("!list_empty(h)","../ruby-2.7.1/ccan/list/list.h",328),0));
+ list_del_(n, "../ruby-2.7.1/ccan/list/list.h" ":" "329");
 }
 #define list_swap(o,n) list_swap_(o, n, LIST_LOC)
 static inline void list_swap_(struct list_node *o,
@@ -78798,7 +78814,7 @@ static inline void list_swap_(struct list_node *o,
 #define list_top(h,type,member) ((type *)list_top_((h), list_off_(type, member)))
 static inline const void *list_top_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.7.0/ccan/list/list.h" ":" "399"))
+ if (list_empty_(h, "../ruby-2.7.1/ccan/list/list.h" ":" "399"))
   return ((void *)0);
  return (const char *)h->n.next - off;
 }
@@ -78806,16 +78822,16 @@ static inline const void *list_top_(const struct list_head *h, size_t off)
 static inline const void *list_pop_(const struct list_head *h, size_t off)
 {
  struct list_node *n;
- if (list_empty_(h, "../ruby-2.7.0/ccan/list/list.h" ":" "425"))
+ if (list_empty_(h, "../ruby-2.7.1/ccan/list/list.h" ":" "425"))
   return ((void *)0);
  n = h->n.next;
- list_del_(n, "../ruby-2.7.0/ccan/list/list.h" ":" "428");
+ list_del_(n, "../ruby-2.7.1/ccan/list/list.h" ":" "428");
  return (const char *)n - off;
 }
 #define list_tail(h,type,member) ((type *)list_tail_((h), list_off_(type, member)))
 static inline const void *list_tail_(const struct list_head *h, size_t off)
 {
- if (list_empty_(h, "../ruby-2.7.0/ccan/list/list.h" ":" "451"))
+ if (list_empty_(h, "../ruby-2.7.1/ccan/list/list.h" ":" "451"))
   return ((void *)0);
  return (const char *)h->n.prev - off;
 }
@@ -78836,7 +78852,7 @@ static inline void list_append_list_(struct list_head *to,
  from_tail->next = &to->n;
  to_tail->next = &from->n;
  from->n.prev = to_tail;
- list_del_(&from->n, "../ruby-2.7.0/ccan/list/list.h" ":" "600");
+ list_del_(&from->n, "../ruby-2.7.1/ccan/list/list.h" ":" "600");
  list_head_init(from);
 }
 #define list_prepend_list(t,f) list_prepend_list_(t, f, LIST_LOC)
@@ -78850,7 +78866,7 @@ static inline void list_prepend_list_(struct list_head *to,
  from->n.prev = &to->n;
  to_head->prev = from_tail;
  from_tail->next = to_head;
- list_del_(&from->n, "../ruby-2.7.0/ccan/list/list.h" ":" "632");
+ list_del_(&from->n, "../ruby-2.7.1/ccan/list/list.h" ":" "632");
  list_head_init(from);
 }
 #define list_for_each_off_dir_(h,i,off,dir) for (i = list_node_to_off_(list_debug(h, LIST_LOC)->n.dir, (off)); list_node_from_off_((void *)i, (off)) != &(h)->n; i = list_node_to_off_(list_node_from_off_((void *)i, (off))->dir, (off)))
@@ -80006,13 +80022,13 @@ rb_vm_living_threads_init(rb_vm_t *vm)
 static inline void
 rb_vm_living_threads_insert(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.7.0/vm_core.h" ":" "1703");
+    list_add_tail_(&vm->living_threads, &th->vmlt_node, "../ruby-2.7.1/vm_core.h" ":" "1703");
     vm->living_thread_num++;
 }
 static inline void
 rb_vm_living_threads_remove(rb_vm_t *vm, rb_thread_t *th)
 {
-    list_del_(&th->vmlt_node, "../ruby-2.7.0/vm_core.h" ":" "1710");
+    list_del_(&th->vmlt_node, "../ruby-2.7.1/vm_core.h" ":" "1710");
     vm->living_thread_num--;
 }
 typedef int rb_backtrace_iter_func(void *, VALUE, int, VALUE);
@@ -80511,7 +80527,7 @@ CREF_REFINEMENTS_SET(rb_cref_t *cref, VALUE refs)
 #pragma GCC diagnostic push
    ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-   ; typeof(rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.7.0/eval_intern.h", 220)) unaligned_member_access_result = (rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.7.0/eval_intern.h", 220));
+   ; typeof(rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.7.1/eval_intern.h", 220)) unaligned_member_access_result = (rb_obj_write((VALUE)(cref), (VALUE *)(&cref->refinements), (VALUE)(refs), "../ruby-2.7.1/eval_intern.h", 220));
 #pragma GCC diagnostic pop
    ; unaligned_member_access_result; });
 }
@@ -80862,7 +80878,7 @@ void
 rb_vm_block_ep_update(VALUE obj, const struct rb_block *dst, const VALUE *ep)
 {
     *((const VALUE **)&dst->as.captured.ep) = ep;
-    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.7.0/vm.c", 318);
+    rb_obj_written((VALUE)(obj), (VALUE)(((VALUE)RUBY_Qundef)), (VALUE)(VM_ENV_ENVVAL(ep)), "../ruby-2.7.1/vm.c", 318);
 }
 static void
 vm_bind_update_env(VALUE bindval, rb_binding_t *bind, VALUE envval)
@@ -80872,7 +80888,7 @@ vm_bind_update_env(VALUE bindval, rb_binding_t *bind, VALUE envval)
 #pragma GCC diagnostic push
    ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-   ; typeof(rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.7.0/vm.c", 325)) unaligned_member_access_result = (rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.7.0/vm.c", 325));
+   ; typeof(rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.7.1/vm.c", 325)) unaligned_member_access_result = (rb_obj_write((VALUE)(bindval), (VALUE *)(&bind->block.as.captured.code.iseq), (VALUE)(env->iseq), "../ruby-2.7.1/vm.c", 325));
 #pragma GCC diagnostic pop
    ; unaligned_member_access_result; });
     rb_vm_block_ep_update(bindval, &bind->block, env->ep);
@@ -81757,7 +81773,7 @@ lep_svar_write(const rb_execution_context_t *ec, const VALUE *lep, const struct 
 #pragma GCC diagnostic push
 ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-; typeof(rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.7.0/vm_insnhelper.c", 486)) unaligned_member_access_result = (rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.7.0/vm_insnhelper.c", 486));
+; typeof(rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.7.1/vm_insnhelper.c", 486)) unaligned_member_access_result = (rb_obj_write((VALUE)(rb_ec_thread_ptr(ec)->self), (VALUE *)(&ec->root_svar), (VALUE)(svar), "../ruby-2.7.1/vm_insnhelper.c", 486));
 #pragma GCC diagnostic pop
 ; unaligned_member_access_result; });
     }
@@ -81801,7 +81817,7 @@ lep_svar_set(const rb_execution_context_t *ec, const VALUE *lep, rb_num_t key, V
 #pragma GCC diagnostic push
 ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-; typeof(rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 532)) unaligned_member_access_result = (rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 532));
+; typeof(rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 532)) unaligned_member_access_result = (rb_obj_write((VALUE)(svar), (VALUE *)(&svar->lastline), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 532));
 #pragma GCC diagnostic pop
 ; unaligned_member_access_result; });
  return;
@@ -81810,7 +81826,7 @@ lep_svar_set(const rb_execution_context_t *ec, const VALUE *lep, rb_num_t key, V
 #pragma GCC diagnostic push
 ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-; typeof(rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 535)) unaligned_member_access_result = (rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 535));
+; typeof(rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 535)) unaligned_member_access_result = (rb_obj_write((VALUE)(svar), (VALUE *)(&svar->backref), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 535));
 #pragma GCC diagnostic pop
 ; unaligned_member_access_result; });
  return;
@@ -81821,7 +81837,7 @@ lep_svar_set(const rb_execution_context_t *ec, const VALUE *lep, rb_num_t key, V
 #pragma GCC diagnostic push
     ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-    ; typeof(rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.7.0/vm_insnhelper.c", 541)) unaligned_member_access_result = (rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.7.0/vm_insnhelper.c", 541));
+    ; typeof(rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.7.1/vm_insnhelper.c", 541)) unaligned_member_access_result = (rb_obj_write((VALUE)(svar), (VALUE *)(&svar->others), (VALUE)(ary = rb_ary_new()), "../ruby-2.7.1/vm_insnhelper.c", 541));
 #pragma GCC diagnostic pop
     ; unaligned_member_access_result; });
  }
@@ -81968,7 +81984,7 @@ cref_replace_with_duplicated_cref_each_frame(const VALUE *vptr, int can_be_svar,
 #pragma GCC diagnostic push
  ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
- ; typeof(rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.7.0/vm_insnhelper.c", 716)) unaligned_member_access_result = (rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.7.0/vm_insnhelper.c", 716));
+ ; typeof(rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.7.1/vm_insnhelper.c", 716)) unaligned_member_access_result = (rb_obj_write((VALUE)(parent), (VALUE *)(vptr), (VALUE)(new_cref), "../ruby-2.7.1/vm_insnhelper.c", 716));
 #pragma GCC diagnostic pop
  ; unaligned_member_access_result; });
      }
@@ -82319,7 +82335,7 @@ vm_setivar(VALUE obj, ID id, VALUE val, IVC ic, struct rb_call_cache *cc, int is
 #pragma GCC diagnostic push
  ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
- ; typeof(rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 1127)) unaligned_member_access_result = (rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 1127));
+ ; typeof(rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 1127)) unaligned_member_access_result = (rb_obj_write((VALUE)(obj), (VALUE *)(&ptr[index]), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 1127));
 #pragma GCC diagnostic pop
  ; unaligned_member_access_result; });
   ((void)0);
@@ -82968,7 +82984,7 @@ args_copy(struct args_info *args)
 #pragma GCC diagnostic push
     ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-    ; typeof(rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.7.0/vm_args.c", 154)) unaligned_member_access_result = (rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.7.0/vm_args.c", 154));
+    ; typeof(rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.7.1/vm_args.c", 154)) unaligned_member_access_result = (rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[--args->rest_index]), (VALUE)(_v), "../ruby-2.7.1/vm_args.c", 154));
 #pragma GCC diagnostic pop
     ; unaligned_member_access_result; }); rb_array_ptr_use_end(_ary, 1); } while (0);
  }
@@ -83093,7 +83109,7 @@ args_pop_keyword_hash(struct args_info *args, VALUE *kw_hash_ptr, int check_only
 #pragma GCC diagnostic push
      ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-     ; typeof(rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.7.0/vm_args.c", 291)) unaligned_member_access_result = (rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.7.0/vm_args.c", 291));
+     ; typeof(rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.7.1/vm_args.c", 291)) unaligned_member_access_result = (rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.7.1/vm_args.c", 291));
 #pragma GCC diagnostic pop
      ; unaligned_member_access_result; }); rb_array_ptr_use_end(_ary, 1); } while (0);
   }
@@ -83462,10 +83478,10 @@ setup_parameters_complex(rb_execution_context_t * const ec, const rb_iseq_t * co
 {
     const int min_argc = iseq->body->param.lead_num + iseq->body->param.post_num;
     const int max_argc = (iseq->body->param.flags.has_rest == 0) ? min_argc + iseq->body->param.opt_num : (-1);
-    int opt_pc = 0;
     int given_argc;
     int kw_splat = 0;
     unsigned int kw_flag = ci->flag & ((0x01 << VM_CALL_KWARG_bit) | (0x01 << VM_CALL_KW_SPLAT_bit));
+    int opt_pc = 0, allow_autosplat = !kw_flag;
     struct args_info args_body, *args;
     VALUE keyword_hash = ((VALUE)RUBY_Qnil);
     VALUE * const orig_sp = ec->cfp->sp;
@@ -83534,6 +83550,16 @@ setup_parameters_complex(rb_execution_context_t * const ec, const rb_iseq_t * co
                         kw_flag &= ~(0x01 << VM_CALL_KW_SPLAT_bit);
                     }
                     else {
+                        if (( ((RUBY_T_HASH) == RUBY_T_FIXNUM) ? (((int)(long)(rest_last))&RUBY_FIXNUM_FLAG) : ((RUBY_T_HASH) == RUBY_T_TRUE) ? ((rest_last) == ((VALUE)RUBY_Qtrue)) : ((RUBY_T_HASH) == RUBY_T_FALSE) ? ((rest_last) == ((VALUE)RUBY_Qfalse)) : ((RUBY_T_HASH) == RUBY_T_NIL) ? ((rest_last) == ((VALUE)RUBY_Qnil)) : ((RUBY_T_HASH) == RUBY_T_UNDEF) ? ((rest_last) == ((VALUE)RUBY_Qundef)) : ((RUBY_T_HASH) == RUBY_T_SYMBOL) ? ((((VALUE)(rest_last)&~((~(VALUE)0)<<RUBY_SPECIAL_SHIFT)) == RUBY_SYMBOL_FLAG)||(!(((VALUE)(rest_last) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(rest_last) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(rest_last))->flags & RUBY_T_MASK) == (RUBY_T_SYMBOL))) : ((RUBY_T_HASH) == RUBY_T_FLOAT) ? ( 0 || (!(((VALUE)(rest_last) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(rest_last) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(rest_last))->flags & RUBY_T_MASK) == RUBY_T_FLOAT)) : (!(((VALUE)(rest_last) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(rest_last) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(rest_last))->flags & RUBY_T_MASK) == (RUBY_T_HASH))) && rb_obj_frozen_p(rest_last)) {
+                            rest_last = rb_hash_new();
+                            do { const VALUE _ary = (args->rest); const VALUE _v = (rest_last); VALUE *ptr = (VALUE *)rb_array_ptr_use_start(_ary, 1); __extension__({
+#pragma GCC diagnostic push
+                           ;
+#pragma GCC diagnostic ignored "-Waddress-of-packed-member"
+                           ; typeof(rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.7.1/vm_args.c", 826)) unaligned_member_access_result = (rb_obj_write((VALUE)(_ary), (VALUE *)(&ptr[len - 1]), (VALUE)(_v), "../ruby-2.7.1/vm_args.c", 826));
+#pragma GCC diagnostic pop
+                           ; unaligned_member_access_result; }); rb_array_ptr_use_end(_ary, 1); } while (0);
+                        }
                         flag_keyword_hash = rest_last;
                     }
                 }
@@ -83557,6 +83583,10 @@ setup_parameters_complex(rb_execution_context_t * const ec, const rb_iseq_t * co
                         kw_flag &= ~(0x01 << VM_CALL_KW_SPLAT_bit);
                     }
                     else {
+                        if (( ((RUBY_T_HASH) == RUBY_T_FIXNUM) ? (((int)(long)(last_arg))&RUBY_FIXNUM_FLAG) : ((RUBY_T_HASH) == RUBY_T_TRUE) ? ((last_arg) == ((VALUE)RUBY_Qtrue)) : ((RUBY_T_HASH) == RUBY_T_FALSE) ? ((last_arg) == ((VALUE)RUBY_Qfalse)) : ((RUBY_T_HASH) == RUBY_T_NIL) ? ((last_arg) == ((VALUE)RUBY_Qnil)) : ((RUBY_T_HASH) == RUBY_T_UNDEF) ? ((last_arg) == ((VALUE)RUBY_Qundef)) : ((RUBY_T_HASH) == RUBY_T_SYMBOL) ? ((((VALUE)(last_arg)&~((~(VALUE)0)<<RUBY_SPECIAL_SHIFT)) == RUBY_SYMBOL_FLAG)||(!(((VALUE)(last_arg) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(last_arg) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(last_arg))->flags & RUBY_T_MASK) == (RUBY_T_SYMBOL))) : ((RUBY_T_HASH) == RUBY_T_FLOAT) ? ( 0 || (!(((VALUE)(last_arg) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(last_arg) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(last_arg))->flags & RUBY_T_MASK) == RUBY_T_FLOAT)) : (!(((VALUE)(last_arg) & RUBY_IMMEDIATE_MASK) || !!(((VALUE)(last_arg) & (VALUE)~((VALUE)RUBY_Qnil)) == 0)) && (int)(((struct RBasic*)(last_arg))->flags & RUBY_T_MASK) == (RUBY_T_HASH))) && rb_obj_frozen_p(last_arg)) {
+                            last_arg = rb_hash_new();
+                            args->argv[args->argc-1] = last_arg;
+                        }
                         flag_keyword_hash = last_arg;
                     }
                 }
@@ -83581,6 +83611,7 @@ setup_parameters_complex(rb_execution_context_t * const ec, const rb_iseq_t * co
  break;
       case arg_setup_block:
  if (given_argc == 1 &&
+            allow_autosplat &&
      (min_argc > 0 || iseq->body->param.opt_num > 1 ||
       iseq->body->param.flags.has_kw || iseq->body->param.flags.has_kwrest) &&
      !iseq->body->param.flags.ambiguous_param0 &&
@@ -84634,7 +84665,7 @@ aliased_callable_method_entry(const rb_callable_method_entry_t *me)
 #pragma GCC diagnostic push
     ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-    ; typeof(rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.7.0/vm_insnhelper.c", 2828)) unaligned_member_access_result = (rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.7.0/vm_insnhelper.c", 2828));
+    ; typeof(rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.7.1/vm_insnhelper.c", 2828)) unaligned_member_access_result = (rb_obj_write((VALUE)(me), (VALUE *)(&me->def->body.alias.original_me), (VALUE)(cme), "../ruby-2.7.1/vm_insnhelper.c", 2828));
 #pragma GCC diagnostic pop
     ; unaligned_member_access_result; });
  }
@@ -85771,7 +85802,7 @@ vm_once_dispatch(rb_execution_context_t *ec, ISEQ iseq, ISE is)
 #pragma GCC diagnostic push
 ;
 #pragma GCC diagnostic ignored "-Waddress-of-packed-member"
-; typeof(rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 4160)) unaligned_member_access_result = (rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.7.0/vm_insnhelper.c", 4160));
+; typeof(rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 4160)) unaligned_member_access_result = (rb_obj_write((VALUE)(ec->cfp->iseq), (VALUE *)(&is->once.value), (VALUE)(val), "../ruby-2.7.1/vm_insnhelper.c", 4160));
 #pragma GCC diagnostic pop
 ; unaligned_member_access_result; });
  is->once.running_thread = RUNNING_THREAD_ONCE_DONE;

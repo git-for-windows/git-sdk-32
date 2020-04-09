@@ -286,6 +286,7 @@ mingw32/i686-w64-mingw32/lib/libpenwin32.a
 mingw32/i686-w64-mingw32/lib/libpkpd32.a
 mingw32/i686-w64-mingw32/lib/libportabledeviceguids.a
 mingw32/i686-w64-mingw32/lib/libpowrprof.a
+mingw32/i686-w64-mingw32/lib/libpropsys.a
 mingw32/i686-w64-mingw32/lib/libpsapi.a
 mingw32/i686-w64-mingw32/lib/libquartz.a
 mingw32/i686-w64-mingw32/lib/libqutil.a

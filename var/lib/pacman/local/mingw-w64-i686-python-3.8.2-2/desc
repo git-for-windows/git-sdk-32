@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-python2
+mingw-w64-i686-python
 
 %VERSION%
-2.7.17-1
+3.8.2-2
 
 %BASE%
-mingw-w64-python2
+mingw-w64-python
 
 %DESC%
 A high-level scripting language (mingw-w64)
@@ -17,16 +17,16 @@ https://www.python.org/
 any
 
 %BUILDDATE%
-1571809866
+1586441565
 
 %INSTALLDATE%
-1571973266
+1586487945
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-75055104
+118284000
 
 %REASON%
 1
@@ -37,15 +37,27 @@ PSF
 %VALIDATION%
 pgp
 
+%REPLACES%
+mingw-w64-i686-python3
+
 %DEPENDS%
 mingw-w64-i686-gcc-libs
 mingw-w64-i686-expat
 mingw-w64-i686-bzip2
 mingw-w64-i686-libffi
+mingw-w64-i686-mpdecimal
 mingw-w64-i686-ncurses
 mingw-w64-i686-openssl
 mingw-w64-i686-sqlite3
 mingw-w64-i686-tcl
 mingw-w64-i686-tk
 mingw-w64-i686-zlib
+mingw-w64-i686-xz
+
+%CONFLICTS%
+mingw-w64-i686-python3
+mingw-w64-i686-python2<2.7.16-7
+
+%PROVIDES%
+mingw-w64-i686-python3=3.8.2
 

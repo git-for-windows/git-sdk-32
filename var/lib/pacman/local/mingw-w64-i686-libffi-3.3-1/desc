@@ -2,7 +2,7 @@
 mingw-w64-i686-libffi
 
 %VERSION%
-3.2.1-4
+3.3-1
 
 %BASE%
 mingw-w64-libffi
@@ -17,16 +17,16 @@ https://sourceware.org/libffi
 any
 
 %BUILDDATE%
-1469086992
+1586434866
 
 %INSTALLDATE%
-1469785355
+1586487931
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-121856
+120683
 
 %REASON%
 1

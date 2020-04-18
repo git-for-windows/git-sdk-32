@@ -28,8 +28,8 @@ MODLIBS=        $(LOCALMODLIBS) $(BASEMODLIBS)
 VERSION=	2.7
 srcdir=		.
 
-abs_srcdir=	/msys_scripts/python2/src/Python-2.7.17
-abs_builddir=	/msys_scripts/python2/src/Python-2.7.17
+abs_srcdir=	/msysdev/python2/src/Python-2.7.17
+abs_builddir=	/msysdev/python2/src/Python-2.7.17
 build=		i686-pc-msys
 host=		i686-pc-msys
 
@@ -252,7 +252,7 @@ SIGNAL_OBJS=
 
 ##########################################################################
 
-LIBFFI_INCLUDEDIR=	/usr/lib/libffi-3.2.1/include
+LIBFFI_INCLUDEDIR=	
 
 ##########################################################################
 # Parser

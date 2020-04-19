@@ -1,38 +1,36 @@
 %NAME%
-libxslt
+file
 
 %VERSION%
-1.1.34-1
+5.38-3
 
 %BASE%
-libxslt
+file
 
 %DESC%
-XML stylesheet transformation library
+File type identification utility
 
 %URL%
-http://xmlsoft.org/XSLT/
+https://www.darwinsys.com/file/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1576135451
+1587197126
 
 %INSTALLDATE%
-1576206777
+1587265551
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-360943
-
-%REASON%
-1
+9453630
 
 %GROUPS%
-libraries
+base
+base-devel
 
 %LICENSE%
 custom
@@ -41,6 +39,7 @@ custom
 pgp
 
 %DEPENDS%
-libxml2
-libgcrypt
+gcc-libs
+msys2-runtime
+zlib
 

@@ -1,42 +1,50 @@
 %NAME%
-vim
+libxml2
 
 %VERSION%
-8.2.0121-1
+2.9.10-4
 
 %BASE%
-vim
+libxml2
 
 %DESC%
-
+XML parsing library, version 2
 
 %URL%
-http://www.vim.org
+http://www.xmlsoft.org/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1579161814
+1587188966
 
 %INSTALLDATE%
-1579230809
+1587265551
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-48383137
+1397400
+
+%REASON%
+1
 
 %GROUPS%
-editors
+libraries
 
 %LICENSE%
-custom:vim
+MIT
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
+coreutils
+icu>=59.1
+liblzma
+libreadline
 ncurses
+zlib
 

@@ -1289,6 +1289,8 @@ mingw32/i686-w64-mingw32/include/smtpguid.h
 mingw32/i686-w64-mingw32/include/smx.h
 mingw32/i686-w64-mingw32/include/snmp.h
 mingw32/i686-w64-mingw32/include/softpub.h
+mingw32/i686-w64-mingw32/include/spatialaudioclient.h
+mingw32/i686-w64-mingw32/include/spatialaudioclient.idl
 mingw32/i686-w64-mingw32/include/specstrings.h
 mingw32/i686-w64-mingw32/include/sperror.h
 mingw32/i686-w64-mingw32/include/sphelper.h
@@ -1467,6 +1469,8 @@ mingw32/i686-w64-mingw32/include/vsbackup.h
 mingw32/i686-w64-mingw32/include/vsmgmt.h
 mingw32/i686-w64-mingw32/include/vsprov.h
 mingw32/i686-w64-mingw32/include/vss.h
+mingw32/i686-w64-mingw32/include/vss.idl
+mingw32/i686-w64-mingw32/include/vsserror.h
 mingw32/i686-w64-mingw32/include/vsstyle.h
 mingw32/i686-w64-mingw32/include/vssym32.h
 mingw32/i686-w64-mingw32/include/vswriter.h

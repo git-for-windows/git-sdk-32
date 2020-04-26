@@ -1,8 +1,8 @@
 %NAME%
-mingw-w64-i686-libwinpthread-git
+mingw-w64-i686-winpthreads-git
 
 %VERSION%
-8.0.0.5680.0df6b89f-1
+8.0.0.5814.9dbf4cc1-1
 
 %BASE%
 mingw-w64-winpthreads-git
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1584111404
+1587823564
 
 %INSTALLDATE%
-1584155194
+1587870350
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-68711
+389975
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -39,11 +39,15 @@ BSD
 pgp
 
 %REPLACES%
-mingw-w64-i686-libwinpthread-svn
+mingw-w64-i686-winpthreads-svn
+
+%DEPENDS%
+mingw-w64-i686-crt-git
+mingw-w64-i686-libwinpthread-git=8.0.0.5814.9dbf4cc1
 
 %CONFLICTS%
-mingw-w64-i686-libwinpthread
+mingw-w64-i686-winpthreads
 
 %PROVIDES%
-mingw-w64-i686-libwinpthread
+mingw-w64-i686-winpthreads
 

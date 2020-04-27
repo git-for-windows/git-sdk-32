@@ -10,10 +10,10 @@ use strict;
 
 use Config;
 "$Config{'archname'}-$Config{'osvers'}" eq
-"i686-msys-thread-multi-64int-2.10.0(0.32553)" or
-	die "Errno architecture (i686-msys-thread-multi-64int-2.10.0(0.32553)) does not match executable architecture ($Config{'archname'}-$Config{'osvers'})";
+"i686-msys-thread-multi-64int-3.0.7-338.i686" or
+	die "Errno architecture (i686-msys-thread-multi-64int-3.0.7-338.i686) does not match executable architecture ($Config{'archname'}-$Config{'osvers'})";
 
-our $VERSION = "1.28";
+our $VERSION = "1.30";
 $VERSION = eval $VERSION;
 our @ISA = 'Exporter';
 

@@ -10,8 +10,8 @@ use strict;
 
 use Config;
 "$Config{'archname'}-$Config{'osvers'}" eq
-"i686-msys-thread-multi-64int-3.0.7-338.i686" or
-	die "Errno architecture (i686-msys-thread-multi-64int-3.0.7-338.i686) does not match executable architecture ($Config{'archname'}-$Config{'osvers'})";
+"i686-msys-thread-multi-64int-3.1.4-340.i686" or
+	die "Errno architecture (i686-msys-thread-multi-64int-3.1.4-340.i686) does not match executable architecture ($Config{'archname'}-$Config{'osvers'})";
 
 our $VERSION = "1.30";
 $VERSION = eval $VERSION;

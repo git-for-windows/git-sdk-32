@@ -1,32 +1,32 @@
 %NAME%
-perl-Net-SSLeay
+perl-XML-Parser
 
 %VERSION%
-1.88-1
+2.46-2
 
 %BASE%
-perl-Net-SSLeay
+perl-XML-Parser
 
 %DESC%
-Perl extension for using OpenSSL
+Expat-based XML parser module for perl
 
 %URL%
-http://search.cpan.org/dist/Net-SSLeay/
+http://search.cpan.org/dist/XML-Parser/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1587934450
+1588629710
 
 %INSTALLDATE%
-1587956764
+1588647948
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-791236
+439498
 
 %REASON%
 1
@@ -35,17 +35,20 @@ Git for Windows Build Agent <ci@git-for-windows.build>
 perl-modules
 
 %LICENSE%
-custom:BSD
+GPL
+PerlArtistic
 
 %VALIDATION%
 pgp
 
 %REPLACES%
-net-ssleay
+perlxml
 
 %DEPENDS%
-openssl
+perl
+libexpat
+libcrypt
 
 %PROVIDES%
-net-ssleay
+perlxml=2.46
 

@@ -43,6 +43,8 @@ mingw32/share/doc/git-doc/git-blame.html
 mingw32/share/doc/git-doc/git-blame.txt
 mingw32/share/doc/git-doc/git-branch.html
 mingw32/share/doc/git-doc/git-branch.txt
+mingw32/share/doc/git-doc/git-bugreport.html
+mingw32/share/doc/git-doc/git-bugreport.txt
 mingw32/share/doc/git-doc/git-bundle.html
 mingw32/share/doc/git-doc/git-bundle.txt
 mingw32/share/doc/git-doc/git-cat-file.html
@@ -349,6 +351,8 @@ mingw32/share/doc/git-doc/gitdiffcore.html
 mingw32/share/doc/git-doc/gitdiffcore.txt
 mingw32/share/doc/git-doc/giteveryday.html
 mingw32/share/doc/git-doc/giteveryday.txt
+mingw32/share/doc/git-doc/gitfaq.html
+mingw32/share/doc/git-doc/gitfaq.txt
 mingw32/share/doc/git-doc/gitglossary.html
 mingw32/share/doc/git-doc/gitglossary.txt
 mingw32/share/doc/git-doc/githooks.html
@@ -756,6 +760,7 @@ mingw32/share/doc/git-doc/RelNotes/2.25.4.txt
 mingw32/share/doc/git-doc/RelNotes/2.26.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.26.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.26.2.txt
+mingw32/share/doc/git-doc/RelNotes/2.27.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.10.txt

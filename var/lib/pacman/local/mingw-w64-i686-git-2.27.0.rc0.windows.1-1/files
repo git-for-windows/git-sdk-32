@@ -29,6 +29,7 @@ mingw32/libexec/git-core/git-bisect
 mingw32/libexec/git-core/git-bisect--helper.exe
 mingw32/libexec/git-core/git-blame.exe
 mingw32/libexec/git-core/git-branch.exe
+mingw32/libexec/git-core/git-bugreport.exe
 mingw32/libexec/git-core/git-bundle.exe
 mingw32/libexec/git-core/git-cat-file.exe
 mingw32/libexec/git-core/git-check-attr.exe
@@ -91,7 +92,6 @@ mingw32/libexec/git-core/git-init-db.exe
 mingw32/libexec/git-core/git-init.exe
 mingw32/libexec/git-core/git-instaweb
 mingw32/libexec/git-core/git-interpret-trailers.exe
-mingw32/libexec/git-core/git-legacy-stash
 mingw32/libexec/git-core/git-log.exe
 mingw32/libexec/git-core/git-ls-files.exe
 mingw32/libexec/git-core/git-ls-remote.exe

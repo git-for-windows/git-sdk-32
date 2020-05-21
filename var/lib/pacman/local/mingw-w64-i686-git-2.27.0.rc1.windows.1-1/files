@@ -307,6 +307,7 @@ mingw32/share/git/completion/git-completion.bash
 mingw32/share/git/completion/git-completion.tcsh
 mingw32/share/git/completion/git-completion.zsh
 mingw32/share/git/completion/git-prompt.sh
+mingw32/share/git/edit-git-bash.exe
 mingw32/share/git/git-for-windows.ico
 mingw32/share/git/git-wrapper.exe
 mingw32/share/gitk/

@@ -1,0 +1,12 @@
+[Trigger]
+Type = Path
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = mingw32/share/glib-2.0/schemas/*.gschema.xml
+Target = mingw32/share/glib-2.0/schemas/*.gschema.override
+
+[Action]
+Description = Compiling GSettings XML schema files...
+When = PostTransaction
+Exec = /mingw32/bin/glib-compile-schemas.exe /mingw32/share/glib-2.0/schemas

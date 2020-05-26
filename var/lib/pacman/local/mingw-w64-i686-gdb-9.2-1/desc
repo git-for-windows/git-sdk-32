@@ -2,7 +2,7 @@
 mingw-w64-i686-gdb
 
 %VERSION%
-9.1-4
+9.2-1
 
 %BASE%
 mingw-w64-gdb
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gdb/
 any
 
 %BUILDDATE%
-1590079728
+1590387861
 
 %INSTALLDATE%
-1590203201
+1590462360
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-13523209
+13523721
 
 %GROUPS%
 mingw-w64-i686-toolchain

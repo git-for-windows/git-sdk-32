@@ -12,10 +12,10 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.31.1/
-mingw32/lib/sqlite3.31.1/libtclsqlite3.dll
-mingw32/lib/sqlite3.31.1/libtclsqlite3.dll.a
-mingw32/lib/sqlite3.31.1/pkgIndex.tcl
+mingw32/lib/sqlite3.32.0/
+mingw32/lib/sqlite3.32.0/libtclsqlite3.dll
+mingw32/lib/sqlite3.32.0/libtclsqlite3.dll.a
+mingw32/lib/sqlite3.32.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/sqlite3/
@@ -35,6 +35,7 @@ mingw32/share/doc/sqlite3/autoinc.html
 mingw32/share/doc/sqlite3/backup.html
 mingw32/share/doc/sqlite3/bindptr.html
 mingw32/share/doc/sqlite3/books.html
+mingw32/share/doc/sqlite3/bytecodevtab.html
 mingw32/share/doc/sqlite3/c3ref/
 mingw32/share/doc/sqlite3/c3ref/aggregate_context.html
 mingw32/share/doc/sqlite3/c3ref/aggregate_count.html
@@ -109,10 +110,12 @@ mingw32/share/doc/sqlite3/c3ref/constlist.html
 mingw32/share/doc/sqlite3/c3ref/context.html
 mingw32/share/doc/sqlite3/c3ref/context_db_handle.html
 mingw32/share/doc/sqlite3/c3ref/create_collation.html
+mingw32/share/doc/sqlite3/c3ref/create_filename.html
 mingw32/share/doc/sqlite3/c3ref/create_function.html
 mingw32/share/doc/sqlite3/c3ref/create_module.html
 mingw32/share/doc/sqlite3/c3ref/data_count.html
 mingw32/share/doc/sqlite3/c3ref/data_directory.html
+mingw32/share/doc/sqlite3/c3ref/database_file_object.html
 mingw32/share/doc/sqlite3/c3ref/db_cacheflush.html
 mingw32/share/doc/sqlite3/c3ref/db_config.html
 mingw32/share/doc/sqlite3/c3ref/db_filename.html
@@ -242,6 +245,7 @@ mingw32/share/doc/sqlite3/carray.html
 mingw32/share/doc/sqlite3/changes.html
 mingw32/share/doc/sqlite3/chronology.html
 mingw32/share/doc/sqlite3/cintro.html
+mingw32/share/doc/sqlite3/cksumvfs.html
 mingw32/share/doc/sqlite3/cli.html
 mingw32/share/doc/sqlite3/codeofconduct.html
 mingw32/share/doc/sqlite3/codeofethics.html
@@ -257,6 +261,7 @@ mingw32/share/doc/sqlite3/cpu.html
 mingw32/share/doc/sqlite3/crew.html
 mingw32/share/doc/sqlite3/csv.html
 mingw32/share/doc/sqlite3/custombuild.html
+mingw32/share/doc/sqlite3/cves.html
 mingw32/share/doc/sqlite3/cvstrac.css
 mingw32/share/doc/sqlite3/datatype3.html
 mingw32/share/doc/sqlite3/datatypes.html
@@ -265,7 +270,6 @@ mingw32/share/doc/sqlite3/dbpage.html
 mingw32/share/doc/sqlite3/dbstat.html
 mingw32/share/doc/sqlite3/debugging.html
 mingw32/share/doc/sqlite3/deterministic.html
-mingw32/share/doc/sqlite3/dev.html
 mingw32/share/doc/sqlite3/different.html
 mingw32/share/doc/sqlite3/doc_backlink_crossref.html
 mingw32/share/doc/sqlite3/doc_keyword_crossref.html
@@ -295,6 +299,7 @@ mingw32/share/doc/sqlite3/gencol.html
 mingw32/share/doc/sqlite3/geopoly.html
 mingw32/share/doc/sqlite3/getthecode.html
 mingw32/share/doc/sqlite3/hirely.html
+mingw32/share/doc/sqlite3/howitworks.html
 mingw32/share/doc/sqlite3/howtocompile.html
 mingw32/share/doc/sqlite3/howtocorrupt.html
 mingw32/share/doc/sqlite3/hp1.html
@@ -598,7 +603,7 @@ mingw32/share/doc/sqlite3/lang_savepoint.html
 mingw32/share/doc/sqlite3/lang_select.html
 mingw32/share/doc/sqlite3/lang_transaction.html
 mingw32/share/doc/sqlite3/lang_update.html
-mingw32/share/doc/sqlite3/lang_UPSERT.html
+mingw32/share/doc/sqlite3/lang_upsert.html
 mingw32/share/doc/sqlite3/lang_vacuum.html
 mingw32/share/doc/sqlite3/lang_with.html
 mingw32/share/doc/sqlite3/lemon.html
@@ -614,6 +619,7 @@ mingw32/share/doc/sqlite3/mmap.html
 mingw32/share/doc/sqlite3/mostdeployed.html
 mingw32/share/doc/sqlite3/news.html
 mingw32/share/doc/sqlite3/np1queryprob.html
+mingw32/share/doc/sqlite3/nulinstr.html
 mingw32/share/doc/sqlite3/nulls.html
 mingw32/share/doc/sqlite3/oldnews.html
 mingw32/share/doc/sqlite3/omitted.html
@@ -707,6 +713,7 @@ mingw32/share/doc/sqlite3/releaselog/3_30_0.html
 mingw32/share/doc/sqlite3/releaselog/3_30_1.html
 mingw32/share/doc/sqlite3/releaselog/3_31_0.html
 mingw32/share/doc/sqlite3/releaselog/3_31_1.html
+mingw32/share/doc/sqlite3/releaselog/3_32_0.html
 mingw32/share/doc/sqlite3/releaselog/3_3_0.html
 mingw32/share/doc/sqlite3/releaselog/3_3_1.html
 mingw32/share/doc/sqlite3/releaselog/3_3_10.html
@@ -984,6 +991,7 @@ mingw32/share/doc/sqlite3/th3.html
 mingw32/share/doc/sqlite3/threadsafe.html
 mingw32/share/doc/sqlite3/toc.db
 mingw32/share/doc/sqlite3/transactional.html
+mingw32/share/doc/sqlite3/uintcseq.html
 mingw32/share/doc/sqlite3/undoredo.html
 mingw32/share/doc/sqlite3/unionvtab.html
 mingw32/share/doc/sqlite3/unlock_notify.html

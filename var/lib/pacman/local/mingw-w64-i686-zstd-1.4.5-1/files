@@ -11,6 +11,12 @@ mingw32/include/zdict.h
 mingw32/include/zstd.h
 mingw32/include/zstd_errors.h
 mingw32/lib/
+mingw32/lib/cmake/
+mingw32/lib/cmake/zstd/
+mingw32/lib/cmake/zstd/zstdConfig.cmake
+mingw32/lib/cmake/zstd/zstdConfigVersion.cmake
+mingw32/lib/cmake/zstd/zstdTargets-release.cmake
+mingw32/lib/cmake/zstd/zstdTargets.cmake
 mingw32/lib/libzstd.a
 mingw32/lib/libzstd.dll.a
 mingw32/lib/pkgconfig/

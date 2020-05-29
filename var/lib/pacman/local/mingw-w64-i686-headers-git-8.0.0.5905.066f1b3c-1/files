@@ -376,6 +376,7 @@ mingw32/i686-w64-mingw32/include/ddk/video.h
 mingw32/i686-w64-mingw32/include/ddk/videoagp.h
 mingw32/i686-w64-mingw32/include/ddk/wdm.h
 mingw32/i686-w64-mingw32/include/ddk/wdmguid.h
+mingw32/i686-w64-mingw32/include/ddk/wdmsec.h
 mingw32/i686-w64-mingw32/include/ddk/wmidata.h
 mingw32/i686-w64-mingw32/include/ddk/wmilib.h
 mingw32/i686-w64-mingw32/include/ddk/ws2san.h
@@ -405,6 +406,8 @@ mingw32/i686-w64-mingw32/include/digitalv.h
 mingw32/i686-w64-mingw32/include/dimm.h
 mingw32/i686-w64-mingw32/include/dimm.idl
 mingw32/i686-w64-mingw32/include/dinput.h
+mingw32/i686-w64-mingw32/include/dinputd.h
+mingw32/i686-w64-mingw32/include/dinputd.idl
 mingw32/i686-w64-mingw32/include/dir.h
 mingw32/i686-w64-mingw32/include/direct.h
 mingw32/i686-w64-mingw32/include/dirent.h
@@ -468,6 +471,8 @@ mingw32/i686-w64-mingw32/include/dssec.h
 mingw32/i686-w64-mingw32/include/dtchelp.h
 mingw32/i686-w64-mingw32/include/dvbsiparser.h
 mingw32/i686-w64-mingw32/include/dvdevcod.h
+mingw32/i686-w64-mingw32/include/dvdif.h
+mingw32/i686-w64-mingw32/include/dvdif.idl
 mingw32/i686-w64-mingw32/include/dvdmedia.h
 mingw32/i686-w64-mingw32/include/dvec.h
 mingw32/i686-w64-mingw32/include/dvobj.h
@@ -980,6 +985,10 @@ mingw32/i686-w64-mingw32/include/ndhelper.h
 mingw32/i686-w64-mingw32/include/ndkinfo.h
 mingw32/i686-w64-mingw32/include/ndr64types.h
 mingw32/i686-w64-mingw32/include/ndrtypes.h
+mingw32/i686-w64-mingw32/include/netcfgn.h
+mingw32/i686-w64-mingw32/include/netcfgn.idl
+mingw32/i686-w64-mingw32/include/netcfgx.h
+mingw32/i686-w64-mingw32/include/netcfgx.idl
 mingw32/i686-w64-mingw32/include/netcon.h
 mingw32/i686-w64-mingw32/include/neterr.h
 mingw32/i686-w64-mingw32/include/netevent.h
@@ -998,6 +1007,7 @@ mingw32/i686-w64-mingw32/include/nldef.h
 mingw32/i686-w64-mingw32/include/nmsupp.h
 mingw32/i686-w64-mingw32/include/npapi.h
 mingw32/i686-w64-mingw32/include/nsemail.h
+mingw32/i686-w64-mingw32/include/nserror.h
 mingw32/i686-w64-mingw32/include/nspapi.h
 mingw32/i686-w64-mingw32/include/ntdd1394.h
 mingw32/i686-w64-mingw32/include/ntdd8042.h
@@ -1519,6 +1529,8 @@ mingw32/i686-w64-mingw32/include/winbase.h
 mingw32/i686-w64-mingw32/include/winber.h
 mingw32/i686-w64-mingw32/include/wincodec.h
 mingw32/i686-w64-mingw32/include/wincodec.idl
+mingw32/i686-w64-mingw32/include/wincodecsdk.h
+mingw32/i686-w64-mingw32/include/wincodecsdk.idl
 mingw32/i686-w64-mingw32/include/wincon.h
 mingw32/i686-w64-mingw32/include/wincred.h
 mingw32/i686-w64-mingw32/include/wincrypt.h

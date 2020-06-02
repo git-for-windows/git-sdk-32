@@ -2,7 +2,7 @@
 mingw-w64-i686-gcc
 
 %VERSION%
-10.1.0-2
+10.1.0-3
 
 %BASE%
 mingw-w64-gcc
@@ -17,16 +17,16 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1589201233
+1590998250
 
 %INSTALLDATE%
-1589252748
+1591067174
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-142911279
+142972073
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -47,7 +47,7 @@ mingw-w64-i686-headers
 mingw-w64-i686-isl
 mingw-w64-i686-libiconv
 mingw-w64-i686-mpc
-mingw-w64-i686-gcc-libs=10.1.0-2
+mingw-w64-i686-gcc-libs=10.1.0-3
 mingw-w64-i686-windows-default-manifest
 mingw-w64-i686-winpthreads
 mingw-w64-i686-zlib

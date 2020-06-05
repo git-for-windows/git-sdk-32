@@ -2,7 +2,7 @@
 mingw-w64-i686-harfbuzz
 
 %VERSION%
-2.6.6-3
+2.6.6-4
 
 %BASE%
 mingw-w64-harfbuzz
@@ -17,16 +17,16 @@ https://www.freedesktop.org/wiki/Software/HarfBuzz
 any
 
 %BUILDDATE%
-1590397069
+1591249161
 
 %INSTALLDATE%
-1590462361
+1591326424
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-7575503
+7637086
 
 %REASON%
 1
@@ -38,6 +38,7 @@ MIT
 pgp
 
 %DEPENDS%
+mingw-w64-i686-cairo
 mingw-w64-i686-freetype
 mingw-w64-i686-gcc-libs
 mingw-w64-i686-glib2

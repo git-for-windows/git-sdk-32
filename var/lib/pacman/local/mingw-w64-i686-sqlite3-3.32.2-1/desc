@@ -2,7 +2,7 @@
 mingw-w64-i686-sqlite3
 
 %VERSION%
-3.32.1-1
+3.32.2-1
 
 %BASE%
 mingw-w64-sqlite3
@@ -17,16 +17,16 @@ https://www.sqlite.org
 any
 
 %BUILDDATE%
-1590653769
+1591600056
 
 %INSTALLDATE%
-1590721570
+1591672020
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-32996325
+33061668
 
 %REASON%
 1
@@ -49,7 +49,7 @@ mingw-w64-i686-tcl
 mingw-w64-i686-sqlite-analyzer
 
 %PROVIDES%
-mingw-w64-i686-sqlite=3.32.1
-mingw-w64-i686-sqlite-analyzer=3.32.1
-mingw-w64-i686-sqlite-docs=3.32.1
+mingw-w64-i686-sqlite=3.32.2
+mingw-w64-i686-sqlite-analyzer=3.32.2
+mingw-w64-i686-sqlite-docs=3.32.2
 

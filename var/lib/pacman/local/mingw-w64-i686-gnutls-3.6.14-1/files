@@ -343,6 +343,7 @@ mingw32/share/man/man3/gnutls_est_record_overhead_size.3
 mingw32/share/man/man3/gnutls_ext_get_current_msg.3
 mingw32/share/man/man3/gnutls_ext_get_data.3
 mingw32/share/man/man3/gnutls_ext_get_name.3
+mingw32/share/man/man3/gnutls_ext_get_name2.3
 mingw32/share/man/man3/gnutls_ext_raw_parse.3
 mingw32/share/man/man3/gnutls_ext_register.3
 mingw32/share/man/man3/gnutls_ext_set_data.3
@@ -605,6 +606,7 @@ mingw32/share/man/man3/gnutls_pkcs7_get_signature_info.3
 mingw32/share/man/man3/gnutls_pkcs7_import.3
 mingw32/share/man/man3/gnutls_pkcs7_init.3
 mingw32/share/man/man3/gnutls_pkcs7_print.3
+mingw32/share/man/man3/gnutls_pkcs7_print_signature_info.3
 mingw32/share/man/man3/gnutls_pkcs7_set_crl.3
 mingw32/share/man/man3/gnutls_pkcs7_set_crl_raw.3
 mingw32/share/man/man3/gnutls_pkcs7_set_crt.3

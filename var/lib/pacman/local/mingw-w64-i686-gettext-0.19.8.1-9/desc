@@ -2,7 +2,7 @@
 mingw-w64-i686-gettext
 
 %VERSION%
-0.19.8.1-8
+0.19.8.1-9
 
 %BASE%
 mingw-w64-gettext
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gettext/
 any
 
 %BUILDDATE%
-1557831690
+1591703026
 
 %INSTALLDATE%
-1557976377
+1591758413
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
 
 %SIZE%
-19329024
+19283658
 
 %REASON%
 1

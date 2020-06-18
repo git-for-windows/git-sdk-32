@@ -46,6 +46,8 @@ mingw32/lib/pkgconfig/fontconfig.pc
 mingw32/share/
 mingw32/share/fontconfig/
 mingw32/share/fontconfig/conf.avail/
+mingw32/share/fontconfig/conf.avail/05-reset-dirs-sample.conf
+mingw32/share/fontconfig/conf.avail/09-autohint-if-no-hinting.conf
 mingw32/share/fontconfig/conf.avail/10-autohint.conf
 mingw32/share/fontconfig/conf.avail/10-hinting-full.conf
 mingw32/share/fontconfig/conf.avail/10-hinting-medium.conf
@@ -64,6 +66,7 @@ mingw32/share/fontconfig/conf.avail/11-lcdfilter-light.conf
 mingw32/share/fontconfig/conf.avail/20-unhint-small-vera.conf
 mingw32/share/fontconfig/conf.avail/25-unhint-nonlatin.conf
 mingw32/share/fontconfig/conf.avail/30-metric-aliases.conf
+mingw32/share/fontconfig/conf.avail/35-lang-normalize.conf
 mingw32/share/fontconfig/conf.avail/40-nonlatin.conf
 mingw32/share/fontconfig/conf.avail/45-generic.conf
 mingw32/share/fontconfig/conf.avail/45-latin.conf

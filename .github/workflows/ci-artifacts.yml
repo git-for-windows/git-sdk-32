@@ -3,7 +3,7 @@ name: ci-artifacts
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   LC_CTYPE: C.UTF-8
@@ -17,9 +17,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: clone git-sdk-32
-        run: git clone --bare --depth=1 --single-branch -b master https://github.com/git-for-windows/git-sdk-32
+        run: git clone --bare --depth=1 --single-branch -b main https://github.com/git-for-windows/git-sdk-32
       - name: clone build-extra
-        run: git clone --depth=1 --single-branch -b master https://github.com/git-for-windows/build-extra
+        run: git clone --depth=1 --single-branch -b main https://github.com/git-for-windows/build-extra
       - name: build git-sdk-32-${{matrix.artifact}}
         shell: bash
         run: |

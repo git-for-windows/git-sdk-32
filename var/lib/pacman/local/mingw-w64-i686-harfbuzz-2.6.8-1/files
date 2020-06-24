@@ -44,6 +44,7 @@ mingw32/include/harfbuzz/hb-ot.h
 mingw32/include/harfbuzz/hb-set.h
 mingw32/include/harfbuzz/hb-shape-plan.h
 mingw32/include/harfbuzz/hb-shape.h
+mingw32/include/harfbuzz/hb-style.h
 mingw32/include/harfbuzz/hb-subset.h
 mingw32/include/harfbuzz/hb-unicode.h
 mingw32/include/harfbuzz/hb-uniscribe.h

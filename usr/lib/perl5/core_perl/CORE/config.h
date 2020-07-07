@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Mon Jul  6 15:25:11 GMT 2020
+ * Configuration time: Tue Jul  7 11:19:25 GMT 2020
  * Configured by     : VssAdministrator
- * Target system     : msys_nt-10.0-14393-wow64 fv-az352 3.1.5-340.i686 2020-06-08 23:20 utc i686 msys 
+ * Target system     : msys_nt-10.0-14393-wow64 win-tqfmni3bn4d 3.1.5-340.i686 2020-06-08 23:20 utc i686 msys 
  */
 
 #ifndef _config_h_

@@ -761,6 +761,7 @@ mingw32/share/doc/git-doc/RelNotes/2.26.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.26.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.26.2.txt
 mingw32/share/doc/git-doc/RelNotes/2.27.0.txt
+mingw32/share/doc/git-doc/RelNotes/2.28.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.10.txt
@@ -858,6 +859,7 @@ mingw32/share/doc/git-doc/technical/pack-heuristics.html
 mingw32/share/doc/git-doc/technical/pack-heuristics.txt
 mingw32/share/doc/git-doc/technical/pack-protocol.html
 mingw32/share/doc/git-doc/technical/pack-protocol.txt
+mingw32/share/doc/git-doc/technical/packfile-uri.txt
 mingw32/share/doc/git-doc/technical/partial-clone.html
 mingw32/share/doc/git-doc/technical/partial-clone.txt
 mingw32/share/doc/git-doc/technical/protocol-capabilities.html
@@ -868,6 +870,8 @@ mingw32/share/doc/git-doc/technical/protocol-v2.html
 mingw32/share/doc/git-doc/technical/protocol-v2.txt
 mingw32/share/doc/git-doc/technical/racy-git.html
 mingw32/share/doc/git-doc/technical/racy-git.txt
+mingw32/share/doc/git-doc/technical/reftable.html
+mingw32/share/doc/git-doc/technical/reftable.txt
 mingw32/share/doc/git-doc/technical/repository-version.txt
 mingw32/share/doc/git-doc/technical/rerere.txt
 mingw32/share/doc/git-doc/technical/send-pack-pipeline.html

@@ -9,6 +9,12 @@ mingw32/include/
 mingw32/include/zip.h
 mingw32/include/zipconf.h
 mingw32/lib/
+mingw32/lib/cmake/
+mingw32/lib/cmake/libzip/
+mingw32/lib/cmake/libzip/libzip-config-version.cmake
+mingw32/lib/cmake/libzip/libzip-config.cmake
+mingw32/lib/cmake/libzip/libzip-targets-noconfig.cmake
+mingw32/lib/cmake/libzip/libzip-targets.cmake
 mingw32/lib/libzip.a
 mingw32/lib/libzip.dll.a
 mingw32/lib/pkgconfig/
@@ -27,9 +33,11 @@ mingw32/share/man/man3/libzip.3.gz
 mingw32/share/man/man3/zip_add.3.gz
 mingw32/share/man/man3/zip_add_dir.3.gz
 mingw32/share/man/man3/zip_close.3.gz
+mingw32/share/man/man3/zip_compression_method_supported.3.gz
 mingw32/share/man/man3/zip_delete.3.gz
 mingw32/share/man/man3/zip_dir_add.3.gz
 mingw32/share/man/man3/zip_discard.3.gz
+mingw32/share/man/man3/zip_encryption_method_supported.3.gz
 mingw32/share/man/man3/zip_error_clear.3.gz
 mingw32/share/man/man3/zip_error_code_system.3.gz
 mingw32/share/man/man3/zip_error_code_zip.3.gz
@@ -47,6 +55,7 @@ mingw32/share/man/man3/zip_errors.3.gz
 mingw32/share/man/man3/zip_fclose.3.gz
 mingw32/share/man/man3/zip_fdopen.3.gz
 mingw32/share/man/man3/zip_file_add.3.gz
+mingw32/share/man/man3/zip_file_attributes_init.3.gz
 mingw32/share/man/man3/zip_file_error_clear.3.gz
 mingw32/share/man/man3/zip_file_error_get.3.gz
 mingw32/share/man/man3/zip_file_extra_field_delete.3.gz

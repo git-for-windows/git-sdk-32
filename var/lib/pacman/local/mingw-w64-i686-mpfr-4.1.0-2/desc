@@ -2,7 +2,7 @@
 mingw-w64-i686-mpfr
 
 %VERSION%
-4.0.2-2
+4.1.0-2
 
 %BASE%
 mingw-w64-mpfr
@@ -17,16 +17,16 @@ Multiple-precision floating-point library (mingw-w64)
 any
 
 %BUILDDATE%
-1549617228
+1597484928
 
 %INSTALLDATE%
-1549681825
+1597633773
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2-devtools/7d41eefb/209696524)
 
 %SIZE%
-1030144
+1094617
 
 %REASON%
 1

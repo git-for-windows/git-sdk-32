@@ -14,10 +14,10 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.32.3/
-mingw32/lib/sqlite3.32.3/libtclsqlite3.dll
-mingw32/lib/sqlite3.32.3/libtclsqlite3.dll.a
-mingw32/lib/sqlite3.32.3/pkgIndex.tcl
+mingw32/lib/sqlite3.33.0/
+mingw32/lib/sqlite3.33.0/libtclsqlite3.dll
+mingw32/lib/sqlite3.33.0/libtclsqlite3.dll.a
+mingw32/lib/sqlite3.33.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/sqlite3/
@@ -291,6 +291,7 @@ mingw32/share/doc/sqlite3/features.html
 mingw32/share/doc/sqlite3/fileformat.html
 mingw32/share/doc/sqlite3/fileformat2.html
 mingw32/share/doc/sqlite3/fileio.html
+mingw32/share/doc/sqlite3/floatingpoint.html
 mingw32/share/doc/sqlite3/footprint.html
 mingw32/share/doc/sqlite3/foreignkeys.html
 mingw32/share/doc/sqlite3/formatchng.html
@@ -719,6 +720,7 @@ mingw32/share/doc/sqlite3/releaselog/3_32_0.html
 mingw32/share/doc/sqlite3/releaselog/3_32_1.html
 mingw32/share/doc/sqlite3/releaselog/3_32_2.html
 mingw32/share/doc/sqlite3/releaselog/3_32_3.html
+mingw32/share/doc/sqlite3/releaselog/3_33_0.html
 mingw32/share/doc/sqlite3/releaselog/3_3_0.html
 mingw32/share/doc/sqlite3/releaselog/3_3_1.html
 mingw32/share/doc/sqlite3/releaselog/3_3_10.html
@@ -848,6 +850,7 @@ mingw32/share/doc/sqlite3/robots.txt
 mingw32/share/doc/sqlite3/rowidtable.html
 mingw32/share/doc/sqlite3/rowvalue.html
 mingw32/share/doc/sqlite3/rtree.html
+mingw32/share/doc/sqlite3/schematab.html
 mingw32/share/doc/sqlite3/search
 mingw32/share/doc/sqlite3/search.d/
 mingw32/share/doc/sqlite3/search.d/admin
@@ -1047,6 +1050,8 @@ mingw32/share/sqlite/extensions/dbdata.c
 mingw32/share/sqlite/extensions/dbdata.dll
 mingw32/share/sqlite/extensions/dbdump.c
 mingw32/share/sqlite/extensions/dbdump.dll
+mingw32/share/sqlite/extensions/decimal.c
+mingw32/share/sqlite/extensions/decimal.dll
 mingw32/share/sqlite/extensions/eval.c
 mingw32/share/sqlite/extensions/eval.dll
 mingw32/share/sqlite/extensions/explain.c

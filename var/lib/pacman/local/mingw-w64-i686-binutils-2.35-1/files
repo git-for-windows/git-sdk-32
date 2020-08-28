@@ -200,6 +200,7 @@ mingw32/share/locale/sk/LC_MESSAGES/binutils.mo
 mingw32/share/locale/sr/
 mingw32/share/locale/sr/LC_MESSAGES/
 mingw32/share/locale/sr/LC_MESSAGES/binutils.mo
+mingw32/share/locale/sr/LC_MESSAGES/gold.mo
 mingw32/share/locale/sr/LC_MESSAGES/gprof.mo
 mingw32/share/locale/sr/LC_MESSAGES/ld.mo
 mingw32/share/locale/sv/

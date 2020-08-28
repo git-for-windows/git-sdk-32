@@ -2,7 +2,7 @@
 mingw-w64-i686-ca-certificates
 
 %VERSION%
-20190110-1
+20200601-1
 
 %BASE%
 mingw-w64-ca-certificates
@@ -17,16 +17,16 @@ https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 any
 
 %BUILDDATE%
-1573156200
+1598430404
 
 %INSTALLDATE%
-1573269174
+1598584078
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2-autobuild/d1574a20/225009050)
 
 %SIZE%
-969551
+977771
 
 %REASON%
 1

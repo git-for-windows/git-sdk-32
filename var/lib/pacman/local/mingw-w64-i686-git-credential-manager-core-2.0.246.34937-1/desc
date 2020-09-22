@@ -2,7 +2,7 @@
 mingw-w64-i686-git-credential-manager-core
 
 %VERSION%
-2.0.194.40577-1
+2.0.246.34937-1
 
 %BASE%
 mingw-w64-git-credential-manager-core
@@ -17,16 +17,16 @@ Credential Manager for Git
 any
 
 %BUILDDATE%
-1595010045
+1600802110
 
 %INSTALLDATE%
-1595022816
+1600803633
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-4012678
+3100048
 
 %GROUPS%
 VCS

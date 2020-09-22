@@ -12,11 +12,9 @@ mingw32/libexec/git-core/Atlassian.Bitbucket.UI.exe
 mingw32/libexec/git-core/Atlassian.Bitbucket.UI.exe.config
 mingw32/libexec/git-core/git-credential-manager-core.exe
 mingw32/libexec/git-core/git-credential-manager-core.exe.config
-mingw32/libexec/git-core/git2-572e4d8.dll
 mingw32/libexec/git-core/GitHub.dll
 mingw32/libexec/git-core/GitHub.UI.exe
 mingw32/libexec/git-core/GitHub.UI.exe.config
-mingw32/libexec/git-core/LibGit2Sharp.dll.config
 mingw32/libexec/git-core/Microsoft.AzureRepos.dll
 mingw32/libexec/git-core/Microsoft.Git.CredentialManager.dll
 mingw32/libexec/git-core/Microsoft.Git.CredentialManager.UI.dll

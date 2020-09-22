@@ -1141,6 +1141,7 @@ usr/share/doc/openssl/html/man3/EC_GROUP_set_seed.html
 usr/share/doc/openssl/html/man3/EC_KEY_check_key.html
 usr/share/doc/openssl/html/man3/EC_KEY_clear_flags.html
 usr/share/doc/openssl/html/man3/EC_KEY_copy.html
+usr/share/doc/openssl/html/man3/EC_KEY_decoded_from_explicit_params.html
 usr/share/doc/openssl/html/man3/EC_KEY_dup.html
 usr/share/doc/openssl/html/man3/EC_KEY_free.html
 usr/share/doc/openssl/html/man3/EC_KEY_generate_key.html
@@ -3552,6 +3553,7 @@ usr/share/doc/openssl/html/man3/USERNOTICE_new.html
 usr/share/doc/openssl/html/man3/X509_add1_ext_i2d.html
 usr/share/doc/openssl/html/man3/X509_add_ext.html
 usr/share/doc/openssl/html/man3/X509_ALGOR_cmp.html
+usr/share/doc/openssl/html/man3/X509_ALGOR_copy.html
 usr/share/doc/openssl/html/man3/X509_ALGOR_dup.html
 usr/share/doc/openssl/html/man3/X509_ALGOR_free.html
 usr/share/doc/openssl/html/man3/X509_ALGOR_get0.html
@@ -3768,6 +3770,8 @@ usr/share/doc/openssl/html/man3/X509_REQ_get_X509_PUBKEY.html
 usr/share/doc/openssl/html/man3/X509_REQ_INFO_free.html
 usr/share/doc/openssl/html/man3/X509_REQ_INFO_new.html
 usr/share/doc/openssl/html/man3/X509_REQ_new.html
+usr/share/doc/openssl/html/man3/X509_REQ_set0_signature.html
+usr/share/doc/openssl/html/man3/X509_REQ_set1_signature_algo.html
 usr/share/doc/openssl/html/man3/X509_REQ_set_pubkey.html
 usr/share/doc/openssl/html/man3/X509_REQ_set_subject_name.html
 usr/share/doc/openssl/html/man3/X509_REQ_set_version.html
@@ -5113,6 +5117,7 @@ usr/share/man/man3/EC_GROUP_set_seed.3ssl.gz
 usr/share/man/man3/EC_KEY_check_key.3ssl.gz
 usr/share/man/man3/EC_KEY_clear_flags.3ssl.gz
 usr/share/man/man3/EC_KEY_copy.3ssl.gz
+usr/share/man/man3/EC_KEY_decoded_from_explicit_params.3ssl.gz
 usr/share/man/man3/EC_KEY_dup.3ssl.gz
 usr/share/man/man3/EC_KEY_free.3ssl.gz
 usr/share/man/man3/EC_KEY_generate_key.3ssl.gz
@@ -7524,6 +7529,7 @@ usr/share/man/man3/USERNOTICE_new.3ssl.gz
 usr/share/man/man3/X509_add1_ext_i2d.3ssl.gz
 usr/share/man/man3/X509_add_ext.3ssl.gz
 usr/share/man/man3/X509_ALGOR_cmp.3ssl.gz
+usr/share/man/man3/X509_ALGOR_copy.3ssl.gz
 usr/share/man/man3/X509_ALGOR_dup.3ssl.gz
 usr/share/man/man3/X509_ALGOR_free.3ssl.gz
 usr/share/man/man3/X509_ALGOR_get0.3ssl.gz
@@ -7740,6 +7746,8 @@ usr/share/man/man3/X509_REQ_get_X509_PUBKEY.3ssl.gz
 usr/share/man/man3/X509_REQ_INFO_free.3ssl.gz
 usr/share/man/man3/X509_REQ_INFO_new.3ssl.gz
 usr/share/man/man3/X509_REQ_new.3ssl.gz
+usr/share/man/man3/X509_REQ_set0_signature.3ssl.gz
+usr/share/man/man3/X509_REQ_set1_signature_algo.3ssl.gz
 usr/share/man/man3/X509_REQ_set_pubkey.3ssl.gz
 usr/share/man/man3/X509_REQ_set_subject_name.3ssl.gz
 usr/share/man/man3/X509_REQ_set_version.3ssl.gz

@@ -2,7 +2,7 @@
 mingw-w64-i686-tools-git
 
 %VERSION%
-8.0.0.5903.3310d459-1
+8.0.0.6001.98dad1fe-1
 
 %BASE%
 mingw-w64-tools-git
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1590673035
+1600619364
 
 %INSTALLDATE%
-1590721570
+1600916873
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2-autobuild/0b940838/263871200)
 
 %SIZE%
-969074
+1025101
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -36,9 +36,6 @@ custom
 
 %VALIDATION%
 pgp
-
-%REPLACES%
-mingw-w64-i686-tools-svn
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs

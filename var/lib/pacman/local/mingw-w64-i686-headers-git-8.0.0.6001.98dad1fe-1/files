@@ -251,6 +251,10 @@ mingw32/i686-w64-mingw32/include/d3d11_4.idl
 mingw32/i686-w64-mingw32/include/d3d11sdklayers.h
 mingw32/i686-w64-mingw32/include/d3d11sdklayers.idl
 mingw32/i686-w64-mingw32/include/d3d11shader.h
+mingw32/i686-w64-mingw32/include/d3d12.h
+mingw32/i686-w64-mingw32/include/d3d12.idl
+mingw32/i686-w64-mingw32/include/d3d12shader.h
+mingw32/i686-w64-mingw32/include/d3d12shader.idl
 mingw32/i686-w64-mingw32/include/d3d8.h
 mingw32/i686-w64-mingw32/include/d3d8caps.h
 mingw32/i686-w64-mingw32/include/d3d8types.h
@@ -294,6 +298,7 @@ mingw32/i686-w64-mingw32/include/dbt.h
 mingw32/i686-w64-mingw32/include/dciddi.h
 mingw32/i686-w64-mingw32/include/dciman.h
 mingw32/i686-w64-mingw32/include/dcommon.h
+mingw32/i686-w64-mingw32/include/dcommon.idl
 mingw32/i686-w64-mingw32/include/dcomp.h
 mingw32/i686-w64-mingw32/include/dcompanimation.h
 mingw32/i686-w64-mingw32/include/dcompanimation.idl
@@ -478,9 +483,13 @@ mingw32/i686-w64-mingw32/include/dvec.h
 mingw32/i686-w64-mingw32/include/dvobj.h
 mingw32/i686-w64-mingw32/include/dwmapi.h
 mingw32/i686-w64-mingw32/include/dwrite.h
+mingw32/i686-w64-mingw32/include/dwrite.idl
 mingw32/i686-w64-mingw32/include/dwrite_1.h
+mingw32/i686-w64-mingw32/include/dwrite_1.idl
 mingw32/i686-w64-mingw32/include/dwrite_2.h
+mingw32/i686-w64-mingw32/include/dwrite_2.idl
 mingw32/i686-w64-mingw32/include/dwrite_3.h
+mingw32/i686-w64-mingw32/include/dwrite_3.idl
 mingw32/i686-w64-mingw32/include/dxdiag.h
 mingw32/i686-w64-mingw32/include/dxerr8.h
 mingw32/i686-w64-mingw32/include/dxerr9.h
@@ -1116,6 +1125,7 @@ mingw32/i686-w64-mingw32/include/powrprof.h
 mingw32/i686-w64-mingw32/include/prnasnot.h
 mingw32/i686-w64-mingw32/include/prnsetup.dlg
 mingw32/i686-w64-mingw32/include/prntfont.h
+mingw32/i686-w64-mingw32/include/prntvpt.h
 mingw32/i686-w64-mingw32/include/process.h
 mingw32/i686-w64-mingw32/include/processenv.h
 mingw32/i686-w64-mingw32/include/processthreadsapi.h
@@ -1574,6 +1584,7 @@ mingw32/i686-w64-mingw32/include/winnt.h
 mingw32/i686-w64-mingw32/include/winnt.rh
 mingw32/i686-w64-mingw32/include/winperf.h
 mingw32/i686-w64-mingw32/include/winreg.h
+mingw32/i686-w64-mingw32/include/winres.h
 mingw32/i686-w64-mingw32/include/winresrc.h
 mingw32/i686-w64-mingw32/include/winsafer.h
 mingw32/i686-w64-mingw32/include/winsatcominterfacei.h
@@ -1676,6 +1687,13 @@ mingw32/i686-w64-mingw32/include/wtypes.idl
 mingw32/i686-w64-mingw32/include/wtypesbase.h
 mingw32/i686-w64-mingw32/include/wtypesbase.idl
 mingw32/i686-w64-mingw32/include/xa.h
+mingw32/i686-w64-mingw32/include/xapo.h
+mingw32/i686-w64-mingw32/include/xapo.idl
+mingw32/i686-w64-mingw32/include/xapofx.h
+mingw32/i686-w64-mingw32/include/xaudio2.h
+mingw32/i686-w64-mingw32/include/xaudio2.idl
+mingw32/i686-w64-mingw32/include/xaudio2fx.h
+mingw32/i686-w64-mingw32/include/xaudio2fx.idl
 mingw32/i686-w64-mingw32/include/xcmc.h
 mingw32/i686-w64-mingw32/include/xcmcext.h
 mingw32/i686-w64-mingw32/include/xcmcmsx2.h

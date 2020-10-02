@@ -2,7 +2,7 @@
 mingw-w64-i686-pkg-config
 
 %VERSION%
-0.29.2-1
+0.29.2-2
 
 %BASE%
 mingw-w64-pkg-config
@@ -17,16 +17,16 @@ https://www.freedesktop.org/wiki/Software/pkg-config/
 any
 
 %BUILDDATE%
-1490166763
+1601413687
 
 %INSTALLDATE%
-1490235341
+1601608089
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2-autobuild/a0c4802f/279226055)
 
 %SIZE%
-1480704
+1501874
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -37,12 +37,6 @@ GPL
 %VALIDATION%
 pgp
 
-%REPLACES%
-mingw-w64-i686-pkgconf
-
 %DEPENDS%
 mingw-w64-i686-libwinpthread
-
-%CONFLICTS%
-mingw-w64-i686-pkgconf
 

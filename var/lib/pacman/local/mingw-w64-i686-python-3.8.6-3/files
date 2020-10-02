@@ -17,6 +17,7 @@ mingw32/bin/python3.8-config
 mingw32/bin/python3.8.exe
 mingw32/bin/python3.exe
 mingw32/bin/python3w.exe
+mingw32/bin/pythonw.exe
 mingw32/include/
 mingw32/include/python3.8/
 mingw32/include/python3.8/abstract.h
@@ -2221,8 +2222,8 @@ mingw32/lib/python3.8/ensurepip/__pycache__/_uninstall.cpython-38.opt-1.pyc
 mingw32/lib/python3.8/ensurepip/__pycache__/_uninstall.cpython-38.opt-2.pyc
 mingw32/lib/python3.8/ensurepip/__pycache__/_uninstall.cpython-38.pyc
 mingw32/lib/python3.8/ensurepip/_bundled/
-mingw32/lib/python3.8/ensurepip/_bundled/pip-20.1.1-py2.py3-none-any.whl
-mingw32/lib/python3.8/ensurepip/_bundled/setuptools-47.1.0-py3-none-any.whl
+mingw32/lib/python3.8/ensurepip/_bundled/pip-20.2.1-py2.py3-none-any.whl
+mingw32/lib/python3.8/ensurepip/_bundled/setuptools-49.2.1-py3-none-any.whl
 mingw32/lib/python3.8/ensurepip/_uninstall.py
 mingw32/lib/python3.8/enum.py
 mingw32/lib/python3.8/filecmp.py
@@ -3180,11 +3181,11 @@ mingw32/lib/python3.8/lib2to3/fixes/fix_xrange.py
 mingw32/lib/python3.8/lib2to3/fixes/fix_xreadlines.py
 mingw32/lib/python3.8/lib2to3/fixes/fix_zip.py
 mingw32/lib/python3.8/lib2to3/Grammar.txt
-mingw32/lib/python3.8/lib2to3/Grammar3.8.5.final.0.pickle
+mingw32/lib/python3.8/lib2to3/Grammar3.8.6.final.0.pickle
 mingw32/lib/python3.8/lib2to3/main.py
 mingw32/lib/python3.8/lib2to3/patcomp.py
 mingw32/lib/python3.8/lib2to3/PatternGrammar.txt
-mingw32/lib/python3.8/lib2to3/PatternGrammar3.8.5.final.0.pickle
+mingw32/lib/python3.8/lib2to3/PatternGrammar3.8.6.final.0.pickle
 mingw32/lib/python3.8/lib2to3/pgen2/
 mingw32/lib/python3.8/lib2to3/pgen2/__init__.py
 mingw32/lib/python3.8/lib2to3/pgen2/__pycache__/

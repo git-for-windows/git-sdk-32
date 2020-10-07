@@ -49,6 +49,8 @@ mingw32/libexec/git-core/git-commit-tree.exe
 mingw32/libexec/git-core/git-commit.exe
 mingw32/libexec/git-core/git-config.exe
 mingw32/libexec/git-core/git-count-objects.exe
+mingw32/libexec/git-core/git-credential-cache--daemon.exe
+mingw32/libexec/git-core/git-credential-cache.exe
 mingw32/libexec/git-core/git-credential-store.exe
 mingw32/libexec/git-core/git-credential-wincred.exe
 mingw32/libexec/git-core/git-credential.exe
@@ -140,7 +142,6 @@ mingw32/libexec/git-core/git-remote-ftp.exe
 mingw32/libexec/git-core/git-remote-ftps.exe
 mingw32/libexec/git-core/git-remote-http.exe
 mingw32/libexec/git-core/git-remote-https.exe
-mingw32/libexec/git-core/git-remote-testsvn.exe
 mingw32/libexec/git-core/git-remote.exe
 mingw32/libexec/git-core/git-repack.exe
 mingw32/libexec/git-core/git-replace.exe
@@ -194,7 +195,6 @@ mingw32/libexec/git-core/git.exe
 mingw32/libexec/git-core/mergetools/
 mingw32/libexec/git-core/mergetools/araxis
 mingw32/libexec/git-core/mergetools/bc
-mingw32/libexec/git-core/mergetools/bc3
 mingw32/libexec/git-core/mergetools/codecompare
 mingw32/libexec/git-core/mergetools/deltawalker
 mingw32/libexec/git-core/mergetools/diffmerge
@@ -204,19 +204,16 @@ mingw32/libexec/git-core/mergetools/emerge
 mingw32/libexec/git-core/mergetools/examdiff
 mingw32/libexec/git-core/mergetools/guiffy
 mingw32/libexec/git-core/mergetools/gvimdiff
-mingw32/libexec/git-core/mergetools/gvimdiff2
-mingw32/libexec/git-core/mergetools/gvimdiff3
 mingw32/libexec/git-core/mergetools/kdiff3
 mingw32/libexec/git-core/mergetools/kompare
 mingw32/libexec/git-core/mergetools/meld
+mingw32/libexec/git-core/mergetools/nvimdiff
 mingw32/libexec/git-core/mergetools/opendiff
 mingw32/libexec/git-core/mergetools/p4merge
 mingw32/libexec/git-core/mergetools/smerge
 mingw32/libexec/git-core/mergetools/tkdiff
 mingw32/libexec/git-core/mergetools/tortoisemerge
 mingw32/libexec/git-core/mergetools/vimdiff
-mingw32/libexec/git-core/mergetools/vimdiff2
-mingw32/libexec/git-core/mergetools/vimdiff3
 mingw32/libexec/git-core/mergetools/winmerge
 mingw32/libexec/git-core/mergetools/xxdiff
 mingw32/share/

@@ -2,7 +2,7 @@
 libgc
 
 %VERSION%
-8.0.0-1
+7.6.8-1
 
 %BASE%
 gc
@@ -17,10 +17,10 @@ http://www.hboehm.info/gc/
 i686
 
 %BUILDDATE%
-1537938942
+1544464462
 
 %INSTALLDATE%
-1538017887
+1602717512
 
 %PACKAGER%
 Alexey Pavlov <alexpux@gmail.com>
@@ -38,5 +38,6 @@ GPL
 pgp
 
 %DEPENDS%
+libatomic_ops
 gcc-libs
 

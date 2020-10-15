@@ -2421,6 +2421,7 @@ libtool_validate_options ()
       *cygwin* | *msys* | *mingw* | *pw32* | *cegcc* | *solaris2* | *os2*)
         # don't eliminate duplications in $postdeps and $predeps
         opt_duplicate_compiler_generated_deps=:
+        case $host in *msys*) func_append postdeps " -lpthread ";; esac
         ;;
       *)
         opt_duplicate_compiler_generated_deps=$opt_preserve_dup_deps

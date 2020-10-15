@@ -2,7 +2,7 @@
 libgnutls
 
 %VERSION%
-3.6.13-1
+3.6.15-1
 
 %BASE%
 gnutls
@@ -17,16 +17,16 @@ https://www.gnutls.org/
 i686
 
 %BUILDDATE%
-1587109387
+1602766941
 
 %INSTALLDATE%
-1587179138
+1602769260
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2730807
+2668021
 
 %REASON%
 1

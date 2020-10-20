@@ -283,6 +283,7 @@ mingw32/i686-w64-mingw32/lib/libopengl32.a
 mingw32/i686-w64-mingw32/lib/libp2p.a
 mingw32/i686-w64-mingw32/lib/libp2pcollab.a
 mingw32/i686-w64-mingw32/lib/libp2pgraph.a
+mingw32/i686-w64-mingw32/lib/libpathcch.a
 mingw32/i686-w64-mingw32/lib/libpcwum.a
 mingw32/i686-w64-mingw32/lib/libpdh.a
 mingw32/i686-w64-mingw32/lib/libpdhui.a

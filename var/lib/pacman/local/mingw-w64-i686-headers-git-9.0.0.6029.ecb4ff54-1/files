@@ -248,11 +248,15 @@ mingw32/i686-w64-mingw32/include/d3d11_3.h
 mingw32/i686-w64-mingw32/include/d3d11_3.idl
 mingw32/i686-w64-mingw32/include/d3d11_4.h
 mingw32/i686-w64-mingw32/include/d3d11_4.idl
+mingw32/i686-w64-mingw32/include/d3d11on12.h
+mingw32/i686-w64-mingw32/include/d3d11on12.idl
 mingw32/i686-w64-mingw32/include/d3d11sdklayers.h
 mingw32/i686-w64-mingw32/include/d3d11sdklayers.idl
 mingw32/i686-w64-mingw32/include/d3d11shader.h
 mingw32/i686-w64-mingw32/include/d3d12.h
 mingw32/i686-w64-mingw32/include/d3d12.idl
+mingw32/i686-w64-mingw32/include/d3d12sdklayers.h
+mingw32/i686-w64-mingw32/include/d3d12sdklayers.idl
 mingw32/i686-w64-mingw32/include/d3d12shader.h
 mingw32/i686-w64-mingw32/include/d3d12shader.idl
 mingw32/i686-w64-mingw32/include/d3d8.h
@@ -534,6 +538,7 @@ mingw32/i686-w64-mingw32/include/edevdefs.h
 mingw32/i686-w64-mingw32/include/eh.h
 mingw32/i686-w64-mingw32/include/ehstorapi.h
 mingw32/i686-w64-mingw32/include/elscore.h
+mingw32/i686-w64-mingw32/include/elssrvc.h
 mingw32/i686-w64-mingw32/include/emostore.h
 mingw32/i686-w64-mingw32/include/emptyvc.h
 mingw32/i686-w64-mingw32/include/endpointvolume.h

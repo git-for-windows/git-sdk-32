@@ -450,4 +450,9 @@ mingw32/share/man/man1/gdk-pixbuf-csource.1.gz
 mingw32/share/man/man1/gdk-pixbuf-query-loaders.1.gz
 mingw32/share/thumbnailers/
 mingw32/share/thumbnailers/gdk-pixbuf-thumbnailer.thumbnailer
+usr/
+usr/share/
+usr/share/libalpm/
+usr/share/libalpm/hooks/
+usr/share/libalpm/hooks/mingw-w64-i686-gdk-pixbuf-query-loaders.hook
 

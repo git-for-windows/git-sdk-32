@@ -101,4 +101,9 @@ mingw32/share/xml/fontconfig/fonts.dtd
 mingw32/var/
 mingw32/var/cache/
 mingw32/var/cache/fontconfig/
+usr/
+usr/share/
+usr/share/libalpm/
+usr/share/libalpm/hooks/
+usr/share/libalpm/hooks/mingw-w64-i686-fontconfig.hook
 

@@ -7409,6 +7409,9 @@ mingw32/lib/python3.8/venv/scripts/
 mingw32/lib/python3.8/venv/scripts/common/
 mingw32/lib/python3.8/venv/scripts/common/activate
 mingw32/lib/python3.8/venv/scripts/common/Activate.ps1
+mingw32/lib/python3.8/venv/scripts/nt/
+mingw32/lib/python3.8/venv/scripts/nt/python.exe
+mingw32/lib/python3.8/venv/scripts/nt/pythonw.exe
 mingw32/lib/python3.8/venv/scripts/posix/
 mingw32/lib/python3.8/venv/scripts/posix/activate.csh
 mingw32/lib/python3.8/venv/scripts/posix/activate.fish

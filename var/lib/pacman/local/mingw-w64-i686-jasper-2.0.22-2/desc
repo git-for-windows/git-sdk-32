@@ -2,7 +2,7 @@
 mingw-w64-i686-jasper
 
 %VERSION%
-2.0.22-1
+2.0.22-2
 
 %BASE%
 mingw-w64-jasper
@@ -17,16 +17,16 @@ https://www.ece.uvic.ca/~mdadams/jasper
 any
 
 %BUILDDATE%
-1603285007
+1603995496
 
 %INSTALLDATE%
-1603466048
+1604286582
 
 %PACKAGER%
-CI (msys2-autobuild/c7f6e584/319831850)
+CI (msys2-autobuild/6e7d6a99/336432804)
 
 %SIZE%
-1808548
+1811694
 
 %REASON%
 1

@@ -126,6 +126,8 @@ mingw32/share/doc/git-doc/git-fmt-merge-msg.html
 mingw32/share/doc/git-doc/git-fmt-merge-msg.txt
 mingw32/share/doc/git-doc/git-for-each-ref.html
 mingw32/share/doc/git-doc/git-for-each-ref.txt
+mingw32/share/doc/git-doc/git-for-each-repo.html
+mingw32/share/doc/git-doc/git-for-each-repo.txt
 mingw32/share/doc/git-doc/git-format-patch.html
 mingw32/share/doc/git-doc/git-format-patch.txt
 mingw32/share/doc/git-doc/git-fsck-objects.html
@@ -212,8 +214,6 @@ mingw32/share/doc/git-doc/git-pack-redundant.html
 mingw32/share/doc/git-doc/git-pack-redundant.txt
 mingw32/share/doc/git-doc/git-pack-refs.html
 mingw32/share/doc/git-doc/git-pack-refs.txt
-mingw32/share/doc/git-doc/git-parse-remote.html
-mingw32/share/doc/git-doc/git-parse-remote.txt
 mingw32/share/doc/git-doc/git-patch-id.html
 mingw32/share/doc/git-doc/git-patch-id.txt
 mingw32/share/doc/git-doc/git-prune-packed.html
@@ -423,6 +423,7 @@ mingw32/share/doc/git-doc/howto/using-signed-tag-in-pull-request.txt
 mingw32/share/doc/git-doc/i18n.txt
 mingw32/share/doc/git-doc/index.html
 mingw32/share/doc/git-doc/line-range-format.txt
+mingw32/share/doc/git-doc/line-range-options.txt
 mingw32/share/doc/git-doc/mailmap.txt
 mingw32/share/doc/git-doc/merge-options.txt
 mingw32/share/doc/git-doc/merge-strategies.txt
@@ -781,6 +782,7 @@ mingw32/share/doc/git-doc/RelNotes/2.3.6.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.7.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.8.txt
 mingw32/share/doc/git-doc/RelNotes/2.3.9.txt
+mingw32/share/doc/git-doc/RelNotes/2.30.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.10.txt
@@ -833,6 +835,7 @@ mingw32/share/doc/git-doc/rev-list-description.txt
 mingw32/share/doc/git-doc/rev-list-options.txt
 mingw32/share/doc/git-doc/revisions.txt
 mingw32/share/doc/git-doc/sequencer.txt
+mingw32/share/doc/git-doc/signoff-option.txt
 mingw32/share/doc/git-doc/SubmittingPatches.html
 mingw32/share/doc/git-doc/SubmittingPatches.txt
 mingw32/share/doc/git-doc/technical/

@@ -1,0 +1,36 @@
+%NAME%
+mingw-w64-i686-connect
+
+%VERSION%
+1.105-2
+
+%BASE%
+mingw-w64-connect
+
+%DESC%
+Make socket connection using SOCKS4/5 and HTTP tunnel (mingw-w64)
+
+%URL%
+https://github.com/gotoh/ssh-connect
+
+%ARCH%
+any
+
+%BUILDDATE%
+1608107174
+
+%INSTALLDATE%
+1608606576
+
+%PACKAGER%
+CI (msys2-autobuild/dfb80bed/425168837)
+
+%SIZE%
+145560
+
+%LICENSE%
+GPL2+
+
+%VALIDATION%
+pgp
+

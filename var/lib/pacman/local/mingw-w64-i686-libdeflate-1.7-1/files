@@ -1,0 +1,16 @@
+%FILES%
+mingw32/
+mingw32/bin/
+mingw32/bin/libdeflate-gunzip.exe
+mingw32/bin/libdeflate-gzip.exe
+mingw32/bin/libdeflate.dll
+mingw32/include/
+mingw32/include/libdeflate.h
+mingw32/lib/
+mingw32/lib/libdeflate.a
+mingw32/lib/libdeflate.dll.a
+mingw32/share/
+mingw32/share/licenses/
+mingw32/share/licenses/libdeflate/
+mingw32/share/licenses/libdeflate/COPYING
+

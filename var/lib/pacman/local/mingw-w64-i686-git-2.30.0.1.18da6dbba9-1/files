@@ -361,6 +361,9 @@ mingw32/share/locale/it/LC_MESSAGES/git.mo
 mingw32/share/locale/ko/
 mingw32/share/locale/ko/LC_MESSAGES/
 mingw32/share/locale/ko/LC_MESSAGES/git.mo
+mingw32/share/locale/pl/
+mingw32/share/locale/pl/LC_MESSAGES/
+mingw32/share/locale/pl/LC_MESSAGES/git.mo
 mingw32/share/locale/pt_PT/
 mingw32/share/locale/pt_PT/LC_MESSAGES/
 mingw32/share/locale/pt_PT/LC_MESSAGES/git.mo

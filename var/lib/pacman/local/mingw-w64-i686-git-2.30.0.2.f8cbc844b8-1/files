@@ -193,6 +193,7 @@ mingw32/libexec/git-core/git-whatchanged.exe
 mingw32/libexec/git-core/git-worktree.exe
 mingw32/libexec/git-core/git-write-tree.exe
 mingw32/libexec/git-core/git.exe
+mingw32/libexec/git-core/headless-git.exe
 mingw32/libexec/git-core/mergetools/
 mingw32/libexec/git-core/mergetools/araxis
 mingw32/libexec/git-core/mergetools/bc

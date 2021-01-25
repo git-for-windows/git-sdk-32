@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Tue Jul  7 11:19:25 GMT 2020
+ * Configuration time: Sun Jan 24 14:38:13 GMT 2021
  * Configured by     : VssAdministrator
- * Target system     : msys_nt-10.0-14393-wow64 win-tqfmni3bn4d 3.1.5-340.i686 2020-06-08 23:20 utc i686 msys 
+ * Target system     : msys_nt-10.0-14393-wow64 win-kv22ihb2u58 3.1.7-340.i686 2020-10-23 13:08 utc i686 msys 
  */
 
 #ifndef _config_h_
@@ -1369,7 +1369,7 @@
  *	feature tests from Configure are generally more reliable.
  */
 #define OSNAME "msys"		/**/
-#define OSVERS "3.1.5-340.i686"		/**/
+#define OSVERS "3.1.7-340.i686"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.

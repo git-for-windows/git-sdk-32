@@ -1630,6 +1630,8 @@ mingw32/i686-w64-mingw32/include/wmdrmsdk.idl
 mingw32/i686-w64-mingw32/include/wmiatlprov.h
 mingw32/i686-w64-mingw32/include/wmistr.h
 mingw32/i686-w64-mingw32/include/wmiutils.h
+mingw32/i686-w64-mingw32/include/wmp.h
+mingw32/i686-w64-mingw32/include/wmp.idl
 mingw32/i686-w64-mingw32/include/wmsbuffer.h
 mingw32/i686-w64-mingw32/include/wmsbuffer.idl
 mingw32/i686-w64-mingw32/include/wmsdkidl.h

@@ -214,9 +214,12 @@ mingw32/i686-w64-mingw32/lib/libm.a
 mingw32/i686-w64-mingw32/lib/libmapi32.a
 mingw32/i686-w64-mingw32/lib/libmcd.a
 mingw32/i686-w64-mingw32/lib/libmf.a
+mingw32/i686-w64-mingw32/lib/libmfcore.a
 mingw32/i686-w64-mingw32/lib/libmfcuia32.a
 mingw32/i686-w64-mingw32/lib/libmfplat.a
+mingw32/i686-w64-mingw32/lib/libmfplay.a
 mingw32/i686-w64-mingw32/lib/libmfreadwrite.a
+mingw32/i686-w64-mingw32/lib/libmfsensorgroup.a
 mingw32/i686-w64-mingw32/lib/libmfuuid.a
 mingw32/i686-w64-mingw32/lib/libmgmtapi.a
 mingw32/i686-w64-mingw32/lib/libmincore.a

@@ -2,7 +2,7 @@
 mingw-w64-i686-pcre2
 
 %VERSION%
-10.33-1
+10.36-1
 
 %BASE%
 mingw-w64-pcre2
@@ -17,16 +17,16 @@ https://pcre.org/
 any
 
 %BUILDDATE%
-1562248707
+1612971365
 
 %INSTALLDATE%
-1562296275
+1613013008
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-6045696
+6453198
 
 %LICENSE%
 BSD

@@ -1,9 +1,9 @@
 <html>
 <head>
-<title>pcre2_jit_free_unused_memory specification</title>
+<title>pcre2_get_match_data_size specification</title>
 </head>
 <body bgcolor="#FFFFFF" text="#00005A" link="#0066FF" alink="#3399FF" vlink="#2222BB">
-<h1>pcre2_jit_free_unused_memory man page</h1>
+<h1>pcre2_get_match_data_size man page</h1>
 <p>
 Return to the <a href="index.html">PCRE2 index page</a>.
 </p>
@@ -19,18 +19,14 @@ SYNOPSIS
 <b>#include &#60;pcre2.h&#62;</b>
 </P>
 <P>
-<b>void pcre2_jit_free_unused_memory(pcre2_general_context *<i>gcontext</i>);</b>
+<b>PCRE2_SIZE pcre2_get_match_data_size(pcre2_match_data *<i>match_data</i>);</b>
 </P>
 <br><b>
 DESCRIPTION
 </b><br>
 <P>
-This function frees unused JIT executable memory. The argument is a general
-context, for custom memory management, or NULL for standard memory management.
-JIT memory allocation retains some memory in order to improve future JIT
-compilation speed. In low memory conditions,
-<b>pcre2_jit_free_unused_memory()</b> can be used to cause this memory to be
-freed.
+This function returns the size, in bytes, of the match data block that is its
+argument.
 </P>
 <P>
 There is a complete description of the PCRE2 native API in the

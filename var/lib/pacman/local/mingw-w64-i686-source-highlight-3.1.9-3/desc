@@ -2,7 +2,7 @@
 mingw-w64-i686-source-highlight
 
 %VERSION%
-3.1.9-2
+3.1.9-3
 
 %BASE%
 mingw-w64-source-highlight
@@ -17,16 +17,16 @@ https://www.gnu.org/software/src-highlite/
 any
 
 %BUILDDATE%
-1602485643
+1613142792
 
 %INSTALLDATE%
-1602731284
+1613272352
 
 %PACKAGER%
-CI (msys2-autobuild/ef81fcc3/301553843)
+CI (msys2-autobuild/571bdbec/561237203)
 
 %SIZE%
-17941749
+17976466
 
 %REASON%
 1

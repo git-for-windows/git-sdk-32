@@ -2,7 +2,7 @@
 mingw-w64-i686-cairo
 
 %VERSION%
-1.17.4-1
+1.17.4-2
 
 %BASE%
 mingw-w64-cairo
@@ -17,16 +17,16 @@ https://cairographics.org/
 any
 
 %BUILDDATE%
-1606674799
+1613337552
 
 %INSTALLDATE%
-1606964888
+1613417283
 
 %PACKAGER%
-CI (msys2-autobuild/599a5db8/390225754)
+CI (msys2-autobuild/571bdbec/566685871)
 
 %SIZE%
-4429111
+4429053
 
 %REASON%
 1

@@ -2704,6 +2704,9 @@ mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_window.cpython-38.pyc
 mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_zoomheight.cpython-38.opt-1.pyc
 mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_zoomheight.cpython-38.opt-2.pyc
 mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_zoomheight.cpython-38.pyc
+mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_zzdummy.cpython-38.opt-1.pyc
+mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_zzdummy.cpython-38.opt-2.pyc
+mingw32/lib/python3.8/idlelib/idle_test/__pycache__/test_zzdummy.cpython-38.pyc
 mingw32/lib/python3.8/idlelib/idle_test/htest.py
 mingw32/lib/python3.8/idlelib/idle_test/mock_idle.py
 mingw32/lib/python3.8/idlelib/idle_test/mock_tk.py
@@ -2766,6 +2769,7 @@ mingw32/lib/python3.8/idlelib/idle_test/test_undo.py
 mingw32/lib/python3.8/idlelib/idle_test/test_warning.py
 mingw32/lib/python3.8/idlelib/idle_test/test_window.py
 mingw32/lib/python3.8/idlelib/idle_test/test_zoomheight.py
+mingw32/lib/python3.8/idlelib/idle_test/test_zzdummy.py
 mingw32/lib/python3.8/idlelib/iomenu.py
 mingw32/lib/python3.8/idlelib/macosx.py
 mingw32/lib/python3.8/idlelib/mainmenu.py
@@ -3185,11 +3189,11 @@ mingw32/lib/python3.8/lib2to3/fixes/fix_xrange.py
 mingw32/lib/python3.8/lib2to3/fixes/fix_xreadlines.py
 mingw32/lib/python3.8/lib2to3/fixes/fix_zip.py
 mingw32/lib/python3.8/lib2to3/Grammar.txt
-mingw32/lib/python3.8/lib2to3/Grammar3.8.7.final.0.pickle
+mingw32/lib/python3.8/lib2to3/Grammar3.8.8.final.0.pickle
 mingw32/lib/python3.8/lib2to3/main.py
 mingw32/lib/python3.8/lib2to3/patcomp.py
 mingw32/lib/python3.8/lib2to3/PatternGrammar.txt
-mingw32/lib/python3.8/lib2to3/PatternGrammar3.8.7.final.0.pickle
+mingw32/lib/python3.8/lib2to3/PatternGrammar3.8.8.final.0.pickle
 mingw32/lib/python3.8/lib2to3/pgen2/
 mingw32/lib/python3.8/lib2to3/pgen2/__init__.py
 mingw32/lib/python3.8/lib2to3/pgen2/__pycache__/
@@ -6979,6 +6983,9 @@ mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/__init__.cpython-38.opt-1.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/__init__.cpython-38.opt-2.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/__init__.cpython-38.pyc
+mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-38.opt-1.pyc
+mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-38.opt-2.pyc
+mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-38.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_font.cpython-38.opt-1.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_font.cpython-38.opt-2.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_font.cpython-38.pyc
@@ -7006,6 +7013,7 @@ mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_variables.cpyth
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-38.opt-1.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-38.opt-2.pyc
 mingw32/lib/python3.8/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-38.pyc
+mingw32/lib/python3.8/tkinter/test/test_tkinter/test_colorchooser.py
 mingw32/lib/python3.8/tkinter/test/test_tkinter/test_font.py
 mingw32/lib/python3.8/tkinter/test/test_tkinter/test_geometry_managers.py
 mingw32/lib/python3.8/tkinter/test/test_tkinter/test_images.py

@@ -1199,6 +1199,8 @@ mingw32/i686-w64-mingw32/include/reconcil.h
 mingw32/i686-w64-mingw32/include/regbag.h
 mingw32/i686-w64-mingw32/include/regbag.idl
 mingw32/i686-w64-mingw32/include/regstr.h
+mingw32/i686-w64-mingw32/include/relogger.h
+mingw32/i686-w64-mingw32/include/relogger.idl
 mingw32/i686-w64-mingw32/include/rend.h
 mingw32/i686-w64-mingw32/include/resapi.h
 mingw32/i686-w64-mingw32/include/restartmanager.h
@@ -1560,6 +1562,8 @@ mingw32/i686-w64-mingw32/include/winddiui.h
 mingw32/i686-w64-mingw32/include/windef.h
 mingw32/i686-w64-mingw32/include/windns.h
 mingw32/i686-w64-mingw32/include/windot11.h
+mingw32/i686-w64-mingw32/include/windows.foundation.collections.h
+mingw32/i686-w64-mingw32/include/windows.foundation.collections.idl
 mingw32/i686-w64-mingw32/include/windows.foundation.h
 mingw32/i686-w64-mingw32/include/windows.foundation.idl
 mingw32/i686-w64-mingw32/include/windows.h
@@ -1573,6 +1577,8 @@ mingw32/i686-w64-mingw32/include/windows.system.h
 mingw32/i686-w64-mingw32/include/windows.system.idl
 mingw32/i686-w64-mingw32/include/windows.system.threading.h
 mingw32/i686-w64-mingw32/include/windows.system.threading.idl
+mingw32/i686-w64-mingw32/include/windowscontracts.h
+mingw32/i686-w64-mingw32/include/windowscontracts.idl
 mingw32/i686-w64-mingw32/include/windowsx.h
 mingw32/i686-w64-mingw32/include/windowsx.h16
 mingw32/i686-w64-mingw32/include/winefs.h

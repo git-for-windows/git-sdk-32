@@ -77,6 +77,7 @@ mingw32/libexec/git-core/git-for-each-repo.exe
 mingw32/libexec/git-core/git-format-patch.exe
 mingw32/libexec/git-core/git-fsck-objects.exe
 mingw32/libexec/git-core/git-fsck.exe
+mingw32/libexec/git-core/git-fsmonitor--daemon.exe
 mingw32/libexec/git-core/git-gc.exe
 mingw32/libexec/git-core/git-get-tar-commit-id.exe
 mingw32/libexec/git-core/git-grep.exe

@@ -354,6 +354,9 @@ mingw32/share/locale/es/LC_MESSAGES/git.mo
 mingw32/share/locale/fr/
 mingw32/share/locale/fr/LC_MESSAGES/
 mingw32/share/locale/fr/LC_MESSAGES/git.mo
+mingw32/share/locale/id/
+mingw32/share/locale/id/LC_MESSAGES/
+mingw32/share/locale/id/LC_MESSAGES/git.mo
 mingw32/share/locale/is/
 mingw32/share/locale/is/LC_MESSAGES/
 mingw32/share/locale/is/LC_MESSAGES/git.mo

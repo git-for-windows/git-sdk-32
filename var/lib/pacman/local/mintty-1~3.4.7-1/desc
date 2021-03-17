@@ -2,7 +2,7 @@
 mintty
 
 %VERSION%
-1~3.4.6-1
+1~3.4.7-1
 
 %BASE%
 mintty
@@ -17,16 +17,16 @@ https://mintty.github.io
 i686
 
 %BUILDDATE%
-1613737519
+1615927293
 
 %INSTALLDATE%
-1613790478
+1615950497
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-1317337
+1319316
 
 %GROUPS%
 base

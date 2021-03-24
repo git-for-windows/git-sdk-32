@@ -2,7 +2,7 @@
 git-for-windows-keyring
 
 %VERSION%
-1.1.2.92cd5db-1
+1.1.3.eb5a809-1
 
 %BASE%
 git-for-windows-keyring
@@ -17,16 +17,16 @@ Git for Windows PGP keyring
 i686
 
 %BUILDDATE%
-1616452925
+1616508553
 
 %INSTALLDATE%
-1616468875
+1616555479
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-10940
+10986
 
 %REASON%
 1

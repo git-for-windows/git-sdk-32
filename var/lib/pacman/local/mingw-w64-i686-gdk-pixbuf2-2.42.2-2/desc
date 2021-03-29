@@ -2,7 +2,7 @@
 mingw-w64-i686-gdk-pixbuf2
 
 %VERSION%
-2.42.2-1
+2.42.2-2
 
 %BASE%
 mingw-w64-gdk-pixbuf2
@@ -17,16 +17,16 @@ https://gitlab.gnome.org/GNOME/gdk-pixbuf
 any
 
 %BUILDDATE%
-1611213194
+1616899450
 
 %INSTALLDATE%
-1611544126
+1616987266
 
 %PACKAGER%
-CI (msys2-autobuild/6afc517e/500459810)
+CI (msys2-autobuild/53312781/694143140)
 
 %SIZE%
-4473774
+4473787
 
 %REASON%
 1

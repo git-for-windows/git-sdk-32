@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-tools-git
+mingw-w64-i686-headers-git
 
 %VERSION%
-9.0.0.6154.e37b315b-1
+9.0.0.6158.1c773877-1
 
 %BASE%
-mingw-w64-tools-git
+mingw-w64-headers-git
 
 %DESC%
-MinGW-w64 tools
+MinGW-w64 headers for Windows
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1617783243
+1617938177
 
 %INSTALLDATE%
-1617851252
+1618024094
 
 %PACKAGER%
-CI (msys2-autobuild/251a70c6/725243177)
+CI (msys2-autobuild/251a70c6/731713048)
 
 %SIZE%
-1074797
+69582236
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -37,12 +37,9 @@ custom
 %VALIDATION%
 pgp
 
-%DEPENDS%
-mingw-w64-i686-gcc-libs
-
 %CONFLICTS%
-mingw-w64-i686-tools
+mingw-w64-i686-headers
 
 %PROVIDES%
-mingw-w64-i686-tools
+mingw-w64-i686-headers
 

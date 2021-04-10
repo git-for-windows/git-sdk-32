@@ -2,7 +2,7 @@
 mingw-w64-i686-libtasn1
 
 %VERSION%
-4.16.0-1
+4.16.0-2
 
 %BASE%
 mingw-w64-libtasn1
@@ -17,16 +17,16 @@ https://www.gnu.org/software/libtasn1/
 any
 
 %BUILDDATE%
-1582459531
+1617920949
 
 %INSTALLDATE%
-1582513544
+1618024095
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2-autobuild/251a70c6/731127628)
 
 %SIZE%
-506094
+527165
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 mingw-w64-i686-libffi
 
 %VERSION%
-3.3-3
+3.3-4
 
 %BASE%
 mingw-w64-libffi
@@ -17,13 +17,13 @@ https://sourceware.org/libffi
 any
 
 %BUILDDATE%
-1610109422
+1618130406
 
 %INSTALLDATE%
-1610566250
+1618196911
 
 %PACKAGER%
-CI (msys2-autobuild/dae62d58/471711291)
+CI (msys2-autobuild/251a70c6/737749814)
 
 %SIZE%
 129654

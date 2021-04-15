@@ -2,7 +2,7 @@
 mingw-w64-i686-pcre
 
 %VERSION%
-8.44-2
+8.44-3
 
 %BASE%
 mingw-w64-pcre
@@ -17,13 +17,13 @@ https://pcre.org/
 any
 
 %BUILDDATE%
-1608658649
+1618350092
 
 %INSTALLDATE%
-1609038633
+1618456129
 
 %PACKAGER%
-CI (msys2-autobuild/dfb80bed/438552357)
+CI (msys2-autobuild/8ebdca93/746140604)
 
 %SIZE%
 4348721

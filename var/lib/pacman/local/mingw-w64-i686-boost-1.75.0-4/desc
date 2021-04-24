@@ -2,7 +2,7 @@
 mingw-w64-i686-boost
 
 %VERSION%
-1.75.0-3
+1.75.0-4
 
 %BASE%
 mingw-w64-boost
@@ -17,13 +17,13 @@ https://www.boost.org/
 any
 
 %BUILDDATE%
-1617641002
+1619166841
 
 %INSTALLDATE%
-1617678520
+1619233654
 
 %PACKAGER%
-CI (msys2-autobuild/251a70c6/719782915)
+CI (msys2-autobuild/12703c6c/777084677)
 
 %SIZE%
 322933731

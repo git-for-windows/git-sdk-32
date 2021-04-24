@@ -1330,7 +1330,10 @@ mingw32/i686-w64-mingw32/include/snmp.h
 mingw32/i686-w64-mingw32/include/softpub.h
 mingw32/i686-w64-mingw32/include/spatialaudioclient.h
 mingw32/i686-w64-mingw32/include/spatialaudioclient.idl
+mingw32/i686-w64-mingw32/include/spatialaudiometadata.h
 mingw32/i686-w64-mingw32/include/specstrings.h
+mingw32/i686-w64-mingw32/include/spellcheck.h
+mingw32/i686-w64-mingw32/include/spellcheck.idl
 mingw32/i686-w64-mingw32/include/sperror.h
 mingw32/i686-w64-mingw32/include/sphelper.h
 mingw32/i686-w64-mingw32/include/sporder.h

@@ -2,7 +2,7 @@
 mingw-w64-i686-freetype
 
 %VERSION%
-2.10.4-1
+2.10.4-2
 
 %BASE%
 mingw-w64-freetype
@@ -17,16 +17,16 @@ https://www.freetype.org/
 any
 
 %BUILDDATE%
-1603283962
+1619973659
 
 %INSTALLDATE%
-1603466046
+1620011214
 
 %PACKAGER%
-CI (msys2-autobuild/c7f6e584/319831850)
+CI (msys2-autobuild/4ba4930f/804643436)
 
 %SIZE%
-2648842
+2728369
 
 %REASON%
 1
@@ -42,7 +42,7 @@ pgp
 mingw-w64-i686-gcc-libs
 mingw-w64-i686-brotli
 mingw-w64-i686-bzip2
-mingw-w64-i686-harfbuzz
 mingw-w64-i686-libpng
 mingw-w64-i686-zlib
+mingw-w64-i686-harfbuzz
 

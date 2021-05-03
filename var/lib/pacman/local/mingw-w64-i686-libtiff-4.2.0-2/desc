@@ -2,7 +2,7 @@
 mingw-w64-i686-libtiff
 
 %VERSION%
-4.2.0-1
+4.2.0-2
 
 %BASE%
 mingw-w64-libtiff
@@ -17,16 +17,16 @@ http://www.simplesystems.org/libtiff/
 any
 
 %BUILDDATE%
-1608978599
+1619943450
 
 %INSTALLDATE%
-1609124945
+1620011214
 
 %PACKAGER%
-CI (msys2-autobuild/dfb80bed/445374765)
+CI (msys2-autobuild/4ba4930f/803890991)
 
 %SIZE%
-4609577
+4609707
 
 %REASON%
 1

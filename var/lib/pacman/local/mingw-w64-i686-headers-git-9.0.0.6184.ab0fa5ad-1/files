@@ -1197,6 +1197,7 @@ mingw32/i686-w64-mingw32/include/rassapi.h
 mingw32/i686-w64-mingw32/include/rasshost.h
 mingw32/i686-w64-mingw32/include/ratings.h
 mingw32/i686-w64-mingw32/include/rdpencomapi.h
+mingw32/i686-w64-mingw32/include/rdpencomapi.idl
 mingw32/i686-w64-mingw32/include/realtimeapiset.h
 mingw32/i686-w64-mingw32/include/reason.h
 mingw32/i686-w64-mingw32/include/recguids.h
@@ -1721,6 +1722,8 @@ mingw32/i686-w64-mingw32/include/wtypes.h
 mingw32/i686-w64-mingw32/include/wtypes.idl
 mingw32/i686-w64-mingw32/include/wtypesbase.h
 mingw32/i686-w64-mingw32/include/wtypesbase.idl
+mingw32/i686-w64-mingw32/include/wuapi.h
+mingw32/i686-w64-mingw32/include/wuapi.idl
 mingw32/i686-w64-mingw32/include/xa.h
 mingw32/i686-w64-mingw32/include/xapo.h
 mingw32/i686-w64-mingw32/include/xapo.idl

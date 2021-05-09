@@ -2,7 +2,7 @@
 mingw-w64-i686-gcc-libs
 
 %VERSION%
-10.3.0-1
+10.3.0-2
 
 %BASE%
 mingw-w64-gcc
@@ -17,13 +17,13 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1620024866
+1620318309
 
 %INSTALLDATE%
-1620097607
+1620529649
 
 %PACKAGER%
-CI (msys2-autobuild/4ba4930f/805944751)
+CI (msys2-autobuild/4ba4930f/817495391)
 
 %SIZE%
 3032371

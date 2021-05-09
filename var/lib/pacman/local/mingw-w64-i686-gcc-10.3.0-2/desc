@@ -2,7 +2,7 @@
 mingw-w64-i686-gcc
 
 %VERSION%
-10.3.0-1
+10.3.0-2
 
 %BASE%
 mingw-w64-gcc
@@ -17,13 +17,13 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1620024866
+1620318309
 
 %INSTALLDATE%
-1620097609
+1620529651
 
 %PACKAGER%
-CI (msys2-autobuild/4ba4930f/805944751)
+CI (msys2-autobuild/4ba4930f/817495391)
 
 %SIZE%
 170250313
@@ -47,7 +47,7 @@ mingw-w64-i686-headers
 mingw-w64-i686-isl
 mingw-w64-i686-libiconv
 mingw-w64-i686-mpc
-mingw-w64-i686-gcc-libs=10.3.0-1
+mingw-w64-i686-gcc-libs=10.3.0-2
 mingw-w64-i686-windows-default-manifest
 mingw-w64-i686-winpthreads
 mingw-w64-i686-zlib

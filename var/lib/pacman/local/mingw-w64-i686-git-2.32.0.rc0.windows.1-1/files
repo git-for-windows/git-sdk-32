@@ -36,6 +36,7 @@ mingw32/libexec/git-core/git-check-attr.exe
 mingw32/libexec/git-core/git-check-ignore.exe
 mingw32/libexec/git-core/git-check-mailmap.exe
 mingw32/libexec/git-core/git-check-ref-format.exe
+mingw32/libexec/git-core/git-checkout--worker.exe
 mingw32/libexec/git-core/git-checkout-index.exe
 mingw32/libexec/git-core/git-checkout.exe
 mingw32/libexec/git-core/git-cherry-pick.exe

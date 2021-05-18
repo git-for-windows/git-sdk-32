@@ -394,6 +394,8 @@ mingw32/share/doc/git-doc/glossary-content.txt
 mingw32/share/doc/git-doc/howto-index.html
 mingw32/share/doc/git-doc/howto-index.txt
 mingw32/share/doc/git-doc/howto/
+mingw32/share/doc/git-doc/howto/coordinate-embargoed-releases.html
+mingw32/share/doc/git-doc/howto/coordinate-embargoed-releases.txt
 mingw32/share/doc/git-doc/howto/keep-canonical-history-correct.html
 mingw32/share/doc/git-doc/howto/keep-canonical-history-correct.txt
 mingw32/share/doc/git-doc/howto/maintain-git.html
@@ -803,6 +805,7 @@ mingw32/share/doc/git-doc/RelNotes/2.30.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.30.2.txt
 mingw32/share/doc/git-doc/RelNotes/2.31.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.31.1.txt
+mingw32/share/doc/git-doc/RelNotes/2.32.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.10.txt
@@ -895,6 +898,8 @@ mingw32/share/doc/git-doc/technical/pack-heuristics.txt
 mingw32/share/doc/git-doc/technical/pack-protocol.html
 mingw32/share/doc/git-doc/technical/pack-protocol.txt
 mingw32/share/doc/git-doc/technical/packfile-uri.txt
+mingw32/share/doc/git-doc/technical/parallel-checkout.html
+mingw32/share/doc/git-doc/technical/parallel-checkout.txt
 mingw32/share/doc/git-doc/technical/partial-clone.html
 mingw32/share/doc/git-doc/technical/partial-clone.txt
 mingw32/share/doc/git-doc/technical/protocol-capabilities.html
@@ -915,6 +920,7 @@ mingw32/share/doc/git-doc/technical/shallow.html
 mingw32/share/doc/git-doc/technical/shallow.txt
 mingw32/share/doc/git-doc/technical/signature-format.html
 mingw32/share/doc/git-doc/technical/signature-format.txt
+mingw32/share/doc/git-doc/technical/sparse-index.txt
 mingw32/share/doc/git-doc/technical/trivial-merge.html
 mingw32/share/doc/git-doc/technical/trivial-merge.txt
 mingw32/share/doc/git-doc/trace2-target-values.txt

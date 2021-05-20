@@ -1658,6 +1658,7 @@ mingw32/i686-w64-mingw32/include/wmpservices.h
 mingw32/i686-w64-mingw32/include/wmpservices.idl
 mingw32/i686-w64-mingw32/include/wmsbuffer.h
 mingw32/i686-w64-mingw32/include/wmsbuffer.idl
+mingw32/i686-w64-mingw32/include/wmsdk.h
 mingw32/i686-w64-mingw32/include/wmsdkidl.h
 mingw32/i686-w64-mingw32/include/wmsdkidl.idl
 mingw32/i686-w64-mingw32/include/wnnc.h

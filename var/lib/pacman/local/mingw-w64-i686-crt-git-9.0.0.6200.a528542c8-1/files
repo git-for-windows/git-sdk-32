@@ -33,6 +33,7 @@ mingw32/i686-w64-mingw32/lib/gcrt1.o
 mingw32/i686-w64-mingw32/lib/gcrt2.o
 mingw32/i686-w64-mingw32/lib/libaclui.a
 mingw32/i686-w64-mingw32/lib/libactiveds.a
+mingw32/i686-w64-mingw32/lib/libadsiid.a
 mingw32/i686-w64-mingw32/lib/libadsldpc.a
 mingw32/i686-w64-mingw32/lib/libadvapi32.a
 mingw32/i686-w64-mingw32/lib/libamstrmid.a
@@ -404,6 +405,7 @@ mingw32/i686-w64-mingw32/lib/libwlanutil.a
 mingw32/i686-w64-mingw32/lib/libwldap32.a
 mingw32/i686-w64-mingw32/lib/libwmcodecdspuuid.a
 mingw32/i686-w64-mingw32/lib/libwmilib.a
+mingw32/i686-w64-mingw32/lib/libwofutil.a
 mingw32/i686-w64-mingw32/lib/libwow32.a
 mingw32/i686-w64-mingw32/lib/libws2_32.a
 mingw32/i686-w64-mingw32/lib/libwsdapi.a

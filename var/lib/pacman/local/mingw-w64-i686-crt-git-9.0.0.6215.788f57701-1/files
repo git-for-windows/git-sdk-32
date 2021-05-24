@@ -284,6 +284,7 @@ mingw32/i686-w64-mingw32/lib/liboledlg.a
 mingw32/i686-w64-mingw32/lib/libolepro32.a
 mingw32/i686-w64-mingw32/lib/libolesvr32.a
 mingw32/i686-w64-mingw32/lib/libolethk32.a
+mingw32/i686-w64-mingw32/lib/libopends60.a
 mingw32/i686-w64-mingw32/lib/libopengl32.a
 mingw32/i686-w64-mingw32/lib/libp2p.a
 mingw32/i686-w64-mingw32/lib/libp2pcollab.a

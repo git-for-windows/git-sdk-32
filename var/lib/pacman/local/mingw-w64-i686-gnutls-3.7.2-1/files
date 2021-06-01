@@ -42,6 +42,7 @@ mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/gnutls/
 mingw32/share/doc/gnutls/gnutls-client-server-use-case.png
+mingw32/share/doc/gnutls/gnutls-crypto-layers.png
 mingw32/share/doc/gnutls/gnutls-handshake-sequence.png
 mingw32/share/doc/gnutls/gnutls-handshake-state.png
 mingw32/share/doc/gnutls/gnutls-internals.png
@@ -52,6 +53,7 @@ mingw32/share/doc/gnutls/gnutls-x509.png
 mingw32/share/doc/gnutls/pkcs11-vision.png
 mingw32/share/info/
 mingw32/share/info/gnutls-client-server-use-case.png
+mingw32/share/info/gnutls-crypto-layers.png
 mingw32/share/info/gnutls-guile.info
 mingw32/share/info/gnutls-handshake-sequence.png
 mingw32/share/info/gnutls-handshake-state.png
@@ -328,6 +330,8 @@ mingw32/share/man/man3/gnutls_dtls_prestate_set.3
 mingw32/share/man/man3/gnutls_dtls_set_data_mtu.3
 mingw32/share/man/man3/gnutls_dtls_set_mtu.3
 mingw32/share/man/man3/gnutls_dtls_set_timeouts.3
+mingw32/share/man/man3/gnutls_early_cipher_get.3
+mingw32/share/man/man3/gnutls_early_prf_hash_get.3
 mingw32/share/man/man3/gnutls_ecc_curve_get.3
 mingw32/share/man/man3/gnutls_ecc_curve_get_id.3
 mingw32/share/man/man3/gnutls_ecc_curve_get_name.3

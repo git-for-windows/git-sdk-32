@@ -6,6 +6,7 @@ mingw32/bin/libidn2-0.dll
 mingw32/include/
 mingw32/include/idn2.h
 mingw32/lib/
+mingw32/lib/libidn2-0.def
 mingw32/lib/libidn2.a
 mingw32/lib/libidn2.dll.a
 mingw32/lib/pkgconfig/

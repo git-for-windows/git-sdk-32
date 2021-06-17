@@ -1,14 +1,14 @@
 %NAME%
-libgpg-error
+libgcrypt
 
 %VERSION%
-1.38-1
+1.9.3-2
 
 %BASE%
-libgpg-error
+libgcrypt
 
 %DESC%
-Support library for libgcrypt
+General purpose cryptographic library based on the code from GnuPG
 
 %URL%
 https://gnupg.org
@@ -17,16 +17,16 @@ https://gnupg.org
 i686
 
 %BUILDDATE%
-1601369616
+1623843627
 
 %INSTALLDATE%
-1601435197
+1623899229
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-669639
+1051463
 
 %REASON%
 1
@@ -41,7 +41,5 @@ LGPL
 pgp
 
 %DEPENDS%
-sh
-libiconv
-libintl
+libgpg-error
 

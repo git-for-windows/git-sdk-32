@@ -56,6 +56,7 @@ mingw32/i686-w64-mingw32/include/adssts.h
 mingw32/i686-w64-mingw32/include/adtgen.h
 mingw32/i686-w64-mingw32/include/advpub.h
 mingw32/i686-w64-mingw32/include/af_irda.h
+mingw32/i686-w64-mingw32/include/afunix.h
 mingw32/i686-w64-mingw32/include/afxres.h
 mingw32/i686-w64-mingw32/include/agtctl.h
 mingw32/i686-w64-mingw32/include/agterr.h
@@ -1444,6 +1445,8 @@ mingw32/i686-w64-mingw32/include/tsattrs.h
 mingw32/i686-w64-mingw32/include/tspi.h
 mingw32/i686-w64-mingw32/include/tssbx.h
 mingw32/i686-w64-mingw32/include/tsuserex.h
+mingw32/i686-w64-mingw32/include/tsvirtualchannels.h
+mingw32/i686-w64-mingw32/include/tsvirtualchannels.idl
 mingw32/i686-w64-mingw32/include/tuner.h
 mingw32/i686-w64-mingw32/include/tuner.idl
 mingw32/i686-w64-mingw32/include/tvout.h

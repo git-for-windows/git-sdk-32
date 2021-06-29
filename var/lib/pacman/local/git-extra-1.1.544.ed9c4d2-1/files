@@ -16,12 +16,12 @@ mingw32/bin/blocked-file-util.exe
 mingw32/bin/create-shortcut.exe
 mingw32/bin/git-askyesno.exe
 mingw32/bin/git-credential-helper-selector.exe
+mingw32/bin/git-update-git-for-windows
 mingw32/bin/proxy-lookup.exe
 mingw32/bin/WhoUses.exe
 mingw32/libexec/
 mingw32/libexec/git-core/
 mingw32/libexec/git-core/git-update
-mingw32/libexec/git-core/git-update-git-for-windows
 update-via-pacman.bat
 usr/
 usr/bin/

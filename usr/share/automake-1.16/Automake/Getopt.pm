@@ -1,4 +1,4 @@
-# Copyright (C) 2012-2018 Free Software Foundation, Inc.
+# Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -33,14 +33,15 @@ line options in conformance to the GNU Coding standards.
 use 5.006;
 use strict;
 use warnings FATAL => 'all';
+
+use Carp qw (confess croak);
 use Exporter ();
 use Getopt::Long ();
-use Automake::ChannelDefs qw/fatal/;
-use Carp qw/croak confess/;
 
-use vars qw (@ISA @EXPORT);
-@ISA = qw (Exporter);
-@EXPORT= qw/getopt/;
+use Automake::ChannelDefs qw (fatal);
+
+our @ISA = qw (Exporter);
+our @EXPORT = qw (getopt);
 
 =item C<parse_options (%option)>
 

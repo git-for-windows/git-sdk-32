@@ -94,7 +94,7 @@ m4_definedefine
 F9,6
 m4_sysvalsysval
 T17,17
-m4_PACKAGE_STRINGGNU Autoconf 2.69
+m4_PACKAGE_STRINGGNU Autoconf 2.71
 T15,12
 m4_PACKAGE_NAMEGNU Autoconf
 T18,202
@@ -123,7 +123,7 @@ T12,48
 m4_re_escapem4_bpatsubst([$1],
 	      [[][*+.?\^$]], [\\\&])
 T17,152
-m4_version_prereqm4_if(m4_version_compare([2.69], [$1]),
+m4_version_prereqm4_if(m4_version_compare([2.71], [$1]),
 	[-1],
 	[m4_default([$3],
 		    [m4_fatal([Autoconf version $1 or higher is required],
@@ -194,13 +194,14 @@ T9,26
 m4_ifndefm4_ifdef([$1], [$3], [$2])
 T13,26
 m4_cr_LETTERSABCDEFGHIJKLMNOPQRSTUVWXYZ
-T16,452
+T16,496
 _m4_require_callm4_pushdef([_m4_divert_grow], m4_decr(_m4_divert_grow))m4_pushdef([_m4_diverting([$1])])m4_pushdef([_m4_diverting], [$1])m4_divert_push(_m4_divert_grow, [-])m4_if([$2], [], [$1], [$2])
 m4_provide_if([$1], [m4_set_remove([_m4_provide], [$1])],
-  [m4_warn([syntax], [$1 is m4_require'd but not m4_defun'd])])_m4_divert_raw($3)_m4_undivert(_m4_divert_grow)m4_divert_pop(_m4_divert_grow)_m4_popdef([_m4_divert_grow],
+  [m4_ifndef([m4_require_silent_probe],
+    [m4_warn([syntax], [$1 is m4_require'd but not m4_defun'd])])])_m4_divert_raw($3)_m4_undivert(_m4_divert_grow)m4_divert_pop(_m4_divert_grow)_m4_popdef([_m4_divert_grow],
 [_m4_diverting([$1])], [_m4_diverting])
-T14,37
-m4_PACKAGE_URLhttp://www.gnu.org/software/autoconf/
+T14,38
+m4_PACKAGE_URLhttps://www.gnu.org/software/autoconf/
 T11,62
 m4_cr_alnumabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 T9,127
@@ -390,11 +391,11 @@ m4_make_listm4_join([,
 T17,203
 m4_cr_not_Letters	
  !"#*%&'()$+,./0123456789:;<=>?@[\]^_`{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ-
-T17,292
+T17,293
 _m4_require_checkm4_if(_m4_defn([_m4_diverting]), [$2], [m4_ignore],
        m4_ifdef([_m4_diverting([$2])], [-]), [-], [m4_warn([syntax],
    [$3: `$1' was expanded before it was required
-http://www.gnu.org/software/autoconf/manual/autoconf.html#Expanded-Before-Required])_m4_require_call],
+https://www.gnu.org/software/autoconf/manual/autoconf.html#Expanded-Before-Required])_m4_require_call],
        [m4_ignore])
 T13,42
 m4_mapall_sepm4_if([$3], [], [], [_$0([$1], [$2], $3)])
@@ -405,7 +406,7 @@ _m4_define_cr_notm4_define([m4_cr_not_$1],
 	   m4_translit(m4_dquote(m4_defn([m4_cr_all])),
 		       m4_defn([m4_cr_$1])))
 T15,4
-m4_PACKAGE_YEAR2012
+m4_PACKAGE_YEAR2021
 F14,6
 _m4_divert_rawdivert
 T18,72
@@ -435,8 +436,9 @@ m4_condm4_if([$#], [0], [m4_fatal([$0: cannot be called without arguments])],
        [$#], [1], [$1],
        m4_eval([$# % 3]), [2], [m4_fatal([$0: missing an argument])],
        [_$0($@)])
-T14,62
-m4_set_foreachm4_pushdef([$2])m4_set_map_sep([$1], [m4_define([$2],], [)$3])
+T14,77
+m4_set_foreachm4_pushdef([$2])m4_set_map_sep([$1],
+[m4_define([$2],], [)$3])m4_popdef([$2])
 T9,156
 m4_escapem4_if(m4_index(m4_translit([$1],
    [[]#,()][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789], [$$$]), [$]),
@@ -467,8 +469,8 @@ T8,4
 m4_quote[$*]
 F9,6
 m4_syscmdsyscmd
-T16,55
-_m4_divert_stack../../lib/m4sugar/m4sugar.m4:3259: m4_divert_push: KILL
+T16,66
+_m4_divert_stack../autoconf-2.71/lib/m4sugar/m4sugar.m4:3287: m4_divert_push: KILL
 T9,31
 _m4_applym4_if([$2], [], [], [$1($2)[]])
 F11,8
@@ -531,7 +533,7 @@ m4_cdrm4_if([$#], 0, [m4_fatal([$0: cannot be called without arguments])],
        [$#], 1, [],
        [m4_dquote(m4_shift($@))])
 T18,4
-m4_PACKAGE_VERSION2.69
+m4_PACKAGE_VERSION2.71
 T10,27
 m4_joinall[$2]_$0([$1], m4_shift($@))
 T17,64
@@ -709,6 +711,13 @@ F7,4
 m4_evaleval
 T8,19
 m4_curry$1(m4_shift($@,)_$0
+T14,237
+_m4_validate_wm4_if([$1], [$2], [],
+  [m4_warn([obsolete], [whitespace-separated list contains macros;
+in a future version of Autoconf they will not be expanded]dnl
+m4_if(m4_bregexp([$1], [\bdn[l]\b]), -1, [], [
+note: `dn@&t@l' is a macro]))])dnl
+[$2]
 T9,222
 m4_bmatchm4_if([$#], 0, [m4_fatal([$0: too few arguments: $#])],
        [$#], 1, [m4_fatal([$0: too few arguments: $#: $1])],
@@ -762,6 +771,8 @@ m4_set_addm4_ifdef([_m4_set([$1],$2)],
 	  [m4_define([_m4_set([$1],$2)],
 		     [1])m4_pushdef([_m4_set([$1])],
 				    [$2])_m4_set_size([$1], [m4_incr])$3])
+T13,65
+m4_validate_w_m4_validate_w(m4_normalize([$1]), m4_normalize(m4_expand([$1])))
 T14,131
 m4_set_add_allm4_define([_m4_set_size($1)], m4_eval(m4_set_size([$1])
   + m4_len(m4_ifdef([_m4_set_cleanup($1)], [_$0_check], [_$0])([$1], $@))))

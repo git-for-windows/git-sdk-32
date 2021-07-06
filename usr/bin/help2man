@@ -2,7 +2,7 @@
 
 # Generate a short man page from --help and --version output.
 # Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009,
-# 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020 Free Software
+# 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020, 2021 Free Software
 # Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
@@ -32,7 +32,7 @@ use Encode qw(decode encode);
 use I18N::Langinfo qw(langinfo CODESET);
 
 my $this_program = 'help2man';
-my $this_version = '1.47.13';
+my $this_version = '1.48.3';
 my $encoding;
 
 {
@@ -74,8 +74,9 @@ sub fix_italic_spacing;
 my $version_info = enc_user sprintf _(<<'EOT'), $this_program, $this_version;
 GNU %s %s
 
-Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009, 2010,
-2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020 Free Software Foundation, Inc.
+Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2009,
+2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2020, 2021 Free Software
+Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
@@ -307,21 +308,23 @@ if ($opt_output)
 #   <version>
 #   <program> <version>
 #   {GNU,Free} <program> <version>
-#   <program> ({GNU,Free} <package>) <version>
-#   <program> - {GNU,Free} <package> <version>
+#   <program> ({GNU,Free,} <package>) <version>
+#   <program> - {GNU,Free,} <package> <version>
+#   <program> - {GNU,Free,} <package> - <version>
 #
 # and separated from any copyright/author details by a blank line.
 
 ($_, $version_text) = ((split /\n+/, $version_text, 2), '');
 
-if (/^(\S+) +\(((?:GNU|Free) +[^)]+)\) +(\S+)$/ or
-    /^(\S+) +- *((?:GNU|Free) +\S.*) +(\S+)$/)
+if (/^(\S+) +\(((?:(?:GNU|Free) +)?[^)]+)\) +(\S.*)$/ or
+    /^(\S+) +- +((?:(?:GNU|Free) +)?\S.*) +- +(\S.*)$/ or
+    /^(\S+) +- +((?:(?:GNU|Free) +)?\S+) +(\S.*)$/)
 {
     $program = program_basename $1;
     $package = $2;
     $version = $3;
 }
-elsif (/^((?:GNU|Free) +)?(\S.*) +(\S+)$/)
+elsif (/^((?:GNU|Free) +)?(\S+) +(\S.*)$/)
 {
     $program = program_basename $2;
     $package = $1 ? "$1$program" : $program;
@@ -361,7 +364,7 @@ for ($replace{_('NAME')} || ($include{_('NAME')} ||= ''))
 my $PROGRAM = uc $program;
 
 # Set default page head/footers
-$source ||= "$program $version";
+$source ||= "$package $version";
 unless ($manual)
 {
     for ($section)

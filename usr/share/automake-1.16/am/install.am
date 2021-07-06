@@ -1,5 +1,5 @@
 ## automake - create Makefile.in from Makefile.am
-## Copyright (C) 2001-2018 Free Software Foundation, Inc.
+## Copyright (C) 2001-2020 Free Software Foundation, Inc.
 
 ## This program is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -52,18 +52,19 @@ if %?SUBDIRS%
 RECURSIVE_TARGETS += install-data-recursive install-exec-recursive \
 		     install-recursive uninstall-recursive
 install:%maybe_BUILT_SOURCES% install-recursive
-install-exec: install-exec-recursive
+install-exec:%maybe_BUILT_SOURCES% install-exec-recursive
 install-data: install-data-recursive
 uninstall: uninstall-recursive
 else !%?SUBDIRS%
 install:%maybe_BUILT_SOURCES% install-am
-install-exec: install-exec-am
+install-exec:%maybe_BUILT_SOURCES% install-exec-am
 install-data: install-data-am
 uninstall: uninstall-am
 endif !%?SUBDIRS%
 
 if %?maybe_BUILT_SOURCES%
 .MAKE: install
+.MAKE: install-exec
 endif %?maybe_BUILT_SOURCES%
 
 .MAKE .PHONY: install-am

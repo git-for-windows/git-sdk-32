@@ -1,4 +1,4 @@
-*repeat.txt*    For Vim version 8.2.  Last change: 2019 Dec 07
+*repeat.txt*    For Vim version 8.2.  Last change: 2021 May 08
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -58,6 +58,11 @@ of area is used, see |visual-repeat|.
 							*:v* *:vglobal*
 :[range]v[global]/{pattern}/[cmd]
 			Same as :g!.
+
+Example: >
+	:g/^Obsolete/d _
+Using the underscore after `:d` avoids clobbering registers or the clipboard.
+This also makes it faster.
 
 Instead of the '/' which surrounds the {pattern}, you can use any other
 single byte character, but not an alphabetic character, '\', '"' or '|'.
@@ -126,6 +131,11 @@ q{0-9a-zA-Z"}		Record typed characters into register {0-9a-zA-Z"}
 			recorded macro and the yank will overwrite the
 			recorded macro.
 
+			Note: The recording happens while you type, replaying
+			the register happens as if the keys come from a
+			mapping.  This matters, for example, for undo, which
+			only syncs when commands were typed.
+
 q			Stops recording.  (Implementation note: The 'q' that
 			stops recording is not stored in the register, unless
 			it was the result of a mapping)
@@ -137,7 +147,7 @@ q			Stops recording.  (Implementation note: The 'q' that
 			used.
 			The register is executed like a mapping, that means
 			that the difference between 'wildchar' and 'wildcharm'
-			applies.
+			applies, and undo might not be synced in the same way.
 			For "@=" you are prompted to enter an expression.  The
 			result of the expression is then executed.
 			See also |@:|.
@@ -145,28 +155,37 @@ q			Stops recording.  (Implementation note: The 'q' that
 							*@@* *E748*
 @@			Repeat the previous @{0-9a-z":*} [count] times.
 
-:[addr]*{0-9a-z".=+}						*:@* *:star*
+								*:@*
 :[addr]@{0-9a-z".=*+}	Execute the contents of register {0-9a-z".=*+} as an Ex
 			command.  First set cursor at line [addr] (default is
 			current line).  When the last line in the register does
 			not have a <CR> it will be added automatically when
 			the 'e' flag is present in 'cpoptions'.
-			Note that the ":*" command is only recognized when the
-			'*' flag is present in 'cpoptions'.  This is NOT the
-			default when 'nocompatible' is used.
 			For ":@=" the last used expression is used.  The
 			result of evaluating the expression is executed as an
 			Ex command.
 			Mappings are not recognized in these commands.
+			When the |line-continuation| character (\) is present
+			at the beginning of a line in a linewise register,
+			then it is combined with the previous line. This is
+			useful for yanking and executing parts of a Vim
+			script.
 			Future: Will execute the register for each line in the
 			address range.
+
+:[addr]*{0-9a-z".=+}					*:star-compatible*
+			When '*' is present in 'cpoptions' |cpo-star|, use
+			":*" in the same way as ":@".  This is NOT the default
+			when 'nocompatible' is used.  When the '*' flag is not
+			present in 'cpoptions', ":*" is an alias for ":'<,'>",
+			select the Visual area |:star|.
 
 							*:@:*
 :[addr]@:		Repeat last command-line.  First set cursor at line
 			[addr] (default is current line).
 
 :[addr]@							*:@@*
-:[addr]@@		Repeat the previous :@{0-9a-z"}.  First set cursor at
+:[addr]@@		Repeat the previous :@{register}.  First set cursor at
 			line [addr] (default is current line).
 
 ==============================================================================
@@ -261,6 +280,9 @@ For writing a Vim script, see chapter 41 of the user manual |usr_41.txt|.
 			directories are added to 'runtimepath'.  This is
 			useful in your .vimrc.  The plugins will then be
 			loaded during initialization, see |load-plugins|.
+			Note that for ftdetect scripts to be loaded
+			you will need to write `filetype plugin indent on`
+			AFTER all `packadd!` commands.
 
 			Also see |pack-add|.
 			{only available when compiled with |+eval|}
@@ -341,6 +363,16 @@ For writing a Vim script, see chapter 41 of the user manual |usr_41.txt|.
 			Vim version, or update Vim to a newer version.  See
 			|vimscript-version| for what changed between versions.
 
+:vim9s[cript] [noclear]				*:vim9s* *:vim9script*
+			Marks a script file as containing |Vim9-script|
+			commands.  Also see |vim9-namespace|.
+			Must be the first command in the file.
+			For [noclear] see |vim9-reload|.
+			Without the |+eval| feature this changes the syntax
+			for some commands.
+			See |:vim9cmd| for executing one command with Vim9
+			syntax and semantics.
+			 
 						*:scr* *:scriptnames*
 :scr[iptnames]		List all sourced script names, in the order they were
 			first sourced.  The number is used for the script ID
@@ -632,8 +664,8 @@ disallowed though.
 This assumes you write one or more plugins that you distribute as a package.
 
 If you have two unrelated plugins you would use two packages, so that Vim
-users can chose what they include or not.  Or you can decide to use one
-package with optional plugins, and tell the user to add the ones he wants with
+users can choose what they include or not.  Or you can decide to use one
+package with optional plugins, and tell the user to add the preferred ones with
 `:packadd`.
 
 Decide how you want to distribute the package.  You can create an archive or
@@ -654,9 +686,9 @@ Your directory layout would be like this:
    opt/fooextra/doc/tags  	        " help tags
 
 This allows for the user to do: >
-	mkdir ~/.vim/pack/myfoobar
-	cd ~/.vim/pack/myfoobar
-	git clone https://github.com/you/foobar.git
+	mkdir ~/.vim/pack
+	cd ~/.vim/pack
+	git clone https://github.com/you/foobar.git myfoobar
 
 Here "myfoobar" is a name that the user can choose, the only condition is that
 it differs from other packages.
@@ -669,7 +701,7 @@ You could add this packadd command in one of your plugins, to be executed when
 the optional plugin is needed.
 
 Run the `:helptags` command to generate the doc/tags file.  Including this
-generated file in the package means that the user can drop the package in his
+generated file in the package means that the user can drop the package in the
 pack directory and the help command works right away.  Don't forget to re-run
 the command after changing the plugin help: >
 	:helptags path/start/foobar/doc
@@ -856,7 +888,7 @@ DEFINING BREAKPOINTS
 		valid in the script where it has been defined and if that
 		script is called from several other scripts, this will stop
 		whenever that particular variable will become visible or
-		unaccessible again.
+		inaccessible again.
 
 The [lnum] is the line number of the breakpoint.  Vim will stop at or after
 this line.  When omitted line 1 is used.
@@ -878,8 +910,9 @@ matches ".../plugin/explorer.vim", ".../plugin/iexplorer.vim", etc. >
 matches ".../plugin/explorer.vim" and "explorer.vim" in any other directory.
 
 The match for functions is done against the name as it's shown in the output
-of ":function".  For local functions this means that something like "<SNR>99_"
-is prepended.
+of ":function".  However, for local functions the script-specific prefix such
+as "<SNR>99_" is ignored to make it easier to match script-local functions
+without knowing the ID of the script.
 
 Note that functions are first loaded and later executed.  When they are loaded
 the "file" breakpoints are checked, when they are executed the "func"
@@ -934,10 +967,10 @@ OBSCURE
 
 Profiling means that Vim measures the time that is spent on executing
 functions and/or scripts.  The |+profile| feature is required for this.
-It is only included when Vim was compiled with "huge" features.
+It is included when Vim was compiled with "huge" features.
 
 You can also use the |reltime()| function to measure time.  This only requires
-the |+reltime| feature, which is present more often.
+the |+reltime| feature, which is present in more builds.
 
 For profiling syntax highlighting see |:syntime|.
 
@@ -984,7 +1017,12 @@ For example, to profile the one_script.vim script file: >
 
 
 You must always start with a ":profile start fname" command.  The resulting
-file is written when Vim exits.  Here is an example of the output, with line
+file is written when Vim exits.  For example, to profile one specific
+function: >
+	profile start /tmp/vimprofile
+	profile func MyFunc
+
+Here is an example of the output, with line
 numbers prepended for the explanation:
 
   1 FUNCTION  Test2() ~

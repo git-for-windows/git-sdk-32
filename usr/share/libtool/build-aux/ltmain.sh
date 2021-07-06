@@ -2073,7 +2073,7 @@ include the following information:
        autoconf:       `($AUTOCONF --version) 2>/dev/null |$SED 1q`
 
 Report bugs to <bug-libtool@gnu.org>.
-GNU libtool home page: <http://www.gnu.org/software/libtool/>.
+GNU libtool home page: <https://www.gnu.org/software/libtool/>.
 General help using GNU software: <http://www.gnu.org/gethelp/>."
     exit 0
 }
@@ -2421,7 +2421,6 @@ libtool_validate_options ()
       *cygwin* | *msys* | *mingw* | *pw32* | *cegcc* | *solaris2* | *os2*)
         # don't eliminate duplications in $postdeps and $predeps
         opt_duplicate_compiler_generated_deps=:
-        case $host in *msys*) func_append postdeps " -lpthread ";; esac
         ;;
       *)
         opt_duplicate_compiler_generated_deps=$opt_preserve_dup_deps
@@ -4932,7 +4931,7 @@ func_win32_libid ()
   *ar\ archive*) # could be an import, or static
     # Keep the egrep pattern in sync with the one in _LT_CHECK_MAGIC_METHOD.
     if eval $OBJDUMP -f $1 | $SED -e '10q' 2>/dev/null |
-       $EGREP 'file format (pei*-i386(.*architecture: i386)?|pe-arm-wince|pe-x86-64)' >/dev/null; then
+       $EGREP 'file format (pei*-i386(.*architecture: i386)?|pe-arm-wince|pe-x86-64|coff-arm|coff-arm64|coff-i386|coff-x86-64)' >/dev/null; then
       case $nm_interface in
       "MS dumpbin")
 	if func_cygming_ms_implib_p "$1" ||

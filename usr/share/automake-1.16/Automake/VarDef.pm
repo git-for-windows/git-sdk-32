@@ -1,4 +1,4 @@
-# Copyright (C) 2003-2018 Free Software Foundation, Inc.
+# Copyright (C) 2003-2020 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,15 +17,17 @@ package Automake::VarDef;
 
 use 5.006;
 use strict;
+use warnings FATAL => 'all';
+
 use Carp;
+use Exporter;
+
 use Automake::ChannelDefs;
 use Automake::ItemDef;
 
-require Exporter;
-use vars '@ISA', '@EXPORT';
-@ISA = qw/Automake::ItemDef Exporter/;
-@EXPORT = qw (&VAR_AUTOMAKE &VAR_CONFIGURE &VAR_MAKEFILE
-	      &VAR_ASIS &VAR_PRETTY &VAR_SILENT &VAR_SORTED);
+our @ISA = qw (Automake::ItemDef Exporter);
+our @EXPORT = qw (&VAR_AUTOMAKE &VAR_CONFIGURE &VAR_MAKEFILE
+		  &VAR_ASIS &VAR_PRETTY &VAR_SILENT &VAR_SORTED);
 
 =head1 NAME
 

@@ -1,4 +1,4 @@
-*term.txt*      For Vim version 8.2.  Last change: 2019 Dec 07
+*term.txt*      For Vim version 8.2.  Last change: 2021 Jan 14
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -217,6 +217,10 @@ it's different from Alt).  They can be combined.  Examples: >
 Another speciality about these codes is that they are not overwritten by
 another code.  That is to avoid that the codes obtained from xterm directly
 |t_RV| overwrite them.
+
+Another special value is a termcap entry ending in "@;*X".  This is for cursor
+keys, which either use "CSI X" or "CSI 1 ; modifier X".  Thus the "@"
+stands for either "1" if a modifier follows, or nothing.
 							*xterm-scroll-region*
 The default termcap entry for xterm on Sun and other platforms does not
 contain the entry for scroll regions.  Add ":cs=\E[%i%d;%dr:" to the xterm
@@ -322,6 +326,7 @@ OUTPUT CODES						*terminal-output-codes*
 	t_ZR	italics end					*t_ZR* *'t_ZR'*
 
 Added by Vim (there are no standard codes for these):
+	t_AU	set underline color (ANSI)			*t_AU* *'t_AU'*
 	t_Ce	undercurl end					*t_Ce* *'t_Ce'*
 	t_Cs	undercurl mode					*t_Cs* *'t_Cs'*
 	t_Te	strikethrough end				*t_Te* *'t_Te'*
@@ -350,6 +355,7 @@ Added by Vim (there are no standard codes for these):
 		|xterm-true-color|
 	t_8b	set background color (R, G, B)			*t_8b* *'t_8b'*
 		|xterm-true-color|
+	t_8u	set underline color (R, G, B)			*t_8u* *'t_8u'*
 	t_BE	enable bracketed paste mode			*t_BE* *'t_BE'*
 		|xterm-bracketed-paste|
 	t_BD	disable bracketed paste mode			*t_BD* *'t_BD'*
@@ -367,6 +373,10 @@ Added by Vim (there are no standard codes for these):
 	t_Ri	restore icon text from stack			*t_Ri* *'t_Ri'*
 	t_TE	end of "raw" mode				*t_TE* *'t_TE'*
 	t_TI	put terminal into "raw" mode 			*t_TI* *'t_TI'*
+	t_fd	disable focus-event tracking 			*t_fd* *'t_fd'*
+		|xterm-focus-event|
+	t_fe	enable focus-event tracking 			*t_fe* *'t_fe'*
+		|xterm-focus-event|
 
 Some codes have a start, middle and end part.  The start and end are defined
 by the termcap option, the middle part is text.
@@ -540,11 +550,22 @@ And run "xrdb -merge .Xresources" to make it effective.  You can check the
 value with the context menu (right mouse button while CTRL key is pressed),
 there should be a tick at allow-window-ops.
 
+							*xterm-focus-event*
+Some terminals including xterm support the focus event tracking feature.
+If this feature is enabled by the 't_fe' sequence, special key sequences are
+sent from the terminal to Vim every time the terminal gains or loses focus.
+Vim fires focus events (|FocusGained|/|FocusLost|) by handling them accordingly.
+Focus event tracking is disabled by a 't_fd' sequence when exiting "raw" mode.
+If you would like to disable this feature, add the following to your .vimrc:
+	`set t_fd=`
+	`set t_fe=`
+
 							*termcap-colors*
 Note about colors: The 't_Co' option tells Vim the number of colors available.
 When it is non-zero, the 't_AB' and 't_AF' options are used to set the color.
 If one of these is not available, 't_Sb' and 't_Sf' are used.  't_me' is used
 to reset to the default colors.  Also see 'termguicolors'.
+When the GUI is running 't_Co' is set to 16777216.
 
 				*termcap-cursor-shape* *termcap-cursor-color*
 When Vim enters Insert mode the 't_SI' escape sequence is sent.  When Vim

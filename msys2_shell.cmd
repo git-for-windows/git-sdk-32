@@ -39,6 +39,8 @@ if "x%~1" == "x-msys" shift& set /a msys2_shiftCounter+=1& set MSYSTEM=MSYS& got
 if "x%~1" == "x-msys2" shift& set /a msys2_shiftCounter+=1& set MSYSTEM=MSYS& goto :checkparams
 if "x%~1" == "x-mingw32" shift& set /a msys2_shiftCounter+=1& set MSYSTEM=MINGW32& goto :checkparams
 if "x%~1" == "x-mingw64" shift& set /a msys2_shiftCounter+=1& set MSYSTEM=MINGW64& goto :checkparams
+if "x%~1" == "x-ucrt64" shift& set /a msys2_shiftCounter+=1& set MSYSTEM=UCRT64& goto :checkparams
+if "x%~1" == "x-clang64" shift& set /a msys2_shiftCounter+=1& set MSYSTEM=CLANG64& goto :checkparams
 if "x%~1" == "x-mingw" shift& set /a msys2_shiftCounter+=1& (if exist "%WD%..\..\mingw64" (set MSYSTEM=MINGW64) else (set MSYSTEM=MINGW32))& goto :checkparams
 rem Console types
 if "x%~1" == "x-mintty" shift& set /a msys2_shiftCounter+=1& set MSYSCON=mintty.exe& goto :checkparams
@@ -93,13 +95,22 @@ set msys2_arg=
 set msys2_shiftCounter=
 set msys2_full_cmd=
 
-rem Setup proper title
+rem Setup proper title and icon
 if "%MSYSTEM%" == "MINGW32" (
   set "CONTITLE=MinGW x32"
+  set "CONICON=mingw32.ico"
 ) else if "%MSYSTEM%" == "MINGW64" (
   set "CONTITLE=MinGW x64"
+  set "CONICON=mingw64.ico"
+) else if "%MSYSTEM%" == "UCRT64" (
+  set "CONTITLE=MinGW UCRT x64"
+  set "CONICON=ucrt64.ico"
+) else if "%MSYSTEM%" == "CLANG64" (
+  set "CONTITLE=MinGW Clang x64"
+  set "CONICON=clang64.ico"
 ) else (
   set "CONTITLE=MSYS2 MSYS"
+  set "CONICON=msys2.ico"
 )
 
 if "x%MSYSCON%" == "xmintty.exe" goto startmintty
@@ -110,9 +121,9 @@ if NOT EXIST "%WD%mintty.exe" goto startsh
 set MSYSCON=mintty.exe
 :startmintty
 if not defined MSYS2_NOSTART (
-  start "%CONTITLE%" "%WD%mintty" -i /msys2.ico -t "%CONTITLE%" "/usr/bin/%LOGINSHELL%" --login !SHELL_ARGS!
+  start "%CONTITLE%" "%WD%mintty" -i "/%CONICON%" -t "%CONTITLE%" "/usr/bin/%LOGINSHELL%" --login !SHELL_ARGS!
 ) else (
-  "%WD%mintty" -i /msys2.ico -t "%CONTITLE%" "/usr/bin/%LOGINSHELL%" --login !SHELL_ARGS!
+  "%WD%mintty" -i "/%CONICON%" -t "%CONTITLE%" "/usr/bin/%LOGINSHELL%" --login !SHELL_ARGS!
 )
 exit /b %ERRORLEVEL%
 
@@ -122,9 +133,9 @@ call :conemudetect || (
   exit /b 1
 )
 if not defined MSYS2_NOSTART (
-  start "%CONTITLE%" "%ComEmuCommand%" /Here /Icon "%WD%..\..\msys2.ico" /cmd "%WD%\%LOGINSHELL%" --login !SHELL_ARGS!
+  start "%CONTITLE%" "%ComEmuCommand%" /Here /Icon "%WD%..\..\%CONICON%" /cmd "%WD%\%LOGINSHELL%" --login !SHELL_ARGS!
 ) else (
-  "%ComEmuCommand%" /Here /Icon "%WD%..\..\msys2.ico" /cmd "%WD%\%LOGINSHELL%" --login !SHELL_ARGS!
+  "%ComEmuCommand%" /Here /Icon "%WD%..\..\%CONICON%" /cmd "%WD%\%LOGINSHELL%" --login !SHELL_ARGS!
 )
 exit /b %ERRORLEVEL%
 
@@ -187,8 +198,8 @@ echo Usage:
 echo     %~1 [options] [login shell parameters]
 echo.
 echo Options:
-echo     -mingw32 ^| -mingw64 ^| -msys[2]   Set shell type
-echo     -defterm ^| -mintty ^| -conemu     Set terminal type
+echo     -mingw32 ^| -mingw64 ^| -ucrt64 ^| -clang64 ^| -msys[2]   Set shell type
+echo     -defterm ^| -mintty ^| -conemu                            Set terminal type
 echo     -here                            Use current directory as working
 echo                                      directory
 echo     -where DIRECTORY                 Use specified DIRECTORY as working

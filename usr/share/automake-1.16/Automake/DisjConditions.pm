@@ -1,4 +1,4 @@
-# Copyright (C) 1997-2018 Free Software Foundation, Inc.
+# Copyright (C) 1997-2020 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,8 +17,10 @@ package Automake::DisjConditions;
 
 use 5.006;
 use strict;
+use warnings FATAL => 'all';
+
 use Carp;
-use Automake::Condition qw/TRUE FALSE/;
+use Automake::Condition qw (TRUE FALSE);
 
 =head1 NAME
 
@@ -139,7 +141,7 @@ ignored.
 # Keys in this hash are DisjConditions strings. Values are the
 # associated object DisjConditions.  This is used by 'new' to reuse
 # DisjConditions objects with identical conditions.
-use vars '%_disjcondition_singletons';
+our %_disjcondition_singletons;
 
 sub new ($;@)
 {

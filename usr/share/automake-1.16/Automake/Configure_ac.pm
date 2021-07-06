@@ -1,4 +1,4 @@
-# Copyright (C) 2003-2018 Free Software Foundation, Inc.
+# Copyright (C) 2003-2020 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,14 +22,15 @@ package Automake::Configure_ac;
 
 use 5.006;
 use strict;
+use warnings FATAL => 'all';
+
 use Exporter;
-use Automake::Channels;
+
 use Automake::ChannelDefs;
+use Automake::Channels;
 
-use vars qw (@ISA @EXPORT);
-
-@ISA = qw (Exporter);
-@EXPORT = qw (&find_configure_ac &require_configure_ac);
+our @ISA = qw (Exporter);
+our @EXPORT = qw (&find_configure_ac &require_configure_ac);
 
 =head1 NAME
 

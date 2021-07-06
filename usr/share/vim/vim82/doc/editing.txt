@@ -1,4 +1,4 @@
-*editing.txt*   For Vim version 8.2.  Last change: 2019 Dec 22
+*editing.txt*   For Vim version 8.2.  Last change: 2021 Apr 05
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -73,10 +73,14 @@ g CTRL-G		Prints the current position of the cursor in five
 			ways: Column, Line, Word, Character and Byte.  If the
 			number of Characters and Bytes is the same then the
 			Character position is omitted.
+
 			If there are characters in the line that take more
 			than one position on the screen (<Tab> or special
-			character), both the "real" column and the screen
-			column are shown, separated with a dash.
+			character), or characters using more than one byte per
+			column (characters above 0x7F when 'encoding' is
+			utf-8), both the byte column and the screen column are
+			shown, separated by a dash.
+
 			Also see the 'ruler' option and the |wordcount()|
 			function.
 
@@ -475,6 +479,9 @@ This edits the same file again with 'fileformat' set to "unix". >
 	:w ++enc=latin1 newfile
 This writes the current buffer to "newfile" in latin1 format.
 
+The message given when writing a file will show "[converted]" when
+'fileencoding' or the value specified with ++enc differs from 'encoding'.
+
 There may be several ++opt arguments, separated by white space.  They must all
 appear before any |+cmd| argument.
 
@@ -649,7 +656,7 @@ list of the current window.
 				:args ## x
 <			This will add the "x" item and sort the new list.
 
-:argd[elete] {pattern} ..			*:argd* *:argdelete* *E480*
+:argd[elete] {pattern} ..		*:argd* *:argdelete* *E480* *E610*
 			Delete files from the argument list that match the
 			{pattern}s.  {pattern} is used like a file pattern,
 			see |file-pattern|.  "%" can be used to delete the
@@ -659,7 +666,7 @@ list of the current window.
 			Example: >
 				:argdel *.obj
 
-:[range]argd[elete]	Delete the {range} files from the argument list.
+:[range]argd[elete]	Delete the [range] files from the argument list.
 			Example: >
 				:10,$argdel
 <			Deletes arguments 10 and further, keeping 1-9. >
@@ -1007,7 +1014,7 @@ to write anyway add a '!' to the command.
 
 							*write-permissions*
 When writing a new file the permissions are read-write.  For unix the mask is
-0666 with additionally umask applied.  When writing a file that was read Vim
+0o666 with additionally umask applied.  When writing a file that was read Vim
 will preserve the permissions, but clear the s-bit.
 
 							*write-readonly*
@@ -1026,7 +1033,7 @@ original file fails, there will be an error message telling you that you
 lost the original file.
 
 						*DOS-format-write*
-If the 'fileformat' is "dos", <CR> <NL> is used for <EOL>.  This is default
+If the 'fileformat' is "dos", <CR><NL> is used for <EOL>.  This is default
 for Win32.  On other systems the message "[dos format]" is shown to remind you
 that an unusual <EOL> was used.
 						*Unix-format-write*
@@ -1079,9 +1086,9 @@ The names can be in upper- or lowercase.
 
 							*:q* *:quit*
 :q[uit]			Quit the current window.  Quit Vim if this is the last
-			window.  This fails when changes have been made and
-			Vim refuses to |abandon| the current buffer, and when
-			the last file in the argument list has not been
+			|edit-window|.  This fails when changes have been made
+			and Vim refuses to |abandon| the current buffer, and
+			when the last file in the argument list has not been
 			edited.
 			If there are other tab pages and quitting the last
 			window in the current tab page the current tab page is
@@ -1107,18 +1114,22 @@ The names can be in upper- or lowercase.
 			|quickfix|).
 
 							*:wq*
-:wq [++opt]		Write the current file and quit.  Writing fails when
-			the file is read-only or the buffer does not have a
-			name.  Quitting fails when the last file in the
-			argument list has not been edited.
+:wq [++opt]		Write the current file and close the window.  If this
+			was the last |edit-window| Vim quits.
+			Writing fails when the file is read-only or the buffer
+			does not have a name.  Quitting fails when the last
+			file in the argument list has not been edited.
 
-:wq! [++opt]		Write the current file and quit.  Writing fails when
-			the current buffer does not have a name.
+:wq! [++opt]		Write the current file and close the window.  If this
+			was the last |edit-window| Vim quits.  Writing fails
+			when the current buffer does not have a name.
 
-:wq [++opt] {file}	Write to {file} and quit.  Quitting fails when the
+:wq [++opt] {file}	Write to {file} and close the window.  If this was the
+			last |edit-window| Vim quits.  Quitting fails when the
 			last file in the argument list has not been edited.
 
-:wq! [++opt] {file}	Write to {file} and quit.
+:wq! [++opt] {file}	Write to {file} and close the current window.  Quit
+			Vim if this was the last |edit-window|.
 
 :[range]wq[!] [++opt] [file]
 			Same as above, but only write the lines in [range].
@@ -1135,10 +1146,10 @@ The names can be in upper- or lowercase.
 			Same as :xit.
 
 							*ZZ*
-ZZ			Write current file, if modified, and quit (same as
-			":x").  (Note: If there are several windows for the
-			current file, the file is written if it was modified
-			and the window is closed).
+ZZ			Write current file, if modified, and close the current
+			window (same as ":x").
+			If there are several windows for the current file,
+			only the current window is closed.
 
 							*ZQ*
 ZQ			Quit without checking for changes (same as ":q!").
@@ -1242,7 +1253,7 @@ For versions of Vim where browsing is not supported, the command is executed
 unmodified.
 
 							*browsefilter*
-For MS Windows and GTK, you can modify the filters that are used in the browse
+For MS-Windows and GTK, you can modify the filters that are used in the browse
 dialog.  By setting the g:browsefilter or b:browsefilter variables, you can
 change the filters globally or locally to the buffer.  The variable is set to
 a string in the format "{filter label}\t{pattern};{pattern}\n" where {filter
@@ -1319,6 +1330,10 @@ present in 'cpoptions' and "!" is not used in the command.
 							*:tch* *:tchdir*
 :tch[dir][!]		Same as |:tcd|.
 
+							*:tcd-*
+:tcd[!] -		Change to the previous current directory, before the
+			last ":tcd {path}" command.
+
 							*:lc* *:lcd*
 :lc[d][!] {path}	Like |:cd|, but only set the current directory when
 			the cursor is in the current window.  The current
@@ -1328,9 +1343,28 @@ present in 'cpoptions' and "!" is not used in the command.
 							*:lch* *:lchdir*
 :lch[dir][!]		Same as |:lcd|.
 
+							*:lcd-*
+:lcd[!] -		Change to the previous current directory, before the
+			last ":lcd {path}" command.
+
 							*:pw* *:pwd* *E187*
 :pw[d]			Print the current directory name.
 			Also see |getcwd()|.
+							*:pwd-verbose*
+			When 'verbose' is non-zero, |:pwd| will also display
+			what scope the current directory was set. Example: >
+
+				" Set by :cd
+				:verbose pwd
+				[global] /path/to/current
+
+				" Set by :lcd
+				:verbose pwd
+				[window] /path/to/current
+
+				" Set by :tcd
+				:verbose pwd
+				[tabpage] /path/to/current
 
 So long as no |:lcd| or |:tcd| command has been used, all windows share the
 same current directory.  Using a command to jump to another window doesn't
@@ -1372,7 +1406,7 @@ to 0, 'modeline' off, 'expandtab' off).  Setting the 'binary' option has the
 same effect.  Don't forget to do this before reading the file.
 
 There are a few things to remember when editing binary files:
-- When editing executable files the number of characters must not change.
+- When editing executable files the number of bytes must not change.
   Use only the "R" or "r" command to change text.  Do not delete characters
   with "x" or by backspacing.
 - Set the 'textwidth' option to 0.  Otherwise lines will unexpectedly be
@@ -1380,13 +1414,13 @@ There are a few things to remember when editing binary files:
 - When there are not many <EOL>s, the lines will become very long.  If you
   want to edit a line that does not fit on the screen reset the 'wrap' option.
   Horizontal scrolling is used then.  If a line becomes too long (more than
-  about 32767 characters on the Amiga, much more on 32-bit systems, see
+  about 32767 bytes on the Amiga, much more on 32-bit and 64-bit systems, see
   |limits|) you cannot edit that line.  The line will be split when reading
   the file.  It is also possible that you get an "out of memory" error when
   reading the file.
 - Make sure the 'binary' option is set BEFORE loading the
-  file.  Otherwise both <CR> <NL> and <NL> are considered to end a line
-  and when the file is written the <NL> will be replaced with <CR> <NL>.
+  file.  Otherwise both <CR><NL> and <NL> are considered to end a line
+  and when the file is written the <NL> will be replaced with <CR><NL>.
 - <Nul> characters are shown on the screen as ^@.  You can enter them with
   "CTRL-V CTRL-@" or "CTRL-V 000"
 - To insert a <NL> character in the file split a line.  When writing the

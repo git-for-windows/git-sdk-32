@@ -10,8 +10,9 @@ T13,0
 _AT_LINE_file
 T15,55
 _AS_TR_SH_INDIR`AS_ECHO(["_AS_ESCAPE([[$1]], [`], [\])"]) | $as_tr_sh`
-T21,342
-_AS_BOURNE_COMPATIBLEAS_IF([test -n "${ZSH_VERSION+set}" && (emulate sh) >/dev/null 2>&1],
+T21,344
+_AS_BOURNE_COMPATIBLEas_nop=:
+AS_IF([test ${ZSH_VERSION+y} && (emulate sh) >/dev/null 2>&1],
  [emulate sh
   NULLCMD=:
   [#] Pre-4.2 versions of Zsh do word splitting on ${1+"$[@]"}, which
@@ -22,8 +23,8 @@ _AS_BOURNE_COMPATIBLEAS_IF([test -n "${ZSH_VERSION+set}" && (emulate sh) >/dev/n
 
 T20,1
 AS_ORIGINAL_STDIN_FD0
-T29,30
-m4_location(_AS_EXPR_PREPARE)../../lib/m4sugar/m4sh.m4:1108
+T29,41
+m4_location(_AS_EXPR_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1161
 T8,198
 _m4_qlenm4_define([m4_qlen-$1],
 m4_if(m4_index([$1], [@]), [-1], [m4_len([$1])],
@@ -42,10 +43,17 @@ AS_FOR_m4_defun_pro([$0])m4_pushdef([$1], m4_if([$3], [], [[$$2]], m4_translit([
 do :
   $4
 done[]_m4_popdef([$1])[]_m4_defun_epi([$0])
+T23,270
+_AS_ENSURE_STANDARD_FDS_m4_defun_pro([$0])dnl
+# Ensure that fds 0, 1, and 2 are open.
+if (exec 3>&0) 2>/dev/null; then :; else exec 0</dev/null; fi
+if (exec 3>&1) 2>/dev/null; then :; else exec 1>/dev/null; fi
+if (exec 3>&2)            ; then :; else exec 2>/dev/null; fi
+[]_m4_defun_epi([$0])
 T14,42
 m4_divert_textm4_divert_push([$1])$2
 m4_divert_pop([$1])
-T8,734
+T8,795
 AT_SETUPm4_ifdef([AT_ingroup], [m4_fatal([$0: nested AT_SETUP detected])],
   [m4_define([AT_ingroup], [AS_ECHO(["$at_setup_line"]) >"$at_check_line_file"
 ])])
@@ -61,6 +69,8 @@ at_fn_group_banner AT_ordinal 'm4_defn([AT_line])' \
   "AS_ESCAPE(m4_dquote(m4_defn([AT_description])))" m4_format(["%*s"],
   m4_max(0, m4_eval(47 - m4_qlen(m4_defn([AT_description])))), [])m4_if(
   AT_banner_ordinal, [0], [], [ AT_banner_ordinal])
+m4_ifset([AT_prepare_each_test], [AT_prepare_each_test
+])dnl
 m4_divert_push([TEST_SCRIPT])dnl
 
 T8,46
@@ -84,8 +94,6 @@ T7,2
 m4_echo$@
 T10,27
 m4_defaultm4_if([$1], [], [$2], [$1])
-T22,30
-m4_location(AS_ECHO_N)../../lib/m4sugar/m4sh.m4:1034
 T16,103
 AS_IDENTIFIER_IFm4_if(_$0(m4_if(m4_index([$1], [@]), [-1],
   [[$1]], [m4_bpatsubst([[$1]], [@&t@])])), [-], [$2], [$3])
@@ -136,8 +144,8 @@ T19,3
 _m4_divert(VERSION)350
 T8,0
 _m4_warn
-T21,29
-m4_location(AS_UNSET)../../lib/m4sugar/m4sh.m4:671
+T21,40
+m4_location(AS_UNSET)../autoconf-2.71/lib/m4sugar/m4sh.m4:743
 T10,103
 m4_flattenm4_if(m4_index([$1], [
 ]), [-1], [[$1]],
@@ -146,8 +154,8 @@ m4_flattenm4_if(m4_index([$1], [
 ], [ ])])
 F12,9
 m4_debugmodedebugmode
-T20,30
-m4_location(AS_LN_S)../../lib/m4sugar/m4sh.m4:1257
+T20,41
+m4_location(AS_LN_S)../autoconf-2.71/lib/m4sugar/m4sh.m4:1310
 T7,0
 __gnu__
 T9,35
@@ -160,6 +168,9 @@ m4_set_deletem4_ifdef([_m4_set([$1])],
 		    [_m4_popdef([_m4_set_cleanup($1)])])m4_ifdef(
 		    [_m4_set_size($1)],
 		    [_m4_popdef([_m4_set_size($1)])])])
+T9,97
+as_echo_nm4_warn([obsolete],
+   [$as_echo_n is obsolete; use AS_ECHO_N(["message"]) instead])as_@&t@echo_n
 T14,102
 _AS_ME_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_AS_BASENAME_PREPARE])as_me=`AS_BASENAME("$[0]")`
 []_m4_defun_epi([$0])
@@ -176,8 +187,8 @@ AT_CHECKm4_ifndef([AT_ingroup],
   AS_ESCAPE(m4_dquote(m4_expand([$4]))), [$5], [$6])
 T13,1
 AS_MESSAGE_FD1
-T27,30
-m4_location(_AS_CR_PREPARE)../../lib/m4sugar/m4sh.m4:1793
+T27,41
+m4_location(_AS_CR_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1851
 T18,1268
 _AS_LINENO_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_AS_CR_PREPARE])AS_REQUIRE([_AS_ME_PREPARE])_AS_DETECT_SUGGESTED([_AS_LINENO_WORKS])m4_pushdef([AS_MESSAGE_LOG_FD])m4_pushdef([AS_ERROR],
   [{ AS_MESSAGE(]m4_dquote([error: $][1])[, [2]); AS_EXIT([1]); }])_AS_LINENO_WORKS || {
@@ -212,17 +223,18 @@ _AS_LINENO_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_AS_CR_PREPARE])AS_REQUIRE([_AS
   exit
 }
 _m4_popdef([AS_MESSAGE_LOG_FD], [AS_ERROR])[]_m4_defun_epi([$0])
-T40,30
-m4_location(_AS_VERSION_COMPARE_PREPARE)../../lib/m4sugar/m4sh.m4:1697
-T11,31
-_AS_IF_ELSEm4_ifnblank([$1],
-[else
+T40,41
+m4_location(_AS_VERSION_COMPARE_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1755
+T11,154
+_AS_IF_ELSE_m4_defun_pro([$0])m4_ifnblank([$1],
+[m4_append_uniq([_AS_CLEANUP], [AS_REQUIRE([_AS_EMPTY_ELSE_PREPARE])])]dnl
+[else $as_nop
   $1
-])
-T21,30
-m4_location(AS_TR_SH)../../lib/m4sugar/m4sh.m4:1826
-T30,29
-m4_location(_AS_UNSET_PREPARE)../../lib/m4sugar/m4sh.m4:657
+])[]_m4_defun_epi([$0])
+T21,41
+m4_location(AS_TR_SH)../autoconf-2.71/lib/m4sugar/m4sh.m4:1884
+T30,40
+m4_location(_AS_UNSET_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:728
 T16,400
 _AS_EXIT_PREPARE_m4_defun_pro([$0])AS_REQUIRE_SHELL_FN([as_fn_set_status],
   [AS_FUNCTION_DESCRIBE([as_fn_set_status], [STATUS],
@@ -238,8 +250,8 @@ m4_defun_initm4_define([$1], [$3[]])m4_defun([$1],
 [m4_if(]m4_dquote($[#])[, [0], [], ]m4_dquote([,$]@)[))], [m4_pushdef])
 T23,3
 _m4_divert(TEST_GROUPS)500
-T23,30
-m4_location(AS_DIRNAME)../../lib/m4sugar/m4sh.m4:1002
+T23,41
+m4_location(AS_DIRNAME)../autoconf-2.71/lib/m4sugar/m4sh.m4:1087
 T11,165
 _m4_dumpdefm4_if([$#], [0], [m4_fatal([$0: missing argument])],
        [$#], [1], [m4_builtin([dumpdef], [$1])],
@@ -289,8 +301,6 @@ m4_casem4_if([$#], 0, [],
        [$0([$1], m4_shift3($@))])
 T13,57
 AS_ME_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_$0])[]_m4_defun_epi([$0])
-T20,30
-m4_location(AS_ECHO)../../lib/m4sugar/m4sh.m4:1026
 T21,76
 _m4_set_add_all_checkm4_if([$#], [2], [],
        [m4_set_add([$1], [$3])$0([$1], m4_shift2($@))])
@@ -317,19 +327,22 @@ as_executable_p=as_fn_executable_p
 []_m4_defun_epi([$0])
 T17,51
 _AS_ECHO_UNQUOTEDAS_ECHO(["$1"]) >&m4_default([$2], [AS_MESSAGE_FD])
-T13,110
-_AS_CLEAN_DIRif test -d $1; then
+T13,109
+_AS_CLEAN_DIRif test -d $1
+then
   find $1 -type d ! -perm -700 -exec chmod u+rwx {} \;
   rm -fr $1/* $1/.[[!.]] $1/.??*
 fi
-T29,29
-m4_location(_AS_EXIT_PREPARE)../../lib/m4sugar/m4sh.m4:568
+T29,40
+m4_location(_AS_EXIT_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:612
 F9,6
 m4_definedefine
 F9,6
 m4_sysvalsysval
 T17,17
-m4_PACKAGE_STRINGGNU Autoconf 2.69
+m4_PACKAGE_STRINGGNU Autoconf 2.71
+T22,45
+m4_location(AT_TESTED)../autoconf-2.71/lib/autotest/general.m4:1789
 T15,12
 m4_PACKAGE_NAMEGNU Autoconf
 T10,82
@@ -358,8 +371,8 @@ m4_cr_not_alnum
  !"#*%&'()$+,./:;<=>?@[\]^_`{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ-
 T10,62
 m4_noquotem4_changequote([-=<{(],[)}>=-])$1-=<{()}>=-m4_changequote([,])
-T32,30
-m4_location(_AS_MKDIR_P_PREPARE)../../lib/m4sugar/m4sh.m4:1296
+T32,41
+m4_location(_AS_MKDIR_P_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1349
 T10,211
 m4_dumpdefm4_if([$#], [0], [m4_fatal([$0: missing argument])],
        [$#], [1], [m4_ifdef([$1], [m4_errprintn(
@@ -379,7 +392,7 @@ T12,48
 m4_re_escapem4_bpatsubst([$1],
 	      [[][*+.?\^$]], [\\\&])
 T17,152
-m4_version_prereqm4_if(m4_version_compare([2.69], [$1]),
+m4_version_prereqm4_if(m4_version_compare([2.71], [$1]),
 	[-1],
 	[m4_default([$3],
 		    [m4_fatal([Autoconf version $1 or higher is required],
@@ -423,38 +436,39 @@ AS_ERRORas_fn_error m4_default([$2], [$?]) "_AS_QUOTE([$1])"m4_ifval(AS_MESSAGE_
 T8,187
 AS_ERROR_m4_defun_pro([$0])m4_append_uniq([_AS_CLEANUP],
   [m4_divert_text([M4SH-INIT-FN], [_AS_ERROR_PREPARE[]])])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
-T25,29
-m4_location(_AS_ECHO_LOG)../../lib/m4sugar/m4sh.m4:790
+T25,40
+m4_location(_AS_ECHO_LOG)../autoconf-2.71/lib/m4sugar/m4sh.m4:862
 T16,245
 m4_cr_not_digits	
  !"#*%&'()$+,./:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ-
 F11,7
 m4_maketempmkstemp
-T27,30
-m4_location(AS_VAR_PUSHDEF)../../lib/m4sugar/m4sh.m4:2066
+T27,41
+m4_location(AS_VAR_PUSHDEF)../autoconf-2.71/lib/m4sugar/m4sh.m4:2124
 F10,7
 m4_builtinbuiltin
-T17,164
+T17,165
 _AS_UNSET_PREPARE_m4_defun_pro([$0])AS_FUNCTION_DESCRIBE([as_fn_unset], [VAR], [Portably unset VAR.])
 as_fn_unset ()
 {
   AS_UNSET([$[1]])
 }
-as_unset=as_fn_unset[]_m4_defun_epi([$0])
+as_unset=as_fn_unset
+[]_m4_defun_epi([$0])
 T7,16
 AS_LN_S$as_ln_s $1 $2[]
 T7,129
 AS_LN_S_m4_defun_pro([$0])AS_REQUIRE([_AS_LN_S_PREPARE])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
 T12,16
 m4_wrap_lifo_m4_wrap([$1[]])
-T20,29
-m4_location(AS_CASE)../../lib/m4sugar/m4sh.m4:550
+T20,40
+m4_location(AS_CASE)../autoconf-2.71/lib/m4sugar/m4sh.m4:594
 T25,53
 _m4_expansion_stack_entry_m4_defn([m4_location($1)])[: $1 is expanded from...]
 T14,110
 m4_divert_pushm4_divert_stack_push([$0], [$1])m4_pushdef([_m4_divert_diversion], [$1])_m4_divert_raw(_m4_divert([$1], [$2]))
-T26,29
-m4_location(AS_LINENO_POP)../../lib/m4sugar/m4sh.m4:904
+T26,40
+m4_location(AS_LINENO_POP)../autoconf-2.71/lib/m4sugar/m4sh.m4:989
 T10,55
 _m4_shift2m4_if([$#], [2], [],
        [, m4_shift(m4_shift($@))])
@@ -464,14 +478,14 @@ _m4_shift3m4_if([$#], [3], [],
 T12,93
 AT_COPYRIGHTAS_COPYRIGHT([$1])[]m4_divert_text([VERSION_NOTICES],
 [m4_default([$2], [m4_newline])([$1])])
-T30,30
-m4_location(_AS_TR_SH_PREPARE)../../lib/m4sugar/m4sh.m4:1805
+T30,41
+m4_location(_AS_TR_SH_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1863
 T12,55
 m4_copy_unm4m4_copy([$1], m4_bpatsubst([$1], [^m4_\(.*\)], [[\1]]))
 T13,41
 _m4_set_unionm4_ifdef([_m4_set([$1],$2)], [], [,[$2]])
-T30,34
-m4_location(AT_ARG_OPTION_ARG)../../lib/autotest/general.m4:1787
+T30,45
+m4_location(AT_ARG_OPTION_ARG)../autoconf-2.71/lib/autotest/general.m4:1780
 T9,57
 m4_appendm4_define([$1], m4_ifdef([$1], [_m4_defn([$1])[$3]])[$2])
 T16,31
@@ -481,8 +495,8 @@ _m4_append_uniqm4_ifdef([$1],
 	  [m4_if(m4_index([$3]_m4_defn([$1])[$3], [$3$2$3]), [-1],
 		 [m4_append([$1], [$2], [$3])$4], [$5])],
 	  [m4_define([$1], [$2])$4])
-T27,30
-m4_location(_AS_TR_PREPARE)../../lib/m4sugar/m4sh.m4:1878
+T27,41
+m4_location(_AS_TR_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1936
 T17,149
 AT_CHECK_NOESCAPEm4_warn([obsolete], [consider using AT_CHECK_UNQUOTED instead of $0])_AT_CHECK(m4_expand([$1]), [$2], m4_expand([$3]),
   m4_expand([$4]), [$5], [$6])
@@ -499,8 +513,8 @@ F12,8
 _m4_undivertundivert
 T25,111
 m4_stack_foreach_sep_lifo_m4_stack_reverse([$1], [m4_tmp-$1], [$2[]_m4_defn([m4_tmp-$1])$3], [$4[]])_m4_stack_reverse([m4_tmp-$1], [$1])
-T29,29
-m4_location(_AS_DIRNAME_EXPR)../../lib/m4sugar/m4sh.m4:975
+T29,41
+m4_location(_AS_DIRNAME_EXPR)../autoconf-2.71/lib/m4sugar/m4sh.m4:1060
 T13,474
 _m4_text_wrapm4_pushdef([m4_Indent], m4_qlen([$2]))m4_pushdef([m4_Cursor], m4_qlen([$3]))m4_pushdef([m4_Separator], [m4_define([m4_Separator], [ ])])[$3]m4_cond([m4_Cursor], m4_Indent, [],
 	      [m4_eval(m4_Cursor > m4_Indent)], [1], [
@@ -511,7 +525,7 @@ T21,1
 _m4_divert(M4SH-INIT)6
 T16,4
 _m4_divert(BODY)1000
-T7,676
+T7,902
 AS_INIT# Wrap our cleanup prior to m4sugar's cleanup.
 m4_wrap([_AS_CLEANUP])
 m4_init
@@ -521,9 +535,11 @@ m4_provide([AS_INIT])
 m4_pattern_forbid([^_?AS_])
 
 # Bangshe and minimal initialization.
+# Put only the basename of __file__ into HEADER-COMMENT, so that the
+# path to the source directory is not embedded in the output file.
 m4_divert_text([BINSH], [@%:@! /bin/sh])
 m4_divert_text([HEADER-COMMENT],
-	       [@%:@ Generated from __file__ by m4_PACKAGE_STRING.])
+	       [@%:@ Generated from m4_bpatsubst(__file__,[^.*/\([^/]*\)$],[[\1]]) by m4_PACKAGE_STRING.])
 m4_divert_text([M4SH-SANITIZE], [_AS_SHELL_SANITIZE])
 m4_divert_text([M4SH-INIT-FN], [m4_text_box([M4sh Shell Functions.])])
 
@@ -531,6 +547,7 @@ m4_divert_text([M4SH-INIT-FN], [m4_text_box([M4sh Shell Functions.])])
 m4_divert([BODY])dnl
 m4_text_box([Main body of script.])
 _AS_DETECT_REQUIRED([_AS_SHELL_FN_WORK])dnl
+_AS_DETECT_REQUIRED([_AS_MODERN_CMDSUBST_WORKS])dnl
 _AS_DETECT_REQUIRED([_AS_TEST_X_WORKS])dnl
 AS_REQUIRE([_AS_UNSET_PREPARE], [], [M4SH-INIT-FN])dnl
 
@@ -544,20 +561,23 @@ m4_beforem4_provide_if([$2],
 	       [m4_warn([syntax], [$2 was called before $1])])
 T21,32
 AS_LITERAL_HEREDOC_IF_$0(m4_expand([$1]))([$2], [$3])
-T26,30
-m4_location(_AS_PATH_WALK)../../lib/m4sugar/m4sh.m4:1339
+T26,41
+m4_location(_AS_PATH_WALK)../autoconf-2.71/lib/m4sugar/m4sh.m4:1392
+T35,40
+m4_location(_AS_EMPTY_ELSE_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:706
 T9,26
 m4_ifndefm4_ifdef([$1], [$3], [$2])
 T26,1
 _m4_divert(HEADER-COMMENT)2
 T13,26
 m4_cr_LETTERSABCDEFGHIJKLMNOPQRSTUVWXYZ
-T16,452
+T16,496
 _m4_require_callm4_pushdef([_m4_divert_grow], m4_decr(_m4_divert_grow))m4_pushdef([_m4_diverting([$1])])m4_pushdef([_m4_diverting], [$1])m4_divert_push(_m4_divert_grow, [-])m4_if([$2], [], [$1], [$2])
 m4_provide_if([$1], [m4_set_remove([_m4_provide], [$1])],
-  [m4_warn([syntax], [$1 is m4_require'd but not m4_defun'd])])_m4_divert_raw($3)_m4_undivert(_m4_divert_grow)m4_divert_pop(_m4_divert_grow)_m4_popdef([_m4_divert_grow],
+  [m4_ifndef([m4_require_silent_probe],
+    [m4_warn([syntax], [$1 is m4_require'd but not m4_defun'd])])])_m4_divert_raw($3)_m4_undivert(_m4_divert_grow)m4_divert_pop(_m4_divert_grow)_m4_popdef([_m4_divert_grow],
 [_m4_diverting([$1])], [_m4_diverting])
-T7,45675
+T7,45955
 AT_INITm4_pushdef([AT_INIT], [m4_fatal([$0: invoked multiple times])])
 m4_pattern_forbid([^_?AT_])
 m4_pattern_allow([^_ATEOF$])
@@ -724,7 +744,7 @@ at_fn_create_debugging_script ()
 {
   {
     echo "#! /bin/sh" &&
-    echo 'test "${ZSH_VERSION+set}" = set dnl
+    echo 'test ${ZSH_VERSION+y} dnl
 && alias -g '\''${1+"$[@]"}'\''='\''"$[@]"'\''' &&
     AS_ECHO(["cd '$at_dir'"]) &&
     AS_ECHO(["exec \${CONFIG_SHELL-$SHELL} \"$at_myself\" -v -d ]dnl
@@ -790,9 +810,6 @@ m4_divert_text([DEFAULTS],
 [
 # Whether to enable colored test results.
 at_color=m4_ifdef([AT_color], [AT_color], [no])
-# List of the tested programs.
-at_tested='m4_ifdef([AT_tested],
-  [m4_translit(m4_dquote(m4_defn([AT_tested])), [ ], m4_newline)])'
 # As many question marks as there are digits in the last test group number.
 # Used to normalize the test group numbers so that `ls' lists them in
 # numerical order.
@@ -839,8 +856,6 @@ do
   *=?*) at_optarg=`expr "X$at_option" : '[[^=]]*=\(.*\)'` ;;
   *)    at_optarg= ;;
   esac
-
-  # Accept the important Cygnus configure options, so we can diagnose typos.
 
   case $at_option in
     --help | -h )
@@ -1118,7 +1133,7 @@ m4_ifdef([AT_PACKAGE_NAME],
 [m4_ifset([AT_PACKAGE_URL], [
 m4_defn([AT_PACKAGE_NAME]) home page: <AT_PACKAGE_URL>.])dnl
 m4_if(m4_index(m4_defn([AT_PACKAGE_NAME]), [GNU ]), [0], [
-General help using GNU software: <http://www.gnu.org/gethelp/>.])])
+General help using GNU software: <https://www.gnu.org/gethelp/>.])])
 _ATEOF
   exit $at_write_fail
 fi
@@ -1355,33 +1370,7 @@ AS_BOX(m4_defn([AT_TESTSUITE_NAME])[.])
 } >&AS_MESSAGE_LOG_FD
 
 m4_divert_pop([TESTS_BEGIN])dnl
-m4_divert_push([PREPARE_TESTS])dnl
-{
-  AS_BOX([Tested programs.])
-  echo
-} >&AS_MESSAGE_LOG_FD
-
-# Report what programs are being tested.
-for at_program in : $at_tested
-do
-  test "$at_program" = : && continue
-  case $at_program in
-    [[\\/]* | ?:[\\/]* ) $at_program_=$at_program ;;]
-    * )
-    _AS_PATH_WALK([$PATH], [test -f "$as_dir/$at_program" && break])
-    at_program_=$as_dir/$at_program ;;
-  esac
-  if test -f "$at_program_"; then
-    {
-      AS_ECHO(["$at_srcdir/AT_LINE: $at_program_ --version"])
-      "$at_program_" --version </dev/null
-      echo
-    } >&AS_MESSAGE_LOG_FD 2>&1
-  else
-    AS_ERROR([cannot find $at_program])
-  fi
-done
-
+m4_divert_push([TESTS])dnl
 {
   AS_BOX([Running the tests.])
 } >&AS_MESSAGE_LOG_FD
@@ -1389,8 +1378,6 @@ done
 at_start_date=`date`
 at_start_time=`date +%s 2>/dev/null`
 AS_ECHO(["$as_me: starting at: $at_start_date"]) >&AS_MESSAGE_LOG_FD
-m4_divert_pop([PREPARE_TESTS])dnl
-m4_divert_push([TESTS])dnl
 
 # Create the master directory if it doesn't already exist.
 AS_MKDIR_P(["$at_suite_dir"]) ||
@@ -1411,6 +1398,29 @@ then
 else
   at_diff=diff
 fi
+
+### ------------------------------------------------- ###
+###  MSYS2 patch for Windows specificity (EOL issue)  ###
+### ------------------------------------------------- ###
+# By default try to treat any end of line identfier 'LF' and 'CRLF' the same
+# in testsuites when comparing files or output of programs.
+# This feature can be switched off if the testsuite script is run with the
+# environment variable 'MSYS2_AUTOTEST_NO_UNIFY_EOL' set to a non-empty string
+# other than '0', e.g. simply by setting 'MSYS2_AUTOTEST_NO_UNIFY_EOL=1'.
+# Sample calls:
+# - tests/testsuite -C tests                                ... Differences in EOLs are ignored
+#                                                                 for file comparisons.
+# - tests/testsuite -C tests MSYS2_AUTOTEST_NO_UNIFY_EOL=1  ... EOLs do matter for file comparisons.
+case "x$MSYS2_AUTOTEST_NO_UNIFY_EOL" in
+  x|x0)
+    # Use the diff flag '--strip-trailing-cr' when possible.
+    if at_ret=`$at_diff --strip-trailing-cr "$at_devnull" "$at_devnull" 2>&1` && test -z "$at_ret"
+    then
+      at_diff="$at_diff --strip-trailing-cr"
+    fi
+    at_ret='';;
+esac
+
 
 # Get the last needed group.
 for at_group in : $at_groups; do :; done
@@ -1728,7 +1738,7 @@ dnl Unfortunately, ksh93 fork-bombs when we send TSTP, so send STOP
 dnl if this might be ksh (STOP prevents possible TSTP handlers inside
 dnl AT_CHECKs from running).  Then stop ourselves.
 	  at_sig=TSTP
-	  test "${TMOUT+set}" = set && at_sig=STOP
+	  test ${TMOUT+y} && at_sig=STOP
 	  kill -$at_sig $at_pids 2>/dev/null
 	fi
 	kill -STOP $$
@@ -2003,12 +2013,15 @@ else
   else
     at_msg="\`${at_testdir+${at_testdir}/}$as_me.log'"
   fi
+  at_msg1a=${at_xpass_list:+', '}
+  at_msg1=$at_fail_list${at_fail_list:+" failed$at_msg1a"}
+  at_msg2=$at_xpass_list${at_xpass_list:+" passed unexpectedly"}
+
   AS_ECHO(["Please send $at_msg and all information you think might help:
 
    To: <AT_PACKAGE_BUGREPORT>
    Subject: @<:@AT_PACKAGE_STRING@:>@ $as_me: dnl
-$at_fail_list${at_fail_list:+ failed${at_xpass_list:+, }}dnl
-$at_xpass_list${at_xpass_list:+ passed unexpectedly}
+$at_msg1$at_msg2
 
 You may investigate any problem if you feel able to do so, in which
 case the test suite provides a good starting point.  Its output may
@@ -2026,8 +2039,8 @@ dnl output, the rest is ignored.  Current diversion is BODY, inherited
 dnl from M4sh.
 m4_divert([KILL])
 
-T14,37
-m4_PACKAGE_URLhttp://www.gnu.org/software/autoconf/
+T14,38
+m4_PACKAGE_URLhttps://www.gnu.org/software/autoconf/
 T11,62
 m4_cr_alnumabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
 T9,127
@@ -2060,8 +2073,8 @@ m4_cond([m4_eval(m4_index([$1], [`]) >= 0)], [1],
 		[[a shell pipeline]],
 	[]))m4_if(m4_index(_m4_defn([at_reason]), [a]), [0],[at_fn_check_prepare_notrace '_m4_defn([at_reason])'],
        m4_index([$1], [$]), [-1],[at_fn_check_prepare_trace],[at_fn_check_prepare_dynamic "AS_ESCAPE([[$1]], [`\"])"])[]_m4_popdef([at_reason])
-T31,29
-m4_location(_AS_SHELL_SANITIZE)../../lib/m4sugar/m4sh.m4:451
+T31,40
+m4_location(_AS_SHELL_SANITIZE)../autoconf-2.71/lib/m4sugar/m4sh.m4:488
 T22,38
 AT_DIFF_STDERR(stderr)echo stderr:; tee stderr <"$at_stderr"
 T11,136
@@ -2078,8 +2091,9 @@ m4_cr_not_LETTERS
  !"#*%&'()$+,./0123456789:;<=>?@[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ-
 T16,46
 AT_DIFF_STDOUT()at_fn_diff_devnull "$at_stdout" || at_failed=:
-T5,113
-AS_IF_m4_defun_pro([$0])if $1; then :
+T5,112
+AS_IF_m4_defun_pro([$0])if $1
+then :
   $2
 m4_map_args_pair([_$0], [_$0_ELSE], m4_shift2($@))fi[][]_m4_defun_epi([$0])
 F5,6
@@ -2103,8 +2117,11 @@ T8,66
 m4_ifsetm4_ifdef([$1],
 	  [m4_ifval(_m4_defn([$1]), [$2], [$3])],
 	  [$3])
-T23,29
-m4_location(AS_REQUIRE)../../lib/m4sugar/m4sh.m4:385
+T20,44
+AT_PREPARE_EACH_TESTm4_append([AT_prepare_each_test], [$1], [
+])
+T23,40
+m4_location(AS_REQUIRE)../autoconf-2.71/lib/m4sugar/m4sh.m4:413
 T23,3
 _m4_divert(HELP_TUNING)303
 T27,1
@@ -2229,8 +2246,8 @@ m4_undefinem4_if([$#], [0], [[$0]],
        [$#], [1], [m4_ifdef([$1], [_m4_undefine([$1])],
 			    [m4_fatal([$0: undefined macro: $1])])],
        [m4_map_args([$0], $@)])
-T29,30
-m4_location(_AS_LN_S_PREPARE)../../lib/m4sugar/m4sh.m4:1223
+T29,41
+m4_location(_AS_LN_S_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1276
 T20,20
 m4_PACKAGE_BUGREPORTbug-autoconf@gnu.org
 T21,479
@@ -2248,8 +2265,8 @@ AS_IF([_AS_RUN(["AS_ESCAPE(m4_quote(_AS_VAR_ARITH_WORKS))"])],
     as_val=`expr "$[]@" || test $? -eq 1`
   }]) # as_fn_arith
 []_m4_defun_epi([$0])
-T30,29
-m4_location(_AS_BASENAME_EXPR)../../lib/m4sugar/m4sh.m4:921
+T30,41
+m4_location(_AS_BASENAME_EXPR)../autoconf-2.71/lib/m4sugar/m4sh.m4:1006
 T9,75
 AS_ESCAPE_$0([$1], m4_if([$2], [], [[`], [\"$]], [m4_substr([$2], [0], [1]), [$2]]))
 T20,111
@@ -2257,11 +2274,11 @@ m4_stack_foreach_sep_m4_stack_reverse([$1], [m4_tmp-$1])_m4_stack_reverse([m4_tm
 T10,79
 _m4_shiftnm4_if([$1], 1, [m4_shift(],
        [$0(m4_decr([$1])]), m4_shift(m4_shift($@)))
-T15,114
+T15,111
 AS_VAR_TEST_SETAS_LITERAL_WORD_IF([$1],
-  [${$1+:} false],
-  [{ as_var=$1; eval \${$as_var+:} false; }],
-  [eval \${$1+:} false])
+  [test ${$1+y}],
+  [{ as_var=$1; eval test \${$as_var+y}; }],
+  [eval test \${$1+y}])
 T11,162
 m4_dumpdefsm4_if([$#], [0], [m4_fatal([$0: missing argument])],
        [$#], [1], [m4_stack_foreach_lifo([$1], [m4_dumpdef([$1])m4_ignore])],
@@ -2270,10 +2287,8 @@ T13,124
 _m4_defun_prom4_ifdef([_m4_expansion_stack], [], [_m4_defun_pro_outer([$1])])m4_expansion_stack_push([$1])m4_pushdef([_m4_expanding($1)])
 T17,57
 AS_LINENO_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_$0])[]_m4_defun_epi([$0])
-T7,13
-AS_ECHO$as_echo $1[]
-T7,124
-AS_ECHO_m4_defun_pro([$0])AS_REQUIRE([_$0_PREPARE])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
+T7,18
+AS_ECHOprintf "[%s\n]" $1
 T4,37
 m4_nm4_if([$1],
        [], [],
@@ -2283,6 +2298,8 @@ T17,77
 AT_ARG_OPTION_ARG_m4_defun_pro([$0])_AT_ARG_OPTION([$1],[$2],1,[$3],[$4])[]_m4_defun_epi([$0])
 T13,76
 AT_ARG_OPTION_m4_defun_pro([$0])_AT_ARG_OPTION([$1],[$2],,[$3],[$4])[]_m4_defun_epi([$0])
+T24,40
+m4_location(_AS_IF_ELSE)../autoconf-2.71/lib/m4sugar/m4sh.m4:692
 T17,604
 _AS_SHELL_FN_WORKas_fn_return () { (exit [$]1); }
 as_fn_success () { as_fn_return 0; }
@@ -2300,8 +2317,9 @@ AS_IF([( set x; as_fn_ret_success y && test x = "[$]1" )], [],
 test x$exitcode = x0[]
 T28,0
 AT_DIFF_STDOUT(ignore-nolog)
-T9,35
-AT_TESTEDm4_append_uniq_w([AT_tested], [$1])
+T9,153
+AT_TESTED_m4_defun_pro([$0])m4_require([_AT_TESTED])m4_foreach_w([AT_test], [$1],
+  [m4_append_uniq([AT_tested], "m4_defn([AT_test])", [ ])])[]_m4_defun_epi([$0])
 T18,40
 _m4_set_differencem4_set_contains([$1], [$2], [], [,[$2]])
 T10,137
@@ -2323,8 +2341,8 @@ _AS_DIRNAME_EXPR$as_expr X[]$1 : 'X\(.*[[^/]]\)//*[[^/][^/]]*/*$' \| \
 	 X[]$1 : 'X\(/\)' \| .[]
 T16,129
 _AS_DIRNAME_EXPR_m4_defun_pro([$0])AS_REQUIRE([_AS_EXPR_PREPARE])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
-T23,29
-m4_location(AS_MESSAGE)../../lib/m4sugar/m4sh.m4:834
+T23,40
+m4_location(AS_MESSAGE)../autoconf-2.71/lib/m4sugar/m4sh.m4:919
 T16,298
 m4_map_args_pairm4_if([$#], [0], [m4_fatal([$0: too few arguments: $#])],
        [$#], [1], [m4_fatal([$0: too few arguments: $#: $1])],
@@ -2351,8 +2369,8 @@ T14,42
 _m4_defun_oncem4_pushdef([$1])$3[$2[]m4_provide([$1])]$4
 T9,5
 _m4_curry[$1])
-T24,29
-m4_location(_AS_PREPARE)../../lib/m4sugar/m4sh.m4:322
+T24,40
+m4_location(_AS_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:348
 T14,53
 m4_cr_symbols1abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_
 T14,63
@@ -2365,7 +2383,7 @@ m4_set_containsm4_ifdef([_m4_set_cleanup($1)],
 T9,174
 m4_expandm4_pushdef([m4_divert], _m4_defn([_m4_divert_unsafe]))m4_pushdef([m4_divert_push], _m4_defn([_m4_divert_unsafe]))m4_chomp(_$0([$1
 ]))_m4_popdef([m4_divert], [m4_divert_push])
-T23,3173
+T23,3162
 _AS_DETECT_BETTER_SHELL_m4_defun_pro([$0])m4_if(_AS_FORCE_REEXEC_WITH_CONFIG_SHELL, [yes],
   [# Use a proper internal environment variable to ensure we don't fall
   # into an infinite loop, continuously re-executing ourselves.
@@ -2393,7 +2411,7 @@ _AS_DETECT_BETTER_SHELL_m4_defun_pro([$0])m4_if(_AS_FORCE_REEXEC_WITH_CONFIG_SHE
 	 /*)
 	   for as_base in sh bash ksh sh5; do
 	     # Try only shells that exist, to save several forks.
-	     as_shell=$as_dir/$as_base
+	     as_shell=$as_dir$as_base
 	     AS_IF([{ test -f "$as_shell" || test -f "$as_shell.exe"; } &&
 		    _AS_RUN(["$as_required"], ["$as_shell"])],
 		   [CONFIG_SHELL=$as_shell as_have_required=yes
@@ -2414,7 +2432,7 @@ dnl Unfortunately, $as_me isn't available here.
     AS_IF([test x$as_have_required = xno],
       [AS_ECHO(["$[]0: This script requires a shell more modern than all"])
   AS_ECHO(["$[]0: the shells that I found on your system."])
-  if test x${ZSH_VERSION+set} = xset ; then
+  if test ${ZSH_VERSION+y} ; then
     AS_ECHO(["$[]0: In particular, zsh $ZSH_VERSION has bugs and should"])
     AS_ECHO(["$[]0: be upgraded to zsh 4.3.4 or later."])
   else
@@ -2453,6 +2471,8 @@ AS_VAR_IFAS_LITERAL_WORD_IF([$1],
     [[eval test \"x\$"$1"\" = x"_AS_ESCAPE([$2], [`], [\"$])"]],
     [[eval \${$1:+false} :]])]),
 [$3], [$4])
+T36,40
+m4_location(_AS_ENSURE_STANDARD_FDS)../autoconf-2.71/lib/m4sugar/m4sh.m4:318
 T28,3
 _m4_divert(PARSE_ARGS_BEGIN)200
 T16,838
@@ -2490,18 +2510,27 @@ m4_rename_m4m4_rename([$1], [m4_$1])
 T7,93
 _AS_BOXm4_if(m4_index(m4_translit([[$1]], [`\"], [$$$]), [$]),
   [-1], [$0_LITERAL], [$0_INDIR])($@)
-T18,29
-m4_location(AS_IF)../../lib/m4sugar/m4sh.m4:639
+T18,40
+m4_location(AS_IF)../autoconf-2.71/lib/m4sugar/m4sh.m4:699
 F14,11
 m4_changequotechangequote
 T12,69
 _m4_list_cmpm4_if([$1], [], [0m4_ignore], [$2], [0], [m4_unquote], [$2m4_ignore])
+T22,220
+_AS_EMPTY_ELSE_PREPARE_m4_defun_pro([$0])m4_divert_text([M4SH-INIT-FN],
+[AS_FUNCTION_DESCRIBE([as_fn_nop], [],
+  [Do nothing but, unlike ":", preserve the value of $][?.])
+as_fn_nop ()
+{
+  return $[]?
+}
+as_nop=as_fn_nop])[]_m4_defun_epi([$0])
 T14,73
 _m4_mapall_sepm4_apply([$1], [$3])_m4_foreach([m4_apply([$2[]$1],], [)], m4_shift2($@))
 T9,132
 m4_divertm4_popdef([_m4_divert_stack])m4_define([_m4_divert_diversion], [$1])m4_divert_stack_push([$0], [$1])_m4_divert_raw(_m4_divert([$1]))
-T26,30
-m4_location(AS_VAR_APPEND)../../lib/m4sugar/m4sh.m4:1939
+T26,41
+m4_location(AS_VAR_APPEND)../autoconf-2.71/lib/m4sugar/m4sh.m4:1997
 T13,293
 m4_defun_oncem4_define([m4_location($1)], m4_location)m4_define([$1], [_m4_defun_once([$1], [$2], m4_if(_m4_divert_dump, [],
   [[_m4_defun_pro([$1])m4_unquote(], [)_m4_defun_epi([$1])]],
@@ -2516,6 +2545,16 @@ m4_requirem4_ifdef([_m4_expanding($1)],
 m4_if([$0], [m4_require], [[m4_defun]], [[AC_DEFUN]])['d macro])])m4_provide_if([$1], [m4_set_contains([_m4_provide], [$1],
     [_m4_require_check([$1], _m4_defn([m4_provide($1)]), [$0])], [m4_ignore])],
   [_m4_require_call])([$1], [$2], _m4_divert_dump)
+T17,278
+AT_TEST_HELPER_FNAS_LITERAL_WORD_IF([$1], [],
+  [m4_fatal([invalid shell function name "$1"])])m4_ifdef([ATH_fn_$1_defined],
+  [m4_fatal([helper function "$1" defined twice])])m4_define([ATH_fn_$1_defined])AT_PREPARE_TESTS([
+AS_FUNCTION_DESCRIBE([ath_fn_$1], [$2], [$3])
+ath_fn_$1 ()
+{
+  $4
+}
+])
 T9,14
 AS_TEST_Xtest -x $1[][]
 T9,129
@@ -2526,8 +2565,8 @@ T7,146
 AS_CASE_m4_defun_pro([$0])case $1 in[]m4_map_args_pair([_$0], [_$0_DEFAULT],
    m4_shift($@m4_if(m4_eval([$# & 1]), [1], [,])))
 esac[]_m4_defun_epi([$0])
-T26,34
-m4_location(AT_ARG_OPTION)../../lib/autotest/general.m4:1766
+T26,45
+m4_location(AT_ARG_OPTION)../autoconf-2.71/lib/autotest/general.m4:1759
 F7,4
 m4_incrincr
 T8,87
@@ -2595,18 +2634,16 @@ m4_make_listm4_join([,
 T17,203
 m4_cr_not_Letters	
  !"#*%&'()$+,./0123456789:;<=>?@[\]^_`{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ-
-T17,292
+T17,293
 _m4_require_checkm4_if(_m4_defn([_m4_diverting]), [$2], [m4_ignore],
        m4_ifdef([_m4_diverting([$2])], [-]), [-], [m4_warn([syntax],
    [$3: `$1' was expanded before it was required
-http://www.gnu.org/software/autoconf/manual/autoconf.html#Expanded-Before-Required])_m4_require_call],
+https://www.gnu.org/software/autoconf/manual/autoconf.html#Expanded-Before-Required])_m4_require_call],
        [m4_ignore])
 T13,42
 m4_mapall_sepm4_if([$3], [], [], [_$0([$1], [$2], $3)])
-T9,15
-AS_ECHO_N$as_echo_n $1[]
-T9,129
-AS_ECHO_N_m4_defun_pro([$0])AS_REQUIRE([_AS_ECHO_PREPARE])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
+T9,14
+AS_ECHO_Nprintf [%s] $1
 F11,11
 __program____program__
 T17,105
@@ -2615,10 +2652,10 @@ _m4_define_cr_notm4_define([m4_cr_not_$1],
 		       m4_defn([m4_cr_$1])))
 T22,30
 AT_DIFF_STDERR(ignore)echo stderr:; cat "$at_stderr"
-T32,30
-m4_location(_AS_DIRNAME_PREPARE)../../lib/m4sugar/m4sh.m4:1011
+T32,41
+m4_location(_AS_DIRNAME_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1096
 T15,4
-m4_PACKAGE_YEAR2012
+m4_PACKAGE_YEAR2021
 F14,6
 _m4_divert_rawdivert
 T10,302
@@ -2641,14 +2678,14 @@ m4_append_uniqm4_ifval([$3], [m4_if(m4_index([$2], [$3]), [-1], [],
 				[$0: `$2' contains `$3'])])])_$0($@)
 T9,4
 m4_dquote[$@]
-T22,30
-m4_location(AS_TR_CPP)../../lib/m4sugar/m4sh.m4:1859
+T22,41
+m4_location(AS_TR_CPP)../autoconf-2.71/lib/m4sugar/m4sh.m4:1917
 T24,32
 m4_default_nblank_quotedm4_ifblank([$1], [[$2]], [[$1]])
-T19,54
-_AT_COPYRIGHT_YEARSCopyright (C) 2009-2012 Free Software Foundation, Inc.
-T27,30
-m4_location(_AS_ME_PREPARE)../../lib/m4sugar/m4sh.m4:1122
+T19,65
+_AT_COPYRIGHT_YEARSCopyright (C) 2009-2017, 2020-2021 Free Software Foundation, Inc.
+T27,41
+m4_location(_AS_ME_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1175
 T32,0
 m4_include(autotest/specific.m4)
 T17,28
@@ -2670,8 +2707,9 @@ m4_condm4_if([$#], [0], [m4_fatal([$0: cannot be called without arguments])],
        [$#], [1], [$1],
        m4_eval([$# % 3]), [2], [m4_fatal([$0: missing an argument])],
        [_$0($@)])
-T14,62
-m4_set_foreachm4_pushdef([$2])m4_set_map_sep([$1], [m4_define([$2],], [)$3])
+T14,77
+m4_set_foreachm4_pushdef([$2])m4_set_map_sep([$1],
+[m4_define([$2],], [)$3])m4_popdef([$2])
 T9,156
 m4_escapem4_if(m4_index(m4_translit([$1],
    [[]#,()][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789], [$$$]), [$]),
@@ -2703,8 +2741,8 @@ T8,124
 AS_TR_SH_m4_defun_pro([$0])AS_REQUIRE([_$0_PREPARE])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
 T20,53
 m4_divert_stack_pushm4_pushdef([_m4_divert_stack], m4_location[: $1: $2])
-T23,30
-m4_location(AS_MKDIR_P)../../lib/m4sugar/m4sh.m4:1289
+T23,41
+m4_location(AS_MKDIR_P)../autoconf-2.71/lib/m4sugar/m4sh.m4:1342
 T10,40
 m4_warningm4_errprintn(m4_location[: warning: $1])
 F10,7
@@ -2719,12 +2757,13 @@ AS_BOURNE_COMPATIBLE# Be more Bourne compatible
 DUALCASE=1; export DUALCASE # for MKS sh
 _$0
 
-T31,30
-m4_location(AS_VERSION_COMPARE)../../lib/m4sugar/m4sh.m4:1767
-T11,544
+T31,41
+m4_location(AS_VERSION_COMPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1825
+T11,567
 _AS_PREPARE_m4_defun_pro([$0])m4_pushdef([AS_REQUIRE])m4_pushdef([AS_REQUIRE_SHELL_FN], _m4_defn([_AS_REQUIRE_SHELL_FN])
 )m4_pushdef([AS_MESSAGE_LOG_FD], [-1])_AS_ERROR_PREPARE
-_m4_popdef([AS_MESSAGE_LOG_FD])_AS_EXIT_PREPARE
+_m4_popdef([AS_MESSAGE_LOG_FD])_AS_EMPTY_ELSE_PREPARE
+_AS_EXIT_PREPARE
 _AS_UNSET_PREPARE
 _AS_VAR_APPEND_PREPARE
 _AS_VAR_ARITH_PREPARE
@@ -2749,8 +2788,8 @@ T11,136
 m4_set_dumpm4_ifdef([_m4_set_size($1)],
 	  [_m4_popdef([_m4_set_size($1)])])m4_ifdef([_m4_set_cleanup($1)],
     [_$0_check], [_$0])([$1], [], [$2])
-T20,29
-m4_location(AS_EXIT)../../lib/m4sugar/m4sh.m4:585
+T20,40
+m4_location(AS_EXIT)../autoconf-2.71/lib/m4sugar/m4sh.m4:629
 T11,17
 m4_location__file__:__line__
 T8,4
@@ -2759,16 +2798,16 @@ T7,111
 AS_EXIT_m4_defun_pro([$0])AS_REQUIRE([_AS_EXIT_PREPARE])[]as_fn_exit m4_ifval([$1], [$1], [$][?])[]_m4_defun_epi([$0])
 F9,6
 m4_syscmdsyscmd
-T16,55
-_m4_divert_stack../../lib/m4sugar/m4sugar.m4:3259: m4_divert_push: KILL
+T16,66
+_m4_divert_stack../autoconf-2.71/lib/m4sugar/m4sugar.m4:3287: m4_divert_push: KILL
 T9,31
 _m4_applym4_if([$2], [], [], [$1($2)[]])
 F11,8
 m4_traceofftraceoff
 T8,2
 m4_count$#
-T31,30
-m4_location(_AS_TR_CPP_PREPARE)../../lib/m4sugar/m4sh.m4:1845
+T31,41
+m4_location(_AS_TR_CPP_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1903
 F6,3
 m4_lenlen
 T14,113
@@ -2777,8 +2816,8 @@ m4_expand_oncem4_provide_if(m4_default_quoted([$2], [$1]),
 	       [m4_provide(m4_default_quoted([$2], [$1]))[]$1])
 T25,2
 _AS_LITERAL_HEREDOC_IF_NO$2
-T23,29
-m4_location(AS_PREPARE)../../lib/m4sugar/m4sh.m4:353
+T23,40
+m4_location(AS_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:380
 T10,681
 AT_CLEANUPm4_ifdef([AT_ingroup], [AT_ingroup[]_m4_undefine([AT_ingroup])],
   [m4_fatal([$0: missing AT_SETUP detected])])dnl
@@ -2820,7 +2859,7 @@ m4_if([$2], [], [: "${TMPDIR:=/tmp}"])
   (umask 077 && mkdir "$tmp")
 } || AS_ERROR([cannot create a temporary directory in m4_default([$2],
 	      [$TMPDIR])])
-T9,845
+T9,793
 _AT_CHECKm4_define([AT_ingroup]){ set +x
 AS_ECHO(["$at_srcdir/AT_LINE: AS_ESCAPE([[$1]])"])
 _AT_DECIDE_TRACEABLE([$1]) _AT_LINE_ESCAPED
@@ -2828,8 +2867,6 @@ _AT_DECIDE_TRACEABLE([$1]) _AT_LINE_ESCAPED
 ) >>"$at_stdout" 2>>"$at_stderr" AS_MESSAGE_LOG_FD>&-
 at_status=$? at_failed=false
 $at_check_filter
-AT_UNIFY_NL([$at_stderr])
-AT_UNIFY_NL([$at_stdout])
 m4_ifdef([AT_DIFF_STDERR($4)], [m4_indir([AT_DIFF_STDERR($4)])],
   [echo >>"$at_stderr"; AS_ECHO([["$4"]]) | \
   $at_diff - "$at_stderr" || at_failed=:])
@@ -2841,7 +2878,7 @@ m4_if([$2], [ignore], [at_fn_check_skip],
 m4_ifvaln([$5$6], [AS_IF($at_failed, [$5], [$6])])$at_failed && at_fn_log_failure AT_capture_files
 $at_traceon; }
 
-T10,728
+T10,765
 AS_PREPARE_m4_defun_pro([$0])m4_divert_push([KILL])
 m4_append_uniq([_AS_CLEANUP],
   [m4_divert_text([M4SH-INIT-FN], [_AS_ERROR_PREPARE[]])])
@@ -2853,6 +2890,7 @@ AS_REQUIRE([_AS_CR_PREPARE])
 AS_REQUIRE([_AS_LINENO_PREPARE])
 AS_REQUIRE([_AS_ECHO_N_PREPARE])
 AS_REQUIRE([_AS_EXIT_PREPARE])
+AS_REQUIRE([_AS_EMPTY_ELSE_PREPARE])
 AS_REQUIRE([_AS_LN_S_PREPARE])
 AS_REQUIRE([_AS_MKDIR_P_PREPARE])
 AS_REQUIRE([_AS_TEST_PREPARE])
@@ -2943,6 +2981,37 @@ m4_ifvalnm4_if([$1],
 	     [m4_n([$2])])
 F8,5
 m4_indexindex
+T10,825
+_AT_TESTED_m4_defun_pro([$0])m4_wrap([m4_divert_text([DEFAULTS],
+[# List of the tested programs.
+at_tested='m4_translit(m4_dquote(m4_defn([AT_tested])), [ ], m4_newline)'
+])]dnl
+[m4_divert_text([PREPARE_TESTS],
+[{
+  AS_BOX([Tested programs.])
+  echo
+} >&AS_MESSAGE_LOG_FD
+
+# Report what programs are being tested.
+for at_program in : `eval echo $at_tested`
+do
+  AS_CASE([$at_program],
+    [:], [continue],
+    [[[\\/]* | ?:[\\/]*]], [at_program_=$at_program],
+    [_AS_PATH_WALK([$PATH], [test -f "$as_dir$at_program" && break])
+    at_program_=$as_dir$at_program])
+
+  if test -f "$at_program_"; then
+    {
+      AS_ECHO(["$at_srcdir/AT_LINE: $at_program_ --version"])
+      "$at_program_" --version </dev/null
+      echo
+    } >&AS_MESSAGE_LOG_FD 2>&1
+  else
+    AS_ERROR([cannot find $at_program])
+  fi
+done
+])])[]_m4_defun_epi([$0])
 T8,85
 _m4_joinm4_if([$#$2], [2], [],
        [m4_if([$2], [], [], [[$1$2]])$0([$1], m4_shift2($@))])
@@ -2970,8 +3039,8 @@ AS_IF([_AS_RUN(["AS_ESCAPE(m4_quote(_AS_VAR_APPEND_WORKS))"])],
 []_m4_defun_epi([$0])
 F10,7
 m4_traceontraceon
-T39,30
-m4_location(_AS_PATH_SEPARATOR_PREPARE)../../lib/m4sugar/m4sh.m4:1315
+T39,41
+m4_location(_AS_PATH_SEPARATOR_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1368
 T10,84
 _m4_minmaxm4_if([$#], [3], [$1([$2], [$3])],
        [$0([$1], $1([$2], [$3]), m4_shift3($@))])
@@ -2980,8 +3049,8 @@ _AS_LITERAL_HEREDOC_IFm4_if(m4_index([$1], [@S|@]), [-1],
   [m4_if(m4_index(m4_translit([[$1]], [\`], [$]), [$]), [-1],
     [$0_YES], [$0_NO])],
   [$0_NO])
-T31,30
-m4_location(_AS_LINENO_PREPARE)../../lib/m4sugar/m4sh.m4:1167
+T31,41
+m4_location(_AS_LINENO_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1220
 T12,110
 _m4_set_sizem4_define([_m4_set_size($1)],
 	   m4_ifdef([_m4_set_size($1)], [$2(m4_indir([_m4_set_size($1)]))],
@@ -2991,24 +3060,24 @@ m4_tolowerm4_translit([[$1]], [ABCDEFGHIJKLMNOPQRSTUVWXYZ],
 		     [abcdefghijklmnopqrstuvwxyz])
 T10,121
 m4_re_word[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_][abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789]*
-T33,29
-m4_location(_AS_BASENAME_PREPARE)../../lib/m4sugar/m4sh.m4:954
+T33,41
+m4_location(_AS_BASENAME_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1039
 T25,1
 _m4_divert(M4SH-SANITIZE)4
 T13,82
 m4_dquote_eltm4_if([$#], [0], [],
        [$#], [1], [[[$1]]],
        [[[$1]],$0(m4_shift($@))])
-T27,29
-m4_location(AS_LINENO_PUSH)../../lib/m4sugar/m4sh.m4:894
+T27,40
+m4_location(AS_LINENO_PUSH)../autoconf-2.71/lib/m4sugar/m4sh.m4:979
 T10,36
 _m4_expand$0_([$1], [(], -=<{($1)}>=-, [}>=-])
 T12,66
 m4_re_string[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789]*
-T28,29
-m4_location(_AS_DIRNAME_SED)../../lib/m4sugar/m4sh.m4:982
-T28,30
-m4_location(AS_EXECUTABLE_P)../../lib/m4sugar/m4sh.m4:1098
+T28,41
+m4_location(_AS_DIRNAME_SED)../autoconf-2.71/lib/m4sugar/m4sh.m4:1067
+T28,41
+m4_location(AS_EXECUTABLE_P)../autoconf-2.71/lib/m4sugar/m4sh.m4:1151
 F11,8
 m4_errprinterrprint
 T6,122
@@ -3016,7 +3085,7 @@ m4_cdrm4_if([$#], 0, [m4_fatal([$0: cannot be called without arguments])],
        [$#], 1, [],
        [m4_dquote(m4_shift($@))])
 T18,4
-m4_PACKAGE_VERSION2.69
+m4_PACKAGE_VERSION2.71
 T18,207
 _AS_TR_CPP_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_AS_CR_PREPARE])# Sed expression to map a string onto a valid CPP name.
 as_tr_cpp="eval sed 'y%*$as_cr_letters%P$as_cr_LETTERS%;s%[[^_$as_cr_alnum]]%_%g'"
@@ -3033,8 +3102,8 @@ m4_divert_popm4_if([$1], [], [],
        [m4_fatal([$0($1): diversion mismatch:
 ]m4_divert_stack)])_m4_popdef([_m4_divert_stack], [_m4_divert_diversion])m4_ifdef([_m4_divert_diversion], [],
 	   [m4_fatal([too many m4_divert_pop])])_m4_divert_raw(_m4_divert(_m4_defn([_m4_divert_diversion]), [-]))
-T30,30
-m4_location(AS_LINENO_PREPARE)../../lib/m4sugar/m4sh.m4:1166
+T30,41
+m4_location(AS_LINENO_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1219
 T14,103
 _AS_TR_PREPARE_m4_defun_pro([$0])AS_REQUIRE([_AS_TR_SH_PREPARE])AS_REQUIRE([_AS_TR_CPP_PREPARE])[]_m4_defun_epi([$0])
 T11,65
@@ -3048,17 +3117,20 @@ m4_ifblankm4_if(m4_translit([[$1]],  [ ][	][
 ]), [], [$2], [$3])
 T7,20
 m4_wrap_m4_wrap([], [$1[]])
-T25,30
-m4_location(AS_VAR_ARITH)../../lib/m4sugar/m4sh.m4:1981
-T29,29
-m4_location(_AS_BASENAME_SED)../../lib/m4sugar/m4sh.m4:926
+T25,41
+m4_location(AS_VAR_ARITH)../autoconf-2.71/lib/m4sugar/m4sh.m4:2039
+T29,41
+m4_location(_AS_BASENAME_SED)../autoconf-2.71/lib/m4sugar/m4sh.m4:1011
 T15,165
 _m4_set_add_allm4_if([$#], [2], [],
        [m4_ifdef([_m4_set([$1],$3)], [],
 		 [m4_define([_m4_set([$1],$3)], [1])m4_pushdef([_m4_set([$1])],
 	   [$3])-])$0([$1], m4_shift2($@))])
-T29,30
-m4_location(_AS_TEST_PREPARE)../../lib/m4sugar/m4sh.m4:1384
+T25,47
+_AS_MODERN_CMDSUBST_WORKSblah=$(echo $(echo blah))
+test x"$blah" = xblah
+T29,41
+m4_location(_AS_TEST_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1441
 T8,42
 _AS_ECHO_AS_ECHO_UNQUOTED([_AS_QUOTE([$1])], [$2])
 T7,48
@@ -3079,31 +3151,57 @@ fi
 T14,95
 _m4_list_cmp_2_m4_list_cmp([$1$3], m4_cmp([$3+0], [$1+0]))(
   [_m4_list_cmp_1(m4_dquote(m4_shift3($@)), $2)])
-T34,30
-m4_location(_AS_VAR_ARITH_PREPARE)../../lib/m4sugar/m4sh.m4:1948
+T34,41
+m4_location(_AS_VAR_ARITH_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:2006
 T12,18
 m4_errprintnm4_errprint([$1
 ])
-T18,1601
+T18,1830
 _AS_SHELL_SANITIZE_m4_defun_pro([$0])m4_pushdef([AS_EXIT], [exit m4_default(]m4_dquote([$][1])[, 1)])m4_text_box([M4sh Initialization.])
 
 AS_BOURNE_COMPATIBLE
-_AS_ECHO_PREPARE
-_AS_PATH_SEPARATOR_PREPARE
 
-# IFS
-# We need space, tab and new line, in precisely that order.  Quoting is
-# there to prevent editors from complaining about space-tab.
-# (If _AS_PATH_WALK were called with IFS unset, it would disable word
-# splitting by setting IFS to empty value.)
+# Reset variables that may have inherited troublesome values from
+# the environment.
+
+# IFS needs to be set, to space, tab, and newline, in precisely that order.
+# (If _AS_PATH_WALK were called with IFS unset, it would have the
+# side effect of setting IFS to empty, thus disabling word splitting.)
+# Quoting is to prevent editors from complaining about space-tab.
+as_nl='
+'
+export as_nl
 IFS=" ""	$as_nl"
+
+PS1='$ '
+PS2='> '
+PS4='+ '
+
+# Ensure predictable behavior from utilities with locale-dependent output.
+LC_ALL=C
+export LC_ALL
+LANGUAGE=C
+export LANGUAGE
+
+# We cannot yet rely on "unset" to work, but we need these variables
+# to be unset--not just set to an empty or harmless value--now, to
+# avoid bugs in old shells (e.g. pre-3.0 UWIN ksh).  This construct
+# also avoids known problems related to "unset" and subshell syntax
+# in other old shells (e.g. bash 2.01 and pdksh 5.2.14).
+for as_var in BASH_ENV ENV MAIL MAILPATH CDPATH
+do eval test \${$as_var+y} \
+  && ( (unset $as_var) || exit 1) >/dev/null 2>&1 && unset $as_var || :
+done
+
+_AS_ENSURE_STANDARD_FDS
+_AS_PATH_SEPARATOR_PREPARE
 
 # Find who we are.  Look in the path if we contain no directory separator.
 as_myself=
 case $[0] in @%:@((
   *[[\\/]]* ) as_myself=$[0] ;;
   *) _AS_PATH_WALK([],
-		   [test -r "$as_dir/$[0]" && as_myself=$as_dir/$[0] && break])
+		   [test -r "$as_dir$[0]" && as_myself=$as_dir$[0] && break])
      ;;
 esac
 # We did not find ourselves, most probably we were run as `sh COMMAND'
@@ -3116,43 +3214,27 @@ if test ! -f "$as_myself"; then
   AS_EXIT
 fi
 
-# Unset variables that we do not need and which cause bugs (e.g. in
-# pre-3.0 UWIN ksh).  But do not cause bugs in bash 2.01; the "|| exit 1"
-# suppresses any "Segmentation fault" message there.  '((' could
-# trigger a bug in pdksh 5.2.14.
-for as_var in BASH_ENV ENV MAIL MAILPATH
-do eval test x\${$as_var+set} = xset \
-  && ( (unset $as_var) || exit 1) >/dev/null 2>&1 && unset $as_var || :
-done
-PS1='$ '
-PS2='> '
-PS4='+ '
-
-# NLS nuisances.
-LC_ALL=C
-export LC_ALL
-LANGUAGE=C
-export LANGUAGE
-
-# CDPATH.
-(unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 _m4_popdef([AS_EXIT])[]_m4_defun_epi([$0])
-T13,383
+T13,462
 _AS_PATH_WALKas_save_IFS=$IFS; IFS=$PATH_SEPARATOR
 m4_ifvaln([$3], [as_found=false])dnl
-m4_bmatch([$1], [[:;]],
+m4_if([$1], m4_translit([[$1]], [:;]),
+[for as_dir in m4_default([$1], [$PATH])],
 [as_dummy="$1"
-for as_dir in $as_dummy],
-[for as_dir in m4_default([$1], [$PATH])])
+for as_dir in $as_dummy])
 do
   IFS=$as_save_IFS
-  test -z "$as_dir" && as_dir=.
+  case $as_dir in #(((
+    '') as_dir=./ ;;
+    */) ;;
+    *) as_dir=$as_dir/ ;;
+  esac
   m4_ifvaln([$3], [as_found=:])dnl
   $2
   m4_ifvaln([$3], [as_found=false])dnl
 done
-m4_ifvaln([$3], [$as_found || { $3; }])dnl
 IFS=$as_save_IFS
+m4_ifvaln([$3], [AS_IF([$as_found], [], [$3])])dnl
 []
 T13,139
 _AS_PATH_WALK_m4_defun_pro([$0])AS_REQUIRE([_AS_PATH_SEPARATOR_PREPARE])[]_m4_popdef([$0])m4_indir([$0]m4_if([$#], [0], [], [,$@]))[]_m4_defun_epi([$0])
@@ -3191,14 +3273,25 @@ m4_divert_oncem4_expand_once([m4_divert_text([$1], [$2])])
 T17,129
 _AS_DETECT_EXPAND$1="m4_bpatsubst(m4_dquote(AS_ESCAPE(_m4_expand(m4_set_contents([$2], [
 ])))), [\\\$LINENO\(.*\)$], [";$1=$$1$LINENO;$1=$$1"\1])"
+T16,167
+AT_DATA_UNQUOTEDm4_ifndef([AT_ingroup],
+ [m4_fatal([AT_DATA_UNQUOTED: missing AT_SETUP detected])])m4_if([$2], [], [: >$1],
+       [$2], [[]], [: >$1],
+[cat >$1 <<_ATEOF
+$2[]_ATEOF
+])
 T10,143
 m4_map_sepm4_pushdef([m4_Sep], [m4_define([m4_Sep], _m4_defn([m4_unquote]))])_m4_foreach([_m4_apply([m4_Sep([$2])[]$1],], [)], [], $3)m4_popdef([m4_Sep])
 T17,272
 _AS_IDENTIFIER_IFm4_cond([[$1]], [], [],
 	 [m4_eval(m4_len(m4_translit([[$1]], ][[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789]][)) > 0)], [1], [],
 	 [m4_len(m4_translit(m4_format([[%.1s]], [$1]), ][[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_]][))], [0], [-])
-T18,303
-_AS_ECHO_N_PREPARE_m4_defun_pro([$0])ECHO_C= ECHO_N= ECHO_T=
+T18,977
+_AS_ECHO_N_PREPARE_m4_defun_pro([$0])
+# Determine whether it's possible to make 'echo' print without a newline.
+# These variables are no longer used directly by Autoconf, but are AC_SUBSTed
+# for compatibility with existing Makefiles.
+ECHO_C= ECHO_N= ECHO_T=
 case `echo -n x` in @%:@(((((
 -n*)
   case `echo 'xy\c'` in
@@ -3210,12 +3303,22 @@ case `echo -n x` in @%:@(((((
 *)
   ECHO_N='-n';;
 esac
+
+# For backward compatibility with old third-party macros, we provide
+# the shell variables $as_echo and $as_echo_n.  New code should use
+# AS_ECHO(["message"]) and AS_ECHO_N(["message"]), respectively.
+dnl The @&t@ prevents a spurious deprecation diagnostic.
+dnl Extra quoting in case `s' or `n' are user-defined macros when this
+dnl is expanded; they almost certainly aren't meant to be used here.
+dnl See bug 110377.
+as_@&t@echo='printf [%s\n]'
+as_@&t@echo_n='printf [%s]'
 []_m4_defun_epi([$0])
 T7,75
 m4_warn_m4_warn([$1], [$2],
 m4_ifdef([_m4_expansion_stack], [m4_expansion_stack]))
-T33,29
-m4_location(_AS_DETECT_SUGGESTED)../../lib/m4sugar/m4sh.m4:167
+T33,40
+m4_location(_AS_DETECT_SUGGESTED)../autoconf-2.71/lib/m4sugar/m4sh.m4:168
 T9,36
 m4_renamem4_copy([$1], [$2])m4_undefine([$1])
 T18,540
@@ -3227,8 +3330,8 @@ F12,9
 m4_changecomchangecom
 T29,3
 _m4_divert(HELP_TUNING_BEGIN)302
-T31,29
-m4_location(_AS_ECHO_N_PREPARE)../../lib/m4sugar/m4sh.m4:807
+T31,40
+m4_location(_AS_ECHO_N_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:879
 F3,3
 dnldnl
 T13,134
@@ -3282,8 +3385,9 @@ m4_minm4_if([$#], [0], [m4_fatal([too few arguments to $0])],
        [$#$1], [2$2], [m4_eval([$1])],
        [$#], [2], [_$0($@)],
        [_m4_minmax([_$0], $@)])
-T6,21
-_AS_IFelif $1; then :
+T6,20
+_AS_IFelif $1
+then :
   $2
 
 T12,78
@@ -3297,8 +3401,8 @@ m4_defnm4_if([$#], [0], [[$0]],
        [$#], [1], [m4_ifdef([$1], [_m4_defn([$1])],
 			    [m4_fatal([$0: undefined macro: $1])])],
        [m4_map_args([$0], $@)])
-T27,34
-m4_location(_AT_ARG_OPTION)../../lib/autotest/general.m4:1674
+T27,45
+m4_location(_AT_ARG_OPTION)../autoconf-2.71/lib/autotest/general.m4:1667
 T28,0
 AT_DIFF_STDERR(ignore-nolog)
 T6,190
@@ -3307,8 +3411,8 @@ m4_maxm4_if([$#], [0], [m4_fatal([too few arguments to $0])],
        [$#$1], [2$2], [m4_eval([$1])],
        [$#], [2], [_$0($@)],
        [_m4_minmax([_$0], $@)])
-T30,30
-m4_location(AS_INIT_GENERATED)../../lib/m4sugar/m4sh.m4:2121
+T30,41
+m4_location(AS_INIT_GENERATED)../autoconf-2.71/lib/m4sugar/m4sh.m4:2179
 T16,0
 m4_pattern_allow
 T14,276
@@ -3319,8 +3423,8 @@ as_cr_Letters=$as_cr_letters$as_cr_LETTERS
 as_cr_digits='0123456789'
 as_cr_alnum=$as_cr_Letters$as_cr_digits
 []_m4_defun_epi([$0])
-T21,29
-m4_location(AS_ERROR)../../lib/m4sugar/m4sh.m4:883
+T21,40
+m4_location(AS_ERROR)../autoconf-2.71/lib/m4sugar/m4sh.m4:968
 T25,3
 _m4_divert(PREPARE_TESTS)402
 T10,115
@@ -3406,9 +3510,9 @@ T13,26
 m4_cr_lettersabcdefghijklmnopqrstuvwxyz
 T18,8
 m4_PACKAGE_TARNAMEautoconf
-T26,292
+T26,282
 _AS_PATH_SEPARATOR_PREPARE_m4_defun_pro([$0])# The user is always right.
-if test "${PATH_SEPARATOR+set}" != set; then
+if ${PATH_SEPARATOR+false} :; then
   PATH_SEPARATOR=:
   (PATH='/bin;/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 && {
     (PATH='/bin:/bin'; FPATH=$PATH; sh -c :) >/dev/null 2>&1 ||
@@ -3420,8 +3524,8 @@ F8,8
 __line____line__
 T20,40
 _AS_VAR_APPEND_WORKSas_var=1; as_var+=2; test x$as_var = x12
-T35,30
-m4_location(_AS_VAR_APPEND_PREPARE)../../lib/m4sugar/m4sh.m4:1906
+T35,41
+m4_location(_AS_VAR_APPEND_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1964
 T9,255
 m4_cr_all	
  !"#*%&'()$+,./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ-
@@ -3435,8 +3539,8 @@ AT_DATAm4_ifndef([AT_ingroup],
 [cat >$1 <<'_ATEOF'
 $2[]_ATEOF
 ])
-T19,29
-m4_location(AS_FOR)../../lib/m4sugar/m4sh.m4:607
+T19,40
+m4_location(AS_FOR)../autoconf-2.71/lib/m4sugar/m4sh.m4:651
 T13,252
 m4_set_removem4_set_contains([$1], [$2], [_m4_set_size([$1],
     [m4_decr])m4_if(_m4_defn([_m4_set([$1])]), [$2],
@@ -3450,8 +3554,8 @@ T22,30
 AT_DIFF_STDOUT(ignore)echo stdout:; cat "$at_stdout"
 T8,27
 m4_ifvalm4_if([$1], [], [$3], [$2])
-T26,30
-m4_location(AS_ME_PREPARE)../../lib/m4sugar/m4sh.m4:1121
+T26,41
+m4_location(AS_ME_PREPARE)../autoconf-2.71/lib/m4sugar/m4sh.m4:1174
 T9,309
 AT_BANNERm4_ifdef([AT_ingroup], [m4_fatal([$0: nested AT_SETUP detected])])dnl
 m4_define([AT_banner_ordinal], m4_incr(AT_banner_ordinal))
@@ -3467,6 +3571,8 @@ m4_map_args_w_$0(_m4_split([ ]m4_flatten([$1])[ ], [[	 ]+],
 	       m4_if(m4_index([$2$3$4], [\]), [-1], [[$3[]$4[]$2]],
 		     [m4_bpatsubst([[$3[]$4[]$2]], [\\], [\\\\])])),
      m4_len([[]$3[]$4]), m4_len([$4[]$2[]]))
+T23,45
+m4_location(_AT_TESTED)../autoconf-2.71/lib/autotest/general.m4:1794
 T17,117
 m4_include_uniquem4_ifdef([m4_include($1)],
 	  [m4_warn([syntax], [file `$1' included several times])])dnl
@@ -3501,6 +3607,13 @@ AS_HELP_STRINGm4_text_wrap([$2], m4_cond([[$3]], [], [                          
 	      m4_expand([  $1 ]), [$4])
 T8,19
 m4_curry$1(m4_shift($@,)_$0
+T14,237
+_m4_validate_wm4_if([$1], [$2], [],
+  [m4_warn([obsolete], [whitespace-separated list contains macros;
+in a future version of Autoconf they will not be expanded]dnl
+m4_if(m4_bregexp([$1], [\bdn[l]\b]), -1, [], [
+note: `dn@&t@l' is a macro]))])dnl
+[$2]
 T9,222
 m4_bmatchm4_if([$#], 0, [m4_fatal([$0: too few arguments: $#])],
        [$#], 1, [m4_fatal([$0: too few arguments: $#: $1])],
@@ -3509,12 +3622,14 @@ m4_bmatchm4_if([$#], 0, [m4_fatal([$0: too few arguments: $#])],
 	      [$3])])
 T13,91
 AS_SET_STATUS_m4_defun_pro([$0])AS_REQUIRE([_AS_EXIT_PREPARE])[]as_fn_set_status $1[]_m4_defun_epi([$0])
+T16,115
+AT_PREPARE_TESTSm4_divert_once([PREPARE_TESTS],
+[m4_text_box([Prepare for this testsuite.])
+])m4_divert_text([PREPARE_TESTS], [$1])
 T16,54
 m4_append_uniq_wm4_map_args_w([$2], [_m4_append_uniq([$1],], [, [ ])])
 T20,36
 _m4_set_intersectionm4_set_contains([$1], [$2], [,[$2]])
-T29,30
-m4_location(_AS_ECHO_PREPARE)../../lib/m4sugar/m4sh.m4:1044
 T6,4
 m4_car[$1]
 T11,238
@@ -3553,10 +3668,13 @@ _ASUNAME
 
 _AS_PATH_WALK([$PATH], [AS_ECHO(["PATH: $as_dir"])])
 }
-T32,29
-m4_location(_AS_DETECT_REQUIRED)../../lib/m4sugar/m4sh.m4:156
+T32,40
+m4_location(_AS_DETECT_REQUIRED)../autoconf-2.71/lib/m4sugar/m4sh.m4:157
 T7,65
 _m4_minm4_eval((([$1]) < ([$2])) * ([$1]) + (([$1]) >= ([$2])) * ([$2]))
+T7,91
+as_echom4_warn([obsolete],
+   [$as_echo is obsolete; use AS_ECHO(["message"]) instead])as_@&t@echo
 T20,170
 _m4_version_unletterm4_bpatsubst(m4_bpatsubst(m4_translit([[[[0,$1]]]], [.-], [,,]),[[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]][+],
 	      [+1,-1,[0r36:\&]]), [,0], [,[0r10:0]])
@@ -3569,7 +3687,7 @@ m4_map_argsm4_if([$#], [0], [m4_fatal([$0: too few arguments: $#])],
        [_m4_foreach([$1(], [)], $@)])
 T6,46
 m4_cmpm4_eval((([$1]) > ([$2])) - (([$1]) < ([$2])))
-T21,696
+T21,909
 _AS_REEXEC_WITH_SHELL_m4_defun_pro([$0])dnl
 # We cannot yet assume a decent shell, so we have to provide a
 # neutralization value for shells without unset; and this also
@@ -3588,13 +3706,16 @@ exec $1 $as_opts "$as_myself" ${1+"$[@]"}
 # Admittedly, this is quite paranoid, since all the known shells bail
 # out after a failed `exec'.
 AS_ECHO(["$[]0: could not re-execute with $1"]) >&2
-AS_EXIT([255])[]_m4_defun_epi([$0])
+dnl AS_EXIT cannot be used here because as_fn_exit is not yet defined;
+dnl code inserted by AS_REQUIRE_SHELL_FN will appear _after_ this point.
+dnl We shouldn't have to worry about any traps being active at this point.
+exit 255[]_m4_defun_epi([$0])
 T7,65
 _m4_maxm4_eval((([$1]) > ([$2])) * ([$1]) + (([$1]) <= ([$2])) * ([$2]))
 T7,36
 m4_signm4_eval((([$1]) > 0) - (([$1]) < 0))
-T26,29
-m4_location(AS_SET_STATUS)../../lib/m4sugar/m4sh.m4:649
+T26,40
+m4_location(AS_SET_STATUS)../autoconf-2.71/lib/m4sugar/m4sh.m4:720
 T10,266
 AS_REQUIRE_m4_defun_pro([$0])m4_define([_m4_divert_desired], [m4_default_quoted([$3], [M4SH-INIT])])m4_if(m4_eval(_m4_divert_dump - 0 <= _m4_divert(_m4_divert_desired, [-])),
        1, [m4_require(],
@@ -3627,32 +3748,35 @@ _AS_VAR_PUSHDEF_AS_LITERAL_IF([$2], [	 ][
 ])([], [as_$1=_AS_TR_SH_INDIR([$2])
 m4_pushdef([$1], [$as_[$1]])],
 [m4_pushdef([$1], [_AS_TR_SH_LITERAL([$2])])])
-T7,98
-_AS_RUNm4_ifval([$2], [{ $as_echo "$as_bourne_compatible"$1 | as_run=a $2; }],
+T7,85
+_AS_RUNm4_ifval([$2], [as_run=a $2 -c "$as_bourne_compatible"$1],
 		[(eval $1)]) 2>/dev/null
 T26,2
 _AS_LITERAL_HEREDOC_IF_YES$1
+T13,65
+m4_validate_w_m4_validate_w(m4_normalize([$1]), m4_normalize(m4_expand([$1])))
 T14,131
 m4_set_add_allm4_define([_m4_set_size($1)], m4_eval(m4_set_size([$1])
   + m4_len(m4_ifdef([_m4_set_cleanup($1)], [_$0_check], [_$0])([$1], $@))))
 T19,62
 m4_version_unletterm4_substr(m4_map_args([.m4_eval], m4_unquote(_$0([$1]))), [3])
-T24,29
-m4_location(AS_BASENAME)../../lib/m4sugar/m4sh.m4:942
+T24,41
+m4_location(AS_BASENAME)../autoconf-2.71/lib/m4sugar/m4sh.m4:1027
 T16,50
 _m4_list_cmp_rawm4_if([$1], [$2], [0], [_m4_list_cmp_1([$1], $2)])
 T11,33
 m4_set_listm4_set_map_sep([$1], [], [], [,])
-T36,29
-m4_location(_AS_DETECT_BETTER_SHELL)../../lib/m4sugar/m4sh.m4:194
+T36,40
+m4_location(_AS_DETECT_BETTER_SHELL)../autoconf-2.71/lib/m4sugar/m4sh.m4:195
 T10,72
 m4_reversem4_if([$#], [0], [], [$#], [1], [[$1]],
        [$0(m4_shift($@)), [$1]])
-T17,196
+T17,245
 AS_SHELL_SANITIZE_AS_SHELL_SANITIZE
 m4_provide_if([AS_INIT], [],
 [m4_provide([AS_INIT])
 _AS_DETECT_REQUIRED([_AS_SHELL_FN_WORK])
+_AS_DETECT_REQUIRED([_AS_MODERN_CMDSUBST_WORKS])
 _AS_DETECT_REQUIRED([_AS_TEST_X_WORKS])
 _AS_DETECT_BETTER_SHELL
 _AS_UNSET_PREPARE
@@ -3695,8 +3819,8 @@ m4_wrap([m4_popdef([_m4_divert_diversion])m4_ifdef(
   [_m4_divert_diversion], [m4_fatal([$0: unbalanced m4_divert_push:
 ]m4_divert_stack)])_m4_popdef([_m4_divert_stack])m4_divert_push([KILL])])
 
-T22,30
-m4_location(AS_TEST_X)../../lib/m4sugar/m4sh.m4:1090
+T22,41
+m4_location(AS_TEST_X)../autoconf-2.71/lib/m4sugar/m4sh.m4:1143
 T11,70
 _m4_foreachm4_if([$#], [3], [],
        [$1[$4]$2[]$0([$1], [$2], m4_shift3($@))])
@@ -3707,51 +3831,12 @@ T20,3
 _m4_divert(DEFAULTS)100
 F10,6
 m4_bregexpregexp
-T16,1346
-_AS_ECHO_PREPARE_m4_defun_pro([$0])[as_nl='
-'
-export as_nl
-# Printing a long string crashes Solaris 7 /usr/bin/printf.
-as_echo='\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\'
-as_echo=$as_echo$as_echo$as_echo$as_echo$as_echo
-as_echo=$as_echo$as_echo$as_echo$as_echo$as_echo$as_echo
-# Prefer a ksh shell builtin over an external printf program on Solaris,
-# but without wasting forks for bash or zsh.
-if test -z "$BASH_VERSION$ZSH_VERSION" \
-    && (test "X`print -r -- $as_echo`" = "X$as_echo") 2>/dev/null; then
-  as_echo='print -r --'
-  as_echo_n='print -rn --'
-elif (test "X`printf %s $as_echo`" = "X$as_echo") 2>/dev/null; then
-  as_echo='printf %s\n'
-  as_echo_n='printf %s'
-else
-  if test "X`(/usr/ucb/echo -n -n $as_echo) 2>/dev/null`" = "X-n $as_echo"; then
-    as_echo_body='eval /usr/ucb/echo -n "$][1$as_nl"'
-    as_echo_n='/usr/ucb/echo -n'
-  else
-    as_echo_body='eval expr "X$][1" : "X\\(.*\\)"'
-    as_echo_n_body='eval
-      arg=$][1;
-      case $arg in @%:@(
-      *"$as_nl"*)
-	expr "X$arg" : "X\\(.*\\)$as_nl";
-	arg=`expr "X$arg" : ".*$as_nl\\(.*\\)"`;;
-      esac;
-      expr "X$arg" : "X\\(.*\\)" | tr -d "$as_nl"
-    '
-    export as_echo_n_body
-    as_echo_n='sh -c $as_echo_n_body as_echo'
-  fi
-  export as_echo_body
-  as_echo='sh -c $as_echo_body as_echo'
-fi
-][]_m4_defun_epi([$0])
 T9,22
 m4_shift2m4_shift(m4_shift($@))
 T9,32
 m4_shift3m4_shift(m4_shift(m4_shift($@)))
-T34,29
-m4_location(_AS_REEXEC_WITH_SHELL)../../lib/m4sugar/m4sh.m4:279
+T34,40
+m4_location(_AS_REEXEC_WITH_SHELL)../autoconf-2.71/lib/m4sugar/m4sh.m4:280
 T6,598
 m4_form4_pushdef([$1], m4_eval([$2]))m4_cond([m4_eval(([$3]) > ([$2]))], 1,
 	   [m4_pushdef([_m4_step], m4_eval(m4_default_quoted([$4],
@@ -3851,9 +3936,6 @@ T10,100
 m4_foreachm4_if([$2], [], [],
        [m4_pushdef([$1])_$0([m4_define([$1],], [)$3], [],
   $2)m4_popdef([$1])])
-T11,38
-AT_UNIFY_NLtr -d '\015' < $1 > $1.t
-mv -f $1.t $1
 T15,58
 m4_divert_stackm4_stack_foreach_sep_lifo([_m4_divert_stack], [], [], [
 ])

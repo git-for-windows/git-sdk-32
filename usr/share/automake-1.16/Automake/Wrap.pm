@@ -1,4 +1,4 @@
-# Copyright (C) 2003-2018 Free Software Foundation, Inc.
+# Copyright (C) 2003-2020 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,11 +17,12 @@ package Automake::Wrap;
 
 use 5.006;
 use strict;
+use warnings FATAL => 'all';
 
-require Exporter;
-use vars '@ISA', '@EXPORT_OK';
-@ISA = qw/Exporter/;
-@EXPORT_OK = qw/wrap makefile_wrap/;
+use Exporter;
+
+our @ISA = qw (Exporter);
+our @EXPORT_OK = qw (wrap makefile_wrap);
 
 =head1 NAME
 

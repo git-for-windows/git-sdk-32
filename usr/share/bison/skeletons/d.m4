@@ -2,7 +2,7 @@
 
 # D language support for Bison
 
-# Copyright (C) 2018-2020 Free Software Foundation, Inc.
+# Copyright (C) 2018-2021 Free Software Foundation, Inc.
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
 # _b4_comment(TEXT, OPEN, CONTINUE, END)
@@ -103,12 +103,12 @@ m4_define([b4_location_type_if],
 # b4_identification
 # -----------------
 m4_define([b4_identification],
-[/** Version number for the Bison executable that generated this parser.  */
-  public static immutable string yy_bison_version = "b4_version";
+[[/** Version number for the Bison executable that generated this parser.  */
+  public static immutable string yy_bison_version = "]b4_version_string[";
 
   /** Name of the skeleton that generated this parser.  */
-  public static immutable string yy_bison_skeleton = b4_skeleton;
-])
+  public static immutable string yy_bison_skeleton = ]b4_skeleton[;
+]])
 
 
 ## ------------ ##
@@ -152,6 +152,8 @@ private static immutable b4_int_type_for([$2])[[]] yy$1_ =
 ## Token kinds.  ##
 ## ------------- ##
 
+m4_define([b4_symbol(-2, id)],  [[YYEMPTY]])
+
 # b4_token_enum(TOKEN-NAME, TOKEN-NUMBER)
 # ---------------------------------------
 # Output the definition of this token as an enum.
@@ -178,6 +180,11 @@ b4_symbol_foreach([b4_token_enum])dnl
 
 b4_percent_define_default([[api.symbol.prefix]], [[S_]])
 
+# b4_symbol_kind(NUM)
+# -------------------
+m4_define([b4_symbol_kind],
+[SymbolKind.b4_symbol_kind_base($@)])
+
 
 # b4_symbol_enum(SYMBOL-NUM)
 # --------------------------
@@ -185,7 +192,7 @@ b4_percent_define_default([[api.symbol.prefix]], [[S_]])
 m4_define([b4_symbol_enum],
 [m4_format([    %-30s %s],
            m4_format([[%s = %s,]],
-                     b4_symbol([$1], [kind]),
+                     b4_symbol([$1], [kind_base]),
                      [$1]),
            [b4_symbol_tag_comment([$1])])])
 
@@ -199,16 +206,16 @@ m4_define([b4_declare_symbol_enum],
 [[  /* Symbol kinds.  */
   public enum SymbolKind
   {
-    ]b4_symbol_kind([-2])[ = -2,  /* No symbol.  */
+    ]b4_symbol(-2, kind_base)[ = -2,  /* No symbol.  */
 ]b4_symbol_foreach([b4_symbol_enum])dnl
 [  };
 ]])])
 
 
 
-# b4-case(ID, CODE)
-# -----------------
-m4_define([b4_case], [    case $1:
+# b4-case(ID, CODE, [COMMENTS])
+# -----------------------------
+m4_define([b4_case], [    case $1:m4_ifval([$3], [ b4_comment([$3])])
 $2
       break;])
 

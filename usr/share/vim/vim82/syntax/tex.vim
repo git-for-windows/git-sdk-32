@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:	TeX
 " Maintainer:	Charles E. Campbell <NcampObell@SdrPchip.AorgM-NOSPAM>
-" Last Change:	Jan 24, 2020
-" Version:	116
+" Last Change:	Jun 29, 2020
+" Version:	119
 " URL:		http://www.drchip.org/astronaut/vim/index.html#SYNTAX_TEX
 "
 " Notes: {{{1
@@ -147,6 +147,11 @@ if exists("g:tex_nospell") && g:tex_nospell
 else
  let s:tex_nospell = 0
 endif
+if exists("g:tex_matchcheck")
+ let s:tex_matchcheck= g:tex_matchcheck
+else
+ let s:tex_matchcheck= '[({[]'
+endif
 if exists("g:tex_excludematcher")
  let s:tex_excludematcher= g:tex_excludematcher
 else
@@ -205,27 +210,41 @@ if !exists("g:tex_no_math")
  endif
 endif
 
-" Try to flag {} and () mismatches: {{{1
+" Try to flag {}, [], and () mismatches: {{{1
 if s:tex_fast =~# 'm'
   if !s:tex_no_error
-   syn region texMatcher	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchGroup,texError
-   syn region texMatcher	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchGroup,texError,@NoSpell
-   syn region texMatcherNM	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchNMGroup,texError
-   syn region texMatcherNM	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchNMGroup,texError,@NoSpell
+   if s:tex_matchcheck =~ '{'
+    syn region texMatcher	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchGroup,texError
+    syn region texMatcherNM	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchNMGroup,texError
+   endif
+   if s:tex_matchcheck =~ '\['
+    syn region texMatcher	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchGroup,texError,@NoSpell
+    syn region texMatcherNM	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchNMGroup,texError,@NoSpell
+   endif
   else
-   syn region texMatcher	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchGroup
-   syn region texMatcher	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchGroup
-   syn region texMatcherNM	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchNMGroup
-   syn region texMatcherNM	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchNMGroup
+   if s:tex_matchcheck =~ '{'
+    syn region texMatcher	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchGroup
+    syn region texMatcherNM	matchgroup=Delimiter start="{" skip="\\\\\|\\[{}]"	end="}"			transparent contains=@texMatchNMGroup
+   endif
+   if s:tex_matchcheck =~ '\['
+    syn region texMatcher	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchGroup
+    syn region texMatcherNM	matchgroup=Delimiter start="\["				end="]"			transparent contains=@texMatchNMGroup
+   endif
   endif
-  if !s:tex_nospell
-   syn region texParen		start="("	end=")"								transparent contains=@texMatchGroup,@Spell
-  else
-   syn region texParen		start="("	end=")"								transparent contains=@texMatchGroup
+  if s:tex_matchcheck =~ '('
+   if !s:tex_nospell
+    syn region texParen		start="("	end=")"								transparent contains=@texMatchGroup,@Spell
+   else
+    syn region texParen		start="("	end=")"								transparent contains=@texMatchGroup
+   endif
   endif
 endif
 if !s:tex_no_error
- syn match  texError		"[}\])]"
+ if s:tex_matchcheck =~ '('
+  syn match  texError		"[}\]]"
+ else
+  syn match  texError		"[}\])]"
+ endif
 endif
 if s:tex_fast =~# 'M'
   if !exists("g:tex_no_math")
@@ -755,6 +774,8 @@ if has("conceal") && &enc == 'utf-8'
     \ ['lceil'		, '⌈'],
     \ ['ldots'		, '…'],
     \ ['le'		, '≤'],
+    \ ['left|'		, '|'],
+    \ ['left\\|'	, '‖'],
     \ ['left('		, '('],
     \ ['left\['		, '['],
     \ ['left\\{'	, '{'],
@@ -805,6 +826,8 @@ if has("conceal") && &enc == 'utf-8'
     \ ['quad'		, ' '],
     \ ['qquad'		, ' '],
     \ ['rfloor'		, '⌋'],
+    \ ['right|'		, '|'],
+    \ ['right\\|'	, '‖'],
     \ ['right)'		, ')'],
     \ ['right]'		, ']'],
     \ ['right\\}'	, '}'],
@@ -1057,6 +1080,7 @@ if has("conceal") && &enc == 'utf-8'
   call s:SuperSub('texSuperscript','\^','R','ᴿ')
   call s:SuperSub('texSuperscript','\^','T','ᵀ')
   call s:SuperSub('texSuperscript','\^','U','ᵁ')
+  call s:SuperSub('texSuperscript','\^','V','ⱽ')
   call s:SuperSub('texSuperscript','\^','W','ᵂ')
   call s:SuperSub('texSuperscript','\^',',','︐')
   call s:SuperSub('texSuperscript','\^',':','︓')

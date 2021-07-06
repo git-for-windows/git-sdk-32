@@ -4,8 +4,8 @@ includedir=${prefix}/include
 
 Name: libalpm
 Description: Arch Linux package management library
-URL: http://www.archlinux.org/pacman/
-Version: 12.0.2
-Requires: libcrypto, libarchive >= 3.0.0, libcurl >= 7.32.0, gpgme >= 1.3.0
-Libs: -L${libdir} -lalpm /usr/lib/gcc/i686-pc-msys/9.3.0/../../../libintl.a
-Cflags:-I${includedir}
+URL: http://archlinux.org/pacman/
+Version: 13.0.0
+Requires: libcrypto, libarchive >= 3.0.0, libcurl >= 7.55.0, gpgme >= 1.3.0
+Libs: -L${libdir} -lalpm /usr/lib/gcc/i686-pc-msys/10.2.0/../../../libintl.a
+Cflags: -I${includedir}

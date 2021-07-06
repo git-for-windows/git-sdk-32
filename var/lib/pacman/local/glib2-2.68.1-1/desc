@@ -1,0 +1,50 @@
+%NAME%
+glib2
+
+%VERSION%
+2.68.1-1
+
+%BASE%
+glib2
+
+%DESC%
+Common C routines used by GTK+ and other libs
+
+%URL%
+https://www.gtk.org/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1618529119
+
+%INSTALLDATE%
+1625540927
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+12159384
+
+%REASON%
+1
+
+%LICENSE%
+LGPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libxslt
+libpcre
+libffi
+libiconv
+zlib
+
+%OPTDEPENDS%
+gamin: for gio fam module
+python3: for gdbus-codegen and gtester-report
+

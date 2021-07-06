@@ -4,9 +4,28 @@
 a2x - A toolchain manager for AsciiDoc (converts Asciidoc text files to other
       file formats)
 
-Copyright: Stuart Rackham (c) 2009
-License:   MIT
-Email:     srackham@gmail.com
+Free use of this software is granted under the terms of the MIT license.
+
+Copyright (C) 2002-2013 Stuart Rackham.
+Copyright (C) 2013-2020 AsciiDoc Contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 
 import os
@@ -23,7 +42,7 @@ import xml.dom.minidom
 import mimetypes
 
 PROG = os.path.basename(os.path.splitext(__file__)[0])
-VERSION = '9.0.0rc2'
+VERSION = '9.1.0'
 
 # AsciiDoc global configuration file directory.
 # NOTE: CONF_DIR is "fixed up" by Makefile -- don't rename or change syntax.
@@ -284,6 +303,8 @@ def find_resources(files, tagname, attrname, filter=None):
         with open(filename, 'rb') as open_file:
             contents = open_file.read()
         mo = re.search(b'\A<\?xml.* encoding="(.*?)"', contents)
+        if mo is None:
+            mo = re.search(br'<meta http\-equiv="Content\-Type" content="text\/html; charset=(.*?)">', contents)
         contents = contents.decode(mo.group(1).decode('utf-8') if mo else 'utf-8')
         parser.feed(contents)
         parser.close()
@@ -364,11 +385,19 @@ def get_source_options(asciidoc_file):
     result = []
     if os.path.isfile(asciidoc_file):
         options = ''
-        with open(asciidoc_file) as f:
+        with open(asciidoc_file, 'rb') as f:
+            line_number = 0
             for line in f:
-                mo = re.search(r'^//\s*a2x:', line)
+                line_number += 1
+                mo = re.search(b'^//\s*a2x:', line)
                 if mo:
-                    options += ' ' + line[mo.end():].strip()
+                    try:
+                        options += ' ' + line[mo.end():].strip().decode('ascii')
+                    except UnicodeDecodeError as e:
+                        warning(
+                            "Could not decode option to %s " % e.encoding +
+                            "on line %s in %s" % (line_number, asciidoc_file)
+                        )
         parse_options()
     return result
 
@@ -670,7 +699,10 @@ class A2X(AttrDict):
         shell('"%s" --backend docbook -a "a2x-format=%s" %s --out-file "%s" "%s"' %
              (self.asciidoc, self.format, self.asciidoc_opts, docbook_file, self.asciidoc_file))
         if not self.no_xmllint and XMLLINT:
-            shell('"%s" --nonet --noout --valid "%s"' % (XMLLINT, docbook_file))
+            xmllint_options = ['--nonet', '--noout', '--valid']
+            if 'SGML_CATALOG_FILES' in os.environ:
+                xmllint_options.append('--catalogs')
+            shell('"%s" %s "%s"' % (XMLLINT, " ".join(xmllint_options), docbook_file))
 
     def to_xhtml(self):
         self.to_docbook()
@@ -863,119 +895,122 @@ class A2X(AttrDict):
 
 if __name__ == '__main__':
     description = '''A toolchain manager for AsciiDoc (converts Asciidoc text files to other file formats)'''
-    from argparse import ArgumentParser
-    parser = ArgumentParser(usage='usage: %(prog)s [OPTIONS] ASCIIDOC_FILE',
+    from optparse import OptionParser
+    parser = OptionParser(usage='usage: %prog [OPTIONS] SOURCE_FILE',
+        version='%s %s' % (PROG,VERSION),
         description=description)
-    parser.add_argument('--version', action='version', version='{} {}'.format(PROG, VERSION))
-    parser.add_argument('-a', '--attribute',
+    parser.add_option('-a', '--attribute',
         action='append', dest='attributes', default=[], metavar='ATTRIBUTE',
         help='set asciidoc attribute value')
-    parser.add_argument('--asciidoc-opts',
+    parser.add_option('--asciidoc-opts',
         action='append', dest='asciidoc_opts', default=[],
         metavar='ASCIIDOC_OPTS', help='asciidoc options')
     #DEPRECATED
-    parser.add_argument('--copy',
+    parser.add_option('--copy',
         action='store_true', dest='copy', default=False,
         help='DEPRECATED: does nothing')
-    parser.add_argument('--conf-file',
+    parser.add_option('--conf-file',
         dest='conf_file', default=None, metavar='CONF_FILE',
         help='configuration file')
-    parser.add_argument('-D', '--destination-dir',
+    parser.add_option('-D', '--destination-dir',
         action='store', dest='destination_dir', default=None, metavar='PATH',
-        help='output directory (defaults to ASCIIDOC_FILE directory)')
-    parser.add_argument('-d','--doctype',
+        help='output directory (defaults to SOURCE_FILE directory)')
+    parser.add_option('-d','--doctype',
         action='store', dest='doctype', metavar='DOCTYPE',
         choices=('article','manpage','book'),
         help='article, manpage, book')
-    parser.add_argument('-b','--backend',
+    parser.add_option('-b','--backend',
         action='store', dest='backend', metavar='BACKEND',
         help='name of backend plugin')
-    parser.add_argument('--epubcheck',
+    parser.add_option('--epubcheck',
         action='store_true', dest='epubcheck', default=False,
         help='check EPUB output with epubcheck')
-    parser.add_argument('-f','--format',
+    parser.add_option('-f','--format',
         action='store', dest='format', metavar='FORMAT', default = 'pdf',
         choices=('chunked','epub','htmlhelp','manpage','pdf', 'text',
                  'xhtml','dvi','ps','tex','docbook'),
         help='chunked, epub, htmlhelp, manpage, pdf, text, xhtml, dvi, ps, tex, docbook')
-    parser.add_argument('--icons',
+    parser.add_option('--icons',
         action='store_true', dest='icons', default=False,
         help='use admonition, callout and navigation icons')
-    parser.add_argument('--icons-dir',
+    parser.add_option('--icons-dir',
         action='store', dest='icons_dir',
         default=None, metavar='PATH',
         help='admonition and navigation icon directory')
-    parser.add_argument('-k', '--keep-artifacts',
+    parser.add_option('-k', '--keep-artifacts',
         action='store_true', dest='keep_artifacts', default=False,
         help='do not delete temporary build files')
-    parser.add_argument('--lynx',
+    parser.add_option('--lynx',
         action='store_true', dest='lynx', default=False,
         help='use lynx to generate text files')
-    parser.add_argument('-L', '--no-xmllint',
+    parser.add_option('-L', '--no-xmllint',
         action='store_true', dest='no_xmllint', default=False,
         help='do not check asciidoc output with xmllint')
-    parser.add_argument('-n','--dry-run',
+    parser.add_option('-n','--dry-run',
         action='store_true', dest='dry_run', default=False,
         help='just print the commands that would have been executed')
-    parser.add_argument('-r','--resource',
+    parser.add_option('-r','--resource',
         action='append', dest='resources', default=[],
         metavar='PATH',
         help='resource file or directory containing resource files')
-    parser.add_argument('-m', '--resource-manifest',
+    parser.add_option('-m', '--resource-manifest',
         action='store', dest='resource_manifest', default=None, metavar='FILE',
         help='read resources from FILE')
     #DEPRECATED
-    parser.add_argument('--resource-dir',
+    parser.add_option('--resource-dir',
         action='append', dest='resources', default=[],
         metavar='PATH',
         help='DEPRECATED: use --resource')
     #DEPRECATED
-    parser.add_argument('-s','--skip-asciidoc',
+    parser.add_option('-s','--skip-asciidoc',
         action='store_true', dest='skip_asciidoc', default=False,
         help='DEPRECATED: redundant')
-    parser.add_argument('--stylesheet',
+    parser.add_option('--stylesheet',
         action='store', dest='stylesheet', default=None,
         metavar='STYLESHEET',
         help='HTML CSS stylesheet file name')
     #DEPRECATED
-    parser.add_argument('--safe',
+    parser.add_option('--safe',
         action='store_true', dest='safe', default=False,
         help='DEPRECATED: does nothing')
-    parser.add_argument('--dblatex-opts',
+    parser.add_option('--dblatex-opts',
         action='append', dest='dblatex_opts', default=[],
         metavar='DBLATEX_OPTS', help='dblatex options')
-    parser.add_argument('--backend-opts',
+    parser.add_option('--backend-opts',
         action='append', dest='backend_opts', default=[],
         metavar='BACKEND_OPTS', help='backend plugin options')
-    parser.add_argument('--fop',
+    parser.add_option('--fop',
         action='store_true', dest='fop', default=False,
         help='use FOP to generate PDF files')
-    parser.add_argument('--fop-opts',
+    parser.add_option('--fop-opts',
         action='append', dest='fop_opts', default=[],
         metavar='FOP_OPTS', help='options for FOP pdf generation')
-    parser.add_argument('--xsltproc-opts',
+    parser.add_option('--xsltproc-opts',
         action='append', dest='xsltproc_opts', default=[],
         metavar='XSLTPROC_OPTS', help='xsltproc options for XSL stylesheets')
-    parser.add_argument('--xsl-file',
+    parser.add_option('--xsl-file',
         action='store', dest='xsl_file', metavar='XSL_FILE',
         help='custom XSL stylesheet')
-    parser.add_argument('-v', '--verbose',
+    parser.add_option('-v', '--verbose',
         action='count', dest='verbose', default=0,
         help='increase verbosity')
-    parser.add_argument("asciidoc_file", action="store", help="AsciiDoc source file")
+    if len(sys.argv) == 1:
+        parser.parse_args(['--help'])
     source_options = get_source_options(sys.argv[-1])
     argv = source_options + sys.argv[1:]
-    opts = parser.parse_args(argv)
+    opts, args = parser.parse_args(argv)
+    if len(args) != 1:
+        parser.error('incorrect number of arguments')
     opts.asciidoc_opts = ' '.join(opts.asciidoc_opts)
     opts.dblatex_opts = ' '.join(opts.dblatex_opts)
     opts.fop_opts = ' '.join(opts.fop_opts)
     opts.xsltproc_opts = ' '.join(opts.xsltproc_opts)
     opts.backend_opts = ' '.join(opts.backend_opts)
-    opts = vars(opts)  # Convert argparse.Values to dict.
+    opts = eval(str(opts))  # Convert optparse.Values to dict.
     a2x = A2X(opts)
     OPTIONS = a2x           # verbose and dry_run used by utility functions.
     verbose('args: %r' % argv)
-    a2x.asciidoc_file = opts['asciidoc_file']
+    a2x.asciidoc_file = args[0]
     try:
         a2x.load_conf()
         a2x.execute()

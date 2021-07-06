@@ -47,31 +47,19 @@ esac
 unset MINGW_MOUNT_POINT
 . '/etc/msystem'
 case "${MSYSTEM}" in
-MINGW32)
+MINGW*|CLANG*|UCRT*)
   MINGW_MOUNT_POINT="${MINGW_PREFIX}"
   PATH="${MINGW_MOUNT_POINT}/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}"
   PKG_CONFIG_PATH="${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig"
   ACLOCAL_PATH="${MINGW_MOUNT_POINT}/share/aclocal:/usr/share/aclocal"
   MANPATH="${MINGW_MOUNT_POINT}/local/man:${MINGW_MOUNT_POINT}/share/man:${MANPATH}"
-  ;;
-MINGW64)
-  MINGW_MOUNT_POINT="${MINGW_PREFIX}"
-  PATH="${MINGW_MOUNT_POINT}/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}"
-  PKG_CONFIG_PATH="${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig"
-  ACLOCAL_PATH="${MINGW_MOUNT_POINT}/share/aclocal:/usr/share/aclocal"
-  MANPATH="${MINGW_MOUNT_POINT}/local/man:${MINGW_MOUNT_POINT}/share/man:${MANPATH}"
-  ;;
-ARM64)
-  MINGW_MOUNT_POINT="/arm64"
-  PATH="${MINGW_MOUNT_POINT}/bin:/mingw32/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}"
-  PKG_CONFIG_PATH="${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig:/mingw32/lib/pkgconfig:/mingw32/share/pkgconfig"
-  ACLOCAL_PATH="${MINGW_MOUNT_POINT}/share/aclocal:/mingw32/share/aclocal:/usr/share/aclocal"
-  MANPATH="${MINGW_MOUNT_POINT}/local/man:${MINGW_MOUNT_POINT}/share/man:/mingw32/local/man:/mingw32/share/man:${MANPATH}"
   ;;
 *)
   PATH="${MSYS2_PATH}:/opt/bin${ORIGINAL_PATH:+:${ORIGINAL_PATH}}"
   PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/share/pkgconfig:/lib/pkgconfig"
 esac
+
+CONFIG_SITE="/etc/config.site"
 
 MAYBE_FIRST_START=false
 SYSCONFDIR="${SYSCONFDIR:=/etc}"
@@ -132,6 +120,7 @@ done
 
 if [ ! "x${BASH_VERSION}" = "x" ]; then
   HOSTNAME="$(exec /usr/bin/hostname)"
+  SHELL=`which bash`
   profile_d sh
   [ -f "/etc/bash.bashrc" ] && . "/etc/bash.bashrc"
 elif [ ! "x${KSH_VERSION}" = "x" ]; then
@@ -158,12 +147,11 @@ then
   export ACLOCAL_PATH
 fi
 
-export PATH MANPATH INFOPATH PKG_CONFIG_PATH USER TMP TEMP HOSTNAME PS1 SHELL tmp temp ORIGINAL_TMP ORIGINAL_TEMP ORIGINAL_PATH
+export PATH MANPATH INFOPATH PKG_CONFIG_PATH USER TMP TEMP HOSTNAME PS1 SHELL tmp temp ORIGINAL_TMP ORIGINAL_TEMP ORIGINAL_PATH CONFIG_SITE
 unset PATH_SEPARATOR
 
 if [ "$MAYBE_FIRST_START" = "true" ]; then
-  sh /usr/bin/regen-info.sh
-  
+
   if [ -f "/usr/bin/update-ca-trust" ]
   then 
     sh /usr/bin/update-ca-trust

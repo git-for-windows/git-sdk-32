@@ -3,13 +3,17 @@
 """
 asciidoc - converts an AsciiDoc text file to HTML or DocBook
 
-Copyright (C) 2002-2010 Stuart Rackham. Free use of this software is granted
-under the terms of the GNU General Public License (GPL).
+Copyright (C) 2002-2013 Stuart Rackham.
+Copyright (C) 2013-2020 AsciiDoc Contributors.
+
+Free use of this software is granted under the terms of the GNU General
+Public License version 2 (GPLv2).
 """
 
 import ast
 import copy
 import csv
+from functools import lru_cache
 import getopt
 import io
 import locale
@@ -29,9 +33,9 @@ from ast import literal_eval
 from collections import OrderedDict
 
 # Used by asciidocapi.py #
-VERSION = '9.0.0rc2'           # See CHANGELOG file for version history.
+VERSION = '9.1.0'           # See CHANGELOG file for version history.
 
-MIN_PYTHON_VERSION = '3.5'  # Require this version of Python or better.
+MIN_PYTHON_VERSION = (3, 5)  # Require this version of Python or better.
 
 # ---------------------------------------------------------------------------
 # Program constants.
@@ -50,7 +54,7 @@ SUBS_VERBATIM = ('specialcharacters', 'callouts')
 
 NAME_RE = r'[^\W\d][-\w]*'  # Valid section or attribute name.
 OR, AND = ',', '+'              # Attribute list separators.
-
+DEFAULT_NEWLINE = '\r\n'
 
 # ---------------------------------------------------------------------------
 # Utility functions and classes.
@@ -899,8 +903,9 @@ def system(name, args, is_macro=False, attrs=None):
         value = document.attributes.get(attr)
         if value:
             if not re.match(r'^\d+$', value) and len(value) > 1:
-                message.warning('%s: illegal counter value: %s'
-                                % (syntax, value))
+                message.warning(
+                    '%s: illegal counter value: %s' % (syntax, value)
+                )
                 return None
             if re.match(r'^\d+$', value):
                 expr = value + '+1'
@@ -965,7 +970,7 @@ def system(name, args, is_macro=False, attrs=None):
                 line = subs_attrs(line)
                 if line is not None:
                     result.append(line)
-            result = '\n'.join(result)
+            result = config.newline.join(result)
     else:
         assert False
     if result and name in ('eval3', 'sys3'):
@@ -1052,13 +1057,17 @@ def subs_attrs(lines, dictionary=None):
                 pos = mo.start() + len(s)
         # Expand conditional attributes.
         # Single name -- higher precedence.
-        reo1 = re.compile(r'(?s)\{(?P<name>[^\\\W][-\w]*?)'
-                          r'(?P<op>\=|\?|!|#|%|@|\$)'
-                          r'(?P<value>.*?)\}(?!\\)')
+        reo1 = re.compile(
+            r'(?s)\{(?P<name>[^\\\W][-\w]*?)'
+            r'(?P<op>\=|\?|!|#|%|@|\$)'
+            r'(?P<value>.*?)\}(?!\\)'
+        )
         # Multiple names (n1,n2,... or n1+n2+...) -- lower precedence.
-        reo2 = re.compile(r'(?s)\{(?P<name>[^\\\W][-\w' + OR + AND + r']*?)'
-                          r'(?P<op>\=|\?|!|#|%|@|\$)'
-                          r'(?P<value>.*?)\}(?!\\)')
+        reo2 = re.compile(
+            r'(?s)\{(?P<name>[^\\\W][-\w' + OR + AND + r']*?)'
+            r'(?P<op>\=|\?|!|#|%|@|\$)'
+            r'(?P<value>.*?)\}(?!\\)'
+        )
         for reo in [reo1, reo2]:
             pos = 0
             while True:
@@ -1209,12 +1218,14 @@ def subs_attrs(lines, dictionary=None):
         return tuple(result)
 
 
-east_asian_widths = {'W': 2,   # Wide
-                     'F': 2,   # Full-width (wide)
-                     'Na': 1,  # Narrow
-                     'H': 1,   # Half-width (narrow)
-                     'N': 1,   # Neutral (not East Asian, treated as narrow)
-                     'A': 1}   # Ambiguous (s/b wide in East Asian context, narrow otherwise, but that doesn't work)
+east_asian_widths = {
+    'W': 2,   # Wide
+    'F': 2,   # Full-width (wide)
+    'Na': 1,  # Narrow
+    'H': 1,   # Half-width (narrow)
+    'N': 1,   # Neutral (not East Asian, treated as narrow)
+    'A': 1,   # Ambiguous (s/b wide in East Asian context, narrow otherwise, but that doesn't work)
+}
 """Mapping of result codes from `unicodedata.east_asian_width()` to character
 column widths."""
 
@@ -2265,7 +2276,11 @@ class Section:
         base_id = re.sub(r'\W+', '_', title).strip('_').lower()
         if 'ascii-ids' in document.attributes:
             # Replace non-ASCII characters with ASCII equivalents.
-            base_id = unicodedata.normalize('NFKD', base_id).encode('ascii', 'ignore').decode('ascii')
+            try:
+                from trans import trans
+                base_id = trans(base_id)
+            except ImportError:
+                base_id = unicodedata.normalize('NFKD', base_id).encode('ascii', 'ignore').decode('ascii')
         # Prefix the ID name with idprefix attribute or underscore if not
         # defined. Prefix ensures the ID does not clash with existing IDs.
         idprefix = document.attributes.get('idprefix', '_')
@@ -3132,6 +3147,10 @@ class DelimitedBlock(AbstractBlock):
         if 'skip' not in self.parameters.options:
             BlockTitle.consume(self.attributes)
             AttributeList.consume()
+        if 'options' in self.attributes:
+            options = parse_options(self.attributes['options'], (), 'illegal option name')
+            for option in options:
+                self.attributes[option + '-option'] = ''
         self.push_blockname()
         options = self.parameters.options
         if 'skip' in options:
@@ -3622,7 +3641,7 @@ class Table(AbstractBlock):
         is a list of Cells.
         """
         rows = []
-        rdr = csv.reader(io.StringIO('\r\n'.join(text)),
+        rdr = csv.reader(io.StringIO(DEFAULT_NEWLINE.join(text)),
                          delimiter=self.parameters.separator, skipinitialspace=True)
         try:
             for row in rdr:
@@ -3933,6 +3952,7 @@ class Macros:
                         return m
         return False
 
+    @lru_cache(maxsize=2048)
     def match(self, prefix, name, text):
         """Return re match object matching 'text' with macro type 'prefix',
         macro name 'name'."""
@@ -4227,6 +4247,7 @@ class Reader1:
         self.tabsize = 8        # Tab expansion number of spaces.
         self.parent = None      # Included reader's parent reader.
         self._lineno = 0        # The last line read from file object f.
+        self.line_ranges = None # line ranges to include
         self.current_depth = 0  # Current include depth.
         self.max_depth = 10     # Initial maxiumum allowed include depth.
         self.bom = None         # Byte order mark (BOM).
@@ -4265,15 +4286,34 @@ class Reader1:
         self.closefile()
         self.__init__()
 
+    def readline(self):
+        while True:
+            s = self.f.readline()
+            if s:
+                self._lineno = self._lineno + 1
+            else:
+                break
+
+            if self.line_ranges is not None:
+                for line_range in self.line_ranges:
+                    if len(line_range) == 1 and self._lineno == line_range[0]:
+                        break
+                    elif len(line_range) == 2 and line_range[0] <= self._lineno and (line_range[1] == -1 or self._lineno <= line_range[1]):
+                        break
+                else:
+                    continue
+                break
+            else:
+                break
+        return s
+
     def read(self, skip=False):
         """Read next line. Return None if EOF. Expand tabs. Strip trailing
         white space. Maintain self.next read ahead buffer. If skip=True then
         conditional exclusion is active (ifdef and ifndef macros)."""
         # Top up buffer.
         if len(self.next) <= self.READ_BUFFER_MIN:
-            s = self.f.readline()
-            if s:
-                self._lineno = self._lineno + 1
+            s = self.readline()
             while s:
                 if self.tabsize != 0:
                     s = s.expandtabs(self.tabsize)
@@ -4281,9 +4321,7 @@ class Reader1:
                 self.next.append([self.fname, self._lineno, s])
                 if len(self.next) > self.READ_BUFFER_MIN:
                     break
-                s = self.f.readline()
-                if s:
-                    self._lineno = self._lineno + 1
+                s = self.readline()
         # Return first (oldest) buffer entry.
         if len(self.next) > 0:
             self.cursor = self.next[0]
@@ -4349,6 +4387,17 @@ class Reader1:
                         self.max_depth = self.current_depth + val
                     except ValueError:
                         raise EAsciiDoc("include macro: illegal 'depth' argument")
+                if 'lines' in attrs:
+                    try:
+                        if ';' in attrs['lines']:
+                            ranges = attrs['lines'].split(';')
+                        else:
+                            ranges = attrs['lines'].split(',')
+                        for idx in range(len(ranges)):
+                            ranges[idx] = [int(x) for x in ranges[idx].split('..')]
+                        self.line_ranges = ranges
+                    except ValueError:
+                        raise EAsciiDoc("include macro: illegal 'lines' argument")
                 # Process included file.
                 message.verbose('include: ' + fname, linenos=False)
                 self.open(fname)
@@ -4566,7 +4615,7 @@ class Reader(Reader1):
 class Writer:
     """Writes lines to output file."""
     def __init__(self):
-        self.newline = '\r\n'            # End of line terminator.
+        self.newline = DEFAULT_NEWLINE   # End of line terminator.
         self.f = None                    # Output file object.
         self.fname = None                # Output file name.
         self.lines_out = 0               # Number of lines written.
@@ -4581,7 +4630,7 @@ class Writer:
         if fname == '<stdout>':
             self.f = sys.stdout
         else:
-            self.f = open(fname, 'w+', encoding='utf-8')
+            self.f = open(fname, 'w+', encoding='utf-8', newline="")
         message.verbose('writing: ' + writer.fname, False)
         if bom:
             self.f.write(bom)
@@ -4677,7 +4726,7 @@ class Config:
         # [miscellaneous] section.
         self.tabsize = 8
         self.textwidth = 70             # DEPRECATED: Old tables only.
-        self.newline = '\r\n'
+        self.newline = DEFAULT_NEWLINE
         self.pagewidth = None
         self.pageunits = None
         self.outfilesuffix = ''
@@ -4706,8 +4755,8 @@ class Config:
         directory.
         cmd is the asciidoc command or asciidoc.py path.
         """
-        if float(sys.version[:3]) < float(MIN_PYTHON_VERSION):
-            message.stderr('FAILED: Python %s or better required' % MIN_PYTHON_VERSION)
+        if sys.version_info[:2] < MIN_PYTHON_VERSION:
+            message.stderr('FAILED: Python %d.%d or better required' % MIN_PYTHON_VERSION)
             sys.exit(1)
         if not os.path.exists(cmd):
             message.stderr('FAILED: Missing asciidoc command: %s' % cmd)
@@ -5646,7 +5695,7 @@ class Table_OLD(AbstractBlock):
         """Parse the list of source table rows. Each row item in the returned
         list contains a list of cell data elements."""
         result = []
-        rdr = csv.reader(io.StringIO('\r\n'.join(rows)), skipinitialspace=True)
+        rdr = csv.reader(io.StringIO(DEFAULT_NEWLINE.join(rows)), skipinitialspace=True)
         try:
             for row in rdr:
                 result.append(row)
@@ -6015,7 +6064,7 @@ class Plugin:
         """
         for d in [os.path.join(d, Plugin.type + 's') for d in config.get_load_dirs()]:
             if os.path.isdir(d):
-                for f in os.walk(d).next()[1]:
+                for f in sorted(filter(os.path.isdir, [os.path.join(d, o) for o in os.listdir(d)])):
                     message.stdout(os.path.join(d, f))
 
     @staticmethod

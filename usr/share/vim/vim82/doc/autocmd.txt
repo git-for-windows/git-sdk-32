@@ -1,4 +1,4 @@
-*autocmd.txt*   For Vim version 8.2.  Last change: 2020 Jan 26
+*autocmd.txt*   For Vim version 8.2.  Last change: 2021 Apr 25
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -54,7 +54,8 @@ effects.  Be careful not to destroy your text.
 :au[tocmd] [group] {event} {pat} [++once] [++nested] {cmd}
 			Add {cmd} to the list of commands that Vim will
 			execute automatically on {event} for a file matching
-			{pat} |autocmd-patterns|.
+			{pat} |autocmd-patterns|. 
+			Here {event} cannot be "*".  *E1155*
 			Note: A quote character is seen as argument to the
 			:autocmd and won't start a comment.
 			Vim always adds the {cmd} after existing autocommands,
@@ -69,6 +70,11 @@ effects.  Be careful not to destroy your text.
 
 The special pattern <buffer> or <buffer=N> defines a buffer-local autocommand.
 See |autocmd-buflocal|.
+
+If the `:autocmd` is in Vim9 script (a script that starts with `:vim9script`
+and in a `:def` function) then {cmd} will be executed as in Vim9
+script.  Thus this depends on where the autocmd is defined, not where it is
+triggered.
 
 Note: The ":autocmd" command can only be followed by another command when the
 '|' appears before {cmd}.  This works: >
@@ -278,7 +284,7 @@ Name			triggered by ~
 |BufWinLeave|		before a buffer is removed from a window
 
 |BufUnload|		before unloading a buffer
-|BufHidden|		just after a buffer has become hidden
+|BufHidden|		just before a buffer becomes hidden
 |BufNew|		just after creating a new buffer
 
 |SwapExists|		detected an existing swap file
@@ -300,6 +306,9 @@ Name			triggered by ~
 |ExitPre|		when using a command that may make Vim exit
 |VimLeavePre|		before exiting Vim, before writing the viminfo file
 |VimLeave|		before exiting Vim, after writing the viminfo file
+
+|VimSuspend|		when suspending Vim
+|VimResume|		when Vim is resumed after being suspended
 
 	Terminal
 |TerminalOpen|		after a terminal buffer was created
@@ -380,6 +389,7 @@ Name			triggered by ~
 			info
 
 |User|			to be used in combination with ":doautocmd"
+|SigUSR1|		after the SIGUSR1 signal has been detected
 
 
 The alphabetical list of autocommand events:		*autocmd-events-abc*
@@ -550,12 +560,15 @@ CmdlineChanged			After a change was made to the text in the
 							*CmdlineEnter*
 CmdlineEnter			After moving the cursor to the command line,
 				where the user can type a command or search
-				string.
+				string; including non-interactive use of ":"
+				in a mapping, but not when using |<Cmd>|.
 				<afile> is set to a single character,
 				indicating the type of command-line.
 				|cmdwin-char|
 							*CmdlineLeave*
-CmdlineLeave			Before leaving the command line.
+CmdlineLeave			Before leaving the command line; including
+				non-interactive use of ":" in a mapping, but
+				not when using |<Cmd>|.
 				Also when abandoning the command line, after
 				typing CTRL-C or <Esc>.
 				When the commands result in an error the
@@ -630,7 +643,7 @@ CompleteDone			After Insert mode completion is done.  Either
 
 							*CursorHold*
 CursorHold			When the user doesn't press a key for the time
-				specified with 'updatetime'.  Not re-triggered
+				specified with 'updatetime'.  Not triggered
 				until the user has pressed a key (i.e. doesn't
 				fire every 'updatetime' ms if you leave Vim to
 				make some coffee. :)  See |CursorHold-example|
@@ -839,6 +852,8 @@ FuncUndefined			When a user function is used but it isn't
 				when it's used.  The pattern is matched
 				against the function name.  Both <amatch> and
 				<afile> are set to the name of the function.
+				Not triggered when compiling a |Vim9|
+				function.
 				NOTE: When writing Vim scripts a better
 				alternative is to use an autoloaded function.
 				See |autoload-functions|.
@@ -880,9 +895,14 @@ InsertEnter			Just before starting Insert mode.  Also for
 				The cursor is restored afterwards.  If you do
 				not want that set |v:char| to a non-empty
 				string.
+							*InsertLeavePre*
+InsertLeavePre			Just before leaving Insert mode.  Also when
+				using CTRL-O |i_CTRL-O|.  Be careful not to
+				change mode or use `:normal`, it will likely
+				cause trouble.
 							*InsertLeave*
-InsertLeave			When leaving Insert mode.  Also when using
-				CTRL-O |i_CTRL-O|.  But not for |i_CTRL-C|.
+InsertLeave			Just after leaving Insert mode.  Also when
+				using CTRL-O |i_CTRL-O|.  But not for |i_CTRL-C|.
 							*MenuPopup*
 MenuPopup			Just before showing the popup menu (under the
 				right mouse button).  Useful for adjusting the
@@ -1153,11 +1173,14 @@ TextYankPost			After text has been yanked or deleted in the
 						register.
 				   regtype	Type of the register, see
 						|getregtype()|.
+				   visual	True if the operation is
+						performed on a |Visual| area.
 				Not triggered when |quote_| is used nor when
 				called recursively.
 				It is not allowed to change the buffer text,
 				see |textlock|.
 				{only when compiled with the +eval feature}
+
 							*User*
 User				Never executed automatically.  To be used for
 				autocommands that are only executed with
@@ -1166,6 +1189,15 @@ User				Never executed automatically.  To be used for
 				used while there are no matching autocommands,
 				you will get an error.  If you don't want
 				that, define a dummy autocommand yourself.
+
+							*SigUSR1*
+SigUSR1				After the SIGUSR1 signal has been detected.
+				Could be used if other ways of notifying Vim
+				are not feasible.  E.g. to check for the
+				result of a build that takes a long time, or
+				when a motion sensor is triggered.
+				{only on Unix}
+
 							*UserGettingBored*
 UserGettingBored		When the user presses the same key 42 times.
 				Just kidding! :-)
@@ -1189,6 +1221,7 @@ VimLeave			Before exiting Vim, just after writing the
 				To detect an abnormal exit use |v:dying|.
 				When v:dying is 2 or more this event is not
 				triggered.
+				To get the exit code use |v:exiting|.
 							*VimLeavePre*
 VimLeavePre			Before exiting Vim, just before writing the
 				.viminfo file.  This is executed only once,
@@ -1199,10 +1232,22 @@ VimLeavePre			Before exiting Vim, just before writing the
 <				To detect an abnormal exit use |v:dying|.
 				When v:dying is 2 or more this event is not
 				triggered.
+				To get the exit code use |v:exiting|.
 							*VimResized*
 VimResized			After the Vim window was resized, thus 'lines'
 				and/or 'columns' changed.  Not when starting
 				up though.
+							*VimResume*
+VimResume			When the Vim instance is resumed after being
+				suspended and |VimSuspend| was triggered.
+				Useful for triggering |:checktime| and ensure
+				the buffers content did not change while Vim
+				was suspended: >
+	:autocmd VimResume * checktime
+<							*VimSuspend*
+VimSuspend			When the Vim instance is suspended.  Only when
+				CTRL-Z was typed inside Vim, not when the
+				SIGSTOP or SIGTSTP signal was sent to Vim.
 							*WinEnter*
 WinEnter			After entering another window.  Not done for
 				the first window, when Vim has just started.
@@ -1412,8 +1457,8 @@ name!
 :aug[roup]! {name}		Delete the autocmd group {name}.  Don't use
 				this if there is still an autocommand using
 				this group!  You will get a warning if doing
-				it anyway. when the group is the current group
-				you will get error E936.
+				it anyway.  When the group is the current
+				group you will get error E936.
 
 To enter autocommands for a specific group, use this method:
 1. Select the group with ":augroup {name}".
@@ -1474,9 +1519,18 @@ option will not cause any commands to be executed.
 						*:doautoa* *:doautoall*
 :doautoa[ll] [<nomodeline>] [group] {event} [fname]
 			Like ":doautocmd", but apply the autocommands to each
-			loaded buffer.  Note that [fname] is used to select
-			the autocommands, not the buffers to which they are
-			applied.
+			loaded buffer.  The current buffer is done last.
+
+			Note that [fname] is used to select the autocommands,
+			not the buffers to which they are applied. Example: >
+				augroup mine
+				  autocmd!
+				  autocmd FileType * echo expand('<amatch>')
+				augroup END
+				doautoall mine FileType Loaded-Buffer
+<			Sourcing this script, you'll see as many
+			"Loaded-Buffer" echoed as there are loaded buffers.
+
 			Careful: Don't use this for autocommands that delete a
 			buffer, change to another buffer or change the
 			contents of a buffer; the result is unpredictable.

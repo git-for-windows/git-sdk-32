@@ -1,4 +1,4 @@
-*gui_w32.txt*   For Vim version 8.2.  Last change: 2020 Mar 25
+*gui_w32.txt*   For Vim version 8.2.  Last change: 2021 Apr 05
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -403,7 +403,7 @@ The "File/Print" menu prints the text with syntax highlighting, see
 printer installed this should also work: >
 	:w >>prn
 
-Vim supports a number of standard MS Windows features.  Some of these are
+Vim supports a number of standard MS-Windows features.  Some of these are
 detailed elsewhere: see |'mouse'|, |win32-hidden-menus|.
 
 							*drag-n-drop-win32*
@@ -451,7 +451,7 @@ with the Intellimouse driver 2.2 and when "Universal Scrolling" is turned on.
 
 XPM support						*w32-xpm-support*
 
-GVim can be build on MS-Windows with support for XPM files.  |+xpm_w32|
+GVim can be built on MS-Windows with support for XPM files.  |+xpm_w32|
 See the Make_mvc.mak file for instructions, search for XPM.
 
 To try out if XPM support works do this: >

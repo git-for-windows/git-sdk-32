@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2018 Free Software Foundation, Inc.
+# Copyright (C) 2013-2020 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,8 +17,10 @@ package Automake::Language;
 
 use 5.006;
 use strict;
+use warnings FATAL => 'all';
 
 use Class::Struct ();
+
 Class::Struct::struct (
 	# Short name of the language (c, f77...).
 	'name' => "\$",

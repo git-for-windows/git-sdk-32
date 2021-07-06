@@ -1,7 +1,26 @@
-%require "3.6"
+/* Parser and scanner for bistromathic.   -*- C -*-
 
+   Copyright (C) 2019-2021 Free Software Foundation, Inc.
+
+   This file is part of Bison, the GNU Compiler Compiler.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+
+%require "3.7"
+
+// Emitted on top of the implementation file.
 %code top {
-  #include <assert.h>
   #include <ctype.h>  // isdigit
   #include <locale.h> // LC_ALL
   #include <math.h>   // cos, sin, etc.
@@ -25,6 +44,7 @@
   #endif
 }
 
+// Emitted in the header file, before the definition of YYSTYPE.
 %code requires {
   // Function type.
   typedef double (func_t) (double);
@@ -45,19 +65,34 @@
 
   symrec *putsym (char const *name, int sym_type);
   symrec *getsym (char const *name);
+
+  // Exchanging information with the parser.
+  typedef struct
+  {
+    // Whether to not emit error messages.
+    int silent;
+    // The current input line.
+    const char *line;
+  } user_context;
 }
 
+// Emitted in the header file, after the definition of YYSTYPE.
 %code provides {
 # ifndef __attribute__
 #  ifndef __GNUC__
 #   define __attribute__(Spec) /* empty */
 #  endif
 # endif
-  int yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc);
-  void yyerror (YYLTYPE *loc, char const *format, ...)
-    __attribute__ ((__format__ (__printf__, 2, 3)));
+
+  yytoken_kind_t
+  yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc,
+         const user_context *uctx);
+  void yyerror (YYLTYPE *loc, const user_context *uctx,
+                char const *format, ...)
+    __attribute__ ((__format__ (__printf__, 3, 4)));
 }
 
+// Emitted in the implementation file.
 %code {
   #if defined ENABLE_NLS && ENABLE_NLS
   # define _(Msgid)  gettext (Msgid)
@@ -68,6 +103,9 @@
   // Whether to quit.
   int done = 0;
 }
+
+// Include the header in the implementation rather than duplicating it.
+%define api.header.include {"parse.h"}
 
 // Don't share global variables between the scanner and the parser.
 %define api.pure full
@@ -90,6 +128,9 @@
 
 // Generate the parser description file (calc.output).
 %verbose
+
+// User information exchanged with the parser and scanner.
+%param {const user_context *uctx}
 
 // Generate YYSTYPE from the types assigned to symbols.
 %define api.value.type union
@@ -146,7 +187,7 @@ exp:
   {
     if ($r == 0)
       {
-        yyerror (&@$, "error: division by zero");
+        yyerror (&@$, uctx, "error: division by zero");
         YYERROR;
       }
     else
@@ -218,7 +259,7 @@ getsym (char const *name)
 }
 
 // How many symbols are registered.
-int
+static int
 symbol_count (void)
 {
   int res = 0;
@@ -232,8 +273,9 @@ symbol_count (void)
 | Scanner.  |
 `----------*/
 
-int
-yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc)
+yytoken_kind_t
+yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc,
+       const user_context *uctx)
 {
   int c;
 
@@ -268,7 +310,8 @@ yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc)
     case '5': case '6': case '7': case '8': case '9':
       {
         int nchars = 0;
-        sscanf (*line - 1, "%lf%n", &yylval->TOK_NUM, &nchars);
+        if (sscanf (*line - 1, "%lf%n", &yylval->TOK_NUM, &nchars) != 1)
+          abort ();
         *line += nchars - 1;
         yylloc->last_column += nchars - 1;
         return TOK_NUM;
@@ -284,7 +327,8 @@ yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc)
       {
         int nchars = 0;
         char buf[100];
-        sscanf (*line - 1, "%99[a-z]%n", buf, &nchars);
+        if (sscanf (*line - 1, "%99[a-z]%n", buf, &nchars) != 1)
+          abort ();
         *line += nchars - 1;
         yylloc->last_column += nchars - 1;
         if (strcmp (buf, "exit") == 0)
@@ -301,7 +345,7 @@ yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc)
 
       // Stray characters.
     default:
-      yyerror (yylloc, "syntax error: invalid character: %c", c);
+      yyerror (yylloc, uctx, "syntax error: invalid character: %c", c);
       return TOK_YYerror;
     }
 }
@@ -312,7 +356,7 @@ yylex (const char **line, YYSTYPE *yylval, YYLTYPE *yylloc)
 `---------*/
 
 
-const char *
+static const char *
 error_format_string (int argc)
 {
   switch (argc)
@@ -339,8 +383,11 @@ error_format_string (int argc)
 
 
 int
-yyreport_syntax_error (const yypcontext_t *ctx)
+yyreport_syntax_error (const yypcontext_t *ctx, const user_context *uctx)
 {
+  if (uctx->silent)
+    return 0;
+
   enum { ARGS_MAX = 6 };
   yysymbol_kind_t arg[ARGS_MAX];
   int argsize = yypcontext_expected_tokens (ctx, arg, ARGS_MAX);
@@ -351,11 +398,12 @@ yyreport_syntax_error (const yypcontext_t *ctx)
     argsize = ARGS_MAX;
   const char *format = error_format_string (1 + argsize + too_many_expected_tokens);
 
+  const YYLTYPE *loc = yypcontext_location (ctx);
   while (*format)
     // %@: location.
     if (format[0] == '%' && format[1] == '@')
       {
-        YY_LOCATION_PRINT (stderr, *yypcontext_location (ctx));
+        YY_LOCATION_PRINT (stderr, *loc);
         format += 2;
       }
     // %u: unexpected token.
@@ -380,13 +428,25 @@ yyreport_syntax_error (const yypcontext_t *ctx)
         ++format;
       }
   fputc ('\n', stderr);
+
+  // Quote the source line.
+  {
+    fprintf (stderr, "%5d | %s\n", loc->first_line, uctx->line);
+    fprintf (stderr, "%5s | %*s", "", loc->first_column, "^");
+    for (int i = loc->last_column - loc->first_column - 1; 0 < i; --i)
+      putc ('~', stderr);
+    putc ('\n', stderr);
+  }
   return 0;
 }
 
 
 // Called by yyparse on error.
-void yyerror (YYLTYPE *loc, char const *format, ...)
+void yyerror (YYLTYPE *loc, const user_context *uctx, char const *format, ...)
 {
+  if (uctx->silent)
+    return;
+
   YY_LOCATION_PRINT (stderr, *loc);
   fputs (": ", stderr);
   va_list args;
@@ -407,7 +467,8 @@ xstrndup (const char *string, size_t n)
   const char *end = memchr (string, '\0', n);
   size_t len = end ? (size_t) (end - string) : n;
   char *new = malloc (len + 1);
-  assert (new);
+  if (!new)
+    abort ();
   new[len] = '\0';
   return memcpy (new, string, len);
 }
@@ -418,13 +479,16 @@ xstrndup (const char *string, size_t n)
 `-----------*/
 
 // Parse (and execute) this line.
-int process_line (YYLTYPE *lloc, const char *line)
+static int
+process_line (YYLTYPE *lloc, const char *line)
 {
+  user_context uctx = {0, line};
   yypstate *ps = yypstate_new ();
   int status = 0;
   do {
     YYSTYPE lval;
-    status = yypush_parse (ps, yylex (&line, &lval, lloc), &lval, lloc);
+    yytoken_kind_t token = yylex (&line, &lval, lloc, &uctx);
+    status = yypush_parse (ps, token, &lval, lloc, &uctx);
   } while (status == YYPUSH_MORE);
   yypstate_delete (ps);
   lloc->last_line++;
@@ -433,27 +497,36 @@ int process_line (YYLTYPE *lloc, const char *line)
 }
 
 // Get the list of possible tokens after INPUT was read.
-int
+// Returns a nonnegative.
+static int
 expected_tokens (const char *input,
                  int *tokens, int ntokens)
 {
   YYDPRINTF ((stderr, "expected_tokens (\"%s\")", input));
+  user_context uctx = {1, input};
 
   // Parse the current state of the line.
   yypstate *ps = yypstate_new ();
   int status = 0;
+  YYLTYPE lloc = { 1, 1, 1, 1 };
   do {
-    YYLTYPE lloc;
     YYSTYPE lval;
-    int token = yylex (&input, &lval, &lloc);
+    yytoken_kind_t token = yylex (&input, &lval, &lloc, &uctx);
     // Don't let the parse know when we reach the end of input.
-    if (!token)
+    if (token == TOK_YYEOF)
       break;
-    status = yypush_parse (ps, token, &lval, &lloc);
+    status = yypush_parse (ps, token, &lval, &lloc, &uctx);
   } while (status == YYPUSH_MORE);
 
-  // Then query for the accepted tokens at this point.
-  int res = yypstate_expected_tokens (ps, tokens, ntokens);
+  int res = 0;
+  // If there were parse errors, don't propose completions.
+  if (!ps->yynerrs)
+    {
+      // Then query for the accepted tokens at this point.
+      res = yypstate_expected_tokens (ps, tokens, ntokens);
+      if (res < 0)
+        abort ();
+    }
   yypstate_delete (ps);
   return res;
 }
@@ -463,7 +536,7 @@ expected_tokens (const char *input,
 // TEXT is the word to complete.  We can use the entire contents of
 // rl_line_buffer in case we want to do some simple parsing.  Return
 // the array of matches, or NULL if there aren't any.
-char **
+static char **
 completion (const char *text, int start, int end)
 {
   YYDPRINTF ((stderr, "completion (\"%.*s[%.*s]%s\")\n",
@@ -473,14 +546,17 @@ completion (const char *text, int start, int end)
 
   // Get list of token numbers.
   int tokens[YYNTOKENS];
-  char *line = xstrndup (rl_line_buffer, start);
+  char *line = xstrndup (rl_line_buffer, (size_t) start);
   int ntokens = expected_tokens (line, tokens, YYNTOKENS);
   free (line);
 
   // Build MATCHES, the list of possible completions.
-  const int len = strlen (text);
+  const size_t len = strlen (text);
   // Need initial prefix and final NULL.
-  char **matches = calloc (ntokens + symbol_count () + 2, sizeof *matches);
+  char **matches
+    = calloc ((size_t) ntokens + (size_t) symbol_count () + 2, sizeof *matches);
+  if (!matches)
+    abort ();
   int match = 1;
   for (int i = 0; i < ntokens; ++i)
     switch (tokens[i])
@@ -510,9 +586,9 @@ completion (const char *text, int start, int end)
     matches[0] = strdup (text);
   else
     {
-      int lcplen = strlen (matches[1]);
+      size_t lcplen = strlen (matches[1]);
       for (int i = 2; i < match && lcplen; ++i)
-        for (int j = 0; j < lcplen; ++j)
+        for (size_t j = 0; j < lcplen; ++j)
           if (matches[1][j] != matches[i][j])
             lcplen = j;
       matches[0] = xstrndup (matches[1], lcplen);
@@ -536,7 +612,8 @@ completion (const char *text, int start, int end)
   return matches;
 }
 
-void init_readline (void)
+static void
+init_readline (void)
 {
   // Allow conditional parsing of the ~/.inputrc file.
   rl_readline_name = "bistromathic";
@@ -555,7 +632,8 @@ void init_readline (void)
 | Main.  |
 `-------*/
 
-int main (int argc, char const* argv[])
+int
+main (int argc, char const* argv[])
 {
 #if defined ENABLE_NLS && ENABLE_NLS
   // Set up internationalization.

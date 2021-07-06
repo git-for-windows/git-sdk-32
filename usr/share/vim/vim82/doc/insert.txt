@@ -1,4 +1,4 @@
-*insert.txt*    For Vim version 8.2.  Last change: 2020 Mar 25
+*insert.txt*    For Vim version 8.2.  Last change: 2020 Oct 16
 
 
 		  VIM REFERENCE MANUAL    by Bram Moolenaar
@@ -312,6 +312,7 @@ If you enter a value of 10, it will end up in the file as a 0.  The 10 is a
 the buffer to a file, the <NL> character is translated into <Nul>.  The <NL>
 character is written at the end of each line.  Thus if you want to insert a
 <NL> character in a file you will have to make a line break.
+Also see 'fileformat'.
 
 						*i_CTRL-X* *insert_expand*
 CTRL-X enters a sub-mode where several commands can be used.  Most of these
@@ -666,8 +667,10 @@ Note: The keys that are valid in CTRL-X mode are not mapped.  This allows for
 ends CTRL-X mode (any key that is not a valid CTRL-X mode command) is mapped.
 Also, when doing completion with 'complete' mappings apply as usual.
 
-Note: While completion is active Insert mode can't be used recursively.
-Mappings that somehow invoke ":normal i.." will generate an E523 error.
+							*E578* *E565*
+Note: While completion is active Insert mode can't be used recursively and
+buffer text cannot be changed.  Mappings that somehow invoke ":normal i.."
+will generate an E565 error.
 
 The following mappings are suggested to make typing the completion commands
 a bit easier (although they will hide other commands): >
@@ -1841,6 +1844,7 @@ a			Append text after the cursor [count] times.  If the
 
 							*A*
 A			Append text at the end of the line [count] times.
+			For using "A" in Visual block mode see |v_b_A|.
 
 <insert>	or				*i* *insert* *<Insert>*
 i			Insert text before the cursor [count] times.
@@ -1853,6 +1857,7 @@ I			Insert text before the first non-blank in the line
 			When the 'H' flag is present in 'cpoptions' and the
 			line only contains blanks, insert start just before
 			the last blank.
+			For using "I" in Visual block mode see |v_b_I|.
 
 							*gI*
 gI			Insert text in column 1 [count] times.

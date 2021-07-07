@@ -14,10 +14,10 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.35.5/
-mingw32/lib/sqlite3.35.5/libtclsqlite3.dll
-mingw32/lib/sqlite3.35.5/libtclsqlite3.dll.a
-mingw32/lib/sqlite3.35.5/pkgIndex.tcl
+mingw32/lib/sqlite3.36.0/
+mingw32/lib/sqlite3.36.0/libtclsqlite3.dll
+mingw32/lib/sqlite3.36.0/libtclsqlite3.dll.a
+mingw32/lib/sqlite3.36.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/sqlite3/
@@ -175,7 +175,7 @@ mingw32/share/doc/sqlite3/c3ref/pcache.html
 mingw32/share/doc/sqlite3/c3ref/pcache_methods2.html
 mingw32/share/doc/sqlite3/c3ref/pcache_page.html
 mingw32/share/doc/sqlite3/c3ref/prepare.html
-mingw32/share/doc/sqlite3/c3ref/preupdate_count.html
+mingw32/share/doc/sqlite3/c3ref/preupdate_blobwrite.html
 mingw32/share/doc/sqlite3/c3ref/profile.html
 mingw32/share/doc/sqlite3/c3ref/progress_handler.html
 mingw32/share/doc/sqlite3/c3ref/randomness.html
@@ -457,6 +457,7 @@ mingw32/share/doc/sqlite3/images/powered_by_sqlite.gif
 mingw32/share/doc/sqlite3/images/private_branch.gif
 mingw32/share/doc/sqlite3/images/qp/
 mingw32/share/doc/sqlite3/images/qp/fqp1.gif
+mingw32/share/doc/sqlite3/images/qp/fqp1.pikchr
 mingw32/share/doc/sqlite3/images/qp/fruitobstate.gif
 mingw32/share/doc/sqlite3/images/qp/fruitobstate0.gif
 mingw32/share/doc/sqlite3/images/qp/fullscan.gif
@@ -480,6 +481,7 @@ mingw32/share/doc/sqlite3/images/qp/partial-sort.gif
 mingw32/share/doc/sqlite3/images/qp/rowidlu.gif
 mingw32/share/doc/sqlite3/images/qp/tab.gif
 mingw32/share/doc/sqlite3/images/qp/tpchq8.gif
+mingw32/share/doc/sqlite3/images/qp/tpchq8.pikchr
 mingw32/share/doc/sqlite3/images/se.gif
 mingw32/share/doc/sqlite3/images/se.png
 mingw32/share/doc/sqlite3/images/shane1.jpg
@@ -658,6 +660,7 @@ mingw32/share/doc/sqlite3/releaselog/3_35_2.html
 mingw32/share/doc/sqlite3/releaselog/3_35_3.html
 mingw32/share/doc/sqlite3/releaselog/3_35_4.html
 mingw32/share/doc/sqlite3/releaselog/3_35_5.html
+mingw32/share/doc/sqlite3/releaselog/3_36_0.html
 mingw32/share/doc/sqlite3/releaselog/3_3_0.html
 mingw32/share/doc/sqlite3/releaselog/3_3_1.html
 mingw32/share/doc/sqlite3/releaselog/3_3_10.html
@@ -834,6 +837,7 @@ mingw32/share/doc/sqlite3/session/sqlite3rebaser_delete.html
 mingw32/share/doc/sqlite3/session/sqlite3rebaser_rebase.html
 mingw32/share/doc/sqlite3/session/sqlite3session_attach.html
 mingw32/share/doc/sqlite3/session/sqlite3session_changeset.html
+mingw32/share/doc/sqlite3/session/sqlite3session_changeset_size.html
 mingw32/share/doc/sqlite3/session/sqlite3session_config.html
 mingw32/share/doc/sqlite3/session/sqlite3session_create.html
 mingw32/share/doc/sqlite3/session/sqlite3session_delete.html
@@ -1019,8 +1023,6 @@ mingw32/share/sqlite/extensions/percentile.dll
 mingw32/share/sqlite/extensions/prefixes.c
 mingw32/share/sqlite/extensions/prefixes.dll
 mingw32/share/sqlite/extensions/README.md
-mingw32/share/sqlite/extensions/regexp.c
-mingw32/share/sqlite/extensions/regexp.dll
 mingw32/share/sqlite/extensions/remember.c
 mingw32/share/sqlite/extensions/remember.dll
 mingw32/share/sqlite/extensions/rot13.c

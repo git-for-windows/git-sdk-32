@@ -91,7 +91,7 @@ return false;
 }
 </script>
 </div>
-<!-- keywords: sqlite3_preupdate_count sqlite3_preupdate_depth sqlite3_preupdate_hook sqlite3_preupdate_new sqlite3_preupdate_old -->
+<!-- keywords: sqlite3_preupdate_blobwrite sqlite3_preupdate_count sqlite3_preupdate_depth sqlite3_preupdate_hook sqlite3_preupdate_new sqlite3_preupdate_old -->
 <div class=nosearch>
 <a href="intro.html"><h2>SQLite C Interface</h2></a>
 <h2>The pre-update hook.</h2>
@@ -115,21 +115,22 @@ int sqlite3_preupdate_old(sqlite3 *, int, sqlite3_value **);
 int sqlite3_preupdate_count(sqlite3 *);
 int sqlite3_preupdate_depth(sqlite3 *);
 int sqlite3_preupdate_new(sqlite3 *, int, sqlite3_value **);
+int sqlite3_preupdate_blobwrite(sqlite3 *);
 #endif
 </pre></blockquote>
 <p>
 These interfaces are only available if SQLite is compiled using the
 <a href="../compile.html#enable_preupdate_hook">SQLITE_ENABLE_PREUPDATE_HOOK</a> compile-time option.</p>
 
-<p>The <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_hook()</a> interface registers a callback function
+<p>The <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_hook()</a> interface registers a callback function
 that is invoked prior to each <a href="../lang_insert.html">INSERT</a>, <a href="../lang_update.html">UPDATE</a>, and <a href="../lang_delete.html">DELETE</a> operation
 on a database table.
 At most one preupdate hook may be registered at a time on a single
-<a href="../c3ref/sqlite3.html">database connection</a>; each call to <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_hook()</a> overrides
+<a href="../c3ref/sqlite3.html">database connection</a>; each call to <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_hook()</a> overrides
 the previous setting.
-The preupdate hook is disabled by invoking <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_hook()</a>
+The preupdate hook is disabled by invoking <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_hook()</a>
 with a NULL pointer as the second parameter.
-The third parameter to <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_hook()</a> is passed through as
+The third parameter to <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_hook()</a> is passed through as
 the first parameter to callbacks.</p>
 
 <p>The preupdate hook only fires for changes to real database tables; the
@@ -159,8 +160,8 @@ or updated. The value of the seventh parameter passed to the callback
 function is not defined for operations on WITHOUT ROWID tables, or for
 DELETE operations on rowid tables.</p>
 
-<p>The <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_old()</a>, <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_new()</a>,
-<a href="../c3ref/preupdate_count.html">sqlite3_preupdate_count()</a>, and <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_depth()</a> interfaces
+<p>The <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_old()</a>, <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_new()</a>,
+<a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_count()</a>, and <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_depth()</a> interfaces
 provide additional information about a preupdate event. These routines
 may only be called from within a preupdate callback.  Invoking any of
 these routines from outside of a preupdate callback or with a
@@ -168,10 +169,10 @@ these routines from outside of a preupdate callback or with a
 to the preupdate callback results in undefined and probably undesirable
 behavior.</p>
 
-<p>The <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_count(D)</a> interface returns the number of columns
+<p>The <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_count(D)</a> interface returns the number of columns
 in the row that is being inserted, updated, or deleted.</p>
 
-<p>The <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_old(D,N,P)</a> interface writes into P a pointer to
+<p>The <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_old(D,N,P)</a> interface writes into P a pointer to
 a <a href="../c3ref/value.html">protected sqlite3_value</a> that contains the value of the Nth column of
 the table row before it is updated.  The N parameter must be between 0
 and one less than the number of columns or the behavior will be
@@ -180,7 +181,7 @@ preupdate callbacks; if it is used by an SQLITE_INSERT callback then the
 behavior is undefined.  The <a href="../c3ref/value.html">sqlite3_value</a> that P points to
 will be destroyed when the preupdate callback returns.</p>
 
-<p>The <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_new(D,N,P)</a> interface writes into P a pointer to
+<p>The <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_new(D,N,P)</a> interface writes into P a pointer to
 a <a href="../c3ref/value.html">protected sqlite3_value</a> that contains the value of the Nth column of
 the table row after it is updated.  The N parameter must be between 0
 and one less than the number of columns or the behavior will be
@@ -189,11 +190,20 @@ preupdate callbacks; if it is used by an SQLITE_DELETE callback then the
 behavior is undefined.  The <a href="../c3ref/value.html">sqlite3_value</a> that P points to
 will be destroyed when the preupdate callback returns.</p>
 
-<p>The <a href="../c3ref/preupdate_count.html">sqlite3_preupdate_depth(D)</a> interface returns 0 if the preupdate
+<p>The <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_depth(D)</a> interface returns 0 if the preupdate
 callback was invoked as a result of a direct insert, update, or delete
 operation; or 1 for inserts, updates, or deletes invoked by top-level
 triggers; or 2 for changes resulting from triggers called by top-level
 triggers; and so forth.</p>
+
+<p>When the <a href="../c3ref/blob_write.html">sqlite3_blob_write()</a> API is used to update a blob column,
+the pre-update hook is invoked with SQLITE_DELETE. This is because the
+in this case the new values are not available. In this case, when a
+callback made with op==SQLITE_DELETE is actuall a write using the
+sqlite3_blob_write() API, the <a href="../c3ref/preupdate_blobwrite.html">sqlite3_preupdate_blobwrite()</a> returns
+the index of the column being written. In other cases, where the
+pre-update hook is being invoked for some other reason, including a
+regular DELETE, sqlite3_preupdate_blobwrite() returns -1.</p>
 
 <p>See also:  <a href="../c3ref/update_hook.html">sqlite3_update_hook()</a>
 </p><p>See also lists of

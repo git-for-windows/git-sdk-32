@@ -2,7 +2,7 @@
 mingw-w64-i686-glib2
 
 %VERSION%
-2.68.3-2
+2.68.3-3
 
 %BASE%
 mingw-w64-glib2
@@ -17,16 +17,16 @@ https://www.gtk.org/
 any
 
 %BUILDDATE%
-1626146365
+1626531616
 
 %INSTALLDATE%
-1626491257
+1626577753
 
 %PACKAGER%
-CI (msys2-autobuild/37d15cdc/1024782032)
+CI (msys2-autobuild/788340e1/1040253534)
 
 %SIZE%
-24583897
+24585555
 
 %REASON%
 1

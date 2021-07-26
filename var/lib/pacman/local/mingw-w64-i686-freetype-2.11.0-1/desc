@@ -2,7 +2,7 @@
 mingw-w64-i686-freetype
 
 %VERSION%
-2.10.4-4
+2.11.0-1
 
 %BASE%
 mingw-w64-freetype
@@ -17,16 +17,16 @@ https://www.freetype.org/
 any
 
 %BUILDDATE%
-1624914273
+1627024414
 
 %INSTALLDATE%
-1625022422
+1627268830
 
 %PACKAGER%
-CI (msys2-autobuild/d8c11058/980421312)
+CI (msys2-autobuild/be1f0f71/1058846449)
 
 %SIZE%
-2739961
+2742124
 
 %REASON%
 1

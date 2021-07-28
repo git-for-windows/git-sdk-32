@@ -2,7 +2,7 @@
 mingw-w64-i686-lzo2
 
 %VERSION%
-2.10-1
+2.10-2
 
 %BASE%
 mingw-w64-lzo2
@@ -11,22 +11,22 @@ mingw-w64-lzo2
 Portable lossless data compression library (mingw-w64)
 
 %URL%
-http://www.oberhumer.com/opensource/lzo
+https://www.oberhumer.com/opensource/lzo
 
 %ARCH%
 any
 
 %BUILDDATE%
-1488459433
+1627369542
 
 %INSTALLDATE%
-1488534856
+1627441649
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2-autobuild/51666786/1070199081)
 
 %SIZE%
-638976
+635976
 
 %REASON%
 1

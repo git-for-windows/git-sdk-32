@@ -1149,6 +1149,8 @@ mingw32/i686-w64-mingw32/include/processtopologyapi.h
 mingw32/i686-w64-mingw32/include/profile.h
 mingw32/i686-w64-mingw32/include/profileapi.h
 mingw32/i686-w64-mingw32/include/profinfo.h
+mingw32/i686-w64-mingw32/include/proofofpossessioncookieinfo.h
+mingw32/i686-w64-mingw32/include/proofofpossessioncookieinfo.idl
 mingw32/i686-w64-mingw32/include/propidl.h
 mingw32/i686-w64-mingw32/include/propidl.idl
 mingw32/i686-w64-mingw32/include/propkey.h

@@ -2,7 +2,7 @@
 subversion
 
 %VERSION%
-1.14.0-3
+1.14.0-4
 
 %BASE%
 subversion
@@ -17,16 +17,16 @@ https://subversion.apache.org/
 i686
 
 %BUILDDATE%
-1594123903
+1628089235
 
 %INSTALLDATE%
-1594147798
+1628132910
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-20487502
+20178815
 
 %GROUPS%
 VCS

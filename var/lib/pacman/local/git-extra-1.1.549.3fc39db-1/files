@@ -14,6 +14,7 @@ mingw32/
 mingw32/bin/
 mingw32/bin/blocked-file-util.exe
 mingw32/bin/create-shortcut.exe
+mingw32/bin/git-askpass.exe
 mingw32/bin/git-askyesno.exe
 mingw32/bin/git-credential-helper-selector.exe
 mingw32/bin/git-update-git-for-windows

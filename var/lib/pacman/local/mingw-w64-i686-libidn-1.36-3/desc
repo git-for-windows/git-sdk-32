@@ -2,7 +2,7 @@
 mingw-w64-i686-libidn
 
 %VERSION%
-1.36-2
+1.36-3
 
 %BASE%
 mingw-w64-libidn
@@ -17,13 +17,13 @@ https://www.gnu.org/software/libidn
 any
 
 %BUILDDATE%
-1628731689
+1629019185
 
 %INSTALLDATE%
-1628824059
+1629083219
 
 %PACKAGER%
-CI (msys2-autobuild/d028d3ac/1122122908)
+CI (msys2-autobuild/d028d3ac/1132227544)
 
 %SIZE%
 919221

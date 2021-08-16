@@ -2,7 +2,7 @@
 mingw-w64-i686-libzip
 
 %VERSION%
-1.7.3-2
+1.7.3-3
 
 %BASE%
 mingw-w64-libzip
@@ -17,13 +17,13 @@ https://libzip.org
 any
 
 %BUILDDATE%
-1628729938
+1629021954
 
 %INSTALLDATE%
-1628824059
+1629083219
 
 %PACKAGER%
-CI (msys2-autobuild/d028d3ac/1122122908)
+CI (msys2-autobuild/d028d3ac/1132227544)
 
 %SIZE%
 1295452

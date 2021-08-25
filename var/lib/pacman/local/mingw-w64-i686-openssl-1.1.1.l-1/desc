@@ -2,7 +2,7 @@
 mingw-w64-i686-openssl
 
 %VERSION%
-1.1.1.k-1
+1.1.1.l-1
 
 %BASE%
 mingw-w64-openssl
@@ -17,16 +17,16 @@ https://www.openssl.org
 any
 
 %BUILDDATE%
-1616684200
+1629816338
 
 %INSTALLDATE%
-1616728119
+1629860920
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-84562437
+84436983
 
 %LICENSE%
 BSD

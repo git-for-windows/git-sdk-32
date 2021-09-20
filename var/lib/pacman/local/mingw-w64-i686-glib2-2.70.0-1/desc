@@ -2,7 +2,7 @@
 mingw-w64-i686-glib2
 
 %VERSION%
-2.68.4-1
+2.70.0-1
 
 %BASE%
 mingw-w64-glib2
@@ -11,22 +11,22 @@ mingw-w64-glib2
 Common C routines used by GTK+ 3 and other libs (mingw-w64)
 
 %URL%
-https://www.gtk.org/
+https://gitlab.gnome.org/GNOME/glib
 
 %ARCH%
 any
 
 %BUILDDATE%
-1629474124
+1631976875
 
 %INSTALLDATE%
-1629688104
+1632107358
 
 %PACKAGER%
-CI (msys2-autobuild/b4c25901/1149946489)
+CI (msys2-autobuild/9c67f65b/1248772735)
 
 %SIZE%
-24564741
+24701349
 
 %REASON%
 1

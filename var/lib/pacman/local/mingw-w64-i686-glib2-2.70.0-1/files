@@ -132,6 +132,7 @@ mingw32/include/glib-2.0/gio/gpermission.h
 mingw32/include/glib-2.0/gio/gpollableinputstream.h
 mingw32/include/glib-2.0/gio/gpollableoutputstream.h
 mingw32/include/glib-2.0/gio/gpollableutils.h
+mingw32/include/glib-2.0/gio/gpowerprofilemonitor.h
 mingw32/include/glib-2.0/gio/gpropertyaction.h
 mingw32/include/glib-2.0/gio/gproxy.h
 mingw32/include/glib-2.0/gio/gproxyaddress.h
@@ -222,6 +223,7 @@ mingw32/include/glib-2.0/glib/gi18n.h
 mingw32/include/glib-2.0/glib/giochannel.h
 mingw32/include/glib-2.0/glib/gkeyfile.h
 mingw32/include/glib-2.0/glib/glib-autocleanups.h
+mingw32/include/glib-2.0/glib/glib-typeof.h
 mingw32/include/glib-2.0/glib/glist.h
 mingw32/include/glib-2.0/glib/gmacros.h
 mingw32/include/glib-2.0/glib/gmain.h

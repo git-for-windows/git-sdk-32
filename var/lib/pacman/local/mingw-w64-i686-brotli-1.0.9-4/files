@@ -12,11 +12,11 @@ mingw32/include/brotli/encode.h
 mingw32/include/brotli/port.h
 mingw32/include/brotli/types.h
 mingw32/lib/
-mingw32/lib/libbrotlicommon-static.a
+mingw32/lib/libbrotlicommon.a
 mingw32/lib/libbrotlicommon.dll.a
-mingw32/lib/libbrotlidec-static.a
+mingw32/lib/libbrotlidec.a
 mingw32/lib/libbrotlidec.dll.a
-mingw32/lib/libbrotlienc-static.a
+mingw32/lib/libbrotlienc.a
 mingw32/lib/libbrotlienc.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/libbrotlicommon.pc

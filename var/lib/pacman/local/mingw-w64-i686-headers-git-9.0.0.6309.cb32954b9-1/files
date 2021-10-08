@@ -1075,6 +1075,7 @@ mingw32/i686-w64-mingw32/include/ntsecapi.h
 mingw32/i686-w64-mingw32/include/ntsecpkg.h
 mingw32/i686-w64-mingw32/include/ntstatus.h
 mingw32/i686-w64-mingw32/include/ntverp.h
+mingw32/i686-w64-mingw32/include/nvme.h
 mingw32/i686-w64-mingw32/include/oaidl.h
 mingw32/i686-w64-mingw32/include/oaidl.idl
 mingw32/i686-w64-mingw32/include/objbase.h

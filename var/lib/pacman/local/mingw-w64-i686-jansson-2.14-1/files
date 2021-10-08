@@ -10,4 +10,8 @@ mingw32/lib/libjansson.a
 mingw32/lib/libjansson.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/jansson.pc
+mingw32/share/
+mingw32/share/licenses/
+mingw32/share/licenses/jansson/
+mingw32/share/licenses/jansson/LICENSE
 

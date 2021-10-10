@@ -321,6 +321,7 @@ mingw32/i686-w64-mingw32/include/ddk/
 mingw32/i686-w64-mingw32/include/ddk/acpiioct.h
 mingw32/i686-w64-mingw32/include/ddk/afilter.h
 mingw32/i686-w64-mingw32/include/ddk/amtvuids.h
+mingw32/i686-w64-mingw32/include/ddk/ata.h
 mingw32/i686-w64-mingw32/include/ddk/atm.h
 mingw32/i686-w64-mingw32/include/ddk/bdasup.h
 mingw32/i686-w64-mingw32/include/ddk/classpnp.h

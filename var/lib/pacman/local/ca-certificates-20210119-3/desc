@@ -2,7 +2,7 @@
 ca-certificates
 
 %VERSION%
-20210119-1
+20210119-3
 
 %BASE%
 ca-certificates
@@ -17,16 +17,16 @@ https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 any
 
 %BUILDDATE%
-1619556353
+1633984517
 
 %INSTALLDATE%
-1625540927
+1634008013
 
 %PACKAGER%
-Unknown Packager
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-892844
+869702
 
 %REASON%
 1

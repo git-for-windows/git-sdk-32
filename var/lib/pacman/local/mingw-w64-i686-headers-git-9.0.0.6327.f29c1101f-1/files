@@ -746,6 +746,7 @@ mingw32/i686-w64-mingw32/include/invkprxy.h
 mingw32/i686-w64-mingw32/include/io.h
 mingw32/i686-w64-mingw32/include/ioapiset.h
 mingw32/i686-w64-mingw32/include/ioevent.h
+mingw32/i686-w64-mingw32/include/ioringapi.h
 mingw32/i686-w64-mingw32/include/ipexport.h
 mingw32/i686-w64-mingw32/include/iphlpapi.h
 mingw32/i686-w64-mingw32/include/ipifcons.h
@@ -1067,6 +1068,7 @@ mingw32/i686-w64-mingw32/include/ntdsbcli.h
 mingw32/i686-w64-mingw32/include/ntdsbmsg.h
 mingw32/i686-w64-mingw32/include/ntgdi.h
 mingw32/i686-w64-mingw32/include/ntiologc.h
+mingw32/i686-w64-mingw32/include/ntioring_x.h
 mingw32/i686-w64-mingw32/include/ntldap.h
 mingw32/i686-w64-mingw32/include/ntmsapi.h
 mingw32/i686-w64-mingw32/include/ntmsmli.h

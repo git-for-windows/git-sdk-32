@@ -2,7 +2,7 @@
 mingw-w64-i686-gdb
 
 %VERSION%
-10.2-2
+11.1-1
 
 %BASE%
 mingw-w64-gdb
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gdb/
 any
 
 %BUILDDATE%
-1626138390
+1635111555
 
 %INSTALLDATE%
-1626491256
+1635217633
 
 %PACKAGER%
-CI (msys2-autobuild/37d15cdc/1024782032)
+CI (msys2-autobuild/067f5c1e/1378574662)
 
 %SIZE%
-14897300
+15656867
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -46,4 +46,7 @@ mingw-w64-i686-python
 mingw-w64-i686-readline
 mingw-w64-i686-xxhash
 mingw-w64-i686-zlib
+
+%OPTDEPENDS%
+mingw-w64-i686-python-pygments: for syntax highlighting
 

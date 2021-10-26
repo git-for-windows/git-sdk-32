@@ -567,6 +567,7 @@ mingw32/share/zoneinfo/Pacific/Guadalcanal
 mingw32/share/zoneinfo/Pacific/Guam
 mingw32/share/zoneinfo/Pacific/Honolulu
 mingw32/share/zoneinfo/Pacific/Johnston
+mingw32/share/zoneinfo/Pacific/Kanton
 mingw32/share/zoneinfo/Pacific/Kiritimati
 mingw32/share/zoneinfo/Pacific/Kosrae
 mingw32/share/zoneinfo/Pacific/Kwajalein
@@ -1157,6 +1158,7 @@ mingw32/share/zoneinfo/posix/Pacific/Guadalcanal
 mingw32/share/zoneinfo/posix/Pacific/Guam
 mingw32/share/zoneinfo/posix/Pacific/Honolulu
 mingw32/share/zoneinfo/posix/Pacific/Johnston
+mingw32/share/zoneinfo/posix/Pacific/Kanton
 mingw32/share/zoneinfo/posix/Pacific/Kiritimati
 mingw32/share/zoneinfo/posix/Pacific/Kosrae
 mingw32/share/zoneinfo/posix/Pacific/Kwajalein
@@ -1775,6 +1777,7 @@ mingw32/share/zoneinfo/right/Pacific/Guadalcanal
 mingw32/share/zoneinfo/right/Pacific/Guam
 mingw32/share/zoneinfo/right/Pacific/Honolulu
 mingw32/share/zoneinfo/right/Pacific/Johnston
+mingw32/share/zoneinfo/right/Pacific/Kanton
 mingw32/share/zoneinfo/right/Pacific/Kiritimati
 mingw32/share/zoneinfo/right/Pacific/Kosrae
 mingw32/share/zoneinfo/right/Pacific/Kwajalein

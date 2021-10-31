@@ -135,7 +135,6 @@ mingw32/libexec/git-core/git-push.exe
 mingw32/libexec/git-core/git-quiltimport
 mingw32/libexec/git-core/git-range-diff.exe
 mingw32/libexec/git-core/git-read-tree.exe
-mingw32/libexec/git-core/git-rebase--preserve-merges
 mingw32/libexec/git-core/git-rebase.exe
 mingw32/libexec/git-core/git-receive-pack.exe
 mingw32/libexec/git-core/git-reflog.exe

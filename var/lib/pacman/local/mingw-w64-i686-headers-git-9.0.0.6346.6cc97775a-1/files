@@ -117,8 +117,17 @@ mingw32/i686-w64-mingw32/include/bemapiset.h
 mingw32/i686-w64-mingw32/include/bh.h
 mingw32/i686-w64-mingw32/include/bidispl.h
 mingw32/i686-w64-mingw32/include/bits.h
+mingw32/i686-w64-mingw32/include/bits.idl
 mingw32/i686-w64-mingw32/include/bits1_5.h
+mingw32/i686-w64-mingw32/include/bits1_5.idl
 mingw32/i686-w64-mingw32/include/bits2_0.h
+mingw32/i686-w64-mingw32/include/bits2_0.idl
+mingw32/i686-w64-mingw32/include/bits2_5.h
+mingw32/i686-w64-mingw32/include/bits2_5.idl
+mingw32/i686-w64-mingw32/include/bits3_0.h
+mingw32/i686-w64-mingw32/include/bits3_0.idl
+mingw32/i686-w64-mingw32/include/bits5_0.h
+mingw32/i686-w64-mingw32/include/bits5_0.idl
 mingw32/i686-w64-mingw32/include/bitscfg.h
 mingw32/i686-w64-mingw32/include/bitsmsg.h
 mingw32/i686-w64-mingw32/include/blberr.h
@@ -572,6 +581,7 @@ mingw32/i686-w64-mingw32/include/evntrace.h
 mingw32/i686-w64-mingw32/include/evr.h
 mingw32/i686-w64-mingw32/include/evr.idl
 mingw32/i686-w64-mingw32/include/evr9.h
+mingw32/i686-w64-mingw32/include/evr9.idl
 mingw32/i686-w64-mingw32/include/exchform.h
 mingw32/i686-w64-mingw32/include/excpt.h
 mingw32/i686-w64-mingw32/include/exdisp.h
@@ -1674,6 +1684,8 @@ mingw32/i686-w64-mingw32/include/wmsbuffer.idl
 mingw32/i686-w64-mingw32/include/wmsdk.h
 mingw32/i686-w64-mingw32/include/wmsdkidl.h
 mingw32/i686-w64-mingw32/include/wmsdkidl.idl
+mingw32/i686-w64-mingw32/include/wmsecure.h
+mingw32/i686-w64-mingw32/include/wmsecure.idl
 mingw32/i686-w64-mingw32/include/wnnc.h
 mingw32/i686-w64-mingw32/include/wow64apiset.h
 mingw32/i686-w64-mingw32/include/wownt16.h

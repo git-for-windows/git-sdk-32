@@ -43,6 +43,7 @@ mingw32/i686-w64-mingw32/lib/libavicap32.a
 mingw32/i686-w64-mingw32/lib/libavifil32.a
 mingw32/i686-w64-mingw32/lib/libavrt.a
 mingw32/i686-w64-mingw32/lib/libbcrypt.a
+mingw32/i686-w64-mingw32/lib/libbits.a
 mingw32/i686-w64-mingw32/lib/libbluetoothapis.a
 mingw32/i686-w64-mingw32/lib/libbootvid.a
 mingw32/i686-w64-mingw32/lib/libbrowcli.a
@@ -274,6 +275,7 @@ mingw32/i686-w64-mingw32/lib/libntdllcrt.a
 mingw32/i686-w64-mingw32/lib/libntdsapi.a
 mingw32/i686-w64-mingw32/lib/libntmsapi.a
 mingw32/i686-w64-mingw32/lib/libntoskrnl.a
+mingw32/i686-w64-mingw32/lib/libntquery.a
 mingw32/i686-w64-mingw32/lib/libodbc32.a
 mingw32/i686-w64-mingw32/lib/libodbccp32.a
 mingw32/i686-w64-mingw32/lib/libole32.a
@@ -301,6 +303,7 @@ mingw32/i686-w64-mingw32/lib/libprntvpt.a
 mingw32/i686-w64-mingw32/lib/libpropsys.a
 mingw32/i686-w64-mingw32/lib/libpsapi.a
 mingw32/i686-w64-mingw32/lib/libquartz.a
+mingw32/i686-w64-mingw32/lib/libquery.a
 mingw32/i686-w64-mingw32/lib/libqutil.a
 mingw32/i686-w64-mingw32/lib/libqwave.a
 mingw32/i686-w64-mingw32/lib/librapi.a

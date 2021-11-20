@@ -85,6 +85,7 @@ usr/share/man/man3/curl_url_cleanup.3.gz
 usr/share/man/man3/curl_url_dup.3.gz
 usr/share/man/man3/curl_url_get.3.gz
 usr/share/man/man3/curl_url_set.3.gz
+usr/share/man/man3/curl_url_strerror.3.gz
 usr/share/man/man3/curl_version.3.gz
 usr/share/man/man3/curl_version_info.3.gz
 usr/share/man/man3/CURLINFO_ACTIVESOCKET.3.gz
@@ -296,6 +297,7 @@ usr/share/man/man3/CURLOPT_MAXAGE_CONN.3.gz
 usr/share/man/man3/CURLOPT_MAXCONNECTS.3.gz
 usr/share/man/man3/CURLOPT_MAXFILESIZE.3.gz
 usr/share/man/man3/CURLOPT_MAXFILESIZE_LARGE.3.gz
+usr/share/man/man3/CURLOPT_MAXLIFETIME_CONN.3.gz
 usr/share/man/man3/CURLOPT_MAXREDIRS.3.gz
 usr/share/man/man3/CURLOPT_MIMEPOST.3.gz
 usr/share/man/man3/CURLOPT_NETRC.3.gz
@@ -321,6 +323,8 @@ usr/share/man/man3/CURLOPT_POSTQUOTE.3.gz
 usr/share/man/man3/CURLOPT_POSTREDIR.3.gz
 usr/share/man/man3/CURLOPT_PRE_PROXY.3.gz
 usr/share/man/man3/CURLOPT_PREQUOTE.3.gz
+usr/share/man/man3/CURLOPT_PREREQDATA.3.gz
+usr/share/man/man3/CURLOPT_PREREQFUNCTION.3.gz
 usr/share/man/man3/CURLOPT_PRIVATE.3.gz
 usr/share/man/man3/CURLOPT_PROGRESSDATA.3.gz
 usr/share/man/man3/CURLOPT_PROGRESSFUNCTION.3.gz
@@ -392,6 +396,7 @@ usr/share/man/man3/CURLOPT_SOCKS5_GSSAPI_SERVICE.3.gz
 usr/share/man/man3/CURLOPT_SSH_AUTH_TYPES.3.gz
 usr/share/man/man3/CURLOPT_SSH_COMPRESSION.3.gz
 usr/share/man/man3/CURLOPT_SSH_HOST_PUBLIC_KEY_MD5.3.gz
+usr/share/man/man3/CURLOPT_SSH_HOST_PUBLIC_KEY_SHA256.3.gz
 usr/share/man/man3/CURLOPT_SSH_KEYDATA.3.gz
 usr/share/man/man3/CURLOPT_SSH_KEYFUNCTION.3.gz
 usr/share/man/man3/CURLOPT_SSH_KNOWNHOSTS.3.gz

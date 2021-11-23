@@ -2,7 +2,7 @@
 mingw-w64-i686-libjpeg-turbo
 
 %VERSION%
-2.1.1-1
+2.1.2-2
 
 %BASE%
 mingw-w64-libjpeg-turbo
@@ -17,16 +17,16 @@ https://libjpeg-turbo.virtualgl.org/
 any
 
 %BUILDDATE%
-1630184903
+1637525516
 
 %INSTALLDATE%
-1630379268
+1637636827
 
 %PACKAGER%
-CI (msys2-autobuild/b738d090/1177829250)
+CI (msys2-autobuild/310a1fa4/1487636634)
 
 %SIZE%
-4848490
+4779235
 
 %REASON%
 1

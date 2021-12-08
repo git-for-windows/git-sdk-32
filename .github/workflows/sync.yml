@@ -33,7 +33,7 @@ jobs:
           repository: git-for-windows/build-extra
       - name: please sync --only-32-bit
         shell: bash
-        run: sh -x usr/src/build-extra/please.sh sync --only-32-bit
+        run: sh -x usr/src/build-extra/please.sh sync --force --only-32-bit
       - name: autorebase
         run: .\autorebase.bat
       - name: use git-sdk-32's Bash

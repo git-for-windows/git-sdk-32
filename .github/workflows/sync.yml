@@ -25,8 +25,6 @@ jobs:
         with:
           persist-credentials: true
           token: ${{ secrets.PUSH_TOKEN }}
-      - name: use git-sdk-32's Bash
-        run: "usr\\bin\\bash.exe -lc 'cygpath -aw /usr/bin >>$GITHUB_PATH && cygpath -aw /mingw32/bin >>$GITHUB_PATH'"
       - name: clone build-extra
         uses: actions/checkout@v2
         with:
@@ -35,9 +33,11 @@ jobs:
           repository: git-for-windows/build-extra
       - name: please sync --only-32-bit
         shell: bash
-        run: sh -x /usr/src/build-extra/please.sh sync --only-32-bit
+        run: sh -x usr/src/build-extra/please.sh sync --only-32-bit
       - name: autorebase
         run: .\autorebase.bat
+      - name: use git-sdk-32's Bash
+        run: "usr\\bin\\bash.exe -lc 'cygpath -aw /usr/bin >>$GITHUB_PATH && cygpath -aw /mingw32/bin >>$GITHUB_PATH'"
       - name: commit & push 32-bit SDK
         shell: bash
         run: |

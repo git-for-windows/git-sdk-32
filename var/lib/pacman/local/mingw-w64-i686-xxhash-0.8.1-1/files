@@ -14,6 +14,8 @@ mingw32/lib/cmake/xxHash/xxHashConfigVersion.cmake
 mingw32/lib/cmake/xxHash/xxHashTargets-release.cmake
 mingw32/lib/cmake/xxHash/xxHashTargets.cmake
 mingw32/lib/libxxhash.dll.a
+mingw32/lib/pkgconfig/
+mingw32/lib/pkgconfig/libxxhash.pc
 mingw32/share/
 mingw32/share/man/
 mingw32/share/man/man1/

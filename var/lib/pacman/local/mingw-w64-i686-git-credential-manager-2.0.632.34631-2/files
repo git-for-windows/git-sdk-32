@@ -1,10 +1,10 @@
 %FILES%
 mingw32/
 mingw32/doc/
-mingw32/doc/git-credential-manager-core/
-mingw32/doc/git-credential-manager-core/LICENSE
-mingw32/doc/git-credential-manager-core/NOTICE
-mingw32/doc/git-credential-manager-core/README.md
+mingw32/doc/git-credential-manager/
+mingw32/doc/git-credential-manager/LICENSE
+mingw32/doc/git-credential-manager/NOTICE
+mingw32/doc/git-credential-manager/README.md
 mingw32/libexec/
 mingw32/libexec/git-core/
 mingw32/libexec/git-core/Atlassian.Bitbucket.dll

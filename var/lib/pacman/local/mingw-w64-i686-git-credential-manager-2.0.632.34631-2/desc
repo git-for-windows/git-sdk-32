@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-git-credential-manager-core
+mingw-w64-i686-git-credential-manager
 
 %VERSION%
-2.0.605.12951-1
+2.0.632.34631-2
 
 %BASE%
-mingw-w64-git-credential-manager-core
+mingw-w64-git-credential-manager
 
 %DESC%
 Credential Manager for Git
@@ -17,16 +17,16 @@ Credential Manager for Git
 any
 
 %BUILDDATE%
-1637141658
+1640189288
 
 %INSTALLDATE%
-1637204795
+1640190730
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-3995547
+4001060
 
 %GROUPS%
 VCS
@@ -36,4 +36,10 @@ MIT
 
 %VALIDATION%
 pgp
+
+%REPLACES%
+mingw-w64-i686-git-credential-manager-core
+
+%CONFLICTS%
+mingw-w64-i686-git-credential-manager-core
 

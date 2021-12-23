@@ -2,7 +2,7 @@
 mingw-w64-i686-zstd
 
 %VERSION%
-1.5.0-1
+1.5.1-1
 
 %BASE%
 mingw-w64-zstd
@@ -17,16 +17,16 @@ https://facebook.github.io/zstd/
 any
 
 %BUILDDATE%
-1621058195
+1640112893
 
 %INSTALLDATE%
-1621220895
+1640229359
 
 %PACKAGER%
-CI (msys2-autobuild/f6d048f2/844284063)
+CI (msys2-autobuild/456f0a1e/1608211836)
 
 %SIZE%
-3811327
+3382322
 
 %REASON%
 1

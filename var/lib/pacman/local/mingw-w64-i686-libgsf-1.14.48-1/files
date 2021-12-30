@@ -194,6 +194,9 @@ mingw32/share/locale/ml/LC_MESSAGES/libgsf.mo
 mingw32/share/locale/nb/
 mingw32/share/locale/nb/LC_MESSAGES/
 mingw32/share/locale/nb/LC_MESSAGES/libgsf.mo
+mingw32/share/locale/nl/
+mingw32/share/locale/nl/LC_MESSAGES/
+mingw32/share/locale/nl/LC_MESSAGES/libgsf.mo
 mingw32/share/locale/nn/
 mingw32/share/locale/nn/LC_MESSAGES/
 mingw32/share/locale/nn/LC_MESSAGES/libgsf.mo

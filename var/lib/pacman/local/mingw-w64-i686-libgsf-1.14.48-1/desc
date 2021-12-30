@@ -2,7 +2,7 @@
 mingw-w64-i686-libgsf
 
 %VERSION%
-1.14.47-3
+1.14.48-1
 
 %BASE%
 mingw-w64-libgsf
@@ -17,16 +17,16 @@ https://gitlab.gnome.org/GNOME/libgsf.git
 any
 
 %BUILDDATE%
-1638821590
+1640686010
 
 %INSTALLDATE%
-1639019761
+1640834133
 
 %PACKAGER%
-CI (msys2-autobuild/8ecac528/1546394732)
+CI (msys2-autobuild/f49b8afb/1630018455)
 
 %SIZE%
-2454283
+2477438
 
 %REASON%
 1
@@ -39,6 +39,7 @@ LGPL
 pgp
 
 %DEPENDS%
+mingw-w64-i686-bzip2
 mingw-w64-i686-glib2
 mingw-w64-i686-gdk-pixbuf2
 mingw-w64-i686-libxml2

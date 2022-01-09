@@ -6,6 +6,7 @@ mingw32/include/
 mingw32/include/Lerc_c_api.h
 mingw32/include/Lerc_types.h
 mingw32/lib/
+mingw32/lib/libLerc.a
 mingw32/lib/libLerc.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/Lerc.pc

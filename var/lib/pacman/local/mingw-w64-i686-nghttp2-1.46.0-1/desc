@@ -2,7 +2,7 @@
 mingw-w64-i686-nghttp2
 
 %VERSION%
-1.45.1-1
+1.46.0-1
 
 %BASE%
 mingw-w64-nghttp2
@@ -17,16 +17,16 @@ https://nghttp2.org/
 any
 
 %BUILDDATE%
-1632389590
+1641802650
 
 %INSTALLDATE%
-1633316903
+1641893755
 
 %PACKAGER%
-CI (msys2-autobuild/9c67f65b/1265175692)
+CI (msys2-autobuild/f49b8afb/1676386814)
 
 %SIZE%
-967115
+972455
 
 %LICENSE%
 MIT

@@ -2,7 +2,7 @@
 mingw-w64-i686-libwebp
 
 %VERSION%
-1.2.1-1
+1.2.2-1
 
 %BASE%
 mingw-w64-libwebp
@@ -17,16 +17,16 @@ https://developers.google.com/speed/webp/
 any
 
 %BUILDDATE%
-1629394515
+1643091518
 
 %INSTALLDATE%
-1629515257
+1643167007
 
 %PACKAGER%
-CI (msys2-autobuild/d028d3ac/1147886489)
+CI (msys2/msys2-autobuild/3e28396a/1743914039)
 
 %SIZE%
-3136889
+3131084
 
 %REASON%
 1

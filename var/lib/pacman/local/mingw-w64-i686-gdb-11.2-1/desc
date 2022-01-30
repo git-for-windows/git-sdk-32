@@ -2,7 +2,7 @@
 mingw-w64-i686-gdb
 
 %VERSION%
-11.1-2
+11.2-1
 
 %BASE%
 mingw-w64-gdb
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gdb/
 any
 
 %BUILDDATE%
-1635211555
+1643156930
 
 %INSTALLDATE%
-1635304129
+1643512531
 
 %PACKAGER%
-CI (msys2-autobuild/a4ab5bc2/1383492785)
+CI (msys2/msys2-autobuild/8b9b746c/1748406001)
 
 %SIZE%
-15656867
+15711856
 
 %GROUPS%
 mingw-w64-i686-toolchain

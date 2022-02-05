@@ -2,7 +2,7 @@
 mingw-w64-i686-fontconfig
 
 %VERSION%
-2.13.95-1
+2.13.96-1
 
 %BASE%
 mingw-w64-fontconfig
@@ -17,16 +17,16 @@ https://wiki.freedesktop.org/www/Software/fontconfig/
 any
 
 %BUILDDATE%
-1643909051
+1643983290
 
 %INSTALLDATE%
-1643944525
+1644030853
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/8b9b746c/1790818446)
+CI (msys2/msys2-autobuild/8b9b746c/1794632084)
 
 %SIZE%
-1378865
+1379747
 
 %REASON%
 1

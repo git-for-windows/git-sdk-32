@@ -20,4 +20,8 @@ mingw32/lib/libfreeglut.dll.a
 mingw32/lib/libfreeglut_static.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/freeglut.pc
+mingw32/share/
+mingw32/share/licenses/
+mingw32/share/licenses/freeglut/
+mingw32/share/licenses/freeglut/LICENSE
 

@@ -2,7 +2,7 @@
 mingw-w64-i686-freeglut
 
 %VERSION%
-3.2.1-2
+3.2.2-1
 
 %BASE%
 mingw-w64-freeglut
@@ -17,16 +17,16 @@ https://freeglut.sourceforge.io/
 any
 
 %BUILDDATE%
-1616966606
+1644351029
 
 %INSTALLDATE%
-1617073814
+1644462921
 
 %PACKAGER%
-CI (msys2-autobuild/53312781/695892525)
+CI (msys2/msys2-autobuild/8b9b746c/1814438724)
 
 %SIZE%
-1047728
+1082730
 
 %REASON%
 1

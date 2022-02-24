@@ -1,0 +1,10 @@
+prefix=/mingw32
+exec_prefix=${prefix}
+includedir=/mingw32/include
+libdir=/mingw32/lib
+
+Name: libdeflate
+Description: Fast implementation of DEFLATE, zlib, and gzip
+Version: 1.10
+Libs: -L${libdir} -ldeflate
+Cflags: -I${includedir}

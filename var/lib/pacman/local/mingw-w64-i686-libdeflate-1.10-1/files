@@ -9,6 +9,8 @@ mingw32/include/libdeflate.h
 mingw32/lib/
 mingw32/lib/libdeflate.a
 mingw32/lib/libdeflate.dll.a
+mingw32/lib/pkgconfig/
+mingw32/lib/pkgconfig/libdeflate.pc
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/libdeflate/

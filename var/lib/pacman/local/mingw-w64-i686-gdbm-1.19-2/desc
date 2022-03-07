@@ -2,7 +2,7 @@
 mingw-w64-i686-gdbm
 
 %VERSION%
-1.19-1
+1.19-2
 
 %BASE%
 mingw-w64-gdbm
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gdbm/gdbm.html
 any
 
 %BUILDDATE%
-1609030895
+1646562833
 
 %INSTALLDATE%
-1609902460
+1646623201
 
 %PACKAGER%
-CI (msys2-autobuild/03194d7f/446272953)
+CI (msys2/msys2-autobuild/7e96898a/1940817960)
 
 %SIZE%
-779797
+780903
 
 %REASON%
 1
@@ -41,4 +41,5 @@ pgp
 mingw-w64-i686-gcc-libs
 mingw-w64-i686-gettext
 mingw-w64-i686-libiconv
+mingw-w64-i686-readline
 

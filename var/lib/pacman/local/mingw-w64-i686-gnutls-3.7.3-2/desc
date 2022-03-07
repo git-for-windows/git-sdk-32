@@ -2,7 +2,7 @@
 mingw-w64-i686-gnutls
 
 %VERSION%
-3.7.3-1
+3.7.3-2
 
 %BASE%
 mingw-w64-gnutls
@@ -17,16 +17,16 @@ https://www.gnutls.org/
 any
 
 %BUILDDATE%
-1642681516
+1646393006
 
 %INSTALLDATE%
-1642821308
+1646623202
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/3e28396a/1723275641)
+CI (msys2/msys2-autobuild/451dca0a/1933396005)
 
 %SIZE%
-13394789
+13441693
 
 %LICENSE%
 GPL3
@@ -45,4 +45,5 @@ mingw-w64-i686-nettle>=3.6
 mingw-w64-i686-p11-kit>=0.23.1
 mingw-w64-i686-libunistring
 mingw-w64-i686-zlib
+mingw-w64-i686-libwinpthread-git
 

@@ -2,7 +2,7 @@
 mingw-w64-i686-spdylay
 
 %VERSION%
-1.4.0-3
+1.4.0-4
 
 %BASE%
 mingw-w64-spdylay
@@ -17,16 +17,16 @@ https://tatsuhiro-t.github.io/spdylay/
 any
 
 %BUILDDATE%
-1627408873
+1646508551
 
 %INSTALLDATE%
-1627441649
+1646623202
 
 %PACKAGER%
-CI (msys2-autobuild/51666786/1072169770)
+CI (msys2/msys2-autobuild/7e96898a/1938581577)
 
 %SIZE%
-393966
+399062
 
 %REASON%
 1
@@ -36,4 +36,7 @@ MIT
 
 %VALIDATION%
 pgp
+
+%DEPENDS%
+mingw-w64-i686-zlib
 

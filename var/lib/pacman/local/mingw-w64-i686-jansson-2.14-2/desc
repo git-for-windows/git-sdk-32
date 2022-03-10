@@ -2,7 +2,7 @@
 mingw-w64-i686-jansson
 
 %VERSION%
-2.14-1
+2.14-2
 
 %BASE%
 mingw-w64-jansson
@@ -17,20 +17,23 @@ https://www.digip.org/jansson/
 any
 
 %BUILDDATE%
-1633325951
+1646815077
 
 %INSTALLDATE%
-1633662549
+1646882400
 
 %PACKAGER%
-CI (msys2-autobuild/9c67f65b/1302286019)
+CI (msys2/msys2-autobuild/51e8ee9f/1956162903)
 
 %SIZE%
-236454
+239671
 
 %LICENSE%
 MIT
 
 %VALIDATION%
 pgp
+
+%DEPENDS%
+mingw-w64-i686-libwinpthread-git
 

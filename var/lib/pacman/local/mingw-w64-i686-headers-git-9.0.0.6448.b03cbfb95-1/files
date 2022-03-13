@@ -1587,6 +1587,7 @@ mingw32/include/wdstci.h
 mingw32/include/wdstpdi.h
 mingw32/include/wdstptmgmt.h
 mingw32/include/wdstptmgmt.idl
+mingw32/include/webauthn.h
 mingw32/include/werapi.h
 mingw32/include/wfext.h
 mingw32/include/wia.h

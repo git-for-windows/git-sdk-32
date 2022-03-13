@@ -383,6 +383,7 @@ mingw32/lib/libwdsimage.a
 mingw32/lib/libwdstptc.a
 mingw32/lib/libwdsupgcompl.a
 mingw32/lib/libwdsutil.a
+mingw32/lib/libwebauthn.a
 mingw32/lib/libwebsocket.a
 mingw32/lib/libwecapi.a
 mingw32/lib/libwer.a

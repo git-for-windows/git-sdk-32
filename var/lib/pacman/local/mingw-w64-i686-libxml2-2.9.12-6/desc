@@ -2,7 +2,7 @@
 mingw-w64-i686-libxml2
 
 %VERSION%
-2.9.12-5
+2.9.12-6
 
 %BASE%
 mingw-w64-libxml2
@@ -17,16 +17,16 @@ http://www.xmlsoft.org/
 any
 
 %BUILDDATE%
-1642616063
+1646938693
 
 %INSTALLDATE%
-1642648469
+1647141377
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/3e28396a/1719444263)
+CI (msys2/msys2-autobuild/51e8ee9f/1964940629)
 
 %SIZE%
-12424432
+12490426
 
 %REASON%
 1
@@ -42,4 +42,7 @@ mingw-w64-i686-gcc-libs
 mingw-w64-i686-gettext
 mingw-w64-i686-xz
 mingw-w64-i686-zlib
+
+%OPTDEPENDS%
+mingw-w64-i686-python: Python bindings
 

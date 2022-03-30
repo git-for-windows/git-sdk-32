@@ -1767,6 +1767,7 @@ mingw32/include/wtypesbase.h
 mingw32/include/wtypesbase.idl
 mingw32/include/wuapi.h
 mingw32/include/wuapi.idl
+mingw32/include/wuerror.h
 mingw32/include/xa.h
 mingw32/include/xapo.h
 mingw32/include/xapo.idl

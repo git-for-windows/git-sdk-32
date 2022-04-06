@@ -88,6 +88,7 @@ mingw32/libexec/git-core/git-gui--askyesno
 mingw32/libexec/git-core/git-gui.tcl
 mingw32/libexec/git-core/git-hash-object.exe
 mingw32/libexec/git-core/git-help.exe
+mingw32/libexec/git-core/git-hook.exe
 mingw32/libexec/git-core/git-http-backend.exe
 mingw32/libexec/git-core/git-http-fetch.exe
 mingw32/libexec/git-core/git-http-push.exe

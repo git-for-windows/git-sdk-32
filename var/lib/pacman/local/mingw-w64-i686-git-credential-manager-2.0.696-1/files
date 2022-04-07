@@ -20,6 +20,10 @@ mingw32/libexec/git-core/GitHub.dll
 mingw32/libexec/git-core/GitHub.UI.exe
 mingw32/libexec/git-core/GitHub.UI.exe.config
 mingw32/libexec/git-core/GitHub.UI.Shared.dll
+mingw32/libexec/git-core/GitLab.dll
+mingw32/libexec/git-core/GitLab.UI.exe
+mingw32/libexec/git-core/GitLab.UI.exe.config
+mingw32/libexec/git-core/GitLab.UI.Shared.dll
 mingw32/libexec/git-core/Microsoft.AzureRepos.dll
 mingw32/libexec/git-core/Microsoft.Identity.Client.Desktop.dll
 mingw32/libexec/git-core/Microsoft.Identity.Client.dll

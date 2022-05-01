@@ -147,6 +147,7 @@ mingw32/lib/libdinput.a
 mingw32/lib/libdinput8.a
 mingw32/lib/libdismapi.a
 mingw32/lib/libdlcapi.a
+mingw32/lib/libdloadhelper.a
 mingw32/lib/libdmoguids.a
 mingw32/lib/libdnsapi.a
 mingw32/lib/libdpapi.a

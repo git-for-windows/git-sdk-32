@@ -413,6 +413,7 @@ mingw32/include/ddstream.h
 mingw32/include/ddstream.idl
 mingw32/include/debugapi.h
 mingw32/include/delayimp.h
+mingw32/include/delayloadhandler.h
 mingw32/include/devenum.idl
 mingw32/include/devguid.h
 mingw32/include/devicetopology.h
@@ -1628,6 +1629,8 @@ mingw32/include/windows.storage.streams.h
 mingw32/include/windows.storage.streams.idl
 mingw32/include/windows.system.h
 mingw32/include/windows.system.idl
+mingw32/include/windows.system.power.h
+mingw32/include/windows.system.power.idl
 mingw32/include/windows.system.threading.h
 mingw32/include/windows.system.threading.idl
 mingw32/include/windowscontracts.h

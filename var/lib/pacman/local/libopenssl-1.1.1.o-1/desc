@@ -2,7 +2,7 @@
 libopenssl
 
 %VERSION%
-1.1.1.n-1
+1.1.1.o-1
 
 %BASE%
 openssl
@@ -17,16 +17,16 @@ https://www.openssl.org
 i686
 
 %BUILDDATE%
-1647372878
+1651604227
 
 %INSTALLDATE%
-1647400751
+1651636259
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2695715
+2695157
 
 %REASON%
 1

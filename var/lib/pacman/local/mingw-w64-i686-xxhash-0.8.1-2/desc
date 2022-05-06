@@ -2,7 +2,7 @@
 mingw-w64-i686-xxhash
 
 %VERSION%
-0.8.1-1
+0.8.1-2
 
 %BASE%
 mingw-w64-xxhash
@@ -17,16 +17,16 @@ https://github.com/Cyan4973/xxHash
 any
 
 %BUILDDATE%
-1639238833
+1651651655
 
 %INSTALLDATE%
-1639365329
+1651808404
 
 %PACKAGER%
-CI (msys2-autobuild/91bb7945/1567380900)
+CI (msys2/msys2-autobuild/4a5355f5/2268500640)
 
 %SIZE%
-431347
+435096
 
 %REASON%
 1

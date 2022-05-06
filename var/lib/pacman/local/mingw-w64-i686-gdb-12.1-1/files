@@ -35,6 +35,7 @@ mingw32/share/gdb/python/gdb/printer/__init__.py
 mingw32/share/gdb/python/gdb/printer/bound_registers.py
 mingw32/share/gdb/python/gdb/printing.py
 mingw32/share/gdb/python/gdb/prompt.py
+mingw32/share/gdb/python/gdb/styling.py
 mingw32/share/gdb/python/gdb/types.py
 mingw32/share/gdb/python/gdb/unwinder.py
 mingw32/share/gdb/python/gdb/xmethod.py

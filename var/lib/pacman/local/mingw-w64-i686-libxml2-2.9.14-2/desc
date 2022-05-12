@@ -2,7 +2,7 @@
 mingw-w64-i686-libxml2
 
 %VERSION%
-2.9.14-1
+2.9.14-2
 
 %BASE%
 mingw-w64-libxml2
@@ -17,13 +17,13 @@ http://www.xmlsoft.org/
 any
 
 %BUILDDATE%
-1651582696
+1652073025
 
 %INSTALLDATE%
-1651808405
+1652327067
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/4a5355f5/2263889700)
+CI (msys2/msys2-autobuild/745e5e2c/2292109847)
 
 %SIZE%
 12496649

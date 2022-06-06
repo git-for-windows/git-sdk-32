@@ -53,6 +53,7 @@ mingw32/include/nettle/memops.h
 mingw32/include/nettle/memxor.h
 mingw32/include/nettle/nettle-meta.h
 mingw32/include/nettle/nettle-types.h
+mingw32/include/nettle/nist-keywrap.h
 mingw32/include/nettle/pbkdf2.h
 mingw32/include/nettle/pgp.h
 mingw32/include/nettle/pkcs1.h
@@ -70,6 +71,7 @@ mingw32/include/nettle/sha1.h
 mingw32/include/nettle/sha2.h
 mingw32/include/nettle/sha3.h
 mingw32/include/nettle/siv-cmac.h
+mingw32/include/nettle/sm3.h
 mingw32/include/nettle/streebog.h
 mingw32/include/nettle/twofish.h
 mingw32/include/nettle/umac.h

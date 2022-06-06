@@ -2,7 +2,7 @@
 mingw-w64-i686-binutils
 
 %VERSION%
-2.38-2
+2.38-3
 
 %BASE%
 mingw-w64-binutils
@@ -17,16 +17,16 @@ https://www.gnu.org/software/binutils/
 any
 
 %BUILDDATE%
-1646153873
+1654343930
 
 %INSTALLDATE%
-1646190964
+1654487529
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/451dca0a/1917502662)
+CI (msys2/msys2-autobuild/97faefb5/2439435065)
 
 %SIZE%
-62535048
+62475316
 
 %GROUPS%
 mingw-w64-i686-toolchain

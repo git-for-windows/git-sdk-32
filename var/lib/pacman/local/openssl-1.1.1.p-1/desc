@@ -1,8 +1,8 @@
 %NAME%
-libopenssl
+openssl
 
 %VERSION%
-1.1.1.o-1
+1.1.1.p-1
 
 %BASE%
 openssl
@@ -17,22 +17,19 @@ https://www.openssl.org
 i686
 
 %BUILDDATE%
-1651604227
+1655841175
 
 %INSTALLDATE%
-1651636259
+1655870104
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-2695157
+59293369
 
 %REASON%
 1
-
-%GROUPS%
-libraries
 
 %LICENSE%
 custom:BSD
@@ -41,5 +38,10 @@ custom:BSD
 pgp
 
 %DEPENDS%
+libopenssl
 zlib
+
+%OPTDEPENDS%
+ca-certificates
+perl
 

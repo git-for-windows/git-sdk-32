@@ -2,7 +2,7 @@
 mingw-w64-i686-isl
 
 %VERSION%
-0.24-1
+0.25-1
 
 %BASE%
 mingw-w64-isl
@@ -11,22 +11,22 @@ mingw-w64-isl
 Library for manipulating sets and relations of integer points bounded by linear constraints (mingw-w64)
 
 %URL%
-https://isl.gforge.inria.fr/
+https://libisl.sourceforge.io/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1621058000
+1656928900
 
 %INSTALLDATE%
-1621220895
+1657080417
 
 %PACKAGER%
-CI (msys2-autobuild/f6d048f2/844284063)
+CI (msys2/msys2-autobuild/a43bdf94/2609254940)
 
 %SIZE%
-6810299
+13034628
 
 %REASON%
 1
@@ -36,4 +36,7 @@ MIT
 
 %VALIDATION%
 pgp
+
+%DEPENDS%
+mingw-w64-i686-gmp
 

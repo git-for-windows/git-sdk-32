@@ -1,5 +1,7 @@
 %FILES%
 mingw32/
+mingw32/bin/
+mingw32/bin/libisl-23.dll
 mingw32/include/
 mingw32/include/isl/
 mingw32/include/isl/aff.h
@@ -66,6 +68,8 @@ mingw32/include/isl/version.h
 mingw32/include/isl/vertices.h
 mingw32/lib/
 mingw32/lib/libisl.a
+mingw32/lib/libisl.dll.a
+mingw32/lib/libisl.dll.a-gdb.py
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/isl.pc
 

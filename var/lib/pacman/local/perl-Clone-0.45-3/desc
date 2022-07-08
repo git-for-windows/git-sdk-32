@@ -2,7 +2,7 @@
 perl-Clone
 
 %VERSION%
-0.45-2
+0.45-3
 
 %BASE%
 perl-Clone
@@ -17,16 +17,16 @@ https://search.cpan.org/~RDF/Clone
 i686
 
 %BUILDDATE%
-1599429417
+1657322945
 
 %INSTALLDATE%
-1625540939
+1657323808
 
 %PACKAGER%
-Unknown Packager
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-18973
+18461
 
 %REASON%
 1

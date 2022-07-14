@@ -2,7 +2,7 @@
 mingw-w64-i686-libidn2
 
 %VERSION%
-2.3.2-1
+2.3.3-1
 
 %BASE%
 mingw-w64-libidn2
@@ -17,22 +17,23 @@ https://www.gnu.org/software/libidn
 any
 
 %BUILDDATE%
-1648846279
+1657723806
 
 %INSTALLDATE%
-1648956352
+1657771575
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/5f5d895c/2079658386)
+CI (msys2/msys2-autobuild/a43bdf94/2664254350)
 
 %SIZE%
-599092
+733878
 
 %REASON%
 1
 
 %LICENSE%
-GPL3, LGPL
+spdx:GPL-2.0-or-later
+spdx:LGPL-3.0-or-later
 
 %VALIDATION%
 pgp

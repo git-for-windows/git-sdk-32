@@ -72,6 +72,7 @@ mingw32/include/apdevpkey.h
 mingw32/include/apiset.h
 mingw32/include/apisetcconv.h
 mingw32/include/appmgmt.h
+mingw32/include/appmodel.h
 mingw32/include/aqadmtyp.h
 mingw32/include/asptlb.h
 mingw32/include/assert.h
@@ -892,6 +893,7 @@ mingw32/include/mgmtapi.h
 mingw32/include/midles.h
 mingw32/include/mimedisp.h
 mingw32/include/mimeinfo.h
+mingw32/include/minappmodel.h
 mingw32/include/minmax.h
 mingw32/include/minwinbase.h
 mingw32/include/minwindef.h

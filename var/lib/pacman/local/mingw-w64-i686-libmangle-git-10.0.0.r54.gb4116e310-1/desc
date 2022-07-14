@@ -2,7 +2,7 @@
 mingw-w64-i686-libmangle-git
 
 %VERSION%
-10.0.0.r51.gb44ee8719-1
+10.0.0.r54.gb4116e310-1
 
 %BASE%
 mingw-w64-libmangle-git
@@ -17,13 +17,13 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1656955932
+1657695090
 
 %INSTALLDATE%
-1657080420
+1657771575
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a43bdf94/2611069178)
+CI (msys2/msys2-autobuild/a43bdf94/2661466300)
 
 %SIZE%
 52335

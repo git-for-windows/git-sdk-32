@@ -6,7 +6,6 @@ mingw32/bin/libidn2-0.dll
 mingw32/include/
 mingw32/include/idn2.h
 mingw32/lib/
-mingw32/lib/libidn2-0.def
 mingw32/lib/libidn2.a
 mingw32/lib/libidn2.dll.a
 mingw32/lib/pkgconfig/
@@ -52,6 +51,9 @@ mingw32/share/locale/it/LC_MESSAGES/libidn2.mo
 mingw32/share/locale/ja/
 mingw32/share/locale/ja/LC_MESSAGES/
 mingw32/share/locale/ja/LC_MESSAGES/libidn2.mo
+mingw32/share/locale/ka/
+mingw32/share/locale/ka/LC_MESSAGES/
+mingw32/share/locale/ka/LC_MESSAGES/libidn2.mo
 mingw32/share/locale/nl/
 mingw32/share/locale/nl/LC_MESSAGES/
 mingw32/share/locale/nl/LC_MESSAGES/libidn2.mo

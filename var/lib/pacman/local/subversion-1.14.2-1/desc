@@ -1,0 +1,55 @@
+%NAME%
+subversion
+
+%VERSION%
+1.14.2-1
+
+%BASE%
+subversion
+
+%DESC%
+A Modern Concurrent Version Control System
+
+%URL%
+https://subversion.apache.org/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1658926528
+
+%INSTALLDATE%
+1658929229
+
+%PACKAGER%
+Git for Windows Build Agent <ci@git-for-windows.build>
+
+%SIZE%
+19651247
+
+%GROUPS%
+VCS
+
+%LICENSE%
+APACHE
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libsqlite
+file
+liblz4
+libserf
+libsasl
+libexpat
+
+%OPTDEPENDS%
+bash-completion: for svn bash completion
+python: for some hook scripts
+ruby: for some hook scripts
+
+%PROVIDES%
+svn
+

@@ -2,7 +2,7 @@
 mingw-w64-i686-pdcurses
 
 %VERSION%
-4.3.3-1
+4.3.3-2
 
 %BASE%
 mingw-w64-pdcurses
@@ -17,13 +17,13 @@ https://www.projectpluto.com/win32a.htm
 any
 
 %BUILDDATE%
-1658141194
+1659067900
 
 %INSTALLDATE%
-1658204562
+1659153842
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a43bdf94/2688589744)
+CI (msys2/msys2-autobuild/5f53dab6/2758283576)
 
 %SIZE%
 1982432

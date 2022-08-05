@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-libmangle-git
+mingw-w64-i686-headers-git
 
 %VERSION%
-10.0.0.r54.gb4116e310-1
+10.0.0.r59.gaacb650be-1
 
 %BASE%
-mingw-w64-libmangle-git
+mingw-w64-headers-git
 
 %DESC%
-MinGW-w64 libmangle
+MinGW-w64 headers for Windows
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1657695090
+1659512985
 
 %INSTALLDATE%
-1657771575
+1659672204
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a43bdf94/2661466300)
+CI (msys2/msys2-autobuild/5f53dab6/2787493647)
 
 %SIZE%
-52335
+73895419
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,8 +38,8 @@ custom
 pgp
 
 %CONFLICTS%
-mingw-w64-i686-libmangle
+mingw-w64-i686-headers
 
 %PROVIDES%
-mingw-w64-i686-libmangle
+mingw-w64-i686-headers
 

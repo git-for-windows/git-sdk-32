@@ -222,6 +222,8 @@ mingw32/include/corhdr.h
 mingw32/include/correg.h
 mingw32/include/cpl.h
 mingw32/include/cplext.h
+mingw32/include/credentialprovider.h
+mingw32/include/credentialprovider.idl
 mingw32/include/credssp.h
 mingw32/include/crtdbg.h
 mingw32/include/crtdefs.h

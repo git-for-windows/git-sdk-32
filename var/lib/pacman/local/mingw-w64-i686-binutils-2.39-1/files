@@ -154,6 +154,9 @@ mingw32/share/locale/ja/LC_MESSAGES/binutils.mo
 mingw32/share/locale/ja/LC_MESSAGES/gas.mo
 mingw32/share/locale/ja/LC_MESSAGES/gprof.mo
 mingw32/share/locale/ja/LC_MESSAGES/ld.mo
+mingw32/share/locale/ka/
+mingw32/share/locale/ka/LC_MESSAGES/
+mingw32/share/locale/ka/LC_MESSAGES/gprof.mo
 mingw32/share/locale/ms/
 mingw32/share/locale/ms/LC_MESSAGES/
 mingw32/share/locale/ms/LC_MESSAGES/gprof.mo

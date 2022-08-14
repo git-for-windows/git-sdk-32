@@ -2238,8 +2238,8 @@ mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/
 mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/__init__.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/__init__.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/__init__.cpython-310.pyc
-mingw32/lib/python3.10/ensurepip/_bundled/pip-22.0.4-py3-none-any.whl
-mingw32/lib/python3.10/ensurepip/_bundled/setuptools-58.1.0-py3-none-any.whl
+mingw32/lib/python3.10/ensurepip/_bundled/pip-22.2.1-py3-none-any.whl
+mingw32/lib/python3.10/ensurepip/_bundled/setuptools-63.2.0-py3-none-any.whl
 mingw32/lib/python3.10/ensurepip/_uninstall.py
 mingw32/lib/python3.10/enum.py
 mingw32/lib/python3.10/filecmp.py
@@ -3259,11 +3259,11 @@ mingw32/lib/python3.10/lib2to3/fixes/fix_xrange.py
 mingw32/lib/python3.10/lib2to3/fixes/fix_xreadlines.py
 mingw32/lib/python3.10/lib2to3/fixes/fix_zip.py
 mingw32/lib/python3.10/lib2to3/Grammar.txt
-mingw32/lib/python3.10/lib2to3/Grammar3.10.5.final.0.pickle
+mingw32/lib/python3.10/lib2to3/Grammar3.10.6.final.0.pickle
 mingw32/lib/python3.10/lib2to3/main.py
 mingw32/lib/python3.10/lib2to3/patcomp.py
 mingw32/lib/python3.10/lib2to3/PatternGrammar.txt
-mingw32/lib/python3.10/lib2to3/PatternGrammar3.10.5.final.0.pickle
+mingw32/lib/python3.10/lib2to3/PatternGrammar3.10.6.final.0.pickle
 mingw32/lib/python3.10/lib2to3/pgen2/
 mingw32/lib/python3.10/lib2to3/pgen2/__init__.py
 mingw32/lib/python3.10/lib2to3/pgen2/__pycache__/
@@ -7360,6 +7360,7 @@ mingw32/lib/python3.10/Tools/scripts/texi2html.py
 mingw32/lib/python3.10/Tools/scripts/untabify.py
 mingw32/lib/python3.10/Tools/scripts/update_file.py
 mingw32/lib/python3.10/Tools/scripts/var_access_benchmark.py
+mingw32/lib/python3.10/Tools/scripts/verify_ensurepip_wheels.py
 mingw32/lib/python3.10/Tools/scripts/which.py
 mingw32/lib/python3.10/Tools/scripts/win_add2path.py
 mingw32/lib/python3.10/trace.py

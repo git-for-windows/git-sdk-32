@@ -1540,6 +1540,8 @@ mingw32/include/verinfo.ver
 mingw32/include/versionhelpers.h
 mingw32/include/vfw.h
 mingw32/include/vfwmsgs.h
+mingw32/include/vidcap.h
+mingw32/include/vidcap.idl
 mingw32/include/virtdisk.h
 mingw32/include/vmr9.h
 mingw32/include/vmr9.idl

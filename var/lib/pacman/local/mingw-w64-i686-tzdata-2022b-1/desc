@@ -2,7 +2,7 @@
 mingw-w64-i686-tzdata
 
 %VERSION%
-2022a-1
+2022b-1
 
 %BASE%
 mingw-w64-tzdata
@@ -17,16 +17,16 @@ https://www.iana.org/time-zones
 any
 
 %BUILDDATE%
-1647557047
+1660634141
 
 %INSTALLDATE%
-1647659727
+1660967748
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a8d63e28/2001073034)
+CI (msys2/msys2-autobuild/9374b1d9/2865639425)
 
 %SIZE%
-1598886
+1536429
 
 %REASON%
 1

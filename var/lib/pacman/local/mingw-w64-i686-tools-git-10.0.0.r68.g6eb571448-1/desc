@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-crt-git
+mingw-w64-i686-tools-git
 
 %VERSION%
-10.0.0.r62.gafef638c3-1
+10.0.0.r68.g6eb571448-1
 
 %BASE%
-mingw-w64-crt-git
+mingw-w64-tools-git
 
 %DESC%
-MinGW-w64 CRT for Windows
+MinGW-w64 tools
 
 %URL%
 https://mingw-w64.sourceforge.io/
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1659804501
+1660662370
 
 %INSTALLDATE%
-1659931080
+1660967745
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/70c69031/2809412800)
+CI (msys2/msys2-autobuild/9374b1d9/2867999592)
 
 %SIZE%
-70858887
+1094500
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,11 +38,11 @@ custom
 pgp
 
 %DEPENDS%
-mingw-w64-i686-headers-git
+mingw-w64-i686-gcc-libs
 
 %CONFLICTS%
-mingw-w64-i686-crt
+mingw-w64-i686-tools
 
 %PROVIDES%
-mingw-w64-i686-crt
+mingw-w64-i686-tools
 

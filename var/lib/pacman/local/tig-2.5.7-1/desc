@@ -2,7 +2,7 @@
 tig
 
 %VERSION%
-2.5.6-1
+2.5.7-1
 
 %BASE%
 tig
@@ -17,10 +17,10 @@ http://jonas.nitro.dk/tig/
 i686
 
 %BUILDDATE%
-1657708280
+1661504463
 
 %INSTALLDATE%
-1657709265
+1661573853
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>

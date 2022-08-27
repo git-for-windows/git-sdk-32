@@ -2,7 +2,7 @@
 mingw-w64-i686-tools-git
 
 %VERSION%
-10.0.0.r68.g6eb571448-1
+10.0.0.r72.g1dd2a4993-1
 
 %BASE%
 mingw-w64-tools-git
@@ -17,16 +17,16 @@ https://mingw-w64.sourceforge.io/
 any
 
 %BUILDDATE%
-1660662370
+1661528964
 
 %INSTALLDATE%
-1660967745
+1661573853
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/9374b1d9/2867999592)
+CI (msys2/msys2-autobuild/b36a4da1/2934792102)
 
 %SIZE%
-1094500
+1095524
 
 %GROUPS%
 mingw-w64-i686-toolchain

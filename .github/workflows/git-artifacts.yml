@@ -73,6 +73,7 @@ jobs:
         with:
           name: bundle-artifacts
           path: bundle-artifacts
+          retention-days: 5
 
       - name: Check out git/git
         shell: bash
@@ -106,6 +107,7 @@ jobs:
         with:
           name: pkg-${{env.ARCH_NAME}}
           path: artifacts
+          retention-days: 5
 
   artifacts:
     runs-on: windows-latest
@@ -167,3 +169,4 @@ jobs:
         with:
           name: ${{matrix.artifact}}-${{env.ARCH_NAME}}
           path: artifacts
+          retention-days: 5

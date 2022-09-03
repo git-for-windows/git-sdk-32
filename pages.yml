@@ -1,0 +1,25 @@
+addEventListener("fetch", (event) => {
+  event.respondWith(handleRequest(event.request));
+
+});
+
+
+
+/**
+ * Respond with hello worker text
+ * @param {Request} request
+ */
+
+async function handleRequest(request) {
+  const { cf } = request;
+  const { city, country } = cf;
+
+
+  console.log(`Request came from city: ${city} in country: ${country}`);
+
+
+  return new Response("Hello worker!", {
+    headers: { "content-type": "text/plain" },
+  });
+
+}

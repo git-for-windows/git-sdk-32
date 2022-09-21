@@ -2,6 +2,8 @@
  * Copyright (C) 2000-2001 Red Hat, Inc.
  * Copyright (C) 2005 Imendio AB
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -110,7 +112,7 @@ typedef void  (*GClosureNotify)		(gpointer	 data,
  *  callback of @closure
  * @invocation_hint: (nullable): the invocation hint given as the
  *  last argument to g_closure_invoke()
- * @marshal_data: (nullable): additional data specified when
+ * @user_data: (nullable): additional data specified when
  *  registering the marshaller, see g_closure_set_marshal() and
  *  g_closure_set_meta_marshal()
  * 
@@ -121,7 +123,7 @@ typedef void  (*GClosureMarshal)	(GClosure	*closure,
 					 guint           n_param_values,
 					 const GValue   *param_values,
 					 gpointer        invocation_hint,
-					 gpointer	 marshal_data);
+					 gpointer	 user_data);
 
 /**
  * GVaClosureMarshal:

@@ -111,22 +111,15 @@ typedef unsigned int guintptr;
 #define G_GUINTPTR_FORMAT       "u"
 
 #define GLIB_MAJOR_VERSION 2
-#define GLIB_MINOR_VERSION 72
-#define GLIB_MICRO_VERSION 3
+#define GLIB_MINOR_VERSION 74
+#define GLIB_MICRO_VERSION 0
 
 #define G_OS_WIN32
 #define G_PLATFORM_WIN32
 
 #define G_VA_COPY va_copy
 
-
-#ifndef __cplusplus
-# define G_HAVE_ISO_VARARGS 1
-#endif
-
-#ifdef __cplusplus
-# define G_HAVE_ISO_VARARGS 1
-#endif
+#define G_HAVE_ISO_VARARGS 1
 
 /* gcc-2.95.x supports both gnu style and ISO varargs, but if -ansi
  * is passed ISO vararg support is turned off, and there is no work

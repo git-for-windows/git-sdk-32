@@ -4,6 +4,8 @@
  * Copyright (C) 2004, Matthias Clasen <mclasen@redhat.com>
  * Copyright (C) 2005 - 2007, Marco Barisione <marco@barisione.org>
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -216,6 +218,7 @@ GQuark g_regex_error_quark (void);
 
 /**
  * GRegexCompileFlags:
+ * @G_REGEX_DEFAULT: No special options set. Since: 2.74
  * @G_REGEX_CASELESS: Letters in the pattern match both upper- and
  *     lowercase letters. This option can be changed within a pattern
  *     by a "(?i)" option setting.
@@ -259,9 +262,13 @@ GQuark g_regex_error_quark (void);
  *     followed by "?" behaves as if it were followed by "?:" but named
  *     parentheses can still be used for capturing (and they acquire numbers
  *     in the usual way).
- * @G_REGEX_OPTIMIZE: Optimize the regular expression. If the pattern will
- *     be used many times, then it may be worth the effort to optimize it
- *     to improve the speed of matches.
+ * @G_REGEX_OPTIMIZE: Since 2.74 and the port to pcre2, requests JIT
+ *     compilation, which, if the just-in-time compiler is available, further
+ *     processes a compiled pattern into machine code that executes much
+ *     faster. However, it comes at the cost of extra processing before the
+ *     match is performed, so it is most beneficial to use this when the same
+ *     compiled pattern is used for matching many times. Before 2.74 this
+ *     option used the built-in non-JIT optimizations in pcre1.
  * @G_REGEX_FIRSTLINE: Limits an unanchored pattern to match before (or at) the
  *     first newline. Since: 2.34
  * @G_REGEX_DUPNAMES: Names used to identify capturing subpatterns need not
@@ -284,7 +291,8 @@ GQuark g_regex_error_quark (void);
  *     is recognised. If this option is set, then "\R" only recognizes the newline
  *    characters '\r', '\n' and '\r\n'. Since: 2.34
  * @G_REGEX_JAVASCRIPT_COMPAT: Changes behaviour so that it is compatible with
- *     JavaScript rather than PCRE. Since: 2.34
+ *     JavaScript rather than PCRE. Since GLib 2.74 this is no longer supported,
+ *     as libpcre2 does not support it. Since: 2.34 Deprecated: 2.74
  *
  * Flags specifying compile-time options.
  *
@@ -295,6 +303,7 @@ GQuark g_regex_error_quark (void);
  */
 typedef enum
 {
+  G_REGEX_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_REGEX_CASELESS          = 1 << 0,
   G_REGEX_MULTILINE         = 1 << 1,
   G_REGEX_DOTALL            = 1 << 2,
@@ -312,11 +321,12 @@ typedef enum
   G_REGEX_NEWLINE_CRLF      = G_REGEX_NEWLINE_CR | G_REGEX_NEWLINE_LF,
   G_REGEX_NEWLINE_ANYCRLF   = G_REGEX_NEWLINE_CR | 1 << 22,
   G_REGEX_BSR_ANYCRLF       = 1 << 23,
-  G_REGEX_JAVASCRIPT_COMPAT = 1 << 25
+  G_REGEX_JAVASCRIPT_COMPAT GLIB_DEPRECATED_ENUMERATOR_IN_2_74 = 1 << 25
 } GRegexCompileFlags;
 
 /**
  * GRegexMatchFlags:
+ * @G_REGEX_MATCH_DEFAULT: No special options set. Since: 2.74
  * @G_REGEX_MATCH_ANCHORED: The pattern is forced to be "anchored", that is,
  *     it is constrained to match only at the first matching point in the
  *     string that is being searched. This effect can also be achieved by
@@ -385,6 +395,7 @@ typedef enum
  * adding a new flag. */
 typedef enum
 {
+  G_REGEX_MATCH_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_REGEX_MATCH_ANCHORED         = 1 << 4,
   G_REGEX_MATCH_NOTBOL           = 1 << 7,
   G_REGEX_MATCH_NOTEOL           = 1 << 8,

@@ -1,6 +1,8 @@
 /* GObject - GLib Type, Object, Parameter and Signal Library
  * Copyright (C) 1998-1999, 2000-2001 Tim Janik and Red Hat, Inc.
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -273,6 +275,106 @@ GLIB_AVAILABLE_IN_ALL
 void	g_flags_complete_type_info (GType	       g_flags_type,
 				    GTypeInfo	      *info,
 				    const GFlagsValue *const_values);
+
+/* {{{ Macros */
+
+/**
+ * G_DEFINE_ENUM_VALUE:
+ * @EnumValue: an enumeration value
+ * @EnumNick: a short string representing the enumeration value
+ *
+ * Defines an enumeration value, and maps it to a "nickname".
+ *
+ * This macro can only be used with G_DEFINE_ENUM_TYPE() and
+ * G_DEFINE_FLAGS_TYPE().
+ *
+ * Since: 2.74
+ */
+#define G_DEFINE_ENUM_VALUE(EnumValue, EnumNick) \
+  { EnumValue, #EnumValue, EnumNick } \
+  GLIB_AVAILABLE_MACRO_IN_2_74
+
+/**
+ * G_DEFINE_ENUM_TYPE:
+ * @TypeName: the enumeration type, in `CamelCase`
+ * @type_name: the enumeration type prefixed, in `snake_case`
+ * @...: a list of enumeration values, defined using G_DEFINE_ENUM_VALUE()
+ *
+ * A convenience macro for defining enumeration types.
+ *
+ * This macro will generate a `*_get_type()` function for the
+ * given @TypeName, using @type_name as the function prefix.
+ *
+ * |[<!-- language="C" -->
+ * G_DEFINE_ENUM_TYPE (GtkOrientation, gtk_orientation,
+ *   G_DEFINE_ENUM_VALUE (GTK_ORIENTATION_HORIZONTAL, "horizontal"),
+ *   G_DEFINE_ENUM_VALUE (GTK_ORIENTATION_VERTICAL, "vertical"))
+ * ]|
+ *
+ * For projects that have multiple enumeration types, or enumeration
+ * types with many values, you should consider using glib-mkenums to
+ * generate the type function.
+ *
+ * Since: 2.74
+ */
+#define G_DEFINE_ENUM_TYPE(TypeName, type_name, ...) \
+GType \
+type_name ## _get_type (void) { \
+  static gsize g_define_type__static = 0; \
+  if (g_once_init_enter (&g_define_type__static)) { \
+    static const GEnumValue enum_values[] = { \
+      __VA_ARGS__ , \
+      { 0, NULL, NULL }, \
+    }; \
+    GType g_define_type = g_enum_register_static (g_intern_static_string (#TypeName), enum_values); \
+    g_once_init_leave (&g_define_type__static, g_define_type); \
+  } \
+  return g_define_type__static; \
+} \
+  GLIB_AVAILABLE_MACRO_IN_2_74
+
+/**
+ * G_DEFINE_FLAGS_TYPE:
+ * @TypeName: the enumeration type, in `CamelCase`
+ * @type_name: the enumeration type prefixed, in `snake_case`
+ * @...: a list of enumeration values, defined using G_DEFINE_ENUM_VALUE()
+ *
+ * A convenience macro for defining flag types.
+ *
+ * This macro will generate a `*_get_type()` function for the
+ * given @TypeName, using @type_name as the function prefix.
+ *
+ * |[<!-- language="C" -->
+ * G_DEFINE_FLAGS_TYPE (GSettingsBindFlags, g_settings_bind_flags,
+ *   G_DEFINE_ENUM_VALUE (G_SETTINGS_BIND_DEFAULT, "default"),
+ *   G_DEFINE_ENUM_VALUE (G_SETTINGS_BIND_GET, "get"),
+ *   G_DEFINE_ENUM_VALUE (G_SETTINGS_BIND_SET, "set"),
+ *   G_DEFINE_ENUM_VALUE (G_SETTINGS_BIND_NO_SENSITIVITY, "no-sensitivity"),
+ *   G_DEFINE_ENUM_VALUE (G_SETTINGS_BIND_GET_NO_CHANGES, "get-no-changes"),
+ *   G_DEFINE_ENUM_VALUE (G_SETTINGS_BIND_INVERT_BOOLEAN, "invert-boolean"))
+ * ]|
+ *
+ * For projects that have multiple enumeration types, or enumeration
+ * types with many values, you should consider using glib-mkenums to
+ * generate the type function.
+ *
+ * Since: 2.74
+ */
+#define G_DEFINE_FLAGS_TYPE(TypeName, type_name, ...) \
+GType \
+type_name ## _get_type (void) { \
+  static gsize g_define_type__static = 0; \
+  if (g_once_init_enter (&g_define_type__static)) { \
+    static const GFlagsValue flags_values[] = { \
+      __VA_ARGS__ , \
+      { 0, NULL, NULL }, \
+    }; \
+    GType g_define_type = g_flags_register_static (g_intern_static_string (#TypeName), flags_values); \
+    g_once_init_leave (&g_define_type__static, g_define_type); \
+  } \
+  return g_define_type__static; \
+} \
+  GLIB_AVAILABLE_MACRO_IN_2_74
 
 G_END_DECLS
 

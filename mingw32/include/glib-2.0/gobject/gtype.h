@@ -1,6 +1,8 @@
 /* GObject - GLib Type, Object, Parameter and Signal Library
  * Copyright (C) 1998-1999, 2000-2001 Tim Janik and Red Hat, Inc.
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -728,6 +730,10 @@ GType                 g_type_next_base               (GType            leaf_type
 GLIB_AVAILABLE_IN_ALL
 gboolean              g_type_is_a                    (GType            type,
 						      GType            is_a_type);
+
+/* Hoist exact GType comparisons into the caller */
+#define g_type_is_a(a,b) ((a) == (b) || (g_type_is_a) ((a), (b)))
+
 GLIB_AVAILABLE_IN_ALL
 gpointer              g_type_class_ref               (GType            type);
 GLIB_AVAILABLE_IN_ALL
@@ -1026,6 +1032,8 @@ typedef void     (*GTypeInterfaceCheckFunc)  (gpointer	       check_data,
  */
 typedef enum    /*< skip >*/
 {
+  /* There is no G_TYPE_FUNDAMENTAL_FLAGS_NONE: this is implemented to use
+   * the same bits as GTypeFlags */
   G_TYPE_FLAG_CLASSED           = (1 << 0),
   G_TYPE_FLAG_INSTANTIATABLE    = (1 << 1),
   G_TYPE_FLAG_DERIVABLE         = (1 << 2),
@@ -1033,6 +1041,7 @@ typedef enum    /*< skip >*/
 } GTypeFundamentalFlags;
 /**
  * GTypeFlags:
+ * @G_TYPE_FLAG_NONE: No special flags. Since: 2.74
  * @G_TYPE_FLAG_ABSTRACT: Indicates an abstract type. No instances can be
  *  created for an abstract type
  * @G_TYPE_FLAG_VALUE_ABSTRACT: Indicates an abstract value type, i.e. a type
@@ -1045,6 +1054,7 @@ typedef enum    /*< skip >*/
  */
 typedef enum    /*< skip >*/
 {
+  G_TYPE_FLAG_NONE GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_TYPE_FLAG_ABSTRACT = (1 << 4),
   G_TYPE_FLAG_VALUE_ABSTRACT = (1 << 5),
   G_TYPE_FLAG_FINAL GLIB_AVAILABLE_ENUMERATOR_IN_2_70 = (1 << 6)
@@ -2150,7 +2160,7 @@ type_name##_get_type (void) \
   return static_g_define_type_id; \
 } /* closes type_name##_get_type() */ \
 \
-G_GNUC_NO_INLINE \
+G_NO_INLINE \
 static GType \
 type_name##_get_type_once (void) \
 { \
@@ -2176,6 +2186,8 @@ type_name##_get_type_once (void) \
   _G_DEFINE_TYPE_EXTENDED_BEGIN_PRE(TypeName, type_name, TYPE_PARENT) \
   _G_DEFINE_TYPE_EXTENDED_BEGIN_REGISTER(TypeName, type_name, TYPE_PARENT, flags) \
 
+/* Intentionally using (GTypeFlags) 0 instead of G_TYPE_FLAG_NONE here,
+ * to avoid deprecation warnings with older GLIB_VERSION_MAX_ALLOWED */
 #define _G_DEFINE_INTERFACE_EXTENDED_BEGIN(TypeName, type_name, TYPE_PREREQ) \
 \
 static void     type_name##_default_init        (TypeName##Interface *klass); \
@@ -2220,14 +2232,49 @@ type_name##_get_type (void) \
  * a `type_name_get_type()` function which will return the newly defined
  * #GType, enabling lazy instantiation.
  *
+ * You might start by putting declarations in a header as follows:
+ *
+ * |[<!-- language="C" -->
+ * #define MY_TYPE_STRUCT my_struct_get_type ()
+ * GType my_struct_get_type (void) G_GNUC_CONST;
+ *
+ * MyStruct *    my_struct_new (void);
+ * void          my_struct_free (MyStruct *self);
+ * MyStruct *    my_struct_copy (MyStruct *self);
+ * ]|
+ *
+ * And then use this macro and define your implementation in the source file as
+ * follows:
+ *
  * |[<!-- language="C" --> 
+ * MyStruct *
+ * my_struct_new (void)
+ * {
+ *   // ... your code to allocate a new MyStruct ...
+ * }
+ *
+ * void
+ * my_struct_free (MyStruct *self)
+ * {
+ *   // ... your code to free a MyStruct ...
+ * }
+ *
+ * MyStruct *
+ * my_struct_copy (MyStruct *self)
+ * {
+ *   // ... your code return a newly allocated copy of a MyStruct ...
+ * }
+ *
  * G_DEFINE_BOXED_TYPE (MyStruct, my_struct, my_struct_copy, my_struct_free)
  *
  * void 
  * foo ()
  * {
- *   GType type = my_struct_get_type ();
+ *   MyStruct *ms;
+ *
+ *   ms = my_struct_new ();
  *   // ... your code ...
+ *   my_struct_free (ms);
  * }
  * ]|
  *
@@ -2282,7 +2329,7 @@ type_name##_get_type (void) \
   return static_g_define_type_id; \
 } \
 \
-G_GNUC_NO_INLINE \
+G_NO_INLINE \
 static GType \
 type_name##_get_type_once (void) \
 { \
@@ -2319,7 +2366,7 @@ type_name##_get_type (void) \
   return static_g_define_type_id; \
 } \
 \
-G_GNUC_NO_INLINE \
+G_NO_INLINE \
 static GType \
 type_name##_get_type_once (void) \
 { \
@@ -2372,7 +2419,7 @@ type_name##_get_type (void) \
   return static_g_define_type_id; \
 } \
 \
-G_GNUC_NO_INLINE \
+G_NO_INLINE \
 static GType \
 type_name##_get_type_once (void) \
 { \

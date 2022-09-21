@@ -2,6 +2,8 @@
  *
  * Copyright (C) 2006-2007 Red Hat, Inc.
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -167,6 +169,10 @@
 #include <gio/gtlsinteraction.h>
 #include <gio/gtlspassword.h>
 #include <gio/gtlsserverconnection.h>
+#include <gio/gunixconnection.h>
+#include <gio/gunixcredentialsmessage.h>
+#include <gio/gunixfdlist.h>
+#include <gio/gunixsocketaddress.h>
 #include <gio/gvfs.h>
 #include <gio/gvolume.h>
 #include <gio/gvolumemonitor.h>

@@ -1,6 +1,8 @@
 /* GLIB - Library of useful routines for C programming
  * Copyright (C) 1995-1997  Peter Mattis, Spencer Kimball and Josh MacDonald
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -152,6 +154,10 @@ GPtrArray* g_ptr_array_sized_new          (guint             reserved_size);
 GLIB_AVAILABLE_IN_ALL
 GPtrArray* g_ptr_array_new_full           (guint             reserved_size,
 					   GDestroyNotify    element_free_func);
+GLIB_AVAILABLE_IN_2_74
+GPtrArray* g_ptr_array_new_null_terminated (guint          reserved_size,
+                                            GDestroyNotify element_free_func,
+                                            gboolean       null_terminated);
 GLIB_AVAILABLE_IN_ALL
 gpointer*  g_ptr_array_free               (GPtrArray        *array,
 					   gboolean          free_seg);
@@ -223,6 +229,8 @@ gboolean   g_ptr_array_find_with_equal_func (GPtrArray     *haystack,
                                              GEqualFunc     equal_func,
                                              guint         *index_);
 
+GLIB_AVAILABLE_IN_2_74
+gboolean   g_ptr_array_is_null_terminated (GPtrArray *array);
 
 /* Byte arrays, an array of guint8.  Implemented as a GArray,
  * but type-safe.

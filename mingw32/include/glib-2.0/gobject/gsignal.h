@@ -1,6 +1,8 @@
 /* GObject - GLib Type, Object, Parameter and Signal Library
  * Copyright (C) 2000-2001 Red Hat, Inc.
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -58,7 +60,7 @@ typedef GVaClosureMarshal		 GSignalCVaMarshaller;
  *  the instance on which the signal was emitted.
  * @param_values: (array length=n_param_values): the instance on which
  *  the signal was emitted, followed by the parameters of the emission.
- * @data: user data associated with the hook.
+ * @user_data: user data associated with the hook.
  * 
  * A simple function pointer to get invoked when the signal is emitted.
  *
@@ -73,14 +75,14 @@ typedef GVaClosureMarshal		 GSignalCVaMarshaller;
 typedef gboolean (*GSignalEmissionHook) (GSignalInvocationHint *ihint,
 					 guint			n_param_values,
 					 const GValue	       *param_values,
-					 gpointer		data);
+					 gpointer		user_data);
 /**
  * GSignalAccumulator:
  * @ihint: Signal invocation hint, see #GSignalInvocationHint.
  * @return_accu: Accumulator to collect callback return values in, this
  *  is the return value of the current signal emission.
  * @handler_return: A #GValue holding the return value of the signal handler.
- * @data: Callback data that was specified when creating the signal.
+ * @user_data: Callback data that was specified when creating the signal.
  * 
  * The signal accumulator is a special callback function that can be used
  * to collect return values of the various callbacks that are called
@@ -101,7 +103,7 @@ typedef gboolean (*GSignalEmissionHook) (GSignalInvocationHint *ihint,
 typedef gboolean (*GSignalAccumulator)	(GSignalInvocationHint *ihint,
 					 GValue		       *return_accu,
 					 const GValue	       *handler_return,
-					 gpointer               data);
+					 gpointer               user_data);
 
 
 /* --- run, match and connect types --- */
@@ -155,9 +157,11 @@ typedef enum
 #define G_SIGNAL_FLAGS_MASK  0x1ff
 /**
  * GConnectFlags:
- * @G_CONNECT_AFTER: whether the handler should be called before or after the
- *  default handler of the signal.
- * @G_CONNECT_SWAPPED: whether the instance and data should be swapped when
+ * @G_CONNECT_DEFAULT: Default behaviour (no special flags). Since: 2.74
+ * @G_CONNECT_AFTER: If set, the handler should be called after the
+ *  default handler of the signal. Normally, the handler is called before
+ *  the default handler.
+ * @G_CONNECT_SWAPPED: If set, the instance and data should be swapped when
  *  calling the handler; see g_signal_connect_swapped() for an example.
  * 
  * The connection flags are used to specify the behaviour of a signal's 
@@ -165,6 +169,7 @@ typedef enum
  */
 typedef enum
 {
+  G_CONNECT_DEFAULT GLIB_AVAILABLE_ENUMERATOR_IN_2_74 = 0,
   G_CONNECT_AFTER	= 1 << 0,
   G_CONNECT_SWAPPED	= 1 << 1
 } GConnectFlags;
@@ -504,6 +509,8 @@ void   g_signal_chain_from_overridden_handler (gpointer           instance,
  * 
  * Returns: the handler ID, of type #gulong (always greater than 0 for successful connections)
  */
+/* Intentionally not using G_CONNECT_DEFAULT here to avoid deprecation
+ * warnings with older GLIB_VERSION_MAX_ALLOWED */
 #define g_signal_connect(instance, detailed_signal, c_handler, data) \
     g_signal_connect_data ((instance), (detailed_signal), (c_handler), (data), NULL, (GConnectFlags) 0)
 /**

@@ -2,6 +2,8 @@
  *
  * Copyright (C) 2008-2010 Red Hat, Inc.
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -107,11 +109,16 @@ GVariant                 *g_dbus_message_get_body           (GDBusMessage       
 GLIB_AVAILABLE_IN_ALL
 void                      g_dbus_message_set_body           (GDBusMessage             *message,
                                                              GVariant                 *body);
+
+#ifdef G_OS_UNIX
+
 GLIB_AVAILABLE_IN_ALL
 GUnixFDList              *g_dbus_message_get_unix_fd_list   (GDBusMessage             *message);
 GLIB_AVAILABLE_IN_ALL
 void                      g_dbus_message_set_unix_fd_list   (GDBusMessage             *message,
                                                              GUnixFDList              *fd_list);
+
+#endif /* G_OS_UNIX */
 
 GLIB_AVAILABLE_IN_ALL
 guint32                   g_dbus_message_get_reply_serial   (GDBusMessage             *message);

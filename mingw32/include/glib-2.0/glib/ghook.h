@@ -1,6 +1,8 @@
 /* GLIB - Library of useful routines for C programming
  * Copyright (C) 1995-1997  Peter Mattis, Spencer Kimball and Josh MacDonald
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -41,11 +43,11 @@ typedef struct _GHookList	GHookList;
 typedef gint		(*GHookCompareFunc)	(GHook		*new_hook,
 						 GHook		*sibling);
 typedef gboolean	(*GHookFindFunc)	(GHook		*hook,
-						 gpointer	 data);
+						 gpointer	 user_data);
 typedef void		(*GHookMarshaller)	(GHook		*hook,
-						 gpointer	 marshal_data);
+						 gpointer	 user_data);
 typedef gboolean	(*GHookCheckMarshaller)	(GHook		*hook,
-						 gpointer	 marshal_data);
+						 gpointer	 user_data);
 typedef void		(*GHookFunc)		(gpointer	 data);
 typedef gboolean	(*GHookCheckFunc)	(gpointer	 data);
 typedef void		(*GHookFinalizeFunc)	(GHookList      *hook_list,

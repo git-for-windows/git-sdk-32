@@ -182,6 +182,7 @@ mingw32/include/glib-2.0/gio/gtlspassword.h
 mingw32/include/glib-2.0/gio/gtlsserverconnection.h
 mingw32/include/glib-2.0/gio/gunixconnection.h
 mingw32/include/glib-2.0/gio/gunixcredentialsmessage.h
+mingw32/include/glib-2.0/gio/gunixfdlist.h
 mingw32/include/glib-2.0/gio/gunixsocketaddress.h
 mingw32/include/glib-2.0/gio/gvfs.h
 mingw32/include/glib-2.0/gio/gvolume.h
@@ -366,6 +367,9 @@ mingw32/share/licenses/
 mingw32/share/licenses/glib2/
 mingw32/share/licenses/glib2/COPYING
 mingw32/share/locale/
+mingw32/share/locale/ab/
+mingw32/share/locale/ab/LC_MESSAGES/
+mingw32/share/locale/ab/LC_MESSAGES/glib20.mo
 mingw32/share/locale/af/
 mingw32/share/locale/af/LC_MESSAGES/
 mingw32/share/locale/af/LC_MESSAGES/glib20.mo

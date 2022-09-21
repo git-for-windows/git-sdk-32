@@ -1,6 +1,8 @@
 /* GLIB - Library of useful routines for C programming
  * Copyright (C) 1995-1997  Peter Mattis, Spencer Kimball and Josh MacDonald
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -110,6 +112,27 @@ typedef gint            (*GCompareDataFunc)     (gconstpointer  a,
 						 gpointer       user_data);
 typedef gboolean        (*GEqualFunc)           (gconstpointer  a,
                                                  gconstpointer  b);
+
+/**
+ * GEqualFuncFull:
+ * @a: a value
+ * @b: a value to compare with
+ * @user_data: user data provided by the caller
+ *
+ * Specifies the type of a function used to test two values for
+ * equality. The function should return %TRUE if both values are equal
+ * and %FALSE otherwise.
+ *
+ * This is a version of #GEqualFunc which provides a @user_data closure from
+ * the caller.
+ *
+ * Returns: %TRUE if @a = @b; %FALSE otherwise
+ * Since: 2.74
+ */
+typedef gboolean        (*GEqualFuncFull)       (gconstpointer  a,
+                                                 gconstpointer  b,
+                                                 gpointer       user_data);
+
 typedef void            (*GDestroyNotify)       (gpointer       data);
 typedef void            (*GFunc)                (gpointer       data,
                                                  gpointer       user_data);
@@ -121,7 +144,7 @@ typedef void            (*GHFunc)               (gpointer       key,
 /**
  * GCopyFunc:
  * @src: (not nullable): A pointer to the data which should be copied
- * @data: Additional data
+ * @user_data: Additional data
  *
  * A function of this signature is used to copy the node data
  * when doing a deep-copy of a tree.
@@ -131,7 +154,7 @@ typedef void            (*GHFunc)               (gpointer       key,
  * Since: 2.4
  */
 typedef gpointer	(*GCopyFunc)            (gconstpointer  src,
-                                                 gpointer       data);
+                                                 gpointer       user_data);
 /**
  * GFreeFunc:
  * @data: a data pointer
@@ -145,7 +168,7 @@ typedef void            (*GFreeFunc)            (gpointer       data);
 /**
  * GTranslateFunc:
  * @str: the untranslated string
- * @data: user data specified when installing the function, e.g.
+ * @user_data: user data specified when installing the function, e.g.
  *  in g_option_group_set_translate_func()
  * 
  * The type of functions which are used to translate user-visible
@@ -155,7 +178,7 @@ typedef void            (*GFreeFunc)            (gpointer       data);
  *  The returned string is owned by GLib and must not be freed.
  */
 typedef const gchar *   (*GTranslateFunc)       (const gchar   *str,
-						 gpointer       data);
+						 gpointer       user_data);
 
 
 /* Define some mathematical constants that aren't available

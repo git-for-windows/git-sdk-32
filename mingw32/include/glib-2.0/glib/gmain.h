@@ -1,6 +1,8 @@
 /* gmain.h - the GLib Main loop
  * Copyright (C) 1998-2000 Red Hat, Inc.
  *
+ * SPDX-License-Identifier: LGPL-2.1-or-later
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -191,6 +193,20 @@ typedef struct _GSourceFuncs            GSourceFuncs;
  * %G_SOURCE_REMOVE are more memorable names for the return value.
  */
 typedef gboolean (*GSourceFunc)       (gpointer user_data);
+
+/**
+ * GSourceOnceFunc:
+ * @user_data: data passed to the function, set when the source was
+ *   created
+ *
+ * A source function that is only called once before being removed from the main
+ * context automatically.
+ *
+ * See: g_idle_add_once(), g_timeout_add_once()
+ *
+ * Since: 2.74
+ */
+typedef void (* GSourceOnceFunc) (gpointer user_data);
 
 /**
  * G_SOURCE_FUNC:
@@ -770,6 +786,10 @@ GLIB_AVAILABLE_IN_ALL
 guint    g_timeout_add              (guint           interval,
                                      GSourceFunc     function,
                                      gpointer        data);
+GLIB_AVAILABLE_IN_2_74
+guint    g_timeout_add_once         (guint           interval,
+                                     GSourceOnceFunc function,
+                                     gpointer        data);
 GLIB_AVAILABLE_IN_ALL
 guint    g_timeout_add_seconds_full (gint            priority,
                                      guint           interval,
@@ -798,6 +818,9 @@ guint    g_idle_add_full            (gint            priority,
                                      GSourceFunc     function,
                                      gpointer        data,
                                      GDestroyNotify  notify);
+GLIB_AVAILABLE_IN_2_74
+guint    g_idle_add_once            (GSourceOnceFunc function,
+                                     gpointer        data);
 GLIB_AVAILABLE_IN_ALL
 gboolean g_idle_remove_by_data      (gpointer        data);
 

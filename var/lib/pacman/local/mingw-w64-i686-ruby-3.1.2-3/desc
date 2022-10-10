@@ -2,7 +2,7 @@
 mingw-w64-i686-ruby
 
 %VERSION%
-3.1.2-2
+3.1.2-3
 
 %BASE%
 mingw-w64-ruby
@@ -17,16 +17,16 @@ https://www.ruby-lang.org/en
 any
 
 %BUILDDATE%
-1662612372
+1665233110
 
 %INSTALLDATE%
-1662697502
+1665377072
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/253f8b8c/3012518979)
+CI (msys2/msys2-autobuild/c9dd9afe/3209915716)
 
 %SIZE%
-34398847
+34410589
 
 %REASON%
 1

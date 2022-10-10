@@ -974,11 +974,6 @@ mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/serializeintrin.h
 mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/sgxintrin.h
 mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/shaintrin.h
 mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/smmintrin.h
-mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/ssp/
-mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/ssp/ssp.h
-mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/ssp/stdio.h
-mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/ssp/string.h
-mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/ssp/unistd.h
 mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/stdalign.h
 mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/stdarg.h
 mingw32/lib/gcc/i686-w64-mingw32/12.2.0/include/stdatomic.h
@@ -1036,9 +1031,6 @@ mingw32/lib/libgomp.dll.a
 mingw32/lib/libgomp.spec
 mingw32/lib/libquadmath.a
 mingw32/lib/libquadmath.dll.a
-mingw32/lib/libssp.a
-mingw32/lib/libssp.dll.a
-mingw32/lib/libssp_nonshared.a
 mingw32/lib/libstdc++.a
 mingw32/lib/libstdc++.dll.a
 mingw32/lib/libstdc++.dll.a-gdb.py

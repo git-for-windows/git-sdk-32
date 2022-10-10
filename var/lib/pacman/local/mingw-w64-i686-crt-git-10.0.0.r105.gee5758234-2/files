@@ -349,6 +349,8 @@ mingw32/lib/libslwga.a
 mingw32/lib/libsnmpapi.a
 mingw32/lib/libspoolss.a
 mingw32/lib/libsrvcli.a
+mingw32/lib/libssp.a
+mingw32/lib/libssp_nonshared.a
 mingw32/lib/libsspicli.a
 mingw32/lib/libstrmiids.a
 mingw32/lib/libsvrapi.a

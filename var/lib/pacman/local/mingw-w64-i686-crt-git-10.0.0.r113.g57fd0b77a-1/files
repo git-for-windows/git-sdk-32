@@ -452,6 +452,7 @@ mingw32/lib/libxinput1_2.a
 mingw32/lib/libxinput1_3.a
 mingw32/lib/libxinput1_4.a
 mingw32/lib/libxinput9_1_0.a
+mingw32/lib/libxmllite.a
 mingw32/lib/txtmode.o
 mingw32/share/
 mingw32/share/licenses/

@@ -19,9 +19,6 @@ mingw32/share/antiword/8859-6.txt
 mingw32/share/antiword/8859-7.txt
 mingw32/share/antiword/8859-8.txt
 mingw32/share/antiword/8859-9.txt
-mingw32/share/antiword/MacCyrillic.txt
-mingw32/share/antiword/MacRoman.txt
-mingw32/share/antiword/UTF-8.txt
 mingw32/share/antiword/cp1250.txt
 mingw32/share/antiword/cp1251.txt
 mingw32/share/antiword/cp1252.txt
@@ -34,5 +31,8 @@ mingw32/share/antiword/cp866.txt
 mingw32/share/antiword/fontnames
 mingw32/share/antiword/koi8-r.txt
 mingw32/share/antiword/koi8-u.txt
+mingw32/share/antiword/MacCyrillic.txt
+mingw32/share/antiword/MacRoman.txt
 mingw32/share/antiword/roman.txt
+mingw32/share/antiword/UTF-8.txt
 

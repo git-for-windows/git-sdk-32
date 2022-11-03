@@ -2,7 +2,7 @@
 openssh
 
 %VERSION%
-9.0p1-1
+9.1p1-1
 
 %BASE%
 openssh
@@ -17,16 +17,16 @@ http://www.openssh.org/portable.html
 i686
 
 %BUILDDATE%
-1650612795
+1667475875
 
 %INSTALLDATE%
-1650684843
+1667478324
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-5792228
+5850412
 
 %GROUPS%
 net-utils

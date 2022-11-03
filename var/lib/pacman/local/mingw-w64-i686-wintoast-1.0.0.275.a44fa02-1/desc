@@ -2,7 +2,7 @@
 mingw-w64-i686-wintoast
 
 %VERSION%
-1.0.0.181.9b0663d-1
+1.0.0.275.a44fa02-1
 
 %BASE%
 mingw-w64-wintoast
@@ -17,16 +17,16 @@ https://github.com/mohabouje/WinToast
 any
 
 %BUILDDATE%
-1510956638
+1667480867
 
 %INSTALLDATE%
-1510964516
+1667503094
 
 %PACKAGER%
 Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-260096
+286096
 
 %LICENSE%
 MIT

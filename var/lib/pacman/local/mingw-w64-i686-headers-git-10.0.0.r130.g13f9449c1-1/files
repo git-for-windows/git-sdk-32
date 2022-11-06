@@ -234,6 +234,7 @@ mingw32/include/cscobj.h
 mingw32/include/ctfutb.h
 mingw32/include/ctfutb.idl
 mingw32/include/ctxtcall.h
+mingw32/include/ctxtcall.idl
 mingw32/include/ctype.h
 mingw32/include/custcntl.h
 mingw32/include/d2d1.h
@@ -783,6 +784,7 @@ mingw32/include/isysmon.h
 mingw32/include/ivec.h
 mingw32/include/iwamreg.h
 mingw32/include/jobapi.h
+mingw32/include/joystickapi.h
 mingw32/include/kcom.h
 mingw32/include/KHR/
 mingw32/include/KHR/khrplatform.h
@@ -855,6 +857,7 @@ mingw32/include/mapix.h
 mingw32/include/math.h
 mingw32/include/mbctype.h
 mingw32/include/mbstring.h
+mingw32/include/mciapi.h
 mingw32/include/mciavi.h
 mingw32/include/mcx.h
 mingw32/include/mdbrole.hxx
@@ -905,9 +908,13 @@ mingw32/include/mmcobj.h
 mingw32/include/mmddk.h
 mingw32/include/mmdeviceapi.h
 mingw32/include/mmdeviceapi.idl
+mingw32/include/mmeapi.h
+mingw32/include/mmiscapi.h
+mingw32/include/mmiscapi2.h
 mingw32/include/mmreg.h
 mingw32/include/mmstream.h
 mingw32/include/mmstream.idl
+mingw32/include/mmsyscom.h
 mingw32/include/mmsystem.h
 mingw32/include/mobsync.h
 mingw32/include/moniker.h
@@ -1158,6 +1165,7 @@ mingw32/include/persist.h
 mingw32/include/pgobootrun.h
 mingw32/include/physicalmonitorenumerationapi.h
 mingw32/include/pla.h
+mingw32/include/playsoundapi.h
 mingw32/include/pnrpdef.h
 mingw32/include/pnrpns.h
 mingw32/include/poclass.h

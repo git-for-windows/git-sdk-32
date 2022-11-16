@@ -19,7 +19,10 @@ import errno
 import codecs
 import locale
 
-VERSION_STR = '''glib-mkenums version 2.74.0
+# Non-english locale systems might complain to unrecognized character
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
+
+VERSION_STR = '''glib-mkenums version 2.74.1
 glib-mkenums comes with ABSOLUTELY NO WARRANTY.
 You may redistribute copies of glib-mkenums under the terms of
 the GNU General Public License which can be found in the

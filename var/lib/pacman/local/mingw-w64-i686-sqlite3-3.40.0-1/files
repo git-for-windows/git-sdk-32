@@ -14,10 +14,10 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.39.2/
-mingw32/lib/sqlite3.39.2/libtclsqlite3.dll
-mingw32/lib/sqlite3.39.2/libtclsqlite3.dll.a
-mingw32/lib/sqlite3.39.2/pkgIndex.tcl
+mingw32/lib/sqlite3.40.0/
+mingw32/lib/sqlite3.40.0/libtclsqlite3.dll
+mingw32/lib/sqlite3.40.0/libtclsqlite3.dll.a
+mingw32/lib/sqlite3.40.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/sqlite3/
@@ -46,8 +46,6 @@ mingw32/share/sqlite/extensions/compress.c
 mingw32/share/sqlite/extensions/compress.dll
 mingw32/share/sqlite/extensions/csv.c
 mingw32/share/sqlite/extensions/csv.dll
-mingw32/share/sqlite/extensions/dbdata.c
-mingw32/share/sqlite/extensions/dbdata.dll
 mingw32/share/sqlite/extensions/dbdump.c
 mingw32/share/sqlite/extensions/dbdump.dll
 mingw32/share/sqlite/extensions/decimal.c

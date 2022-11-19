@@ -10,6 +10,10 @@ mingw32/bin/gcmcoreui.dll
 mingw32/bin/gcmcoreuiwpf.dll
 mingw32/bin/git-credential-manager-core.exe
 mingw32/bin/git-credential-manager-core.exe.config
+mingw32/bin/git-credential-manager-ui.exe
+mingw32/bin/git-credential-manager-ui.exe.config
+mingw32/bin/git-credential-manager.exe
+mingw32/bin/git-credential-manager.exe.config
 mingw32/bin/GitHub.dll
 mingw32/bin/GitHub.UI.exe
 mingw32/bin/GitHub.UI.exe.config

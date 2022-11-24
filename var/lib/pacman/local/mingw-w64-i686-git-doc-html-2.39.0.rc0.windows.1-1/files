@@ -24,6 +24,7 @@ mingw32/share/doc/git-doc/diff-options.txt
 mingw32/share/doc/git-doc/docbook-xsl.css
 mingw32/share/doc/git-doc/everyday.html
 mingw32/share/doc/git-doc/fetch-options.txt
+mingw32/share/doc/git-doc/fsck-msgids.txt
 mingw32/share/doc/git-doc/git-add.html
 mingw32/share/doc/git-doc/git-add.txt
 mingw32/share/doc/git-doc/git-am.html
@@ -877,6 +878,8 @@ mingw32/share/doc/git-doc/RelNotes/2.37.3.txt
 mingw32/share/doc/git-doc/RelNotes/2.37.4.txt
 mingw32/share/doc/git-doc/RelNotes/2.38.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.38.1.txt
+mingw32/share/doc/git-doc/RelNotes/2.38.2.txt
+mingw32/share/doc/git-doc/RelNotes/2.39.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.4.10.txt
@@ -983,6 +986,7 @@ mingw32/share/doc/git-doc/technical/send-pack-pipeline.html
 mingw32/share/doc/git-doc/technical/send-pack-pipeline.txt
 mingw32/share/doc/git-doc/technical/shallow.html
 mingw32/share/doc/git-doc/technical/shallow.txt
+mingw32/share/doc/git-doc/technical/sparse-checkout.txt
 mingw32/share/doc/git-doc/technical/sparse-index.txt
 mingw32/share/doc/git-doc/technical/trivial-merge.html
 mingw32/share/doc/git-doc/technical/trivial-merge.txt

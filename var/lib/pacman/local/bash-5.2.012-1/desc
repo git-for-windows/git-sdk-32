@@ -2,7 +2,7 @@
 bash
 
 %VERSION%
-5.2.009-1
+5.2.012-1
 
 %BASE%
 bash
@@ -17,16 +17,16 @@ https://www.gnu.org/software/bash/bash.html
 i686
 
 %BUILDDATE%
-1667853645
+1669329784
 
 %INSTALLDATE%
-1667879997
+1669347349
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-10443694
+10443695
 
 %LICENSE%
 GPL

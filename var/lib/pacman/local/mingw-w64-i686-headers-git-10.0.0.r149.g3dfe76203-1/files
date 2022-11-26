@@ -839,6 +839,7 @@ mingw32/include/mailmsgprops.h
 mingw32/include/malloc.h
 mingw32/include/manipulations.h
 mingw32/include/mapi.h
+mingw32/include/mapiaux.h
 mingw32/include/mapicode.h
 mingw32/include/mapidbg.h
 mingw32/include/mapidefs.h
@@ -1673,6 +1674,8 @@ mingw32/include/windows.ui.h
 mingw32/include/windows.ui.idl
 mingw32/include/windowscontracts.h
 mingw32/include/windowscontracts.idl
+mingw32/include/windowsnumerics.h
+mingw32/include/windowsnumerics.impl.h
 mingw32/include/windowsx.h
 mingw32/include/windowsx.h16
 mingw32/include/winefs.h

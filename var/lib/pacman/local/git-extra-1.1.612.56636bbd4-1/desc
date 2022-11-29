@@ -2,7 +2,7 @@
 git-extra
 
 %VERSION%
-1.1.609.6752ff0-1
+1.1.612.56636bbd4-1
 
 %BASE%
 git-extra
@@ -17,16 +17,16 @@ https://github.com/git-for-windows/build-extra
 i686
 
 %BUILDDATE%
-1667846182
+1669737951
 
 %INSTALLDATE%
-1669606125
+1669738978
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-525601
+523189
 
 %GROUPS%
 VCS

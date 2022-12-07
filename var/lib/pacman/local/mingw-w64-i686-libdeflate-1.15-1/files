@@ -7,6 +7,12 @@ mingw32/bin/libdeflate.dll
 mingw32/include/
 mingw32/include/libdeflate.h
 mingw32/lib/
+mingw32/lib/cmake/
+mingw32/lib/cmake/libdeflate/
+mingw32/lib/cmake/libdeflate/libdeflate-config-version.cmake
+mingw32/lib/cmake/libdeflate/libdeflate-config.cmake
+mingw32/lib/cmake/libdeflate/libdeflate-targets-release.cmake
+mingw32/lib/cmake/libdeflate/libdeflate-targets.cmake
 mingw32/lib/libdeflate.a
 mingw32/lib/libdeflate.dll.a
 mingw32/lib/pkgconfig/

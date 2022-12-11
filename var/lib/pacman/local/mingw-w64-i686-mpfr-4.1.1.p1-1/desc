@@ -2,7 +2,7 @@
 mingw-w64-i686-mpfr
 
 %VERSION%
-4.1.0.p13-1
+4.1.1.p1-1
 
 %BASE%
 mingw-w64-mpfr
@@ -17,22 +17,22 @@ Multiple-precision floating-point library (mingw-w64)
 any
 
 %BUILDDATE%
-1630182724
+1670698563
 
 %INSTALLDATE%
-1630379240
+1670728833
 
 %PACKAGER%
-CI (msys2-autobuild/b738d090/1177829250)
+CI (msys2/msys2-autobuild/59e8e1af/3665493653)
 
 %SIZE%
-1098381
+1115318
 
 %REASON%
 1
 
 %LICENSE%
-LGPL
+spdx:LGPL-3.0-or-later
 
 %VALIDATION%
 pgp

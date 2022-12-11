@@ -2238,8 +2238,8 @@ mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/
 mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/__init__.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/__init__.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/ensurepip/_bundled/__pycache__/__init__.cpython-310.pyc
-mingw32/lib/python3.10/ensurepip/_bundled/pip-22.2.2-py3-none-any.whl
-mingw32/lib/python3.10/ensurepip/_bundled/setuptools-63.2.0-py3-none-any.whl
+mingw32/lib/python3.10/ensurepip/_bundled/pip-22.3.1-py3-none-any.whl
+mingw32/lib/python3.10/ensurepip/_bundled/setuptools-65.5.0-py3-none-any.whl
 mingw32/lib/python3.10/ensurepip/_uninstall.py
 mingw32/lib/python3.10/enum.py
 mingw32/lib/python3.10/filecmp.py
@@ -3259,11 +3259,11 @@ mingw32/lib/python3.10/lib2to3/fixes/fix_xrange.py
 mingw32/lib/python3.10/lib2to3/fixes/fix_xreadlines.py
 mingw32/lib/python3.10/lib2to3/fixes/fix_zip.py
 mingw32/lib/python3.10/lib2to3/Grammar.txt
-mingw32/lib/python3.10/lib2to3/Grammar3.10.8.final.0.pickle
+mingw32/lib/python3.10/lib2to3/Grammar3.10.9.final.0.pickle
 mingw32/lib/python3.10/lib2to3/main.py
 mingw32/lib/python3.10/lib2to3/patcomp.py
 mingw32/lib/python3.10/lib2to3/PatternGrammar.txt
-mingw32/lib/python3.10/lib2to3/PatternGrammar3.10.8.final.0.pickle
+mingw32/lib/python3.10/lib2to3/PatternGrammar3.10.9.final.0.pickle
 mingw32/lib/python3.10/lib2to3/pgen2/
 mingw32/lib/python3.10/lib2to3/pgen2/__init__.py
 mingw32/lib/python3.10/lib2to3/pgen2/__pycache__/
@@ -3982,9 +3982,6 @@ mingw32/lib/python3.10/test/__pycache__/test_calendar.cpython-310.pyc
 mingw32/lib/python3.10/test/__pycache__/test_call.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/test/__pycache__/test_call.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/test/__pycache__/test_call.cpython-310.pyc
-mingw32/lib/python3.10/test/__pycache__/test_capi.cpython-310.opt-1.pyc
-mingw32/lib/python3.10/test/__pycache__/test_capi.cpython-310.opt-2.pyc
-mingw32/lib/python3.10/test/__pycache__/test_capi.cpython-310.pyc
 mingw32/lib/python3.10/test/__pycache__/test_cgi.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/test/__pycache__/test_cgi.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/test/__pycache__/test_cgi.cpython-310.pyc
@@ -4336,9 +4333,6 @@ mingw32/lib/python3.10/test/__pycache__/test_genericpath.cpython-310.pyc
 mingw32/lib/python3.10/test/__pycache__/test_genexps.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/test/__pycache__/test_genexps.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/test/__pycache__/test_genexps.cpython-310.pyc
-mingw32/lib/python3.10/test/__pycache__/test_getargs2.cpython-310.opt-1.pyc
-mingw32/lib/python3.10/test/__pycache__/test_getargs2.cpython-310.opt-2.pyc
-mingw32/lib/python3.10/test/__pycache__/test_getargs2.cpython-310.pyc
 mingw32/lib/python3.10/test/__pycache__/test_getopt.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/test/__pycache__/test_getopt.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/test/__pycache__/test_getopt.cpython-310.pyc
@@ -4831,9 +4825,6 @@ mingw32/lib/python3.10/test/__pycache__/test_strtod.cpython-310.pyc
 mingw32/lib/python3.10/test/__pycache__/test_struct.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/test/__pycache__/test_struct.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/test/__pycache__/test_struct.cpython-310.pyc
-mingw32/lib/python3.10/test/__pycache__/test_structmembers.cpython-310.opt-1.pyc
-mingw32/lib/python3.10/test/__pycache__/test_structmembers.cpython-310.opt-2.pyc
-mingw32/lib/python3.10/test/__pycache__/test_structmembers.cpython-310.pyc
 mingw32/lib/python3.10/test/__pycache__/test_structseq.cpython-310.opt-1.pyc
 mingw32/lib/python3.10/test/__pycache__/test_structseq.cpython-310.opt-2.pyc
 mingw32/lib/python3.10/test/__pycache__/test_structseq.cpython-310.pyc
@@ -5825,7 +5816,6 @@ mingw32/lib/python3.10/test/test_bz2.py
 mingw32/lib/python3.10/test/test_c_locale_coercion.py
 mingw32/lib/python3.10/test/test_calendar.py
 mingw32/lib/python3.10/test/test_call.py
-mingw32/lib/python3.10/test/test_capi.py
 mingw32/lib/python3.10/test/test_cgi.py
 mingw32/lib/python3.10/test/test_cgitb.py
 mingw32/lib/python3.10/test/test_charmapcodec.py
@@ -6068,7 +6058,6 @@ mingw32/lib/python3.10/test/test_genericalias.py
 mingw32/lib/python3.10/test/test_genericclass.py
 mingw32/lib/python3.10/test/test_genericpath.py
 mingw32/lib/python3.10/test/test_genexps.py
-mingw32/lib/python3.10/test/test_getargs2.py
 mingw32/lib/python3.10/test/test_getopt.py
 mingw32/lib/python3.10/test/test_getpass.py
 mingw32/lib/python3.10/test/test_gettext.py
@@ -6854,7 +6843,6 @@ mingw32/lib/python3.10/test/test_stringprep.py
 mingw32/lib/python3.10/test/test_strptime.py
 mingw32/lib/python3.10/test/test_strtod.py
 mingw32/lib/python3.10/test/test_struct.py
-mingw32/lib/python3.10/test/test_structmembers.py
 mingw32/lib/python3.10/test/test_structseq.py
 mingw32/lib/python3.10/test/test_subclassinit.py
 mingw32/lib/python3.10/test/test_subprocess.py

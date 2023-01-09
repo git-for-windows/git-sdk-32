@@ -267,6 +267,8 @@ mingw32/lib/libmsvcrt20.a
 mingw32/lib/libmsvcrt40.a
 mingw32/lib/libmsvfw32.a
 mingw32/lib/libmswsock.a
+mingw32/lib/libmsxml2.a
+mingw32/lib/libmsxml6.a
 mingw32/lib/libncrypt.a
 mingw32/lib/libnddeapi.a
 mingw32/lib/libndfapi.a

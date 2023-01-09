@@ -1001,7 +1001,11 @@ mingw32/include/mswsock.h
 mingw32/include/msxml.h
 mingw32/include/msxml.idl
 mingw32/include/msxml2.h
+mingw32/include/msxml2.idl
 mingw32/include/msxml2did.h
+mingw32/include/msxml6.h
+mingw32/include/msxml6.idl
+mingw32/include/msxml6did.h
 mingw32/include/msxmldid.h
 mingw32/include/mtsadmin.h
 mingw32/include/mtsevents.h
@@ -1256,6 +1260,8 @@ mingw32/include/richole.h
 mingw32/include/rkeysvcc.h
 mingw32/include/rnderr.h
 mingw32/include/roapi.h
+mingw32/include/robuffer.h
+mingw32/include/robuffer.idl
 mingw32/include/routprot.h
 mingw32/include/rpc.h
 mingw32/include/rpcasync.h
@@ -1341,6 +1347,7 @@ mingw32/include/setupapi.h
 mingw32/include/sfc.h
 mingw32/include/shappmgr.h
 mingw32/include/share.h
+mingw32/include/shcore.h
 mingw32/include/shdeprecated.h
 mingw32/include/shdispid.h
 mingw32/include/shellapi.h
@@ -1830,7 +1837,9 @@ mingw32/include/xenroll.h
 mingw32/include/xinput.h
 mingw32/include/xlocinfo.h
 mingw32/include/xmath.h
+mingw32/include/xmldom.idl
 mingw32/include/xmldomdid.h
+mingw32/include/xmldso.idl
 mingw32/include/xmldsodid.h
 mingw32/include/xmllite.h
 mingw32/include/xmllite.idl

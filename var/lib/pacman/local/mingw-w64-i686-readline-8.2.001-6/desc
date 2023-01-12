@@ -2,7 +2,7 @@
 mingw-w64-i686-readline
 
 %VERSION%
-8.2.001-5
+8.2.001-6
 
 %BASE%
 mingw-w64-readline
@@ -17,16 +17,16 @@ https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
 any
 
 %BUILDDATE%
-1670692156
+1673341791
 
 %INSTALLDATE%
-1670728833
+1673493320
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/59e8e1af/3665130770)
+CI (msys2/msys2-autobuild/63f65d30/3881791846)
 
 %SIZE%
-1734481
+2186510
 
 %LICENSE%
 spdx:GPL-3.0-or-later

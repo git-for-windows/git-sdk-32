@@ -17,6 +17,11 @@ mingw32/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
 mingw32/etc/pki/ca-trust/source/
 mingw32/etc/pki/ca-trust/source/anchors/
 mingw32/etc/pki/ca-trust/source/blacklist/
+mingw32/etc/ssl/
+mingw32/etc/ssl/cert.pem
+mingw32/etc/ssl/certs/
+mingw32/etc/ssl/certs/ca-bundle.crt
+mingw32/etc/ssl/certs/ca-bundle.trust.crt
 mingw32/lib/
 mingw32/lib/p11-kit/
 mingw32/lib/p11-kit/p11-kit-extract-trust
@@ -30,9 +35,4 @@ mingw32/share/pki/ca-trust-legacy/ca-bundle.legacy.default.crt
 mingw32/share/pki/ca-trust-legacy/ca-bundle.legacy.disable.crt
 mingw32/share/pki/ca-trust-source/
 mingw32/share/pki/ca-trust-source/ca-bundle.trust.crt
-mingw32/ssl/
-mingw32/ssl/cert.pem
-mingw32/ssl/certs/
-mingw32/ssl/certs/ca-bundle.crt
-mingw32/ssl/certs/ca-bundle.trust.crt
 

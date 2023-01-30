@@ -2,7 +2,7 @@
 mingw-w64-i686-zlib
 
 %VERSION%
-1.2.13-2
+1.2.13-3
 
 %BASE%
 mingw-w64-zlib
@@ -17,13 +17,13 @@ https://www.zlib.net/
 any
 
 %BUILDDATE%
-1668782643
+1674983588
 
 %INSTALLDATE%
-1668915933
+1675048684
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/59e8e1af/3496989971)
+CI (msys2/msys2-autobuild/aea263ec/4036033029)
 
 %SIZE%
 413663
@@ -32,7 +32,7 @@ CI (msys2/msys2-autobuild/59e8e1af/3496989971)
 1
 
 %LICENSE%
-ZLIB
+spdx:Zlib
 
 %VALIDATION%
 pgp

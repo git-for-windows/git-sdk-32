@@ -35,23 +35,33 @@ jobs:
       - name: clone git-sdk-${{env.ARCH_BITNESS}}
         shell: bash
         run: |
-          git clone --depth=1 --single-branch -b ${REF#refs/heads/} https://github.com/${{github.repository}} git-sdk-${{env.ARCH_BITNESS}}
+          # cannot use `git clone` directly, to allow for PR's refs to be fetched
+          git init --bare -b ${REF#refs/heads/} git-sdk-${{env.ARCH_BITNESS}}.git &&
+          git -C git-sdk-${{env.ARCH_BITNESS}}.git remote add origin https://github.com/${{github.repository}} &&
+          git -C git-sdk-${{env.ARCH_BITNESS}}.git config remote.origin.promisor true &&
+          git -C git-sdk-${{env.ARCH_BITNESS}}.git config remote.origin.partialCloneFilter blob:none &&
+          git -C git-sdk-${{env.ARCH_BITNESS}}.git fetch --depth=1 origin $REF:refs/heads/${REF#refs/heads/}
         env:
           REF: ${{github.ref}}
-      - name: Set up Git for Windows SDK
-        shell: bash
-        run: |
-          cygpath -aw "$PWD/git-sdk-${{env.ARCH_BITNESS}}/usr/bin/core_perl" >>$GITHUB_PATH &&
-          cygpath -aw "$PWD/git-sdk-${{env.ARCH_BITNESS}}/usr/bin" >>$GITHUB_PATH &&
-          cygpath -aw "$PWD/git-sdk-${{env.ARCH_BITNESS}}/mingw${{env.ARCH_BITNESS}}/bin" >>$GITHUB_PATH
       - name: clone build-extra
         shell: bash
+        run: git clone --depth=1 --single-branch -b main https://github.com/git-for-windows/build-extra
+      - name: create build-installers artifact
+        shell: bash
         run: |
-          git clone --depth=100 --single-branch -b main https://github.com/git-for-windows/build-extra /usr/src/build-extra
+          sh -x ./build-extra/please.sh create-sdk-artifact --sdk=git-sdk-${{env.ARCH_BITNESS}}.git build-installers &&
+
+          cygpath -aw "$PWD/build-installers/usr/bin/core_perl" >>$GITHUB_PATH &&
+          cygpath -aw "$PWD/build-installers/usr/bin" >>$GITHUB_PATH &&
+          cygpath -aw "$PWD/build-installers/mingw${{env.ARCH_BITNESS}}/bin" >>$GITHUB_PATH &&
+
+          mkdir -p build-installers/usr/src &&
+          mv build-extra build-installers/usr/src/
 
       - name: Generate bundle artifacts
         shell: bash
         run: |
+          printf '#!/bin/sh\n\nexec /mingw${{env.ARCH_BITNESS}}/bin/git.exe "$@"\n' >/usr/bin/git &&
           mkdir -p bundle-artifacts &&
 
           { test -n "$REPOSITORY" || REPOSITORY='${{github.repository}}'; } &&
@@ -103,12 +113,36 @@ jobs:
           cp PKGBUILD.$version PKGBUILD &&
           git commit -s -m "mingw-w64-git: new version ($version)" PKGBUILD &&
           git bundle create "$b"/MINGW-packages.bundle origin/main..main)
+      - name: Build mingw-w64-i686-git
+        if: env.ARCH_NAME == 'x86_64'
+        shell: bash
+        run: |
+          set -x
+
+          # Make sure that there is a `/usr/bin/git` that can be used by `makepkg-mingw`
+          printf '#!/bin/sh\n\nexec /mingw${{env.ARCH_BITNESS}}/bin/git.exe "$@"\n' >/usr/bin/git &&
+
+          # Restrict `PATH` to MSYS2
+          PATH="/mingw${{env.ARCH_BITNESS}}/bin:/usr/bin:/C/Windows/system32"
+
+          sh -x /usr/src/build-extra/please.sh build-mingw-w64-git --only-32-bit -o artifacts HEAD
       - name: Publish mingw-w64-${{env.ARCH_NAME}}-git
         uses: actions/upload-artifact@v3
         with:
           name: pkg-${{env.ARCH_NAME}}
           path: artifacts
           retention-days: 5
+
+      - name: prepare build-installers for uploading
+        shell: bash
+        run: |
+          tar czf build-installers.tgz build-installers/
+      - name: Publish build-installers.tgz
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-installers.tgz
+          path: build-installers.tgz
+          retention-days: 1
 
   artifacts:
     runs-on: windows-latest
@@ -128,22 +162,17 @@ jobs:
         with:
           name: bundle-artifacts
           path: bundle-artifacts
-      - name: clone git-sdk-${{env.ARCH_BITNESS}}
+      - name: Download build-installers.tgz
+        uses: actions/download-artifact@v3
+        with:
+          name: build-installers.tgz
+      - name: Configure Git for Windows SDK
         shell: bash
         run: |
-          git clone --depth=1 --single-branch -b ${REF#refs/heads/} https://github.com/${{github.repository}} git-sdk-${{env.ARCH_BITNESS}}
-        env:
-          REF: ${{github.ref}}
-      - name: Set up Git for Windows SDK
-        shell: bash
-        run: |
-          cygpath -aw "$PWD/git-sdk-${{env.ARCH_BITNESS}}/usr/bin/core_perl" >>$GITHUB_PATH &&
-          cygpath -aw "$PWD/git-sdk-${{env.ARCH_BITNESS}}/usr/bin" >>$GITHUB_PATH &&
-          cygpath -aw "$PWD/git-sdk-${{env.ARCH_BITNESS}}/mingw${{env.ARCH_BITNESS}}/bin" >>$GITHUB_PATH
-      - name: clone build-extra
-        shell: bash
-        run: |
-          git clone --depth=100 --single-branch -b main https://github.com/git-for-windows/build-extra /usr/src/build-extra
+          tar xf build-installers.tgz &&
+          cygpath -aw "$PWD/build-installers/usr/bin/core_perl" >>$GITHUB_PATH &&
+          cygpath -aw "$PWD/build-installers/usr/bin" >>$GITHUB_PATH &&
+          cygpath -aw "$PWD/build-installers/mingw${{env.ARCH_BITNESS}}/bin" >>$GITHUB_PATH
       - name: Build ${{env.ARCH_BITNESS}}-bit ${{matrix.artifact}}
         shell: bash
         run: |
@@ -196,7 +225,7 @@ jobs:
           git.exe version --build-options >version &&
           cat version &&
           grep "$(sed -e 's|^v||' -e 's|-|.|g' <bundle-artifacts/next_version)" version &&
-          checklist=git-sdk-${{env.ARCH_BITNESS}}/usr/src/build-extra/installer/run-checklist.sh &&
+          checklist=build-installers/usr/src/build-extra/installer/run-checklist.sh &&
           # cannot test SSH keys in read-only mode, skip test for now
           sed -i 's|git@ssh.dev.azure.com:v3/git-for-windows/git/git|https://github.com/git/git|' $checklist &&
           sh -x $checklist

@@ -2,7 +2,7 @@
 less
 
 %VERSION%
-621-1
+621-2
 
 %BASE%
 less
@@ -17,16 +17,16 @@ http://www.greenwoodsoftware.com/less
 i686
 
 %BUILDDATE%
-1674771386
+1675110994
 
 %INSTALLDATE%
-1674789327
+1675135130
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-243140
+244581
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 libcbor
 
 %VERSION%
-0.9.0-1
+0.10.2-1
 
 %BASE%
 libcbor
@@ -17,16 +17,16 @@ https://github.com/PJK/libcbor
 i686
 
 %BUILDDATE%
-1667470527
+1675248039
 
 %INSTALLDATE%
-1667478324
+1675307765
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-45607
+46631
 
 %REASON%
 1

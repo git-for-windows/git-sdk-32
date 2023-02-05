@@ -66,6 +66,8 @@ mingw32/include/libiberty/sort.h
 mingw32/include/libiberty/splay-tree.h
 mingw32/include/libiberty/timeval-utils.h
 mingw32/include/plugin-api.h
+mingw32/include/sframe-api.h
+mingw32/include/sframe.h
 mingw32/include/symcat.h
 mingw32/lib/
 mingw32/lib/bfd-plugins/
@@ -74,6 +76,7 @@ mingw32/lib/libctf-nobfd.a
 mingw32/lib/libctf.a
 mingw32/lib/libiberty.a
 mingw32/lib/libopcodes.a
+mingw32/lib/libsframe.a
 mingw32/share/
 mingw32/share/info/
 mingw32/share/info/as.info.gz
@@ -82,6 +85,7 @@ mingw32/share/info/binutils.info.gz
 mingw32/share/info/ctf-spec.info.gz
 mingw32/share/info/gprof.info.gz
 mingw32/share/info/ld.info.gz
+mingw32/share/info/sframe-spec.info.gz
 mingw32/share/licenses/
 mingw32/share/licenses/binutils/
 mingw32/share/licenses/binutils/COPYING

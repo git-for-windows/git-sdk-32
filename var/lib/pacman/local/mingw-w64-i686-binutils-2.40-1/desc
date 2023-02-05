@@ -2,7 +2,7 @@
 mingw-w64-i686-binutils
 
 %VERSION%
-2.39-3
+2.40-1
 
 %BASE%
 mingw-w64-binutils
@@ -17,16 +17,16 @@ https://www.gnu.org/software/binutils/
 any
 
 %BUILDDATE%
-1675023230
+1675406401
 
 %INSTALLDATE%
-1675135130
+1675567133
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/aea263ec/4038426103)
+CI (msys2/msys2-autobuild/aea263ec/4081751023)
 
 %SIZE%
-64598150
+65471550
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,6 +38,5 @@ GPL
 pgp
 
 %DEPENDS%
-mingw-w64-i686-libiconv
-mingw-w64-i686-zlib
+mingw-w64-i686-zstd
 

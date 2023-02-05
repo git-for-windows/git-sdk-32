@@ -782,6 +782,8 @@ mingw32/include/issper16.h
 mingw32/include/issperr.h
 mingw32/include/isysmon.h
 mingw32/include/ivec.h
+mingw32/include/ivectorchangedeventargs.h
+mingw32/include/ivectorchangedeventargs.idl
 mingw32/include/iwamreg.h
 mingw32/include/jobapi.h
 mingw32/include/joystickapi.h

@@ -2,7 +2,7 @@
 msys2-runtime
 
 %VERSION%
-3.3.6-2
+3.3.6-3
 
 %BASE%
 msys2-runtime
@@ -17,16 +17,16 @@ https://www.cygwin.com/
 i686
 
 %BUILDDATE%
-1675178033
+1675695681
 
 %INSTALLDATE%
-1675179866
+1675739768
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-11662464
+11662935
 
 %GROUPS%
 base

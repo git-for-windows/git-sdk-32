@@ -2,7 +2,7 @@
 bash
 
 %VERSION%
-5.2.012-1
+5.2.015-1
 
 %BASE%
 bash
@@ -17,10 +17,10 @@ https://www.gnu.org/software/bash/bash.html
 i686
 
 %BUILDDATE%
-1669329784
+1675858341
 
 %INSTALLDATE%
-1669347349
+1675862676
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>

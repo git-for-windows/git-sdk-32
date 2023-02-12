@@ -7,7 +7,6 @@ usr/share/
 usr/share/info/
 usr/share/info/gnutls-client-server-use-case.png.gz
 usr/share/info/gnutls-crypto-layers.png.gz
-usr/share/info/gnutls-guile.info.gz
 usr/share/info/gnutls-handshake-sequence.png.gz
 usr/share/info/gnutls-handshake-state.png.gz
 usr/share/info/gnutls-internals.png.gz
@@ -46,6 +45,9 @@ usr/share/locale/fr/LC_MESSAGES/gnutls.mo
 usr/share/locale/it/
 usr/share/locale/it/LC_MESSAGES/
 usr/share/locale/it/LC_MESSAGES/gnutls.mo
+usr/share/locale/ka/
+usr/share/locale/ka/LC_MESSAGES/
+usr/share/locale/ka/LC_MESSAGES/gnutls.mo
 usr/share/locale/ms/
 usr/share/locale/ms/LC_MESSAGES/
 usr/share/locale/ms/LC_MESSAGES/gnutls.mo
@@ -58,6 +60,9 @@ usr/share/locale/pl/LC_MESSAGES/gnutls.mo
 usr/share/locale/pt_BR/
 usr/share/locale/pt_BR/LC_MESSAGES/
 usr/share/locale/pt_BR/LC_MESSAGES/gnutls.mo
+usr/share/locale/ro/
+usr/share/locale/ro/LC_MESSAGES/
+usr/share/locale/ro/LC_MESSAGES/gnutls.mo
 usr/share/locale/sr/
 usr/share/locale/sr/LC_MESSAGES/
 usr/share/locale/sr/LC_MESSAGES/gnutls.mo

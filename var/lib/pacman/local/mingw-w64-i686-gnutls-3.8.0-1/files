@@ -11,7 +11,6 @@ mingw32/bin/libgnutlsxx-30.dll
 mingw32/bin/ocsptool.exe
 mingw32/bin/p11tool.exe
 mingw32/bin/psktool.exe
-mingw32/bin/srptool.exe
 mingw32/include/
 mingw32/include/gnutls/
 mingw32/include/gnutls/abstract.h
@@ -58,7 +57,6 @@ mingw32/share/doc/gnutls/pkcs11-vision.png
 mingw32/share/info/
 mingw32/share/info/gnutls-client-server-use-case.png
 mingw32/share/info/gnutls-crypto-layers.png
-mingw32/share/info/gnutls-guile.info
 mingw32/share/info/gnutls-handshake-sequence.png
 mingw32/share/info/gnutls-handshake-state.png
 mingw32/share/info/gnutls-internals.png
@@ -97,6 +95,9 @@ mingw32/share/locale/fr/LC_MESSAGES/gnutls.mo
 mingw32/share/locale/it/
 mingw32/share/locale/it/LC_MESSAGES/
 mingw32/share/locale/it/LC_MESSAGES/gnutls.mo
+mingw32/share/locale/ka/
+mingw32/share/locale/ka/LC_MESSAGES/
+mingw32/share/locale/ka/LC_MESSAGES/gnutls.mo
 mingw32/share/locale/ms/
 mingw32/share/locale/ms/LC_MESSAGES/
 mingw32/share/locale/ms/LC_MESSAGES/gnutls.mo
@@ -109,6 +110,9 @@ mingw32/share/locale/pl/LC_MESSAGES/gnutls.mo
 mingw32/share/locale/pt_BR/
 mingw32/share/locale/pt_BR/LC_MESSAGES/
 mingw32/share/locale/pt_BR/LC_MESSAGES/gnutls.mo
+mingw32/share/locale/ro/
+mingw32/share/locale/ro/LC_MESSAGES/
+mingw32/share/locale/ro/LC_MESSAGES/gnutls.mo
 mingw32/share/locale/sr/
 mingw32/share/locale/sr/LC_MESSAGES/
 mingw32/share/locale/sr/LC_MESSAGES/gnutls.mo
@@ -133,7 +137,6 @@ mingw32/share/man/man1/gnutls-serv.1
 mingw32/share/man/man1/ocsptool.1
 mingw32/share/man/man1/p11tool.1
 mingw32/share/man/man1/psktool.1
-mingw32/share/man/man1/srptool.1
 mingw32/share/man/man1/tpmtool.1
 mingw32/share/man/man3/
 mingw32/share/man/man3/dane_cert_type_name.3

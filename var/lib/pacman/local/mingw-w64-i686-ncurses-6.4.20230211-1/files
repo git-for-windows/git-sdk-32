@@ -1957,6 +1957,8 @@ mingw32/lib/terminfo/72/regent25
 mingw32/lib/terminfo/72/regent40
 mingw32/lib/terminfo/72/regent40+
 mingw32/lib/terminfo/72/regent60
+mingw32/lib/terminfo/72/report+da2
+mingw32/lib/terminfo/72/report+version
 mingw32/lib/terminfo/72/rt6221
 mingw32/lib/terminfo/72/rt6221-w
 mingw32/lib/terminfo/72/rtpc
@@ -3141,6 +3143,7 @@ mingw32/share/man/man3/curs_util.3x.gz
 mingw32/share/man/man3/curs_variables.3x.gz
 mingw32/share/man/man3/curs_window.3x.gz
 mingw32/share/man/man3/curscr.3x.gz
+mingw32/share/man/man3/curses.3x.gz
 mingw32/share/man/man3/curses_trace.3x.gz
 mingw32/share/man/man3/curses_version.3x.gz
 mingw32/share/man/man3/data_ahead.3x.gz
@@ -5766,6 +5769,8 @@ mingw32/share/terminfo/72/regent25
 mingw32/share/terminfo/72/regent40
 mingw32/share/terminfo/72/regent40+
 mingw32/share/terminfo/72/regent60
+mingw32/share/terminfo/72/report+da2
+mingw32/share/terminfo/72/report+version
 mingw32/share/terminfo/72/rt6221
 mingw32/share/terminfo/72/rt6221-w
 mingw32/share/terminfo/72/rtpc

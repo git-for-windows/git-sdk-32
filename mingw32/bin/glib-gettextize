@@ -39,7 +39,7 @@ Usage: glib-gettextize [OPTION]... [package-dir]
   -f, --force          force writing of new files even if old exist
 Report bugs to https://gitlab.gnome.org/GNOME/glib/issues/new."
 package=glib
-version=2.74.5
+version=2.74.6
 try_ln_s=:
 
 # Directory where the sources are stored.

@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="Asciidoctor 2.0.17"/>
+<meta name="generator" content="Asciidoctor 2.0.18"/>
 <title>gitattributes(5)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
 <style>
@@ -84,10 +84,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -1386,6 +1386,54 @@ See <a href="git.html">git(1)</a> for details.</p>
 </div>
 </div>
 <div class="sect3">
+<h4 id="_setting_the_internal_diff_algorithm">Setting the internal diff algorithm</h4>
+<div class="paragraph">
+<p>The diff algorithm can be set through the <code>diff.algorithm</code> config key, but
+sometimes it may be helpful to set the diff algorithm per path. For example,
+one may want to use the <code>minimal</code> diff algorithm for .json files, and the
+<code>histogram</code> for .c files, and so on without having to pass in the algorithm
+through the command line each time.</p>
+</div>
+<div class="paragraph">
+<p>First, in <code>.gitattributes</code>, assign the <code>diff</code> attribute for paths.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>*.json diff=&lt;name&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, define a "diff.&lt;name&gt;.algorithm" configuration to specify the diff
+algorithm, choosing from <code>myers</code>, <code>patience</code>, <code>minimal</code>, or <code>histogram</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[diff "&lt;name&gt;"]
+  algorithm = histogram</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This diff algorithm applies to user facing diff output like git-diff(1),
+git-show(1) and is used for the <code>--stat</code> output as well. The merge machinery
+will not use the diff algorithm set through this method.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If <code>diff.&lt;name&gt;.command</code> is defined for path with the
+<code>diff=&lt;name&gt;</code> attribute, it is executed as an external diff driver
+(see above), and adding <code>diff.&lt;name&gt;.algorithm</code> has no effect, as the
+algorithm is not passed to the external diff driver.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_defining_a_custom_hunk_header">Defining a custom hunk-header</h4>
 <div class="paragraph">
 <p>Each group of changes (called a "hunk") in the textual diff output
@@ -2077,7 +2125,7 @@ frotz   unspecified</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-27 15:06:42 UTC
+Last updated 2023-03-03 12:57:36 UTC
 </div>
 </div>
 </body>

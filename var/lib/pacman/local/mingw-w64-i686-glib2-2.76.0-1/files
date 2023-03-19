@@ -103,6 +103,7 @@ mingw32/include/glib-2.0/gio/ginetsocketaddress.h
 mingw32/include/glib-2.0/gio/ginitable.h
 mingw32/include/glib-2.0/gio/ginputstream.h
 mingw32/include/glib-2.0/gio/gio-autocleanups.h
+mingw32/include/glib-2.0/gio/gio-visibility.h
 mingw32/include/glib-2.0/gio/gio.h
 mingw32/include/glib-2.0/gio/gioenums.h
 mingw32/include/glib-2.0/gio/gioenumtypes.h
@@ -230,6 +231,7 @@ mingw32/include/glib-2.0/glib/giochannel.h
 mingw32/include/glib-2.0/glib/gkeyfile.h
 mingw32/include/glib-2.0/glib/glib-autocleanups.h
 mingw32/include/glib-2.0/glib/glib-typeof.h
+mingw32/include/glib-2.0/glib/glib-visibility.h
 mingw32/include/glib-2.0/glib/glist.h
 mingw32/include/glib-2.0/glib/gmacros.h
 mingw32/include/glib-2.0/glib/gmain.h
@@ -239,6 +241,7 @@ mingw32/include/glib-2.0/glib/gmem.h
 mingw32/include/glib-2.0/glib/gmessages.h
 mingw32/include/glib-2.0/glib/gnode.h
 mingw32/include/glib-2.0/glib/goption.h
+mingw32/include/glib-2.0/glib/gpathbuf.h
 mingw32/include/glib-2.0/glib/gpattern.h
 mingw32/include/glib-2.0/glib/gpoll.h
 mingw32/include/glib-2.0/glib/gprimes.h
@@ -280,6 +283,8 @@ mingw32/include/glib-2.0/glib/gversion.h
 mingw32/include/glib-2.0/glib/gversionmacros.h
 mingw32/include/glib-2.0/glib/gwin32.h
 mingw32/include/glib-2.0/gmodule.h
+mingw32/include/glib-2.0/gmodule/
+mingw32/include/glib-2.0/gmodule/gmodule-visibility.h
 mingw32/include/glib-2.0/gobject/
 mingw32/include/glib-2.0/gobject/gbinding.h
 mingw32/include/glib-2.0/gobject/gbindinggroup.h
@@ -290,6 +295,7 @@ mingw32/include/glib-2.0/gobject/glib-enumtypes.h
 mingw32/include/glib-2.0/gobject/glib-types.h
 mingw32/include/glib-2.0/gobject/gmarshal.h
 mingw32/include/glib-2.0/gobject/gobject-autocleanups.h
+mingw32/include/glib-2.0/gobject/gobject-visibility.h
 mingw32/include/glib-2.0/gobject/gobject.h
 mingw32/include/glib-2.0/gobject/gobjectnotifyqueue.c
 mingw32/include/glib-2.0/gobject/gparam.h
@@ -306,6 +312,8 @@ mingw32/include/glib-2.0/gobject/gvaluecollector.h
 mingw32/include/glib-2.0/gobject/gvaluetypes.h
 mingw32/include/glib-2.0/msvc_recommended_pragmas.h
 mingw32/lib/
+mingw32/lib/gio/
+mingw32/lib/gio/modules/
 mingw32/lib/glib-2.0/
 mingw32/lib/glib-2.0/include/
 mingw32/lib/glib-2.0/include/glibconfig.h
@@ -350,6 +358,7 @@ mingw32/share/glib-2.0/codegen/__init__.py
 mingw32/share/glib-2.0/codegen/codegen.py
 mingw32/share/glib-2.0/codegen/codegen_docbook.py
 mingw32/share/glib-2.0/codegen/codegen_main.py
+mingw32/share/glib-2.0/codegen/codegen_md.py
 mingw32/share/glib-2.0/codegen/codegen_rst.py
 mingw32/share/glib-2.0/codegen/config.py
 mingw32/share/glib-2.0/codegen/dbustypes.py

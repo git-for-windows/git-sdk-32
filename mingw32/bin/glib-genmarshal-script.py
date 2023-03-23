@@ -22,7 +22,7 @@ import os
 import re
 import sys
 
-VERSION_STR = '''glib-genmarshal version 2.74.4
+VERSION_STR = '''glib-genmarshal version 2.76.0
 glib-genmarshal comes with ABSOLUTELY NO WARRANTY.
 You may redistribute copies of glib-genmarshal under the terms of
 the GNU General Public License which can be found in the
@@ -671,7 +671,7 @@ def generate_body(retval, params, prefix, va_marshal=False):
             body += ['  va_list args_copy;']
             body += ['']
 
-            body += ['  G_VA_COPY (args_copy, args);']
+            body += ['  va_copy (args_copy, args);']
 
             for idx, arg in enumerate(get_args):
                 ctype = IN_ARGS[arg]['ctype']

@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="Asciidoctor 2.0.17"/>
+<meta name="generator" content="Asciidoctor 2.0.18"/>
 <meta name="author" content="Christian Couder"/>
 <title>Fighting regressions with git bisect</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
@@ -85,10 +85,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -2097,10 +2097,10 @@ author to given a talk and for publishing this paper.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>[[[1]]] <a href="https://www.nist.gov/sites/default/files/documents/director/planning/report02-3.pdf"><em>The Economic Impacts of Inadequate Infratructure for Software Testing</em>.  Nist Planning Report 02-3</a>, see Executive Summary and Chapter 8.</p>
+<p>[[[1]]] <a href="https://web.archive.org/web/20091206032101/http://www.nist.gov/public_affairs/releases/n02-10.htm"><em>Software Errors Cost U.S. Economy $59.5 Billion Annually</em>. Nist News Release.</a> See also <a href="https://www.nist.gov/system/files/documents/director/planning/report02-3.pdf"><em>The Economic Impacts of Inadequate Infratructure for Software Testing</em>.  Nist Planning Report 02-3</a>, Executive Summary and Chapter 8.</p>
 </li>
 <li>
-<p>[[[2]]] <a href="http://www.oracle.com/technetwork/java/codeconvtoc-136057.html"><em>Code Conventions for the Java Programming Language</em>. Sun Microsystems.</a></p>
+<p>[[[2]]] <a href="https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html"><em>Code Conventions for the Java Programming Language: 1. Introduction</em>. Sun Microsystems.</a></p>
 </li>
 <li>
 <p>[[[3]]] <a href="https://en.wikipedia.org/wiki/Software_maintenance"><em>Software maintenance</em>. Wikipedia.</a></p>
@@ -2130,7 +2130,7 @@ author to given a talk and for publishing this paper.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-21 13:46:20 UTC
+Last updated 2023-03-14 07:13:12 UTC
 </div>
 </div>
 </body>

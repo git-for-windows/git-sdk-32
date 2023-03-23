@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="Asciidoctor 2.0.17"/>
+<meta name="generator" content="Asciidoctor 2.0.18"/>
 <title>gitformat-signature(5)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
 <style>
@@ -84,10 +84,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -461,13 +461,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Git uses cryptographic signatures in various places, currently objects (tags,
 commits, mergetags) and transactions (pushes). In every case, the command which
 is about to create an object or transaction determines a payload from that,
-calls gpg to obtain a detached signature for the payload (<code>gpg -bsa</code>) and
-embeds the signature into the object or transaction.</p>
+calls an external program to obtain a detached signature for the payload
+(<code>gpg -bsa</code> in the case of PGP signatures), and embeds the signature into the
+object or transaction.</p>
 </div>
 <div class="paragraph">
-<p>Signatures always begin with <code>-----BEGIN PGP SIGNATURE-----</code>
-and end with <code>-----END PGP SIGNATURE-----</code>, unless gpg is told to
-produce RFC1991 signatures which use <code>MESSAGE</code> instead of <code>SIGNATURE</code>.</p>
+<p>Signatures begin with an "ASCII Armor" header line and end with a tail line,
+which differ depending on signature type (as selected by <code>gpg.format</code>, see
+<a href="git-config.html">git-config(1)</a>). These are, for <code>gpg.format</code> values:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>gpg</code> (PGP)</dt>
+<dd>
+<p><code>-----BEGIN PGP SIGNATURE-----</code> and <code>-----END PGP SIGNATURE-----</code>.
+Or, if gpg is told to produce RFC1991 signatures,
+<code>-----BEGIN PGP MESSAGE-----</code> and <code>-----END PGP MESSAGE-----</code></p>
+</dd>
+<dt class="hdlist1"><code>ssh</code> (SSH)</dt>
+<dd>
+<p><code>-----BEGIN SSH SIGNATURE-----</code> and <code>-----END SSH SIGNATURE-----</code></p>
+</dd>
+<dt class="hdlist1"><code>x509</code> (X.509)</dt>
+<dd>
+<p><code>-----BEGIN SIGNED MESSAGE-----</code> and <code>-----END SIGNED MESSAGE-----</code></p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
 <p>Signatures sometimes appear as a part of the normal payload
@@ -484,7 +503,7 @@ line.</p>
 <p>This is even true for an originally empty line.  In the following
 examples, the end of line that ends with a whitespace letter is
 highlighted with a <code>$</code> sign; if you are trying to recreate these
-example by hand, do not cut and paste them---they are there
+example by hand, do not cut and paste them&#8212;&#8203;they are there
 primarily to highlight extra whitespace at the end of some lines.</p>
 </div>
 <div class="paragraph">
@@ -734,7 +753,7 @@ Date:   Wed Jun 15 09:13:29 2016 +0000
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-21 13:46:20 UTC
+Last updated 2023-03-14 07:13:12 UTC
 </div>
 </div>
 </body>

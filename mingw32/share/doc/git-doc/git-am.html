@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="Asciidoctor 2.0.17"/>
+<meta name="generator" content="Asciidoctor 2.0.18"/>
 <title>git-am(1)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
 <style>
@@ -84,10 +84,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -449,7 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git am</em> [--signoff] [--keep] [--[no-]keep-cr] [--[no-]utf8]
+<pre class="content"><em>git am</em> [--signoff] [--keep] [--[no-]keep-cr] [--[no-]utf8] [--no-verify]
          [--[no-]3way] [--interactive] [--committer-date-is-author-date]
          [--ignore-date] [--ignore-space-change | --ignore-whitespace]
          [--whitespace=&lt;option&gt;] [-C&lt;n&gt;] [-p&lt;n&gt;] [--directory=&lt;dir&gt;]
@@ -614,6 +614,13 @@ stgit, stgit-series and hg.</p>
 <dt class="hdlist1">--interactive</dt>
 <dd>
 <p>Run interactively.</p>
+</dd>
+<dt class="hdlist1">-n</dt>
+<dt class="hdlist1">--no-verify</dt>
+<dd>
+<p>By default, the pre-applypatch and applypatch-msg hooks are run.
+When any of <code>--no-verify</code> or <code>-n</code> is given, these are bypassed.
+See also <a href="githooks.html">githooks(5)</a>.</p>
 </dd>
 <dt class="hdlist1">--committer-date-is-author-date</dt>
 <dd>
@@ -828,7 +835,7 @@ See <a href="git-am.html">git-am(1)</a>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-21 13:46:20 UTC
+Last updated 2023-03-14 07:13:12 UTC
 </div>
 </div>
 </body>

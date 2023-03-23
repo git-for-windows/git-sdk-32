@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="generator" content="Asciidoctor 2.0.17"/>
+<meta name="generator" content="Asciidoctor 2.0.18"/>
 <title>git-merge-tree(1)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
 <style>
@@ -84,10 +84,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -530,6 +530,12 @@ conflicts, and to omit them otherwise.</p>
 share no common history.  This flag can be given to override that
 check and make the merge proceed anyway.</p>
 </dd>
+<dt class="hdlist1">--merge-base=&lt;commit&gt;</dt>
+<dd>
+<p>Instead of finding the merge-bases for &lt;branch1&gt; and &lt;branch2&gt;,
+specify a merge-base for the merge, and specifying multiple bases is
+currently not supported. This option is incompatible with <code>--stdin</code>.</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -763,6 +769,25 @@ with <a href="git-merge.html">git-merge(1)</a>:</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_input_format">INPUT FORMAT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>git merge-tree --stdin</em> input format is fully text based. Each line
+has this format:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[&lt;base-commit&gt; -- ]&lt;branch1&gt; &lt;branch2&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If one line is separated by <code>--</code>, the string before the separator is
+used for specifying a merge-base for the merge and the string after
+the separator describes the branches to be merged.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_mistakes_to_avoid">MISTAKES TO AVOID</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -865,7 +890,7 @@ large repositories).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-21 13:46:20 UTC
+Last updated 2023-03-14 07:13:12 UTC
 </div>
 </div>
 </body>

@@ -833,6 +833,7 @@ mingw32/include/loadperf.h
 mingw32/include/locale.h
 mingw32/include/locationapi.h
 mingw32/include/locationapi.idl
+mingw32/include/lowlevelmonitorconfigurationapi.h
 mingw32/include/lpmapi.h
 mingw32/include/lzexpand.h
 mingw32/include/madcapcl.h

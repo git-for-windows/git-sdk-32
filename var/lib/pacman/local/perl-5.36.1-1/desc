@@ -2,7 +2,7 @@
 perl
 
 %VERSION%
-5.36.0-1
+5.36.1-1
 
 %BASE%
 perl
@@ -17,16 +17,16 @@ https://www.perl.org/
 i686
 
 %BUILDDATE%
-1658917453
+1682325462
 
 %INSTALLDATE%
-1658929228
+1682392441
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-54518171
+54511064
 
 %GROUPS%
 base-devel

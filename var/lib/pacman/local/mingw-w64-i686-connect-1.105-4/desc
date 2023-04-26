@@ -2,7 +2,7 @@
 mingw-w64-i686-connect
 
 %VERSION%
-1.105-3
+1.105-4
 
 %BASE%
 mingw-w64-connect
@@ -17,16 +17,16 @@ https://github.com/gotoh/ssh-connect
 any
 
 %BUILDDATE%
-1667043445
+1680902080
 
 %INSTALLDATE%
-1667102899
+1682478850
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/1fd41adb/3351250837)
+Git for Windows Build Agent <ci@git-for-windows.build>
 
 %SIZE%
-144500
+150244
 
 %LICENSE%
 GPL2+

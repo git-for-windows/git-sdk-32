@@ -14,10 +14,10 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.41.2/
-mingw32/lib/sqlite3.41.2/libtclsqlite3.dll
-mingw32/lib/sqlite3.41.2/libtclsqlite3.dll.a
-mingw32/lib/sqlite3.41.2/pkgIndex.tcl
+mingw32/lib/sqlite3.42.0/
+mingw32/lib/sqlite3.42.0/libtclsqlite3.dll
+mingw32/lib/sqlite3.42.0/libtclsqlite3.dll.a
+mingw32/lib/sqlite3.42.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/sqlite3/
@@ -84,6 +84,8 @@ mingw32/share/sqlite/extensions/prefixes.c
 mingw32/share/sqlite/extensions/prefixes.dll
 mingw32/share/sqlite/extensions/qpvtab.c
 mingw32/share/sqlite/extensions/qpvtab.dll
+mingw32/share/sqlite/extensions/randomjson.c
+mingw32/share/sqlite/extensions/randomjson.dll
 mingw32/share/sqlite/extensions/README.md
 mingw32/share/sqlite/extensions/remember.c
 mingw32/share/sqlite/extensions/remember.dll

@@ -2,7 +2,7 @@
 mingw-w64-i686-nettle
 
 %VERSION%
-3.8.1-1
+3.9-1
 
 %BASE%
 mingw-w64-nettle
@@ -17,16 +17,16 @@ https://www.lysator.liu.se/~nisse/nettle
 any
 
 %BUILDDATE%
-1659379210
+1684346691
 
 %INSTALLDATE%
-1659499998
+1684725443
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/5f53dab6/2777013525)
+CI (msys2/msys2-autobuild/dfc132af/5006427079)
 
 %SIZE%
-2734565
+2866535
 
 %REASON%
 1

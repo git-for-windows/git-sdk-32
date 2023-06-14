@@ -1,0 +1,45 @@
+%NAME%
+mingw-w64-i686-pdcurses
+
+%VERSION%
+4.3.6-1
+
+%BASE%
+mingw-w64-pdcurses
+
+%DESC%
+Curses library on the Win32 API (mingw-w64)
+
+%URL%
+https://www.projectpluto.com/win32a.htm
+
+%ARCH%
+any
+
+%BUILDDATE%
+1681373937
+
+%INSTALLDATE%
+1681528416
+
+%PACKAGER%
+CI (msys2/msys2-autobuild/aa61bfde/4686860414)
+
+%SIZE%
+2125724
+
+%REASON%
+1
+
+%LICENSE%
+Public Domain
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+mingw-w64-i686-gcc-libs
+
+%PROVIDES%
+mingw-w64-i686-curses
+

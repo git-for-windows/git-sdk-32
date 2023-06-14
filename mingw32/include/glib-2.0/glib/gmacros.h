@@ -863,18 +863,18 @@
 #ifndef __GI_SCANNER__ /* The static assert macro really confuses the introspection parser */
 #define G_PASTE_ARGS(identifier1,identifier2) identifier1 ## identifier2
 #define G_PASTE(identifier1,identifier2)      G_PASTE_ARGS (identifier1, identifier2)
-#if (G_C_STD_CHECK_VERSION (11) || \
+#if G_CXX_STD_CHECK_VERSION (11)
+#define G_STATIC_ASSERT(expr) static_assert (expr, "Expression evaluates to false")
+#elif (G_C_STD_CHECK_VERSION (11) || \
      g_macro__has_feature(c_static_assert) || g_macro__has_extension(c_static_assert))
 #define G_STATIC_ASSERT(expr) _Static_assert (expr, "Expression evaluates to false")
-#elif G_CXX_STD_CHECK_VERSION (11)
-#define G_STATIC_ASSERT(expr) static_assert (expr, "Expression evaluates to false")
 #else
 #ifdef __COUNTER__
 #define G_STATIC_ASSERT(expr) typedef char G_PASTE (_GStaticAssertCompileTimeAssertion_, __COUNTER__)[(expr) ? 1 : -1] G_GNUC_UNUSED
 #else
 #define G_STATIC_ASSERT(expr) typedef char G_PASTE (_GStaticAssertCompileTimeAssertion_, __LINE__)[(expr) ? 1 : -1] G_GNUC_UNUSED
 #endif
-#endif /* G_C_STD_CHECK_VERSION (11) */
+#endif /* G_CXX_STD_CHECK_VERSION (11) */
 #define G_STATIC_ASSERT_EXPR(expr) ((void) sizeof (char[(expr) ? 1 : -1]))
 #endif /* !__GI_SCANNER__ */
 
@@ -918,9 +918,6 @@
 #  else
 #    define NULL ((void*) 0)
 #  endif /* G_CXX_STD_CHECK_VERSION (11) */
-#elif G_CXX_STD_CHECK_VERSION (11)
-#  undef NULL
-#  define NULL (nullptr)
 #endif
 
 #ifndef	FALSE

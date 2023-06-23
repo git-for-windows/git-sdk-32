@@ -2,7 +2,7 @@
 mingw-w64-i686-tk
 
 %VERSION%
-8.6.12-1
+8.6.12-2
 
 %BASE%
 mingw-w64-tk
@@ -17,16 +17,16 @@ https://tcl.sourceforge.io/
 any
 
 %BUILDDATE%
-1664016116
+1687420843
 
 %INSTALLDATE%
-1664685556
+1687490955
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/b40229da/3117812840)
+CI (msys2/msys2-autobuild/79096b75/5342516887)
 
 %SIZE%
-5945101
+5976724
 
 %REASON%
 1

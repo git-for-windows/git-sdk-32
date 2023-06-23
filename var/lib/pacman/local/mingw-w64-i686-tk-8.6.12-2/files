@@ -70,6 +70,8 @@ mingw32/lib/
 mingw32/lib/libtk.dll.a
 mingw32/lib/libtk86.dll.a
 mingw32/lib/libtkstub86.a
+mingw32/lib/pkgconfig/
+mingw32/lib/pkgconfig/tk.pc
 mingw32/lib/tk8.6/
 mingw32/lib/tk8.6/bgerror.tcl
 mingw32/lib/tk8.6/button.tcl

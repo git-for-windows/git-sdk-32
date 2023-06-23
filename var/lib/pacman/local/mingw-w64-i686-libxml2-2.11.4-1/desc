@@ -2,7 +2,7 @@
 mingw-w64-i686-libxml2
 
 %VERSION%
-2.10.4-1
+2.11.4-1
 
 %BASE%
 mingw-w64-libxml2
@@ -11,22 +11,22 @@ mingw-w64-libxml2
 XML parsing library, version 2 (mingw-w64)
 
 %URL%
-http://www.xmlsoft.org/
+https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
 
 %ARCH%
 any
 
 %BUILDDATE%
-1681240151
+1687349475
 
 %INSTALLDATE%
-1681355624
+1687490954
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/aa61bfde/4671082079)
+CI (msys2/msys2-autobuild/79096b75/5333772690)
 
 %SIZE%
-6914197
+6834756
 
 %REASON%
 1

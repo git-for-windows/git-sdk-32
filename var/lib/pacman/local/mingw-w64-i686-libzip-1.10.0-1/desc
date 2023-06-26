@@ -2,7 +2,7 @@
 mingw-w64-i686-libzip
 
 %VERSION%
-1.9.2-1
+1.10.0-1
 
 %BASE%
 mingw-w64-libzip
@@ -17,16 +17,16 @@ https://libzip.org
 any
 
 %BUILDDATE%
-1656881311
+1687597461
 
 %INSTALLDATE%
-1656993613
+1687750259
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a43bdf94/2605935829)
+CI (msys2/msys2-autobuild/79096b75/5363536524)
 
 %SIZE%
-975343
+1051197
 
 %LICENSE%
 spdx:BSD-3-Clause

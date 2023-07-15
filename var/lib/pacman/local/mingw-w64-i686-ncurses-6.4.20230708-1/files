@@ -31,7 +31,6 @@ mingw32/include/ncurses/etip.h
 mingw32/include/ncurses/form.h
 mingw32/include/ncurses/menu.h
 mingw32/include/ncurses/nc_mingw.h
-mingw32/include/ncurses/nc_tparm.h
 mingw32/include/ncurses/ncurses.h
 mingw32/include/ncurses/ncurses_dll.h
 mingw32/include/ncurses/ncurses_mingw.h
@@ -39,7 +38,6 @@ mingw32/include/ncurses/panel.h
 mingw32/include/ncurses/term.h
 mingw32/include/ncurses/term_entry.h
 mingw32/include/ncurses/termcap.h
-mingw32/include/ncurses/tic.h
 mingw32/include/ncurses/unctrl.h
 mingw32/include/ncursesw/
 mingw32/include/ncursesw/curses.h
@@ -54,7 +52,6 @@ mingw32/include/ncursesw/etip.h
 mingw32/include/ncursesw/form.h
 mingw32/include/ncursesw/menu.h
 mingw32/include/ncursesw/nc_mingw.h
-mingw32/include/ncursesw/nc_tparm.h
 mingw32/include/ncursesw/ncurses.h
 mingw32/include/ncursesw/ncurses_dll.h
 mingw32/include/ncursesw/ncurses_mingw.h
@@ -62,7 +59,6 @@ mingw32/include/ncursesw/panel.h
 mingw32/include/ncursesw/term.h
 mingw32/include/ncursesw/term_entry.h
 mingw32/include/ncursesw/termcap.h
-mingw32/include/ncursesw/tic.h
 mingw32/include/ncursesw/unctrl.h
 mingw32/lib/
 mingw32/lib/libformw.a
@@ -1380,6 +1376,7 @@ mingw32/lib/terminfo/6c/lft
 mingw32/lib/terminfo/6c/lft-pc850
 mingw32/lib/terminfo/6c/linux
 mingw32/lib/terminfo/6c/linux+decid
+mingw32/lib/terminfo/6c/linux+kbs
 mingw32/lib/terminfo/6c/linux+sfkeys
 mingw32/lib/terminfo/6c/linux-16color
 mingw32/lib/terminfo/6c/linux-basic
@@ -3743,6 +3740,8 @@ mingw32/share/man/man3/tigetstr.3x.gz
 mingw32/share/man/man3/tigetstr_sp.3x.gz
 mingw32/share/man/man3/timeout.3x.gz
 mingw32/share/man/man3/tiparm.3x.gz
+mingw32/share/man/man3/tiparm_s.3x.gz
+mingw32/share/man/man3/tiscan_s.3x.gz
 mingw32/share/man/man3/top_panel.3x.gz
 mingw32/share/man/man3/top_row.3x.gz
 mingw32/share/man/man3/touchline.3x.gz
@@ -5192,6 +5191,7 @@ mingw32/share/terminfo/6c/lft
 mingw32/share/terminfo/6c/lft-pc850
 mingw32/share/terminfo/6c/linux
 mingw32/share/terminfo/6c/linux+decid
+mingw32/share/terminfo/6c/linux+kbs
 mingw32/share/terminfo/6c/linux+sfkeys
 mingw32/share/terminfo/6c/linux-16color
 mingw32/share/terminfo/6c/linux-basic

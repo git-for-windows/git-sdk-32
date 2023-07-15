@@ -2,7 +2,7 @@
 mingw-w64-i686-osslsigncode
 
 %VERSION%
-2.5-4
+2.6-1
 
 %BASE%
 mingw-w64-osslsigncode
@@ -17,16 +17,16 @@ https://github.com/mtrojnar/osslsigncode
 any
 
 %BUILDDATE%
-1673743577
+1689286366
 
 %INSTALLDATE%
-1687490954
+1689391729
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/77a21114/3920474532)
+CI (msys2/msys2-autobuild/95ab14df/5547000098)
 
 %SIZE%
-445474
+195547
 
 %LICENSE%
 GPL3

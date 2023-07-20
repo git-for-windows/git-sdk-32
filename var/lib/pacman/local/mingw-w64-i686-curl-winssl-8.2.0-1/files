@@ -93,6 +93,8 @@ mingw32/share/man/man3/curl_multi_strerror.3.gz
 mingw32/share/man/man3/curl_multi_timeout.3.gz
 mingw32/share/man/man3/curl_multi_wait.3.gz
 mingw32/share/man/man3/curl_multi_wakeup.3.gz
+mingw32/share/man/man3/curl_pushheader_byname.3.gz
+mingw32/share/man/man3/curl_pushheader_bynum.3.gz
 mingw32/share/man/man3/curl_share_cleanup.3.gz
 mingw32/share/man/man3/curl_share_init.3.gz
 mingw32/share/man/man3/curl_share_setopt.3.gz
@@ -274,6 +276,7 @@ mingw32/share/man/man3/CURLOPT_FTPPORT.3.gz
 mingw32/share/man/man3/CURLOPT_FTPSSLAUTH.3.gz
 mingw32/share/man/man3/CURLOPT_GSSAPI_DELEGATION.3.gz
 mingw32/share/man/man3/CURLOPT_HAPPY_EYEBALLS_TIMEOUT_MS.3.gz
+mingw32/share/man/man3/CURLOPT_HAPROXY_CLIENT_IP.3.gz
 mingw32/share/man/man3/CURLOPT_HAPROXYPROTOCOL.3.gz
 mingw32/share/man/man3/CURLOPT_HEADER.3.gz
 mingw32/share/man/man3/CURLOPT_HEADERDATA.3.gz
@@ -317,7 +320,7 @@ mingw32/share/man/man3/CURLOPT_LOW_SPEED_TIME.3.gz
 mingw32/share/man/man3/CURLOPT_MAIL_AUTH.3.gz
 mingw32/share/man/man3/CURLOPT_MAIL_FROM.3.gz
 mingw32/share/man/man3/CURLOPT_MAIL_RCPT.3.gz
-mingw32/share/man/man3/CURLOPT_MAIL_RCPT_ALLLOWFAILS.3.gz
+mingw32/share/man/man3/CURLOPT_MAIL_RCPT_ALLOWFAILS.3.gz
 mingw32/share/man/man3/CURLOPT_MAX_RECV_SPEED_LARGE.3.gz
 mingw32/share/man/man3/CURLOPT_MAX_SEND_SPEED_LARGE.3.gz
 mingw32/share/man/man3/CURLOPT_MAXAGE_CONN.3.gz
@@ -513,5 +516,6 @@ mingw32/share/man/man3/libcurl-symbols.3.gz
 mingw32/share/man/man3/libcurl-thread.3.gz
 mingw32/share/man/man3/libcurl-tutorial.3.gz
 mingw32/share/man/man3/libcurl-url.3.gz
+mingw32/share/man/man3/libcurl-ws.3.gz
 mingw32/share/man/man3/libcurl.3.gz
 

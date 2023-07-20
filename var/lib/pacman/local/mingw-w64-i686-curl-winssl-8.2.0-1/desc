@@ -2,7 +2,7 @@
 mingw-w64-i686-curl-winssl
 
 %VERSION%
-8.1.2-2
+8.2.0-1
 
 %BASE%
 mingw-w64-curl
@@ -17,16 +17,16 @@ https://curl.se/
 any
 
 %BUILDDATE%
-1687436751
+1689765497
 
 %INSTALLDATE%
-1687490954
+1689822818
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-2152754
+2142898
 
 %REASON%
 1

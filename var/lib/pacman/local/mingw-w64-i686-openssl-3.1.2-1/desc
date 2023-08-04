@@ -2,7 +2,7 @@
 mingw-w64-i686-openssl
 
 %VERSION%
-3.1.1-1
+3.1.2-1
 
 %BASE%
 mingw-w64-openssl
@@ -17,16 +17,16 @@ https://www.openssl.org/
 any
 
 %BUILDDATE%
-1687415282
+1691055043
 
 %INSTALLDATE%
-1687421462
+1691118780
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-53955480
+53981801
 
 %LICENSE%
 spdx:Apache-2.0

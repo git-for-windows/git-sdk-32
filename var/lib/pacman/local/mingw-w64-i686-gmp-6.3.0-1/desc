@@ -2,7 +2,7 @@
 mingw-w64-i686-gmp
 
 %VERSION%
-6.2.1-5
+6.3.0-1
 
 %BASE%
 mingw-w64-gmp
@@ -17,16 +17,16 @@ https://gmplib.org/
 any
 
 %BUILDDATE%
-1676549511
+1690871436
 
 %INSTALLDATE%
-1676690108
+1691118773
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/aea263ec/4193770144)
+CI (msys2/msys2-autobuild/1f1fabad/5723346492)
 
 %SIZE%
-2707822
+2735668
 
 %REASON%
 1

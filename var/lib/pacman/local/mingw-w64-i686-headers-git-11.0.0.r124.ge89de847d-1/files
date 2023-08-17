@@ -1654,6 +1654,8 @@ mingw32/include/windows.devices.power.h
 mingw32/include/windows.devices.power.idl
 mingw32/include/windows.devices.radios.h
 mingw32/include/windows.devices.radios.idl
+mingw32/include/windows.devices.usb.h
+mingw32/include/windows.devices.usb.idl
 mingw32/include/windows.foundation.collections.h
 mingw32/include/windows.foundation.collections.idl
 mingw32/include/windows.foundation.h
@@ -1707,6 +1709,8 @@ mingw32/include/windows.security.credentials.h
 mingw32/include/windows.security.credentials.idl
 mingw32/include/windows.security.cryptography.h
 mingw32/include/windows.security.cryptography.idl
+mingw32/include/windows.security.isolation.h
+mingw32/include/windows.security.isolation.idl
 mingw32/include/windows.storage.h
 mingw32/include/windows.storage.idl
 mingw32/include/windows.storage.streams.h
@@ -1731,6 +1735,8 @@ mingw32/include/windows.ui.h
 mingw32/include/windows.ui.idl
 mingw32/include/windows.ui.viewmanagement.h
 mingw32/include/windows.ui.viewmanagement.idl
+mingw32/include/windows.ui.xaml.hosting.desktopwindowxamlsource.h
+mingw32/include/windows.ui.xaml.hosting.desktopwindowxamlsource.idl
 mingw32/include/windowscontracts.h
 mingw32/include/windowscontracts.idl
 mingw32/include/windowsnumerics.h
@@ -1872,6 +1878,8 @@ mingw32/include/wuapi.h
 mingw32/include/wuapi.idl
 mingw32/include/wuerror.h
 mingw32/include/xa.h
+mingw32/include/xamlom.h
+mingw32/include/xamlom.idl
 mingw32/include/xapo.h
 mingw32/include/xapo.idl
 mingw32/include/xapofx.h

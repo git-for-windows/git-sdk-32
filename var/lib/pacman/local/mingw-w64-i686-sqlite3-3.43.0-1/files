@@ -3,6 +3,10 @@ mingw32/
 mingw32/bin/
 mingw32/bin/dbhash.exe
 mingw32/bin/libsqlite3-0.dll
+mingw32/bin/showdb.exe
+mingw32/bin/showjournal.exe
+mingw32/bin/showstat4.exe
+mingw32/bin/showwal.exe
 mingw32/bin/sqldiff.exe
 mingw32/bin/sqlite3.exe
 mingw32/bin/sqlite3_analyzer.exe
@@ -14,10 +18,10 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.42.0/
-mingw32/lib/sqlite3.42.0/libtclsqlite3.dll
-mingw32/lib/sqlite3.42.0/libtclsqlite3.dll.a
-mingw32/lib/sqlite3.42.0/pkgIndex.tcl
+mingw32/lib/sqlite3.43.0/
+mingw32/lib/sqlite3.43.0/libtclsqlite3.dll
+mingw32/lib/sqlite3.43.0/libtclsqlite3.dll.a
+mingw32/lib/sqlite3.43.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/sqlite3/
@@ -78,6 +82,8 @@ mingw32/share/sqlite/extensions/noop.c
 mingw32/share/sqlite/extensions/noop.dll
 mingw32/share/sqlite/extensions/normalize.c
 mingw32/share/sqlite/extensions/normalize.dll
+mingw32/share/sqlite/extensions/pcachetrace.c
+mingw32/share/sqlite/extensions/pcachetrace.dll
 mingw32/share/sqlite/extensions/percentile.c
 mingw32/share/sqlite/extensions/percentile.dll
 mingw32/share/sqlite/extensions/prefixes.c

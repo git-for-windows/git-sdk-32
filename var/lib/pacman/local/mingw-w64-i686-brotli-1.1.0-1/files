@@ -10,6 +10,7 @@ mingw32/include/brotli/
 mingw32/include/brotli/decode.h
 mingw32/include/brotli/encode.h
 mingw32/include/brotli/port.h
+mingw32/include/brotli/shared_dictionary.h
 mingw32/include/brotli/types.h
 mingw32/lib/
 mingw32/lib/libbrotlicommon.a

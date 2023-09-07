@@ -2,7 +2,7 @@
 mingw-w64-i686-pkgconf
 
 %VERSION%
-1~2.0.2-1
+1~2.0.3-1
 
 %BASE%
 mingw-w64-pkgconf
@@ -17,16 +17,16 @@ https://github.com/pkgconf/pkgconf
 any
 
 %BUILDDATE%
-1692485228
+1694024666
 
 %INSTALLDATE%
-1692760395
+1694056384
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/f368fb49/5913897459)
+CI (msys2/msys2-autobuild/0852421d/6100707477)
 
 %SIZE%
-550837
+550871
 
 %GROUPS%
 mingw-w64-i686-toolchain

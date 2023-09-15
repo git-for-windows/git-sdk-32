@@ -22,7 +22,7 @@ import locale
 # Non-english locale systems might complain to unrecognized character
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 
-VERSION_STR = '''glib-mkenums version 2.76.5
+VERSION_STR = '''glib-mkenums version 2.78.0
 glib-mkenums comes with ABSOLUTELY NO WARRANTY.
 You may redistribute copies of glib-mkenums under the terms of
 the GNU General Public License which can be found in the
@@ -149,8 +149,7 @@ output = ''                 # Filename to write result into
 
 def parse_trigraph(opts):
     result = {}
-
-    for opt in re.split(r'\s*,\s*', opts):
+    for opt in re.findall(r'(?:[^\s,"]|"(?:\\.|[^"])*")+', opts):
         opt = re.sub(r'^\s*', '', opt)
         opt = re.sub(r'\s*$', '', opt)
         m = re.search(r'(\w+)(?:=(.+))?', opt)
@@ -161,7 +160,7 @@ def parse_trigraph(opts):
             val = groups[1]
         else:
             val = 1
-        result[key] = val
+        result[key] = val.strip('"') if val is not None else None
     return result
 
 def parse_entries(file, file_name):

@@ -2,7 +2,7 @@
 mingw-w64-i686-libdeflate
 
 %VERSION%
-1.18-1
+1.19-1
 
 %BASE%
 mingw-w64-libdeflate
@@ -17,16 +17,16 @@ https://github.com/ebiggers/libdeflate
 any
 
 %BUILDDATE%
-1679659880
+1695025331
 
 %INSTALLDATE%
-1679714070
+1695093209
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/c27f9a7c/4510974866)
+CI (msys2/msys2-autobuild/3f5f60aa/6219641775)
 
 %SIZE%
-335481
+342527
 
 %REASON%
 1

@@ -242,9 +242,13 @@ mingw32/include/custcntl.h
 mingw32/include/d2d1.h
 mingw32/include/d2d1_1.h
 mingw32/include/d2d1_1helper.h
+mingw32/include/d2d1_2.h
+mingw32/include/d2d1_2helper.h
 mingw32/include/d2d1effectauthor.h
 mingw32/include/d2d1effecthelpers.h
 mingw32/include/d2d1effects.h
+mingw32/include/d2d1effects_1.h
+mingw32/include/d2d1effects_2.h
 mingw32/include/d2d1helper.h
 mingw32/include/d2dbasetypes.h
 mingw32/include/d2derr.h

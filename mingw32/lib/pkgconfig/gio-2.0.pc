@@ -12,7 +12,7 @@ gio_querymodules=${bindir}/gio-querymodules
 glib_compile_schemas=${bindir}/glib-compile-schemas
 glib_compile_resources=${bindir}/glib-compile-resources
 gdbus=${bindir}/gdbus
-gdbus_codegen=${bindir}/gdbus-codegen
+gdbus_codegen=${bindir}/gdbus-codegen.exe
 gresource=${bindir}/gresource
 gsettings=${bindir}/gsettings
 

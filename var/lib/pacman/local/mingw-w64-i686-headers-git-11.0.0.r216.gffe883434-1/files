@@ -1736,6 +1736,8 @@ mingw32/include/windows.perception.spatial.surfaces.h
 mingw32/include/windows.perception.spatial.surfaces.idl
 mingw32/include/windows.security.credentials.h
 mingw32/include/windows.security.credentials.idl
+mingw32/include/windows.security.credentials.ui.h
+mingw32/include/windows.security.credentials.ui.idl
 mingw32/include/windows.security.cryptography.h
 mingw32/include/windows.security.cryptography.idl
 mingw32/include/windows.security.isolation.h

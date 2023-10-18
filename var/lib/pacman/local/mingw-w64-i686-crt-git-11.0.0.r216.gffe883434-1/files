@@ -144,6 +144,7 @@ mingw32/lib/libdfscli.a
 mingw32/lib/libdhcpcsvc.a
 mingw32/lib/libdhcpcsvc6.a
 mingw32/lib/libdhcpsapi.a
+mingw32/lib/libdiagnosticdataquery.a
 mingw32/lib/libdinput.a
 mingw32/lib/libdinput8.a
 mingw32/lib/libdismapi.a
@@ -369,6 +370,7 @@ mingw32/lib/libtxfw32.a
 mingw32/lib/libucrt.a
 mingw32/lib/libucrtapp.a
 mingw32/lib/libucrtbase.a
+mingw32/lib/libuiautomationcore.a
 mingw32/lib/liburl.a
 mingw32/lib/liburlmon.a
 mingw32/lib/libusbcamd.a

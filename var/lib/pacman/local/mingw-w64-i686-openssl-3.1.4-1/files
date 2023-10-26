@@ -5200,6 +5200,7 @@ mingw32/share/man/man3/SSL_CONF_cmd.3ossl.gz
 mingw32/share/man/man3/SSL_CONF_cmd_argv.3ossl.gz
 mingw32/share/man/man3/SSL_CONF_cmd_value_type.3ossl.gz
 mingw32/share/man/man3/SSL_CONF_CTX_clear_flags.3ossl.gz
+mingw32/share/man/man3/SSL_CONF_CTX_finish.3ossl.gz
 mingw32/share/man/man3/SSL_CONF_CTX_free.3ossl.gz
 mingw32/share/man/man3/SSL_CONF_CTX_new.3ossl.gz
 mingw32/share/man/man3/SSL_CONF_CTX_set1_prefix.3ossl.gz

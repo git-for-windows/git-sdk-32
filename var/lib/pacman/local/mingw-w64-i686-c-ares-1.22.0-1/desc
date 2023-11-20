@@ -2,7 +2,7 @@
 mingw-w64-i686-c-ares
 
 %VERSION%
-1.21.0-1
+1.22.0-1
 
 %BASE%
 mingw-w64-c-ares
@@ -17,16 +17,16 @@ https://c-ares.org/
 any
 
 %BUILDDATE%
-1698429789
+1700318952
 
 %INSTALLDATE%
-1698549185
+1700450023
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/1ed7c15c/6670414314)
+CI (msys2/msys2-autobuild/1ed7c15c/6914594404)
 
 %SIZE%
-611358
+810516
 
 %REASON%
 1
@@ -35,5 +35,6 @@ CI (msys2/msys2-autobuild/1ed7c15c/6670414314)
 spdx:MIT
 
 %VALIDATION%
+sha256
 pgp
 

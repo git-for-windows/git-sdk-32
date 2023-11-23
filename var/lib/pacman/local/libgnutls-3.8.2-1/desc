@@ -2,7 +2,7 @@
 libgnutls
 
 %VERSION%
-3.8.1-1
+3.8.2-1
 
 %BASE%
 gnutls
@@ -17,16 +17,16 @@ https://www.gnutls.org/
 i686
 
 %BUILDDATE%
-1694105321
+1700741724
 
 %INSTALLDATE%
-1694142773
+1700745631
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-2992695
+3003897
 
 %REASON%
 1

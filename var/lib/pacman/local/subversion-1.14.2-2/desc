@@ -1,0 +1,55 @@
+%NAME%
+subversion
+
+%VERSION%
+1.14.2-2
+
+%BASE%
+subversion
+
+%DESC%
+A Modern Concurrent Version Control System
+
+%URL%
+https://subversion.apache.org/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1701030332
+
+%INSTALLDATE%
+1701054828
+
+%PACKAGER%
+Johannes Schindelin <johannes.schindelin@gmx.de>
+
+%SIZE%
+19645504
+
+%GROUPS%
+VCS
+
+%LICENSE%
+APACHE
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libsqlite
+file
+liblz4
+libserf
+libsasl
+libexpat
+
+%OPTDEPENDS%
+bash-completion: for svn bash completion
+python: for some hook scripts
+ruby: for some hook scripts
+
+%PROVIDES%
+svn
+

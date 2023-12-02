@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Sun Nov 26 14:06:50 UTC 2023
+ * Configuration time: Fri Dec  1 16:19:31 UTC 2023
  * Configured by     : runneradmin
- * Target system     : msys_nt-10.0-20348-wow64 fv-az653-974 3.3.6-09fa4556-341.i686 2023-11-25 08:23 utc i686 msys 
+ * Target system     : msys_nt-10.0-20348-wow64 fv-az1212-448 3.3.6-09fa4556-341.i686 2023-11-25 08:23 utc i686 msys 
  */
 
 #ifndef _config_h_

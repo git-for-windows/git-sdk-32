@@ -106,6 +106,7 @@ mingw32/share/man/man3/ares_free_hostent.3.gz
 mingw32/share/man/man3/ares_free_string.3.gz
 mingw32/share/man/man3/ares_freeaddrinfo.3.gz
 mingw32/share/man/man3/ares_get_servers.3.gz
+mingw32/share/man/man3/ares_get_servers_csv.3.gz
 mingw32/share/man/man3/ares_get_servers_ports.3.gz
 mingw32/share/man/man3/ares_getaddrinfo.3.gz
 mingw32/share/man/man3/ares_gethostbyaddr.3.gz

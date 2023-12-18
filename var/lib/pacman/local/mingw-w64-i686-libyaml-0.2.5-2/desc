@@ -2,7 +2,7 @@
 mingw-w64-i686-libyaml
 
 %VERSION%
-0.2.5-1
+0.2.5-2
 
 %BASE%
 mingw-w64-libyaml
@@ -17,16 +17,16 @@ https://yaml.org/
 any
 
 %BUILDDATE%
-1591268730
+1702834009
 
 %INSTALLDATE%
-1591326424
+1702869235
 
 %PACKAGER%
-Alexey Pavlov <alexpux@gmail.com>
+CI (msys2/msys2-autobuild/0eca067d/7239922883)
 
 %SIZE%
-387565
+386788
 
 %REASON%
 1
@@ -35,5 +35,6 @@ Alexey Pavlov <alexpux@gmail.com>
 MIT
 
 %VALIDATION%
+sha256
 pgp
 

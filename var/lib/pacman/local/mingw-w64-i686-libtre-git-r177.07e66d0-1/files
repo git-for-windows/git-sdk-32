@@ -24,6 +24,9 @@ mingw32/share/locale/fi/LC_MESSAGES/tre.mo
 mingw32/share/locale/sv/
 mingw32/share/locale/sv/LC_MESSAGES/
 mingw32/share/locale/sv/LC_MESSAGES/tre.mo
+mingw32/share/locale/zh_CN/
+mingw32/share/locale/zh_CN/LC_MESSAGES/
+mingw32/share/locale/zh_CN/LC_MESSAGES/tre.mo
 mingw32/share/man/
 mingw32/share/man/man1/
 mingw32/share/man/man1/i686-w64-mingw32-agrep.1.gz

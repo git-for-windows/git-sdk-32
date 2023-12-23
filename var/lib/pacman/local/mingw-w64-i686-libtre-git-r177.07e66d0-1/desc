@@ -2,7 +2,7 @@
 mingw-w64-i686-libtre-git
 
 %VERSION%
-r128.6fb7206-3
+r177.07e66d0-1
 
 %BASE%
 mingw-w64-libtre-git
@@ -17,16 +17,16 @@ https://github.com/laurikari/tre
 any
 
 %BUILDDATE%
-1702884649
+1703242695
 
 %INSTALLDATE%
-1702955610
+1703301186
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/0eca067d/7244897230)
+CI (msys2/msys2-autobuild/0eca067d/7299079977)
 
 %SIZE%
-278136
+283266
 
 %REASON%
 1

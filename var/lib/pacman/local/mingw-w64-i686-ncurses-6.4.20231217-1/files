@@ -300,6 +300,7 @@ mingw32/lib/terminfo/61/ampex232w
 mingw32/lib/terminfo/61/ampex80
 mingw32/lib/terminfo/61/annarbor4080
 mingw32/lib/terminfo/61/ansi
+mingw32/lib/terminfo/61/ansi+apparrows
 mingw32/lib/terminfo/61/ansi+arrows
 mingw32/lib/terminfo/61/ansi+cpr
 mingw32/lib/terminfo/61/ansi+csr
@@ -1717,6 +1718,7 @@ mingw32/lib/terminfo/6f/old-st
 mingw32/lib/terminfo/6f/oldibmpc3
 mingw32/lib/terminfo/6f/oldpc3
 mingw32/lib/terminfo/6f/oldsun
+mingw32/lib/terminfo/6f/oldxterm+sm+1006
 mingw32/lib/terminfo/6f/omron
 mingw32/lib/terminfo/6f/opennt
 mingw32/lib/terminfo/6f/opennt-100
@@ -1879,6 +1881,7 @@ mingw32/lib/terminfo/70/pt505-22
 mingw32/lib/terminfo/70/pt505-24
 mingw32/lib/terminfo/70/pty
 mingw32/lib/terminfo/70/putty
+mingw32/lib/terminfo/70/putty+cursor
 mingw32/lib/terminfo/70/putty+fnkeys
 mingw32/lib/terminfo/70/putty+fnkeys+esc
 mingw32/lib/terminfo/70/putty+fnkeys+linux
@@ -3035,6 +3038,7 @@ mingw32/share/man/man3/attr_get.3x.gz
 mingw32/share/man/man3/attr_off.3x.gz
 mingw32/share/man/man3/attr_on.3x.gz
 mingw32/share/man/man3/attr_set.3x.gz
+mingw32/share/man/man3/attr_t.3x.gz
 mingw32/share/man/man3/attroff.3x.gz
 mingw32/share/man/man3/attron.3x.gz
 mingw32/share/man/man3/attrset.3x.gz
@@ -3047,6 +3051,7 @@ mingw32/share/man/man3/bkgd.3x.gz
 mingw32/share/man/man3/bkgdset.3x.gz
 mingw32/share/man/man3/bkgrnd.3x.gz
 mingw32/share/man/man3/bkgrndset.3x.gz
+mingw32/share/man/man3/bool.3x.gz
 mingw32/share/man/man3/boolcodes.3x.gz
 mingw32/share/man/man3/boolfnames.3x.gz
 mingw32/share/man/man3/boolnames.3x.gz
@@ -3059,17 +3064,27 @@ mingw32/share/man/man3/can_change_color.3x.gz
 mingw32/share/man/man3/can_change_color_sp.3x.gz
 mingw32/share/man/man3/cbreak.3x.gz
 mingw32/share/man/man3/cbreak_sp.3x.gz
+mingw32/share/man/man3/cchar_t.3x.gz
 mingw32/share/man/man3/ceiling_panel.3x.gz
 mingw32/share/man/man3/chgat.3x.gz
+mingw32/share/man/man3/chtype.3x.gz
 mingw32/share/man/man3/clear.3x.gz
 mingw32/share/man/man3/clearok.3x.gz
 mingw32/share/man/man3/clrtobot.3x.gz
 mingw32/share/man/man3/clrtoeol.3x.gz
+mingw32/share/man/man3/COLOR_BLACK.3x.gz
+mingw32/share/man/man3/COLOR_BLUE.3x.gz
 mingw32/share/man/man3/color_content.3x.gz
 mingw32/share/man/man3/color_content_sp.3x.gz
+mingw32/share/man/man3/COLOR_CYAN.3x.gz
+mingw32/share/man/man3/COLOR_GREEN.3x.gz
+mingw32/share/man/man3/COLOR_MAGENTA.3x.gz
 mingw32/share/man/man3/COLOR_PAIR.3x.gz
 mingw32/share/man/man3/COLOR_PAIRS.3x.gz
+mingw32/share/man/man3/COLOR_RED.3x.gz
 mingw32/share/man/man3/color_set.3x.gz
+mingw32/share/man/man3/COLOR_WHITE.3x.gz
+mingw32/share/man/man3/COLOR_YELLOW.3x.gz
 mingw32/share/man/man3/COLORS.3x.gz
 mingw32/share/man/man3/COLS.3x.gz
 mingw32/share/man/man3/copywin.3x.gz
@@ -3178,6 +3193,7 @@ mingw32/share/man/man3/erasechar.3x.gz
 mingw32/share/man/man3/erasechar_sp.3x.gz
 mingw32/share/man/man3/erasewchar.3x.gz
 mingw32/share/man/man3/erasewchar_sp.3x.gz
+mingw32/share/man/man3/ERR.3x.gz
 mingw32/share/man/man3/ESCDELAY.3x.gz
 mingw32/share/man/man3/exit_curses.3x.gz
 mingw32/share/man/man3/exit_terminfo.3x.gz
@@ -3187,6 +3203,7 @@ mingw32/share/man/man3/extended_pair_content.3x.gz
 mingw32/share/man/man3/extended_pair_content_sp.3x.gz
 mingw32/share/man/man3/extended_slk_color.3x.gz
 mingw32/share/man/man3/extended_slk_color_sp.3x.gz
+mingw32/share/man/man3/FALSE.3x.gz
 mingw32/share/man/man3/field_arg.3x.gz
 mingw32/share/man/man3/field_back.3x.gz
 mingw32/share/man/man3/field_buffer.3x.gz
@@ -3329,16 +3346,24 @@ mingw32/share/man/man3/instr.3x.gz
 mingw32/share/man/man3/intrflush.3x.gz
 mingw32/share/man/man3/intrflush_sp.3x.gz
 mingw32/share/man/man3/inwstr.3x.gz
+mingw32/share/man/man3/is_cbreak.3x.gz
+mingw32/share/man/man3/is_cbreak_sp.3x.gz
 mingw32/share/man/man3/is_cleared.3x.gz
+mingw32/share/man/man3/is_echo.3x.gz
+mingw32/share/man/man3/is_echo_sp.3x.gz
 mingw32/share/man/man3/is_idcok.3x.gz
 mingw32/share/man/man3/is_idlok.3x.gz
 mingw32/share/man/man3/is_immedok.3x.gz
 mingw32/share/man/man3/is_keypad.3x.gz
 mingw32/share/man/man3/is_leaveok.3x.gz
 mingw32/share/man/man3/is_linetouched.3x.gz
+mingw32/share/man/man3/is_nl.3x.gz
+mingw32/share/man/man3/is_nl_sp.3x.gz
 mingw32/share/man/man3/is_nodelay.3x.gz
 mingw32/share/man/man3/is_notimeout.3x.gz
 mingw32/share/man/man3/is_pad.3x.gz
+mingw32/share/man/man3/is_raw.3x.gz
+mingw32/share/man/man3/is_raw_sp.3x.gz
 mingw32/share/man/man3/is_scrollok.3x.gz
 mingw32/share/man/man3/is_subwin.3x.gz
 mingw32/share/man/man3/is_syncok.3x.gz
@@ -3512,6 +3537,8 @@ mingw32/share/man/man3/mvwvline_set.3x.gz
 mingw32/share/man/man3/napms.3x.gz
 mingw32/share/man/man3/napms_sp.3x.gz
 mingw32/share/man/man3/ncurses.3x.gz
+mingw32/share/man/man3/NCURSES_SCREEN_CB.3x.gz
+mingw32/share/man/man3/NCURSES_WINDOW_CB.3x.gz
 mingw32/share/man/man3/new_field.3x.gz
 mingw32/share/man/man3/new_fieldtype.3x.gz
 mingw32/share/man/man3/new_form.3x.gz
@@ -3549,6 +3576,7 @@ mingw32/share/man/man3/notimeout.3x.gz
 mingw32/share/man/man3/numcodes.3x.gz
 mingw32/share/man/man3/numfnames.3x.gz
 mingw32/share/man/man3/numnames.3x.gz
+mingw32/share/man/man3/OK.3x.gz
 mingw32/share/man/man3/ospeed.3x.gz
 mingw32/share/man/man3/overlay.3x.gz
 mingw32/share/man/man3/overwrite.3x.gz
@@ -3751,6 +3779,7 @@ mingw32/share/man/man3/tparm_sp.3x.gz
 mingw32/share/man/man3/tputs.3x.gz
 mingw32/share/man/man3/tputs_sp.3x.gz
 mingw32/share/man/man3/trace.3x.gz
+mingw32/share/man/man3/TRUE.3x.gz
 mingw32/share/man/man3/ttytype.3x.gz
 mingw32/share/man/man3/TYPE_ALNUM.3x.gz
 mingw32/share/man/man3/TYPE_ALPHA.3x.gz
@@ -3854,6 +3883,7 @@ mingw32/share/man/man3/win_wchstr.3x.gz
 mingw32/share/man/man3/winch.3x.gz
 mingw32/share/man/man3/winchnstr.3x.gz
 mingw32/share/man/man3/winchstr.3x.gz
+mingw32/share/man/man3/WINDOW.3x.gz
 mingw32/share/man/man3/winnstr.3x.gz
 mingw32/share/man/man3/winnwstr.3x.gz
 mingw32/share/man/man3/wins_nwstr.3x.gz
@@ -4115,6 +4145,7 @@ mingw32/share/terminfo/61/ampex232w
 mingw32/share/terminfo/61/ampex80
 mingw32/share/terminfo/61/annarbor4080
 mingw32/share/terminfo/61/ansi
+mingw32/share/terminfo/61/ansi+apparrows
 mingw32/share/terminfo/61/ansi+arrows
 mingw32/share/terminfo/61/ansi+cpr
 mingw32/share/terminfo/61/ansi+csr
@@ -5532,6 +5563,7 @@ mingw32/share/terminfo/6f/old-st
 mingw32/share/terminfo/6f/oldibmpc3
 mingw32/share/terminfo/6f/oldpc3
 mingw32/share/terminfo/6f/oldsun
+mingw32/share/terminfo/6f/oldxterm+sm+1006
 mingw32/share/terminfo/6f/omron
 mingw32/share/terminfo/6f/opennt
 mingw32/share/terminfo/6f/opennt-100
@@ -5694,6 +5726,7 @@ mingw32/share/terminfo/70/pt505-22
 mingw32/share/terminfo/70/pt505-24
 mingw32/share/terminfo/70/pty
 mingw32/share/terminfo/70/putty
+mingw32/share/terminfo/70/putty+cursor
 mingw32/share/terminfo/70/putty+fnkeys
 mingw32/share/terminfo/70/putty+fnkeys+esc
 mingw32/share/terminfo/70/putty+fnkeys+linux

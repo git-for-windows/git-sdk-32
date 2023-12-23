@@ -2,7 +2,7 @@
 mingw-w64-i686-ncurses
 
 %VERSION%
-6.4.20230708-1
+6.4.20231217-1
 
 %BASE%
 mingw-w64-ncurses
@@ -17,16 +17,16 @@ https://www.gnu.org/software/ncurses/
 any
 
 %BUILDDATE%
-1689317292
+1703242843
 
 %INSTALLDATE%
-1689391729
+1703301193
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/95ab14df/5551300402)
+CI (msys2/msys2-autobuild/0eca067d/7299079977)
 
 %SIZE%
-16178832
+16429656
 
 %REASON%
 1
@@ -35,6 +35,7 @@ CI (msys2/msys2-autobuild/95ab14df/5551300402)
 spdx:MIT
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%

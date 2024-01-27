@@ -51,4 +51,8 @@ mingw32/doc/git-credential-manager/
 mingw32/doc/git-credential-manager/LICENSE
 mingw32/doc/git-credential-manager/NOTICE
 mingw32/doc/git-credential-manager/README.md
+mingw32/share/
+mingw32/share/doc/
+mingw32/share/doc/git-doc/
+mingw32/share/doc/git-doc/git-credential-manager.html
 

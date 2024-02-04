@@ -2,7 +2,7 @@
 gnupg
 
 %VERSION%
-2.2.42-1
+2.4.4-1
 
 %BASE%
 gnupg
@@ -17,16 +17,16 @@ https://gnupg.org/
 i686
 
 %BUILDDATE%
-1701248349
+1706969598
 
 %INSTALLDATE%
-1701314000
+1707016455
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-9517758
+10825954
 
 %REASON%
 1
@@ -60,5 +60,5 @@ curl: gpg2keys_curl
 
 %PROVIDES%
 dirmngr
-gnupg2=2.2.42
+gnupg2=2.4.4
 

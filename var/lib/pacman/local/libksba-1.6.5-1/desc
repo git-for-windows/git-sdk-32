@@ -2,7 +2,7 @@
 libksba
 
 %VERSION%
-1.6.0-1
+1.6.5-1
 
 %BASE%
 libksba
@@ -17,16 +17,16 @@ https://www.gnupg.org/related_software/libksba/
 i686
 
 %BUILDDATE%
-1625428212
+1706969008
 
 %INSTALLDATE%
-1625540943
+1707016455
 
 %PACKAGER%
-Unknown Packager
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-258682
+260702
 
 %REASON%
 1
@@ -35,7 +35,7 @@ Unknown Packager
 libraries
 
 %LICENSE%
-GPL
+spdx:LGPL-3.0-or-later OR GPL-2.0-or-later
 
 %VALIDATION%
 pgp

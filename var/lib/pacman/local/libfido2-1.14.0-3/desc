@@ -2,7 +2,7 @@
 libfido2
 
 %VERSION%
-1.14.0-2
+1.14.0-3
 
 %BASE%
 libfido2
@@ -17,10 +17,10 @@ https://developers.yubico.com/libfido2/
 i686
 
 %BUILDDATE%
-1707150461
+1707205121
 
 %INSTALLDATE%
-1707189253
+1707242209
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>

@@ -2,7 +2,7 @@
 mingw-w64-i686-gettext-tools
 
 %VERSION%
-0.22.4-6
+0.22.5-2
 
 %BASE%
 mingw-w64-gettext
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gettext/
 any
 
 %BUILDDATE%
-1707555334
+1708674099
 
 %INSTALLDATE%
-1707621188
+1708744525
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/d4515ba2/7853838838)
+CI (msys2/msys2-autobuild/d4515ba2/8016090384)
 
 %SIZE%
-16238386
+16271572
 
 %REASON%
 1
@@ -50,5 +50,5 @@ mingw-w64-i686-libiconv
 mingw-w64-i686-gettext<=0.22.4-3
 
 %PROVIDES%
-mingw-w64-i686-gettext=0.22.4-6
+mingw-w64-i686-gettext=0.22.5-2
 

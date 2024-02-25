@@ -2,7 +2,7 @@
 mingw-w64-i686-xz
 
 %VERSION%
-5.4.6-2
+5.6.0-1
 
 %BASE%
 mingw-w64-xz
@@ -17,24 +17,22 @@ https://tukaani.org/xz
 any
 
 %BUILDDATE%
-1706863298
+1708786858
 
 %INSTALLDATE%
-1706930092
+1708830788
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/b78070c6/7753378101)
+CI (msys2/msys2-autobuild/d4515ba2/8031337065)
 
 %SIZE%
-3657541
+3792600
 
 %REASON%
 1
 
 %LICENSE%
-partial:PublicDomain
-partial:LGPL2.1+
-partial:GPL2+
+spdx:0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
 %VALIDATION%
 sha256

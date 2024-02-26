@@ -1,42 +1,45 @@
 %NAME%
-mintty
+libpcre2_32
 
 %VERSION%
-1~3.7.0-1
+10.43-1
 
 %BASE%
-mintty
+pcre2
 
 %DESC%
-Terminal emulator with native Windows look and feel
+A library that implements Perl 5-style regular expressions
 
 %URL%
-https://mintty.github.io
+https://www.pcre.org/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1699952099
+1708881882
 
 %INSTALLDATE%
-1699953944
+1708917255
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1536287
+542549
+
+%REASON%
+1
 
 %GROUPS%
-base
+libraries
 
 %LICENSE%
-GPL3
+BSD
 
 %VALIDATION%
 pgp
 
 %DEPENDS%
-sh
+gcc-libs
 

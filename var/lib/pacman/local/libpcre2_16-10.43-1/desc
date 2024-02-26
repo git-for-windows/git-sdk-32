@@ -1,8 +1,8 @@
 %NAME%
-libpcre2_8
+libpcre2_16
 
 %VERSION%
-10.37-1
+10.43-1
 
 %BASE%
 pcre2
@@ -17,16 +17,16 @@ https://www.pcre.org/
 i686
 
 %BUILDDATE%
-1624137428
+1708881882
 
 %INSTALLDATE%
-1625540936
+1708917255
 
 %PACKAGER%
-Unknown Packager
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-359540
+568661
 
 %REASON%
 1

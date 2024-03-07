@@ -490,6 +490,7 @@ mingw32/include/docobjectservice.idl
 mingw32/include/documenttarget.h
 mingw32/include/documenttarget.idl
 mingw32/include/domdid.h
+mingw32/include/dontuse.h
 mingw32/include/dos.h
 mingw32/include/downloadmgr.h
 mingw32/include/downloadmgr.idl
@@ -1712,6 +1713,8 @@ mingw32/include/windows.graphics.effects.h
 mingw32/include/windows.graphics.effects.idl
 mingw32/include/windows.graphics.holographic.h
 mingw32/include/windows.graphics.holographic.idl
+mingw32/include/windows.graphics.imaging.h
+mingw32/include/windows.graphics.imaging.idl
 mingw32/include/windows.h
 mingw32/include/windows.management.deployment.h
 mingw32/include/windows.management.deployment.idl
@@ -1723,6 +1726,8 @@ mingw32/include/windows.media.devices.h
 mingw32/include/windows.media.devices.idl
 mingw32/include/windows.media.effects.h
 mingw32/include/windows.media.effects.idl
+mingw32/include/windows.media.faceanalysis.h
+mingw32/include/windows.media.faceanalysis.idl
 mingw32/include/windows.media.h
 mingw32/include/windows.media.idl
 mingw32/include/windows.media.render.h
@@ -1739,6 +1744,8 @@ mingw32/include/windows.perception.spatial.h
 mingw32/include/windows.perception.spatial.idl
 mingw32/include/windows.perception.spatial.surfaces.h
 mingw32/include/windows.perception.spatial.surfaces.idl
+mingw32/include/windows.security.authentication.onlineid.h
+mingw32/include/windows.security.authentication.onlineid.idl
 mingw32/include/windows.security.credentials.h
 mingw32/include/windows.security.credentials.idl
 mingw32/include/windows.security.credentials.ui.h

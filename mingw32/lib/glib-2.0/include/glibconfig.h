@@ -16,6 +16,7 @@
 /* #undef GOBJECT_STATIC_COMPILATION */
 /* #undef GIO_STATIC_COMPILATION */
 /* #undef GMODULE_STATIC_COMPILATION */
+/* #undef GI_STATIC_COMPILATION */
 /* #undef G_INTL_STATIC_COMPILATION */
 /* #undef FFI_STATIC_BUILD */
 
@@ -113,8 +114,8 @@ typedef unsigned int guintptr;
 #define G_GUINTPTR_FORMAT       "u"
 
 #define GLIB_MAJOR_VERSION 2
-#define GLIB_MINOR_VERSION 78
-#define GLIB_MICRO_VERSION 4
+#define GLIB_MINOR_VERSION 80
+#define GLIB_MICRO_VERSION 0
 
 #define G_OS_WIN32
 #define G_PLATFORM_WIN32

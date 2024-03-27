@@ -22,7 +22,7 @@ import locale
 # Non-english locale systems might complain to unrecognized character
 sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding='utf-8')
 
-VERSION_STR = '''glib-mkenums version 2.78.4
+VERSION_STR = '''glib-mkenums version 2.80.0
 glib-mkenums comes with ABSOLUTELY NO WARRANTY.
 You may redistribute copies of glib-mkenums under the terms of
 the GNU General Public License which can be found in the
@@ -223,6 +223,8 @@ def parse_entries(file, file_name):
               (\w+)\s*                   # name
               (\s+[A-Z]+_(?:AVAILABLE|DEPRECATED)_ENUMERATOR_IN_[0-9_]+(?:_FOR\s*\(\s*\w+\s*\))?\s*)?    # availability
               (?:=(                      # value
+                   \s*'[^']*'\s*          # char
+                     |                      # OR
                    \s*\w+\s*\(.*\)\s*       # macro with multiple args
                    |                        # OR
                    (?:[^,/]|/(?!\*))*       # anything but a comma or comment
@@ -727,6 +729,10 @@ def process_file(curfilename):
                             # use sandboxed evaluation as a reasonable
                             # approximation to C constant folding
                             inum = eval(num, {}, c_namespace)
+
+                            # Support character literals
+                            if isinstance(inum, str) and len(inum) == 1:
+                                inum = ord(inum)
 
                             # make sure it parsed to an integer
                             if not isinstance(inum, int):

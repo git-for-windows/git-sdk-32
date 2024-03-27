@@ -386,6 +386,15 @@
 * Since: 2.78
 */
 #define GLIB_VERSION_2_78       (G_ENCODE_VERSION (2, 78))
+/**
+* GLIB_VERSION_2_80:
+*
+* A macro that evaluates to the 2.80 version of GLib, in a format
+* that can be used by the C pre-processor.
+*
+* Since: 2.80
+*/
+#define GLIB_VERSION_2_80       (G_ENCODE_VERSION (2, 80))
 
 /**
  * GLIB_VERSION_CUR_STABLE:

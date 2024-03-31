@@ -2,7 +2,7 @@
 tig
 
 %VERSION%
-2.5.8-1
+2.5.9-1
 
 %BASE%
 tig
@@ -17,16 +17,16 @@ http://jonas.nitro.dk/tig/
 i686
 
 %BUILDDATE%
-1675673535
+1711838472
 
 %INSTALLDATE%
-1675739776
+1711854838
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-695252
+699331
 
 %LICENSE%
 GPL

@@ -564,6 +564,7 @@ mingw32/include/dxva2api.h
 mingw32/include/dxva2api.idl
 mingw32/include/dxvahd.h
 mingw32/include/dxvahd.idl
+mingw32/include/dyngraph.idl
 mingw32/include/eapauthenticatoractiondefine.h
 mingw32/include/eapauthenticatortypes.h
 mingw32/include/eaphosterror.h

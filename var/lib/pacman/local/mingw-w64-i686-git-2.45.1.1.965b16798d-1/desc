@@ -2,7 +2,7 @@
 mingw-w64-i686-git
 
 %VERSION%
-2.45.0.1.b5d0511969-1
+2.45.1.1.965b16798d-1
 
 %BASE%
 mingw-w64-git
@@ -17,21 +17,22 @@ https://git-for-windows.github.io/
 any
 
 %BUILDDATE%
-1714421573
+1714675530
 
 %INSTALLDATE%
-1714446859
+1715764348
 
 %PACKAGER%
-gitforwindowshelper[bot] <gitforwindowshelper[bot]@users.noreply.github.com>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-52966303
+53018518
 
 %LICENSE%
 GPL2
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%

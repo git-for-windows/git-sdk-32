@@ -556,6 +556,9 @@ mingw32/share/locale/ja/LC_MESSAGES/glib20.mo
 mingw32/share/locale/ka/
 mingw32/share/locale/ka/LC_MESSAGES/
 mingw32/share/locale/ka/LC_MESSAGES/glib20.mo
+mingw32/share/locale/kab/
+mingw32/share/locale/kab/LC_MESSAGES/
+mingw32/share/locale/kab/LC_MESSAGES/glib20.mo
 mingw32/share/locale/kk/
 mingw32/share/locale/kk/LC_MESSAGES/
 mingw32/share/locale/kk/LC_MESSAGES/glib20.mo

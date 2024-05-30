@@ -49,9 +49,9 @@ mingw32/share/doc/xz/api/bcj_8h.html
 mingw32/share/doc/xz/api/block_8h.html
 mingw32/share/doc/xz/api/check_8h.html
 mingw32/share/doc/xz/api/classes.html
+mingw32/share/doc/xz/api/clipboard.js
 mingw32/share/doc/xz/api/closed.png
 mingw32/share/doc/xz/api/container_8h.html
-mingw32/share/doc/xz/api/COPYING.CC-BY-SA-4.0
 mingw32/share/doc/xz/api/delta_8h.html
 mingw32/share/doc/xz/api/dir_b17a1d403082bd69a703ed987cf158fb.html
 mingw32/share/doc/xz/api/doc.svg
@@ -59,6 +59,7 @@ mingw32/share/doc/xz/api/docd.svg
 mingw32/share/doc/xz/api/doxygen.css
 mingw32/share/doc/xz/api/doxygen.svg
 mingw32/share/doc/xz/api/doxygen_crawl.html
+mingw32/share/doc/xz/api/dynsections.js
 mingw32/share/doc/xz/api/files.html
 mingw32/share/doc/xz/api/filter_8h.html
 mingw32/share/doc/xz/api/folderclosed.svg
@@ -77,8 +78,10 @@ mingw32/share/doc/xz/api/hardware_8h.html
 mingw32/share/doc/xz/api/index.html
 mingw32/share/doc/xz/api/index_8h.html
 mingw32/share/doc/xz/api/index__hash_8h.html
+mingw32/share/doc/xz/api/jquery.js
 mingw32/share/doc/xz/api/lzma12_8h.html
 mingw32/share/doc/xz/api/lzma_8h.html
+mingw32/share/doc/xz/api/menudata.js
 mingw32/share/doc/xz/api/minus.svg
 mingw32/share/doc/xz/api/minusd.svg
 mingw32/share/doc/xz/api/nav_f.png
@@ -86,9 +89,11 @@ mingw32/share/doc/xz/api/nav_fd.png
 mingw32/share/doc/xz/api/nav_g.png
 mingw32/share/doc/xz/api/nav_h.png
 mingw32/share/doc/xz/api/nav_hd.png
+mingw32/share/doc/xz/api/navtree.css
 mingw32/share/doc/xz/api/open.png
 mingw32/share/doc/xz/api/plus.svg
 mingw32/share/doc/xz/api/plusd.svg
+mingw32/share/doc/xz/api/resize.js
 mingw32/share/doc/xz/api/splitbar.png
 mingw32/share/doc/xz/api/splitbard.png
 mingw32/share/doc/xz/api/stream__flags_8h.html
@@ -115,7 +120,6 @@ mingw32/share/doc/xz/api/tab_sd.png
 mingw32/share/doc/xz/api/tabs.css
 mingw32/share/doc/xz/api/version_8h.html
 mingw32/share/doc/xz/api/vli_8h.html
-mingw32/share/doc/xz/api/xz-logo.png
 mingw32/share/doc/xz/AUTHORS
 mingw32/share/doc/xz/COPYING
 mingw32/share/doc/xz/COPYING.0BSD
@@ -140,7 +144,6 @@ mingw32/share/licenses/
 mingw32/share/licenses/xz/
 mingw32/share/licenses/xz/COPYING
 mingw32/share/licenses/xz/COPYING.0BSD
-mingw32/share/licenses/xz/COPYING.CC-BY-SA-4.0
 mingw32/share/licenses/xz/COPYING.GPLv2
 mingw32/share/licenses/xz/COPYING.GPLv3
 mingw32/share/licenses/xz/COPYING.LGPLv2.1

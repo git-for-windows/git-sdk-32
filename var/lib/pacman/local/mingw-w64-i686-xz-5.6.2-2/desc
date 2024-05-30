@@ -2,7 +2,7 @@
 mingw-w64-i686-xz
 
 %VERSION%
-5.6.1-2
+5.6.2-2
 
 %BASE%
 mingw-w64-xz
@@ -17,16 +17,16 @@ https://tukaani.org/xz
 any
 
 %BUILDDATE%
-1711742459
+1717015976
 
 %INSTALLDATE%
-1711768577
+1717038933
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/3e617554/8484999421)
+CI (msys2/msys2-autobuild/59bb7f6f/9292931008)
 
 %SIZE%
-3826226
+4043421
 
 %REASON%
 1

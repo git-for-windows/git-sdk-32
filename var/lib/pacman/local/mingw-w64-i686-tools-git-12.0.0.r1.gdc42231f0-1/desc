@@ -2,7 +2,7 @@
 mingw-w64-i686-tools-git
 
 %VERSION%
-11.0.0.r750.g05598db99-1
+12.0.0.r1.gdc42231f0-1
 
 %BASE%
 mingw-w64-tools-git
@@ -17,13 +17,13 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1715939949
+1716963274
 
 %INSTALLDATE%
-1716002102
+1717038933
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/9c7e8d31/9126212479)
+CI (msys2/msys2-autobuild/59bb7f6f/9281020380)
 
 %SIZE%
 1034344

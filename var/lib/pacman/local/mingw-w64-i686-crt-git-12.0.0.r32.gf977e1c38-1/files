@@ -267,9 +267,13 @@ mingw32/lib/libmsvcr110.a
 mingw32/lib/libmsvcr120.a
 mingw32/lib/libmsvcr120_app.a
 mingw32/lib/libmsvcr120d.a
+mingw32/lib/libmsvcr40d.a
 mingw32/lib/libmsvcr70.a
+mingw32/lib/libmsvcr70d.a
 mingw32/lib/libmsvcr71.a
+mingw32/lib/libmsvcr71d.a
 mingw32/lib/libmsvcr80.a
+mingw32/lib/libmsvcr80d.a
 mingw32/lib/libmsvcr90.a
 mingw32/lib/libmsvcr90d.a
 mingw32/lib/libmsvcrt-os.a
@@ -277,6 +281,7 @@ mingw32/lib/libmsvcrt.a
 mingw32/lib/libmsvcrt10.a
 mingw32/lib/libmsvcrt20.a
 mingw32/lib/libmsvcrt40.a
+mingw32/lib/libmsvcrtd.a
 mingw32/lib/libmsvfw32.a
 mingw32/lib/libmswsock.a
 mingw32/lib/libmsxml2.a

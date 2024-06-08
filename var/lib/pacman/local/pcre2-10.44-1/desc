@@ -1,8 +1,8 @@
 %NAME%
-libpcre2posix
+pcre2
 
 %VERSION%
-10.43-1
+10.44-1
 
 %BASE%
 pcre2
@@ -17,22 +17,19 @@ https://www.pcre.org/
 i686
 
 %BUILDDATE%
-1708881882
+1717799149
 
 %INSTALLDATE%
-1708917255
+1717816497
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-10018
+2456395
 
 %REASON%
 1
-
-%GROUPS%
-libraries
 
 %LICENSE%
 BSD
@@ -41,5 +38,11 @@ BSD
 pgp
 
 %DEPENDS%
-libpcre2_8=10.43
+libreadline
+libbz2
+zlib
+libpcre2_8=10.44
+libpcre2_16=10.44
+libpcre2_32=10.44
+libpcre2posix=10.44
 

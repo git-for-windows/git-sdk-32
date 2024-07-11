@@ -480,13 +480,13 @@ gboolean result = g_array_binary_search (garray, &amp;i, cmpint, &amp;matched_in
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1568">Create a shallow copy of a #GArray. If the array elements consist of
+             line="1569">Create a shallow copy of a #GArray. If the array elements consist of
 pointers to data, the pointers are copied but the actual data is not.</doc>
         <source-position filename="glib/garray.h" line="93"/>
         <return-value transfer-ownership="container">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1575">A copy of @array.</doc>
+               line="1576">A copy of @array.</doc>
           <array name="GLib.Array" c:type="GArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -495,7 +495,7 @@ pointers to data, the pointers are copied but the actual data is not.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1570">A #GArray.</doc>
+                 line="1571">A #GArray.</doc>
             <array name="GLib.Array" c:type="GArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -4237,31 +4237,31 @@ guaranteed to be atomic by using g_file_set_contents() internally.</doc>
             c:symbol-prefix="byte_array">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2675">Contains the public fields of a GByteArray.</doc>
+           line="2676">Contains the public fields of a GByteArray.</doc>
       <source-position filename="glib/garray.h" line="53"/>
       <field name="data" writable="1">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2677">a pointer to the element data. The data may be moved as
+             line="2678">a pointer to the element data. The data may be moved as
     elements are added to the #GByteArray</doc>
         <type name="guint8" c:type="guint8*"/>
       </field>
       <field name="len" writable="1">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2679">the number of elements in the #GByteArray</doc>
+             line="2680">the number of elements in the #GByteArray</doc>
         <type name="guint" c:type="guint"/>
       </field>
       <function name="append" c:identifier="g_byte_array_append">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2857">Adds the given bytes to the end of the #GByteArray.
+             line="2858">Adds the given bytes to the end of the #GByteArray.
 The array will grow in size automatically if necessary.</doc>
         <source-position filename="glib/garray.h" line="293"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2866">the #GByteArray</doc>
+               line="2867">the #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4270,7 +4270,7 @@ The array will grow in size automatically if necessary.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2859">a #GByteArray</doc>
+                 line="2860">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4278,13 +4278,13 @@ The array will grow in size automatically if necessary.</doc>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2860">the byte data to be added</doc>
+                 line="2861">the byte data to be added</doc>
             <type name="guint8" c:type="const guint8*"/>
           </parameter>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2861">the number of bytes to add</doc>
+                 line="2862">the number of bytes to add</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4292,7 +4292,7 @@ The array will grow in size automatically if necessary.</doc>
       <function name="free" c:identifier="g_byte_array_free">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2774">Frees the memory allocated by the #GByteArray. If @free_segment is
+             line="2775">Frees the memory allocated by the #GByteArray. If @free_segment is
 %TRUE it frees the actual byte data. If the reference count of
 @array is greater than one, the #GByteArray wrapper is preserved but
 the size of @array will be set to zero.</doc>
@@ -4300,7 +4300,7 @@ the size of @array will be set to zero.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2784">the element data if @free_segment is %FALSE, otherwise
+               line="2785">the element data if @free_segment is %FALSE, otherwise
          %NULL.  The element data should be freed using g_free().</doc>
           <type name="guint8" c:type="guint8*"/>
         </return-value>
@@ -4308,7 +4308,7 @@ the size of @array will be set to zero.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2776">a #GByteArray</doc>
+                 line="2777">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4316,7 +4316,7 @@ the size of @array will be set to zero.</doc>
           <parameter name="free_segment" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2777">if %TRUE the actual byte data is freed as well</doc>
+                 line="2778">if %TRUE the actual byte data is freed as well</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4326,7 +4326,7 @@ the size of @array will be set to zero.</doc>
                 version="2.32">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2794">Transfers the data from the #GByteArray into a new immutable #GBytes.
+             line="2795">Transfers the data from the #GByteArray into a new immutable #GBytes.
 
 The #GByteArray is freed unless the reference count of @array is greater
 than one, the #GByteArray wrapper is preserved but the size of @array
@@ -4338,7 +4338,7 @@ together.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2809">a new immutable #GBytes representing same
+               line="2810">a new immutable #GBytes representing same
     byte data that was in the array</doc>
           <type name="Bytes" c:type="GBytes*"/>
         </return-value>
@@ -4346,7 +4346,7 @@ together.</doc>
           <parameter name="array" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2796">a #GByteArray</doc>
+                 line="2797">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4356,12 +4356,12 @@ together.</doc>
       <function name="new" c:identifier="g_byte_array_new">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2684">Creates a new #GByteArray with a reference count of 1.</doc>
+             line="2685">Creates a new #GByteArray with a reference count of 1.</doc>
         <source-position filename="glib/garray.h" line="274"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2689">the new #GByteArray</doc>
+               line="2690">the new #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4372,7 +4372,7 @@ together.</doc>
                 version="2.32">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2719">Creates a byte array containing the @data.
+             line="2720">Creates a byte array containing the @data.
 After this call, @data belongs to the #GByteArray and may no longer be
 modified by the caller. The memory of @data has to be dynamically
 allocated and will eventually be freed with g_free().
@@ -4384,7 +4384,7 @@ stores the length of its data in #guint, which may be shorter than
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2735">a new #GByteArray</doc>
+               line="2736">a new #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4393,7 +4393,7 @@ stores the length of its data in #guint, which may be shorter than
           <parameter name="data" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2721">byte data for the array</doc>
+                 line="2722">byte data for the array</doc>
             <array length="1" zero-terminated="0" c:type="guint8*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4401,7 +4401,7 @@ stores the length of its data in #guint, which may be shorter than
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2722">length of @data</doc>
+                 line="2723">length of @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -4409,13 +4409,13 @@ stores the length of its data in #guint, which may be shorter than
       <function name="prepend" c:identifier="g_byte_array_prepend">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2878">Adds the given data to the start of the #GByteArray.
+             line="2879">Adds the given data to the start of the #GByteArray.
 The array will grow in size automatically if necessary.</doc>
         <source-position filename="glib/garray.h" line="297"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2887">the #GByteArray</doc>
+               line="2888">the #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4424,7 +4424,7 @@ The array will grow in size automatically if necessary.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2880">a #GByteArray</doc>
+                 line="2881">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4432,13 +4432,13 @@ The array will grow in size automatically if necessary.</doc>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2881">the byte data to be added</doc>
+                 line="2882">the byte data to be added</doc>
             <type name="guint8" c:type="const guint8*"/>
           </parameter>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2882">the number of bytes to add</doc>
+                 line="2883">the number of bytes to add</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4446,13 +4446,13 @@ The array will grow in size automatically if necessary.</doc>
       <function name="ref" c:identifier="g_byte_array_ref" version="2.22">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2823">Atomically increments the reference count of @array by one.
+             line="2824">Atomically increments the reference count of @array by one.
 This function is thread-safe and may be called from any thread.</doc>
         <source-position filename="glib/garray.h" line="289"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2830">The passed in #GByteArray</doc>
+               line="2831">The passed in #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4461,7 +4461,7 @@ This function is thread-safe and may be called from any thread.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2825">A #GByteArray</doc>
+                 line="2826">A #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4471,13 +4471,13 @@ This function is thread-safe and may be called from any thread.</doc>
       <function name="remove_index" c:identifier="g_byte_array_remove_index">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2917">Removes the byte at the given index from a #GByteArray.
+             line="2918">Removes the byte at the given index from a #GByteArray.
 The following bytes are moved down one place.</doc>
         <source-position filename="glib/garray.h" line="304"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2925">the #GByteArray</doc>
+               line="2926">the #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4486,7 +4486,7 @@ The following bytes are moved down one place.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2919">a #GByteArray</doc>
+                 line="2920">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4494,7 +4494,7 @@ The following bytes are moved down one place.</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2920">the index of the byte to remove</doc>
+                 line="2921">the index of the byte to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4503,7 +4503,7 @@ The following bytes are moved down one place.</doc>
                 c:identifier="g_byte_array_remove_index_fast">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2936">Removes the byte at the given index from a #GByteArray. The last
+             line="2937">Removes the byte at the given index from a #GByteArray. The last
 element in the array is used to fill in the space, so this function
 does not preserve the order of the #GByteArray. But it is faster
 than g_byte_array_remove_index().</doc>
@@ -4511,7 +4511,7 @@ than g_byte_array_remove_index().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2946">the #GByteArray</doc>
+               line="2947">the #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4520,7 +4520,7 @@ than g_byte_array_remove_index().</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2938">a #GByteArray</doc>
+                 line="2939">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4528,7 +4528,7 @@ than g_byte_array_remove_index().</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2939">the index of the byte to remove</doc>
+                 line="2940">the index of the byte to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4538,13 +4538,13 @@ than g_byte_array_remove_index().</doc>
                 version="2.4">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2957">Removes the given number of bytes starting at the given index from a
+             line="2958">Removes the given number of bytes starting at the given index from a
 #GByteArray.  The following elements are moved to close the gap.</doc>
         <source-position filename="glib/garray.h" line="310"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2966">the #GByteArray</doc>
+               line="2967">the #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4553,7 +4553,7 @@ than g_byte_array_remove_index().</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2959">a @GByteArray</doc>
+                 line="2960">a @GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4561,13 +4561,13 @@ than g_byte_array_remove_index().</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2960">the index of the first byte to remove</doc>
+                 line="2961">the index of the first byte to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2961">the number of bytes to remove</doc>
+                 line="2962">the number of bytes to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4575,12 +4575,12 @@ than g_byte_array_remove_index().</doc>
       <function name="set_size" c:identifier="g_byte_array_set_size">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2899">Sets the size of the #GByteArray, expanding it if necessary.</doc>
+             line="2900">Sets the size of the #GByteArray, expanding it if necessary.</doc>
         <source-position filename="glib/garray.h" line="301"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2906">the #GByteArray</doc>
+               line="2907">the #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4589,7 +4589,7 @@ than g_byte_array_remove_index().</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2901">a #GByteArray</doc>
+                 line="2902">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4597,7 +4597,7 @@ than g_byte_array_remove_index().</doc>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2902">the new size of the #GByteArray</doc>
+                 line="2903">the new size of the #GByteArray</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4605,7 +4605,7 @@ than g_byte_array_remove_index().</doc>
       <function name="sized_new" c:identifier="g_byte_array_sized_new">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2757">Creates a new #GByteArray with @reserved_size bytes preallocated.
+             line="2758">Creates a new #GByteArray with @reserved_size bytes preallocated.
 This avoids frequent reallocation, if you are going to add many
 bytes to the array. Note however that the size of the array is still
 0.</doc>
@@ -4613,7 +4613,7 @@ bytes to the array. Note however that the size of the array is still
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2766">the new #GByteArray</doc>
+               line="2767">the new #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -4622,7 +4622,7 @@ bytes to the array. Note however that the size of the array is still
           <parameter name="reserved_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2759">number of bytes preallocated</doc>
+                 line="2760">number of bytes preallocated</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4630,7 +4630,7 @@ bytes to the array. Note however that the size of the array is still
       <function name="sort" c:identifier="g_byte_array_sort">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2983">Sorts a byte array, using @compare_func which should be a
+             line="2984">Sorts a byte array, using @compare_func which should be a
 qsort()-style comparison function (returns less than zero for first
 arg is less than second arg, zero for equal, greater than zero if
 first arg is greater than second arg).
@@ -4648,7 +4648,7 @@ their addresses.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2985">a #GByteArray</doc>
+                 line="2986">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4658,7 +4658,7 @@ their addresses.</doc>
                      scope="call">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2986">comparison function</doc>
+                 line="2987">comparison function</doc>
             <type name="CompareFunc" c:type="GCompareFunc"/>
           </parameter>
         </parameters>
@@ -4667,7 +4667,7 @@ their addresses.</doc>
                 c:identifier="g_byte_array_sort_with_data">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="3006">Like g_byte_array_sort(), but the comparison function takes an extra
+             line="3007">Like g_byte_array_sort(), but the comparison function takes an extra
 user data argument.</doc>
         <source-position filename="glib/garray.h" line="317"/>
         <return-value transfer-ownership="none">
@@ -4677,7 +4677,7 @@ user data argument.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="3008">a #GByteArray</doc>
+                 line="3009">a #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4688,7 +4688,7 @@ user data argument.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="3009">comparison function</doc>
+                 line="3010">comparison function</doc>
             <type name="CompareDataFunc" c:type="GCompareDataFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -4697,7 +4697,7 @@ user data argument.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="3010">data to pass to @compare_func</doc>
+                 line="3011">data to pass to @compare_func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -4705,14 +4705,14 @@ user data argument.</doc>
       <function name="steal" c:identifier="g_byte_array_steal" version="2.64">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2697">Frees the data in the array and resets the size to zero, while
+             line="2698">Frees the data in the array and resets the size to zero, while
 the underlying array is preserved for use elsewhere and returned
 to the caller.</doc>
         <source-position filename="glib/garray.h" line="279"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2707">the element data, which should be
+               line="2708">the element data, which should be
     freed using g_free().</doc>
           <type name="guint8" c:type="guint8*"/>
         </return-value>
@@ -4720,7 +4720,7 @@ to the caller.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2699">a #GByteArray.</doc>
+                 line="2700">a #GByteArray.</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -4733,7 +4733,7 @@ to the caller.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2700">pointer to retrieve the number of
+                 line="2701">pointer to retrieve the number of
    elements of the original array</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
@@ -4742,7 +4742,7 @@ to the caller.</doc>
       <function name="unref" c:identifier="g_byte_array_unref" version="2.22">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2840">Atomically decrements the reference count of @array by one. If the
+             line="2841">Atomically decrements the reference count of @array by one. If the
 reference count drops to 0, all memory allocated by the array is
 released. This function is thread-safe and may be called from any
 thread.</doc>
@@ -4754,7 +4754,7 @@ thread.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2842">A #GByteArray</doc>
+                 line="2843">A #GByteArray</doc>
             <array name="GLib.ByteArray" c:type="GByteArray*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -22366,7 +22366,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="3" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="4" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
@@ -29356,25 +29356,25 @@ These are called with the complete formatted string to output.</doc>
             c:symbol-prefix="ptr_array">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="1085">Contains the public fields of a pointer array.</doc>
+           line="1086">Contains the public fields of a pointer array.</doc>
       <source-position filename="glib/garray.h" line="59"/>
       <field name="pdata" writable="1">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1087">points to the array of pointers, which may be moved when the
+             line="1088">points to the array of pointers, which may be moved when the
     array grows</doc>
         <type name="gpointer" c:type="gpointer*"/>
       </field>
       <field name="len" writable="1">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1089">number of pointers in the array</doc>
+             line="1090">number of pointers in the array</doc>
         <type name="guint" c:type="guint"/>
       </field>
       <function name="add" c:identifier="g_ptr_array_add" introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2203">Adds a pointer to the end of the pointer array. The array will grow
+             line="2204">Adds a pointer to the end of the pointer array. The array will grow
 in size automatically if necessary.</doc>
         <source-position filename="glib/garray.h" line="224"/>
         <return-value transfer-ownership="none">
@@ -29384,7 +29384,7 @@ in size automatically if necessary.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2205">a #GPtrArray</doc>
+                 line="2206">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29395,7 +29395,7 @@ in size automatically if necessary.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2206">the pointer to add</doc>
+                 line="2207">the pointer to add</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -29406,7 +29406,7 @@ in size automatically if necessary.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1484">Makes a full (deep) copy of a #GPtrArray.
+             line="1485">Makes a full (deep) copy of a #GPtrArray.
 
 @func, as a #GCopyFunc, takes two arguments, the data to be copied
 and a @user_data pointer. On common processor architectures, it's safe to
@@ -29424,7 +29424,7 @@ array is.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1505">a deep copy of the initial #GPtrArray.</doc>
+               line="1506">a deep copy of the initial #GPtrArray.</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -29433,7 +29433,7 @@ array is.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1486">#GPtrArray to duplicate</doc>
+                 line="1487">#GPtrArray to duplicate</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29445,7 +29445,7 @@ array is.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1487">a copy function used to copy every element in the array</doc>
+                 line="1488">a copy function used to copy every element in the array</doc>
             <type name="CopyFunc" c:type="GCopyFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -29454,7 +29454,7 @@ array is.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1488">user data passed to the copy function @func, or %NULL</doc>
+                 line="1489">user data passed to the copy function @func, or %NULL</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -29465,7 +29465,7 @@ array is.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2227">Adds all pointers of @array to the end of the array @array_to_extend.
+             line="2228">Adds all pointers of @array to the end of the array @array_to_extend.
 The array will grow in size automatically if needed. @array_to_extend is
 modified in-place.
 
@@ -29487,7 +29487,7 @@ Whether @array_to_extend is %NULL terminated stays unchanged by this function.</
           <parameter name="array_to_extend" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2229">a #GPtrArray.</doc>
+                 line="2230">a #GPtrArray.</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29495,7 +29495,7 @@ Whether @array_to_extend is %NULL terminated stays unchanged by this function.</
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2230">a #GPtrArray to add to the end of @array_to_extend.</doc>
+                 line="2231">a #GPtrArray to add to the end of @array_to_extend.</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29507,7 +29507,7 @@ Whether @array_to_extend is %NULL terminated stays unchanged by this function.</
                      closure="3">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2231">a copy function used to copy every element in the array</doc>
+                 line="2232">a copy function used to copy every element in the array</doc>
             <type name="CopyFunc" c:type="GCopyFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -29516,7 +29516,7 @@ Whether @array_to_extend is %NULL terminated stays unchanged by this function.</
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2232">user data passed to the copy function @func, or %NULL</doc>
+                 line="2233">user data passed to the copy function @func, or %NULL</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -29527,7 +29527,7 @@ Whether @array_to_extend is %NULL terminated stays unchanged by this function.</
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2290">Adds all the pointers in @array to the end of @array_to_extend, transferring
+             line="2291">Adds all the pointers in @array to the end of @array_to_extend, transferring
 ownership of each element from @array to @array_to_extend and modifying
 @array_to_extend in-place. @array is then freed.
 
@@ -29542,7 +29542,7 @@ length of @array set to zero.</doc>
           <parameter name="array_to_extend" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2292">a #GPtrArray.</doc>
+                 line="2293">a #GPtrArray.</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29550,7 +29550,7 @@ length of @array set to zero.</doc>
           <parameter name="array" transfer-ownership="container">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2293">a #GPtrArray to add to the end of
+                 line="2294">a #GPtrArray to add to the end of
     @array_to_extend.</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
@@ -29564,7 +29564,7 @@ length of @array set to zero.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2600">Checks whether @needle exists in @haystack. If the element is found, %TRUE is
+             line="2601">Checks whether @needle exists in @haystack. If the element is found, %TRUE is
 returned and the element’s index is returned in @index_ (if non-%NULL).
 Otherwise, %FALSE is returned and @index_ is undefined. If @needle exists
 multiple times in @haystack, the index of the first instance is returned.
@@ -29575,14 +29575,14 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2615">%TRUE if @needle is one of the elements of @haystack</doc>
+               line="2616">%TRUE if @needle is one of the elements of @haystack</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="haystack" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2602">pointer array to be searched</doc>
+                 line="2603">pointer array to be searched</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29593,7 +29593,7 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2603">pointer to look for</doc>
+                 line="2604">pointer to look for</doc>
             <type name="gpointer" c:type="gconstpointer"/>
           </parameter>
           <parameter name="index_"
@@ -29604,7 +29604,7 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2604">return location for the index of
+                 line="2605">return location for the index of
    the element, if found</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
@@ -29616,7 +29616,7 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2626">Checks whether @needle exists in @haystack, using the given @equal_func.
+             line="2627">Checks whether @needle exists in @haystack, using the given @equal_func.
 If the element is found, %TRUE is returned and the element’s index is
 returned in @index_ (if non-%NULL). Otherwise, %FALSE is returned and @index_
 is undefined. If @needle exists multiple times in @haystack, the index of
@@ -29629,14 +29629,14 @@ equality is used.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2646">%TRUE if @needle is one of the elements of @haystack</doc>
+               line="2647">%TRUE if @needle is one of the elements of @haystack</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="haystack" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2628">pointer array to be searched</doc>
+                 line="2629">pointer array to be searched</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29647,7 +29647,7 @@ equality is used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2629">pointer to look for</doc>
+                 line="2630">pointer to look for</doc>
             <type name="gpointer" c:type="gconstpointer"/>
           </parameter>
           <parameter name="equal_func"
@@ -29656,7 +29656,7 @@ equality is used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2630">the function to call for each element, which should
+                 line="2631">the function to call for each element, which should
    return %TRUE when the desired element is found; or %NULL to use pointer
    equality</doc>
             <type name="EqualFunc" c:type="GEqualFunc"/>
@@ -29669,7 +29669,7 @@ equality is used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2633">return location for the index of
+                 line="2634">return location for the index of
    the element, if found</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
@@ -29681,7 +29681,7 @@ equality is used.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2576">Calls a function for each element of a #GPtrArray. @func must not
+             line="2577">Calls a function for each element of a #GPtrArray. @func must not
 add elements to or remove elements from the array.</doc>
         <source-position filename="glib/garray.h" line="253"/>
         <return-value transfer-ownership="none">
@@ -29691,7 +29691,7 @@ add elements to or remove elements from the array.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2578">a #GPtrArray</doc>
+                 line="2579">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29699,7 +29699,7 @@ add elements to or remove elements from the array.</doc>
           <parameter name="func" transfer-ownership="none" closure="2">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2579">the function to call for each array element</doc>
+                 line="2580">the function to call for each array element</doc>
             <type name="Func" c:type="GFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -29708,7 +29708,7 @@ add elements to or remove elements from the array.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2580">user data to pass to the function</doc>
+                 line="2581">user data to pass to the function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -29716,7 +29716,7 @@ add elements to or remove elements from the array.</doc>
       <function name="free" c:identifier="g_ptr_array_free" introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1775">Frees the memory allocated for the #GPtrArray. If @free_seg is %TRUE
+             line="1776">Frees the memory allocated for the #GPtrArray. If @free_seg is %TRUE
 it frees the memory block holding the elements as well. Pass %FALSE
 if you want to free the #GPtrArray wrapper but preserve the
 underlying array for use elsewhere. If the reference count of @array
@@ -29738,7 +29738,7 @@ functions.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1799">the pointer array if @free_seg is
+               line="1800">the pointer array if @free_seg is
     %FALSE, otherwise %NULL. The pointer array should be freed using g_free().</doc>
           <type name="gpointer" c:type="gpointer*"/>
         </return-value>
@@ -29746,7 +29746,7 @@ functions.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1777">a #GPtrArray</doc>
+                 line="1778">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29754,7 +29754,7 @@ functions.</doc>
           <parameter name="free_seg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1778">if %TRUE the actual pointer array is freed as well</doc>
+                 line="1779">if %TRUE the actual pointer array is freed as well</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -29765,7 +29765,7 @@ functions.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2323">Inserts an element into the pointer array at the given index. The
+             line="2324">Inserts an element into the pointer array at the given index. The
 array will grow in size automatically if necessary.</doc>
         <source-position filename="glib/garray.h" line="235"/>
         <return-value transfer-ownership="none">
@@ -29775,7 +29775,7 @@ array will grow in size automatically if necessary.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2325">a #GPtrArray</doc>
+                 line="2326">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29783,7 +29783,7 @@ array will grow in size automatically if necessary.</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2326">the index to place the new element at, or -1 to append</doc>
+                 line="2327">the index to place the new element at, or -1 to append</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="data"
@@ -29792,7 +29792,7 @@ array will grow in size automatically if necessary.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2327">the pointer to add.</doc>
+                 line="2328">the pointer to add.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -29803,7 +29803,7 @@ array will grow in size automatically if necessary.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1705">Gets whether the @array was constructed as %NULL-terminated.
+             line="1706">Gets whether the @array was constructed as %NULL-terminated.
 
 This will only return %TRUE for arrays constructed by passing %TRUE to the
 `null_terminated` argument of g_ptr_array_new_null_terminated(). It will not
@@ -29813,14 +29813,14 @@ them.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1716">%TRUE if the array is made to be %NULL terminated.</doc>
+               line="1717">%TRUE if the array is made to be %NULL terminated.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1707">the #GPtrArray</doc>
+                 line="1708">the #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -29830,12 +29830,12 @@ them.</doc>
       <function name="new" c:identifier="g_ptr_array_new" introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1164">Creates a new #GPtrArray with a reference count of 1.</doc>
+             line="1165">Creates a new #GPtrArray with a reference count of 1.</doc>
         <source-position filename="glib/garray.h" line="151"/>
         <return-value>
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1169">the new #GPtrArray</doc>
+               line="1170">the new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -29847,7 +29847,7 @@ them.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1312">Creates a new #GPtrArray, copying @len pointers from @data, and setting
+             line="1313">Creates a new #GPtrArray, copying @len pointers from @data, and setting
 the array’s reference count to 1.
 
 This avoids having to manually add each element one by one.
@@ -29867,7 +29867,7 @@ stores the length of its data in #guint, which may be shorter than
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1340">A new #GPtrArray</doc>
+               line="1341">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -29879,7 +29879,7 @@ stores the length of its data in #guint, which may be shorter than
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1314">an array of pointers,
+                 line="1315">an array of pointers,
 or %NULL for an empty array</doc>
             <array length="1" zero-terminated="0" c:type="gpointer*">
               <type name="gpointer" c:type="gpointer"/>
@@ -29888,7 +29888,7 @@ or %NULL for an empty array</doc>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1316">the number of pointers in @data</doc>
+                 line="1317">the number of pointers in @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="copy_func"
@@ -29900,7 +29900,7 @@ or %NULL for an empty array</doc>
                      destroy="4">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1317">a copy function used to copy every element in the
+                 line="1318">a copy function used to copy every element in the
   array or %NULL.</doc>
             <type name="CopyFunc" c:type="GCopyFunc"/>
           </parameter>
@@ -29910,7 +29910,7 @@ or %NULL for an empty array</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1319">user data passed to @copy_func, or %NULL</doc>
+                 line="1320">user data passed to @copy_func, or %NULL</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="element_free_func"
@@ -29920,7 +29920,7 @@ or %NULL for an empty array</doc>
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1320">a function to free elements on @array
+                 line="1321">a function to free elements on @array
   destruction or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -29932,7 +29932,7 @@ or %NULL for an empty array</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1358">Creates a new #GPtrArray copying the pointers from @data after having
+             line="1359">Creates a new #GPtrArray copying the pointers from @data after having
 computed the length of it and with a reference count of 1.
 This avoids having to manually add each element one by one.
 If @copy_func is provided, then it is used to copy the data in the new
@@ -29948,7 +29948,7 @@ stores the length of its data in #guint, which may be shorter than
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1381">A new #GPtrArray</doc>
+               line="1382">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -29960,7 +29960,7 @@ stores the length of its data in #guint, which may be shorter than
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1360">an array of
+                 line="1361">an array of
   pointers, %NULL terminated; or %NULL for an empty array</doc>
             <array c:type="gpointer*">
               <type name="gpointer" c:type="gpointer"/>
@@ -29975,7 +29975,7 @@ stores the length of its data in #guint, which may be shorter than
                      destroy="3">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1362">a copy function used to copy every element in the
+                 line="1363">a copy function used to copy every element in the
   array or %NULL.</doc>
             <type name="CopyFunc" c:type="GCopyFunc"/>
           </parameter>
@@ -29985,7 +29985,7 @@ stores the length of its data in #guint, which may be shorter than
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1364">user data passed to @copy_func, or %NULL</doc>
+                 line="1365">user data passed to @copy_func, or %NULL</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="element_free_func"
@@ -29995,7 +29995,7 @@ stores the length of its data in #guint, which may be shorter than
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1365">a function to free elements on @array
+                 line="1366">a function to free elements on @array
   destruction or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -30007,7 +30007,7 @@ stores the length of its data in #guint, which may be shorter than
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1619">Creates a new #GPtrArray with @reserved_size pointers preallocated
+             line="1620">Creates a new #GPtrArray with @reserved_size pointers preallocated
 and a reference count of 1. This avoids frequent reallocation, if
 you are going to add many pointers to the array. Note however that
 the size of the array is still 0. It also set @element_free_func
@@ -30018,7 +30018,7 @@ g_ptr_array_unref(), when g_ptr_array_free() is called with
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1633">A new #GPtrArray</doc>
+               line="1634">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30027,7 +30027,7 @@ g_ptr_array_unref(), when g_ptr_array_free() is called with
           <parameter name="reserved_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1621">number of pointers preallocated</doc>
+                 line="1622">number of pointers preallocated</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="element_free_func"
@@ -30037,7 +30037,7 @@ g_ptr_array_unref(), when g_ptr_array_free() is called with
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1622">A function to free elements with
+                 line="1623">A function to free elements with
     destroy @array or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -30049,7 +30049,7 @@ g_ptr_array_unref(), when g_ptr_array_free() is called with
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1644">Like g_ptr_array_new_full() but also allows to set the array to
+             line="1645">Like g_ptr_array_new_full() but also allows to set the array to
 be %NULL terminated. A %NULL terminated pointer array has an
 additional %NULL pointer after the last element, beyond the
 current length.
@@ -30068,7 +30068,7 @@ zero or be %NULL.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1670">A new #GPtrArray</doc>
+               line="1671">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30077,7 +30077,7 @@ zero or be %NULL.</doc>
           <parameter name="reserved_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1646">number of pointers preallocated.
+                 line="1647">number of pointers preallocated.
     If @null_terminated is %TRUE, the actually allocated
     buffer size is @reserved_size plus 1, unless @reserved_size
     is zero, in which case no initial buffer gets allocated.</doc>
@@ -30090,14 +30090,14 @@ zero or be %NULL.</doc>
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1650">A function to free elements with
+                 line="1651">A function to free elements with
     destroy @array or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
           <parameter name="null_terminated" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1652">whether to make the array as %NULL terminated.</doc>
+                 line="1653">whether to make the array as %NULL terminated.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -30108,7 +30108,7 @@ zero or be %NULL.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1177">Creates a new #GPtrArray with @data as pointers, @len as length and a
+             line="1178">Creates a new #GPtrArray with @data as pointers, @len as length and a
 reference count of 1.
 
 This avoids having to copy such data manually.
@@ -30127,7 +30127,7 @@ stores the length of its data in #guint, which may be shorter than
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1201">A new #GPtrArray</doc>
+               line="1202">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30139,7 +30139,7 @@ stores the length of its data in #guint, which may be shorter than
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1179">an array of pointers,
+                 line="1180">an array of pointers,
    or %NULL for an empty array</doc>
             <array length="1" zero-terminated="0" c:type="gpointer*">
               <type name="gpointer" c:type="gpointer"/>
@@ -30148,7 +30148,7 @@ stores the length of its data in #guint, which may be shorter than
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1181">the number of pointers in @data</doc>
+                 line="1182">the number of pointers in @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="element_free_func"
@@ -30158,7 +30158,7 @@ stores the length of its data in #guint, which may be shorter than
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1182">A function to free elements on @array
+                 line="1183">A function to free elements on @array
   destruction or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -30170,7 +30170,7 @@ stores the length of its data in #guint, which may be shorter than
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1226">Creates a new #GPtrArray with @data as pointers, computing the length of it
+             line="1227">Creates a new #GPtrArray with @data as pointers, computing the length of it
 and setting the reference count to 1.
 
 This avoids having to copy such data manually.
@@ -30192,7 +30192,7 @@ stores the length of its data in #guint, which may be shorter than
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1252">A new #GPtrArray</doc>
+               line="1253">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30204,7 +30204,7 @@ stores the length of its data in #guint, which may be shorter than
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1228">an array
+                 line="1229">an array
  of pointers, %NULL terminated, or %NULL for an empty array</doc>
             <array c:type="gpointer*">
               <type name="gpointer" c:type="gpointer"/>
@@ -30217,7 +30217,7 @@ stores the length of its data in #guint, which may be shorter than
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1230">a function to free elements on @array
+                 line="1231">a function to free elements on @array
   destruction or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -30229,7 +30229,7 @@ stores the length of its data in #guint, which may be shorter than
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1599">Creates a new #GPtrArray with a reference count of 1 and use
+             line="1600">Creates a new #GPtrArray with a reference count of 1 and use
 @element_free_func for freeing each element when the array is destroyed
 either via g_ptr_array_unref(), when g_ptr_array_free() is called with
 @free_segment set to %TRUE or when removing elements.</doc>
@@ -30237,7 +30237,7 @@ either via g_ptr_array_unref(), when g_ptr_array_free() is called with
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1609">A new #GPtrArray</doc>
+               line="1610">A new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30250,7 +30250,7 @@ either via g_ptr_array_unref(), when g_ptr_array_free() is called with
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1601">A function to free elements with
+                 line="1602">A function to free elements with
     destroy @array or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -30262,13 +30262,13 @@ either via g_ptr_array_unref(), when g_ptr_array_free() is called with
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1728">Atomically increments the reference count of @array by one.
+             line="1729">Atomically increments the reference count of @array by one.
 This function is thread-safe and may be called from any thread.</doc>
         <source-position filename="glib/garray.h" line="192"/>
         <return-value>
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1735">The passed in #GPtrArray</doc>
+               line="1736">The passed in #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30277,7 +30277,7 @@ This function is thread-safe and may be called from any thread.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1730">a #GPtrArray</doc>
+                 line="1731">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30289,7 +30289,7 @@ This function is thread-safe and may be called from any thread.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2128">Removes the first occurrence of the given pointer from the pointer
+             line="2129">Removes the first occurrence of the given pointer from the pointer
 array. The following elements are moved down one place. If @array
 has a non-%NULL #GDestroyNotify function it is called for the
 removed element.
@@ -30300,7 +30300,7 @@ pointer was not found.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2141">%TRUE if the pointer is removed, %FALSE if the pointer
+               line="2142">%TRUE if the pointer is removed, %FALSE if the pointer
     is not found in the array</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -30308,7 +30308,7 @@ pointer was not found.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2130">a #GPtrArray</doc>
+                 line="2131">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30319,7 +30319,7 @@ pointer was not found.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2131">the pointer to remove</doc>
+                 line="2132">the pointer to remove</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -30329,7 +30329,7 @@ pointer was not found.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2165">Removes the first occurrence of the given pointer from the pointer
+             line="2166">Removes the first occurrence of the given pointer from the pointer
 array. The last element in the array is used to fill in the space,
 so this function does not preserve the order of the array. But it
 is faster than g_ptr_array_remove(). If @array has a non-%NULL
@@ -30341,14 +30341,14 @@ pointer was not found.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2179">%TRUE if the pointer was found in the array</doc>
+               line="2180">%TRUE if the pointer was found in the array</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2167">a #GPtrArray</doc>
+                 line="2168">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30359,7 +30359,7 @@ pointer was not found.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2168">the pointer to remove</doc>
+                 line="2169">the pointer to remove</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -30369,7 +30369,7 @@ pointer was not found.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1987">Removes the pointer at the given index from the pointer array.
+             line="1988">Removes the pointer at the given index from the pointer array.
 The following elements are moved down one place. If @array has
 a non-%NULL #GDestroyNotify function it is called for the removed
 element. If so, the return value from this function will potentially point
@@ -30378,14 +30378,14 @@ to freed memory (depending on the #GDestroyNotify implementation).</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1998">the pointer which was removed</doc>
+               line="1999">the pointer which was removed</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1989">a #GPtrArray</doc>
+                 line="1990">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30393,7 +30393,7 @@ to freed memory (depending on the #GDestroyNotify implementation).</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1990">the index of the pointer to remove</doc>
+                 line="1991">the index of the pointer to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -30403,7 +30403,7 @@ to freed memory (depending on the #GDestroyNotify implementation).</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2007">Removes the pointer at the given index from the pointer array.
+             line="2008">Removes the pointer at the given index from the pointer array.
 The last element in the array is used to fill in the space, so
 this function does not preserve the order of the array. But it
 is faster than g_ptr_array_remove_index(). If @array has a non-%NULL
@@ -30414,14 +30414,14 @@ return value from this function will potentially point to freed memory
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2020">the pointer which was removed</doc>
+               line="2021">the pointer which was removed</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2009">a #GPtrArray</doc>
+                 line="2010">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30429,7 +30429,7 @@ return value from this function will potentially point to freed memory
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2010">the index of the pointer to remove</doc>
+                 line="2011">the index of the pointer to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -30440,7 +30440,7 @@ return value from this function will potentially point to freed memory
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2071">Removes the given number of pointers starting at the given index
+             line="2072">Removes the given number of pointers starting at the given index
 from a #GPtrArray. The following elements are moved to close the
 gap. If @array has a non-%NULL #GDestroyNotify function it is
 called for the removed elements.</doc>
@@ -30448,7 +30448,7 @@ called for the removed elements.</doc>
         <return-value>
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2082">the @array</doc>
+               line="2083">the @array</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30457,7 +30457,7 @@ called for the removed elements.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2073">a @GPtrArray</doc>
+                 line="2074">a @GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30465,13 +30465,13 @@ called for the removed elements.</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2074">the index of the first pointer to remove</doc>
+                 line="2075">the index of the first pointer to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2075">the number of pointers to remove</doc>
+                 line="2076">the number of pointers to remove</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -30482,7 +30482,7 @@ called for the removed elements.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1682">Sets a function for freeing each element when @array is destroyed
+             line="1683">Sets a function for freeing each element when @array is destroyed
 either via g_ptr_array_unref(), when g_ptr_array_free() is called
 with @free_segment set to %TRUE or when removing elements.</doc>
         <source-position filename="glib/garray.h" line="196"/>
@@ -30493,7 +30493,7 @@ with @free_segment set to %TRUE or when removing elements.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1684">A #GPtrArray</doc>
+                 line="1685">A #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30505,7 +30505,7 @@ with @free_segment set to %TRUE or when removing elements.</doc>
                      scope="async">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1685">A function to free elements with
+                 line="1686">A function to free elements with
     destroy @array or %NULL</doc>
             <type name="DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
@@ -30516,7 +30516,7 @@ with @free_segment set to %TRUE or when removing elements.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1904">Sets the size of the array. When making the array larger,
+             line="1905">Sets the size of the array. When making the array larger,
 newly-added elements will be set to %NULL. When making it smaller,
 if @array has a non-%NULL #GDestroyNotify function then it will be
 called for the removed elements.</doc>
@@ -30528,7 +30528,7 @@ called for the removed elements.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1906">a #GPtrArray</doc>
+                 line="1907">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30536,7 +30536,7 @@ called for the removed elements.</doc>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1907">the new length of the pointer array</doc>
+                 line="1908">the new length of the pointer array</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -30546,7 +30546,7 @@ called for the removed elements.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1551">Creates a new #GPtrArray with @reserved_size pointers preallocated
+             line="1552">Creates a new #GPtrArray with @reserved_size pointers preallocated
 and a reference count of 1. This avoids frequent reallocation, if
 you are going to add many pointers to the array. Note however that
 the size of the array is still 0.</doc>
@@ -30554,7 +30554,7 @@ the size of the array is still 0.</doc>
         <return-value>
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1560">the new #GPtrArray</doc>
+               line="1561">the new #GPtrArray</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -30563,7 +30563,7 @@ the size of the array is still 0.</doc>
           <parameter name="reserved_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1553">number of pointers preallocated</doc>
+                 line="1554">number of pointers preallocated</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -30571,7 +30571,7 @@ the size of the array is still 0.</doc>
       <function name="sort" c:identifier="g_ptr_array_sort" introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2363">Sorts the array, using @compare_func which should be a qsort()-style
+             line="2364">Sorts the array, using @compare_func which should be a qsort()-style
 comparison function (returns less than zero for first arg is less
 than second arg, zero for equal, greater than zero if first arg is
 greater than second arg).
@@ -30617,7 +30617,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2365">a #GPtrArray</doc>
+                 line="2366">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30625,7 +30625,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
           <parameter name="compare_func" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2366">comparison function</doc>
+                 line="2367">comparison function</doc>
             <type name="CompareFunc" c:type="GCompareFunc"/>
           </parameter>
         </parameters>
@@ -30636,7 +30636,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2512">Sorts the array, using @compare_func which should be a qsort()-style
+             line="2513">Sorts the array, using @compare_func which should be a qsort()-style
 comparison function (returns less than zero for first arg is less
 than second arg, zero for equal, greater than zero if first arg is
 greater than second arg).
@@ -30650,7 +30650,7 @@ This is guaranteed to be a stable sort.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2514">a #GPtrArray</doc>
+                 line="2515">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30658,7 +30658,7 @@ This is guaranteed to be a stable sort.</doc>
           <parameter name="compare_func" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2515">a #GCompareFunc comparison function</doc>
+                 line="2516">a #GCompareFunc comparison function</doc>
             <type name="CompareFunc" c:type="GCompareFunc"/>
           </parameter>
         </parameters>
@@ -30669,7 +30669,7 @@ This is guaranteed to be a stable sort.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2551">Like g_ptr_array_sort_values(), but the comparison function has an extra
+             line="2552">Like g_ptr_array_sort_values(), but the comparison function has an extra
 user data argument.
 
 This is guaranteed to be a stable sort.</doc>
@@ -30681,7 +30681,7 @@ This is guaranteed to be a stable sort.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2553">a #GPtrArray</doc>
+                 line="2554">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30689,7 +30689,7 @@ This is guaranteed to be a stable sort.</doc>
           <parameter name="compare_func" transfer-ownership="none" closure="2">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2554">a #GCompareDataFunc comparison function</doc>
+                 line="2555">a #GCompareDataFunc comparison function</doc>
             <type name="CompareDataFunc" c:type="GCompareDataFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -30698,7 +30698,7 @@ This is guaranteed to be a stable sort.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2555">data to pass to @compare_func</doc>
+                 line="2556">data to pass to @compare_func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -30708,7 +30708,7 @@ This is guaranteed to be a stable sort.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2424">Like g_ptr_array_sort(), but the comparison function has an extra
+             line="2425">Like g_ptr_array_sort(), but the comparison function has an extra
 user data argument.
 
 Note that the comparison function for g_ptr_array_sort_with_data()
@@ -30772,7 +30772,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2426">a #GPtrArray</doc>
+                 line="2427">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30780,7 +30780,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
           <parameter name="compare_func" transfer-ownership="none" closure="2">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2427">comparison function</doc>
+                 line="2428">comparison function</doc>
             <type name="CompareDataFunc" c:type="GCompareDataFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -30789,7 +30789,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2428">data to pass to @compare_func</doc>
+                 line="2429">data to pass to @compare_func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -30800,7 +30800,7 @@ This is guaranteed to be a stable sort since version 2.32.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1406">Frees the data in the array and resets the size to zero, while
+             line="1407">Frees the data in the array and resets the size to zero, while
 the underlying array is preserved for use elsewhere and returned
 to the caller.
 
@@ -30848,7 +30848,7 @@ g_assert (chunk_buffer-&gt;len == 0);
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1457">the element data, which should be
+               line="1458">the element data, which should be
     freed using g_free(). This may be %NULL if the array doesn’t have any
     elements (i.e. if `*len` is zero).</doc>
           <type name="gpointer" c:type="gpointer*"/>
@@ -30857,7 +30857,7 @@ g_assert (chunk_buffer-&gt;len == 0);
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1408">a #GPtrArray.</doc>
+                 line="1409">a #GPtrArray.</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30870,7 +30870,7 @@ g_assert (chunk_buffer-&gt;len == 0);
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1409">pointer to retrieve the number of
+                 line="1410">pointer to retrieve the number of
    elements of the original array</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
@@ -30882,7 +30882,7 @@ g_assert (chunk_buffer-&gt;len == 0);
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2029">Removes the pointer at the given index from the pointer array.
+             line="2030">Removes the pointer at the given index from the pointer array.
 The following elements are moved down one place. The #GDestroyNotify for
 @array is *not* called on the removed element; ownership is transferred to
 the caller of this function.</doc>
@@ -30890,14 +30890,14 @@ the caller of this function.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2039">the pointer which was removed</doc>
+               line="2040">the pointer which was removed</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2031">a #GPtrArray</doc>
+                 line="2032">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30905,7 +30905,7 @@ the caller of this function.</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2032">the index of the pointer to steal</doc>
+                 line="2033">the index of the pointer to steal</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -30916,7 +30916,7 @@ the caller of this function.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2049">Removes the pointer at the given index from the pointer array.
+             line="2050">Removes the pointer at the given index from the pointer array.
 The last element in the array is used to fill in the space, so
 this function does not preserve the order of the array. But it
 is faster than g_ptr_array_steal_index(). The #GDestroyNotify for @array is
@@ -30926,14 +30926,14 @@ of this function.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2061">the pointer which was removed</doc>
+               line="2062">the pointer which was removed</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2051">a #GPtrArray</doc>
+                 line="2052">a #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -30941,7 +30941,7 @@ of this function.</doc>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="2052">the index of the pointer to steal</doc>
+                 line="2053">the index of the pointer to steal</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -30952,7 +30952,7 @@ of this function.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1753">Atomically decrements the reference count of @array by one. If the
+             line="1754">Atomically decrements the reference count of @array by one. If the
 reference count drops to 0, the effect is the same as calling
 g_ptr_array_free() with @free_segment set to %TRUE. This function
 is thread-safe and may be called from any thread.</doc>
@@ -30964,7 +30964,7 @@ is thread-safe and may be called from any thread.</doc>
           <parameter name="array" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/garray.c"
-                 line="1755">A #GPtrArray</doc>
+                 line="1756">A #GPtrArray</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray*">
               <type name="gpointer" c:type="gpointer"/>
             </array>
@@ -63122,13 +63122,13 @@ This function is mainly meant for language bindings.</doc>
               moved-to="ByteArray.append">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2857">Adds the given bytes to the end of the #GByteArray.
+           line="2858">Adds the given bytes to the end of the #GByteArray.
 The array will grow in size automatically if necessary.</doc>
       <source-position filename="glib/garray.h" line="293"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2866">the #GByteArray</doc>
+             line="2867">the #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63137,7 +63137,7 @@ The array will grow in size automatically if necessary.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2859">a #GByteArray</doc>
+               line="2860">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63145,13 +63145,13 @@ The array will grow in size automatically if necessary.</doc>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2860">the byte data to be added</doc>
+               line="2861">the byte data to be added</doc>
           <type name="guint8" c:type="const guint8*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2861">the number of bytes to add</doc>
+               line="2862">the number of bytes to add</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63161,7 +63161,7 @@ The array will grow in size automatically if necessary.</doc>
               moved-to="ByteArray.free">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2774">Frees the memory allocated by the #GByteArray. If @free_segment is
+           line="2775">Frees the memory allocated by the #GByteArray. If @free_segment is
 %TRUE it frees the actual byte data. If the reference count of
 @array is greater than one, the #GByteArray wrapper is preserved but
 the size of @array will be set to zero.</doc>
@@ -63169,7 +63169,7 @@ the size of @array will be set to zero.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2784">the element data if @free_segment is %FALSE, otherwise
+             line="2785">the element data if @free_segment is %FALSE, otherwise
          %NULL.  The element data should be freed using g_free().</doc>
         <type name="guint8" c:type="guint8*"/>
       </return-value>
@@ -63177,7 +63177,7 @@ the size of @array will be set to zero.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2776">a #GByteArray</doc>
+               line="2777">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63185,7 +63185,7 @@ the size of @array will be set to zero.</doc>
         <parameter name="free_segment" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2777">if %TRUE the actual byte data is freed as well</doc>
+               line="2778">if %TRUE the actual byte data is freed as well</doc>
           <type name="gboolean" c:type="gboolean"/>
         </parameter>
       </parameters>
@@ -63196,7 +63196,7 @@ the size of @array will be set to zero.</doc>
               version="2.32">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2794">Transfers the data from the #GByteArray into a new immutable #GBytes.
+           line="2795">Transfers the data from the #GByteArray into a new immutable #GBytes.
 
 The #GByteArray is freed unless the reference count of @array is greater
 than one, the #GByteArray wrapper is preserved but the size of @array
@@ -63208,7 +63208,7 @@ together.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2809">a new immutable #GBytes representing same
+             line="2810">a new immutable #GBytes representing same
     byte data that was in the array</doc>
         <type name="Bytes" c:type="GBytes*"/>
       </return-value>
@@ -63216,7 +63216,7 @@ together.</doc>
         <parameter name="array" transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2796">a #GByteArray</doc>
+               line="2797">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63228,12 +63228,12 @@ together.</doc>
               moved-to="ByteArray.new">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2684">Creates a new #GByteArray with a reference count of 1.</doc>
+           line="2685">Creates a new #GByteArray with a reference count of 1.</doc>
       <source-position filename="glib/garray.h" line="274"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2689">the new #GByteArray</doc>
+             line="2690">the new #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63245,7 +63245,7 @@ together.</doc>
               version="2.32">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2719">Creates a byte array containing the @data.
+           line="2720">Creates a byte array containing the @data.
 After this call, @data belongs to the #GByteArray and may no longer be
 modified by the caller. The memory of @data has to be dynamically
 allocated and will eventually be freed with g_free().
@@ -63257,7 +63257,7 @@ stores the length of its data in #guint, which may be shorter than
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2735">a new #GByteArray</doc>
+             line="2736">a new #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63266,7 +63266,7 @@ stores the length of its data in #guint, which may be shorter than
         <parameter name="data" transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2721">byte data for the array</doc>
+               line="2722">byte data for the array</doc>
           <array length="1" zero-terminated="0" c:type="guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63274,7 +63274,7 @@ stores the length of its data in #guint, which may be shorter than
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2722">length of @data</doc>
+               line="2723">length of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
       </parameters>
@@ -63284,13 +63284,13 @@ stores the length of its data in #guint, which may be shorter than
               moved-to="ByteArray.prepend">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2878">Adds the given data to the start of the #GByteArray.
+           line="2879">Adds the given data to the start of the #GByteArray.
 The array will grow in size automatically if necessary.</doc>
       <source-position filename="glib/garray.h" line="297"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2887">the #GByteArray</doc>
+             line="2888">the #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63299,7 +63299,7 @@ The array will grow in size automatically if necessary.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2880">a #GByteArray</doc>
+               line="2881">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63307,13 +63307,13 @@ The array will grow in size automatically if necessary.</doc>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2881">the byte data to be added</doc>
+               line="2882">the byte data to be added</doc>
           <type name="guint8" c:type="const guint8*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2882">the number of bytes to add</doc>
+               line="2883">the number of bytes to add</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63324,13 +63324,13 @@ The array will grow in size automatically if necessary.</doc>
               version="2.22">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2823">Atomically increments the reference count of @array by one.
+           line="2824">Atomically increments the reference count of @array by one.
 This function is thread-safe and may be called from any thread.</doc>
       <source-position filename="glib/garray.h" line="289"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2830">The passed in #GByteArray</doc>
+             line="2831">The passed in #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63339,7 +63339,7 @@ This function is thread-safe and may be called from any thread.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2825">A #GByteArray</doc>
+               line="2826">A #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63351,13 +63351,13 @@ This function is thread-safe and may be called from any thread.</doc>
               moved-to="ByteArray.remove_index">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2917">Removes the byte at the given index from a #GByteArray.
+           line="2918">Removes the byte at the given index from a #GByteArray.
 The following bytes are moved down one place.</doc>
       <source-position filename="glib/garray.h" line="304"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2925">the #GByteArray</doc>
+             line="2926">the #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63366,7 +63366,7 @@ The following bytes are moved down one place.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2919">a #GByteArray</doc>
+               line="2920">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63374,7 +63374,7 @@ The following bytes are moved down one place.</doc>
         <parameter name="index_" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2920">the index of the byte to remove</doc>
+               line="2921">the index of the byte to remove</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63384,7 +63384,7 @@ The following bytes are moved down one place.</doc>
               moved-to="ByteArray.remove_index_fast">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2936">Removes the byte at the given index from a #GByteArray. The last
+           line="2937">Removes the byte at the given index from a #GByteArray. The last
 element in the array is used to fill in the space, so this function
 does not preserve the order of the #GByteArray. But it is faster
 than g_byte_array_remove_index().</doc>
@@ -63392,7 +63392,7 @@ than g_byte_array_remove_index().</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2946">the #GByteArray</doc>
+             line="2947">the #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63401,7 +63401,7 @@ than g_byte_array_remove_index().</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2938">a #GByteArray</doc>
+               line="2939">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63409,7 +63409,7 @@ than g_byte_array_remove_index().</doc>
         <parameter name="index_" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2939">the index of the byte to remove</doc>
+               line="2940">the index of the byte to remove</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63420,13 +63420,13 @@ than g_byte_array_remove_index().</doc>
               version="2.4">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2957">Removes the given number of bytes starting at the given index from a
+           line="2958">Removes the given number of bytes starting at the given index from a
 #GByteArray.  The following elements are moved to close the gap.</doc>
       <source-position filename="glib/garray.h" line="310"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2966">the #GByteArray</doc>
+             line="2967">the #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63435,7 +63435,7 @@ than g_byte_array_remove_index().</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2959">a @GByteArray</doc>
+               line="2960">a @GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63443,13 +63443,13 @@ than g_byte_array_remove_index().</doc>
         <parameter name="index_" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2960">the index of the first byte to remove</doc>
+               line="2961">the index of the first byte to remove</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2961">the number of bytes to remove</doc>
+               line="2962">the number of bytes to remove</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63459,12 +63459,12 @@ than g_byte_array_remove_index().</doc>
               moved-to="ByteArray.set_size">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2899">Sets the size of the #GByteArray, expanding it if necessary.</doc>
+           line="2900">Sets the size of the #GByteArray, expanding it if necessary.</doc>
       <source-position filename="glib/garray.h" line="301"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2906">the #GByteArray</doc>
+             line="2907">the #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63473,7 +63473,7 @@ than g_byte_array_remove_index().</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2901">a #GByteArray</doc>
+               line="2902">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63481,7 +63481,7 @@ than g_byte_array_remove_index().</doc>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2902">the new size of the #GByteArray</doc>
+               line="2903">the new size of the #GByteArray</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63491,7 +63491,7 @@ than g_byte_array_remove_index().</doc>
               moved-to="ByteArray.sized_new">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2757">Creates a new #GByteArray with @reserved_size bytes preallocated.
+           line="2758">Creates a new #GByteArray with @reserved_size bytes preallocated.
 This avoids frequent reallocation, if you are going to add many
 bytes to the array. Note however that the size of the array is still
 0.</doc>
@@ -63499,7 +63499,7 @@ bytes to the array. Note however that the size of the array is still
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2766">the new #GByteArray</doc>
+             line="2767">the new #GByteArray</doc>
         <array name="GLib.ByteArray" c:type="GByteArray*">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -63508,7 +63508,7 @@ bytes to the array. Note however that the size of the array is still
         <parameter name="reserved_size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2759">number of bytes preallocated</doc>
+               line="2760">number of bytes preallocated</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -63518,7 +63518,7 @@ bytes to the array. Note however that the size of the array is still
               moved-to="ByteArray.sort">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2983">Sorts a byte array, using @compare_func which should be a
+           line="2984">Sorts a byte array, using @compare_func which should be a
 qsort()-style comparison function (returns less than zero for first
 arg is less than second arg, zero for equal, greater than zero if
 first arg is greater than second arg).
@@ -63536,7 +63536,7 @@ their addresses.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2985">a #GByteArray</doc>
+               line="2986">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63544,7 +63544,7 @@ their addresses.</doc>
         <parameter name="compare_func" transfer-ownership="none" scope="call">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2986">comparison function</doc>
+               line="2987">comparison function</doc>
           <type name="CompareFunc" c:type="GCompareFunc"/>
         </parameter>
       </parameters>
@@ -63554,7 +63554,7 @@ their addresses.</doc>
               moved-to="ByteArray.sort_with_data">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="3006">Like g_byte_array_sort(), but the comparison function takes an extra
+           line="3007">Like g_byte_array_sort(), but the comparison function takes an extra
 user data argument.</doc>
       <source-position filename="glib/garray.h" line="317"/>
       <return-value transfer-ownership="none">
@@ -63564,7 +63564,7 @@ user data argument.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="3008">a #GByteArray</doc>
+               line="3009">a #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63575,7 +63575,7 @@ user data argument.</doc>
                    closure="2">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="3009">comparison function</doc>
+               line="3010">comparison function</doc>
           <type name="CompareDataFunc" c:type="GCompareDataFunc"/>
         </parameter>
         <parameter name="user_data"
@@ -63584,7 +63584,7 @@ user data argument.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="3010">data to pass to @compare_func</doc>
+               line="3011">data to pass to @compare_func</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -63595,14 +63595,14 @@ user data argument.</doc>
               version="2.64">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2697">Frees the data in the array and resets the size to zero, while
+           line="2698">Frees the data in the array and resets the size to zero, while
 the underlying array is preserved for use elsewhere and returned
 to the caller.</doc>
       <source-position filename="glib/garray.h" line="279"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2707">the element data, which should be
+             line="2708">the element data, which should be
     freed using g_free().</doc>
         <type name="guint8" c:type="guint8*"/>
       </return-value>
@@ -63610,7 +63610,7 @@ to the caller.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2699">a #GByteArray.</doc>
+               line="2700">a #GByteArray.</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -63623,7 +63623,7 @@ to the caller.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2700">pointer to retrieve the number of
+               line="2701">pointer to retrieve the number of
    elements of the original array</doc>
           <type name="gsize" c:type="gsize*"/>
         </parameter>
@@ -63635,7 +63635,7 @@ to the caller.</doc>
               version="2.22">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2840">Atomically decrements the reference count of @array by one. If the
+           line="2841">Atomically decrements the reference count of @array by one. If the
 reference count drops to 0, all memory allocated by the array is
 released. This function is thread-safe and may be called from any
 thread.</doc>
@@ -63647,7 +63647,7 @@ thread.</doc>
         <parameter name="array" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2842">A #GByteArray</doc>
+               line="2843">A #GByteArray</doc>
           <array name="GLib.ByteArray" c:type="GByteArray*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -75339,7 +75339,7 @@ g_prefix_error().</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2600">Checks whether @needle exists in @haystack. If the element is found, %TRUE is
+           line="2601">Checks whether @needle exists in @haystack. If the element is found, %TRUE is
 returned and the element’s index is returned in @index_ (if non-%NULL).
 Otherwise, %FALSE is returned and @index_ is undefined. If @needle exists
 multiple times in @haystack, the index of the first instance is returned.
@@ -75350,14 +75350,14 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2615">%TRUE if @needle is one of the elements of @haystack</doc>
+             line="2616">%TRUE if @needle is one of the elements of @haystack</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="haystack" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2602">pointer array to be searched</doc>
+               line="2603">pointer array to be searched</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -75368,7 +75368,7 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2603">pointer to look for</doc>
+               line="2604">pointer to look for</doc>
           <type name="gpointer" c:type="gconstpointer"/>
         </parameter>
         <parameter name="index_"
@@ -75379,7 +75379,7 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2604">return location for the index of
+               line="2605">return location for the index of
    the element, if found</doc>
           <type name="guint" c:type="guint*"/>
         </parameter>
@@ -75392,7 +75392,7 @@ checks, such as string comparisons, use g_ptr_array_find_with_equal_func().</doc
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="2626">Checks whether @needle exists in @haystack, using the given @equal_func.
+           line="2627">Checks whether @needle exists in @haystack, using the given @equal_func.
 If the element is found, %TRUE is returned and the element’s index is
 returned in @index_ (if non-%NULL). Otherwise, %FALSE is returned and @index_
 is undefined. If @needle exists multiple times in @haystack, the index of
@@ -75405,14 +75405,14 @@ equality is used.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="2646">%TRUE if @needle is one of the elements of @haystack</doc>
+             line="2647">%TRUE if @needle is one of the elements of @haystack</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="haystack" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2628">pointer array to be searched</doc>
+               line="2629">pointer array to be searched</doc>
           <array name="GLib.PtrArray" c:type="GPtrArray*">
             <type name="gpointer" c:type="gpointer"/>
           </array>
@@ -75423,7 +75423,7 @@ equality is used.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2629">pointer to look for</doc>
+               line="2630">pointer to look for</doc>
           <type name="gpointer" c:type="gconstpointer"/>
         </parameter>
         <parameter name="equal_func"
@@ -75432,7 +75432,7 @@ equality is used.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2630">the function to call for each element, which should
+               line="2631">the function to call for each element, which should
    return %TRUE when the desired element is found; or %NULL to use pointer
    equality</doc>
           <type name="EqualFunc" c:type="GEqualFunc"/>
@@ -75445,7 +75445,7 @@ equality is used.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="2633">return location for the index of
+               line="2634">return location for the index of
    the element, if found</doc>
           <type name="guint" c:type="guint*"/>
         </parameter>
@@ -75456,7 +75456,7 @@ equality is used.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="1103">Returns the pointer at the given index of the pointer array.
+           line="1104">Returns the pointer at the given index of the pointer array.
 
 This does not perform bounds checking on the given @index_,
 so you are responsible for checking it against the array length.</doc>
@@ -75465,12 +75465,12 @@ so you are responsible for checking it against the array length.</doc>
         <parameter name="array">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1105">a #GPtrArray</doc>
+               line="1106">a #GPtrArray</doc>
         </parameter>
         <parameter name="index_">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1106">the index of the pointer to return</doc>
+               line="1107">the index of the pointer to return</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -75481,7 +75481,7 @@ so you are responsible for checking it against the array length.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="1312">Creates a new #GPtrArray, copying @len pointers from @data, and setting
+           line="1313">Creates a new #GPtrArray, copying @len pointers from @data, and setting
 the array’s reference count to 1.
 
 This avoids having to manually add each element one by one.
@@ -75501,7 +75501,7 @@ stores the length of its data in #guint, which may be shorter than
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1340">A new #GPtrArray</doc>
+             line="1341">A new #GPtrArray</doc>
         <array name="GLib.PtrArray" c:type="GPtrArray*">
           <type name="gpointer" c:type="gpointer"/>
         </array>
@@ -75513,7 +75513,7 @@ stores the length of its data in #guint, which may be shorter than
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1314">an array of pointers,
+               line="1315">an array of pointers,
 or %NULL for an empty array</doc>
           <array length="1" zero-terminated="0" c:type="gpointer*">
             <type name="gpointer" c:type="gpointer"/>
@@ -75522,7 +75522,7 @@ or %NULL for an empty array</doc>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1316">the number of pointers in @data</doc>
+               line="1317">the number of pointers in @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="copy_func"
@@ -75534,7 +75534,7 @@ or %NULL for an empty array</doc>
                    destroy="4">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1317">a copy function used to copy every element in the
+               line="1318">a copy function used to copy every element in the
   array or %NULL.</doc>
           <type name="CopyFunc" c:type="GCopyFunc"/>
         </parameter>
@@ -75544,7 +75544,7 @@ or %NULL for an empty array</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1319">user data passed to @copy_func, or %NULL</doc>
+               line="1320">user data passed to @copy_func, or %NULL</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
         <parameter name="element_free_func"
@@ -75554,7 +75554,7 @@ or %NULL for an empty array</doc>
                    scope="async">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1320">a function to free elements on @array
+               line="1321">a function to free elements on @array
   destruction or %NULL</doc>
           <type name="DestroyNotify" c:type="GDestroyNotify"/>
         </parameter>
@@ -75567,7 +75567,7 @@ or %NULL for an empty array</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="1358">Creates a new #GPtrArray copying the pointers from @data after having
+           line="1359">Creates a new #GPtrArray copying the pointers from @data after having
 computed the length of it and with a reference count of 1.
 This avoids having to manually add each element one by one.
 If @copy_func is provided, then it is used to copy the data in the new
@@ -75583,7 +75583,7 @@ stores the length of its data in #guint, which may be shorter than
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1381">A new #GPtrArray</doc>
+             line="1382">A new #GPtrArray</doc>
         <array name="GLib.PtrArray" c:type="GPtrArray*">
           <type name="gpointer" c:type="gpointer"/>
         </array>
@@ -75595,7 +75595,7 @@ stores the length of its data in #guint, which may be shorter than
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1360">an array of
+               line="1361">an array of
   pointers, %NULL terminated; or %NULL for an empty array</doc>
           <array c:type="gpointer*">
             <type name="gpointer" c:type="gpointer"/>
@@ -75610,7 +75610,7 @@ stores the length of its data in #guint, which may be shorter than
                    destroy="3">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1362">a copy function used to copy every element in the
+               line="1363">a copy function used to copy every element in the
   array or %NULL.</doc>
           <type name="CopyFunc" c:type="GCopyFunc"/>
         </parameter>
@@ -75620,7 +75620,7 @@ stores the length of its data in #guint, which may be shorter than
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1364">user data passed to @copy_func, or %NULL</doc>
+               line="1365">user data passed to @copy_func, or %NULL</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
         <parameter name="element_free_func"
@@ -75630,7 +75630,7 @@ stores the length of its data in #guint, which may be shorter than
                    scope="async">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1365">a function to free elements on @array
+               line="1366">a function to free elements on @array
   destruction or %NULL</doc>
           <type name="DestroyNotify" c:type="GDestroyNotify"/>
         </parameter>
@@ -75643,7 +75643,7 @@ stores the length of its data in #guint, which may be shorter than
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="1177">Creates a new #GPtrArray with @data as pointers, @len as length and a
+           line="1178">Creates a new #GPtrArray with @data as pointers, @len as length and a
 reference count of 1.
 
 This avoids having to copy such data manually.
@@ -75662,7 +75662,7 @@ stores the length of its data in #guint, which may be shorter than
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1201">A new #GPtrArray</doc>
+             line="1202">A new #GPtrArray</doc>
         <array name="GLib.PtrArray" c:type="GPtrArray*">
           <type name="gpointer" c:type="gpointer"/>
         </array>
@@ -75674,7 +75674,7 @@ stores the length of its data in #guint, which may be shorter than
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1179">an array of pointers,
+               line="1180">an array of pointers,
    or %NULL for an empty array</doc>
           <array length="1" zero-terminated="0" c:type="gpointer*">
             <type name="gpointer" c:type="gpointer"/>
@@ -75683,7 +75683,7 @@ stores the length of its data in #guint, which may be shorter than
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1181">the number of pointers in @data</doc>
+               line="1182">the number of pointers in @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="element_free_func"
@@ -75693,7 +75693,7 @@ stores the length of its data in #guint, which may be shorter than
                    scope="async">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1182">A function to free elements on @array
+               line="1183">A function to free elements on @array
   destruction or %NULL</doc>
           <type name="DestroyNotify" c:type="GDestroyNotify"/>
         </parameter>
@@ -75706,7 +75706,7 @@ stores the length of its data in #guint, which may be shorter than
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/garray.c"
-           line="1226">Creates a new #GPtrArray with @data as pointers, computing the length of it
+           line="1227">Creates a new #GPtrArray with @data as pointers, computing the length of it
 and setting the reference count to 1.
 
 This avoids having to copy such data manually.
@@ -75728,7 +75728,7 @@ stores the length of its data in #guint, which may be shorter than
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/garray.c"
-             line="1252">A new #GPtrArray</doc>
+             line="1253">A new #GPtrArray</doc>
         <array name="GLib.PtrArray" c:type="GPtrArray*">
           <type name="gpointer" c:type="gpointer"/>
         </array>
@@ -75740,7 +75740,7 @@ stores the length of its data in #guint, which may be shorter than
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1228">an array
+               line="1229">an array
  of pointers, %NULL terminated, or %NULL for an empty array</doc>
           <array c:type="gpointer*">
             <type name="gpointer" c:type="gpointer"/>
@@ -75753,7 +75753,7 @@ stores the length of its data in #guint, which may be shorter than
                    scope="async">
           <doc xml:space="preserve"
                filename="glib/garray.c"
-               line="1230">a function to free elements on @array
+               line="1231">a function to free elements on @array
   destruction or %NULL</doc>
           <type name="DestroyNotify" c:type="GDestroyNotify"/>
         </parameter>

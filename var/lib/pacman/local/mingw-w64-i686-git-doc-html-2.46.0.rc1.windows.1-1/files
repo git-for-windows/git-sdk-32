@@ -25,6 +25,7 @@ mingw32/share/doc/git-doc/diff-format.txt
 mingw32/share/doc/git-doc/diff-generate-patch.txt
 mingw32/share/doc/git-doc/diff-options.txt
 mingw32/share/doc/git-doc/docbook-xsl.css
+mingw32/share/doc/git-doc/docinfo.html
 mingw32/share/doc/git-doc/everyday.html
 mingw32/share/doc/git-doc/fetch-options.txt
 mingw32/share/doc/git-doc/fsck-msgids.txt

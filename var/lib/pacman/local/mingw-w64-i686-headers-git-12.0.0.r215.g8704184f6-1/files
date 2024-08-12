@@ -1667,10 +1667,16 @@ mingw32/include/winddiui.h
 mingw32/include/windef.h
 mingw32/include/windns.h
 mingw32/include/windot11.h
+mingw32/include/windows.applicationmodel.activation.h
+mingw32/include/windows.applicationmodel.activation.idl
+mingw32/include/windows.applicationmodel.background.h
+mingw32/include/windows.applicationmodel.background.idl
 mingw32/include/windows.applicationmodel.core.h
 mingw32/include/windows.applicationmodel.core.idl
 mingw32/include/windows.applicationmodel.h
 mingw32/include/windows.applicationmodel.idl
+mingw32/include/windows.data.json.h
+mingw32/include/windows.data.json.idl
 mingw32/include/windows.devices.bluetooth.h
 mingw32/include/windows.devices.bluetooth.idl
 mingw32/include/windows.devices.enumeration.h
@@ -1679,6 +1685,8 @@ mingw32/include/windows.devices.geolocation.h
 mingw32/include/windows.devices.geolocation.idl
 mingw32/include/windows.devices.haptics.h
 mingw32/include/windows.devices.haptics.idl
+mingw32/include/windows.devices.input.h
+mingw32/include/windows.devices.input.idl
 mingw32/include/windows.devices.power.h
 mingw32/include/windows.devices.power.idl
 mingw32/include/windows.devices.radios.h
@@ -1713,8 +1721,10 @@ mingw32/include/windows.graphics.directx.h
 mingw32/include/windows.graphics.directx.idl
 mingw32/include/windows.graphics.effects.h
 mingw32/include/windows.graphics.effects.idl
+mingw32/include/windows.graphics.h
 mingw32/include/windows.graphics.holographic.h
 mingw32/include/windows.graphics.holographic.idl
+mingw32/include/windows.graphics.idl
 mingw32/include/windows.graphics.imaging.h
 mingw32/include/windows.graphics.imaging.idl
 mingw32/include/windows.h
@@ -1786,6 +1796,8 @@ mingw32/include/windows.ui.core.h
 mingw32/include/windows.ui.core.idl
 mingw32/include/windows.ui.h
 mingw32/include/windows.ui.idl
+mingw32/include/windows.ui.input.h
+mingw32/include/windows.ui.input.idl
 mingw32/include/windows.ui.viewmanagement.h
 mingw32/include/windows.ui.viewmanagement.idl
 mingw32/include/windows.ui.xaml.hosting.desktopwindowxamlsource.h
@@ -1930,6 +1942,7 @@ mingw32/include/wtypesbase.idl
 mingw32/include/wuapi.h
 mingw32/include/wuapi.idl
 mingw32/include/wuerror.h
+mingw32/include/x3daudio.h
 mingw32/include/xa.h
 mingw32/include/xamlom.h
 mingw32/include/xamlom.idl

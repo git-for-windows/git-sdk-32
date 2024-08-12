@@ -42,6 +42,7 @@ mingw32/lib/libavicap32.a
 mingw32/lib/libavifil32.a
 mingw32/lib/libavrt.a
 mingw32/lib/libbcrypt.a
+mingw32/lib/libbcryptprimitives.a
 mingw32/lib/libbits.a
 mingw32/lib/libbluetoothapis.a
 mingw32/lib/libbootvid.a
@@ -263,7 +264,9 @@ mingw32/lib/libmstask.a
 mingw32/lib/libmsvcp120_app.a
 mingw32/lib/libmsvcp60.a
 mingw32/lib/libmsvcr100.a
+mingw32/lib/libmsvcr100d.a
 mingw32/lib/libmsvcr110.a
+mingw32/lib/libmsvcr110d.a
 mingw32/lib/libmsvcr120.a
 mingw32/lib/libmsvcr120_app.a
 mingw32/lib/libmsvcr120d.a
@@ -401,7 +404,9 @@ mingw32/lib/libuserenv.a
 mingw32/lib/libusp10.a
 mingw32/lib/libuuid.a
 mingw32/lib/libuxtheme.a
+mingw32/lib/libvcruntime140.a
 mingw32/lib/libvcruntime140_app.a
+mingw32/lib/libvcruntime140d.a
 mingw32/lib/libvdmdbg.a
 mingw32/lib/libversion.a
 mingw32/lib/libvfw32.a

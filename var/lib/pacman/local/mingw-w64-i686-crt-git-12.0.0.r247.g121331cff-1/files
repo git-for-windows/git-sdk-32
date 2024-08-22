@@ -392,6 +392,7 @@ mingw32/lib/libtxfw32.a
 mingw32/lib/libucrt.a
 mingw32/lib/libucrtapp.a
 mingw32/lib/libucrtbase.a
+mingw32/lib/libucrtbased.a
 mingw32/lib/libuiautomationcore.a
 mingw32/lib/liburl.a
 mingw32/lib/liburlmon.a

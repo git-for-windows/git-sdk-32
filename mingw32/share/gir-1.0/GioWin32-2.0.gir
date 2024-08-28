@@ -10,7 +10,7 @@ and/or use gtk-doc annotations.  -->
   <include name="GModule" version="2.0"/>
   <include name="GObject" version="2.0"/>
   <include name="Gio" version="2.0"/>
-  <package name="gio-win32-2.0"/>
+  <package name="gio-windows-2.0"/>
   <c:include name="gio/gio.h"/>
   <c:include name="gio/gregistrysettingsbackend.h"/>
   <c:include name="gio/gwin32inputstream.h"/>

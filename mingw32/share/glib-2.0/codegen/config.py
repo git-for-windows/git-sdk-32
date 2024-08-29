@@ -4,6 +4,8 @@
 #
 # Copyright (C) 2008-2011 Red Hat, Inc.
 #
+# SPDX-License-Identifier: LGPL-2.1-or-later
+#
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
 # License as published by the Free Software Foundation; either
@@ -19,6 +21,6 @@
 #
 # Author: David Zeuthen <davidz@redhat.com>
 
-VERSION = "2.80.5"
+VERSION = "2.82.0"
 MAJOR_VERSION = 2
-MINOR_VERSION = 80
+MINOR_VERSION = 82

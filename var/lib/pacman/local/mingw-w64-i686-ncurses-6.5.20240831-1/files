@@ -664,6 +664,9 @@ mingw32/lib/terminfo/63/contel300
 mingw32/lib/terminfo/63/contel301
 mingw32/lib/terminfo/63/contel320
 mingw32/lib/terminfo/63/contel321
+mingw32/lib/terminfo/63/contour
+mingw32/lib/terminfo/63/contour-direct
+mingw32/lib/terminfo/63/contour-latest
 mingw32/lib/terminfo/63/cops
 mingw32/lib/terminfo/63/cops-10
 mingw32/lib/terminfo/63/cops10
@@ -1484,6 +1487,7 @@ mingw32/lib/terminfo/6d/mono-emx
 mingw32/lib/terminfo/6d/morphos
 mingw32/lib/terminfo/6d/mosh
 mingw32/lib/terminfo/6d/mosh-256color
+mingw32/lib/terminfo/6d/mostlike
 mingw32/lib/terminfo/6d/mouse-sun
 mingw32/lib/terminfo/6d/mrxvt
 mingw32/lib/terminfo/6d/mrxvt-256color
@@ -1491,6 +1495,7 @@ mingw32/lib/terminfo/6d/ms-terminal
 mingw32/lib/terminfo/6d/ms-vt-utf8
 mingw32/lib/terminfo/6d/ms-vt100
 mingw32/lib/terminfo/6d/ms-vt100+
+mingw32/lib/terminfo/6d/ms-vt100-16color
 mingw32/lib/terminfo/6d/ms-vt100-color
 mingw32/lib/terminfo/6d/msk227
 mingw32/lib/terminfo/6d/msk22714
@@ -1959,6 +1964,8 @@ mingw32/lib/terminfo/72/regent40+
 mingw32/lib/terminfo/72/regent60
 mingw32/lib/terminfo/72/report+da2
 mingw32/lib/terminfo/72/report+version
+mingw32/lib/terminfo/72/rio
+mingw32/lib/terminfo/72/rio-direct
 mingw32/lib/terminfo/72/rt6221
 mingw32/lib/terminfo/72/rt6221-w
 mingw32/lib/terminfo/72/rtpc
@@ -2445,6 +2452,8 @@ mingw32/lib/terminfo/76/vt100+4bsd
 mingw32/lib/terminfo/76/vt100+enq
 mingw32/lib/terminfo/76/vt100+fnkeys
 mingw32/lib/terminfo/76/vt100+keypad
+mingw32/lib/terminfo/76/vt100+noapp
+mingw32/lib/terminfo/76/vt100+noapp+pc
 mingw32/lib/terminfo/76/vt100+pfkeys
 mingw32/lib/terminfo/76/vt100-am
 mingw32/lib/terminfo/76/vt100-bm
@@ -2518,6 +2527,7 @@ mingw32/lib/terminfo/76/vt510
 mingw32/lib/terminfo/76/vt510pc
 mingw32/lib/terminfo/76/vt510pcdos
 mingw32/lib/terminfo/76/vt52
+mingw32/lib/terminfo/76/vt52+arrows
 mingw32/lib/terminfo/76/vt52+keypad
 mingw32/lib/terminfo/76/vt52-basic
 mingw32/lib/terminfo/76/vt520
@@ -2539,6 +2549,8 @@ mingw32/lib/terminfo/76/vtnt
 mingw32/lib/terminfo/76/vv100
 mingw32/lib/terminfo/76/vwmterm
 mingw32/lib/terminfo/77/
+mingw32/lib/terminfo/77/wezterm
+mingw32/lib/terminfo/77/winconsole
 mingw32/lib/terminfo/77/wren
 mingw32/lib/terminfo/77/wrenw
 mingw32/lib/terminfo/77/wsiris
@@ -2858,6 +2870,8 @@ mingw32/lib/terminfo/78/xterm+alt+title
 mingw32/lib/terminfo/78/xterm+alt1049
 mingw32/lib/terminfo/78/xterm+alt47
 mingw32/lib/terminfo/78/xterm+app
+mingw32/lib/terminfo/78/xterm+app+pc
+mingw32/lib/terminfo/78/xterm+decedit
 mingw32/lib/terminfo/78/xterm+direct
 mingw32/lib/terminfo/78/xterm+direct16
 mingw32/lib/terminfo/78/xterm+direct2
@@ -2998,7 +3012,6 @@ mingw32/share/man/man1/i686-w64-mingw32-i686-w64-mingw32-tset.1.gz
 mingw32/share/man/man1/i686-w64-mingw32-infocmp.1m.gz
 mingw32/share/man/man1/i686-w64-mingw32-infotocap.1m.gz
 mingw32/share/man/man1/i686-w64-mingw32-ncursesw6-config.1.gz
-mingw32/share/man/man1/i686-w64-mingw32-reset.1.gz
 mingw32/share/man/man1/i686-w64-mingw32-tabs.1.gz
 mingw32/share/man/man1/i686-w64-mingw32-tic.1m.gz
 mingw32/share/man/man1/i686-w64-mingw32-toe.1m.gz
@@ -3637,6 +3650,7 @@ mingw32/share/man/man3/scr_restore.3x.gz
 mingw32/share/man/man3/scr_restore_sp.3x.gz
 mingw32/share/man/man3/scr_set.3x.gz
 mingw32/share/man/man3/scr_set_sp.3x.gz
+mingw32/share/man/man3/SCREEN.3x.gz
 mingw32/share/man/man3/scrl.3x.gz
 mingw32/share/man/man3/scroll.3x.gz
 mingw32/share/man/man3/scrollok.3x.gz
@@ -3697,6 +3711,7 @@ mingw32/share/man/man3/set_top_row.3x.gz
 mingw32/share/man/man3/setcchar.3x.gz
 mingw32/share/man/man3/setscrreg.3x.gz
 mingw32/share/man/man3/setsyx.3x.gz
+mingw32/share/man/man3/setterm.3x.gz
 mingw32/share/man/man3/setupterm.3x.gz
 mingw32/share/man/man3/show_panel.3x.gz
 mingw32/share/man/man3/slk_attr.3x.gz
@@ -4509,6 +4524,9 @@ mingw32/share/terminfo/63/contel300
 mingw32/share/terminfo/63/contel301
 mingw32/share/terminfo/63/contel320
 mingw32/share/terminfo/63/contel321
+mingw32/share/terminfo/63/contour
+mingw32/share/terminfo/63/contour-direct
+mingw32/share/terminfo/63/contour-latest
 mingw32/share/terminfo/63/cops
 mingw32/share/terminfo/63/cops-10
 mingw32/share/terminfo/63/cops10
@@ -5329,6 +5347,7 @@ mingw32/share/terminfo/6d/mono-emx
 mingw32/share/terminfo/6d/morphos
 mingw32/share/terminfo/6d/mosh
 mingw32/share/terminfo/6d/mosh-256color
+mingw32/share/terminfo/6d/mostlike
 mingw32/share/terminfo/6d/mouse-sun
 mingw32/share/terminfo/6d/mrxvt
 mingw32/share/terminfo/6d/mrxvt-256color
@@ -5336,6 +5355,7 @@ mingw32/share/terminfo/6d/ms-terminal
 mingw32/share/terminfo/6d/ms-vt-utf8
 mingw32/share/terminfo/6d/ms-vt100
 mingw32/share/terminfo/6d/ms-vt100+
+mingw32/share/terminfo/6d/ms-vt100-16color
 mingw32/share/terminfo/6d/ms-vt100-color
 mingw32/share/terminfo/6d/msk227
 mingw32/share/terminfo/6d/msk22714
@@ -5804,6 +5824,8 @@ mingw32/share/terminfo/72/regent40+
 mingw32/share/terminfo/72/regent60
 mingw32/share/terminfo/72/report+da2
 mingw32/share/terminfo/72/report+version
+mingw32/share/terminfo/72/rio
+mingw32/share/terminfo/72/rio-direct
 mingw32/share/terminfo/72/rt6221
 mingw32/share/terminfo/72/rt6221-w
 mingw32/share/terminfo/72/rtpc
@@ -6290,6 +6312,8 @@ mingw32/share/terminfo/76/vt100+4bsd
 mingw32/share/terminfo/76/vt100+enq
 mingw32/share/terminfo/76/vt100+fnkeys
 mingw32/share/terminfo/76/vt100+keypad
+mingw32/share/terminfo/76/vt100+noapp
+mingw32/share/terminfo/76/vt100+noapp+pc
 mingw32/share/terminfo/76/vt100+pfkeys
 mingw32/share/terminfo/76/vt100-am
 mingw32/share/terminfo/76/vt100-bm
@@ -6363,6 +6387,7 @@ mingw32/share/terminfo/76/vt510
 mingw32/share/terminfo/76/vt510pc
 mingw32/share/terminfo/76/vt510pcdos
 mingw32/share/terminfo/76/vt52
+mingw32/share/terminfo/76/vt52+arrows
 mingw32/share/terminfo/76/vt52+keypad
 mingw32/share/terminfo/76/vt52-basic
 mingw32/share/terminfo/76/vt520
@@ -6384,6 +6409,8 @@ mingw32/share/terminfo/76/vtnt
 mingw32/share/terminfo/76/vv100
 mingw32/share/terminfo/76/vwmterm
 mingw32/share/terminfo/77/
+mingw32/share/terminfo/77/wezterm
+mingw32/share/terminfo/77/winconsole
 mingw32/share/terminfo/77/wren
 mingw32/share/terminfo/77/wrenw
 mingw32/share/terminfo/77/wsiris
@@ -6703,6 +6730,8 @@ mingw32/share/terminfo/78/xterm+alt+title
 mingw32/share/terminfo/78/xterm+alt1049
 mingw32/share/terminfo/78/xterm+alt47
 mingw32/share/terminfo/78/xterm+app
+mingw32/share/terminfo/78/xterm+app+pc
+mingw32/share/terminfo/78/xterm+decedit
 mingw32/share/terminfo/78/xterm+direct
 mingw32/share/terminfo/78/xterm+direct16
 mingw32/share/terminfo/78/xterm+direct2

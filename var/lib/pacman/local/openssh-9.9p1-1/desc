@@ -2,7 +2,7 @@
 openssh
 
 %VERSION%
-9.8p1-1
+9.9p1-1
 
 %BASE%
 openssh
@@ -17,16 +17,16 @@ http://www.openssh.org/portable.html
 i686
 
 %BUILDDATE%
-1719828177
+1726824471
 
 %INSTALLDATE%
-1719890135
+1726888629
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-6423160
+6566970
 
 %GROUPS%
 net-utils

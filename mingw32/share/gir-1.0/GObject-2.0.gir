@@ -4090,8 +4090,6 @@ the last parameter.
         <parameters>
           <parameter name="callback_func"
                      transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1"
                      closure="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
@@ -4101,8 +4099,7 @@ the last parameter.
           <parameter name="user_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="0">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="960">user data to pass to @callback_func</doc>
@@ -4199,8 +4196,6 @@ the first parameter.
         <parameters>
           <parameter name="callback_func"
                      transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1"
                      closure="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
@@ -4210,8 +4205,7 @@ the first parameter.
           <parameter name="user_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="0">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="990">user data to pass to @callback_func</doc>
@@ -4685,17 +4679,13 @@ notifiers will be run before the finalize notifiers.</doc>
           <parameter name="notify_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="1">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="429">data to pass to @notify_func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
-          <parameter name="notify_func"
-                     transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1">
+          <parameter name="notify_func" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="430">the callback function to register</doc>
@@ -4727,17 +4717,13 @@ in an unspecified order.</doc>
           <parameter name="notify_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="1">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="466">data to pass to @notify_func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
-          <parameter name="notify_func"
-                     transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1">
+          <parameter name="notify_func" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="467">the callback function to register</doc>
@@ -4770,8 +4756,7 @@ example of marshal guards.</doc>
           <parameter name="pre_marshal_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="1">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="368">data to pass
@@ -4780,8 +4765,6 @@ example of marshal guards.</doc>
           </parameter>
           <parameter name="pre_marshal_notify"
                      transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1"
                      closure="2">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
@@ -4791,18 +4774,14 @@ example of marshal guards.</doc>
           <parameter name="post_marshal_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="3">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="371">data to pass
  to @post_marshal_notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
-          <parameter name="post_marshal_notify"
-                     transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1">
+          <parameter name="post_marshal_notify" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="373">a function to call after the closure callback</doc>
@@ -5061,18 +5040,14 @@ the right callback and passes it to the marshaller as the
           <parameter name="marshal_data"
                      transfer-ownership="none"
                      nullable="1"
-                     allow-none="1"
-                     closure="1">
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="323">context-dependent data to pass
  to @meta_marshal</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
-          <parameter name="meta_marshal"
-                     transfer-ownership="none"
-                     nullable="1"
-                     allow-none="1">
+          <parameter name="meta_marshal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
                  line="325">a #GClosureMarshal function</doc>
@@ -23233,11 +23208,7 @@ the last parameter.
         <type name="Closure" c:type="GClosure*"/>
       </return-value>
       <parameters>
-        <parameter name="callback_func"
-                   transfer-ownership="none"
-                   nullable="1"
-                   allow-none="1"
-                   closure="1">
+        <parameter name="callback_func" transfer-ownership="none" closure="1">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
                line="959">the function to invoke</doc>
@@ -23246,8 +23217,7 @@ the last parameter.
         <parameter name="user_data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="0">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
                line="960">user data to pass to @callback_func</doc>
@@ -23345,11 +23315,7 @@ the first parameter.
         <type name="Closure" c:type="GClosure*"/>
       </return-value>
       <parameters>
-        <parameter name="callback_func"
-                   transfer-ownership="none"
-                   nullable="1"
-                   allow-none="1"
-                   closure="1">
+        <parameter name="callback_func" transfer-ownership="none" closure="1">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
                line="989">the function to invoke</doc>
@@ -23358,8 +23324,7 @@ the first parameter.
         <parameter name="user_data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="0">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
                line="990">user data to pass to @callback_func</doc>
@@ -25682,8 +25647,7 @@ for signals which don't have %G_SIGNAL_NO_HOOKS flag set.</doc>
                    transfer-ownership="none"
                    nullable="1"
                    allow-none="1"
-                   scope="notified"
-                   closure="2">
+                   scope="notified">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="939">user data for @hook_func.</doc>
@@ -25980,8 +25944,7 @@ warning is emitted.</doc>
                    transfer-ownership="none"
                    nullable="1"
                    allow-none="1"
-                   scope="notified"
-                   closure="2">
+                   scope="notified">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="2460">data to pass to @c_handler calls.</doc>
@@ -26439,8 +26402,7 @@ If no handler was found, 0 is returned.</doc>
         <parameter name="data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="2774">The closure data of the handler's closure.</doc>
@@ -26607,8 +26569,7 @@ Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
         <parameter name="data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="2852">The closure data of the handlers' closures.</doc>
@@ -26754,8 +26715,7 @@ Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
         <parameter name="data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="2962">The closure data of the handlers' closures.</doc>
@@ -26861,8 +26821,7 @@ Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
         <parameter name="data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="2906">The closure data of the handlers' closures.</doc>
@@ -27120,8 +27079,7 @@ be used.</doc>
         <parameter name="accu_data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="1363">user data for the @accumulator.</doc>
@@ -27235,8 +27193,7 @@ the marshaller for this signal.</doc>
         <parameter name="accu_data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="1439">user data for the @accumulator.</doc>
@@ -27336,8 +27293,7 @@ the marshaller for this signal.</doc>
         <parameter name="accu_data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="1837">user data for the @accumulator.</doc>
@@ -27374,7 +27330,9 @@ the marshaller for this signal.</doc>
         </parameter>
       </parameters>
     </function>
-    <function name="signal_newv" c:identifier="g_signal_newv">
+    <function name="signal_newv"
+              c:identifier="g_signal_newv"
+              introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.c"
            line="1565">Creates a new signal. (This is usually done in the class initializer.)
@@ -27436,8 +27394,7 @@ the marshaller for this signal.</doc>
         <parameter name="accu_data"
                    transfer-ownership="none"
                    nullable="1"
-                   allow-none="1"
-                   closure="4">
+                   allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gsignal.c"
                line="1576">user data for the @accumulator</doc>
@@ -27669,7 +27626,8 @@ be considered constant and have to be left untouched.</doc>
     </function>
     <function name="signal_set_va_marshaller"
               c:identifier="g_signal_set_va_marshaller"
-              version="2.32">
+              version="2.32"
+              introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.c"
            line="1785">Change the #GSignalCVaMarshaller used for a given signal.  This is a

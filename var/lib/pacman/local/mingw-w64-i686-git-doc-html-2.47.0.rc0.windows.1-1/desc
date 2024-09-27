@@ -1,8 +1,8 @@
 %NAME%
-mingw-w64-i686-git
+mingw-w64-i686-git-doc-html
 
 %VERSION%
-2.46.2.1.1e20af0e80-1
+2.47.0.rc0.windows.1-1
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://git-for-windows.github.io/
 any
 
 %BUILDDATE%
-1727179543
+1727391100
 
 %INSTALLDATE%
-1727234585
+1727407274
 
 %PACKAGER%
 gitforwindowshelper[bot] <gitforwindowshelper[bot]@users.noreply.github.com>
 
 %SIZE%
-53836823
+17770407
 
 %LICENSE%
 GPL2

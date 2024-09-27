@@ -41,6 +41,8 @@ mingw32/share/doc/git-doc/git-archimport.html
 mingw32/share/doc/git-doc/git-archimport.txt
 mingw32/share/doc/git-doc/git-archive.html
 mingw32/share/doc/git-doc/git-archive.txt
+mingw32/share/doc/git-doc/git-backfill.html
+mingw32/share/doc/git-doc/git-backfill.txt
 mingw32/share/doc/git-doc/git-bash.html
 mingw32/share/doc/git-doc/git-bash.txt
 mingw32/share/doc/git-doc/git-bisect-lk2009.html
@@ -315,6 +317,8 @@ mingw32/share/doc/git-doc/git-stripspace.txt
 mingw32/share/doc/git-doc/git-submodule.html
 mingw32/share/doc/git-doc/git-submodule.txt
 mingw32/share/doc/git-doc/git-subtree.html
+mingw32/share/doc/git-doc/git-survey.html
+mingw32/share/doc/git-doc/git-survey.txt
 mingw32/share/doc/git-doc/git-svn.html
 mingw32/share/doc/git-doc/git-svn.txt
 mingw32/share/doc/git-doc/git-switch.html
@@ -963,6 +967,7 @@ mingw32/share/doc/git-doc/RelNotes/2.45.3.txt
 mingw32/share/doc/git-doc/RelNotes/2.46.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.46.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.46.2.txt
+mingw32/share/doc/git-doc/RelNotes/2.47.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.5.0.txt
 mingw32/share/doc/git-doc/RelNotes/2.5.1.txt
 mingw32/share/doc/git-doc/RelNotes/2.5.2.txt
@@ -1020,6 +1025,8 @@ mingw32/share/doc/git-doc/technical/api-merge.html
 mingw32/share/doc/git-doc/technical/api-merge.txt
 mingw32/share/doc/git-doc/technical/api-parse-options.html
 mingw32/share/doc/git-doc/technical/api-parse-options.txt
+mingw32/share/doc/git-doc/technical/api-path-walk.html
+mingw32/share/doc/git-doc/technical/api-path-walk.txt
 mingw32/share/doc/git-doc/technical/api-simple-ipc.html
 mingw32/share/doc/git-doc/technical/api-simple-ipc.txt
 mingw32/share/doc/git-doc/technical/api-trace2.html
@@ -1043,6 +1050,8 @@ mingw32/share/doc/git-doc/technical/parallel-checkout.html
 mingw32/share/doc/git-doc/technical/parallel-checkout.txt
 mingw32/share/doc/git-doc/technical/partial-clone.html
 mingw32/share/doc/git-doc/technical/partial-clone.txt
+mingw32/share/doc/git-doc/technical/platform-support.html
+mingw32/share/doc/git-doc/technical/platform-support.txt
 mingw32/share/doc/git-doc/technical/racy-git.html
 mingw32/share/doc/git-doc/technical/racy-git.txt
 mingw32/share/doc/git-doc/technical/reftable.html

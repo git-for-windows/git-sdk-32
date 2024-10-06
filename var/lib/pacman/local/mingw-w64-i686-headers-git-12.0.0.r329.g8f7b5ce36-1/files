@@ -803,6 +803,8 @@ mingw32/include/ivec.h
 mingw32/include/ivectorchangedeventargs.h
 mingw32/include/ivectorchangedeventargs.idl
 mingw32/include/iwamreg.h
+mingw32/include/iwscapi.h
+mingw32/include/iwscapi.idl
 mingw32/include/jobapi.h
 mingw32/include/joystickapi.h
 mingw32/include/kcom.h
@@ -1909,6 +1911,7 @@ mingw32/include/ws2dnet.h
 mingw32/include/ws2ipdef.h
 mingw32/include/ws2spi.h
 mingw32/include/ws2tcpip.h
+mingw32/include/wscapi.h
 mingw32/include/wsdapi.h
 mingw32/include/wsdattachment.h
 mingw32/include/wsdattachment.idl

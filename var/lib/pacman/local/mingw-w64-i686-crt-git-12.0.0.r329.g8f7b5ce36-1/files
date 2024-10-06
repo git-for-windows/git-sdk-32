@@ -459,6 +459,7 @@ mingw32/lib/libwmilib.a
 mingw32/lib/libwofutil.a
 mingw32/lib/libwow32.a
 mingw32/lib/libws2_32.a
+mingw32/lib/libwscapi.a
 mingw32/lib/libwsdapi.a
 mingw32/lib/libwsmsvc.a
 mingw32/lib/libwsnmp32.a

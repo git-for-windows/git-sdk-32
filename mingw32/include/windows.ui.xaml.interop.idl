@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Mohamad Al-Jaf
+ * Copyright 2024 Zhiyi Zhang for CodeWeavers
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -20,21 +20,32 @@
 #pragma winrt ns_prefix
 #endif
 
-import "windows.ui.composition.idl";
-import "sdkddkver.h";
+import "inspectable.idl";
+import "asyncinfo.idl";
+import "eventtoken.idl";
+import "windowscontracts.idl";
+import "windows.foundation.idl";
 
-namespace Windows.UI.Composition {
-    interface ICompositorInterop;
+namespace Windows.UI.Xaml.Interop {
+    typedef enum TypeKind TypeKind;
+    typedef struct TypeName TypeName;
 
     [
-        object,
-        uuid(25297d5c-3ad4-4c9c-b5cf-e36a38512330),
-        pointer_default(unique)
+        contract(Windows.Foundation.UniversalApiContract, 1.0)
     ]
-    interface ICompositorInterop : IUnknown
+    enum TypeKind
     {
-        HRESULT CreateCompositionSurfaceForHandle([in] HANDLE swapchain, [out, retval] ICompositionSurface **result);
-        HRESULT CreateCompositionSurfaceForSwapChain([in] IUnknown *swapchain, [out, retval] ICompositionSurface **result);
-        HRESULT CreateGraphicsDevice([in] IUnknown *device, [out, retval] ICompositionGraphicsDevice **result);
+        Primitive = 0,
+        Metadata  = 1,
+        Custom    = 2
+    };
+
+    [
+        contract(Windows.Foundation.UniversalApiContract, 1.0)
+    ]
+    struct TypeName
+    {
+        HSTRING Name;
+        Windows.UI.Xaml.Interop.TypeKind Kind;
     };
 }

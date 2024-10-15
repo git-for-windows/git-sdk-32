@@ -435,6 +435,7 @@ mingw32/lib/libwiadss.a
 mingw32/lib/libwimgapi.a
 mingw32/lib/libwin32k.a
 mingw32/lib/libwin32spl.a
+mingw32/lib/libwinbrand.a
 mingw32/lib/libwindows.ai.machinelearning.a
 mingw32/lib/libwindows.data.pdf.a
 mingw32/lib/libwindows.networking.a

@@ -2,7 +2,7 @@
 mingw-w64-i686-libsystre
 
 %VERSION%
-1.0.1-5
+1.0.1-6
 
 %BASE%
 mingw-w64-libsystre
@@ -17,16 +17,16 @@ Wrapper library around TRE that provides POSIX API (mingw-w64)
 any
 
 %BUILDDATE%
-1702884782
+1729069579
 
 %INSTALLDATE%
-1702955610
+1729135292
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/0eca067d/7244897230)
+CI (msys2/msys2-autobuild/7c56a1d7/11362381552)
 
 %SIZE%
-31471
+31477
 
 %REASON%
 1

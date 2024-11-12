@@ -2,7 +2,7 @@
 mingw-w64-i686-python-packaging
 
 %VERSION%
-24.1-3
+24.2-1
 
 %BASE%
 mingw-w64-python-packaging
@@ -17,16 +17,16 @@ https://github.com/pypa/packaging
 any
 
 %BUILDDATE%
-1730679995
+1731235343
 
 %INSTALLDATE%
-1731122377
+1731381504
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/acafab9b/11655209338)
+CI (msys2/msys2-autobuild/acafab9b/11764430844)
 
 %SIZE%
-530014
+701936
 
 %REASON%
 1

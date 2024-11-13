@@ -770,6 +770,7 @@ mingw32/include/inputscope.h
 mingw32/include/inputscope.idl
 mingw32/include/inspectable.h
 mingw32/include/inspectable.idl
+mingw32/include/interactioncontext.h
 mingw32/include/interlockedapi.h
 mingw32/include/intrin.h
 mingw32/include/intsafe.h
@@ -1678,6 +1679,12 @@ mingw32/include/windows.applicationmodel.background.h
 mingw32/include/windows.applicationmodel.background.idl
 mingw32/include/windows.applicationmodel.core.h
 mingw32/include/windows.applicationmodel.core.idl
+mingw32/include/windows.applicationmodel.datatransfer.dragdrop.core.h
+mingw32/include/windows.applicationmodel.datatransfer.dragdrop.core.idl
+mingw32/include/windows.applicationmodel.datatransfer.dragdrop.h
+mingw32/include/windows.applicationmodel.datatransfer.dragdrop.idl
+mingw32/include/windows.applicationmodel.datatransfer.h
+mingw32/include/windows.applicationmodel.datatransfer.idl
 mingw32/include/windows.applicationmodel.h
 mingw32/include/windows.applicationmodel.idl
 mingw32/include/windows.data.json.h
@@ -1773,6 +1780,8 @@ mingw32/include/windows.security.credentials.ui.h
 mingw32/include/windows.security.credentials.ui.idl
 mingw32/include/windows.security.cryptography.h
 mingw32/include/windows.security.cryptography.idl
+mingw32/include/windows.security.enterprisedata.h
+mingw32/include/windows.security.enterprisedata.idl
 mingw32/include/windows.security.exchangeactivesyncprovisioning.h
 mingw32/include/windows.security.exchangeactivesyncprovisioning.idl
 mingw32/include/windows.security.isolation.h

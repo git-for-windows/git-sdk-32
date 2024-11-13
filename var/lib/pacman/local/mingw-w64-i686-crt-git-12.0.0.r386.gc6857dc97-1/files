@@ -298,6 +298,7 @@ mingw32/lib/libnetio.a
 mingw32/lib/libnetjoin.a
 mingw32/lib/libnetutils.a
 mingw32/lib/libnewdev.a
+mingw32/lib/libninput.a
 mingw32/lib/libnormaliz.a
 mingw32/lib/libntdll.a
 mingw32/lib/libntdllcrt.a

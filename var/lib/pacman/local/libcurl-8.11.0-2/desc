@@ -2,7 +2,7 @@
 libcurl
 
 %VERSION%
-8.11.0-1
+8.11.0-2
 
 %BASE%
 curl
@@ -11,22 +11,22 @@ curl
 Multi-protocol file transfer library (runtime)
 
 %URL%
-https://curl.haxx.se
+https://curl.se/
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1730883570
+1731580836
 
 %INSTALLDATE%
-1730949713
+1731581489
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-846578
+871154
 
 %REASON%
 1
@@ -35,7 +35,7 @@ Johannes Schindelin <johannes.schindelin@gmx.de>
 libraries
 
 %LICENSE%
-MIT
+spdx:MIT
 
 %VALIDATION%
 pgp

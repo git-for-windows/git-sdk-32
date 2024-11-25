@@ -86,6 +86,8 @@
 /mingw32/lib/ruby/*/did_you_mean*
 /mingw32/lib/ruby/*/cgi/util*
 /mingw32/lib/ruby/*/logger*
+/mingw32/lib/ruby/*/bundled_gems.rb
+/mingw32/lib/ruby/*/syntax_suggest*
 
 # xsltproc (e.g. for Git's user-manual.html)
 /usr/bin/xsltproc.exe

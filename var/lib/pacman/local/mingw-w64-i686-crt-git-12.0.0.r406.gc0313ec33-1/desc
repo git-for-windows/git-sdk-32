@@ -2,7 +2,7 @@
 mingw-w64-i686-crt-git
 
 %VERSION%
-12.0.0.r387.gcf5c50cce-1
+12.0.0.r406.gc0313ec33-1
 
 %BASE%
 mingw-w64-crt-git
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1731523100
+1732643829
 
 %INSTALLDATE%
-1731554461
+1732764701
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a6b3079a/11823571701)
+CI (msys2/msys2-autobuild/a6b3079a/12036222583)
 
 %SIZE%
-127170157
+127678049
 
 %GROUPS%
 mingw-w64-i686-toolchain

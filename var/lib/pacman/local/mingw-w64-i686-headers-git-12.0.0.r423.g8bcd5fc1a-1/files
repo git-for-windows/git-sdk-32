@@ -212,6 +212,9 @@ mingw32/include/comutil.h
 mingw32/include/concurrencysal.h
 mingw32/include/confpriv.h
 mingw32/include/conio.h
+mingw32/include/consoleapi.h
+mingw32/include/consoleapi2.h
+mingw32/include/consoleapi3.h
 mingw32/include/control.h
 mingw32/include/control.idl
 mingw32/include/cor.h
@@ -1665,6 +1668,7 @@ mingw32/include/wincodec.idl
 mingw32/include/wincodecsdk.h
 mingw32/include/wincodecsdk.idl
 mingw32/include/wincon.h
+mingw32/include/wincontypes.h
 mingw32/include/wincred.h
 mingw32/include/wincrypt.h
 mingw32/include/wincrypt.idl

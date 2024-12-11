@@ -2,7 +2,7 @@
 mingw-w64-i686-glib2
 
 %VERSION%
-2.82.2-1
+2.82.3-1
 
 %BASE%
 mingw-w64-glib2
@@ -17,16 +17,16 @@ https://gitlab.gnome.org/GNOME/glib
 any
 
 %BUILDDATE%
-1729339525
+1733811044
 
 %INSTALLDATE%
-1729394760
+1733887955
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/7c56a1d7/11417347796)
+CI (msys2/msys2-autobuild/0f71ee73/12250423338)
 
 %SIZE%
-40758279
+40786682
 
 %REASON%
 1

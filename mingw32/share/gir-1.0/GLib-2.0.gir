@@ -22798,7 +22798,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="2" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="3" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
@@ -63459,19 +63459,19 @@ into it.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/garcbox.c"
-           line="237">Retrieves the size of the reference counted data pointed by @mem_block.</doc>
+           line="242">Retrieves the size of the reference counted data pointed by @mem_block.</doc>
       <source-position filename="glib/grcbox.h" line="66"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/garcbox.c"
-             line="243">the size of the data, in bytes</doc>
+             line="248">the size of the data, in bytes</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="mem_block" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/garcbox.c"
-               line="239">a pointer to reference counted data</doc>
+               line="244">a pointer to reference counted data</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -63550,7 +63550,12 @@ resources allocated for @mem_block.</doc>
 
 If the reference was the last one, it will call @clear_func
 to clear the contents of @mem_block, and then will free the
-resources allocated for @mem_block.</doc>
+resources allocated for @mem_block.
+
+Note that implementing weak references via @clear_func is not thread-safe:
+clearing a pointer to the memory from the callback can race with another
+thread trying to access it as @mem_block already has a reference count of 0
+when the callback is called and will be freed.</doc>
       <source-position filename="glib/grcbox.h" line="62"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -72590,7 +72595,7 @@ output via the structured log writer function (see [func@GLib.log_set_writer_fun
     <function name="log_default_handler" c:identifier="g_log_default_handler">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3276">The default log handler set up by GLib; [func@GLib.log_set_default_handler]
+           line="3331">The default log handler set up by GLib; [func@GLib.log_set_default_handler]
 allows to install an alternate default log handler.
 
 This is used if no log handler has been set for the particular log
@@ -72629,14 +72634,14 @@ This has no effect if structured logging is enabled; see
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3278">the log domain of the message, or `NULL` for the
+               line="3333">the log domain of the message, or `NULL` for the
   default `""` application domain</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3280">the level of the message</doc>
+               line="3335">the level of the message</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="message"
@@ -72645,7 +72650,7 @@ This has no effect if structured logging is enabled; see
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3281">the message</doc>
+               line="3336">the message</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="unused_data"
@@ -72654,7 +72659,7 @@ This has no effect if structured logging is enabled; see
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3282">data passed from [func@GLib.log] which is unused</doc>
+               line="3337">data passed from [func@GLib.log] which is unused</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -72664,7 +72669,7 @@ This has no effect if structured logging is enabled; see
               version="2.72">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2943">Return whether debug output from the GLib logging system is enabled.
+           line="2998">Return whether debug output from the GLib logging system is enabled.
 
 Note that this should not be used to conditionalise calls to [func@GLib.debug] or
 other logging functions; it should only be used from [type@GLib.LogWriterFunc]
@@ -72676,7 +72681,7 @@ Note also that the value of this does not depend on `G_MESSAGES_DEBUG`, nor
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2955">`TRUE` if debug output is enabled, `FALSE` otherwise</doc>
+             line="3010">`TRUE` if debug output is enabled, `FALSE` otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
     </function>
@@ -72750,7 +72755,7 @@ are fatal. See [Using Structured Logging](logging.html#using-structured-logging)
               version="2.72">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2965">Enable or disable debug output from the GLib logging system for all domains.
+           line="3020">Enable or disable debug output from the GLib logging system for all domains.
 
 This value interacts disjunctively with `G_MESSAGES_DEBUG` and
 [func@GLib.log_writer_default_set_debug_domains] — if any of them would allow
@@ -72766,7 +72771,7 @@ output — it is intended for external use.</doc>
         <parameter name="enabled" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2967">`TRUE` to enable debug output, `FALSE` otherwise</doc>
+               line="3022">`TRUE` to enable debug output, `FALSE` otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </parameter>
       </parameters>
@@ -73002,7 +73007,7 @@ This has no effect if structured logging is enabled; see
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="1921">Set a writer function which will be called to format and write out each log
+           line="1922">Set a writer function which will be called to format and write out each log
 message.
 
 Each program should set a writer function, or the default writer
@@ -73025,7 +73030,7 @@ There can only be one writer function. It is an error to set more than one.</doc
                    destroy="2">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1923">log writer function, which must not be `NULL`</doc>
+               line="1924">log writer function, which must not be `NULL`</doc>
           <type name="LogWriterFunc" c:type="GLogWriterFunc"/>
         </parameter>
         <parameter name="user_data"
@@ -73034,7 +73039,7 @@ There can only be one writer function. It is an error to set more than one.</doc
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1924">user data to pass to @func</doc>
+               line="1925">user data to pass to @func</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
         <parameter name="user_data_free"
@@ -73043,7 +73048,7 @@ There can only be one writer function. It is an error to set more than one.</doc
                    destroy="0">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1925">function to free @user_data once it’s
+               line="1926">function to free @user_data once it’s
    finished with, if non-`NULL`</doc>
           <type name="DestroyNotify" c:type="GDestroyNotify"/>
         </parameter>
@@ -73079,7 +73084,8 @@ Note that keys that expect UTF-8 strings (specifically `"MESSAGE"` and
 `"GLIB_DOMAIN"`) must be passed as nul-terminated UTF-8 strings until GLib
 version 2.74.1 because the default log handler did not consider the length of
 the `GLogField`. Starting with GLib 2.74.1 this is fixed and
-non-nul-terminated UTF-8 strings can be passed with their correct length.
+non-nul-terminated UTF-8 strings can be passed with their correct length,
+with the exception of `"GLIB_DOMAIN"` which was only fixed with GLib 2.82.3.
 
 The @log_domain will be converted into a `GLIB_DOMAIN` field. @log_level will
 be converted into a
@@ -73176,7 +73182,7 @@ manually to the format string.</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="1809">Log a message with structured data.
+           line="1810">Log a message with structured data.
 
 The message will be passed through to the log writer set by the application
 using [func@GLib.log_set_writer_func]. If the
@@ -73195,14 +73201,14 @@ This assumes that @log_level is already present in @fields (typically as the
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1811">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="1812">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1813">key–value pairs of structured data to add
+               line="1814">key–value pairs of structured data to add
    to the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -73211,7 +73217,7 @@ This assumes that @log_level is already present in @fields (typically as the
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1815">number of elements in the @fields array</doc>
+               line="1816">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
       </parameters>
@@ -73250,7 +73256,7 @@ This assumes that @log_level is already present in @fields (typically as the
     <function name="log_variant" c:identifier="g_log_variant" version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="1692">Log a message with structured data, accepting the data within a [type@GLib.Variant].
+           line="1693">Log a message with structured data, accepting the data within a [type@GLib.Variant].
 
 This version is especially useful for use in other languages, via introspection.
 
@@ -73276,20 +73282,20 @@ For more details on its usage and about the parameters, see [func@GLib.log_struc
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1694">log domain, usually `G_LOG_DOMAIN`</doc>
+               line="1695">log domain, usually `G_LOG_DOMAIN`</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1695">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="1696">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1697">a dictionary ([type@GLib.Variant] of the type `G_VARIANT_TYPE_VARDICT`)
+               line="1698">a dictionary ([type@GLib.Variant] of the type `G_VARIANT_TYPE_VARDICT`)
 containing the key-value pairs of message data.</doc>
           <type name="Variant" c:type="GVariant*"/>
         </parameter>
@@ -73300,7 +73306,7 @@ containing the key-value pairs of message data.</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2785">Format a structured log message and output it to the default log destination
+           line="2840">Format a structured log message and output it to the default log destination
 for the platform.
 
 On Linux, this is typically the systemd journal, falling
@@ -73325,7 +73331,7 @@ up to the writer function to determine which log messages are fatal.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2816">[enum@GLib.LogWriterOutput.HANDLED] on success,
+             line="2871">[enum@GLib.LogWriterOutput.HANDLED] on success,
   [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
         <type name="LogWriterOutput" c:type="GLogWriterOutput"/>
       </return-value>
@@ -73333,14 +73339,14 @@ up to the writer function to determine which log messages are fatal.</doc>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2787">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2842">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2789">key–value pairs of structured data forming
+               line="2844">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -73349,7 +73355,7 @@ up to the writer function to determine which log messages are fatal.</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2791">number of elements in the @fields array</doc>
+               line="2846">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="user_data"
@@ -73358,7 +73364,7 @@ up to the writer function to determine which log messages are fatal.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2792">user data passed to [func@GLib.log_set_writer_func]</doc>
+               line="2847">user data passed to [func@GLib.log_set_writer_func]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -73368,7 +73374,7 @@ up to the writer function to determine which log messages are fatal.</doc>
               version="2.80">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2656">Reset the list of domains to be logged, that might be initially set by the
+           line="2702">Reset the list of domains to be logged, that might be initially set by the
 `G_MESSAGES_DEBUG` environment variable.
 
 This function is thread-safe.</doc>
@@ -73383,7 +73389,7 @@ This function is thread-safe.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2658">`NULL`-terminated array with domains to be printed.
+               line="2704">`NULL`-terminated array with domains to be printed.
   `NULL` or an array with no values means none. Array with a single value `"all"` means all.</doc>
           <type name="utf8" c:type="const gchar* const*"/>
         </parameter>
@@ -73428,7 +73434,7 @@ or creating objects that could create worker threads of their own.</doc>
               version="2.68">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2741">Check whether [func@GLib.log_writer_default] and [func@GLib.log_default_handler] would
+           line="2796">Check whether [func@GLib.log_writer_default] and [func@GLib.log_default_handler] would
 ignore a message with the given domain and level.
 
 As with [func@GLib.log_default_handler], this function drops debug and informational
@@ -73458,7 +73464,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2774">`TRUE` if the log message would be dropped by GLib’s
+             line="2829">`TRUE` if the log message would be dropped by GLib’s
   default log handlers</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -73466,7 +73472,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2744">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2799">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
@@ -73476,7 +73482,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2743">log domain</doc>
+               line="2798">log domain</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -73486,7 +73492,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2110">Format a structured log message as a string suitable for outputting to the
+           line="2111">Format a structured log message as a string suitable for outputting to the
 terminal (or elsewhere).
 
 This will include the values of all fields it knows
@@ -73501,7 +73507,7 @@ UTF-8.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2133">string containing the formatted log message, in
+             line="2134">string containing the formatted log message, in
    the character set of the current locale</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -73509,14 +73515,14 @@ UTF-8.</doc>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2112">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2113">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2114">key–value pairs of structured data forming
+               line="2115">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -73525,13 +73531,13 @@ UTF-8.</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2116">number of elements in the @fields array</doc>
+               line="2117">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="use_color" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2117">`TRUE` to use
+               line="2118">`TRUE` to use
   [ANSI color escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code)
   when formatting the message, `FALSE` to not</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -73543,7 +73549,7 @@ UTF-8.</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2081">Check whether the given @output_fd file descriptor is a connection to the
+           line="2082">Check whether the given @output_fd file descriptor is a connection to the
 systemd journal, or something else (like a log file or `stdout` or
 `stderr`).
 
@@ -73556,14 +73562,14 @@ is_journald = g_log_writer_is_journald (fileno (stderr));
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2095">`TRUE` if @output_fd points to the journal, `FALSE` otherwise</doc>
+             line="2096">`TRUE` if @output_fd points to the journal, `FALSE` otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="output_fd" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2083">output file descriptor to check</doc>
+               line="2084">output file descriptor to check</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
       </parameters>
@@ -73573,7 +73579,7 @@ is_journald = g_log_writer_is_journald (fileno (stderr));
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2443">Format a structured log message and send it to the systemd journal as a set
+           line="2444">Format a structured log message and send it to the systemd journal as a set
 of key–value pairs.
 
 All fields are sent to the journal, but if a field has
@@ -73588,21 +73594,21 @@ defined, but will always return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2464">[enum@GLib.LogWriterOutput.HANDLED] on success, [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
+             line="2465">[enum@GLib.LogWriterOutput.HANDLED] on success, [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
         <type name="LogWriterOutput" c:type="GLogWriterOutput"/>
       </return-value>
       <parameters>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2445">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2446">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2447">key–value pairs of structured data forming
+               line="2448">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -73611,7 +73617,7 @@ defined, but will always return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2449">number of elements in the @fields array</doc>
+               line="2450">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="user_data"
@@ -73620,7 +73626,7 @@ defined, but will always return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2450">user data passed to [func@GLib.log_set_writer_func]</doc>
+               line="2451">user data passed to [func@GLib.log_set_writer_func]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -73630,7 +73636,7 @@ defined, but will always return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2556">Format a structured log message and print it to either `stdout` or `stderr`,
+           line="2557">Format a structured log message and print it to either `stdout` or `stderr`,
 depending on its log level.
 
 [flags@GLib.LogLevelFlags.LEVEL_INFO] and [flags@GLib.LogLevelFlags.LEVEL_DEBUG] messages
@@ -73651,7 +73657,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2583">[enum@GLib.LogWriterOutput.HANDLED] on success,
+             line="2584">[enum@GLib.LogWriterOutput.HANDLED] on success,
   [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
         <type name="LogWriterOutput" c:type="GLogWriterOutput"/>
       </return-value>
@@ -73659,14 +73665,14 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2558">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2559">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2560">key–value pairs of structured data forming
+               line="2561">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -73675,7 +73681,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2562">number of elements in the @fields array</doc>
+               line="2563">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="user_data"
@@ -73684,7 +73690,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2563">user data passed to [func@GLib.log_set_writer_func]</doc>
+               line="2564">user data passed to [func@GLib.log_set_writer_func]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -73694,7 +73700,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="1965">Check whether the given @output_fd file descriptor supports
+           line="1966">Check whether the given @output_fd file descriptor supports
 [ANSI color escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code).
 
 If so, they can safely be used when formatting log messages.</doc>
@@ -73702,14 +73708,14 @@ If so, they can safely be used when formatting log messages.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="1974">`TRUE` if ANSI color escapes are supported, `FALSE` otherwise</doc>
+             line="1975">`TRUE` if ANSI color escapes are supported, `FALSE` otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="output_fd" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="1967">output file descriptor to check</doc>
+               line="1968">output file descriptor to check</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
       </parameters>
@@ -73719,7 +73725,7 @@ If so, they can safely be used when formatting log messages.</doc>
               version="2.80">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2245">Format a structured log message and send it to the syslog daemon. Only fields
+           line="2246">Format a structured log message and send it to the syslog daemon. Only fields
 which are understood by this function are included in the formatted string
 which is printed.
 
@@ -73735,21 +73741,21 @@ return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2267">[enum@GLib.LogWriterOutput.HANDLED] on success, [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
+             line="2268">[enum@GLib.LogWriterOutput.HANDLED] on success, [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
         <type name="LogWriterOutput" c:type="GLogWriterOutput"/>
       </return-value>
       <parameters>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2247">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2248">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2249">key–value pairs of structured data forming
+               line="2250">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -73758,7 +73764,7 @@ return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2251">number of elements in the @fields array</doc>
+               line="2252">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="user_data"
@@ -73767,7 +73773,7 @@ return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2252">user data passed to [func@GLib.log_set_writer_func]</doc>
+               line="2253">user data passed to [func@GLib.log_set_writer_func]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -76451,7 +76457,7 @@ error condition) then also do nothing.</doc>
     <function name="print" c:identifier="g_print" introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3453">Outputs a formatted message via the print handler.
+           line="3508">Outputs a formatted message via the print handler.
 
 The default print handler outputs the encoded message to `stdout`, without
 appending a trailing new-line character. Typically, @format should end with
@@ -76470,13 +76476,13 @@ use [func@GLib.log], [func@GLib.log_structured], or the convenience macros
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3455">the message format. See the `printf()` documentation</doc>
+               line="3510">the message format. See the `printf()` documentation</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3456">the parameters to insert into the format string</doc>
+               line="3511">the parameters to insert into the format string</doc>
           <varargs/>
         </parameter>
       </parameters>
@@ -76484,7 +76490,7 @@ use [func@GLib.log], [func@GLib.log_structured], or the convenience macros
     <function name="printerr" c:identifier="g_printerr" introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3520">Outputs a formatted message via the error message handler.
+           line="3575">Outputs a formatted message via the error message handler.
 
 The default handler outputs the encoded message to `stderr`, without appending
 a trailing new-line character. Typically, @format should end with its own
@@ -76501,13 +76507,13 @@ macros [func@GLib.message], [func@GLib.warning] and [func@GLib.error].</doc>
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3522">the message format. See the `printf()` documentation</doc>
+               line="3577">the message format. See the `printf()` documentation</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3523">the parameters to insert into the format string</doc>
+               line="3578">the parameters to insert into the format string</doc>
           <varargs/>
         </parameter>
       </parameters>
@@ -76554,7 +76560,7 @@ own new-line character.
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3555">Calculates the maximum space needed to store the output
+           line="3610">Calculates the maximum space needed to store the output
 of the `sprintf()` function.
 
 If @format or @args are invalid, `0` is returned. This could happen if, for
@@ -76568,20 +76574,20 @@ placeholders in any case, as their behaviour is locale-dependent.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3571">the maximum space needed to store the formatted string, or `0` on error</doc>
+             line="3626">the maximum space needed to store the formatted string, or `0` on error</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3557">the format string. See the `printf()` documentation</doc>
+               line="3612">the format string. See the `printf()` documentation</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="args" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3558">the parameters to be inserted into the format string</doc>
+               line="3613">the parameters to be inserted into the format string</doc>
           <type name="va_list" c:type="va_list"/>
         </parameter>
       </parameters>
@@ -77811,19 +77817,19 @@ g_ref_count_init() to be used again.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grefstring.c"
-           line="167">Acquires a reference on a string.</doc>
+           line="214">Acquires a reference on a string.</doc>
       <source-position filename="glib/grefstring.h" line="37"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grefstring.c"
-             line="173">the given string, with its reference count increased</doc>
+             line="220">the given string, with its reference count increased</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="169">a reference counted string</doc>
+               line="216">a reference counted string</doc>
           <type name="utf8" c:type="char*"/>
         </parameter>
       </parameters>
@@ -77833,19 +77839,19 @@ g_ref_count_init() to be used again.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grefstring.c"
-           line="220">Retrieves the length of @str.</doc>
+           line="295">Retrieves the length of @str.</doc>
       <source-position filename="glib/grefstring.h" line="42"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/grefstring.c"
-             line="226">the length of the given string, in bytes</doc>
+             line="301">the length of the given string, in bytes</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="222">a reference counted string</doc>
+               line="297">a reference counted string</doc>
           <type name="utf8" c:type="char*"/>
         </parameter>
       </parameters>
@@ -77855,20 +77861,20 @@ g_ref_count_init() to be used again.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grefstring.c"
-           line="40">Creates a new reference counted string and copies the contents of @str
+           line="77">Creates a new reference counted string and copies the contents of @str
 into it.</doc>
       <source-position filename="glib/grefstring.h" line="29"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grefstring.c"
-             line="47">the newly created reference counted string</doc>
+             line="84">the newly created reference counted string</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="42">a NUL-terminated string</doc>
+               line="79">a NUL-terminated string</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -77878,7 +77884,7 @@ into it.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grefstring.c"
-           line="119">Creates a new reference counted string and copies the content of @str
+           line="169">Creates a new reference counted string and copies the content of @str
 into it.
 
 If you call this function multiple times with the same @str, or with
@@ -77888,7 +77894,7 @@ creating a new string.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grefstring.c"
-             line="130">the newly created reference
+             line="180">the newly created reference
   counted string, or a new reference to an existing string</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
@@ -77896,7 +77902,7 @@ creating a new string.</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="121">a NUL-terminated string</doc>
+               line="171">a NUL-terminated string</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -77906,7 +77912,7 @@ creating a new string.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grefstring.c"
-           line="66">Creates a new reference counted string and copies the contents of @str
+           line="110">Creates a new reference counted string and copies the contents of @str
 into it, up to @len bytes.
 
 Since this function does not stop at nul bytes, it is the caller's
@@ -77915,20 +77921,20 @@ responsibility to ensure that @str has at least @len addressable bytes.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grefstring.c"
-             line="77">the newly created reference counted string</doc>
+             line="121">the newly created reference counted string</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="68">a string</doc>
+               line="112">a string</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="69">length of @str to use, or -1 if @str is nul-terminated</doc>
+               line="113">length of @str to use, or -1 if @str is nul-terminated</doc>
           <type name="gssize" c:type="gssize"/>
         </parameter>
       </parameters>
@@ -77938,7 +77944,7 @@ responsibility to ensure that @str has at least @len addressable bytes.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grefstring.c"
-           line="203">Releases a reference on a string; if it was the last reference, the
+           line="234">Releases a reference on a string; if it was the last reference, the
 resources allocated by the string are freed as well.</doc>
       <source-position filename="glib/grefstring.h" line="39"/>
       <return-value transfer-ownership="none">
@@ -77948,7 +77954,7 @@ resources allocated by the string are freed as well.</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grefstring.c"
-               line="205">a reference counted string</doc>
+               line="236">a reference counted string</doc>
           <type name="utf8" c:type="char*"/>
         </parameter>
       </parameters>
@@ -78319,7 +78325,7 @@ Care is taken to avoid overflow when calculating the size of the allocated block
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2986">Internal function used to print messages from the public [func@GLib.return_if_fail]
+           line="3041">Internal function used to print messages from the public [func@GLib.return_if_fail]
 and [func@GLib.return_val_if_fail] macros.</doc>
       <source-position filename="glib/gmessages.h" line="293"/>
       <return-value transfer-ownership="none">
@@ -78332,13 +78338,13 @@ and [func@GLib.return_val_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2988">log domain</doc>
+               line="3043">log domain</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="pretty_function" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2989">function containing the assertion</doc>
+               line="3044">function containing the assertion</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="expression"
@@ -78347,7 +78353,7 @@ and [func@GLib.return_val_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2990">expression which failed</doc>
+               line="3045">expression which failed</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -79083,7 +79089,7 @@ could only be called once per process.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3360">Sets the print handler to @func, or resets it to the
+           line="3415">Sets the print handler to @func, or resets it to the
 default GLib handler if `NULL`.
 
 Any messages passed to [func@GLib.print] will be output via
@@ -79102,7 +79108,7 @@ in all platforms. Before GLib 2.76, this was `NULL`.</doc>
       <return-value>
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3381">the old print handler</doc>
+             line="3436">the old print handler</doc>
         <type name="PrintFunc" c:type="GPrintFunc"/>
       </return-value>
       <parameters>
@@ -79112,7 +79118,7 @@ in all platforms. Before GLib 2.76, this was `NULL`.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3362">the new print handler or `NULL` to
+               line="3417">the new print handler or `NULL` to
   reset to the default</doc>
           <type name="PrintFunc" c:type="GPrintFunc"/>
         </parameter>
@@ -79123,7 +79129,7 @@ in all platforms. Before GLib 2.76, this was `NULL`.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3490">Sets the handler for printing error messages to @func,
+           line="3545">Sets the handler for printing error messages to @func,
 or resets it to the default GLib handler if `NULL`.
 
 Any messages passed to [func@GLib.printerr] will be output via
@@ -79142,7 +79148,7 @@ Before GLib 2.76, this was `NULL`.</doc>
       <return-value>
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3511">the old error message handler</doc>
+             line="3566">the old error message handler</doc>
         <type name="PrintFunc" c:type="GPrintFunc"/>
       </return-value>
       <parameters>
@@ -79152,7 +79158,7 @@ Before GLib 2.76, this was `NULL`.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3492">he new error message handler or `NULL`
+               line="3547">he new error message handler or `NULL`
   to reset to the default</doc>
           <type name="PrintFunc" c:type="GPrintFunc"/>
         </parameter>
@@ -83236,7 +83242,7 @@ do so even if it isn’t.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3151">Asserts that all messages previously indicated via
+           line="3206">Asserts that all messages previously indicated via
 [func@GLib.test_expect_message] have been seen and suppressed.
 
 This API may only be used with the old logging API ([func@GLib.log] without
@@ -83501,7 +83507,7 @@ crash collection infrastructure such as systemd-coredump or abrt.</doc>
               version="2.34">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3065">Indicates that a message with the given @log_domain and @log_level,
+           line="3120">Indicates that a message with the given @log_domain and @log_level,
 with text matching @pattern, is expected to be logged.
 
 When this message is logged, it will not be printed, and the test case will
@@ -83547,19 +83553,19 @@ expected via [func@GLib.test_expect_message] then they will be ignored.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3067">the log domain of the message</doc>
+               line="3122">the log domain of the message</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3068">the log level of the message</doc>
+               line="3123">the log level of the message</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="pattern" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3069">a glob-style pattern (see [type@GLib.PatternSpec])</doc>
+               line="3124">a glob-style pattern (see [type@GLib.PatternSpec])</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -90760,7 +90766,7 @@ checks and assertions are disabled.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3007">Internal function used to print messages from the public [func@GLib.warn_if_reached]
+           line="3062">Internal function used to print messages from the public [func@GLib.warn_if_reached]
 and [func@GLib.warn_if_fail] macros.</doc>
       <source-position filename="glib/gmessages.h" line="297"/>
       <return-value transfer-ownership="none">
@@ -90773,25 +90779,25 @@ and [func@GLib.warn_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3009">log domain</doc>
+               line="3064">log domain</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="file" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3010">file containing the warning</doc>
+               line="3065">file containing the warning</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="line" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3011">line number of the warning</doc>
+               line="3066">line number of the warning</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="func" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3012">function containing the warning</doc>
+               line="3067">function containing the warning</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="warnexpr"
@@ -90800,7 +90806,7 @@ and [func@GLib.warn_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3013">expression which failed</doc>
+               line="3068">expression which failed</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>

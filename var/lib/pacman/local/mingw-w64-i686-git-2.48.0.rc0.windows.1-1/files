@@ -93,7 +93,6 @@ mingw32/libexec/git-core/scalar.exe
 mingw32/share/
 mingw32/share/git-core/
 mingw32/share/git-core/templates/
-mingw32/share/git-core/templates/branches/
 mingw32/share/git-core/templates/description
 mingw32/share/git-core/templates/hooks/
 mingw32/share/git-core/templates/hooks/applypatch-msg.sample
@@ -180,6 +179,7 @@ mingw32/share/git/completion/git-completion.bash
 mingw32/share/git/completion/git-completion.tcsh
 mingw32/share/git/completion/git-completion.zsh
 mingw32/share/git/completion/git-prompt.sh
+mingw32/share/git/completion/meson.build
 mingw32/share/git/edit-git-bash.exe
 mingw32/share/git/git-for-windows.ico
 mingw32/share/git/git-wrapper.exe

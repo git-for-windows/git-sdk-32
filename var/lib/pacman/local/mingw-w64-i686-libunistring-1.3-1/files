@@ -18,7 +18,6 @@ mingw32/include/unistring/cdefs.h
 mingw32/include/unistring/iconveh.h
 mingw32/include/unistring/inline.h
 mingw32/include/unistring/localcharset.h
-mingw32/include/unistring/stdbool.h
 mingw32/include/unistring/stdint.h
 mingw32/include/unistring/version.h
 mingw32/include/unistring/woe32dll.h

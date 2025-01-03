@@ -2,7 +2,7 @@
 mingw-w64-i686-libunistring
 
 %VERSION%
-1.2-1
+1.3-1
 
 %BASE%
 mingw-w64-libunistring
@@ -17,16 +17,16 @@ https://www.gnu.org/software/libunistring
 any
 
 %BUILDDATE%
-1711724648
+1735668631
 
 %INSTALLDATE%
-1711854838
+1735874412
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/3e617554/8482314427)
+CI (msys2/msys2-autobuild/35ff0b71/12562599200)
 
 %SIZE%
-6051930
+6466202
 
 %LICENSE%
 spdx:LGPL-3.0-or-later OR GPL-3.0-or-later

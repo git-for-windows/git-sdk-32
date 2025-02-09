@@ -2,7 +2,7 @@
 #
 #   pkgbuild.sh - functions to extract information from PKGBUILD files
 #
-#   Copyright (c) 2009-2021 Pacman Development Team <pacman-dev@archlinux.org>
+#   Copyright (c) 2009-2024 Pacman Development Team <pacman-dev@lists.archlinux.org>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -21,7 +21,9 @@
 [[ -n "$LIBMAKEPKG_UTIL_PKGBUILD_SH" ]] && return
 LIBMAKEPKG_UTIL_PKGBUILD_SH=1
 
-source "$LIBRARY/util/schema.sh"
+MAKEPKG_LIBRARY=${MAKEPKG_LIBRARY:-'/usr/share/makepkg'}
+
+source "$MAKEPKG_LIBRARY/util/schema.sh"
 
 
 have_function() {

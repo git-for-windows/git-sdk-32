@@ -1,6 +1,6 @@
 package Git::Mediawiki;
 
-use 5.008;
+require v5.26;
 use strict;
 use POSIX;
 use Git;

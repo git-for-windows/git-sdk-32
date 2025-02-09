@@ -15,19 +15,25 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 declare -r myname='paclist'
-declare -r myver='1.4.0'
+declare -r myver='1.10.6'
 
 usage() {
-	printf "%s v%s\n" "${myname}" "${myver}"
-	echo
-	printf "List all packages installed from a given repository\n" "${myname}"
-	echo
-	printf "Usage: %s <repository> ...\n" "${myname}"
-	echo
-	printf "Example: %s testing\n" "${myname}"
+	cat <<EOF
+${myname} v${myver}
+
+List all packages installed from a given repository.
+
+Usage: ${myname} <repository ...>
+
+Options:
+  -h, --help     show this help message and exit
+  -V, --version  display version information and exit
+
+Example: ${myname} core-testing
+EOF
 }
 
 version() {
@@ -53,6 +59,4 @@ pacman -Sl "$@" | awk '/\[.*[[:alpha:]]+]$/ {print $2,$3};
                      /\[.*[[:digit:]]+]$/ {print $2,substr($NF, 1, length($NF) - 1)}'
 
 # exit with pacman's return value, not awk's
-exit ${PIPESTATUS[0]}
-
-# vim: set noet:
+exit "${PIPESTATUS[0]}"

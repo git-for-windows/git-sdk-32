@@ -25,8 +25,12 @@ cat >.vscode/settings.json.new <<\EOF ||
         "editor.detectIndentation": false,
         "editor.insertSpaces": false,
         "editor.tabSize": 8,
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wordWrapColumn": 80,
+        "files.trimTrailingWhitespace": true
+    },
+    "[txt]": {
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": false,
+        "editor.tabSize": 8,
         "files.trimTrailingWhitespace": true
     },
     "files.associations": {
@@ -88,7 +92,6 @@ cat >.vscode/settings.json.new <<\EOF ||
         "isexe",
         "iskeychar",
         "kompare",
-        "mksnpath",
         "mktag",
         "mktree",
         "mmblob",
@@ -271,7 +274,6 @@ cat >.vscode/launch.json.new <<EOF ||
             "stopAtEntry": false,
             "cwd": "\${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
             "MIMode": "gdb",
             "miDebuggerPath": "$GDBPATH",
             "setupCommands": [

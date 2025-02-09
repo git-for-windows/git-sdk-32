@@ -1,0 +1,46 @@
+%NAME%
+gettext-devel
+
+%VERSION%
+0.22.4-1
+
+%BASE%
+gettext
+
+%DESC%
+GNU Internationalization development utilities
+
+%URL%
+https://www.gnu.org/software/gettext/
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1700687820
+
+%INSTALLDATE%
+1739088340
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+5395974
+
+%GROUPS%
+development
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+gettext=0.22.4
+libiconv-devel
+
+%OPTDEPENDS%
+cvs: for autopoint tool
+

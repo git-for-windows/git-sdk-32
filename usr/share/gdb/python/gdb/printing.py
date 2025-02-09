@@ -1,5 +1,5 @@
 # Pretty-printer utilities.
-# Copyright (C) 2010-2021 Free Software Foundation, Inc.
+# Copyright (C) 2010-2023 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,13 +18,9 @@
 
 import gdb
 import gdb.types
+import itertools
 import re
-import sys
 
-if sys.version_info[0] > 2:
-    # Python 3 removed basestring and long
-    basestring = str
-    long = int
 
 class PrettyPrinter(object):
     """A basic pretty-printer.
@@ -110,27 +106,28 @@ def register_pretty_printer(obj, printer, replace=False):
     if not hasattr(printer, "__name__") and not hasattr(printer, "name"):
         raise TypeError("printer missing attribute: name")
     if hasattr(printer, "name") and not hasattr(printer, "enabled"):
-        raise TypeError("printer missing attribute: enabled") 
+        raise TypeError("printer missing attribute: enabled")
     if not hasattr(printer, "__call__"):
         raise TypeError("printer missing attribute: __call__")
 
     if hasattr(printer, "name"):
-      name = printer.name
+        name = printer.name
     else:
-      name = printer.__name__
+        name = printer.__name__
     if obj is None or obj is gdb:
         if gdb.parameter("verbose"):
             gdb.write("Registering global %s pretty-printer ...\n" % name)
         obj = gdb
     else:
         if gdb.parameter("verbose"):
-            gdb.write("Registering %s pretty-printer for %s ...\n" % (
-                name, obj.filename))
+            gdb.write(
+                "Registering %s pretty-printer for %s ...\n" % (name, obj.filename)
+            )
 
     # Printers implemented as functions are old-style.  In order to not risk
     # breaking anything we do not check __name__ here.
     if hasattr(printer, "name"):
-        if not isinstance(printer.name, basestring):
+        if not isinstance(printer.name, str):
             raise TypeError("printer name is not a string")
         # If printer provides a name, make sure it doesn't contain ";".
         # Semicolon is used by the info/enable/disable pretty-printer commands
@@ -148,8 +145,9 @@ def register_pretty_printer(obj, printer, replace=False):
                     del obj.pretty_printers[i]
                     break
                 else:
-                  raise RuntimeError("pretty-printer already registered: %s" %
-                                     printer.name)
+                    raise RuntimeError(
+                        "pretty-printer already registered: %s" % printer.name
+                    )
             i = i + 1
 
     obj.pretty_printers.insert(0, printer)
@@ -197,8 +195,7 @@ class RegexpCollectionPrettyPrinter(PrettyPrinter):
         # cumbersome to make a regexp of a regexp).  So now the name is a
         # separate parameter.
 
-        self.subprinters.append(self.RegexpSubprinter(name, regexp,
-                                                      gen_printer))
+        self.subprinters.append(self.RegexpSubprinter(name, regexp, gen_printer))
 
     def __call__(self, val):
         """Lookup the pretty-printer for the provided value."""
@@ -220,26 +217,28 @@ class RegexpCollectionPrettyPrinter(PrettyPrinter):
         # Cannot find a pretty printer.  Return None.
         return None
 
+
 # A helper class for printing enum types.  This class is instantiated
 # with a list of enumerators to print a particular Value.
-class _EnumInstance:
+class _EnumInstance(gdb.ValuePrinter):
     def __init__(self, enumerators, val):
-        self.enumerators = enumerators
-        self.val = val
+        self.__enumerators = enumerators
+        self.__val = val
 
     def to_string(self):
         flag_list = []
-        v = long(self.val)
+        v = int(self.__val)
         any_found = False
-        for (e_name, e_value) in self.enumerators:
+        for e_name, e_value in self.__enumerators:
             if v & e_value != 0:
                 flag_list.append(e_name)
                 v = v & ~e_value
                 any_found = True
         if not any_found or v != 0:
             # Leftover value.
-            flag_list.append('<unknown: 0x%x>' % v)
-        return "0x%x [%s]" % (int(self.val), " | ".join(flag_list))
+            flag_list.append("<unknown: 0x%x>" % v)
+        return "0x%x [%s]" % (int(self.__val), " | ".join(flag_list))
+
 
 class FlagEnumerationPrinter(PrettyPrinter):
     """A pretty-printer which can be used to print a flag-style enumeration.
@@ -263,12 +262,129 @@ class FlagEnumerationPrinter(PrettyPrinter):
                 self.enumerators.append((field.name, field.enumval))
             # Sorting the enumerators by value usually does the right
             # thing.
-            self.enumerators.sort(key = lambda x: x[1])
+            self.enumerators.sort(key=lambda x: x[1])
 
         if self.enabled:
             return _EnumInstance(self.enumerators, val)
         else:
             return None
+
+
+class NoOpScalarPrinter(gdb.ValuePrinter):
+    """A no-op pretty printer that wraps a scalar value."""
+
+    def __init__(self, value):
+        self.__value = value
+
+    def to_string(self):
+        return self.__value.format_string(raw=True)
+
+
+class NoOpPointerReferencePrinter(gdb.ValuePrinter):
+    """A no-op pretty printer that wraps a pointer or reference."""
+
+    def __init__(self, value):
+        self.__value = value
+
+    def to_string(self):
+        return self.__value.format_string(deref_refs=False)
+
+    def num_children(self):
+        return 1
+
+    def child(self, i):
+        return "value", self.__value.referenced_value()
+
+    def children(self):
+        yield "value", self.__value.referenced_value()
+
+
+class NoOpArrayPrinter(gdb.ValuePrinter):
+    """A no-op pretty printer that wraps an array value."""
+
+    def __init__(self, ty, value):
+        self.__value = value
+        (low, high) = ty.range()
+        # In Ada, an array can have an index type that is a
+        # non-contiguous enum.  In this case the indexing must be done
+        # by using the indices into the enum type, not the underlying
+        # integer values.
+        range_type = ty.fields()[0].type
+        if range_type.target().code == gdb.TYPE_CODE_ENUM:
+            e_values = range_type.target().fields()
+            # Drop any values before LOW.
+            e_values = itertools.dropwhile(lambda x: x.enumval < low, e_values)
+            # Drop any values after HIGH.
+            e_values = itertools.takewhile(lambda x: x.enumval <= high, e_values)
+            low = 0
+            high = len(list(e_values)) - 1
+        self.__low = low
+        self.__high = high
+
+    def to_string(self):
+        return ""
+
+    def display_hint(self):
+        return "array"
+
+    def num_children(self):
+        return self.__high - self.__low + 1
+
+    def child(self, i):
+        return (self.__low + i, self.__value[self.__low + i])
+
+    def children(self):
+        for i in range(self.__low, self.__high + 1):
+            yield (i, self.__value[i])
+
+
+class NoOpStructPrinter(gdb.ValuePrinter):
+    """A no-op pretty printer that wraps a struct or union value."""
+
+    def __init__(self, ty, value):
+        self.__ty = ty
+        self.__value = value
+
+    def to_string(self):
+        return ""
+
+    def children(self):
+        for field in self.__ty.fields():
+            if hasattr(field, "bitpos") and field.name is not None:
+                yield (field.name, self.__value[field])
+
+
+def make_visualizer(value):
+    """Given a gdb.Value, wrap it in a pretty-printer.
+
+    If a pretty-printer is found by the usual means, it is returned.
+    Otherwise, VALUE will be wrapped in a no-op visualizer."""
+
+    result = gdb.default_visualizer(value)
+    if result is not None:
+        # Found a pretty-printer.
+        pass
+    else:
+        ty = value.type.strip_typedefs()
+        if ty.is_string_like:
+            result = NoOpScalarPrinter(value)
+        elif ty.code == gdb.TYPE_CODE_ARRAY:
+            result = NoOpArrayPrinter(ty, value)
+        elif ty.is_array_like:
+            value = value.to_array()
+            ty = value.type.strip_typedefs()
+            result = NoOpArrayPrinter(ty, value)
+        elif ty.code in (gdb.TYPE_CODE_STRUCT, gdb.TYPE_CODE_UNION):
+            result = NoOpStructPrinter(ty, value)
+        elif ty.code in (
+            gdb.TYPE_CODE_PTR,
+            gdb.TYPE_CODE_REF,
+            gdb.TYPE_CODE_RVALUE_REF,
+        ):
+            result = NoOpPointerReferencePrinter(value)
+        else:
+            result = NoOpScalarPrinter(value)
+    return result
 
 
 # Builtin pretty-printers.
@@ -280,6 +396,7 @@ _builtin_pretty_printers = RegexpCollectionPrettyPrinter("builtin")
 register_pretty_printer(None, _builtin_pretty_printers)
 
 # Add a builtin pretty-printer.
+
 
 def add_builtin_pretty_printer(name, regexp, printer):
     _builtin_pretty_printers.add_printer(name, regexp, printer)

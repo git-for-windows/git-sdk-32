@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2021 Free Software Foundation, Inc.
+# Copyright (C) 2015-2023 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,8 +35,27 @@ class Unwinder(object):
         Args:
             name: An identifying name for the unwinder.
         """
-        self.name = name
-        self.enabled = True
+
+        if not isinstance(name, str):
+            raise TypeError("incorrect type for name: %s" % type(name))
+
+        self._name = name
+        self._enabled = True
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def enabled(self):
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, value):
+        if not isinstance(value, bool):
+            raise TypeError("incorrect type for enabled attribute: %s" % type(value))
+        self._enabled = value
+        gdb.invalidate_cached_frames()
 
     def __call__(self, pending_frame):
         """GDB calls this method to unwind a frame.
@@ -48,6 +67,32 @@ class Unwinder(object):
             gdb.UnwindInfo instance.
         """
         raise NotImplementedError("Unwinder __call__.")
+
+
+class FrameId(object):
+    """A Frame-ID class for use when creating gdb.UnwindInfo objects.
+
+    Attributes (all read-only):
+        pc: Program counter value.
+        sp: The stack-pointer value.
+        special: An alternative stack-pointer value, can be None."""
+
+    def __init__(self, sp, pc, special=None):
+        self._sp = sp
+        self._pc = pc
+        self._special = special
+
+    @property
+    def sp(self):
+        return self._sp
+
+    @property
+    def pc(self):
+        return self._pc
+
+    @property
+    def special(self):
+        return self._special
 
 
 def register_unwinder(locus, unwinder, replace=False):
@@ -77,8 +122,9 @@ def register_unwinder(locus, unwinder, replace=False):
         locus = gdb
     elif isinstance(locus, gdb.Objfile) or isinstance(locus, gdb.Progspace):
         if gdb.parameter("verbose"):
-            gdb.write("Registering %s unwinder for %s ...\n" %
-                      (unwinder.name, locus.filename))
+            gdb.write(
+                "Registering %s unwinder for %s ...\n" % (unwinder.name, locus.filename)
+            )
     else:
         raise TypeError("locus should be gdb.Objfile or gdb.Progspace or None")
 
@@ -88,8 +134,7 @@ def register_unwinder(locus, unwinder, replace=False):
             if replace:
                 del locus.frame_unwinders[i]
             else:
-                raise RuntimeError("Unwinder %s already exists." %
-                                   unwinder.name)
+                raise RuntimeError("Unwinder %s already exists." % unwinder.name)
         i += 1
     locus.frame_unwinders.insert(0, unwinder)
     gdb.invalidate_cached_frames()

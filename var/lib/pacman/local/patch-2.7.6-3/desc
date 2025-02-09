@@ -1,0 +1,42 @@
+%NAME%
+patch
+
+%VERSION%
+2.7.6-3
+
+%BASE%
+patch
+
+%DESC%
+A utility to apply patch files to original sources
+
+%URL%
+https://www.gnu.org/software/patch/patch.html
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1738447592
+
+%INSTALLDATE%
+1739088347
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+229766
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+
+%OPTDEPENDS%
+ed: for patch -e functionality
+
+%XDATA%
+pkgtype=pkg
+

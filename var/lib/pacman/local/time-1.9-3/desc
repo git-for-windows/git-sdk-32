@@ -1,0 +1,36 @@
+%NAME%
+time
+
+%VERSION%
+1.9-3
+
+%BASE%
+time
+
+%DESC%
+Utility for monitoring a program's use of system resources
+
+%URL%
+https://www.gnu.org/directory/time.html
+
+%ARCH%
+i686
+
+%BUILDDATE%
+1652655200
+
+%INSTALLDATE%
+1739088348
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+37341
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+

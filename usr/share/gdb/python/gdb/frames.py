@@ -1,5 +1,5 @@
 # Frame-filter commands.
-# Copyright (C) 2013-2021 Free Software Foundation, Inc.
+# Copyright (C) 2013-2023 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,12 +18,13 @@
 
 import gdb
 from gdb.FrameIterator import FrameIterator
-from gdb.FrameDecorator import FrameDecorator
+from gdb.FrameDecorator import FrameDecorator, DAPFrameDecorator
 import itertools
 import collections
 
+
 def get_priority(filter_item):
-    """ Internal worker function to return the frame-filter's priority
+    """Internal worker function to return the frame-filter's priority
     from a frame filter object.  This is a fail free function as it is
     used in sorting and filtering.  If a badly implemented frame
     filter does not implement the priority attribute, return zero
@@ -42,8 +43,9 @@ def get_priority(filter_item):
     # (incorrectly) set a priority, set it to zero.
     return getattr(filter_item, "priority", 0)
 
+
 def set_priority(filter_item, priority):
-    """ Internal worker function to set the frame-filter's priority.
+    """Internal worker function to set the frame-filter's priority.
 
     Arguments:
         filter_item: An object conforming to the frame filter
@@ -53,8 +55,9 @@ def set_priority(filter_item, priority):
 
     filter_item.priority = priority
 
+
 def get_enabled(filter_item):
-    """ Internal worker function to return a filter's enabled state
+    """Internal worker function to return a filter's enabled state
     from a frame filter object.  This is a fail free function as it is
     used in sorting and filtering.  If a badly implemented frame
     filter does not implement the enabled attribute, return False
@@ -75,8 +78,9 @@ def get_enabled(filter_item):
     # enabled to False.
     return getattr(filter_item, "enabled", False)
 
+
 def set_enabled(filter_item, state):
-    """ Internal Worker function to set the frame-filter's enabled
+    """Internal Worker function to set the frame-filter's enabled
     state.
 
     Arguments:
@@ -87,8 +91,9 @@ def set_enabled(filter_item, state):
 
     filter_item.enabled = state
 
+
 def return_list(name):
-    """ Internal Worker function to return the frame filter
+    """Internal Worker function to return the frame filter
     dictionary, depending on the name supplied as an argument.  If the
     name is not "all", "global" or "progspace", it is assumed to name
     an object-file.
@@ -132,8 +137,9 @@ def return_list(name):
     msg = "Cannot find frame-filter dictionary for '" + name + "'"
     raise gdb.GdbError(msg)
 
+
 def _sort_list():
-    """ Internal Worker function to merge all known frame-filter
+    """Internal Worker function to merge all known frame-filter
     lists, prune any filters with the state set to "disabled", and
     sort the list on the frame-filter's "priority" attribute.
 
@@ -143,54 +149,34 @@ def _sort_list():
     """
 
     all_filters = return_list("all")
-    sorted_frame_filters = sorted(all_filters, key = get_priority,
-                                  reverse = True)
+    sorted_frame_filters = sorted(all_filters, key=get_priority, reverse=True)
 
-    sorted_frame_filters = filter(get_enabled,
-                                  sorted_frame_filters)
+    sorted_frame_filters = filter(get_enabled, sorted_frame_filters)
 
     return sorted_frame_filters
 
-def execute_frame_filters(frame, frame_low, frame_high):
-    """ Internal function called from GDB that will execute the chain
-    of frame filters.  Each filter is executed in priority order.
-    After the execution completes, slice the iterator to frame_low -
-    frame_high range.
 
-    Arguments:
-        frame: The initial frame.
-
-        frame_low: The low range of the slice.  If this is a negative
-        integer then it indicates a backward slice (ie bt -4) which
-        counts backward from the last frame in the backtrace.
-
-        frame_high: The high range of the slice.  If this is -1 then
-        it indicates all frames until the end of the stack from
-        frame_low.
-
-    Returns:
-        frame_iterator: The sliced iterator after all frame
-        filters have had a change to execute, or None if no frame
-        filters are registered.
-    """
-
+# Internal function that implements frame_iterator and
+# execute_frame_filters.  If DAP_SEMANTICS is True, then this will
+# always return an iterator and will wrap frames in DAPFrameDecorator.
+def _frame_iterator(frame, frame_low, frame_high, dap_semantics):
     # Get a sorted list of frame filters.
     sorted_list = list(_sort_list())
 
     # Check to see if there are any frame-filters.  If not, just
     # return None and let default backtrace printing occur.
-    if len(sorted_list) == 0:
+    if not dap_semantics and len(sorted_list) == 0:
         return None
 
     frame_iterator = FrameIterator(frame)
 
     # Apply a basic frame decorator to all gdb.Frames.  This unifies
-    # the interface.  Python 3.x moved the itertools.imap
-    # functionality to map(), so check if it is available.
-    if hasattr(itertools,"imap"):
-        frame_iterator = itertools.imap(FrameDecorator, frame_iterator)
+    # the interface.
+    if dap_semantics:
+        decorator = DAPFrameDecorator
     else:
-        frame_iterator = map(FrameDecorator, frame_iterator)
+        decorator = FrameDecorator
+    frame_iterator = map(decorator, frame_iterator)
 
     for ff in sorted_list:
         frame_iterator = ff.filter(frame_iterator)
@@ -207,7 +193,7 @@ def execute_frame_filters(frame, frame_low, frame_high):
 
         for frame_item in frame_iterator:
             if count >= slice_length:
-                sliced.popleft();
+                sliced.popleft()
             count = count + 1
             sliced.append(frame_item)
 
@@ -221,8 +207,66 @@ def execute_frame_filters(frame, frame_low, frame_high):
     else:
         # As frames start from 0, add one to frame_high so islice
         # correctly finds the end
-        frame_high = frame_high + 1;
+        frame_high = frame_high + 1
 
     sliced = itertools.islice(frame_iterator, frame_low, frame_high)
 
     return sliced
+
+
+def frame_iterator(frame, frame_low, frame_high):
+    """Helper function that will execute the chain of frame filters.
+    Each filter is executed in priority order.  After the execution
+    completes, slice the iterator to frame_low - frame_high range.  An
+    iterator is always returned.  The iterator will always yield
+    frame decorator objects, but note that these decorators have
+    slightly different semantics from the ordinary ones: they will
+    always return a fully-qualified 'filename' (if possible) and will
+    never substitute the objfile name.
+
+    Arguments:
+        frame: The initial frame.
+
+        frame_low: The low range of the slice, counting from 0.  If
+        this is a negative integer then it indicates a backward slice
+        (ie bt -4) which counts backward from the last frame in the
+        backtrace.
+
+        frame_high: The high range of the slice, inclusive.  If this
+        is -1 then it indicates all frames until the end of the stack
+        from frame_low.
+
+    Returns:
+        frame_iterator: The sliced iterator after all frame
+        filters have had a chance to execute.
+    """
+
+    return _frame_iterator(frame, frame_low, frame_high, True)
+
+
+def execute_frame_filters(frame, frame_low, frame_high):
+    """Internal function called from GDB that will execute the chain
+    of frame filters.  Each filter is executed in priority order.
+    After the execution completes, slice the iterator to frame_low -
+    frame_high range.
+
+    Arguments:
+        frame: The initial frame.
+
+        frame_low: The low range of the slice, counting from 0.  If
+        this is a negative integer then it indicates a backward slice
+        (ie bt -4) which counts backward from the last frame in the
+        backtrace.
+
+        frame_high: The high range of the slice, inclusive.  If this
+        is -1 then it indicates all frames until the end of the stack
+        from frame_low.
+
+    Returns:
+        frame_iterator: The sliced iterator after all frame
+        filters have had a chance to execute, or None if no frame
+        filters are registered.
+
+    """
+
+    return _frame_iterator(frame, frame_low, frame_high, False)

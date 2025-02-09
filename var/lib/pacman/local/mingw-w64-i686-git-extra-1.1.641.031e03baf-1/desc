@@ -20,7 +20,7 @@ any
 1718204230
 
 %INSTALLDATE%
-1738984667
+1739088364
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
@@ -53,4 +53,7 @@ mingw-w64-clang-aarch64-git-extra
 
 %PROVIDES%
 git-extra
+
+%XDATA%
+pkgtype=split
 

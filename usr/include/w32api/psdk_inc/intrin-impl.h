@@ -217,11 +217,17 @@ Parameters: (FunctionName, DataType, Segment)
    Type: b, w, l, q
    */
 
+#if defined(__GNUC__) && __GNUC__ > 11
+#define __buildreadseg_star (*)[]
+#else
+#define __buildreadseg_star *
+#endif
+
 #define __buildreadseg(x, y, z, a) y x(unsigned __LONG32 Offset) { \
     y ret; \
     __asm__ ("mov{" a " %%" z ":%[offset], %[ret] | %[ret], %%" z ":%[offset]}" \
         : [ret] "=r" (ret) \
-        : [offset] "m" ((*(y *) (size_t) Offset))); \
+        : [offset] "m" ((*(y __buildreadseg_star) (size_t) Offset))); \
     return ret; \
 }
 
@@ -410,10 +416,10 @@ Parameters: (FunctionName, DataType, RegisterNumber)
    InstructionSize: b, w, d, q
 
    */
-#define __buildmov(x, y, z) void x(y *Destination, y const *Source, size_t Count) \
+#define __buildmov(x, y, z, a) void x(y *Destination, y const *Source, size_t Count) \
 { \
   __asm__ __volatile__ ( \
-    "rep movs" z \
+    "rep movs{" z "|" a "}" \
        : "=D" (Destination), "=S" (Source), "=c" (Count) \
        : "0" (Destination), "1" (Source), "2" (Count) \
        : "memory"); \
@@ -1015,7 +1021,7 @@ __build_writecr(__writecr8, unsigned __int64, "8")
 __MINGW_EXTENSION void __movsq(unsigned __int64 *Dest, unsigned __int64 const *Source, size_t Count);
 #if !__has_builtin(__movsq)
 __MINGW_EXTENSION __INTRINSICS_USEINLINE
-__buildmov(__movsq, unsigned __int64, "q")
+__buildmov(__movsq, unsigned __int64, "q", "q")
 #endif
 #define __INTRINSIC_DEFINED___movsq
 #endif /* __INTRINSIC_PROLOG */
@@ -1424,6 +1430,123 @@ unsigned char _BitScanReverse64(unsigned __LONG32 *Index, unsigned __int64 Mask)
 #endif /* __INTRINSIC_PROLOG */
 
 #endif /* defined(__aarch64__) || define(_ARM64_) */
+
+#if defined(__arm__) || defined(_ARM_) || defined(__aarch64__) || defined(_ARM64_)
+
+#if __INTRINSIC_PROLOG(_bittest)
+unsigned char _bittest(const __LONG32 *__a, __LONG32 __b);
+#if !__has_builtin(_bittest)
+__INTRINSICS_USEINLINE
+unsigned char _bittest(const __LONG32 *__a, __LONG32 __b)
+{
+    return (*__a >> __b) & 1;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittest
+#endif /* __INTRINSIC_PROLOG */
+
+#if __INTRINSIC_PROLOG(_bittestandset)
+unsigned char _bittestandset(__LONG32 *__a, __LONG32 __b);
+#if !__has_builtin(_bittestandset)
+__INTRINSICS_USEINLINE
+unsigned char _bittestandset(__LONG32 *__a, __LONG32 __b)
+{
+    unsigned char __v = (*__a >> __b) & 1;
+    *__a |= 1UL << __b;
+    return __v;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittestandset
+#endif /* __INTRINSIC_PROLOG */
+
+#if __INTRINSIC_PROLOG(_bittestandreset)
+unsigned char _bittestandreset(__LONG32 *__a, __LONG32 __b);
+#if !__has_builtin(_bittestandreset)
+__INTRINSICS_USEINLINE
+unsigned char _bittestandreset(__LONG32 *__a, __LONG32 __b)
+{
+    unsigned char __v = (*__a >> __b) & 1;
+    *__a &= ~(1UL << __b);
+    return __v;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittestandreset
+#endif /* __INTRINSIC_PROLOG */
+
+#if __INTRINSIC_PROLOG(_bittestandcomplement)
+unsigned char _bittestandcomplement(__LONG32 *a, __LONG32 b);
+#if !__has_builtin(_bittestandcomplement)
+__INTRINSICS_USEINLINE
+unsigned char _bittestandcomplement(__LONG32 *__a, __LONG32 __b)
+{
+    unsigned char __v = (*__a >> __b) & 1;
+    *__a ^= 1UL << __b;
+    return __v;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittestandcomplement
+#endif /* __INTRINSIC_PROLOG */
+
+#endif /* defined(__arm__) || defined(_ARM_) || defined(__aarch64__) || defined(_ARM64_) */
+
+#if defined(__aarch64__) || defined(_ARM64_)
+
+#if __INTRINSIC_PROLOG(_bittest64)
+unsigned char _bittest64(const __int64 *__a, __int64 __b);
+#if !__has_builtin(_bittest64)
+__INTRINSICS_USEINLINE
+unsigned char _bittest64(const __int64 *__a, __int64 __b)
+{
+    return (*__a >> __b) & 1;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittest64
+#endif /* __INTRINSIC_PROLOG */
+
+#if __INTRINSIC_PROLOG(_bittestandset64)
+unsigned char _bittestandset64(__int64 *__a, __int64 __b);
+#if !__has_builtin(_bittestandset64)
+__INTRINSICS_USEINLINE
+unsigned char _bittestandset64(__int64 *__a, __int64 __b)
+{
+    unsigned char __v = (*__a >> __b) & 1;
+    *__a |= 1ULL << __b;
+    return __v;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittestandset64
+#endif /* __INTRINSIC_PROLOG */
+
+#if __INTRINSIC_PROLOG(_bittestandreset64)
+unsigned char _bittestandreset64(__int64 *__a, __int64 __b);
+#if !__has_builtin(_bittestandreset64)
+__INTRINSICS_USEINLINE
+unsigned char _bittestandreset64(__int64 *__a, __int64 __b)
+{
+    unsigned char __v = (*__a >> __b) & 1;
+    *__a &= ~(1ULL << __b);
+    return __v;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittestandreset64
+#endif /* __INTRINSIC_PROLOG */
+
+#if __INTRINSIC_PROLOG(_bittestandcomplement64)
+unsigned char _bittestandcomplement64(__int64 *a, __int64 b);
+#if !__has_builtin(_bittestandcomplement64)
+__INTRINSICS_USEINLINE
+unsigned char _bittestandcomplement64(__int64 *__a, __int64 __b)
+{
+    unsigned char __v = (*__a >> __b) & 1;
+    *__a ^= 1ULL << __b;
+    return __v;
+}
+#endif
+#define __INTRINSIC_DEFINED__bittestandcomplement64
+#endif /* __INTRINSIC_PROLOG */
+
+#endif /* defined(__aarch64__) || define(_ARM64_) */
+
 /* ***************************************************** */
 
 #if defined(__x86_64__) || defined(_AMD64_) || defined(__i386__) || defined(_X86_) || defined(__arm__) || defined(_ARM_) || defined(__aarch64__) || defined(_ARM64_)
@@ -1906,6 +2029,7 @@ void __cpuid(int CPUInfo[4], int InfoType) {
 #define __INTRINSIC_DEFINED___cpuid
 #endif /* __INTRINSIC_PROLOG */
 
+#if (!defined(__GNUC__) || __GNUC__ < 11) && (!defined(__clang__) || __clang_major__ < 19)
 #if __INTRINSIC_PROLOG(__cpuidex)
 void __cpuidex(int CPUInfo[4], int, int);
 #if !__has_builtin(__cpuidex)
@@ -1919,6 +2043,7 @@ void __cpuidex(int CPUInfo[4], int function_id, int subfunction_id) {
 #endif
 #define __INTRINSIC_DEFINED___cpuidex
 #endif /* __INTRINSIC_PROLOG */
+#endif /* __GNUC__ < 11 */
 
 #if __INTRINSIC_PROLOG(__readmsr)
 __MINGW_EXTENSION unsigned __int64 __readmsr(unsigned __LONG32);
@@ -1963,7 +2088,7 @@ void __writemsr(unsigned __LONG32 msr, unsigned __int64 Value)
 void __movsb(unsigned char *Destination, unsigned char const *Source, size_t Count);
 #if !__has_builtin(__movsb)
 __INTRINSICS_USEINLINE
-__buildmov(__movsb, unsigned char, "b")
+__buildmov(__movsb, unsigned char, "b", "b")
 #endif
 #define __INTRINSIC_DEFINED___movsb
 #endif /* __INTRINSIC_PROLOG */
@@ -1972,7 +2097,7 @@ __buildmov(__movsb, unsigned char, "b")
 void __movsw(unsigned short *Dest, unsigned short const *Source, size_t Count);
 #if !__has_builtin(__movsw)
 __INTRINSICS_USEINLINE
-__buildmov(__movsw, unsigned short, "w")
+__buildmov(__movsw, unsigned short, "w", "w")
 #endif
 #define __INTRINSIC_DEFINED___movsw
 #endif /* __INTRINSIC_PROLOG */
@@ -1981,7 +2106,7 @@ __buildmov(__movsw, unsigned short, "w")
 void __movsd(unsigned __LONG32 *Dest, unsigned __LONG32 const *Source, size_t Count);
 #if !__has_builtin(__movsd)
 __INTRINSICS_USEINLINE
-__buildmov(__movsd, unsigned __LONG32, "d")
+__buildmov(__movsd, unsigned __LONG32, "l", "d")
 #endif
 #define __INTRINSIC_DEFINED___movsd
 #endif /* __INTRINSIC_PROLOG */

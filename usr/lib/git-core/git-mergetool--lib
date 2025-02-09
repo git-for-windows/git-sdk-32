@@ -63,7 +63,7 @@ $(list_tool_variants)"
 					preamble=
 				fi
 				shown_any=yes
-				printf "%s%s\n" "$per_line_prefix" "$toolname"
+				printf "%s%-15s  %s\n" "$per_line_prefix" "$toolname" $(diff_mode && diff_cmd_help "$toolname" || merge_cmd_help "$toolname")
 			fi
 		done
 
@@ -97,7 +97,42 @@ merge_mode () {
 	test "$TOOL_MODE" = merge
 }
 
+get_gui_default () {
+	if diff_mode
+	then
+		GUI_DEFAULT_KEY="difftool.guiDefault"
+	else
+		GUI_DEFAULT_KEY="mergetool.guiDefault"
+	fi
+	GUI_DEFAULT_CONFIG_LCASE=$(git config --default false --get "$GUI_DEFAULT_KEY" | tr 'A-Z' 'a-z')
+	if test "$GUI_DEFAULT_CONFIG_LCASE" = "auto"
+	then
+		if test -n "$DISPLAY"
+		then
+			GUI_DEFAULT=true
+		else
+			GUI_DEFAULT=false
+		fi
+	else
+		GUI_DEFAULT=$(git config --default false --bool --get "$GUI_DEFAULT_KEY")
+		subshell_exit_status=$?
+		if test $subshell_exit_status -ne 0
+		then
+			exit $subshell_exit_status
+		fi
+	fi
+	echo $GUI_DEFAULT
+}
+
 gui_mode () {
+	if test -z "$GIT_MERGETOOL_GUI"
+	then
+		GIT_MERGETOOL_GUI=$(get_gui_default)
+		if test $? -ne 0
+		then
+			exit 2
+		fi
+	fi
 	test "$GIT_MERGETOOL_GUI" = true
 }
 
@@ -124,7 +159,7 @@ check_unchanged () {
 }
 
 valid_tool () {
-	setup_tool "$1" && return 0
+	setup_tool "$1" 2>/dev/null && return 0
 	cmd=$(get_merge_tool_cmd "$1")
 	test -n "$cmd"
 }
@@ -162,8 +197,16 @@ setup_tool () {
 		return 1
 	}
 
+	diff_cmd_help () {
+		return 0
+	}
+
 	merge_cmd () {
 		return 1
+	}
+
+	merge_cmd_help () {
+		return 0
 	}
 
 	hide_resolved_enabled () {
@@ -207,7 +250,12 @@ setup_tool () {
 		. "$MERGE_TOOLS_DIR/${tool%[0-9]}"
 	else
 		setup_user_tool
-		return $?
+		rc=$?
+		if test $rc -ne 0
+		then
+			echo >&2 "error: ${TOOL_MODE}tool.$tool.cmd not set for tool '$tool'"
+		fi
+		return $rc
 	fi
 
 	# Now let the user override the default command for the tool.  If
@@ -216,6 +264,7 @@ setup_tool () {
 
 	if ! list_tool_variants | grep -q "^$tool$"
 	then
+		echo "error: unknown tool variant '$tool'" >&2
 		return 1
 	fi
 
@@ -431,7 +480,7 @@ get_merge_tool_path () {
 	merge_tool="$1"
 	if ! valid_tool "$merge_tool"
 	then
-		echo >&2 "Unknown merge tool $merge_tool"
+		echo >&2 "Unknown $TOOL_MODE tool $merge_tool"
 		exit 1
 	fi
 	if diff_mode
@@ -459,6 +508,11 @@ get_merge_tool () {
 	is_guessed=false
 	# Check if a merge tool has been configured
 	merge_tool=$(get_configured_merge_tool)
+	subshell_exit_status=$?
+	if test $subshell_exit_status -gt "1"
+	then
+		exit $subshell_exit_status
+	fi
 	# Try to guess an appropriate merge tool if no tool has been set.
 	if test -z "$merge_tool"
 	then

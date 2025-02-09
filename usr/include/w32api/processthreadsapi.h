@@ -43,7 +43,7 @@ extern "C" {
   WINBASEAPI WINBOOL WINAPI GetThreadTimes (HANDLE hThread, LPFILETIME lpCreationTime, LPFILETIME lpExitTime, LPFILETIME lpKernelTime, LPFILETIME lpUserTime);
   WINBASEAPI DWORD WINAPI GetCurrentProcessorNumber (VOID);
 
-#endif
+#endif /* WINAPI_PARTITION_DESKTOP */
 
 #if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_APP)
   WINBASEAPI WINBOOL WINAPI TerminateProcess (HANDLE hProcess, UINT uExitCode);
@@ -99,11 +99,111 @@ extern "C" {
     DWORD dwProcessId;
     DWORD dwThreadId;
   } PROCESS_INFORMATION, *PPROCESS_INFORMATION, *LPPROCESS_INFORMATION;
+
+  typedef enum _PROCESS_INFORMATION_CLASS {
+    ProcessMemoryPriority,
+    ProcessMemoryExhaustionInfo,
+    ProcessAppMemoryInfo,
+    ProcessInPrivateInfo,
+    ProcessPowerThrottling,
+    ProcessReservedValue1,
+    ProcessTelemetryCoverageInfo,
+    ProcessProtectionLevelInfo,
+    ProcessLeapSecondInfo,
+    ProcessMachineTypeInfo,
+    ProcessInformationClassMax
+  } PROCESS_INFORMATION_CLASS;
+
+  typedef struct _APP_MEMORY_INFORMATION {
+    ULONG64 AvailableCommit;
+    ULONG64 PrivateCommitUsage;
+    ULONG64 PeakPrivateCommitUsage;
+    ULONG64 TotalCommitUsage;
+  } APP_MEMORY_INFORMATION, *PAPP_MEMORY_INFORMATION;
+
+  typedef enum _MACHINE_ATTRIBUTES {
+    UserEnabled = 0x00000001,
+    KernelEnabled = 0x00000002,
+    Wow64Container = 0x00000004
+  } MACHINE_ATTRIBUTES;
+#ifndef __WIDL__
+DEFINE_ENUM_FLAG_OPERATORS(MACHINE_ATTRIBUTES);
 #endif
 
-#if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_DESKTOP)
+  typedef struct _PROCESS_MACHINE_INFORMATION {
+    USHORT ProcessMachine;
+    USHORT Res0;
+    MACHINE_ATTRIBUTES MachineAttributes;
+  } PROCESS_MACHINE_INFORMATION;
+
+#define PME_CURRENT_VERSION 1
+
+  typedef enum _PROCESS_MEMORY_EXHAUSTION_TYPE {
+    PMETypeFailFastOnCommitFailure,
+    PMETypeMax
+  } PROCESS_MEMORY_EXHAUSTION_TYPE, *PPROCESS_MEMORY_EXHAUSTION_TYPE;
+
+#define PME_FAILFAST_ON_COMMIT_FAIL_DISABLE 0x0
+#define PME_FAILFAST_ON_COMMIT_FAIL_ENABLE 0x1
+
+  typedef struct _PROCESS_MEMORY_EXHAUSTION_INFO {
+    USHORT Version;
+    USHORT Reserved;
+    PROCESS_MEMORY_EXHAUSTION_TYPE Type;
+    ULONG_PTR Value;
+  } PROCESS_MEMORY_EXHAUSTION_INFO, *PPROCESS_MEMORY_EXHAUSTION_INFO;
+
+#define PROCESS_POWER_THROTTLING_CURRENT_VERSION 1
+
+#define PROCESS_POWER_THROTTLING_EXECUTION_SPEED 0x1
+#define PROCESS_POWER_THROTTLING_IGNORE_TIMER_RESOLUTION 0x4
+
+#define PROCESS_POWER_THROTTLING_VALID_FLAGS (PROCESS_POWER_THROTTLING_EXECUTION_SPEED | PROCESS_POWER_THROTTLING_IGNORE_TIMER_RESOLUTION)
+
+  typedef struct _PROCESS_POWER_THROTTLING_STATE {
+    ULONG Version;
+    ULONG ControlMask;
+    ULONG StateMask;
+  } PROCESS_POWER_THROTTLING_STATE, *PPROCESS_POWER_THROTTLING_STATE;
+
+  typedef struct PROCESS_PROTECTION_LEVEL_INFORMATION {
+    DWORD ProtectionLevel;
+  } PROCESS_PROTECTION_LEVEL_INFORMATION;
+
+#define PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND 0x1
+#define PROCESS_LEAP_SECOND_INFO_VALID_FLAGS PROCESS_LEAP_SECOND_INFO_FLAG_ENABLE_SIXTY_SECOND
+
+  typedef struct _PROCESS_LEAP_SECOND_INFO {
+    ULONG Flags;
+    ULONG Reserved;
+  } PROCESS_LEAP_SECOND_INFO, *PPROCESS_LEAP_SECOND_INFO;
+
+#if _WIN32_WINNT >= 0x0602
+  WINBASEAPI WINBOOL WINAPI GetProcessInformation (HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, LPVOID ProcessInformation, DWORD ProcessInformationSize);
+  WINBASEAPI WINBOOL WINAPI SetProcessInformation (HANDLE hProcess, PROCESS_INFORMATION_CLASS ProcessInformationClass, LPVOID ProcessInformation, DWORD ProcessInformationSize);
+#endif
+
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN10
+  WINBASEAPI WINBOOL WINAPI GetSystemCpuSetInformation (PSYSTEM_CPU_SET_INFORMATION Information, ULONG BufferLength, PULONG ReturnedLength, HANDLE Process, ULONG Flags);
+  WINBASEAPI WINBOOL WINAPI GetProcessDefaultCpuSets (HANDLE Process, PULONG CpuSetIds, ULONG CpuSetIdCount, PULONG RequiredIdCount);
+  WINBASEAPI WINBOOL WINAPI SetProcessDefaultCpuSets (HANDLE Process, const ULONG *CpuSetIds, ULONG CpuSetIdCount);
+  WINBASEAPI WINBOOL WINAPI GetThreadSelectedCpuSets (HANDLE Thread, PULONG CpuSetIds, ULONG CpuSetIdCount, PULONG RequiredIdCount);
+  WINBASEAPI WINBOOL WINAPI SetThreadSelectedCpuSets (HANDLE Thread, const ULONG *CpuSetIds, ULONG CpuSetIdCount);
+  HRESULT WINAPI GetMachineTypeAttributes (USHORT Machine, MACHINE_ATTRIBUTES *MachineTypeAttributes);
+#endif
+
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN10_FE
+  WINBASEAPI WINBOOL WINAPI GetProcessDefaultCpuSetMasks (HANDLE Process, PGROUP_AFFINITY CpuSetMasks, USHORT CpuSetMaskCount, PUSHORT RequiredMaskCount);
+  WINBASEAPI WINBOOL WINAPI SetProcessDefaultCpuSetMasks (HANDLE Process, PGROUP_AFFINITY CpuSetMasks, USHORT CpuSetMaskCount);
+  WINBASEAPI WINBOOL WINAPI GetThreadSelectedCpuSetMasks (HANDLE Thread, PGROUP_AFFINITY CpuSetMasks, USHORT CpuSetMaskCount, PUSHORT RequiredMaskCount);
+  WINBASEAPI WINBOOL WINAPI SetThreadSelectedCpuSetMasks (HANDLE Thread, PGROUP_AFFINITY CpuSetMasks, USHORT CpuSetMaskCount);
+#endif
 
   typedef struct _PROC_THREAD_ATTRIBUTE_LIST *PPROC_THREAD_ATTRIBUTE_LIST, *LPPROC_THREAD_ATTRIBUTE_LIST;
+
+#endif /* WINAPI_PARTITION_APP */
+
+#if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_DESKTOP)
 
   WINBASEAPI HANDLE WINAPI CreateRemoteThread (HANDLE hProcess, LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId);
   WINBASEAPI WINBOOL WINAPI TerminateThread (HANDLE hThread, DWORD dwExitCode);
@@ -139,7 +239,7 @@ extern "C" {
   WINBASEAPI WINBOOL WINAPI QueryProcessAffinityUpdateMode (HANDLE hProcess, LPDWORD lpdwFlags);
   WINBASEAPI WINBOOL WINAPI UpdateProcThreadAttribute (LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList, DWORD dwFlags, DWORD_PTR Attribute, PVOID lpValue, SIZE_T cbSize, PVOID lpPreviousValue, PSIZE_T lpReturnSize);
 #endif
-#if _WIN32_WINNT >= 0x0602
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN8
   WINBASEAPI WINBOOL WINAPI SetProcessMitigationPolicy (PROCESS_MITIGATION_POLICY MitigationPolicy, PVOID lpBuffer, SIZE_T dwLength);
 
   FORCEINLINE HANDLE GetCurrentProcessToken (VOID)
@@ -166,7 +266,16 @@ extern "C" {
 #define MEMORY_PRIORITY_BELOW_NORMAL  4
 #define MEMORY_PRIORITY_NORMAL        5
 
+#if _WIN32_WINNT >= _WIN32_WINNT_WINBLUE
+  WINBASEAPI WINBOOL WINAPI IsProcessCritical (HANDLE hProcess, PBOOL Critical);
 #endif
+
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN10
+  WINBASEAPI WINBOOL WINAPI SetProtectedPolicy (LPCGUID PolicyGuid, ULONG_PTR PolicyValue, PULONG_PTR OldPolicyValue);
+  WINBASEAPI WINBOOL WINAPI QueryProtectedPolicy (LPCGUID PolicyGuid, PULONG_PTR PolicyValue);
+#endif
+
+#endif /* WINAPI_PARTITION_DESKTOP */
 
 #if WINAPI_FAMILY_PARTITION (WINAPI_PARTITION_APP)
 #ifndef _APISET_EXPORTS_FILTER
@@ -174,7 +283,7 @@ extern "C" {
   WINBASEAPI WINBOOL WINAPI CreateProcessW (LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, WINBOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCWSTR lpCurrentDirectory, LPSTARTUPINFOW lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
 #define CreateProcess __MINGW_NAME_AW(CreateProcess)
 
-  #if _WIN32_WINNT >= 0x0601
+#if _WIN32_WINNT >= 0x0601
   WINBASEAPI WINBOOL WINAPI GetThreadIdealProcessorEx (HANDLE hThread, PPROCESSOR_NUMBER lpIdealProcessor);
   WINBASEAPI VOID WINAPI GetCurrentProcessorNumberEx (PPROCESSOR_NUMBER ProcNumber);
 #endif
@@ -210,8 +319,44 @@ extern "C" {
 #if _WIN32_WINNT >= 0x0601
   WINBASEAPI WINBOOL WINAPI SetThreadIdealProcessorEx (HANDLE hThread, PPROCESSOR_NUMBER lpIdealProcessor, PPROCESSOR_NUMBER lpPreviousIdealProcessor);
 #endif
-
+#if NTDDI_VERSION >= NTDDI_WIN10_VB
+  WINBASEAPI WINBOOL WINAPI SetProcessDynamicEHContinuationTargets (HANDLE Process, USHORT NumberOfTargets, PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET Targets);
 #endif
+
+#if NTDDI_VERSION >= NTDDI_WIN10_MN
+  typedef enum _QUEUE_USER_APC_FLAGS {
+    QUEUE_USER_APC_FLAGS_NONE = 0x0,
+    QUEUE_USER_APC_FLAGS_SPECIAL_USER_APC = 0x1
+  } QUEUE_USER_APC_FLAGS;
+
+  typedef struct _APC_CALLBACK_DATA {
+    ULONG_PTR Parameter;
+    PCONTEXT ContextRecord;
+    ULONG_PTR Reserved0;
+    ULONG_PTR Reserved1;
+  } APC_CALLBACK_DATA, *PAPC_CALLBACK_DATA;
+
+  WINBASEAPI WINBOOL WINAPI QueueUserAPC2 (PAPCFUNC ApcRoutine, HANDLE Thread, ULONG_PTR Data, QUEUE_USER_APC_FLAGS Flags);
+#endif
+
+#if NTDDI_VERSION >= NTDDI_WIN10_FE
+  WINBASEAPI WINBOOL WINAPI SetProcessDynamicEnforcedCetCompatibleRanges (HANDLE Process, USHORT NumberOfRanges, PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE Ranges);
+#endif
+
+#define THREAD_POWER_THROTTLING_CURRENT_VERSION 1
+#define THREAD_POWER_THROTTLING_EXECUTION_SPEED 0x1
+#define THREAD_POWER_THROTTLING_VALID_FLAGS (THREAD_POWER_THROTTLING_EXECUTION_SPEED)
+
+  typedef struct _THREAD_POWER_THROTTLING_STATE {
+    ULONG Version;
+    ULONG ControlMask;
+    ULONG StateMask;
+  } THREAD_POWER_THROTTLING_STATE;
+
+#endif /* WINAPI_PARTITION_APP */
+
+  WINBASEAPI HRESULT WINAPI SetThreadDescription (HANDLE hThread, PCWSTR lpThreadDescription);
+  WINBASEAPI HRESULT WINAPI GetThreadDescription (HANDLE hThread, PWSTR *ppszThreadDescription);
 
 #ifdef __cplusplus
 }

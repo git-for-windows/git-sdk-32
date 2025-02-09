@@ -1,5 +1,5 @@
 /* Default linker script, for normal executables */
-/* Copyright (C) 2014-2021 Free Software Foundation, Inc.
+/* Copyright (C) 2014-2025 Free Software Foundation, Inc.
    Copying and distribution of this script, with or without modification,
    are permitted in any medium without royalty provided the copyright
    notice and this notice are preserved.  */
@@ -20,6 +20,37 @@ SECTIONS
      *(.gnu.linkonce.t.*)
     *(.glue_7t)
     *(.glue_7)
+    KEEP (*(SORT_NONE(.fini)))
+    /* ??? Why is .gcc_exc here?  */
+     *(.gcc_exc)
+    PROVIDE (etext = .);
+    PROVIDE (_etext = .);
+     KEEP (*(.gcc_except_table))
+  }
+  /* The Cygwin32 library uses a section to avoid copying certain data
+     on fork.  This used to be named ".data".  The linker used
+     to include this between __data_start__ and __data_end__, but that
+     breaks building the cygwin32 dll.  Instead, we name the section
+     ".data_cygwin_nocopy" and explicitly include it after __data_end__. */
+  .data BLOCK(__section_alignment__) :
+  {
+    __data_start__ = . ;
+    *(.data)
+    *(.data2)
+    *(SORT(.data$*))
+    KEEP(*(.jcr))
+    __data_end__ = . ;
+    *(.data_cygwin_nocopy)
+  }
+  .rdata BLOCK(__section_alignment__) :
+  {
+    *(.rdata)
+	     *(SORT(.rdata$*))
+    . = ALIGN(4);
+    __rt_psrelocs_start = .;
+    KEEP(*(.rdata_runtime_pseudo_reloc))
+    __rt_psrelocs_end = .;
+    /* .ctors & .dtors */
        /* Note: we always define __CTOR_LIST__ and ___CTOR_LIST__ here,
           we do not PROVIDE them.  This is because the ctors.o startup
 	  code in libgcc defines them as common symbols, with the
@@ -54,42 +85,30 @@ SECTIONS
        KEEP(*(.dtor));
        KEEP(*(SORT_BY_NAME(.dtors.*)));
        LONG (0);
-    KEEP (*(SORT_NONE(.fini)))
-    /* ??? Why is .gcc_exc here?  */
-     *(.gcc_exc)
-    PROVIDE (etext = .);
-    PROVIDE (_etext = .);
-     KEEP (*(.gcc_except_table))
+    /* .CRT */
+    ___crt_xc_start__ = . ;
+    KEEP (*(SORT(.CRT$XC*)))  /* C initialization */
+    ___crt_xc_end__ = . ;
+    ___crt_xi_start__ = . ;
+    KEEP (*(SORT(.CRT$XI*)))  /* C++ initialization */
+    ___crt_xi_end__ = . ;
+    ___crt_xl_start__ = . ;
+    KEEP (*(SORT(.CRT$XL*)))  /* TLS callbacks */
+    /* ___crt_xl_end__ is defined in the TLS Directory support code */
+    ___crt_xp_start__ = . ;
+    KEEP (*(SORT(.CRT$XP*)))  /* Pre-termination */
+    ___crt_xp_end__ = . ;
+    ___crt_xt_start__ = . ;
+    KEEP (*(SORT(.CRT$XT*)))  /* Termination */
+    ___crt_xt_end__ = . ;
+    ___crt_xd_start__ = . ;
+    KEEP (*(SORT(.CRT$XD*)))  /* Dynamic TLS Initializer */
+    ___crt_xd_end__ = . ;
   }
-  /* The Cygwin32 library uses a section to avoid copying certain data
-     on fork.  This used to be named ".data".  The linker used
-     to include this between __data_start__ and __data_end__, but that
-     breaks building the cygwin32 dll.  Instead, we name the section
-     ".data_cygwin_nocopy" and explicitly include it after __data_end__. */
-  .data BLOCK(__section_alignment__) :
-  {
-    __data_start__ = . ;
-    *(.data)
-    *(.data2)
-    *(SORT(.data$*))
-    KEEP(*(.jcr))
-    __data_end__ = . ;
-    *(.data_cygwin_nocopy)
-  }
-  .rdata BLOCK(__section_alignment__) :
-  {
-    *(.rdata)
-	     *(SORT(.rdata$*))
-    . = ALIGN(4);
-    __rt_psrelocs_start = .;
-    KEEP(*(.rdata_runtime_pseudo_reloc))
-    __rt_psrelocs_end = .;
-  }
-  __rt_psrelocs_size = __rt_psrelocs_end - __rt_psrelocs_start;
-  ___RUNTIME_PSEUDO_RELOC_LIST_END__ = .;
-  __RUNTIME_PSEUDO_RELOC_LIST_END__ = .;
-  ___RUNTIME_PSEUDO_RELOC_LIST__ = . - __rt_psrelocs_size;
-  __RUNTIME_PSEUDO_RELOC_LIST__ = . - __rt_psrelocs_size;
+  ___RUNTIME_PSEUDO_RELOC_LIST_END__ = __rt_psrelocs_end;
+  __RUNTIME_PSEUDO_RELOC_LIST_END__ = __rt_psrelocs_end;
+  ___RUNTIME_PSEUDO_RELOC_LIST__ = __rt_psrelocs_start;
+  __RUNTIME_PSEUDO_RELOC_LIST__ = __rt_psrelocs_start;
   .eh_frame BLOCK(__section_alignment__) :
   {
     KEEP(*(.eh_frame*))
@@ -114,9 +133,10 @@ SECTIONS
     *(.debug$S)
     *(.debug$T)
     *(.debug$F)
-    *(.drectve)
+     *(.drectve)
      *(.note.GNU-stack)
      *(.gnu.lto_*)
+     *(.gnu_object_only)
   }
   .idata BLOCK(__section_alignment__) :
   {
@@ -132,24 +152,6 @@ SECTIONS
     __IAT_end__ = .;
     KEEP (SORT(*)(.idata$6))
     KEEP (SORT(*)(.idata$7))
-  }
-  .CRT BLOCK(__section_alignment__) :
-  {
-    ___crt_xc_start__ = . ;
-    KEEP (*(SORT(.CRT$XC*)))  /* C initialization */
-    ___crt_xc_end__ = . ;
-    ___crt_xi_start__ = . ;
-    KEEP (*(SORT(.CRT$XI*)))  /* C++ initialization */
-    ___crt_xi_end__ = . ;
-    ___crt_xl_start__ = . ;
-    KEEP (*(SORT(.CRT$XL*)))  /* TLS callbacks */
-    /* ___crt_xl_end__ is defined in the TLS Directory support code */
-    ___crt_xp_start__ = . ;
-    KEEP (*(SORT(.CRT$XP*)))  /* Pre-termination */
-    ___crt_xp_end__ = . ;
-    ___crt_xt_start__ = . ;
-    KEEP (*(SORT(.CRT$XT*)))  /* Termination */
-    ___crt_xt_end__ = . ;
   }
   /* Windows TLS expects .tls$AAA to be at the start and .tls$ZZZ to be
      at the end of section.  This is important because _tls_start MUST
@@ -209,14 +211,6 @@ SECTIONS
   .zdebug_pubnames BLOCK(__section_alignment__) (NOLOAD) :
   {
     *(.zdebug_pubnames)
-  }
-  .debug_pubtypes BLOCK(__section_alignment__) (NOLOAD) :
-  {
-    *(.debug_pubtypes)
-  }
-  .zdebug_pubtypes BLOCK(__section_alignment__) (NOLOAD) :
-  {
-    *(.zdebug_pubtypes)
   }
   /* DWARF 2.  */
   .debug_info BLOCK(__section_alignment__) (NOLOAD) :
@@ -308,15 +302,15 @@ SECTIONS
   {
     *(.zdebug_varnames)
   }
-  .debug_macro BLOCK(__section_alignment__) (NOLOAD) :
-  {
-    *(.debug_macro)
-  }
-  .zdebug_macro BLOCK(__section_alignment__) (NOLOAD) :
-  {
-    *(.zdebug_macro)
-  }
   /* DWARF 3.  */
+  .debug_pubtypes BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_pubtypes)
+  }
+  .zdebug_pubtypes BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_pubtypes)
+  }
   .debug_ranges BLOCK(__section_alignment__) (NOLOAD) :
   {
     *(.debug_ranges)
@@ -333,6 +327,67 @@ SECTIONS
   .zdebug_types BLOCK(__section_alignment__) (NOLOAD) :
   {
     *(.zdebug_types .gnu.linkonce.wt.*)
+  }
+  /* DWARF 5.  */
+  .debug_addr BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_addr)
+  }
+  .zdebug_addr BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_addr)
+  }
+  .debug_line_str BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_line_str)
+  }
+  .zdebug_line_str BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_line_str)
+  }
+  .debug_loclists BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_loclists)
+  }
+  .zdebug_loclists BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_loclists)
+  }
+  .debug_macro BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_macro)
+  }
+  .zdebug_macro BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_macro)
+  }
+  .debug_names BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_names)
+  }
+  .zdebug_names BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_names)
+  }
+  .debug_rnglists BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_rnglists)
+  }
+  .zdebug_rnglists BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_rnglists)
+  }
+  .debug_str_offsets BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_str_offsets)
+  }
+  .zdebug_str_offsets BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.zdebug_str_offsets)
+  }
+  .debug_sup BLOCK(__section_alignment__) (NOLOAD) :
+  {
+    *(.debug_sup)
   }
   /* For Go and Rust.  */
   .debug_gdb_scripts BLOCK(__section_alignment__) (NOLOAD) :

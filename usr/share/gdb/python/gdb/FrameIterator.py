@@ -1,4 +1,4 @@
-# Copyright (C) 2013-2021 Free Software Foundation, Inc.
+# Copyright (C) 2013-2023 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,8 +13,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import gdb
-import itertools
 
 class FrameIterator(object):
     """A gdb.Frame iterator.  Iterates over gdb.Frames or objects that
@@ -32,7 +30,7 @@ class FrameIterator(object):
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         """next implementation.
 
         Returns:
@@ -43,9 +41,3 @@ class FrameIterator(object):
             raise StopIteration
         self.frame = result.older()
         return result
-
-    # Python 3.x requires __next__(self) while Python 2.x requires
-    # next(self).  Define next(self), and for Python 3.x create this
-    # wrapper.
-    def __next__(self):
-        return self.next()

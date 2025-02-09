@@ -1,5 +1,5 @@
 # Pretty-printers for bounds registers.
-# Copyright (C) 2013-2021 Free Software Foundation, Inc.
+# Copyright (C) 2013-2023 Free Software Foundation, Inc.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,30 +14,26 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys
-
+import gdb
 import gdb.printing
 
-if sys.version_info[0] > 2:
-    # Python 3 removed basestring and long
-    basestring = str
-    long = int
 
-class MpxBound128Printer:
+class MpxBound128Printer(gdb.ValuePrinter):
     """Adds size field to a mpx __gdb_builtin_type_bound128 type."""
 
-    def __init__ (self, val):
-        self.val = val
+    def __init__(self, val):
+        self.__val = val
 
-    def to_string (self):
-        upper = self.val["ubound"]
-        lower = self.val["lbound"]
-        size  = (long) ((upper) - (lower))
+    def to_string(self):
+        upper = self.__val["ubound"]
+        lower = self.__val["lbound"]
+        size = upper - lower
         if size > -1:
             size = size + 1
-        result = '{lbound = %s, ubound = %s} : size %s' % (lower, upper, size)
+        result = "{lbound = %s, ubound = %s} : size %s" % (lower, upper, size)
         return result
 
-gdb.printing.add_builtin_pretty_printer ('mpx_bound128',
-                                         '^builtin_type_bound128',
-                                         MpxBound128Printer)
+
+gdb.printing.add_builtin_pretty_printer(
+    "mpx_bound128", "^builtin_type_bound128", MpxBound128Printer
+)

@@ -128,10 +128,6 @@ extern "C" {
   DWORD IMAGEAPI WINAPI UnDecorateSymbolName(PCSTR DecoratedName,PSTR UnDecoratedName,DWORD UndecoratedLength,DWORD Flags);
   DWORD IMAGEAPI WINAPI UnDecorateSymbolNameW(PCWSTR DecoratedName,PWSTR UnDecoratedName,DWORD UndecoratedLength,DWORD Flags);
 
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define UnDecorateSymbolName UnDecorateSymbolNameW
-#endif
-
 #define DBHHEADER_DEBUGDIRS 0x1
 #define DBHHEADER_CVMISC 0x2
 
@@ -192,7 +188,12 @@ extern "C" {
     DWORD64 KiUserExceptionDispatcher;
     DWORD64 StackBase;
     DWORD64 StackLimit;
-    DWORD64 Reserved[5];
+    DWORD BuildVersion;
+    DWORD RetpolineStubFunctionTableSize;
+    DWORD64 RetpolineStubFunctionTable;
+    DWORD RetpolineStubOffset;
+    DWORD RetpolineStubSize;
+    DWORD64 Reserved0[2];
   } KDHELP64,*PKDHELP64;
 
 #ifdef _IMAGEHLP64
@@ -241,6 +242,25 @@ extern "C" {
     DWORD64 Reserved[3];
     KDHELP64 KdHelp;
   } STACKFRAME64,*LPSTACKFRAME64;
+
+#define INLINE_FRAME_CONTEXT_INIT   0
+#define INLINE_FRAME_CONTEXT_IGNORE 0xFFFFFFFF
+
+  typedef struct _tagSTACKFRAME_EX {
+    ADDRESS64 AddrPC;
+    ADDRESS64 AddrReturn;
+    ADDRESS64 AddrFrame;
+    ADDRESS64 AddrStack;
+    ADDRESS64 AddrBStore;
+    PVOID FuncTableEntry;
+    DWORD64 Params[4];
+    WINBOOL Far;
+    WINBOOL Virtual;
+    DWORD64 Reserved[3];
+    KDHELP64 KdHelp;
+    DWORD StackFrameSize;
+    DWORD InlineFrameContext;
+  } STACKFRAME_EX,*LPSTACKFRAME_EX;
 
 #ifdef _IMAGEHLP64
 #define STACKFRAME STACKFRAME64
@@ -336,6 +356,18 @@ GetModuleBaseRoutine,PTRANSLATE_ADDRESS_ROUTINE TranslateAddress);
 #define SYMFLAG_VIRTUAL 0x00001000
 #define SYMFLAG_THUNK 0x00002000
 #define SYMFLAG_TLSREL 0x00004000
+#define SYMFLAG_SLOT 0x00008000
+#define SYMFLAG_ILREL 0x00010000
+#define SYMFLAG_METADATA 0x00020000
+#define SYMFLAG_CLR_TOKEN 0x00040000
+#define SYMFLAG_NULL 0x00080000
+#define SYMFLAG_FUNC_NO_RETURN 0x00100000
+#define SYMFLAG_SYNTHETIC_ZEROBASE 0x00200000
+#define SYMFLAG_PUBLIC_CODE 0x00400000
+#define SYMFLAG_REGREL_ALIASINDIR 0x00800000
+#define SYMFLAG_FIXUP_ARM64X 0x01000000
+#define SYMFLAG_GLOBAL 0x02000000
+#define SYMFLAG_RESET 0x80000000
 
   typedef enum {
     SymNone = 0,
@@ -411,7 +443,14 @@ GetModuleBaseRoutine,PTRANSLATE_ADDRESS_ROUTINE TranslateAddress);
     WINBOOL TypeInfo;
     WINBOOL SourceIndexed;
     WINBOOL Publics;
+    DWORD MachineType;
+    DWORD Reserved;
   } IMAGEHLP_MODULE64,*PIMAGEHLP_MODULE64;
+
+  typedef struct _IMAGEHLP_MODULE64_EX {
+    IMAGEHLP_MODULE64 Module;
+    DWORD RegionFlags;
+  } IMAGEHLP_MODULE64_EX,*PIMAGEHLP_MODULE64_EX;
 
   typedef struct _IMAGEHLP_MODULE64W {
     DWORD SizeOfStruct;
@@ -437,7 +476,14 @@ GetModuleBaseRoutine,PTRANSLATE_ADDRESS_ROUTINE TranslateAddress);
     WINBOOL TypeInfo;
     WINBOOL SourceIndexed;
     WINBOOL Publics;
+    DWORD MachineType;
+    DWORD Reserved;
   } IMAGEHLP_MODULEW64,*PIMAGEHLP_MODULEW64;
+
+  typedef struct _IMAGEHLP_MODULEW64_EX {
+    IMAGEHLP_MODULEW64 Module;
+    DWORD RegionFlags;
+  } IMAGEHLP_MODULEW64_EX,*PIMAGEHLP_MODULEW64_EX;
 
 #ifdef _IMAGEHLP64
 #define IMAGEHLP_MODULE IMAGEHLP_MODULE64
@@ -499,6 +545,14 @@ GetModuleBaseRoutine,PTRANSLATE_ADDRESS_ROUTINE TranslateAddress);
     PCHAR FileName;
     DWORD Address;
   } IMAGEHLP_LINE,*PIMAGEHLP_LINE;
+
+  typedef struct _IMAGEHLP_LINEW {
+    DWORD SizeOfStruct;
+    PVOID Key;
+    DWORD LineNumber;
+    PWSTR FileName;
+    DWORD Address;
+  } IMAGEHLP_LINEW,*PIMAGEHLP_LINEW;
 #endif
 
   typedef struct _SOURCEFILE {
@@ -696,10 +750,6 @@ typedef struct _SYMSRV_INDEX_INFOW {
   WINBOOL IMAGEAPI EnumerateLoadedModules64(HANDLE hProcess,PENUMLOADED_MODULES_CALLBACK64 EnumLoadedModulesCallback,PVOID UserContext);
   WINBOOL IMAGEAPI EnumerateLoadedModulesW64(HANDLE hProcess,PENUMLOADED_MODULES_CALLBACKW64 EnumLoadedModulesCallback,PVOID UserContext);
 
-#ifdef DBGHELP_TRANSLATE_TCHAR
-    #define EnumerateLoadedModules64      EnumerateLoadedModulesW64
-#endif
-
 #ifdef _IMAGEHLP64
 #define EnumerateLoadedModules EnumerateLoadedModules64
 #else
@@ -779,8 +829,10 @@ typedef struct _SYMSRV_INDEX_INFOW {
 
 #ifdef _IMAGEHLP64
 #define SymGetLineFromAddr SymGetLineFromAddr64
+#define SymGetLineFromAddrW SymGetLineFromAddrW64
 #else
   WINBOOL IMAGEAPI SymGetLineFromAddr(HANDLE hProcess,DWORD dwAddr,PDWORD pdwDisplacement,PIMAGEHLP_LINE Line);
+  WINBOOL IMAGEAPI SymGetLineFromAddrW(HANDLE hProcess,DWORD dwAddr,PDWORD pdwDisplacement,PIMAGEHLP_LINEW Line);
 #endif
 
   WINBOOL IMAGEAPI SymGetLineFromName64(HANDLE hProcess,PCSTR ModuleName,PCSTR FileName,DWORD dwLineNumber,PLONG plDisplacement,PIMAGEHLP_LINE64 Line);
@@ -848,7 +900,7 @@ typedef struct _SYMSRV_INDEX_INFOW {
 #endif
 
   WINBOOL IMAGEAPI SymRegisterCallback64(HANDLE hProcess,PSYMBOL_REGISTERED_CALLBACK64 CallbackFunction,ULONG64 UserContext);
-  WINBOOL IMAGEAPI SymRegisterCallback64W(HANDLE hProcess,PSYMBOL_REGISTERED_CALLBACK64 CallbackFunction,ULONG64 UserContext);
+  WINBOOL IMAGEAPI SymRegisterCallbackW64(HANDLE hProcess,PSYMBOL_REGISTERED_CALLBACK64 CallbackFunction,ULONG64 UserContext);
 
   WINBOOL IMAGEAPI SymRegisterFunctionEntryCallback64(HANDLE hProcess,PSYMBOL_FUNCENTRY_CALLBACK64 CallbackFunction,ULONG64 UserContext);
 
@@ -1137,6 +1189,11 @@ typedef struct _SYMSRV_INDEX_INFOW {
     ThreadInfoListStream = 17,
     HandleOperationListStream = 18,
     TokenStream = 19,
+    JavaScriptDataStream = 20,
+    SystemMemoryInfoStream = 21,
+    ProcessVmCountersStream = 22,
+    IptTraceStream = 23,
+    ThreadNamesStream = 24,
     ceStreamNull = 0x8000,
     ceStreamSystemInfo = 0x8001,
     ceStreamException = 0x8002,
@@ -1283,6 +1340,25 @@ typedef struct _SYMSRV_INDEX_INFOW {
     WINBOOL ClientPointers;
   } MINIDUMP_EXCEPTION_INFORMATION64,*PMINIDUMP_EXCEPTION_INFORMATION64;
 
+  typedef enum _MINIDUMP_HANDLE_OBJECT_INFORMATION_TYPE {
+    MiniHandleObjectInformationNone,
+    MiniThreadInformation1,
+    MiniMutantInformation1,
+    MiniMutantInformation2,
+    MiniProcessInformation1,
+    MiniProcessInformation2,
+    MiniEventInformation1,
+    MiniSectionInformation1,
+    MiniSemaphoreInformation1,
+    MiniHandleObjectInformationTypeMax
+  } MINIDUMP_HANDLE_OBJECT_INFORMATION_TYPE;
+
+  typedef struct _MINIDUMP_HANDLE_OBJECT_INFORMATION {
+    RVA NextInfoRva;
+    ULONG32 InfoType;
+    ULONG32 SizeOfInfo;
+  } MINIDUMP_HANDLE_OBJECT_INFORMATION;
+
   typedef struct _MINIDUMP_HANDLE_DESCRIPTOR {
     ULONG64 Handle;
     RVA TypeNameRva;
@@ -1376,12 +1452,20 @@ typedef struct _SYMSRV_INDEX_INFOW {
     IoWriteAllCallback,
     IoFinishCallback,
     ReadMemoryFailureCallback,
-    SecondaryFlagsCallback
+    SecondaryFlagsCallback,
+    IsProcessSnapshotCallback,
+    VmStartCallback,
+    VmQueryCallback,
+    VmPreReadCallback,
+    VmPostReadCallback
   } MINIDUMP_CALLBACK_TYPE;
 
   typedef struct _MINIDUMP_THREAD_CALLBACK {
     ULONG ThreadId;
     HANDLE ThreadHandle;
+#if defined(__aarch64__)
+    ULONG Pad;
+#endif
     CONTEXT Context;
     ULONG SizeOfContext;
     ULONG64 StackBase;
@@ -1391,6 +1475,9 @@ typedef struct _SYMSRV_INDEX_INFOW {
   typedef struct _MINIDUMP_THREAD_EX_CALLBACK {
     ULONG ThreadId;
     HANDLE ThreadHandle;
+#if defined(__aarch64__)
+    ULONG Pad;
+#endif
     CONTEXT Context;
     ULONG SizeOfContext;
     ULONG64 StackBase;
@@ -1531,7 +1618,13 @@ typedef struct _MINIDUMP_MEMORY_INFO_LIST {
     MiniDumpWithFullAuxiliaryState           = 0x00008000,
     MiniDumpWithPrivateWriteCopyMemory       = 0x00010000,
     MiniDumpIgnoreInaccessibleMemory         = 0x00020000,
-    MiniDumpWithTokenInformation             = 0x00040000
+    MiniDumpWithTokenInformation             = 0x00040000,
+    MiniDumpWithModuleHeaders                = 0x00080000,
+    MiniDumpFilterTriage                     = 0x00100000,
+    MiniDumpWithAvxXStateContext             = 0x00200000,
+    MiniDumpWithIptTrace                     = 0x00400000,
+    MiniDumpScanInaccessiblePartialPages     = 0x00800000,
+    MiniDumpValidTypeFlags                   = 0x00ffffff
   } MINIDUMP_TYPE;
 
 #define MINIDUMP_THREAD_INFO_ERROR_THREAD    0x00000001
@@ -1870,10 +1963,6 @@ WINBOOL WINAPI SymSrvGetFileIndexStringW(
   DWORD Flags
 );
 
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvGetFileIndexString SymSrvGetFileIndexStringW
-#endif
-
 WINBOOL WINAPI SymSrvGetFileIndexInfo(
   PCSTR File,
   PSYMSRV_INDEX_INFO Info,
@@ -1885,10 +1974,6 @@ WINBOOL WINAPI SymSrvGetFileIndexInfoW(
   PSYMSRV_INDEX_INFOW Info,
   DWORD Flags
 );
-
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvGetFileIndexInfo SymSrvGetFileIndexInfoW
-#endif
 
 WINBOOL WINAPI SymSrvGetFileIndexes(
   PCTSTR File,
@@ -1906,10 +1991,6 @@ WINBOOL WINAPI SymSrvGetFileIndexesW(
   DWORD Flags
 );
 
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvGetFileIndexes SymSrvGetFileIndexesW
-#endif
-
 PCSTR WINAPI SymSrvGetSupplement(
   HANDLE hProcess,
   PCSTR SymPath,
@@ -1924,10 +2005,6 @@ PCWSTR WINAPI SymSrvGetSupplementW(
   PCWSTR File
 );
 
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvGetSupplement SymSrvGetSupplementW
-#endif
-
 WINBOOL WINAPI SymSrvIsStore(
   HANDLE hProcess,
   PCSTR path
@@ -1937,10 +2014,6 @@ WINBOOL WINAPI SymSrvIsStoreW(
   HANDLE hProcess,
   PCWSTR path
 );
-
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvIsStore SymSrvIsStoreW
-#endif
 
 PCSTR WINAPI SymSrvStoreFile(
   HANDLE hProcess,
@@ -1962,10 +2035,6 @@ PCWSTR WINAPI SymSrvStoreFileW(
 #define SYMSTOREOPT_POINTER 0x08
 #define SYMSTOREOPT_PASS_IF_EXISTS 0x40
 
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvStoreFile SymSrvStoreFileW
-#endif
-
 PCSTR WINAPI SymSrvStoreSupplement(
   HANDLE hProcess,
   const PCTSTR SymPath,
@@ -1981,10 +2050,6 @@ PCWSTR WINAPI SymSrvStoreSupplementW(
   PCWSTR File,
   DWORD Flags
 );
-
-#ifdef DBGHELP_TRANSLATE_TCHAR
-#define SymSrvStoreSupplement SymSrvStoreSupplementW
-#endif
 
 PCSTR WINAPI SymSrvDeltaName(
   HANDLE hProcess,
@@ -2003,8 +2068,103 @@ PCWSTR WINAPI SymSrvDeltaNameW(
 );
 
 #ifdef DBGHELP_TRANSLATE_TCHAR
+#define SymInitialize SymInitializeW
+#define SymAddSymbol SymAddSymbolW
+#define SymDeleteSymbol SymDeleteSymbolW
+#define SearchTreeForFile SearchTreeForFileW
+#define UnDecorateSymbolName UnDecorateSymbolNameW
+#define SymGetLineFromName64 SymGetLineFromNameW64
+#define SymGetLineFromAddr64 SymGetLineFromAddrW64
+#define SymGetLineFromInlineContext SymGetLineFromInlineContextW
+#define SymGetLineNext64 SymGetLineNextW64
+#define SymGetLinePrev64 SymGetLinePrevW64
+#define SymFromName SymFromNameW
+#define SymFindExecutableImage SymFindExecutableImageW
+#define FindExecutableImageEx FindExecutableImageExW
+#define SymSearch SymSearchW
+#define SymEnumLines SymEnumLinesW
+#define SymEnumSourceLines SymEnumSourceLinesW
+#define SymGetTypeFromName SymGetTypeFromNameW
+#define SymEnumSymbolsForAddr SymEnumSymbolsForAddrW
+#define SymFromAddr SymFromAddrW
+#define SymFromInlineContext SymFromInlineContextW
+#define SymMatchString SymMatchStringW
+#define SymEnumSourceFiles SymEnumSourceFilesW
+#define SymEnumSymbols SymEnumSymbolsW
+#define SymEnumSymbolsEx SymEnumSymbolsExW
+#define SymLoadModuleEx SymLoadModuleExW
+#define SymSetSearchPath SymSetSearchPathW
+#define SymGetSearchPath SymGetSearchPathW
+#define EnumDirTree EnumDirTreeW
+#define SymFromToken SymFromTokenW
+#define SymFromIndex SymFromIndexW
+#define SymGetScope SymGetScopeW
+#define SymNext SymNextW
+#define SymPrev SymPrevW
+#define SymEnumTypes SymEnumTypesW
+#define SymEnumTypesByName SymEnumTypesByNameW
+#define SymRegisterCallback64 SymRegisterCallbackW64
+#define SymFindDebugInfoFile SymFindDebugInfoFileW
+#define FindDebugInfoFileEx FindDebugInfoFileExW
+#define SymFindFileInPath SymFindFileInPathW
+#define SymEnumerateModules64 SymEnumerateModulesW64
+#define SymSetHomeDirectory SymSetHomeDirectoryW
+#define SymGetHomeDirectory SymGetHomeDirectoryW
+#define SymGetSourceFile SymGetSourceFileW
+#define SymGetSourceFileToken SymGetSourceFileTokenW
+#define SymGetSourceFileFromToken SymGetSourceFileFromTokenW
+#define SymGetSourceVarFromToken SymGetSourceVarFromTokenW
+#define SymGetSourceFileTokenByTokenName SymGetSourceFileTokenByTokenNameW
+#define SymGetFileLineOffsets64 SymGetFileLineOffsetsW64
+#define SymFindFileInPath SymFindFileInPathW
+#define SymMatchFileName SymMatchFileNameW
+#define SymGetSourceFileFromTokenByTokenName SymGetSourceFileFromTokenByTokenNameW
+#define SymGetModuleInfo64 SymGetModuleInfoW64
+#define SymAddSourceStream SymAddSourceStreamW
+#define SymSrvIsStore SymSrvIsStoreW
 #define SymSrvDeltaName SymSrvDeltaNameW
-#endif
+#define SymSrvGetSupplement SymSrvGetSupplementW
+#define SymSrvStoreSupplement SymSrvStoreSupplementW
+#define SymSrvGetFileIndexes SymSrvGetFileIndexesW
+#define SymSrvGetFileIndexString SymSrvGetFileIndexStringW
+#define SymSrvStoreFile SymSrvStoreFileW
+#define SymGetSymbolFile SymGetSymbolFileW
+#define EnumerateLoadedModules64 EnumerateLoadedModulesW64
+#define EnumerateLoadedModulesEx EnumerateLoadedModulesExW
+#define SymSrvGetFileIndexInfo SymSrvGetFileIndexInfoW
+
+#define IMAGEHLP_LINE64 IMAGEHLP_LINEW64
+#define PIMAGEHLP_LINE64 PIMAGEHLP_LINEW64
+#define SYMBOL_INFO SYMBOL_INFOW
+#define PSYMBOL_INFO PSYMBOL_INFOW
+#define SYMBOL_INFO_PACKAGE SYMBOL_INFO_PACKAGEW
+#define PSYMBOL_INFO_PACKAGE PSYMBOL_INFO_PACKAGEW
+#define FIND_EXE_FILE_CALLBACK FIND_EXE_FILE_CALLBACKW
+#define PFIND_EXE_FILE_CALLBACK PFIND_EXE_FILE_CALLBACKW
+#define SYM_ENUMERATESYMBOLS_CALLBACK SYM_ENUMERATESYMBOLS_CALLBACKW
+#define PSYM_ENUMERATESYMBOLS_CALLBACK PSYM_ENUMERATESYMBOLS_CALLBACKW
+#define SRCCODEINFO SRCCODEINFOW
+#define PSRCCODEINFO PSRCCODEINFOW
+#define SOURCEFILE SOURCEFILEW
+#define PSOURCEFILE PSOURCEFILEW
+#define SYM_ENUMSOURECFILES_CALLBACK SYM_ENUMSOURCEFILES_CALLBACKW
+#define PSYM_ENUMSOURCEFILES_CALLBACK PSYM_ENUMSOURECFILES_CALLBACKW
+#define IMAGEHLP_CBA_EVENT IMAGEHLP_CBA_EVENTW
+#define PIMAGEHLP_CBA_EVENT PIMAGEHLP_CBA_EVENTW
+#define PENUMDIRTREE_CALLBACK PENUMDIRTREE_CALLBACKW
+#define IMAGEHLP_DEFERRED_SYMBOL_LOAD64 IMAGEHLP_DEFERRED_SYMBOL_LOADW64
+#define PIMAGEHLP_DEFERRED_SYMBOL_LOAD64 PIMAGEHLP_DEFERRED_SYMBOL_LOADW64
+#define PFIND_DEBUG_FILE_CALLBACK PFIND_DEBUG_FILE_CALLBACKW
+#define PFINDFILEINPATHCALLBACK PFINDFILEINPATHCALLBACKW
+#define IMAGEHLP_MODULE64 IMAGEHLP_MODULEW64
+#define PIMAGEHLP_MODULE64 PIMAGEHLP_MODULEW64
+#define SYMSRV_INDEX_INFO SYMSRV_INDEX_INFOW
+#define PSYMSRV_INDEX_INFO PSYMSRV_INDEX_INFOW
+
+#define PSYMBOLSERVERPROC PSYMBOLSERVERPROCW
+#define PSYMBOLSERVERPINGPROC PSYMBOLSERVERPINGPROCW
+
+#endif /* DBGHELP_TRANSLATE_TCHAR */
 
 #include <poppack.h>
 

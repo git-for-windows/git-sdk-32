@@ -155,4 +155,4 @@ if ($pacnew.Length -gt 0) {
 }
 
 # Wrapping up: re-install mingw-w64-git-extra
-bash -lc "pacman -S --overwrite=\* --noconfirm mingw-w64-i686-git-extra"
+bash -lc "pacman -Sy --overwrite=\* --noconfirm mingw-w64-i686-git-extra"

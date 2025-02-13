@@ -2,7 +2,7 @@
 libcurl
 
 %VERSION%
-8.12.0-1
+8.12.1-1
 
 %BASE%
 curl
@@ -17,16 +17,16 @@ https://curl.se/
 i686
 
 %BUILDDATE%
-1738748728
+1739432596
 
 %INSTALLDATE%
-1738811953
+1739442093
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-881482
+974201
 
 %REASON%
 1
@@ -38,6 +38,7 @@ libraries
 spdx:MIT
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%
@@ -50,4 +51,7 @@ libpsl
 libssh2
 openssl
 zlib
+
+%XDATA%
+pkgtype=split
 

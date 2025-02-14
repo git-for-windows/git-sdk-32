@@ -1,8 +1,8 @@
 %NAME%
-mingw-w64-i686-git-doc-html
+mingw-w64-i686-git
 
 %VERSION%
-2.48.0.rc2.windows.1.472.g0c796d3013.20250123145154-1
+2.48.1.1.2bd190bcd2-1
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://git-for-windows.github.io/
 any
 
 %BUILDDATE%
-1737644162
+1739444438
 
 %INSTALLDATE%
-1737648296
+1739503173
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-17950659
+54679616
 
 %LICENSE%
 GPL2
@@ -53,4 +53,7 @@ perl-TermReadKey
 
 %OPTDEPENDS%
 mintty
+
+%XDATA%
+pkgtype=split
 

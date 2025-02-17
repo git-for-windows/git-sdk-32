@@ -14,6 +14,7 @@ env:
   GIT_CONFIG_PARAMETERS: "'user.name=Git for Windows Build Agent' 'user.email=ci@git-for-windows.build' 'windows.sdk64.path=' 'windows.sdk32.path=${{ github.workspace }}' 'http.sslbackend=schannel' 'core.autocrlf=false' 'checkout.workers=16'"
   HOME: "${{ github.workspace }}\\home\\git-ci"
   MSYSTEM: MSYS
+  PACKAGES_TO_REMOVE: ${{ inputs.packages }}
 
 jobs:
   remove-packages:
@@ -30,11 +31,9 @@ jobs:
         run: "usr\\bin\\bash.exe -lc 'cygpath -aw /usr/bin >>$GITHUB_PATH && cygpath -aw /cmd >>$GITHUB_PATH'"
       - name: remove packages
         shell: bash
-        env:
-          pkgs: ${{ inputs.packages }}
         run: |
           set -x &&
-          pacman --noconfirm -Rns ${pkgs}
+          pacman --noconfirm -Rns ${PACKAGES_TO_REMOVE}
       - name: commit & push SDK
         shell: bash
         run: |

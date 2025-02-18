@@ -20,16 +20,13 @@ i686
 1739828374
 
 %INSTALLDATE%
-1739848753
+1739859434
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
 427685
-
-%REASON%
-1
 
 %GROUPS%
 perl-modules

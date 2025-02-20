@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.4 -->
-<!-- CreationDate: Wed Jan 18 08:46:05 2023 -->
+<!-- CreationDate: Thu Sep  5 09:31:30 2024 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -22,6 +22,7 @@
 
 <a href="#NAME">NAME</a><br>
 <a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#NOTICE">NOTICE</a><br>
 <a href="#DESCRIPTION">DESCRIPTION</a><br>
 <a href="#EDITING">EDITING</a><br>
 <a href="#OPTIONS">OPTIONS</a><br>
@@ -41,7 +42,7 @@
 
 
 <p style="margin-left:11%; margin-top: 1em">nano -
-Nano&rsquo;s ANOther editor, inspired by Pico</p>
+Nano&rsquo;s ANOther text editor, inspired by Pico</p>
 
 <h2>SYNOPSIS
 <a name="SYNOPSIS"></a>
@@ -55,8 +56,27 @@ Nano&rsquo;s ANOther editor, inspired by Pico</p>
 
 <p style="margin-left:11%; margin-top: 1em"><b>nano</b>
 [<i>options</i>]
-[[<b>+</b>[<b>crCR</b>](<b>/</b>|<b>?</b>)<i>string</i>]
+[[<b>+</b>[<b>crCR</b>]{<b>/</b>|<b>?</b>}<i>string</i>]
 <i>file</i>]...</p>
+
+<h2>NOTICE
+<a name="NOTICE"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Since version
+8.0, to be newcomer friendly, <b>^F</b> starts a forward
+search, <b>^B</b> starts a backward search, <b>M-F</b>
+searches the next occurrence forward, and <b>M-B</b>
+searches the next occurrence backward. If you want those
+keystrokes to do what they did before version 8.0, add the
+following lines at the end of your <i>nanorc</i> file:</p>
+
+<p style="margin-left:17%; margin-top: 1em"><b>bind ^F
+forward main <br>
+bind ^B back main <br>
+bind M-F formatter main <br>
+bind M-B linter main</b></p>
 
 <h2>DESCRIPTION
 <a name="DESCRIPTION"></a>
@@ -64,22 +84,24 @@ Nano&rsquo;s ANOther editor, inspired by Pico</p>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>nano</b> is
-a small and friendly editor. It copies the look and feel of
-Pico, but is free software, and implements several features
-that Pico lacks, such as: opening multiple files, scrolling
-per line, undo/redo, syntax coloring, line numbering, and
-soft-wrapping overlong lines.</p>
+a small and friendly text editor. It copies the look and
+feel of Pico, but is free software, and implements several
+features that Pico lacks, such as: opening multiple files,
+scrolling per line, undo/redo, syntax coloring, line
+numbering, and soft-wrapping overlong lines.</p>
 
 <p style="margin-left:11%; margin-top: 1em">When giving a
 filename on the command line, the cursor can be put on a
 specific line by adding the line number with a plus sign
 (<b>+</b>) before the filename, and even in a specific
-column by adding it with a comma. (Negative numbers count
-from the end of the file or line.) The cursor can be put on
-the first or last occurrence of a specific string by
-specifying that string after <b>+/</b> or <b>+?</b> before
-the filename. The string can be made case sensitive and/or
-caused to be interpreted as a regular expression by
+column by adding it with a comma. Negative numbers count
+from the end of the file or line.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The cursor can
+be put on the first or last occurrence of a specific string
+by specifying that string after <b>+/</b> or <b>+?</b>
+before the filename. The string can be made case sensitive
+and/or caused to be interpreted as a regular expression by
 inserting <b>c</b> and/or <b>r</b> after the <b>+</b> sign.
 These search modes can be explicitly disabled by using the
 uppercase variant of those letters: <b>C</b> and/or
@@ -105,26 +127,26 @@ and moving around in a file is straightforward: typing the
 letters and using the normal cursor movement keys. Commands
 are entered by using the Control (^) and the Alt or Meta
 (M-) keys. Typing <b>^K</b> deletes the current line and
-puts it in the cutbuffer. Consecutive <b>^K</b>s will put
-all deleted lines together in the cutbuffer. Any cursor
-movement or executing any other command will cause the next
-<b>^K</b> to overwrite the cutbuffer. A <b>^U</b> will paste
-the current contents of the cutbuffer at the current cursor
+puts it in the cutbuffer. Consecutive <b>^K</b>s put all
+deleted lines together in the cutbuffer. Any cursor movement
+or executing any other command causes the next <b>^K</b> to
+overwrite the cutbuffer. A <b>^U</b> pastes the current
+contents of the cutbuffer at the current cursor
 position.</p>
 
 <p style="margin-left:11%; margin-top: 1em">When a more
 precise piece of text needs to be cut or copied, you can
 mark its start with <b>^6</b>, move the cursor to its end
-(the marked text will be highlighted), and then use
-<b>^K</b> to cut it, or <b>M-6</b> to copy it to the
-cutbuffer. You can also save the marked text to a file with
-<b>^O</b>, or spell check it with <b>^T^T</b>.</p>
+(the marked text is highlighted), and then use <b>^K</b> to
+cut it, or <b>M-6</b> to copy it to the cutbuffer. You can
+also save the marked text to a file with <b>^O</b>, or spell
+check it with <b>^T^T</b>.</p>
 
 <p style="margin-left:11%; margin-top: 1em">On some
 terminals, text can be selected also by holding down Shift
 while using the arrow keys. Holding down the Ctrl or Alt key
-too will increase the stride. Any cursor movement without
-Shift being held will cancel such a selection.</p>
+too increases the stride. Any cursor movement without Shift
+being held cancels such a selection.</p>
 
 <p style="margin-left:11%; margin-top: 1em">Any valid
 Unicode code point can be inserted into the buffer by typing
@@ -150,10 +172,10 @@ file -- see <b>nanorc</b>(5).</p>
 
 <p style="margin-left:22%;">Make the Home key smarter. When
 Home is pressed anywhere but at the very beginning of
-non-whitespace characters on a line, the cursor will jump to
+non-whitespace characters on a line, the cursor jumps to
 that beginning (either forwards or backwards). If the cursor
-is already at that position, it will jump to the true
-beginning of the line.</p>
+is already at that position, it jumps to the true beginning
+of the line.</p>
 
 <p style="margin-left:11%;"><b>-B</b>, <b>--backup</b></p>
 
@@ -175,10 +197,11 @@ specified <i>directory</i>.</p>
 <b>--boldtext</b></p>
 
 <p style="margin-left:22%;">For the interface, use bold
-instead of reverse video. This will be overridden by setting
-the options <b>titlecolor</b>, <b>statuscolor</b>,
-<b>keycolor</b>, <b>functioncolor</b>, <b>numbercolor</b>,
-and/or <b>selectedcolor</b> in your nanorc file. See
+instead of reverse video. This can be overridden for
+specific elements by setting the options <b>titlecolor</b>,
+<b>statuscolor</b>, <b>promptcolor</b>, <b>minicolor</b>,
+<b>keycolor</b>, <b>numbercolor</b>, and/or
+<b>selectedcolor</b> in your nanorc file. See
 <b>nanorc</b>(5).</p>
 
 <p style="margin-left:11%;"><b>-E</b>,
@@ -186,7 +209,8 @@ and/or <b>selectedcolor</b> in your nanorc file. See
 
 <p style="margin-left:22%;">Convert each typed tab to
 spaces -- to the number of spaces that a tab at that
-position would take up.</p>
+position would take up. (Note: pasted tabs are not
+converted.)</p>
 
 <p style="margin-left:11%;"><b>-F</b>,
 <b>--multibuffer</b></p>
@@ -227,10 +251,10 @@ stripecolor</b> in your <i>nanorc</i> file.)</p>
 <p style="margin-left:22%;">Interpret escape sequences
 directly, instead of asking <b>ncurses</b> to translate
 them. (If you need this option to get some keys to work
-properly, it means that the terminfo terminal description
-that is used does not fully match the actual behavior of
-your terminal. This can happen when you ssh into a BSD
-machine, for example.) Using this option disables
+properly, it means that the <b>terminfo</b> terminal
+description that is used does not fully match the actual
+behavior of your terminal. This can happen when you ssh into
+a BSD machine, for example.) Using this option disables
 <b>nano</b>&rsquo;s mouse support.</p>
 
 <p style="margin-left:11%;"><b>-L</b>,
@@ -299,8 +323,7 @@ beginning with &rsquo;r&rsquo; (e.g. &quot;rnano&quot;).</p>
 rows lines that exceed the screen&rsquo;s width. (You can
 make this soft-wrapping occur at whitespace instead of
 rudely at the screen&rsquo;s edge, by using also
-<b>--atblanks</b>.) (The old short option, <b>-$</b>, is
-deprecated.)</p>
+<b>--atblanks</b>.)</p>
 
 <p style="margin-left:11%;"><b>-T&nbsp;</b><i>number</i>,
 <b>--tabsize=</b><i>number</i></p>
@@ -444,7 +467,7 @@ gets a mark in the margin.)</p>
 <p style="margin-left:22%;">Enable mouse support, if
 available for your system. When enabled, mouse clicks can be
 used to place the cursor, set the mark (with a double
-click), and execute shortcuts. The mouse will work in the X
+click), and execute shortcuts. The mouse works in the X
 Window System, and on the console when gpm is running. Text
 can still be selected through dragging by holding down the
 Shift key.</p>
@@ -453,11 +476,11 @@ Shift key.</p>
 
 <p style="margin-left:22%;">Treat any name given on the
 command line as a new file. This allows <b>nano</b> to write
-to named pipes: it will start with a blank buffer, and will
-write to the pipe when the user saves the &quot;file&quot;.
-This way <b>nano</b> can be used as an editor in combination
-with for instance <b>gpg</b> without having to write
-sensitive data to disk first.</p>
+to named pipes: it starts with a blank buffer, and writes to
+the pipe when the user saves the &quot;file&quot;. This way
+<b>nano</b> can be used as an editor in combination with for
+instance <b>gpg</b> without having to write sensitive data
+to disk first.</p>
 
 
 <p style="margin-left:11%;"><b>-o&nbsp;</b><i>directory</i>,
@@ -470,9 +493,11 @@ chroot.</p>
 <p style="margin-left:11%;"><b>-p</b>,
 <b>--preserve</b></p>
 
-<p style="margin-left:22%;">Preserve the XON and XOFF
-sequences (<b>^Q</b> and <b>^S</b>) so they will be caught
-by the terminal.</p>
+<p style="margin-left:22%;">Preserve the XOFF and XON
+sequences (<b>^S</b> and <b>^Q</b>) so that they are caught
+by the terminal (stopping and resuming the output). Note
+that option <b>-/</b> (<b>--modernbindings</b>) overrides
+this.</p>
 
 <p style="margin-left:11%;"><b>-q</b>,
 <b>--indicator</b></p>
@@ -487,8 +512,8 @@ buffer is covered by the viewport.</p>
 
 <p style="margin-left:22%;">Set the target width for
 justifying and automatic hard-wrapping at this <i>number</i>
-of columns. If the value is 0 or less, wrapping will occur
-at the width of the screen minus <i>number</i> columns,
+of columns. If the value is 0 or less, wrapping occurs at
+the width of the screen minus <i>number</i> columns,
 allowing the wrap point to vary along with the width of the
 screen if the screen is resized. The default value is
 <b>-8</b>.</p>
@@ -542,11 +567,31 @@ lines at the bottom of the screen.</p>
 <p style="margin-left:22%;">Make Ctrl+Right and Ctrl+Delete
 stop at word ends instead of beginnings.</p>
 
+<p style="margin-left:11%;"><b>-z</b>,
+<b>--listsyntaxes</b></p>
+
+<p style="margin-left:22%;">List the names of the available
+syntaxes and exit.</p>
+
 <p style="margin-left:11%;"><b>-!</b>, <b>--magic</b></p>
 
 <p style="margin-left:22%;">When neither the file&rsquo;s
 name nor its first line give a clue, try using libmagic to
 determine the applicable syntax.</p>
+
+<p style="margin-left:11%;"><b>-@</b>,
+<b>--colonparsing</b></p>
+
+<p style="margin-left:22%;">When a filename given on the
+command line ends in a colon plus digits and this filename
+does not exist, then snip the colon plus digits and
+understand the digits as a line number. If the trimmed
+filename does not exist either, then repeat the process and
+understand the obtained two numbers as line and column
+number. But if the doubly trimmed filename does not exist
+either, then forget the trimming and accept the original
+filename as is. To disable this colon parsing for some file,
+use <b>+1</b> or similar before the relevant filename.</p>
 
 <p style="margin-left:11%;"><b>-%</b>,
 <b>--stateflags</b></p>
@@ -564,7 +609,7 @@ the center of the title bar.</p>
 <p style="margin-left:22%;">Suppress the title bar and
 instead show information about the current buffer at the
 bottom of the screen, in the space for the status bar. In
-this &quot;minibar&quot; the filename is shown on the left,
+this &quot;mini bar&quot; the filename is shown on the left,
 followed by an asterisk if the buffer has been modified. On
 the right are displayed the current line and column number,
 the code of the character under the cursor (in Unicode
@@ -591,6 +636,22 @@ upon the next keystroke. With <b>M-Z</b> the title bar plus
 status bar can be toggled. With <b>M-X</b> the help
 lines.</p>
 
+<p style="margin-left:11%;"><b>-/</b>,
+<b>--modernbindings</b></p>
+
+<p style="margin-left:22%;">Use key bindings similar to the
+ones that most modern programs use: <b>^X</b> cuts,
+<b>^C</b> copies, <b>^V</b> pastes, <b>^Z</b> undoes,
+<b>^Y</b> redoes, <b>^F</b> searches forward, <b>^G</b>
+searches next, <b>^S</b> saves, <b>^O</b> opens a file,
+<b>^Q</b> quits, and (when the terminal permits) <b>^H</b>
+shows help. Furthermore, <b>^A</b> sets the mark, <b>^R</b>
+makes replacements, <b>^D</b> searches previous, <b>^P</b>
+shows the position, <b>^T</b> goes to a line, <b>^W</b>
+writes out a file, and <b>^E</b> executes a command. Note
+that this overrides option <b>-p</b>
+(<b>--preserve</b>).</p>
+
 <h2>TOGGLES
 <a name="TOGGLES"></a>
 </h2>
@@ -616,9 +677,9 @@ menu only.</p>
 
 
 <p style="margin-left:11%; margin-top: 1em">When
-<b>--rcfile</b> is given, <b>nano</b> will read just the
+<b>--rcfile</b> is given, <b>nano</b> reads just the
 specified file for setting its options and syntaxes and key
-bindings. Without that option, <b>nano</b> will read two
+bindings. Without that option, <b>nano</b> reads two
 configuration files: first the system&rsquo;s <i>nanorc</i>
 (if it exists), and then the user&rsquo;s <i>nanorc</i> (if
 it exists), either <i>~/.nanorc</i> or
@@ -636,31 +697,43 @@ for available syntax-coloring definitions.</p>
 </h2>
 
 
-<p style="margin-left:11%; margin-top: 1em">Option
-<b>-z</b> (<b>--suspendable</b>) has been removed.
-Suspension is enabled by default, reachable via <b>^T^Z</b>.
-(If you want a plain <b>^Z</b> to suspend nano, add <b>bind
-^Z suspend main</b> to your nanorc.)</p>
+<p style="margin-left:11%; margin-top: 1em">Suspension is
+enabled by default, reachable via <b>^T^Z</b>. (If you want
+a plain <b>^Z</b> to suspend nano, add <b>bind ^Z suspend
+main</b> to your nanorc.)</p>
+
+<p style="margin-left:11%; margin-top: 1em">At a Yes-No
+prompt, <b>^Y</b> can be used for &quot;Yes&quot;, <b>^N</b>
+for &quot;No&quot;, and <b>^A</b> for &quot;All&quot;. These
+unlisted bindings work in any locale.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When you want
+to copy marked text from <b>nano</b> to the system&rsquo;s
+clipboard, see one of the examples in the <b>nanorc</b>(5)
+man page.</p>
 
 <p style="margin-left:11%; margin-top: 1em">If no
 alternative spell checker command is specified on the
 command line nor in one of the <i>nanorc</i> files,
-<b>nano</b> will check the <b>SPELL</b> environment variable
-for one.</p>
+<b>nano</b> checks the <b>SPELL</b> environment variable for
+one.</p>
 
 <p style="margin-left:11%; margin-top: 1em">In some cases
-<b>nano</b> will try to dump the buffer into an emergency
-file. This will happen mainly if <b>nano</b> receives a
-SIGHUP or SIGTERM or runs out of memory. It will write the
-buffer into a file named <i>nano.save</i> if the buffer
-didn&rsquo;t have a name already, or will add a
-&quot;.save&quot; suffix to the current filename. If an
-emergency file with that name already exists in the current
-directory, it will add &quot;.save&quot; plus a number (e.g.
-&quot;.save.1&quot;) to the current filename in order to
-make it unique. In multibuffer mode, <b>nano</b> will write
-all the open buffers to their respective emergency
-files.</p>
+<b>nano</b> tries to dump the buffer into an emergency file.
+This happens mainly if <b>nano</b> receives a SIGHUP or
+SIGTERM or runs out of memory. It writes the buffer into a
+file named <i>nano.save</i> if the buffer didn&rsquo;t have
+a name already, or adds a &quot;.save&quot; suffix to the
+current filename. If an emergency file with that name
+already exists in the current directory, it adds
+&quot;.save&quot; plus a number (e.g. &quot;.save.1&quot;)
+to the current filename in order to make it unique. In
+multibuffer mode, <b>nano</b> writes all open buffers to
+their respective emergency files.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If you have any
+question about how to use <b>nano</b> in some specific
+situation, you can ask on <i>help-nano@gnu.org</i>.</p>
 
 <h2>BUGS
 <a name="BUGS"></a>
@@ -678,9 +751,9 @@ any other bugs that you encounter via: <i><br>
 https://savannah.gnu.org/bugs/?group=nano</i>.</p>
 
 <p style="margin-left:11%; margin-top: 1em">When nano
-crashes, it will save any modified buffers to emergency
-.save files. If you are able to reproduce the crash and you
-want to get a backtrace, define the environment variable
+crashes, it saves any modified buffers to emergency .save
+files. If you are able to reproduce the crash and you want
+to get a backtrace, define the environment variable
 <b>NANO_NOCATCH</b>.</p>
 
 <h2>HOMEPAGE

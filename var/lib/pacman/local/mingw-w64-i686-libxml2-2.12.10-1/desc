@@ -2,7 +2,7 @@
 mingw-w64-i686-libxml2
 
 %VERSION%
-2.12.9-2
+2.12.10-1
 
 %BASE%
 mingw-w64-libxml2
@@ -17,16 +17,16 @@ https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
 any
 
 %BUILDDATE%
-1730679576
+1739908326
 
 %INSTALLDATE%
-1731122377
+1740021636
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/acafab9b/11655209338)
+CI (msys2/msys2-autobuild/a187346d/13398655217)
 
 %SIZE%
-7158688
+6462963
 
 %REASON%
 1
@@ -45,4 +45,7 @@ mingw-w64-i686-zlib
 
 %OPTDEPENDS%
 mingw-w64-i686-python: Python bindings
+
+%XDATA%
+pkgtype=split
 

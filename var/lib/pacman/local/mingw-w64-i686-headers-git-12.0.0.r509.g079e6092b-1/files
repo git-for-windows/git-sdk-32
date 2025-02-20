@@ -1656,6 +1656,10 @@ mingw32/include/webservices.h
 mingw32/include/werapi.h
 mingw32/include/wfext.h
 mingw32/include/wia.h
+mingw32/include/wia_lh.h
+mingw32/include/wia_lh.idl
+mingw32/include/wia_xp.h
+mingw32/include/wia_xp.idl
 mingw32/include/wiadef.h
 mingw32/include/wiadevd.h
 mingw32/include/wiavideo.h

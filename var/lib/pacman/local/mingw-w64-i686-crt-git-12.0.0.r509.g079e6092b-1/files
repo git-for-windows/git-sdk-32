@@ -433,6 +433,7 @@ mingw32/lib/libwer.a
 mingw32/lib/libwevtapi.a
 mingw32/lib/libwevtfwd.a
 mingw32/lib/libwiadss.a
+mingw32/lib/libwiaguid.a
 mingw32/lib/libwimgapi.a
 mingw32/lib/libwin32k.a
 mingw32/lib/libwin32spl.a

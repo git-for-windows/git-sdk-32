@@ -2,7 +2,7 @@
 mingw-w64-i686-zstd
 
 %VERSION%
-1.5.6-2
+1.5.7-1
 
 %BASE%
 mingw-w64-zstd
@@ -17,16 +17,16 @@ https://facebook.github.io/zstd/
 any
 
 %BUILDDATE%
-1712089895
+1740042497
 
 %INSTALLDATE%
-1712200513
+1740108088
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/8d08599c/8529031523)
+CI (msys2/msys2-autobuild/a187346d/13431620315)
 
 %SIZE%
-3584929
+3740642
 
 %REASON%
 1
@@ -40,4 +40,7 @@ pgp
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs
+
+%XDATA%
+pkgtype=pkg
 

@@ -2,7 +2,7 @@
 mingw-w64-i686-pcre2
 
 %VERSION%
-10.44-1
+10.45-1
 
 %BASE%
 mingw-w64-pcre2
@@ -17,16 +17,16 @@ https://pcre.org/
 any
 
 %BUILDDATE%
-1717797774
+1740130174
 
 %INSTALLDATE%
-1717816497
+1740194285
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-6800793
+7248956
 
 %LICENSE%
 BSD
@@ -40,4 +40,7 @@ mingw-w64-i686-gcc-libs
 mingw-w64-i686-bzip2
 mingw-w64-i686-wineditline
 mingw-w64-i686-zlib
+
+%XDATA%
+pkgtype=pkg
 

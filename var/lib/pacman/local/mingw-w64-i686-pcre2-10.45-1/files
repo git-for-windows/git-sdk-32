@@ -28,7 +28,7 @@ mingw32/lib/pkgconfig/libpcre2-posix.pc
 mingw32/share/
 mingw32/share/doc/
 mingw32/share/doc/pcre2/
-mingw32/share/doc/pcre2/AUTHORS
+mingw32/share/doc/pcre2/AUTHORS.md
 mingw32/share/doc/pcre2/ChangeLog
 mingw32/share/doc/pcre2/html/
 mingw32/share/doc/pcre2/html/index.html
@@ -95,10 +95,12 @@ mingw32/share/doc/pcre2/html/pcre2_set_max_pattern_length.html
 mingw32/share/doc/pcre2/html/pcre2_set_max_varlookbehind.html
 mingw32/share/doc/pcre2/html/pcre2_set_newline.html
 mingw32/share/doc/pcre2/html/pcre2_set_offset_limit.html
+mingw32/share/doc/pcre2/html/pcre2_set_optimize.html
 mingw32/share/doc/pcre2/html/pcre2_set_parens_nest_limit.html
 mingw32/share/doc/pcre2/html/pcre2_set_recursion_limit.html
 mingw32/share/doc/pcre2/html/pcre2_set_recursion_memory_management.html
 mingw32/share/doc/pcre2/html/pcre2_set_substitute_callout.html
+mingw32/share/doc/pcre2/html/pcre2_set_substitute_case_callout.html
 mingw32/share/doc/pcre2/html/pcre2_substitute.html
 mingw32/share/doc/pcre2/html/pcre2_substring_copy_byname.html
 mingw32/share/doc/pcre2/html/pcre2_substring_copy_bynumber.html
@@ -137,10 +139,11 @@ mingw32/share/doc/pcre2/pcre2.txt
 mingw32/share/doc/pcre2/pcre2grep.txt
 mingw32/share/doc/pcre2/pcre2test.txt
 mingw32/share/doc/pcre2/README
+mingw32/share/doc/pcre2/SECURITY.md
 mingw32/share/licenses/
 mingw32/share/licenses/pcre2/
 mingw32/share/licenses/pcre2/COPYING
-mingw32/share/licenses/pcre2/LICENCE
+mingw32/share/licenses/pcre2/LICENCE.md
 mingw32/share/man/
 mingw32/share/man/man1/
 mingw32/share/man/man1/pcre2-config.1.gz
@@ -208,10 +211,12 @@ mingw32/share/man/man3/pcre2_set_max_pattern_length.3.gz
 mingw32/share/man/man3/pcre2_set_max_varlookbehind.3.gz
 mingw32/share/man/man3/pcre2_set_newline.3.gz
 mingw32/share/man/man3/pcre2_set_offset_limit.3.gz
+mingw32/share/man/man3/pcre2_set_optimize.3.gz
 mingw32/share/man/man3/pcre2_set_parens_nest_limit.3.gz
 mingw32/share/man/man3/pcre2_set_recursion_limit.3.gz
 mingw32/share/man/man3/pcre2_set_recursion_memory_management.3.gz
 mingw32/share/man/man3/pcre2_set_substitute_callout.3.gz
+mingw32/share/man/man3/pcre2_set_substitute_case_callout.3.gz
 mingw32/share/man/man3/pcre2_substitute.3.gz
 mingw32/share/man/man3/pcre2_substring_copy_byname.3.gz
 mingw32/share/man/man3/pcre2_substring_copy_bynumber.3.gz

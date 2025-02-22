@@ -1,8 +1,8 @@
 %NAME%
-libpcre2_8
+libpcre2_16
 
 %VERSION%
-10.44-1
+10.45-1
 
 %BASE%
 pcre2
@@ -17,16 +17,16 @@ https://www.pcre.org/
 i686
 
 %BUILDDATE%
-1717799149
+1740130103
 
 %INSTALLDATE%
-1717816496
+1740194285
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-619893
+635221
 
 %REASON%
 1
@@ -38,8 +38,12 @@ libraries
 BSD
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%
 gcc-libs
+
+%XDATA%
+pkgtype=split
 

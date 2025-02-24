@@ -2,7 +2,7 @@
 mingw-w64-i686-odt2txt
 
 %VERSION%
-0.5-3
+0.5-4
 
 %BASE%
 mingw-w64-odt2txt
@@ -17,25 +17,29 @@ https://github.com/dstosberg/odt2txt/
 any
 
 %BUILDDATE%
-1667043493
+1740308469
 
 %INSTALLDATE%
-1667102899
+1740367441
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/1fd41adb/3351250837)
+CI (msys2/msys2-autobuild/a187346d/13482354922)
 
 %SIZE%
-69251
+70746
 
 %LICENSE%
 GPL2
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%
 mingw-w64-i686-libiconv
 mingw-w64-i686-libzip
-mingw-w64-i686-pcre
+mingw-w64-i686-pcre2
+
+%XDATA%
+pkgtype=pkg
 

@@ -952,8 +952,10 @@ mingw32/include/mobsync.h
 mingw32/include/moniker.h
 mingw32/include/mpeg2bits.h
 mingw32/include/mpeg2data.h
+mingw32/include/mpeg2data.idl
 mingw32/include/mpeg2psiparser.h
 mingw32/include/mpeg2structs.h
+mingw32/include/mpeg2structs.idl
 mingw32/include/mprapi.h
 mingw32/include/mprerror.h
 mingw32/include/mq.h

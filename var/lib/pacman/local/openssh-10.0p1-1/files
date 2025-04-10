@@ -22,6 +22,7 @@ usr/lib/ssh/sftp-server.exe
 usr/lib/ssh/ssh-keysign.exe
 usr/lib/ssh/ssh-pkcs11-helper.exe
 usr/lib/ssh/ssh-sk-helper.exe
+usr/lib/ssh/sshd-auth.exe
 usr/lib/ssh/sshd-session.exe
 usr/share/
 usr/share/licenses/
@@ -52,5 +53,5 @@ var/empty/
 
 %BACKUP%
 etc/ssh/ssh_config	1482fb6e5a9f5917237105517da016f3
-etc/ssh/sshd_config	50395ec6404e38a9fbb487fdbb0c5959
+etc/ssh/sshd_config	aa1bd7377148be98728dde0afc87a2a9
 

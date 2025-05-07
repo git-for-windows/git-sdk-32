@@ -2,7 +2,7 @@
 mingw-w64-i686-gcc-libs
 
 %VERSION%
-15.1.0-1
+15.1.0-2
 
 %BASE%
 mingw-w64-gcc
@@ -17,16 +17,16 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1745588605
+1746544170
 
 %INSTALLDATE%
-1745811618
+1746589209
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/e8d10d7e/14666019130)
+CI (msys2/msys2-autobuild/3a5fc4c4/14863131114)
 
 %SIZE%
-3596388
+3595876
 
 %LICENSE%
 spdx:GPL-3.0-or-later WITH GCC-exception-3.1 AND LGPL-2.1-or-later

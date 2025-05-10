@@ -2,7 +2,7 @@
 mingw-w64-i686-mpdecimal
 
 %VERSION%
-4.0.0-1
+4.0.1-1
 
 %BASE%
 mingw-w64-mpdecimal
@@ -17,22 +17,22 @@ https://www.bytereef.org/mpdecimal/index.html
 any
 
 %BUILDDATE%
-1707583310
+1746737959
 
 %INSTALLDATE%
-1707621190
+1746848130
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/d4515ba2/7856135944)
+CI (msys2/msys2-autobuild/3a5fc4c4/14915932705)
 
 %SIZE%
-984973
+993348
 
 %REASON%
 1
 
 %LICENSE%
-custom
+spdx:BSD-2-Clause
 
 %VALIDATION%
 sha256
@@ -40,4 +40,7 @@ pgp
 
 %DEPENDS%
 mingw-w64-i686-gcc-libs
+
+%XDATA%
+pkgtype=pkg
 

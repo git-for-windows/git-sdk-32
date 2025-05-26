@@ -2,7 +2,7 @@
 mingw-w64-i686-winpthreads-git
 
 %VERSION%
-12.0.0.r735.g4a3edb6f8-1
+12.0.0.r747.g1a99f8514-1
 
 %BASE%
 mingw-w64-winpthreads-git
@@ -17,13 +17,13 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1748038955
+1748186219
 
 %INSTALLDATE%
-1748144781
+1748231117
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/999e4e93/15219840106)
+CI (msys2/msys2-autobuild/776a26e0/15239120451)
 
 %SIZE%
 455697
@@ -40,7 +40,7 @@ pgp
 
 %DEPENDS%
 mingw-w64-i686-crt-git
-mingw-w64-i686-libwinpthread-git=12.0.0.r735.g4a3edb6f8
+mingw-w64-i686-libwinpthread-git=12.0.0.r747.g1a99f8514
 
 %CONFLICTS%
 mingw-w64-i686-winpthreads

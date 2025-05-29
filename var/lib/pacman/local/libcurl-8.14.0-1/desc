@@ -2,7 +2,7 @@
 libcurl
 
 %VERSION%
-8.13.0-1
+8.14.0-1
 
 %BASE%
 curl
@@ -17,16 +17,16 @@ https://curl.se/
 i686
 
 %BUILDDATE%
-1743599439
+1748425324
 
 %INSTALLDATE%
-1743651135
+1748490247
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1001530
+1026841
 
 %REASON%
 1

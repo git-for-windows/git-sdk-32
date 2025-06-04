@@ -211,9 +211,7 @@ You must stage at least 1 file before you can commit.
 	# Strip trailing whitespace
 	regsub -all -line {[ \t\r]+$} $msg {} msg
 	# Strip comment lines
-	global comment_string
-	set cmt_rx [strcat {(^|\n)} [regsub -all {\W} $comment_string {\\&}] {[^\n]*}]
-	regsub -all $cmt_rx $msg {\1} msg
+	regsub -all {(^|\n)#[^\n]*} $msg {\1} msg
 	# Strip leading empty lines
 	regsub {^\n*} $msg {} msg
 	# Compress consecutive empty lines

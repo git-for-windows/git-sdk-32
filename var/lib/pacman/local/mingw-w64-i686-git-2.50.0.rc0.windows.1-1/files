@@ -91,6 +91,9 @@ mingw32/libexec/git-core/mergetools/winmerge
 mingw32/libexec/git-core/mergetools/xxdiff
 mingw32/libexec/git-core/scalar.exe
 mingw32/share/
+mingw32/share/bash-completion/
+mingw32/share/bash-completion/completions/
+mingw32/share/bash-completion/completions/git
 mingw32/share/git-core/
 mingw32/share/git-core/templates/
 mingw32/share/git-core/templates/description
@@ -198,6 +201,7 @@ mingw32/share/gitk/lib/msgs/pt_br.msg
 mingw32/share/gitk/lib/msgs/pt_pt.msg
 mingw32/share/gitk/lib/msgs/ru.msg
 mingw32/share/gitk/lib/msgs/sv.msg
+mingw32/share/gitk/lib/msgs/ta.msg
 mingw32/share/gitk/lib/msgs/vi.msg
 mingw32/share/gitk/lib/msgs/zh_cn.msg
 mingw32/share/gitweb/

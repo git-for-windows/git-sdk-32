@@ -7,23 +7,25 @@ git-verify-tag - Check the GPG signature of tags
 
 SYNOPSIS
 --------
-[synopsis]
-git verify-tag [-v | --verbose] [--format=<format>] [--raw] <tag>...
+[verse]
+'git verify-tag' [-v | --verbose] [--format=<format>] [--raw] <tag>...
 
 DESCRIPTION
 -----------
-Validates the gpg signature created by `git tag` in the tag
-objects listed on the command line.
+Validates the gpg signature created by 'git tag'.
 
 OPTIONS
 -------
-`--raw`::
+--raw::
 	Print the raw gpg status output to standard error instead of the normal
 	human-readable output.
 
-`-v`::
-`--verbose`::
+-v::
+--verbose::
 	Print the contents of the tag object before validating it.
+
+<tag>...::
+	SHA-1 identifiers of Git tag objects.
 
 GIT
 ---

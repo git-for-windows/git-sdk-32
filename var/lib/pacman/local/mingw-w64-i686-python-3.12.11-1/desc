@@ -2,7 +2,7 @@
 mingw-w64-i686-python
 
 %VERSION%
-3.12.10-1
+3.12.11-1
 
 %BASE%
 mingw-w64-python
@@ -17,16 +17,16 @@ https://www.python.org/
 any
 
 %BUILDDATE%
-1744956649
+1749306552
 
 %INSTALLDATE%
-1745033320
+1749441113
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/e8d10d7e/14530630295)
+CI (msys2/msys2-autobuild/5c250470/15508702307)
 
 %SIZE%
-193942454
+194146337
 
 %REASON%
 1
@@ -43,7 +43,7 @@ mingw-w64-i686-python3
 mingw-w64-i686-python3.12
 
 %DEPENDS%
-mingw-w64-i686-gcc-libs
+mingw-w64-i686-cc-libs
 mingw-w64-i686-expat
 mingw-w64-i686-bzip2
 mingw-w64-i686-libffi

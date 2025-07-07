@@ -20,4 +20,9 @@ mingw32/share/doc/7zip/Methods.txt
 mingw32/share/doc/7zip/readme.txt
 mingw32/share/doc/7zip/src-history.txt
 mingw32/share/doc/7zip/unRarLicense.txt
+mingw32/share/licenses/
+mingw32/share/licenses/7zip/
+mingw32/share/licenses/7zip/copying.txt
+mingw32/share/licenses/7zip/License.txt
+mingw32/share/licenses/7zip/unRarLicense.txt
 

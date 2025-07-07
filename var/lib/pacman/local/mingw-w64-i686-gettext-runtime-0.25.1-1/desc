@@ -2,7 +2,7 @@
 mingw-w64-i686-gettext-runtime
 
 %VERSION%
-0.25-1
+0.25.1-1
 
 %BASE%
 mingw-w64-gettext
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gettext/
 any
 
 %BUILDDATE%
-1746695387
+1751790391
 
 %INSTALLDATE%
-1746761994
+1751860476
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/3a5fc4c4/14902829849)
+CI (msys2/msys2-autobuild/70dec0bd/16097044791)
 
 %SIZE%
-2185889
+2187823
 
 %REASON%
 1
@@ -39,7 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-gcc-libs
+mingw-w64-i686-cc-libs
 mingw-w64-i686-libiconv
 
 %CONFLICTS%

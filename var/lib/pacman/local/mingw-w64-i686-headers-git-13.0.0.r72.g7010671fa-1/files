@@ -1704,8 +1704,12 @@ mingw32/include/windows.data.json.h
 mingw32/include/windows.data.json.idl
 mingw32/include/windows.data.xml.dom.h
 mingw32/include/windows.data.xml.dom.idl
+mingw32/include/windows.devices.bluetooth.genericattributeprofile.h
+mingw32/include/windows.devices.bluetooth.genericattributeprofile.idl
 mingw32/include/windows.devices.bluetooth.h
 mingw32/include/windows.devices.bluetooth.idl
+mingw32/include/windows.devices.bluetooth.rfcomm.h
+mingw32/include/windows.devices.bluetooth.rfcomm.idl
 mingw32/include/windows.devices.enumeration.h
 mingw32/include/windows.devices.enumeration.idl
 mingw32/include/windows.devices.geolocation.h
@@ -1779,6 +1783,8 @@ mingw32/include/windows.networking.connectivity.h
 mingw32/include/windows.networking.connectivity.idl
 mingw32/include/windows.networking.h
 mingw32/include/windows.networking.idl
+mingw32/include/windows.networking.sockets.h
+mingw32/include/windows.networking.sockets.idl
 mingw32/include/windows.perception.spatial.h
 mingw32/include/windows.perception.spatial.idl
 mingw32/include/windows.perception.spatial.surfaces.h
@@ -1831,6 +1837,8 @@ mingw32/include/windows.ui.input.h
 mingw32/include/windows.ui.input.idl
 mingw32/include/windows.ui.notifications.h
 mingw32/include/windows.ui.notifications.idl
+mingw32/include/windows.ui.viewmanagement.core.h
+mingw32/include/windows.ui.viewmanagement.core.idl
 mingw32/include/windows.ui.viewmanagement.h
 mingw32/include/windows.ui.viewmanagement.idl
 mingw32/include/windows.ui.xaml.h

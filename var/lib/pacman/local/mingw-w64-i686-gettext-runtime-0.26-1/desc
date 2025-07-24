@@ -2,7 +2,7 @@
 mingw-w64-i686-gettext-runtime
 
 %VERSION%
-0.25.1-1
+0.26-1
 
 %BASE%
 mingw-w64-gettext
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gettext/
 any
 
 %BUILDDATE%
-1751790391
+1753251088
 
 %INSTALLDATE%
-1751860476
+1753329592
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/70dec0bd/16097044791)
+CI (msys2/msys2-autobuild/ab3c2437/16462935371)
 
 %SIZE%
-2187823
+2850635
 
 %REASON%
 1

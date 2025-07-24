@@ -7,6 +7,8 @@ mingw32/bin/gettext.sh
 mingw32/bin/libasprintf-0.dll
 mingw32/bin/libintl-8.dll
 mingw32/bin/ngettext.exe
+mingw32/bin/printf_gettext.exe
+mingw32/bin/printf_ngettext.exe
 mingw32/include/
 mingw32/include/autosprintf.h
 mingw32/include/libintl.h
@@ -50,6 +52,8 @@ mingw32/share/doc/gettext/javadoc2/serialized-form.html
 mingw32/share/doc/gettext/javadoc2/stylesheet.css
 mingw32/share/doc/gettext/ngettext.1.html
 mingw32/share/doc/gettext/ngettext.3.html
+mingw32/share/doc/gettext/printf_gettext.1.html
+mingw32/share/doc/gettext/printf_ngettext.1.html
 mingw32/share/doc/gettext/textdomain.3.html
 mingw32/share/doc/libasprintf/
 mingw32/share/doc/libasprintf/autosprintf_all.html
@@ -197,6 +201,8 @@ mingw32/share/man/man1/
 mingw32/share/man/man1/envsubst.1.gz
 mingw32/share/man/man1/gettext.1.gz
 mingw32/share/man/man1/ngettext.1.gz
+mingw32/share/man/man1/printf_gettext.1.gz
+mingw32/share/man/man1/printf_ngettext.1.gz
 mingw32/share/man/man3/
 mingw32/share/man/man3/bind_textdomain_codeset.3.gz
 mingw32/share/man/man3/bindtextdomain.3.gz

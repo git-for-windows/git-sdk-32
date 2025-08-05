@@ -2,7 +2,7 @@
 mingw-w64-i686-7zip
 
 %VERSION%
-25.00-1
+25.01-1
 
 %BASE%
 mingw-w64-7zip
@@ -17,16 +17,16 @@ https://7-zip.org
 any
 
 %BUILDDATE%
-1751801611
+1754244592
 
 %INSTALLDATE%
-1751860475
+1754366858
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/70dec0bd/16098555862)
+CI (msys2/msys2-autobuild/fd77359a/16707924950)
 
 %SIZE%
-4330110
+4337784
 
 %LICENSE%
 spdx:LGPL-2.1-or-later AND BSD-3-Clause

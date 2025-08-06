@@ -22,6 +22,7 @@ mingw32/share/doc/git-doc/config.adoc
 mingw32/share/doc/git-doc/date-formats.adoc
 mingw32/share/doc/git-doc/DecisionMaking.adoc
 mingw32/share/doc/git-doc/DecisionMaking.html
+mingw32/share/doc/git-doc/diff-context-options.adoc
 mingw32/share/doc/git-doc/diff-format.adoc
 mingw32/share/doc/git-doc/diff-generate-patch.adoc
 mingw32/share/doc/git-doc/diff-options.adoc
@@ -996,6 +997,7 @@ mingw32/share/doc/git-doc/RelNotes/2.5.5.adoc
 mingw32/share/doc/git-doc/RelNotes/2.5.6.adoc
 mingw32/share/doc/git-doc/RelNotes/2.50.0.adoc
 mingw32/share/doc/git-doc/RelNotes/2.50.1.adoc
+mingw32/share/doc/git-doc/RelNotes/2.51.0.adoc
 mingw32/share/doc/git-doc/RelNotes/2.6.0.adoc
 mingw32/share/doc/git-doc/RelNotes/2.6.1.adoc
 mingw32/share/doc/git-doc/RelNotes/2.6.2.adoc

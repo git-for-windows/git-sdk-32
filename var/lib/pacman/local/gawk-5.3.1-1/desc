@@ -2,7 +2,7 @@
 gawk
 
 %VERSION%
-5.0.0-1
+5.3.1-1
 
 %BASE%
 gawk
@@ -17,20 +17,16 @@ https://www.gnu.org/software/gawk/
 i686
 
 %BUILDDATE%
-1557950264
+1726773200
 
 %INSTALLDATE%
-1557976372
+1756698642
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Unknown Packager
 
 %SIZE%
-3361792
-
-%GROUPS%
-base
-base-devel
+4052134
 
 %LICENSE%
 GPL
@@ -46,4 +42,7 @@ libreadline
 
 %PROVIDES%
 awk
+
+%XDATA%
+pkgtype=pkg
 

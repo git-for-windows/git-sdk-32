@@ -1704,6 +1704,8 @@ mingw32/include/windows.data.json.h
 mingw32/include/windows.data.json.idl
 mingw32/include/windows.data.xml.dom.h
 mingw32/include/windows.data.xml.dom.idl
+mingw32/include/windows.devices.bluetooth.advertisement.h
+mingw32/include/windows.devices.bluetooth.advertisement.idl
 mingw32/include/windows.devices.bluetooth.genericattributeprofile.h
 mingw32/include/windows.devices.bluetooth.genericattributeprofile.idl
 mingw32/include/windows.devices.bluetooth.h
@@ -1765,6 +1767,8 @@ mingw32/include/windows.media.capture.h
 mingw32/include/windows.media.capture.idl
 mingw32/include/windows.media.closedcaptioning.h
 mingw32/include/windows.media.closedcaptioning.idl
+mingw32/include/windows.media.core.h
+mingw32/include/windows.media.core.idl
 mingw32/include/windows.media.devices.h
 mingw32/include/windows.media.devices.idl
 mingw32/include/windows.media.effects.h
@@ -1773,12 +1777,16 @@ mingw32/include/windows.media.faceanalysis.h
 mingw32/include/windows.media.faceanalysis.idl
 mingw32/include/windows.media.h
 mingw32/include/windows.media.idl
+mingw32/include/windows.media.mediaproperties.h
+mingw32/include/windows.media.mediaproperties.idl
 mingw32/include/windows.media.render.h
 mingw32/include/windows.media.render.idl
 mingw32/include/windows.media.speechrecognition.h
 mingw32/include/windows.media.speechrecognition.idl
 mingw32/include/windows.media.speechsynthesis.h
 mingw32/include/windows.media.speechsynthesis.idl
+mingw32/include/windows.media.transcoding.h
+mingw32/include/windows.media.transcoding.idl
 mingw32/include/windows.networking.connectivity.h
 mingw32/include/windows.networking.connectivity.idl
 mingw32/include/windows.networking.h
@@ -1841,6 +1849,8 @@ mingw32/include/windows.ui.viewmanagement.core.h
 mingw32/include/windows.ui.viewmanagement.core.idl
 mingw32/include/windows.ui.viewmanagement.h
 mingw32/include/windows.ui.viewmanagement.idl
+mingw32/include/windows.ui.windowmanagement.h
+mingw32/include/windows.ui.windowmanagement.idl
 mingw32/include/windows.ui.xaml.h
 mingw32/include/windows.ui.xaml.hosting.desktopwindowxamlsource.h
 mingw32/include/windows.ui.xaml.hosting.desktopwindowxamlsource.idl

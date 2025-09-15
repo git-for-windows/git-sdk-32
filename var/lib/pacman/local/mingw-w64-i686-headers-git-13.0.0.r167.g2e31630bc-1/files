@@ -1779,6 +1779,8 @@ mingw32/include/windows.media.h
 mingw32/include/windows.media.idl
 mingw32/include/windows.media.mediaproperties.h
 mingw32/include/windows.media.mediaproperties.idl
+mingw32/include/windows.media.playback.h
+mingw32/include/windows.media.playback.idl
 mingw32/include/windows.media.render.h
 mingw32/include/windows.media.render.idl
 mingw32/include/windows.media.speechrecognition.h
@@ -1793,6 +1795,8 @@ mingw32/include/windows.networking.h
 mingw32/include/windows.networking.idl
 mingw32/include/windows.networking.sockets.h
 mingw32/include/windows.networking.sockets.idl
+mingw32/include/windows.perception.h
+mingw32/include/windows.perception.idl
 mingw32/include/windows.perception.spatial.h
 mingw32/include/windows.perception.spatial.idl
 mingw32/include/windows.perception.spatial.surfaces.h
@@ -1805,6 +1809,8 @@ mingw32/include/windows.security.credentials.h
 mingw32/include/windows.security.credentials.idl
 mingw32/include/windows.security.credentials.ui.h
 mingw32/include/windows.security.credentials.ui.idl
+mingw32/include/windows.security.cryptography.core.h
+mingw32/include/windows.security.cryptography.core.idl
 mingw32/include/windows.security.cryptography.h
 mingw32/include/windows.security.cryptography.idl
 mingw32/include/windows.security.enterprisedata.h

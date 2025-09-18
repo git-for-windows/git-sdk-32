@@ -2,7 +2,7 @@
 tig
 
 %VERSION%
-2.5.12-1
+2.6.0-1
 
 %BASE%
 tig
@@ -17,21 +17,22 @@ http://jonas.nitro.dk/tig/
 i686
 
 %BUILDDATE%
-1738919109
+1758101044
 
 %INSTALLDATE%
-1738929541
+1758166240
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-706055
+744019
 
 %LICENSE%
 GPL
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%
@@ -40,4 +41,7 @@ libreadline
 ncurses
 libpcre2_8
 libpcre2posix
+
+%XDATA%
+pkgtype=pkg
 

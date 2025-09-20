@@ -2,7 +2,7 @@
 libgcrypt
 
 %VERSION%
-1.9.4-2
+1.11.0-1
 
 %BASE%
 libgcrypt
@@ -17,16 +17,16 @@ https://gnupg.org
 i686
 
 %BUILDDATE%
-1683009077
+1719206342
 
 %INSTALLDATE%
-1683083640
+1758338764
 
 %PACKAGER%
-Johannes Schindelin <johannes.schindelin@gmx.de>
+Unknown Packager
 
 %SIZE%
-994110
+1266624
 
 %REASON%
 1
@@ -42,4 +42,7 @@ pgp
 
 %DEPENDS%
 libgpg-error
+
+%XDATA%
+pkgtype=split
 

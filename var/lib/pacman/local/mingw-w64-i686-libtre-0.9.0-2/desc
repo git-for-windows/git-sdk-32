@@ -2,7 +2,7 @@
 mingw-w64-i686-libtre
 
 %VERSION%
-0.9.0-1
+0.9.0-2
 
 %BASE%
 mingw-w64-libtre
@@ -17,16 +17,16 @@ https://github.com/laurikari/tre
 any
 
 %BUILDDATE%
-1729069450
+1759589665
 
 %INSTALLDATE%
-1729135292
+1759807793
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/7c56a1d7/11362381552)
+CI (msys2/msys2-autobuild/c6213b4d/18245774916)
 
 %SIZE%
-278320
+280699
 
 %REASON%
 1
@@ -38,16 +38,9 @@ BSD
 sha256
 pgp
 
-%REPLACES%
-mingw-w64-i686-libtre-git
-
 %DEPENDS%
-mingw-w64-i686-gcc-libs
 mingw-w64-i686-gettext-runtime
 
-%CONFLICTS%
-mingw-w64-i686-libtre-git
-
-%PROVIDES%
-mingw-w64-i686-libtre-git
+%XDATA%
+pkgtype=pkg
 

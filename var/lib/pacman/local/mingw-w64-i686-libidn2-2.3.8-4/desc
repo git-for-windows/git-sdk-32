@@ -2,7 +2,7 @@
 mingw-w64-i686-libidn2
 
 %VERSION%
-2.3.8-3
+2.3.8-4
 
 %BASE%
 mingw-w64-libidn2
@@ -17,13 +17,13 @@ https://www.gnu.org/software/libidn/#libidn2
 any
 
 %BUILDDATE%
-1757603593
+1759596170
 
 %INSTALLDATE%
-1757733583
+1759807793
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/4704486d/17648846191)
+CI (msys2/msys2-autobuild/c6213b4d/18246595728)
 
 %SIZE%
 779036
@@ -41,6 +41,7 @@ pgp
 
 %DEPENDS%
 mingw-w64-i686-gettext-runtime
+mingw-w64-i686-libiconv
 mingw-w64-i686-libunistring
 
 %XDATA%

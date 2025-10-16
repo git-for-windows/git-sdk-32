@@ -2,7 +2,7 @@
 git-flow
 
 %VERSION%
-1.12.3-1
+1.12.3-2
 
 %BASE%
 git-flow
@@ -17,16 +17,16 @@ https://github.com/petervanderdoes/gitflow-avh
 i686
 
 %BUILDDATE%
-1558632685
+1702510895
 
 %INSTALLDATE%
-1558667603
+1760585734
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Unknown Packager
 
 %SIZE%
-231424
+230939
 
 %LICENSE%
 BSD
@@ -37,4 +37,5 @@ pgp
 %DEPENDS%
 git
 util-linux
+make
 

@@ -2,7 +2,7 @@
 mingw-w64-i686-headers-git
 
 %VERSION%
-13.0.0.r245.g1243c4e62-1
+13.0.0.r257.g94a83f88e-2
 
 %BASE%
 mingw-w64-headers-git
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1760946667
+1761296946
 
 %INSTALLDATE%
-1761104585
+1761537077
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/55384653/18645737865)
+CI (msys2/msys2-autobuild/55384653/18775114095)
 
 %SIZE%
-94797398
+94798089
 
 %GROUPS%
 mingw-w64-i686-toolchain

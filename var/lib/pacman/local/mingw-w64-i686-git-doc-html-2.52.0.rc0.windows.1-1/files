@@ -30,6 +30,7 @@ mingw32/share/doc/git-doc/docbook-xsl.css
 mingw32/share/doc/git-doc/docinfo.html
 mingw32/share/doc/git-doc/everyday.html
 mingw32/share/doc/git-doc/fetch-options.adoc
+mingw32/share/doc/git-doc/for-each-ref-options.adoc
 mingw32/share/doc/git-doc/fsck-msgids.adoc
 mingw32/share/doc/git-doc/git-add.adoc
 mingw32/share/doc/git-doc/git-add.html
@@ -181,6 +182,8 @@ mingw32/share/doc/git-doc/git-instaweb.adoc
 mingw32/share/doc/git-doc/git-instaweb.html
 mingw32/share/doc/git-doc/git-interpret-trailers.adoc
 mingw32/share/doc/git-doc/git-interpret-trailers.html
+mingw32/share/doc/git-doc/git-last-modified.adoc
+mingw32/share/doc/git-doc/git-last-modified.html
 mingw32/share/doc/git-doc/git-log.adoc
 mingw32/share/doc/git-doc/git-log.html
 mingw32/share/doc/git-doc/git-ls-files.adoc
@@ -268,6 +271,8 @@ mingw32/share/doc/git-doc/git-replace.adoc
 mingw32/share/doc/git-doc/git-replace.html
 mingw32/share/doc/git-doc/git-replay.adoc
 mingw32/share/doc/git-doc/git-replay.html
+mingw32/share/doc/git-doc/git-repo.adoc
+mingw32/share/doc/git-doc/git-repo.html
 mingw32/share/doc/git-doc/git-request-pull.adoc
 mingw32/share/doc/git-doc/git-request-pull.html
 mingw32/share/doc/git-doc/git-rerere.adoc
@@ -389,6 +394,8 @@ mingw32/share/doc/git-doc/gitformat-commit-graph.adoc
 mingw32/share/doc/git-doc/gitformat-commit-graph.html
 mingw32/share/doc/git-doc/gitformat-index.adoc
 mingw32/share/doc/git-doc/gitformat-index.html
+mingw32/share/doc/git-doc/gitformat-loose.adoc
+mingw32/share/doc/git-doc/gitformat-loose.html
 mingw32/share/doc/git-doc/gitformat-pack.adoc
 mingw32/share/doc/git-doc/gitformat-pack.html
 mingw32/share/doc/git-doc/gitformat-signature.adoc
@@ -486,6 +493,7 @@ mingw32/share/doc/git-doc/MyFirstContribution.html
 mingw32/share/doc/git-doc/MyFirstObjectWalk.adoc
 mingw32/share/doc/git-doc/MyFirstObjectWalk.html
 mingw32/share/doc/git-doc/object-format-disclaimer.adoc
+mingw32/share/doc/git-doc/pack-refs-options.adoc
 mingw32/share/doc/git-doc/pretty-formats.adoc
 mingw32/share/doc/git-doc/pretty-options.adoc
 mingw32/share/doc/git-doc/pull-fetch-param.adoc
@@ -1000,6 +1008,7 @@ mingw32/share/doc/git-doc/RelNotes/2.50.1.adoc
 mingw32/share/doc/git-doc/RelNotes/2.51.0.adoc
 mingw32/share/doc/git-doc/RelNotes/2.51.1.adoc
 mingw32/share/doc/git-doc/RelNotes/2.51.2.adoc
+mingw32/share/doc/git-doc/RelNotes/2.52.0.adoc
 mingw32/share/doc/git-doc/RelNotes/2.6.0.adoc
 mingw32/share/doc/git-doc/RelNotes/2.6.1.adoc
 mingw32/share/doc/git-doc/RelNotes/2.6.2.adoc
@@ -1063,10 +1072,13 @@ mingw32/share/doc/git-doc/technical/build-systems.html
 mingw32/share/doc/git-doc/technical/bundle-uri.adoc
 mingw32/share/doc/git-doc/technical/bundle-uri.html
 mingw32/share/doc/git-doc/technical/commit-graph.adoc
+mingw32/share/doc/git-doc/technical/commit-graph.html
 mingw32/share/doc/git-doc/technical/directory-rename-detection.adoc
+mingw32/share/doc/git-doc/technical/directory-rename-detection.html
 mingw32/share/doc/git-doc/technical/hash-function-transition.adoc
 mingw32/share/doc/git-doc/technical/hash-function-transition.html
 mingw32/share/doc/git-doc/technical/large-object-promisors.adoc
+mingw32/share/doc/git-doc/technical/large-object-promisors.html
 mingw32/share/doc/git-doc/technical/long-running-process-protocol.adoc
 mingw32/share/doc/git-doc/technical/long-running-process-protocol.html
 mingw32/share/doc/git-doc/technical/multi-pack-index.adoc
@@ -1074,6 +1086,7 @@ mingw32/share/doc/git-doc/technical/multi-pack-index.html
 mingw32/share/doc/git-doc/technical/pack-heuristics.adoc
 mingw32/share/doc/git-doc/technical/pack-heuristics.html
 mingw32/share/doc/git-doc/technical/packfile-uri.adoc
+mingw32/share/doc/git-doc/technical/packfile-uri.html
 mingw32/share/doc/git-doc/technical/parallel-checkout.adoc
 mingw32/share/doc/git-doc/technical/parallel-checkout.html
 mingw32/share/doc/git-doc/technical/partial-clone.adoc
@@ -1085,8 +1098,11 @@ mingw32/share/doc/git-doc/technical/racy-git.html
 mingw32/share/doc/git-doc/technical/reftable.adoc
 mingw32/share/doc/git-doc/technical/reftable.html
 mingw32/share/doc/git-doc/technical/remembering-renames.adoc
+mingw32/share/doc/git-doc/technical/remembering-renames.html
 mingw32/share/doc/git-doc/technical/repository-version.adoc
+mingw32/share/doc/git-doc/technical/repository-version.html
 mingw32/share/doc/git-doc/technical/rerere.adoc
+mingw32/share/doc/git-doc/technical/rerere.html
 mingw32/share/doc/git-doc/technical/scalar.adoc
 mingw32/share/doc/git-doc/technical/scalar.html
 mingw32/share/doc/git-doc/technical/send-pack-pipeline.adoc
@@ -1094,7 +1110,9 @@ mingw32/share/doc/git-doc/technical/send-pack-pipeline.html
 mingw32/share/doc/git-doc/technical/shallow.adoc
 mingw32/share/doc/git-doc/technical/shallow.html
 mingw32/share/doc/git-doc/technical/sparse-checkout.adoc
+mingw32/share/doc/git-doc/technical/sparse-checkout.html
 mingw32/share/doc/git-doc/technical/sparse-index.adoc
+mingw32/share/doc/git-doc/technical/sparse-index.html
 mingw32/share/doc/git-doc/technical/trivial-merge.adoc
 mingw32/share/doc/git-doc/technical/trivial-merge.html
 mingw32/share/doc/git-doc/technical/unit-tests.adoc

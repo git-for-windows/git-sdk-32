@@ -2,7 +2,7 @@
 mingw-w64-i686-brotli
 
 %VERSION%
-1.1.0-5
+1.2.0-1
 
 %BASE%
 mingw-w64-brotli
@@ -17,16 +17,16 @@ https://github.com/google/brotli
 any
 
 %BUILDDATE%
-1748700579
+1762401426
 
 %INSTALLDATE%
-1748922323
+1762487044
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/776a26e0/15364413788)
+CI (msys2/msys2-autobuild/db1199d2/19124245426)
 
 %SIZE%
-2044984
+2054293
 
 %REASON%
 1

@@ -1,8 +1,8 @@
 %NAME%
-mingw-w64-i686-git-doc-html
+mingw-w64-i686-git
 
 %VERSION%
-2.52.0.rc2.windows.1-1
+2.52.0.1.2912d8e9b8-1
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://git-for-windows.github.io/
 any
 
 %BUILDDATE%
-1763029145
+1763403833
 
 %INSTALLDATE%
-1763091867
+1763437441
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-18984363
+56488581
 
 %LICENSE%
 GPL2

@@ -46,6 +46,8 @@ mingw32/share/doc/git-doc/git-archive.adoc
 mingw32/share/doc/git-doc/git-archive.html
 mingw32/share/doc/git-doc/git-backfill.adoc
 mingw32/share/doc/git-doc/git-backfill.html
+mingw32/share/doc/git-doc/git-bash.adoc
+mingw32/share/doc/git-doc/git-bash.html
 mingw32/share/doc/git-doc/git-bisect-lk2009.adoc
 mingw32/share/doc/git-doc/git-bisect-lk2009.html
 mingw32/share/doc/git-doc/git-bisect.adoc

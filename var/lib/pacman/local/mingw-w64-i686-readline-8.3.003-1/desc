@@ -2,7 +2,7 @@
 mingw-w64-i686-readline
 
 %VERSION%
-8.3.001-1
+8.3.003-1
 
 %BASE%
 mingw-w64-readline
@@ -17,16 +17,16 @@ https://tiswww.case.edu/php/chet/readline/rltop.html
 any
 
 %BUILDDATE%
-1753196927
+1765418181
 
 %INSTALLDATE%
-1753243256
+1765511795
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/ab3c2437/16448214825)
+CI (msys2/msys2-autobuild/8cbb808c/20119335988)
 
 %SIZE%
-2601256
+2611257
 
 %LICENSE%
 spdx:GPL-3.0-or-later

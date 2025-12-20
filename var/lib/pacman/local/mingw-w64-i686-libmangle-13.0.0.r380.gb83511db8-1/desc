@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-libmangle-git
+mingw-w64-i686-libmangle
 
 %VERSION%
-13.0.0.r354.g40ab95d18-1
+13.0.0.r380.gb83511db8-1
 
 %BASE%
-mingw-w64-libmangle-git
+mingw-w64-libmangle
 
 %DESC%
 MinGW-w64 libmangle (mingw-w64)
@@ -17,13 +17,13 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1765443195
+1766161035
 
 %INSTALLDATE%
-1765684760
+1766202515
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/8cbb808c/20126842689)
+CI (msys2/msys2-autobuild/9963aa3e/20375724214)
 
 %SIZE%
 54541
@@ -38,11 +38,14 @@ spdx:MIT
 sha256
 pgp
 
+%REPLACES%
+mingw-w64-i686-libmangle-git
+
 %CONFLICTS%
-mingw-w64-i686-libmangle
+mingw-w64-i686-libmangle-git
 
 %PROVIDES%
-mingw-w64-i686-libmangle
+mingw-w64-i686-libmangle-git=13.0.0.r380.gb83511db8
 
 %XDATA%
 pkgtype=pkg

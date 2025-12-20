@@ -9,14 +9,38 @@
  * Jansson, namely those things that affect the public API in
  * jansson.h.
  *
- * The configure script copies this file to jansson_config.h and
- * replaces @var@ substitutions by values that fit your system. If you
- * cannot run the configure script, you can do the value substitution
- * by hand.
+ * The CMake system will generate the jansson_config.h file and
+ * copy it to the build and install directories.
  */
 
 #ifndef JANSSON_CONFIG_H
 #define JANSSON_CONFIG_H
+
+/* Define this so that we can disable scattered automake configuration in source files */
+#ifndef JANSSON_USING_CMAKE
+#define JANSSON_USING_CMAKE
+#endif
+
+/* If your compiler supports the `long long` type and the strtoll()
+   library function, JSON_INTEGER_IS_LONG_LONG is defined to 1,
+   otherwise to 0. */
+#define JSON_INTEGER_IS_LONG_LONG 1
+
+/* Bring in the cmake-detected defines */
+#define HAVE_STDINT_H 1
+/* #undef HAVE_INTTYPES_H */
+#define HAVE_SYS_TYPES_H 1
+
+/* Include our standard type header for the integer typedef */
+
+#if defined(HAVE_STDINT_H)
+#  include <stdint.h>
+#elif defined(HAVE_INTTYPES_H)
+#  include <inttypes.h>
+#elif defined(HAVE_SYS_TYPES_H)
+#  include <sys/types.h>
+#endif
+
 
 /* If your compiler supports the inline keyword in C, JSON_INLINE is
    defined to `inline', otherwise empty. In C++, the inline is always
@@ -27,10 +51,11 @@
 #define JSON_INLINE inline
 #endif
 
-/* If your compiler supports the `long long` type and the strtoll()
-   library function, JSON_INTEGER_IS_LONG_LONG is defined to 1,
-   otherwise to 0. */
-#define JSON_INTEGER_IS_LONG_LONG 1
+
+#define json_int_t long long
+#define json_strtoint strtoll
+#define JSON_INTEGER_FORMAT "I64d"
+
 
 /* If __atomic builtins are available they will be used to manage
    reference counts of json_t. */

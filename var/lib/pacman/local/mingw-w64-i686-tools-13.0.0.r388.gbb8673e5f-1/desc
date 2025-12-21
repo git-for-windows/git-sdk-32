@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-tools-git
+mingw-w64-i686-tools
 
 %VERSION%
-13.0.0.r380.gb83511db8-1
+13.0.0.r388.gbb8673e5f-1
 
 %BASE%
-mingw-w64-tools-git
+mingw-w64-tools
 
 %DESC%
 MinGW-w64 tools (mingw-w64)
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1766144731
+1766179616
 
 %INSTALLDATE%
-1766202515
+1766289587
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/9963aa3e/20368599861)
+CI (msys2/msys2-autobuild/6bebd1a9/20382532087)
 
 %SIZE%
-1108276
+1108284
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,14 +38,17 @@ spdx:GPL-3.0-or-later AND LGPL-2.1-or-later
 sha256
 pgp
 
+%REPLACES%
+mingw-w64-i686-tools-git
+
 %DEPENDS%
 mingw-w64-i686-cc-libs
 
 %CONFLICTS%
-mingw-w64-i686-tools
+mingw-w64-i686-tools-git
 
 %PROVIDES%
-mingw-w64-i686-tools
+mingw-w64-i686-tools-git=13.0.0.r388.gbb8673e5f
 
 %XDATA%
 pkgtype=pkg

@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-crt-git
+mingw-w64-i686-crt
 
 %VERSION%
-13.0.0.r380.gb83511db8-1
+13.0.0.r388.gbb8673e5f-1
 
 %BASE%
-mingw-w64-crt-git
+mingw-w64-crt
 
 %DESC%
 MinGW-w64 CRT for Windows (mingw-w64)
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1766143851
+1766178706
 
 %INSTALLDATE%
-1766202515
+1766289587
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/9963aa3e/20368599861)
+CI (msys2/msys2-autobuild/6bebd1a9/20382532087)
 
 %SIZE%
-133391502
+133508756
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,14 +38,17 @@ spdx:ZPL-2.1
 sha256
 pgp
 
+%REPLACES%
+mingw-w64-i686-crt-git
+
 %DEPENDS%
-mingw-w64-i686-headers-git
+mingw-w64-i686-headers
 
 %CONFLICTS%
-mingw-w64-i686-crt
+mingw-w64-i686-crt-git
 
 %PROVIDES%
-mingw-w64-i686-crt
+mingw-w64-i686-crt-git=13.0.0.r388.gbb8673e5f
 
 %XDATA%
 pkgtype=pkg

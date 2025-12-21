@@ -1,11 +1,11 @@
 %NAME%
-mingw-w64-i686-headers-git
+mingw-w64-i686-headers
 
 %VERSION%
-13.0.0.r380.gb83511db8-1
+13.0.0.r388.gbb8673e5f-1
 
 %BASE%
-mingw-w64-headers-git
+mingw-w64-headers
 
 %DESC%
 MinGW-w64 headers for Windows (mingw-w64)
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1766143665
+1766178515
 
 %INSTALLDATE%
-1766202514
+1766289586
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/9963aa3e/20368599861)
+CI (msys2/msys2-autobuild/6bebd1a9/20382532087)
 
 %SIZE%
-94982756
+94981996
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -38,11 +38,14 @@ spdx:ZPL-2.1 AND LGPL-2.1-or-later
 sha256
 pgp
 
+%REPLACES%
+mingw-w64-i686-headers-git
+
 %CONFLICTS%
-mingw-w64-i686-headers
+mingw-w64-i686-headers-git
 
 %PROVIDES%
-mingw-w64-i686-headers
+mingw-w64-i686-headers-git=13.0.0.r388.gbb8673e5f
 
 %XDATA%
 pkgtype=pkg

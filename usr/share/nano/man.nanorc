@@ -1,6 +1,7 @@
 ## Syntax highlighting for man pages.
 
 ## Original author:  Mike Frysinger
+## License:  GPL version 3 or newer
 
 syntax man "\.[1-9]x?$"
 magic "troff or preprocessor input"
@@ -14,8 +15,9 @@ color brightred "^\.(B[IR]?|I[BR]?|RB|RI|SB|SM|SY|OP) .*"
 color brightblue "^\.((B[IR]?|I[BR]?|RB|RI|SB|SM|SY|OP) |YS$)"
 # Inline type faces.
 color magenta "\\f[BIPR]"
+# Some escapes:
+color purple "\\([%&:e~]|\(e[mn])"
 # Hyphenation control.
-color purple "\\[%:]"
 color yellow "^\.(hc|hla|hlm|hw|hy)"
 # Relative margins, hyperlinks, and various other stuff.
 color yellow "^\.(RS|RE|UR|UE|MT|ME|EX|EE|PD|DT)"

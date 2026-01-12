@@ -238,6 +238,8 @@ def perf_command_works():
             cmd = (
                 "perf",
                 "record",
+                "--no-buildid",
+                "--no-buildid-cache",
                 "-g",
                 "--call-graph=fp",
                 "-o",
@@ -266,12 +268,22 @@ def run_perf(cwd, *args, **env_vars):
     else:
         env = None
     output_file = cwd + "/perf_output.perf"
-    base_cmd = ("perf", "record", "-g", "--call-graph=fp", "-o", output_file, "--")
+    base_cmd = (
+        "perf",
+        "record",
+        "--no-buildid",
+        "--no-buildid-cache",
+        "-g",
+        "--call-graph=fp",
+        "-o", output_file,
+        "--"
+    )
     proc = subprocess.run(
         base_cmd + args,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         env=env,
+        text=True,
     )
     if proc.returncode:
         print(proc.stderr)
@@ -284,10 +296,9 @@ def run_perf(cwd, *args, **env_vars):
         stderr=subprocess.PIPE,
         env=env,
         check=True,
+        text=True,
     )
-    return proc.stdout.decode("utf-8", "replace"), proc.stderr.decode(
-        "utf-8", "replace"
-    )
+    return proc.stdout, proc.stderr
 
 
 @unittest.skipUnless(perf_command_works(), "perf command doesn't work")

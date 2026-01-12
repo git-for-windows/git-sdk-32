@@ -2,8 +2,8 @@
 # This program is free software; you can redistribute it and/or
 # modify it under the same terms as Perl itself.
 
-package Authen::SASL::Perl;
-$Authen::SASL::Perl::VERSION = '2.1700';
+package Authen::SASL::Perl 2.1900;
+
 use strict;
 use warnings;
 use Carp;
@@ -58,17 +58,19 @@ sub client_new {
   } grep {
     my $have = $have{$_} ||= (eval "require $_;" and $_->can('_secflags')) ? 1 : -1;
     $have > 0 and $_->_secflags(@sec) == @sec
+        and $_->_acceptable( %{$parent->callback} )
   } map {
     (my $mpkg = __PACKAGE__ . "::$_") =~ s/-/_/g;
     $mpkg;
   } split /[^-\w]+/, $parent->mechanism
-    or croak "No SASL mechanism found\n";
+    or croak "No SASL mechanism found: ", $parent->mechanism, "\n";
 
   $mpkg[0]->_init($self);
 }
 
 sub _init_server {}
 
+sub _acceptable  { 1 }
 sub _order   { 0 }
 sub code     { defined(shift->{error}) || 0 }
 sub error    { shift->{error}    }

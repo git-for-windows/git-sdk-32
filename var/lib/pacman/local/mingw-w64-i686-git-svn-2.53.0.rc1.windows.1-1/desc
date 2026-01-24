@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-subtree
+mingw-w64-i686-git-svn
 
 %VERSION%
-2.53.0.rc0.windows.1-1
+2.53.0.rc1.windows.1-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Subtree support for Git (mingw-w64)
+Subversion support for Git (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1768568723
+1769172416
 
 %INSTALLDATE%
-1768820609
+1769227180
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-81557
+377981
 
 %REASON%
 1
@@ -39,7 +39,9 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.53.0.rc0.windows.1
+mingw-w64-i686-git=2.53.0.rc1.windows.1
+mingw-w64-i686-git-perl=2.53.0.rc1.windows.1
+subversion
 
 %XDATA%
 pkgtype=split

@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-perl
+mingw-w64-i686-git-credential-wincred
 
 %VERSION%
-2.53.0.rc0.windows.1-1
+2.53.0.rc1.windows.1-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Perl module for Git (mingw-w64)
+Git credential helper for Windows Credential Manager (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1768568723
+1769172416
 
 %INSTALLDATE%
-1768820610
+1769227177
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-91949
+70592
 
 %REASON%
 1
@@ -39,11 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.53.0.rc0.windows.1
-perl>=5.14.0
-perl-Error
-perl-libwww
-perl-TermReadKey
+mingw-w64-i686-git=2.53.0.rc1.windows.1
 
 %XDATA%
 pkgtype=split

@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-gui
+mingw-w64-i686-git-subtree
 
 %VERSION%
-2.53.0.rc0.windows.1-1
+2.53.0.rc1.windows.1-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Git GUI tool (mingw-w64)
+Subtree support for Git (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1768568723
+1769172416
 
 %INSTALLDATE%
-1768820611
+1769227179
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1454417
+82797
 
 %REASON%
 1
@@ -39,9 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.53.0.rc0.windows.1
-mingw-w64-i686-tcl
-mingw-w64-i686-tk
+mingw-w64-i686-git=2.53.0.rc1.windows.1
 
 %XDATA%
 pkgtype=split

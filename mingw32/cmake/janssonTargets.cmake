@@ -57,7 +57,8 @@ endif()
 add_library(jansson::jansson SHARED IMPORTED)
 
 set_target_properties(jansson::jansson PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include"
+  INTERFACE_COMPILE_DEFINITIONS "JANSSON_USING_CMAKE"
+  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include;${_IMPORT_PREFIX}/include"
 )
 
 # Load information for each installed configuration.

@@ -1,32 +1,35 @@
 %NAME%
-mingw-w64-i686-openssl
+openssl
 
 %VERSION%
-3.5.4-1
+3.5.5-1
 
 %BASE%
-mingw-w64-openssl
+openssl
 
 %DESC%
-The Open Source toolkit for Secure Sockets Layer and Transport Layer Security (mingw-w64)
+The Open Source toolkit for Secure Sockets Layer and Transport Layer Security
 
 %URL%
-https://www.openssl.org/
+https://www.openssl.org
 
 %ARCH%
-any
+i686
 
 %BUILDDATE%
-1759251344
+1769533168
 
 %INSTALLDATE%
-1759290183
+1769573185
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-59858240
+1488757
+
+%REASON%
+1
 
 %LICENSE%
 spdx:Apache-2.0
@@ -35,8 +38,12 @@ spdx:Apache-2.0
 sha256
 pgp
 
+%DEPENDS%
+libopenssl
+
 %OPTDEPENDS%
-mingw-w64-i686-ca-certificates
+ca-certificates
+perl
 
 %XDATA%
 pkgtype=split

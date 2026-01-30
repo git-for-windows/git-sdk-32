@@ -2,7 +2,7 @@
 mingw-w64-i686-headers
 
 %VERSION%
-13.0.0.r453.gfd36ef357-1
+13.0.0.r453.gfd36ef357-2
 
 %BASE%
 mingw-w64-headers
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1768574204
+1769600087
 
 %INSTALLDATE%
-1768820602
+1769747337
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/cd5d4ff2/21069960137)
+CI (msys2/msys2-autobuild/dcbd5d07/21436536855)
 
 %SIZE%
-94978630
+94978678
 
 %GROUPS%
 mingw-w64-i686-toolchain

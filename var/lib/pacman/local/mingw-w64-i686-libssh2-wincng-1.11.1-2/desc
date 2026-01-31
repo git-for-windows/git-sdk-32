@@ -2,7 +2,7 @@
 mingw-w64-i686-libssh2-wincng
 
 %VERSION%
-1.11.1-1
+1.11.1-2
 
 %BASE%
 mingw-w64-libssh2
@@ -17,16 +17,16 @@ https://libssh2.org/
 any
 
 %BUILDDATE%
-1732342246
+1769691565
 
 %INSTALLDATE%
-1732419102
+1769833455
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/a6b3079a/11984747983)
+CI (msys2/msys2-autobuild/59a03c95/21477774111)
 
 %SIZE%
-918534
+923378
 
 %REASON%
 1
@@ -46,4 +46,7 @@ mingw-w64-i686-libssh2
 
 %PROVIDES%
 mingw-w64-i686-libssh2
+
+%XDATA%
+pkgtype=split
 

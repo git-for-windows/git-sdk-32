@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-credential-wincred
+mingw-w64-i686-git-svn
 
 %VERSION%
-2.53.0.rc2.windows.1-1
+2.53.0.1-2
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Git credential helper for Windows Credential Manager (mingw-w64)
+Subversion support for Git (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1769608116
+1770194427
 
 %INSTALLDATE%
-1769660809
+1770267006
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-70592
+377972
 
 %REASON%
 1
@@ -39,7 +39,9 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.53.0.rc2.windows.1
+mingw-w64-i686-git=2.53.0.1
+mingw-w64-i686-git-perl=2.53.0.1
+subversion
 
 %XDATA%
 pkgtype=split

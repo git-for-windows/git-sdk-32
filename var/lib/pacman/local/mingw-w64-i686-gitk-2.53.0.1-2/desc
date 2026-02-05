@@ -2,7 +2,7 @@
 mingw-w64-i686-gitk
 
 %VERSION%
-2.53.0.rc2.windows.1-1
+2.53.0.1-2
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1769608116
+1770194427
 
 %INSTALLDATE%
-1769660812
+1770267006
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-956427
+956423
 
 %REASON%
 1
@@ -39,7 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.53.0.rc2.windows.1
+mingw-w64-i686-git=2.53.0.1
 mingw-w64-i686-tcl
 mingw-w64-i686-tk
 

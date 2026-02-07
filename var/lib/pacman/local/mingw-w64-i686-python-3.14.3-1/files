@@ -2878,10 +2878,14 @@ mingw32/lib/python3.14/pydoc_data/__pycache__/
 mingw32/lib/python3.14/pydoc_data/__pycache__/__init__.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/pydoc_data/__pycache__/__init__.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/pydoc_data/__pycache__/__init__.cpython-314.pyc
+mingw32/lib/python3.14/pydoc_data/__pycache__/module_docs.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/pydoc_data/__pycache__/module_docs.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/pydoc_data/__pycache__/module_docs.cpython-314.pyc
 mingw32/lib/python3.14/pydoc_data/__pycache__/topics.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/pydoc_data/__pycache__/topics.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/pydoc_data/__pycache__/topics.cpython-314.pyc
 mingw32/lib/python3.14/pydoc_data/_pydoc.css
+mingw32/lib/python3.14/pydoc_data/module_docs.py
 mingw32/lib/python3.14/pydoc_data/topics.py
 mingw32/lib/python3.14/queue.py
 mingw32/lib/python3.14/quopri.py
@@ -3069,9 +3073,15 @@ mingw32/lib/python3.14/test/__pycache__/mp_preload_flush.cpython-314.pyc
 mingw32/lib/python3.14/test/__pycache__/mp_preload_main.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/__pycache__/mp_preload_main.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/__pycache__/mp_preload_main.cpython-314.pyc
+mingw32/lib/python3.14/test/__pycache__/mp_preload_sysargv.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/__pycache__/mp_preload_sysargv.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/__pycache__/mp_preload_sysargv.cpython-314.pyc
 mingw32/lib/python3.14/test/__pycache__/multibytecodec_support.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/__pycache__/multibytecodec_support.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/__pycache__/multibytecodec_support.cpython-314.pyc
+mingw32/lib/python3.14/test/__pycache__/picklecommon.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/__pycache__/picklecommon.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/__pycache__/picklecommon.cpython-314.pyc
 mingw32/lib/python3.14/test/__pycache__/pickletester.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/__pycache__/pickletester.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/__pycache__/pickletester.cpython-314.pyc
@@ -4272,6 +4282,9 @@ mingw32/lib/python3.14/test/__pycache__/test_xml_etree_c.cpython-314.pyc
 mingw32/lib/python3.14/test/__pycache__/test_xmlrpc.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/__pycache__/test_xmlrpc.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/__pycache__/test_xmlrpc.cpython-314.pyc
+mingw32/lib/python3.14/test/__pycache__/test_xpickle.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/__pycache__/test_xpickle.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/__pycache__/test_xpickle.cpython-314.pyc
 mingw32/lib/python3.14/test/__pycache__/test_xxlimited.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/__pycache__/test_xxlimited.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/__pycache__/test_xxlimited.cpython-314.pyc
@@ -4311,6 +4324,9 @@ mingw32/lib/python3.14/test/__pycache__/win_console_handler.cpython-314.pyc
 mingw32/lib/python3.14/test/__pycache__/xmltests.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/__pycache__/xmltests.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/__pycache__/xmltests.cpython-314.pyc
+mingw32/lib/python3.14/test/__pycache__/xpickle_worker.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/__pycache__/xpickle_worker.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/__pycache__/xpickle_worker.cpython-314.pyc
 mingw32/lib/python3.14/test/_code_definitions.py
 mingw32/lib/python3.14/test/_crossinterp_definitions.py
 mingw32/lib/python3.14/test/_test_atexit.py
@@ -4772,7 +4788,10 @@ mingw32/lib/python3.14/test/mp_fork_bomb.py
 mingw32/lib/python3.14/test/mp_preload.py
 mingw32/lib/python3.14/test/mp_preload_flush.py
 mingw32/lib/python3.14/test/mp_preload_main.py
+mingw32/lib/python3.14/test/mp_preload_sysargv.py
 mingw32/lib/python3.14/test/multibytecodec_support.py
+mingw32/lib/python3.14/test/NormalizationTest-3.2.0.txt
+mingw32/lib/python3.14/test/picklecommon.py
 mingw32/lib/python3.14/test/pickletester.py
 mingw32/lib/python3.14/test/profilee.py
 mingw32/lib/python3.14/test/pstats.pck
@@ -7920,6 +7939,7 @@ mingw32/lib/python3.14/test/test_xml_dom_xmlbuilder.py
 mingw32/lib/python3.14/test/test_xml_etree.py
 mingw32/lib/python3.14/test/test_xml_etree_c.py
 mingw32/lib/python3.14/test/test_xmlrpc.py
+mingw32/lib/python3.14/test/test_xpickle.py
 mingw32/lib/python3.14/test/test_xxlimited.py
 mingw32/lib/python3.14/test/test_xxtestfuzz.py
 mingw32/lib/python3.14/test/test_yield_from.py
@@ -8189,6 +8209,7 @@ mingw32/lib/python3.14/test/xmltestdata/simple.xml
 mingw32/lib/python3.14/test/xmltestdata/test.xml
 mingw32/lib/python3.14/test/xmltestdata/test.xml.out
 mingw32/lib/python3.14/test/xmltests.py
+mingw32/lib/python3.14/test/xpickle_worker.py
 mingw32/lib/python3.14/test/zipimport_data/
 mingw32/lib/python3.14/test/zipimport_data/sparse-zip64-c0-0x000000000.part
 mingw32/lib/python3.14/test/zipimport_data/sparse-zip64-c0-0x100000000.part

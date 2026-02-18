@@ -2,7 +2,7 @@
 mintty
 
 %VERSION%
-1~3.8.1-1
+1~3.8.2-1
 
 %BASE%
 mintty
@@ -17,16 +17,16 @@ https://mintty.github.io
 i686
 
 %BUILDDATE%
-1758186086
+1771316880
 
 %INSTALLDATE%
-1758194286
+1771390310
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1690447
+1751238
 
 %GROUPS%
 base

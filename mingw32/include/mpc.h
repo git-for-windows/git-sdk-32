@@ -1,6 +1,6 @@
 /* mpc.h -- Include file for mpc.
 
-Copyright (C) 2002, 2003, 2004, 2005, 2007, 2008, 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022 INRIA
+Copyright (C) 2002, 2003, 2004, 2005, 2007, 2008, 2009, 2010, 2011, 2012, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2026 INRIA
 
 This file is part of GNU MPC.
 
@@ -25,11 +25,17 @@ along with this program. If not, see http://www.gnu.org/licenses/ .
 #include "gmp.h"
 #include "mpfr.h"
 
+#if 1
+#define _MPC_HAVE_COMPLEX_H
+#else
+#undef _MPC_HAVE_COMPLEX_H
+#endif
+
 /* Define MPC version number */
 #define MPC_VERSION_MAJOR 1
-#define MPC_VERSION_MINOR 3
-#define MPC_VERSION_PATCHLEVEL 1
-#define MPC_VERSION_STRING "1.3.1"
+#define MPC_VERSION_MINOR 4
+#define MPC_VERSION_PATCHLEVEL 0
+#define MPC_VERSION_STRING "1.4.0"
 
 /* Macros dealing with MPC VERSION */
 #define MPC_VERSION_NUM(a,b,c) (((a) << 16L) | ((b) << 8) | (c))
@@ -220,8 +226,11 @@ __MPC_DECLSPEC int  mpc_cmp         (mpc_srcptr, mpc_srcptr);
 __MPC_DECLSPEC int  mpc_cmp_si_si   (mpc_srcptr, long int, long int);
 __MPC_DECLSPEC int  mpc_cmp_abs     (mpc_srcptr, mpc_srcptr);
 __MPC_DECLSPEC int  mpc_exp         (mpc_ptr, mpc_srcptr, mpc_rnd_t);
+__MPC_DECLSPEC int  mpc_exp10       (mpc_ptr, mpc_srcptr, mpc_rnd_t);
+__MPC_DECLSPEC int  mpc_exp2        (mpc_ptr, mpc_srcptr, mpc_rnd_t);
 __MPC_DECLSPEC int  mpc_log         (mpc_ptr, mpc_srcptr, mpc_rnd_t);
 __MPC_DECLSPEC int  mpc_log10       (mpc_ptr, mpc_srcptr, mpc_rnd_t);
+__MPC_DECLSPEC int  mpc_log2        (mpc_ptr, mpc_srcptr, mpc_rnd_t);
 __MPC_DECLSPEC int  mpc_agm         (mpc_ptr, mpc_srcptr, mpc_srcptr, mpc_rnd_t);
 __MPC_DECLSPEC int  mpc_sin         (mpc_ptr, mpc_srcptr, mpc_rnd_t);
 __MPC_DECLSPEC int  mpc_cos         (mpc_ptr, mpc_srcptr, mpc_rnd_t);
@@ -259,11 +268,23 @@ __MPC_DECLSPEC int  mpc_set_sj_sj   (mpc_ptr, intmax_t, intmax_t, mpc_rnd_t);
 __MPC_DECLSPEC int  mpc_set_uj_uj   (mpc_ptr, uintmax_t, uintmax_t, mpc_rnd_t);
 #endif
 
-#ifdef _Complex_I
-__MPC_DECLSPEC int  mpc_set_dc      (mpc_ptr, double _Complex, mpc_rnd_t);
-__MPC_DECLSPEC int  mpc_set_ldc     (mpc_ptr, long double _Complex, mpc_rnd_t);
-__MPC_DECLSPEC double _Complex mpc_get_dc (mpc_srcptr, mpc_rnd_t);
-__MPC_DECLSPEC long double _Complex mpc_get_ldc (mpc_srcptr, mpc_rnd_t);
+/* Microsoft Compiler does not have complex/_Complex, see
+   https://learn.microsoft.com/en-US/cpp/c-runtime-library/complex-math-support?view=msvc-170
+   If you change this, also check tests/read_description.c.
+*/
+#ifdef _MSC_VER
+#define DOUBLE_COMPLEX _Dcomplex
+#define LONG_DOUBLE_COMPLEX _Lcomplex
+#else
+#define DOUBLE_COMPLEX double _Complex
+#define LONG_DOUBLE_COMPLEX long double _Complex
+#endif
+
+#if defined (_MPC_HAVE_COMPLEX_H) && defined (_Complex_I)
+__MPC_DECLSPEC int  mpc_set_dc      (mpc_ptr, DOUBLE_COMPLEX, mpc_rnd_t);
+__MPC_DECLSPEC int  mpc_set_ldc     (mpc_ptr, LONG_DOUBLE_COMPLEX, mpc_rnd_t);
+__MPC_DECLSPEC DOUBLE_COMPLEX mpc_get_dc (mpc_srcptr, mpc_rnd_t);
+__MPC_DECLSPEC LONG_DOUBLE_COMPLEX mpc_get_ldc (mpc_srcptr, mpc_rnd_t);
 #endif
 
 #ifdef _GMP_H_HAVE_FILE

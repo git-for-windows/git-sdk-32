@@ -2,7 +2,7 @@
 mingw-w64-i686-mpc
 
 %VERSION%
-1.3.1-2
+1.4.0-1
 
 %BASE%
 mingw-w64-mpc
@@ -11,33 +11,37 @@ mingw-w64-mpc
 Multiple precision complex arithmetic library (mingw-w64)
 
 %URL%
-http://www.multiprecision.org
+https://www.multiprecision.org
 
 %ARCH%
 any
 
 %BUILDDATE%
-1694609917
+1774192297
 
 %INSTALLDATE%
-1694747598
+1774260062
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/0852421d/6172671101)
+CI (msys2/msys2-autobuild/5687451b/23405893275)
 
 %SIZE%
-562256
+589928
 
 %REASON%
 1
 
 %LICENSE%
-LGPL
+spdx:LGPL-3.0-or-later
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%
 mingw-w64-i686-gmp
 mingw-w64-i686-mpfr
+
+%XDATA%
+pkgtype=pkg
 

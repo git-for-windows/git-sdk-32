@@ -2,7 +2,7 @@
 git-for-windows-keyring
 
 %VERSION%
-1.1.3.eb5a809-1
+1.1.4.a0be1ed4-1
 
 %BASE%
 git-for-windows-keyring
@@ -17,16 +17,16 @@ Git for Windows PGP keyring
 i686
 
 %BUILDDATE%
-1616508553
+1774256259
 
 %INSTALLDATE%
-1616555479
+1774260061
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Unknown Packager
 
 %SIZE%
-10986
+6434
 
 %REASON%
 1
@@ -39,4 +39,7 @@ GPL
 
 %VALIDATION%
 pgp
+
+%XDATA%
+pkgtype=pkg
 

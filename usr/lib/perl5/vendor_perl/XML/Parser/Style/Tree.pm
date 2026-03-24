@@ -76,6 +76,7 @@ So for example the result of parsing:
   <foo><head id="a">Hello <em>there</em></head><bar>Howdy<ref/></bar>do</foo>
 
 would be:
+
              Tag   Content
   ==================================================================
   [foo, [{}, head, [{id => "a"}, 0, "Hello ",  em, [{}, 0, "there"]],

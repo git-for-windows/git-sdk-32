@@ -2,7 +2,9 @@ package File::Spec;
 
 use strict;
 
-our $VERSION = '3.88';
+# Keep $VERSION consistent in all *.pm files in this distribution, including
+# Cwd.pm.
+our $VERSION = '3.91';
 $VERSION =~ tr/_//d;
 
 my %module = (
@@ -13,7 +15,6 @@ my %module = (
 	      symbian => 'Win32', # Yes, File::Spec::Win32 works on symbian.
 	      dos     => 'OS2',   # Yes, File::Spec::OS2 works on DJGPP.
 	      cygwin  => 'Cygwin',
-	      msys    => 'Cygwin',
 	      amigaos => 'AmigaOS');
 
 

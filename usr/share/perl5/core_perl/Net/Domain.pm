@@ -171,7 +171,7 @@ sub _hostdomain {
     }
 
     chop($dom = `domainname 2>/dev/null`)
-      unless (defined $dom || $^O =~ /^(?:cygwin|msys|MSWin32|android)/);
+      unless (defined $dom || $^O =~ /^(?:cygwin|MSWin32|android)/);
 
     if (defined $dom) {
       my @h = ();

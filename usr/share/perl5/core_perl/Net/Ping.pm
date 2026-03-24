@@ -420,15 +420,15 @@ sub retrans
 }
 
 sub _IsAdminUser {
-  return unless $^O eq 'MSWin32' or $^O eq "cygwin" or $^O eq "msys";
+  return unless $^O eq 'MSWin32' or $^O eq "cygwin";
   return unless eval { require Win32 };
   return unless defined &Win32::IsAdminUser;
   return Win32::IsAdminUser();
 }
 
 sub _isroot {
-  if (($> and $^O ne 'VMS' and $^O ne 'cygwin' and $^O ne 'msys')
-    or (($^O eq 'MSWin32' or $^O eq 'cygwin' or $^O eq 'msys')
+  if (($> and $^O ne 'VMS' and $^O ne 'cygwin')
+    or (($^O eq 'MSWin32' or $^O eq 'cygwin')
         and !_IsAdminUser())
     or ($^O eq 'VMS'
         and (`write sys\$output f\$privilege("SYSPRV")` =~ m/FALSE/))) {
@@ -974,7 +974,7 @@ sub tcp_connect
             # This should set $! to the correct error.
             my $char;
             sysread($self->{fh},$char,1);
-            $! = ECONNREFUSED if ($! == EAGAIN && $^O =~ /cygwin|msys/i);
+            $! = ECONNREFUSED if ($! == EAGAIN && $^O =~ /cygwin/i);
 
             $ret = 1 if (!$self->{econnrefused}
                          && $! == ECONNREFUSED);
@@ -1615,7 +1615,7 @@ sub ack
             $self->{bad}->{$entry->[0]} = $!;
             if (!$self->{econnrefused} &&
                 (($! == ECONNREFUSED) ||
-                 ($! == EAGAIN && $^O =~ /cygwin|msys/i))) {
+                 ($! == EAGAIN && $^O =~ /cygwin/i))) {
               # "Connection refused" means reachable
               # Good, continue
             } else {

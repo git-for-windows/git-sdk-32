@@ -16,7 +16,7 @@ use Carp;
 
 BEGIN {
     require XML::Parser::Expat;
-    $VERSION = '2.46';
+    $VERSION = '2.47';
     die "Parser.pm and Expat.pm versions don't match"
       unless $VERSION eq $XML::Parser::Expat::VERSION;
 }
@@ -346,8 +346,8 @@ XML::Parser - A perl module for parsing XML documents
                    Default => \&other);
 
   open(my $fh, 'xmlgenerator |');
-  $p3->parse($foo, ProtocolEncoding => 'ISO-8859-1');
-  close($foo);
+  $p3->parse($fh, ProtocolEncoding => 'ISO-8859-1');
+  close($fh);
 
   $p3->parsefile('junk.xml', ErrorContext => 3);
 

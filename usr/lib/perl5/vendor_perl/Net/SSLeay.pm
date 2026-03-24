@@ -3,8 +3,8 @@
 # Copyright (c) 1996-2003 Sampo Kellomäki <sampo@iki.fi>
 # Copyright (c) 2005-2010 Florian Ragwitz <rafl@debian.org>
 # Copyright (c) 2005-2018 Mike McCauley <mikem@airspayce.com>
+# Copyright (c) 2018 Tuure Vartiainen <vartiait@radiatorsoftware.com>
 # Copyright (c) 2018- Chris Novakovic <chris@chrisn.me.uk>
-# Copyright (c) 2018- Tuure Vartiainen <vartiait@radiatorsoftware.com>
 # Copyright (c) 2018- Heikki Vatiainen <hvn@radiatorsoftware.com>
 #
 # All rights reserved.
@@ -70,7 +70,7 @@ $Net::SSLeay::how_random = 512;
 #   inc/Test/Net/SSLeay.pm
 #   inc/Test/Net/SSLeay/Socket.pm
 #   lib/Net/SSLeay/Handle.pm
-$VERSION = '1.92';
+$VERSION = '1.94';
 
 @ISA = qw(Exporter);
 
@@ -78,10 +78,46 @@ $VERSION = '1.92';
 # To add or remove a constant, edit helper_script/constants.txt, then run
 # helper_script/update-exported-constants.
 my @constants = qw(
+    AD_ACCESS_DENIED
+    AD_BAD_CERTIFICATE
+    AD_BAD_CERTIFICATE_HASH_VALUE
+    AD_BAD_CERTIFICATE_STATUS_RESPONSE
+    AD_BAD_RECORD_MAC
+    AD_CERTIFICATE_EXPIRED
+    AD_CERTIFICATE_REQUIRED
+    AD_CERTIFICATE_REVOKED
+    AD_CERTIFICATE_UNKNOWN
+    AD_CERTIFICATE_UNOBTAINABLE
+    AD_CLOSE_NOTIFY
+    AD_DECODE_ERROR
+    AD_DECOMPRESSION_FAILURE
+    AD_DECRYPTION_FAILED
+    AD_DECRYPT_ERROR
+    AD_EXPORT_RESTRICTION
+    AD_HANDSHAKE_FAILURE
+    AD_ILLEGAL_PARAMETER
+    AD_INAPPROPRIATE_FALLBACK
+    AD_INSUFFICIENT_SECURITY
+    AD_INTERNAL_ERROR
+    AD_MISSING_EXTENSION
+    AD_NO_APPLICATION_PROTOCOL
+    AD_NO_CERTIFICATE
+    AD_NO_RENEGOTIATION
+    AD_PROTOCOL_VERSION
+    AD_RECORD_OVERFLOW
+    AD_UNEXPECTED_MESSAGE
+    AD_UNKNOWN_CA
+    AD_UNKNOWN_PSK_IDENTITY
+    AD_UNRECOGNIZED_NAME
+    AD_UNSUPPORTED_CERTIFICATE
+    AD_UNSUPPORTED_EXTENSION
+    AD_USER_CANCELLED
     ASN1_STRFLGS_ESC_CTRL
     ASN1_STRFLGS_ESC_MSB
     ASN1_STRFLGS_ESC_QUOTE
     ASN1_STRFLGS_RFC2253
+    ASYNC_NO_JOBS
+    ASYNC_PAUSED
     CB_ACCEPT_EXIT
     CB_ACCEPT_LOOP
     CB_ALERT
@@ -95,12 +131,26 @@ my @constants = qw(
     CB_READ_ALERT
     CB_WRITE
     CB_WRITE_ALERT
+    CLIENT_HELLO_CB
+    CLIENT_HELLO_ERROR
+    CLIENT_HELLO_RETRY
+    CLIENT_HELLO_SUCCESS
+    CONF_MFLAGS_DEFAULT_SECTION
+    CONF_MFLAGS_IGNORE_ERRORS
+    CONF_MFLAGS_IGNORE_MISSING_FILE
+    CONF_MFLAGS_IGNORE_RETURN_CODES
+    CONF_MFLAGS_NO_DSO
+    CONF_MFLAGS_SILENT
     ERROR_NONE
     ERROR_SSL
     ERROR_SYSCALL
     ERROR_WANT_ACCEPT
+    ERROR_WANT_ASYNC
+    ERROR_WANT_ASYNC_JOB
+    ERROR_WANT_CLIENT_HELLO_CB
     ERROR_WANT_CONNECT
     ERROR_WANT_READ
+    ERROR_WANT_RETRY_VERIFY
     ERROR_WANT_WRITE
     ERROR_WANT_X509_LOOKUP
     ERROR_ZERO_RETURN
@@ -169,8 +219,10 @@ my @constants = qw(
     MBSTRING_UTF8
     MIN_RSA_MODULUS_LENGTH_IN_BYTES
     MODE_ACCEPT_MOVING_WRITE_BUFFER
+    MODE_ASYNC
     MODE_AUTO_RETRY
     MODE_ENABLE_PARTIAL_WRITE
+    MODE_NO_AUTO_CHAIN
     MODE_RELEASE_BUFFERS
     NID_OCSP_sign
     NID_SMIMECapabilities
@@ -340,7 +392,25 @@ my @constants = qw(
     NID_sha1
     NID_sha1WithRSA
     NID_sha1WithRSAEncryption
+    NID_sha224
+    NID_sha224WithRSAEncryption
+    NID_sha256
+    NID_sha256WithRSAEncryption
+    NID_sha384
+    NID_sha384WithRSAEncryption
+    NID_sha3_224
+    NID_sha3_256
+    NID_sha3_384
+    NID_sha3_512
+    NID_sha512
+    NID_sha512WithRSAEncryption
+    NID_sha512_224
+    NID_sha512_224WithRSAEncryption
+    NID_sha512_256
+    NID_sha512_256WithRSAEncryption
     NID_shaWithRSAEncryption
+    NID_shake128
+    NID_shake256
     NID_stateOrProvinceName
     NID_subject_alt_name
     NID_subject_key_identifier
@@ -374,6 +444,26 @@ my @constants = qw(
     OPENSSL_INFO_LIST_SEPARATOR
     OPENSSL_INFO_MODULES_DIR
     OPENSSL_INFO_SEED_SOURCE
+    OPENSSL_INIT_ADD_ALL_CIPHERS
+    OPENSSL_INIT_ADD_ALL_DIGESTS
+    OPENSSL_INIT_ASYNC
+    OPENSSL_INIT_ATFORK
+    OPENSSL_INIT_ENGINE_AFALG
+    OPENSSL_INIT_ENGINE_CAPI
+    OPENSSL_INIT_ENGINE_CRYPTODEV
+    OPENSSL_INIT_ENGINE_DYNAMIC
+    OPENSSL_INIT_ENGINE_OPENSSL
+    OPENSSL_INIT_ENGINE_PADLOCK
+    OPENSSL_INIT_ENGINE_RDRAND
+    OPENSSL_INIT_LOAD_CONFIG
+    OPENSSL_INIT_LOAD_CRYPTO_STRINGS
+    OPENSSL_INIT_LOAD_SSL_STRINGS
+    OPENSSL_INIT_NO_ADD_ALL_CIPHERS
+    OPENSSL_INIT_NO_ADD_ALL_DIGESTS
+    OPENSSL_INIT_NO_ATEXIT
+    OPENSSL_INIT_NO_LOAD_CONFIG
+    OPENSSL_INIT_NO_LOAD_CRYPTO_STRINGS
+    OPENSSL_INIT_NO_LOAD_SSL_STRINGS
     OPENSSL_MODULES_DIR
     OPENSSL_PLATFORM
     OPENSSL_VERSION
@@ -383,15 +473,20 @@ my @constants = qw(
     OPENSSL_VERSION_PATCH
     OPENSSL_VERSION_STRING
     OP_ALL
+    OP_ALLOW_CLIENT_RENEGOTIATION
     OP_ALLOW_NO_DHE_KEX
     OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION
     OP_CIPHER_SERVER_PREFERENCE
     OP_CISCO_ANYCONNECT
+    OP_CLEANSE_PLAINTEXT
     OP_COOKIE_EXCHANGE
     OP_CRYPTOPRO_TLSEXT_BUG
+    OP_DISABLE_TLSEXT_CA_NAMES
     OP_DONT_INSERT_EMPTY_FRAGMENTS
+    OP_ENABLE_KTLS
     OP_ENABLE_MIDDLEBOX_COMPAT
     OP_EPHEMERAL_RSA
+    OP_IGNORE_UNEXPECTED_EOF
     OP_LEGACY_SERVER_CONNECT
     OP_MICROSOFT_BIG_SSLV3_BUFFER
     OP_MICROSOFT_SESS_ID_BUG
@@ -405,6 +500,7 @@ my @constants = qw(
     OP_NO_CLIENT_RENEGOTIATION
     OP_NO_COMPRESSION
     OP_NO_ENCRYPT_THEN_MAC
+    OP_NO_EXTENDED_MASTER_SECRET
     OP_NO_QUERY_MTU
     OP_NO_RENEGOTIATION
     OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION
@@ -430,6 +526,7 @@ my @constants = qw(
     OP_TLS_ROLLBACK_BUG
     READING
     RECEIVED_SHUTDOWN
+    RETRY_VERIFY
     RSA_3
     RSA_F4
     R_BAD_AUTHENTICATION_TYPE
@@ -474,6 +571,7 @@ my @constants = qw(
     SESS_CACHE_NO_INTERNAL_STORE
     SESS_CACHE_OFF
     SESS_CACHE_SERVER
+    SESS_CACHE_UPDATE_TIME
     SSL2_MT_CLIENT_CERTIFICATE
     SSL2_MT_CLIENT_FINISHED
     SSL2_MT_CLIENT_HELLO
@@ -529,6 +627,43 @@ my @constants = qw(
     TLS1_3_VERSION
     TLS1_VERSION
     TLSEXT_STATUSTYPE_ocsp
+    TLSEXT_TYPE_application_layer_protocol_negotiation
+    TLSEXT_TYPE_cert_type
+    TLSEXT_TYPE_certificate_authorities
+    TLSEXT_TYPE_client_authz
+    TLSEXT_TYPE_client_cert_type
+    TLSEXT_TYPE_client_certificate_url
+    TLSEXT_TYPE_compress_certificate
+    TLSEXT_TYPE_cookie
+    TLSEXT_TYPE_early_data
+    TLSEXT_TYPE_ec_point_formats
+    TLSEXT_TYPE_elliptic_curves
+    TLSEXT_TYPE_encrypt_then_mac
+    TLSEXT_TYPE_extended_master_secret
+    TLSEXT_TYPE_key_share
+    TLSEXT_TYPE_max_fragment_length
+    TLSEXT_TYPE_next_proto_neg
+    TLSEXT_TYPE_padding
+    TLSEXT_TYPE_post_handshake_auth
+    TLSEXT_TYPE_psk
+    TLSEXT_TYPE_psk_kex_modes
+    TLSEXT_TYPE_quic_transport_parameters
+    TLSEXT_TYPE_renegotiate
+    TLSEXT_TYPE_server_authz
+    TLSEXT_TYPE_server_cert_type
+    TLSEXT_TYPE_server_name
+    TLSEXT_TYPE_session_ticket
+    TLSEXT_TYPE_signature_algorithms
+    TLSEXT_TYPE_signature_algorithms_cert
+    TLSEXT_TYPE_signed_certificate_timestamp
+    TLSEXT_TYPE_srp
+    TLSEXT_TYPE_status_request
+    TLSEXT_TYPE_supported_groups
+    TLSEXT_TYPE_supported_versions
+    TLSEXT_TYPE_truncated_hmac
+    TLSEXT_TYPE_trusted_ca_keys
+    TLSEXT_TYPE_use_srtp
+    TLSEXT_TYPE_user_mapping
     VERIFY_CLIENT_ONCE
     VERIFY_FAIL_IF_NO_PEER_CERT
     VERIFY_NONE
@@ -544,6 +679,8 @@ my @constants = qw(
     X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS
     X509_CHECK_FLAG_NO_WILDCARDS
     X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS
+    X509_CRL_VERSION_1
+    X509_CRL_VERSION_2
     X509_FILETYPE_ASN1
     X509_FILETYPE_DEFAULT
     X509_FILETYPE_PEM
@@ -557,7 +694,11 @@ my @constants = qw(
     X509_PURPOSE_SSL_CLIENT
     X509_PURPOSE_SSL_SERVER
     X509_PURPOSE_TIMESTAMP_SIGN
+    X509_REQ_VERSION_1
+    X509_REQ_VERSION_2
+    X509_REQ_VERSION_3
     X509_TRUST_COMPAT
+    X509_TRUST_DEFAULT
     X509_TRUST_EMAIL
     X509_TRUST_OBJECT_SIGN
     X509_TRUST_OCSP_REQUEST
@@ -565,9 +706,15 @@ my @constants = qw(
     X509_TRUST_SSL_CLIENT
     X509_TRUST_SSL_SERVER
     X509_TRUST_TSA
+    X509_VERSION_1
+    X509_VERSION_2
+    X509_VERSION_3
     X509_V_ERR_AKID_ISSUER_SERIAL_MISMATCH
     X509_V_ERR_AKID_SKID_MISMATCH
     X509_V_ERR_APPLICATION_VERIFICATION
+    X509_V_ERR_AUTHORITY_KEY_IDENTIFIER_CRITICAL
+    X509_V_ERR_CA_BCONS_NOT_CRITICAL
+    X509_V_ERR_CA_CERT_MISSING_KEY_USAGE
     X509_V_ERR_CA_KEY_TOO_SMALL
     X509_V_ERR_CA_MD_TOO_WEAK
     X509_V_ERR_CERT_CHAIN_TOO_LONG
@@ -584,13 +731,17 @@ my @constants = qw(
     X509_V_ERR_DANE_NO_MATCH
     X509_V_ERR_DEPTH_ZERO_SELF_SIGNED_CERT
     X509_V_ERR_DIFFERENT_CRL_SCOPE
+    X509_V_ERR_EC_KEY_EXPLICIT_PARAMS
     X509_V_ERR_EE_KEY_TOO_SMALL
     X509_V_ERR_EMAIL_MISMATCH
+    X509_V_ERR_EMPTY_SUBJECT_ALT_NAME
+    X509_V_ERR_EMPTY_SUBJECT_SAN_NOT_CRITICAL
     X509_V_ERR_ERROR_IN_CERT_NOT_AFTER_FIELD
     X509_V_ERR_ERROR_IN_CERT_NOT_BEFORE_FIELD
     X509_V_ERR_ERROR_IN_CRL_LAST_UPDATE_FIELD
     X509_V_ERR_ERROR_IN_CRL_NEXT_UPDATE_FIELD
     X509_V_ERR_EXCLUDED_VIOLATION
+    X509_V_ERR_EXTENSIONS_REQUIRE_VERSION_3
     X509_V_ERR_HOSTNAME_MISMATCH
     X509_V_ERR_INVALID_CA
     X509_V_ERR_INVALID_CALL
@@ -599,15 +750,22 @@ my @constants = qw(
     X509_V_ERR_INVALID_POLICY_EXTENSION
     X509_V_ERR_INVALID_PURPOSE
     X509_V_ERR_IP_ADDRESS_MISMATCH
+    X509_V_ERR_ISSUER_NAME_EMPTY
     X509_V_ERR_KEYUSAGE_NO_CERTSIGN
     X509_V_ERR_KEYUSAGE_NO_CRL_SIGN
     X509_V_ERR_KEYUSAGE_NO_DIGITAL_SIGNATURE
+    X509_V_ERR_KU_KEY_CERT_SIGN_INVALID_FOR_NON_CA
+    X509_V_ERR_MISSING_AUTHORITY_KEY_IDENTIFIER
+    X509_V_ERR_MISSING_SUBJECT_KEY_IDENTIFIER
     X509_V_ERR_NO_EXPLICIT_POLICY
+    X509_V_ERR_NO_ISSUER_PUBLIC_KEY
     X509_V_ERR_NO_VALID_SCTS
     X509_V_ERR_OCSP_CERT_UNKNOWN
     X509_V_ERR_OCSP_VERIFY_FAILED
     X509_V_ERR_OCSP_VERIFY_NEEDED
     X509_V_ERR_OUT_OF_MEM
+    X509_V_ERR_PATHLEN_INVALID_FOR_NON_CA
+    X509_V_ERR_PATHLEN_WITHOUT_KU_KEY_CERT_SIGN
     X509_V_ERR_PATH_LENGTH_EXCEEDED
     X509_V_ERR_PATH_LOOP
     X509_V_ERR_PERMITTED_VIOLATION
@@ -615,8 +773,12 @@ my @constants = qw(
     X509_V_ERR_PROXY_PATH_LENGTH_EXCEEDED
     X509_V_ERR_PROXY_SUBJECT_NAME_VIOLATION
     X509_V_ERR_SELF_SIGNED_CERT_IN_CHAIN
+    X509_V_ERR_SIGNATURE_ALGORITHM_INCONSISTENCY
+    X509_V_ERR_SIGNATURE_ALGORITHM_MISMATCH
     X509_V_ERR_STORE_LOOKUP
     X509_V_ERR_SUBJECT_ISSUER_MISMATCH
+    X509_V_ERR_SUBJECT_KEY_IDENTIFIER_CRITICAL
+    X509_V_ERR_SUBJECT_NAME_EMPTY
     X509_V_ERR_SUBTREE_MINMAX
     X509_V_ERR_SUITE_B_CANNOT_SIGN_P_384_WITH_P_256
     X509_V_ERR_SUITE_B_INVALID_ALGORITHM
@@ -640,6 +802,7 @@ my @constants = qw(
     X509_V_ERR_UNSUPPORTED_CONSTRAINT_TYPE
     X509_V_ERR_UNSUPPORTED_EXTENSION_FEATURE
     X509_V_ERR_UNSUPPORTED_NAME_SYNTAX
+    X509_V_ERR_UNSUPPORTED_SIGNATURE_ALGORITHM
     X509_V_FLAG_ALLOW_PROXY_CERTS
     X509_V_FLAG_CB_ISSUER_CHECK
     X509_V_FLAG_CHECK_SS_SIGNATURE
@@ -1399,45 +1562,59 @@ sub randomize (;$$$) {
 }
 
 sub new_x_ctx {
-    if ($ssl_version == 2)  {
-	unless (exists &Net::SSLeay::CTX_v2_new) {
-	    warn "ssl_version has been set to 2, but this version of OpenSSL has been compiled without SSLv2 support";
-	    return undef;
-	}
-	$ctx = CTX_v2_new();
+    if ( $ssl_version == 2 ) {
+        unless ( exists &Net::SSLeay::CTX_v2_new ) {
+            warn "ssl_version has been set to 2, but this version of libssl has been compiled without SSLv2 support";
+            return undef;
+        }
+        $ctx = CTX_v2_new();
     }
-    elsif ($ssl_version == 3)  { $ctx = CTX_v3_new(); }
-    elsif ($ssl_version == 10) { $ctx = CTX_tlsv1_new(); }
-    elsif ($ssl_version == 11) {
-	unless (exists &Net::SSLeay::CTX_tlsv1_1_new) {
-	    warn "ssl_version has been set to 11, but this version of OpenSSL has been compiled without TLSv1.1 support";
-	    return undef;
-	}
-        $ctx = CTX_tlsv1_1_new;
+    elsif ( $ssl_version == 3 ) {
+        unless ( exists &Net::SSLeay::CTX_v3_new ) {
+            warn 'ssl_version has been set to 3, but this version of libssl has been compiled without SSLv3 support';
+            return undef;
+        }
+        $ctx = CTX_v3_new();
     }
-    elsif ($ssl_version == 12) {
-	unless (exists &Net::SSLeay::CTX_tlsv1_2_new) {
-	    warn "ssl_version has been set to 12, but this version of OpenSSL has been compiled without TLSv1.2 support";
-	    return undef;
-	}
-        $ctx = CTX_tlsv1_2_new;
+    elsif ( $ssl_version == 10 ) {
+        unless ( exists &Net::SSLeay::CTX_tlsv1_new ) {
+            warn 'ssl_version has been set to 10, but this version of libssl has been compiled without TLSv1 support';
+            return undef;
+        }
+        $ctx = CTX_tlsv1_new();
     }
-    elsif ($ssl_version == 13) {
-	unless (eval { Net::SSLeay::TLS1_3_VERSION(); } ) {
-	    warn "ssl_version has been set to 13, but this version of OpenSSL has been compiled without TLSv1.3 support";
-	    return undef;
-	}
+    elsif ( $ssl_version == 11 ) {
+        unless ( exists &Net::SSLeay::CTX_tlsv1_1_new ) {
+            warn 'ssl_version has been set to 11, but this version of libssl has been compiled without TLSv1.1 support';
+            return undef;
+        }
+        $ctx = CTX_tlsv1_1_new();
+    }
+    elsif ( $ssl_version == 12 ) {
+        unless ( exists &Net::SSLeay::CTX_tlsv1_2_new ) {
+            warn 'ssl_version has been set to 12, but this version of libssl has been compiled without TLSv1.2 support';
+            return undef;
+        }
+        $ctx = CTX_tlsv1_2_new();
+    }
+    elsif ( $ssl_version == 13 ) {
+        unless ( eval { Net::SSLeay::TLS1_3_VERSION() } ) {
+            warn 'ssl_version has been set to 13, but this version of libssl has been compiled without TLSv1.3 support';
+            return undef;
+        }
         $ctx = CTX_new();
-        unless(Net::SSLeay::CTX_set_min_proto_version($ctx, Net::SSLeay::TLS1_3_VERSION())) {
-            warn "CTX_set_min_proto failed for TLSv1.3";
+        unless ( Net::SSLeay::CTX_set_min_proto_version( $ctx, Net::SSLeay::TLS1_3_VERSION() ) ) {
+            warn 'CTX_set_min_proto failed for TLSv1.3';
             return undef;
         }
-        unless(Net::SSLeay::CTX_set_max_proto_version($ctx, Net::SSLeay::TLS1_3_VERSION())) {
-            warn "CTX_set_max_proto failed for TLSv1.3";
+        unless ( Net::SSLeay::CTX_set_max_proto_version( $ctx, Net::SSLeay::TLS1_3_VERSION() ) ) {
+            warn 'CTX_set_max_proto failed for TLSv1.3';
             return undef;
         }
     }
-    else                       { $ctx = CTX_new(); }
+    else {
+        $ctx = CTX_new();
+    }
     return $ctx;
 }
 

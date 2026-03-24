@@ -57,7 +57,7 @@ you need to add to your program is the tie function as in:
 use vars qw(@ISA @EXPORT_OK $VERSION);
 @ISA = qw(Exporter);
 @EXPORT_OK = qw(shutdown);
-$VERSION = '1.92';
+$VERSION = '1.94';
 
 my $Initialized;       #-- only _initialize() once
 my $Debug = 0;         #-- pretty hokey
@@ -377,7 +377,9 @@ Maintained by Florian Ragwitz between November 2005 and January 2010.
 
 Maintained by Mike McCauley between November 2005 and June 2018.
 
-Maintained by Chris Novakovic, Tuure Vartiainen and Heikki Vatiainen since June 2018.
+Maintained by Tuure Vartiainen between June 2018 and July 2018.
+
+Maintained by Chris Novakovic and Heikki Vatiainen since June 2018.
 
 =head1 COPYRIGHT
 
@@ -389,9 +391,9 @@ Copyright (c) 2005-2010 Florian Ragwitz <rafl@debian.org>
 
 Copyright (c) 2005-2018 Mike McCauley <mikem@airspayce.com>
 
-Copyright (c) 2018- Chris Novakovic <chris@chrisn.me.uk>
+Copyright (c) 2018 Tuure Vartiainen <vartiait@radiatorsoftware.com>
 
-Copyright (c) 2018- Tuure Vartiainen <vartiait@radiatorsoftware.com>
+Copyright (c) 2018- Chris Novakovic <chris@chrisn.me.uk>
 
 Copyright (c) 2018- Heikki Vatiainen <hvn@radiatorsoftware.com>
 

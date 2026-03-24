@@ -10,7 +10,7 @@ use 5.006;
 use Exporter;
 use XSLoader ();
 
-our $VERSION   = '1.34';
+our $VERSION   = '1.36';
 our @EXPORT    = qw( Dump Load DumpFile LoadFile );
 our @EXPORT_OK = qw( DumpInto );
 our @ISA       = qw( Exporter );
@@ -71,7 +71,7 @@ sub _is_glob {
 
     return 1 if ( ref($h) eq 'GLOB' );
     return 1 if ( ref( \$h ) eq 'GLOB' );
-    return 1 if ( ref($h) =~ m/^IO::/ );
+    return 1 if ( index( ref($h), 'IO::' ) == 0 );
 
     return;
 }

@@ -88,8 +88,8 @@ Dies with a special message.
 BEGIN {
     *_Is_VMS        = $^O eq 'VMS'     ? sub(){1} : sub(){0};
     *_Is_Win32      = $^O eq 'MSWin32' ? sub(){1} : sub(){0};
-    *_Is_cygwin     = ($^O eq 'cygwin' || $^O eq 'msys') ? sub(){1} : sub(){0};
-    *_CanMoveAtBoot = ($^O eq 'MSWin32' || $^O eq 'cygwin' || $^O eq 'msys') ? sub(){1} : sub(){0};
+    *_Is_cygwin     = $^O eq 'cygwin'  ? sub(){1} : sub(){0};
+    *_CanMoveAtBoot = ($^O eq 'MSWin32' || $^O eq 'cygwin') ? sub(){1} : sub(){0};
 }
 
 my $Inc_uninstall_warn_handler;

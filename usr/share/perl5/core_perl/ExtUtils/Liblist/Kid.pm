@@ -189,8 +189,6 @@ sub _unix_os2_ext {
             }
             elsif ( $^O eq 'cygwin' && -f ( $fullname = "$thispth/$thislib.dll" ) ) {
             }
-            elsif ( $^O eq 'msys' && -f ( $fullname = "$thispth/$thislib.dll" ) ) {
-            }
             elsif ( -f ( $fullname = "$thispth/Slib$thislib$Config_libext" ) ) {
             }
             elsif ($^O eq 'dgux'

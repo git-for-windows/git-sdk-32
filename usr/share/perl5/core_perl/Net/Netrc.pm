@@ -57,7 +57,6 @@ sub _readrc {
   unless ($^O eq 'os2'
     || $^O eq 'MSWin32'
     || $^O eq 'MacOS'
-    || $^O =~ /^msys/
     || $^O =~ /^cygwin/)
   {
     my @stat = stat($file);

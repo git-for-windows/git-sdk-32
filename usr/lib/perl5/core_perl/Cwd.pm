@@ -3,7 +3,7 @@ use strict;
 use Exporter;
 
 
-our $VERSION = '3.89';
+our $VERSION = '3.91';
 my $xs_version = $VERSION;
 $VERSION =~ tr/_//d;
 
@@ -135,15 +135,6 @@ my %METHOD_MAP =
     realpath		=> 'fast_abs_path',
    },
 
-   msys =>
-   {
-    getcwd		=> 'cwd',
-    fastgetcwd		=> 'cwd',
-    fastcwd		=> 'cwd',
-    abs_path		=> 'fast_abs_path',
-    realpath		=> 'fast_abs_path',
-   },
-
    amigaos =>
    {
     getcwd              => '_backtick_pwd',
@@ -232,7 +223,7 @@ unless ($METHOD_MAP{$^O}{cwd} or defined &cwd) {
     }
 }
 
-if ($^O eq 'cygwin' || $^O eq 'msys') {
+if ($^O eq 'cygwin') {
   # We need to make sure cwd() is called with no args, because it's
   # got an arg-less prototype and will die if args are present.
   local $^W = 0;
@@ -333,7 +324,7 @@ sub chdir_init {
 
 sub chdir {
     my $newdir = @_ ? shift : '';	# allow for no arg (chdir to HOME dir)
-    if ($^O eq "cygwin" || $^O eq "msys") {
+    if ($^O eq "cygwin") {
       $newdir =~ s|\A///+|//|;
       $newdir =~ s|(?<=[^/])//+|/|g;
     }

@@ -2,9 +2,9 @@
     eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
 	if 0; # ^ Run only under a shell
 
-my $config_tag1 = '5.38.2 - Mon Feb 17 20:22:25 UTC 2025';
+my $config_tag1 = '5.40.3 - Tue Aug 19 21:44:17 UTC 2025';
 
-my $patchlevel_date = 1701173777;
+my $patchlevel_date = 1753129568;
 my @patches = Config::local_patches();
 my $patch_tags = join "", map /(\S+)/ ? "+$1 " : (), @patches;
 
@@ -696,7 +696,7 @@ EOF
     my @env =
         qw(PATH LD_LIBRARY_PATH LANG PERL_BADLANG SHELL HOME LOGDIR LANGUAGE);
     push @env, $Config{ldlibpthname} if $Config{ldlibpthname} ne '';
-    push @env, grep /^(?:PERL|LC_|LANG|MSYS)/, keys %ENV;
+    push @env, grep /^(?:PERL|LC_|LANG|CYGWIN|MSYS)/, keys %ENV;
     my %env;
     @env{@env} = @env;
     for my $env (sort keys %env) {

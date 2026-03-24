@@ -9,9 +9,9 @@
 
 /* Package name      : perl5
  * Source directory  : .
- * Configuration time: Mon Feb 17 20:22:25 UTC 2025
+ * Configuration time: Tue Aug 19 21:44:17 UTC 2025
  * Configured by     : runneradmin
- * Target system     : msys_nt-10.0-20348-wow64 fv-az1115-734 3.3.6-09fa4556-341.i686 2023-11-25 08:23 utc i686 msys 
+ * Target system     : cygwin_nt-10.0-20348-wow64 runnervmr86sf 3.3.6-341.i686 2025-06-20 20:37 utc i686 cygwin 
  */
 
 #ifndef _config_h_
@@ -106,6 +106,12 @@
  *	the fcntl() function exists.
  */
 #define HAS_FCNTL		/**/
+
+/* HAS_FDOPENDIR:
+ * This symbol, if defined, indicates that the fdopendir routine is
+ * available to open a directory descriptor.
+ */
+#define HAS_FDOPENDIR		/**/
 
 /* HAS_FGETPOS:
  *	This symbol, if defined, indicates that the fgetpos routine is
@@ -624,7 +630,7 @@
  *	This symbol, if defined, indicates that <gdbm.h> exists and should
  *	be included.
  */
-/*#define I_GDBM	/ **/
+#define I_GDBM	/**/
 
 /* I_LOCALE:
  *	This symbol, if defined, indicates to the C program that it should
@@ -1079,7 +1085,7 @@
 #define FILE_cnt(fp)	((fp)->_r)
 #define STDIO_CNT_LVALUE		/**/
 /*#define STDIO_PTR_LVAL_SETS_CNT	/ **/
-#define STDIO_PTR_LVAL_NOCHANGE_CNT	/**/
+/*#define STDIO_PTR_LVAL_NOCHANGE_CNT	/ **/
 #endif
 
 /* USE_STDIO_BASE:
@@ -1102,7 +1108,7 @@
  *	structure pointed to its argument. This macro will always be defined
  *	if USE_STDIO_BASE is defined.
  */
-#define USE_STDIO_BASE	/**/
+/*#define USE_STDIO_BASE	/ **/
 #ifdef USE_STDIO_BASE
 #define FILE_base(fp)	((fp)->_ub._base ? (fp)->_ub._base : (fp)->_bf._base)
 #define FILE_bufsiz(fp)	((fp)->_ub._base ? (fp)->_ub._size : (fp)->_bf._size)
@@ -1368,8 +1374,8 @@
  *	by Configure.  You shouldn't rely on it too much; the specific
  *	feature tests from Configure are generally more reliable.
  */
-#define OSNAME "msys"		/**/
-#define OSVERS "3.3.6-09fa4556-341.i686"		/**/
+#define OSNAME "cygwin"		/**/
+#define OSVERS "3.3.6-341.i686"		/**/
 
 /* CAT2:
  *	This macro concatenates 2 tokens together.
@@ -1822,7 +1828,7 @@
  *	Usually set to 'void *' or 'caddr_t'.
  */
 #define HAS_MMAP		/**/
-#define Mmap_t void *	/**/
+#define Mmap_t caddr_t	/**/
 
 /* HAS_SETGRENT:
  *	This symbol, if defined, indicates that the setgrent routine is
@@ -1896,7 +1902,7 @@
  *	but not always right so it should be emitted by the program only
  *	when HAS_SHMAT_PROTOTYPE is not defined to avoid conflicting defs.
  */
-#define Shmat_t void *	/**/
+#define Shmat_t char *	/**/
 #define HAS_SHMAT_PROTOTYPE	/**/
 
 /* HAS_SOCKET:
@@ -2083,10 +2089,10 @@
  *	K&R style function declarations will yield errors.
  */
 #define I_NDBM	/**/
-/*#define I_GDBMNDBM	/ **/
+#define I_GDBMNDBM	/**/
 /*#define I_GDBM_NDBM	/ **/
 #define NDBM_H_USES_PROTOTYPES	/**/
-/*#define GDBMNDBM_H_USES_PROTOTYPES	/ **/
+#define GDBMNDBM_H_USES_PROTOTYPES	/**/
 /*#define GDBM_NDBM_H_USES_PROTOTYPES	/ **/
 
 /* I_NETDB:
@@ -3143,10 +3149,16 @@
 
 /* HAS_NL_LANGINFO:
  *	This symbol, if defined, indicates that the nl_langinfo routine is
- *	available to return local data.  You will also need <langinfo.h>
+ *	available to return locale data.  You will also need <langinfo.h>
+ *	and therefore I_LANGINFO.
+ */
+/* HAS_NL_LANGINFO_L:
+ *	This symbol, if defined, indicates that the nl_langinfo_l routine is
+ *	available to return locale data.  You will also need <langinfo.h>
  *	and therefore I_LANGINFO.
  */
 #define HAS_NL_LANGINFO		/**/
+#define HAS_NL_LANGINFO_L		/**/
 
 /* HAS_OFF64_T:
  *	This symbol will be defined if the C compiler supports off64_t.
@@ -3610,6 +3622,31 @@
  */
 #define DEFAULT_INC_EXCLUDES_DOT	/**/
 
+/* PERL_LC_ALL_USES_NAME_VALUE_PAIRS:
+ *	This symbol, if defined, indicates to the C program that the string
+ *	returned by setlocale(LC_ALL, NULL) uses 'name=value;' pairs to
+ *	indicate what each category's locale is when they aren't all set to the
+ *	same locale.  For example, "LC_NUMERIC=C;LC_CTYPE=de_DE;..."
+ *	When not defined, the system uses positional notation.
+ */
+/* PERL_LC_ALL_SEPARATOR:
+ *	This symbol, if defined, gives the string returned by
+ *	setlocale(LC_ALL, NULL) to separate categories that are in different
+ *	locales on systems that use a positional notation as opposed to
+ *	'name=value' pairs.  An example on some platforms could be the '/' in
+ *	"C/de_DE/C/en_UK/C/C"
+ */
+/* PERL_LC_ALL_CATEGORY_POSITIONS_INIT:
+ *	This symbol, when defined, gives the C initializer for an array whose
+ *	element [0] is the first category in the string returned by
+ *	setlocale(LC_ALL, NULL) when not all categories are the same, on
+ *	systems that use a positional notation.  After element [0] is
+ *	LC_ALL_SEPARATOR, then the category given by element [1] and so on.
+ */
+/*#define PERL_LC_ALL_USES_NAME_VALUE_PAIRS  	/ **/
+#define  PERL_LC_ALL_SEPARATOR "/"	/**/
+#define  PERL_LC_ALL_CATEGORY_POSITIONS_INIT  { 1, 2, 3, 4, 5, 6 }	/**/
+
 /* USE_DYNAMIC_LOADING:
  *	This symbol, if defined, indicates that dynamic loading of
  *	some sort is available.
@@ -3670,9 +3707,9 @@
  */
 #define DB_Hash_t	u_int32_t		/**/
 #define DB_Prefix_t	size_t		/**/
-#define DB_VERSION_MAJOR_CFG		/**/
-#define DB_VERSION_MINOR_CFG		/**/
-#define DB_VERSION_PATCH_CFG		/**/
+#define DB_VERSION_MAJOR_CFG	6	/**/
+#define DB_VERSION_MINOR_CFG	2	/**/
+#define DB_VERSION_PATCH_CFG	32	/**/
 
 /* I_FENV:
  *	This symbol, if defined, indicates to the C program that it should
@@ -4478,7 +4515,7 @@
  *	where library files may be held under a private library, for
  *	instance.
  */
-#define ARCHNAME "i686-msys-thread-multi-64int"		/**/
+#define ARCHNAME "i686-cygwin-thread-multi-64int"		/**/
 
 /* HAS_ASCTIME_R:
  *	This symbol, if defined, indicates that the asctime_r routine
@@ -4955,17 +4992,6 @@
  *	available to convert a multi-byte character into a wide character.
  */
 #define HAS_MBRTOWC	/**/
-
-/* HAS_NL_LANGINFO_L:
- *	This symbol, when defined, indicates presence of the nl_langinfo_l()
- *	function
- */
-/* HAS_THREAD_SAFE_NL_LANGINFO_L:
- *	This symbol, when defined, indicates presence of the nl_langinfo_l()
- *	function, and that it is thread-safe.
- */
-#define HAS_NL_LANGINFO_L	/**/
-#define HAS_THREAD_SAFE_NL_LANGINFO_L	/**/
 
 /* OLD_PTHREAD_CREATE_JOINABLE:
  *	This symbol, if defined, indicates how to create pthread

@@ -2,7 +2,7 @@
 perl-TermReadKey
 
 %VERSION%
-2.38-9
+2.38-7
 
 %BASE%
 perl-TermReadKey
@@ -11,22 +11,22 @@ perl-TermReadKey
 Provides simple control over terminal driver modes
 
 %URL%
-http://search.cpan.org/~jstowe/TermReadKey/
+https://metacpan.org/dist/TermReadKey
 
 %ARCH%
 i686
 
 %BUILDDATE%
-1739825509
+1755721316
 
 %INSTALLDATE%
-1739848753
+1774455777
 
 %PACKAGER%
-Johannes Schindelin <johannes.schindelin@gmx.de>
+Unknown Packager
 
 %SIZE%
-43306
+43819
 
 %GROUPS%
 perl-modules
@@ -35,7 +35,6 @@ perl-modules
 custom
 
 %VALIDATION%
-sha256
 pgp
 
 %DEPENDS%

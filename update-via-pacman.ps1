@@ -35,7 +35,7 @@ if (!(Test-Path var\log -PathType Container)) {
 }
 
 echo "Run Pacman (First Pass)"
-bash -lc "pacman -Syyu --overwrite=\* --noconfirm"
+bash -lc "pacman -Syyuu --overwrite=\* --noconfirm"
 if (!$?) { exit 1 }
 
 # Ensure that the Git for Windows keyring is registered
@@ -68,7 +68,7 @@ if ($type -Match "full system upgrade") {
   echo "No second pass needed"
 } else {
   echo "Run Pacman again (Second Pass) to upgrade the remaining (non-core) packages"
-  bash -lc "pacman -Su --overwrite=\* --noconfirm"
+  bash -lc "pacman -Suu --overwrite=\* --noconfirm"
   if (!$?) { exit 1 }
 
   # Ensure that the Git for Windows keyring is registered

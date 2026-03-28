@@ -585,6 +585,7 @@ mingw32/include/eh.h
 mingw32/include/ehstorapi.h
 mingw32/include/elscore.h
 mingw32/include/elssrvc.h
+mingw32/include/emi.h
 mingw32/include/emostore.h
 mingw32/include/emptyvc.h
 mingw32/include/endpointvolume.h
@@ -1752,6 +1753,8 @@ mingw32/include/windows.graphics.directx.direct3d11.h
 mingw32/include/windows.graphics.directx.direct3d11.idl
 mingw32/include/windows.graphics.directx.h
 mingw32/include/windows.graphics.directx.idl
+mingw32/include/windows.graphics.display.h
+mingw32/include/windows.graphics.display.idl
 mingw32/include/windows.graphics.effects.h
 mingw32/include/windows.graphics.effects.idl
 mingw32/include/windows.graphics.h
@@ -1851,6 +1854,10 @@ mingw32/include/windows.ui.input.h
 mingw32/include/windows.ui.input.idl
 mingw32/include/windows.ui.notifications.h
 mingw32/include/windows.ui.notifications.idl
+mingw32/include/windows.ui.text.core.h
+mingw32/include/windows.ui.text.core.idl
+mingw32/include/windows.ui.text.h
+mingw32/include/windows.ui.text.idl
 mingw32/include/windows.ui.viewmanagement.core.h
 mingw32/include/windows.ui.viewmanagement.core.idl
 mingw32/include/windows.ui.viewmanagement.h

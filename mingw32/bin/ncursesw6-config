@@ -88,7 +88,7 @@ else
 	includesubdir="${prefix}/include"
 fi
 
-LIBS="-lsystre -ltre -lintl -liconv "
+LIBS="-lsystre -ltre -lintl -liconv -lpcre2-posix "
 if [ "ncurses" = "ncurses" ]; then
 	LIBS="-l${CURSES_LIB} $LIBS"
 else

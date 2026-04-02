@@ -12,7 +12,7 @@ mingw32/lib/cmake/
 mingw32/lib/cmake/expat-2.7.5/
 mingw32/lib/cmake/expat-2.7.5/expat-config-version.cmake
 mingw32/lib/cmake/expat-2.7.5/expat-config.cmake
-mingw32/lib/cmake/expat-2.7.5/expat-noconfig.cmake
+mingw32/lib/cmake/expat-2.7.5/expat-release.cmake
 mingw32/lib/cmake/expat-2.7.5/expat.cmake
 mingw32/lib/libexpat.a
 mingw32/lib/libexpat.dll.a

@@ -8,8 +8,9 @@ includedir=/mingw32/include
 
 Name: liblzma
 Description: General purpose data compression library
+License: 0BSD
 URL: https://tukaani.org/xz/
-Version: 5.8.2
+Version: 5.8.3
 Cflags: -I${includedir}
 Cflags.private: -DLZMA_API_STATIC
 Libs: -L${libdir} -llzma

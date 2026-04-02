@@ -8,6 +8,6 @@ Version: 2.7.5
 Description: expat XML parser
 URL: https://libexpat.github.io/
 Libs: -L${libdir} -lexpat
-Libs.private: 
+Libs.private: -lm
 Cflags: -I${includedir}
 Cflags.private: -DXML_STATIC

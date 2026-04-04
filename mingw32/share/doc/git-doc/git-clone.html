@@ -542,8 +542,14 @@ instead of using hard links, automatically setup
 .<code>git/objects/info/alternates</code> to share the objects
 with the source repository.  The resulting repository
 starts out without any object of its own.</p>
-<div class="paragraph">
-<p><strong>NOTE</strong>: this is a possibly dangerous operation; do <strong>not</strong> use
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+this is a possibly dangerous operation; do <strong>not</strong> use
 it unless you understand what it does. If you clone your
 repository using this option and then delete branches (or use any
 other Git command that makes any existing commit unreferenced) in the
@@ -551,7 +557,10 @@ source repository, some objects may become unreferenced (or dangling).
 These objects may be removed by normal Git operations (such as <code>git</code> <code>commit</code>)
 which automatically call <code>git</code> <code>maintenance</code> <code>run</code> <code>--auto</code>. (See
 <a href="git-maintenance.html">git-maintenance(1)</a>.) If these objects are removed and were referenced
-by the cloned repository, then the cloned repository will become corrupt.</p>
+by the cloned repository, then the cloned repository will become corrupt.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Note that running <code>git</code> <code>repack</code> without the <code>--local</code> option in a repository
@@ -566,7 +575,8 @@ its source repository, you can simply run <code>git</code> <code>repack</code> <
 objects from the source repository into a pack in the cloned repository.</p>
 </div>
 </dd>
-<dt class="hdlist1"><code>--reference</code>[<code>-if-able</code>] <em>&lt;repository&gt;</em></dt>
+<dt class="hdlist1"><code>--reference=</code><em>&lt;repository&gt;</em></dt>
+<dt class="hdlist1"><code>--reference-if-able=</code><em>&lt;repository&gt;</em></dt>
 <dd>
 <p>If the reference <em>&lt;repository&gt;</em> is on the local machine,
 automatically setup .<code>git/objects/info/alternates</code> to
@@ -577,9 +587,18 @@ being cloned, reducing network and local storage costs.
 When using the <code>--reference-if-able</code>, a non existing
 directory is skipped with a warning instead of aborting
 the clone.</p>
-<div class="paragraph">
-<p><strong>NOTE</strong>: see the NOTE for the <code>--shared</code> option, and also the
-<code>--dissociate</code> option.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+see the NOTE for the <code>--shared</code> option, and also the
+<code>--dissociate</code> option.
+</td>
+</tr>
+</table>
 </div>
 </dd>
 <dt class="hdlist1"><code>--dissociate</code></dt>
@@ -608,15 +627,15 @@ to the standard error stream.</p>
 </dd>
 <dt class="hdlist1"><code>--progress</code></dt>
 <dd>
-<p>Progress status is reported on the standard error stream
-by default when it is attached to a terminal, unless <code>--quiet</code>
+<p>Report progress status on the standard error stream
+by default when attached to a terminal, unless <code>--quiet</code>
 is specified. This flag forces progress status even if the
 standard error stream is not directed to a terminal.</p>
 </dd>
 <dt class="hdlist1"><code>--server-option=</code><em>&lt;option&gt;</em></dt>
 <dd>
 <p>Transmit the given string to the server when communicating using
-protocol version 2.  The given string must not contain a NUL or LF
+protocol version 2.  The given string must not contain a <em>NUL</em> or <em>LF</em>
 character.  The server&#8217;s handling of server options, including
 unknown ones, is server-specific.
 When multiple <code>--server-option=</code><em>&lt;option&gt;</em> are given, they are all
@@ -628,9 +647,10 @@ are used instead.</p>
 <dt class="hdlist1"><code>-n</code></dt>
 <dt class="hdlist1"><code>--no-checkout</code></dt>
 <dd>
-<p>No checkout of <code>HEAD</code> is performed after the clone is complete.</p>
+<p>Do not checkout <code>HEAD</code> after the clone is complete.</p>
 </dd>
-<dt class="hdlist1"><code>--</code>[<code>no-</code>]<code>reject-shallow</code></dt>
+<dt class="hdlist1"><code>--no-reject-shallow</code></dt>
+<dt class="hdlist1"><code>--reject-shallow</code></dt>
 <dd>
 <p>Fail if the source repository is a shallow repository.
 The <code>clone.rejectShallow</code> configuration variable can be used to
@@ -661,11 +681,30 @@ working directory as needed.</p>
 <p>Use the partial clone feature and request that the server sends
 a subset of reachable objects according to a given object filter.
 When using <code>--filter</code>, the supplied <em>&lt;filter-spec&gt;</em> is used for
-the partial clone filter. For example, <code>--filter=blob:none</code> will
-filter out all blobs (file contents) until needed by Git. Also,
-<code>--filter=blob:limit=</code><em>&lt;size&gt;</em> will filter out all blobs of size
-at least <em>&lt;size&gt;</em>. For more details on filter specifications, see
-the <code>--filter</code> option in <a href="git-rev-list.html">git-rev-list(1)</a>.</p>
+the partial clone filter.</p>
+<div class="paragraph">
+<p>If <code>--filter=auto</code> is used the filter specification is determined
+automatically through the <em>promisor-remote</em> protocol (see
+<a href="gitprotocol-v2.html">gitprotocol-v2(5)</a>) by combining the filter specifications
+advertised by the server for the promisor remotes that the client
+accepts (see the <code>promisor.acceptFromServer</code> configuration option in
+<a href="git-config.html">git-config(1)</a>). This allows the server to suggest the optimal
+filter for the available promisor remotes.</p>
+</div>
+<div class="paragraph">
+<p>As with other filter specifications, the "auto" value is persisted in
+the configuration. This ensures that future fetches will continue to
+adapt to the server&#8217;s current recommendation.</p>
+</div>
+<div class="paragraph">
+<p>For details on all other available filter specifications, see the
+<code>--filter=</code><em>&lt;filter-spec&gt;</em> option in <a href="git-rev-list.html">git-rev-list(1)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>--filter=blob:none</code> will filter out all blobs (file
+contents) until needed by Git. Also, <code>--filter=blob:limit=</code><em>&lt;size&gt;</em> will
+filter out all blobs of size at least <em>&lt;size&gt;</em>.</p>
+</div>
 </dd>
 <dt class="hdlist1"><code>--also-filter-submodules</code></dt>
 <dd>
@@ -682,20 +721,19 @@ remote-tracking branches, notes etc.) and sets up a refspec configuration such
 that all these refs are overwritten by a <code>git</code> <code>remote</code> <code>update</code> in the
 target repository.</p>
 </dd>
-<dt class="hdlist1"><code>-o</code> <em>&lt;name&gt;</em></dt>
-<dt class="hdlist1"><code>--origin</code> <em>&lt;name&gt;</em></dt>
+<dt class="hdlist1"><code>-o</code><em>&lt;name&gt;</em></dt>
+<dt class="hdlist1"><code>--origin=</code><em>&lt;name&gt;</em></dt>
 <dd>
 <p>Instead of using the remote name <code>origin</code> to keep track of the upstream
 repository, use <em>&lt;name&gt;</em>.  Overrides <code>clone.defaultRemoteName</code> from the
 config.</p>
 </dd>
-<dt class="hdlist1"><code>-b</code> <em>&lt;name&gt;</em></dt>
-<dt class="hdlist1"><code>--branch</code> <em>&lt;name&gt;</em></dt>
+<dt class="hdlist1"><code>-b</code><em>&lt;name&gt;</em></dt>
+<dt class="hdlist1"><code>--branch=</code><em>&lt;name&gt;</em></dt>
 <dd>
-<p>Instead of pointing the newly created <code>HEAD</code> to the branch pointed
-to by the cloned repository&#8217;s <code>HEAD</code>, point to <em>&lt;name&gt;</em> branch
-instead. In a non-bare repository, this is the branch that will
-be checked out.
+<p>Point the newly created <code>HEAD</code> to <em>&lt;name&gt;</em> branch instead of the branch
+pointed to by the cloned repository&#8217;s <code>HEAD</code>. In a non-bare repository,
+this is the branch that will be checked out.
 <code>--branch</code> can also take tags and detaches the <code>HEAD</code> at that commit
 in the resulting repository.</p>
 </dd>
@@ -709,20 +747,19 @@ branch, and without making any local branch, and detach <code>HEAD</code> to
 name.
 This option is incompatible with <code>--branch</code> and <code>--mirror</code>.</p>
 </dd>
-<dt class="hdlist1"><code>-u</code> <em>&lt;upload-pack&gt;</em></dt>
-<dt class="hdlist1"><code>--upload-pack</code> <em>&lt;upload-pack&gt;</em></dt>
+<dt class="hdlist1"><code>-u</code><em>&lt;upload-pack&gt;</em></dt>
+<dt class="hdlist1"><code>--upload-pack=</code><em>&lt;upload-pack&gt;</em></dt>
 <dd>
-<p>When given, and the repository to clone from is accessed
-via ssh, this specifies a non-default path for the command
-run on the other end.</p>
+<p>Specify a non-default path for the command run on the other end when the
+repository to clone from is accessed via ssh.</p>
 </dd>
 <dt class="hdlist1"><code>--template=</code><em>&lt;template-directory&gt;</em></dt>
 <dd>
 <p>Specify the directory from which templates will be used;
 (See the "TEMPLATE DIRECTORY" section of <a href="git-init.html">git-init(1)</a>.)</p>
 </dd>
-<dt class="hdlist1"><code>-c</code> <em>&lt;key&gt;</em><code>=</code><em>&lt;value&gt;</em></dt>
-<dt class="hdlist1"><code>--config</code> <em>&lt;key&gt;</em><code>=</code><em>&lt;value&gt;</em></dt>
+<dt class="hdlist1"><code>-c</code><em>&lt;key&gt;</em><code>=</code><em>&lt;value&gt;</em></dt>
+<dt class="hdlist1"><code>--config=</code><em>&lt;key&gt;</em><code>=</code><em>&lt;value&gt;</em></dt>
 <dd>
 <p>Set a configuration variable in the newly-created repository;
 this takes effect immediately after the repository is
@@ -740,7 +777,7 @@ Configuration variables known to not take effect are:
 corresponding <code>--mirror</code> and <code>--no-tags</code> options instead.</p>
 </div>
 </dd>
-<dt class="hdlist1"><code>--depth</code> <em>&lt;depth&gt;</em></dt>
+<dt class="hdlist1"><code>--depth=</code><em>&lt;depth&gt;</em></dt>
 <dd>
 <p>Create a <em>shallow</em> clone with a history truncated to the
 specified number of commits. Implies <code>--single-branch</code> unless
@@ -831,20 +868,22 @@ tree.</p>
 <dt class="hdlist1"><code>--ref-format=</code><em>&lt;ref-format&gt;</em></dt>
 <dd>
 <p>Specify the given ref storage format for the repository. The valid values are:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>files</code> for loose files with packed-refs. This is the default.</p>
-</li>
-<li>
-<p><code>reftable</code> for the reftable format. This format is experimental and its
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>files</code></dt>
+<dd>
+<p>for loose files with packed-refs. This is the default.</p>
+</dd>
+<dt class="hdlist1"><code>reftable</code></dt>
+<dd>
+<p>for the reftable format. This format is experimental and its
 internals are subject to change.</p>
-</li>
-</ul>
+</dd>
+</dl>
 </div>
 </dd>
-<dt class="hdlist1"><code>-j</code> <em>&lt;n&gt;</em></dt>
-<dt class="hdlist1"><code>--jobs</code> <em>&lt;n&gt;</em></dt>
+<dt class="hdlist1"><code>-j</code><em>&lt;n&gt;</em></dt>
+<dt class="hdlist1"><code>--jobs=</code><em>&lt;n&gt;</em></dt>
 <dd>
 <p>The number of submodules fetched at the same time.
 Defaults to the <code>submodule.fetchJobs</code> option.</p>
@@ -1122,6 +1161,13 @@ See <code>--ref-format=</code> in <a href="git-init.html">git-init(1)</a>. Both 
 option and the <code>GIT_DEFAULT_REF_FORMAT</code> environment variable take
 precedence over this config.</p>
 </dd>
+<dt class="hdlist1">init.defaultSubmodulePathConfig</dt>
+<dd>
+<p>A boolean that specifies if <code>git</code> <code>init</code> and <code>git</code> <code>clone</code> should
+automatically set <code>extensions.submodulePathConfig</code> to <code>true</code>. This
+allows all new repositories to automatically use the submodule path
+extension. Defaults to <code>false</code> when unset.</p>
+</dd>
 <dt class="hdlist1"><code>clone.defaultRemoteName</code></dt>
 <dd>
 <p>The name of the remote to create when cloning a repository.  Defaults to
@@ -1155,7 +1201,7 @@ the filter to submodules.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

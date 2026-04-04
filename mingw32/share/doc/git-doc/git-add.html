@@ -541,7 +541,10 @@ be ignored.</p>
 <dt class="hdlist1"><code>-f</code></dt>
 <dt class="hdlist1"><code>--force</code></dt>
 <dd>
-<p>Allow adding otherwise ignored files.</p>
+<p>Allow adding otherwise ignored files. The option is also used when
+<code>submodule.</code><em>&lt;name&gt;</em><code>.ignore=all</code> is set, but you want to stage an
+update of the submodule. The <code>path</code> to the submodule must be explicitly
+specified.</p>
 </dd>
 <dt class="hdlist1"><code>--sparse</code></dt>
 <dd>
@@ -575,8 +578,10 @@ See &#8220;Interactive mode&#8221; for details.</p>
 <dt class="hdlist1"><code>-U</code><em>&lt;n&gt;</em></dt>
 <dt class="hdlist1"><code>--unified=</code><em>&lt;n&gt;</em></dt>
 <dd>
-<p>Generate diffs with <em>&lt;n&gt;</em> lines of context. Defaults to <code>diff.context</code>
-or 3 if the config option is unset.</p>
+<p>Generate diffs with <em>&lt;n&gt;</em> lines of context. The number of context
+lines defaults to <code>diff.context</code> or 3 if the configuration variable
+is unset. (<code>-U</code> without <em>&lt;n&gt;</em> is silently accepted as a synonym for
+<code>-p</code> due to a historical accident).</p>
 </dd>
 <dt class="hdlist1"><code>--inter-hunk-context=</code><em>&lt;n&gt;</em></dt>
 <dd>
@@ -1046,7 +1051,7 @@ naming convention for configuration variables.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

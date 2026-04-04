@@ -530,7 +530,9 @@ traditional behavior where output can be piped to <code>git</code> <code>update-
 <p>Range of commits to replay; see "Specifying Ranges" in
 <a href="git-rev-parse.html">git-rev-parse(1)</a>. In <code>--advance</code> <em>&lt;branch&gt;</em> mode, the
 range should have a single tip, so that it&#8217;s clear to which tip the
-advanced &lt;branch&gt; should point.</p>
+advanced &lt;branch&gt; should point. Any commits in the range whose
+changes are already present in the branch the commits are being
+replayed onto will be dropped.</p>
 </dd>
 </dl>
 </div>
@@ -698,6 +700,11 @@ the first parent commit upon seeing a merge commit.
 This can be used to find the set of changes in a topic branch
 from the point where it diverged from the remote branch, given
 that arbitrary merges can be valid topic branch changes.</p>
+</dd>
+<dt class="hdlist1"><code>--maximal-only</code></dt>
+<dd>
+<p>Restrict the output commits to be those that are not reachable
+from any other commits in the revision range.</p>
 </dd>
 <dt class="hdlist1"><code>--not</code></dt>
 <dd>
@@ -1672,7 +1679,7 @@ that they have in common, but that does not need to be the case.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

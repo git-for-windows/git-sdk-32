@@ -452,7 +452,8 @@ pre>code {
 <h2 id="_synopsis">SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><code>git</code> <code>last-modified</code> [<code>--recursive</code>] [<code>--show-trees</code>] [<em>&lt;revision-range&gt;</em>] [[<code>--</code>] <em>&lt;path&gt;</em>&#8230;&#8203;]</pre>
+<pre class="content"><code>git</code> <code>last-modified</code> [<code>--recursive</code>] [<code>--show-trees</code>] [<code>--max-depth=</code><em>&lt;depth&gt;</em>] [<code>-z</code>]
+		  [<em>&lt;revision-range&gt;</em>] [[<code>--</code>] <em>&lt;pathspec&gt;</em>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -476,14 +477,26 @@ A commit renaming a path, or changing it&#8217;s mode is also taken into account
 <dt class="hdlist1"><code>-r</code></dt>
 <dt class="hdlist1"><code>--recursive</code></dt>
 <dd>
-<p>Instead of showing tree entries, step into subtrees and show all entries
-inside them recursively.</p>
+<p>Recursively traverse into all subtrees. By default, the command only
+shows tree entries matching the <em>&lt;pathspec&gt;</em>. With this option, it
+descends into subtrees and displays all entries within them.
+Equivalent to <code>--max-depth=-1</code>.</p>
 </dd>
 <dt class="hdlist1"><code>-t</code></dt>
 <dt class="hdlist1"><code>--show-trees</code></dt>
 <dd>
-<p>Show tree entries even when recursing into them. It has no effect
-without <code>--recursive</code>.</p>
+<p>Show tree entries even when recursing into them.</p>
+</dd>
+<dt class="hdlist1"><code>--max-depth=</code><em>&lt;depth&gt;</em></dt>
+<dd>
+<p>For each pathspec given on the command line, traverse at most <em>&lt;depth&gt;</em>
+levels into subtrees. A negative value means no limit.
+The default is 0, which shows all paths matching the pathspec
+without descending into subtrees.</p>
+</dd>
+<dt class="hdlist1"><code>-z</code></dt>
+<dd>
+<p>Terminate each line with a <em>NUL</em> character rather than a newline.</p>
 </dd>
 <dt class="hdlist1"><em>&lt;revision-range&gt;</em></dt>
 <dd>
@@ -493,13 +506,35 @@ history leading to the current commit). For a complete list of ways to
 spell <em>&lt;revision-range&gt;</em>, see the <em>Specifying Ranges</em> section of
 <a href="gitrevisions.html">gitrevisions(7)</a>.</p>
 </dd>
-<dt class="hdlist1">[<code>--</code>] <em>&lt;path&gt;</em>...</dt>
+<dt class="hdlist1">[<code>--</code>] <em>&lt;pathspec&gt;</em>...</dt>
 <dd>
-<p>For each <em>&lt;path&gt;</em> given, the commit which last modified it is returned.
-Without an optional path parameter, all files and subdirectories
-in path traversal the are included in the output.</p>
+<p>Show the commit that last modified each path matching <em>&lt;pathspec&gt;</em>.
+If no <em>&lt;pathspec&gt;</em> is given, all files and subdirectories are included.
+See <a href="gitglossary.html">gitglossary(7)</a> for details on pathspec syntax.</p>
 </dd>
 </dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_output">OUTPUT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The output is in the format:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> &lt;oid&gt; TAB &lt;path&gt; LF</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If a path contains any special characters, the path is C-style quoted. To
+avoid quoting, pass option <code>-z</code> to terminate each line with a NUL.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> &lt;oid&gt; TAB &lt;path&gt; NUL</pre>
+</div>
 </div>
 </div>
 </div>
@@ -523,7 +558,7 @@ in path traversal the are included in the output.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

@@ -619,8 +619,10 @@ literally (including newlines and quotes).</p>
 <dt class="hdlist1"><code>-U</code><em>&lt;n&gt;</em></dt>
 <dt class="hdlist1"><code>--unified=</code><em>&lt;n&gt;</em></dt>
 <dd>
-<p>Generate diffs with <em>&lt;n&gt;</em> lines of context. Defaults to <code>diff.context</code>
-or 3 if the config option is unset.</p>
+<p>Generate diffs with <em>&lt;n&gt;</em> lines of context. The number of context
+lines defaults to <code>diff.context</code> or 3 if the configuration variable
+is unset. (<code>-U</code> without <em>&lt;n&gt;</em> is silently accepted as a synonym for
+<code>-p</code> due to a historical accident).</p>
 </dd>
 <dt class="hdlist1"><code>--inter-hunk-context=</code><em>&lt;n&gt;</em></dt>
 <dd>
@@ -1181,7 +1183,7 @@ entries:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

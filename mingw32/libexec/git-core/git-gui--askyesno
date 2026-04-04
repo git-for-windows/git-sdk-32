@@ -1,6 +1,6 @@
 #!/bin/sh
 # Tcl ignores the next line -*- tcl -*- \
-exec wish "$0" -- "$@"
+exec 'wish' "$0" -- "$@"
 
 # This is an implementation of a simple yes no dialog
 # which is injected into the git commandline by git gui

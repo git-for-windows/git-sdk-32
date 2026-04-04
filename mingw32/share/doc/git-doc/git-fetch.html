@@ -608,6 +608,29 @@ scripts. See section OUTPUT in <a href="git-fetch.html">git-fetch(1)</a> for det
 precedence over the <code>fetch.output</code> config option.</p>
 </div>
 </dd>
+<dt class="hdlist1"><code>--filter=</code><em>&lt;filter-spec&gt;</em></dt>
+<dd>
+<p>Use the partial clone feature and request that the server sends
+a subset of reachable objects according to a given object filter.
+When using <code>--filter</code>, the supplied <em>&lt;filter-spec&gt;</em> is used for
+the partial fetch.</p>
+<div class="paragraph">
+<p>If <code>--filter=auto</code> is used, the filter specification is determined
+automatically by combining the filter specifications advertised by
+the server for the promisor remotes that the client accepts (see
+<a href="gitprotocol-v2.html">gitprotocol-v2(5)</a> and the <code>promisor.acceptFromServer</code>
+configuration option in <a href="git-config.html">git-config(1)</a>).</p>
+</div>
+<div class="paragraph">
+<p>For details on all other available filter specifications, see the
+<code>--filter=</code><em>&lt;filter-spec&gt;</em> option in <a href="git-rev-list.html">git-rev-list(1)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>--filter=blob:none</code> will filter out all blobs (file
+contents) until needed by Git. Also, <code>--filter=blob:limit=</code><em>&lt;size&gt;</em> will
+filter out all blobs of size at least <em>&lt;size&gt;</em>.</p>
+</div>
+</dd>
 <dt class="hdlist1"><code>--write-fetch-head</code></dt>
 <dt class="hdlist1"><code>--no-write-fetch-head</code></dt>
 <dd>
@@ -751,6 +774,9 @@ When this option is used without any value, it defaults to <code>yes</code>.</p>
 <dt class="hdlist1"><code>--jobs=</code><em>&lt;n&gt;</em></dt>
 <dd>
 <p>Parallelize all forms of fetching up to <em>&lt;n&gt;</em> jobs at a time.</p>
+<div class="paragraph">
+<p>A value of 0 will use some reasonable default.</p>
+</div>
 <div class="paragraph">
 <p>If the <code>--multiple</code> option was specified, the different remotes will be fetched
 in parallel. If multiple submodules are fetched, they will be fetched in
@@ -1905,7 +1931,7 @@ submodule, that submodule cannot be fetched until it is cloned e.g. by <code>git
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

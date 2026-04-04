@@ -51,6 +51,7 @@ git-get-tar-commit-id.exe
 git-grep.exe
 git-hash-object.exe
 git-help.exe
+git-history.exe
 git-hook.exe
 git-index-pack.exe
 git-init-db.exe

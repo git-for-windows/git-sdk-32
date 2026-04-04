@@ -736,7 +736,7 @@ canonical form.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><em>bool</em>: canonicalize values <code>true</code>, <code>yes</code>,<code>on</code>, and positive
+<p><em>bool</em>: canonicalize values <code>true</code>, <code>yes</code>, <code>on</code>, and positive
 numbers as "true", and values <code>false</code>, <code>no</code>, <code>off</code> and <code>0</code> as
 "false".</p>
 </li>
@@ -764,6 +764,11 @@ to a timestamp. This specifier has no effect when setting the value.</p>
 escape sequence. When setting a value, a sanity-check is performed to ensure
 that the given value is canonicalize-able as an ANSI color, but it is written
 as-is.</p>
+<div class="paragraph">
+<p>If the command is in <code>list</code> mode, then the <code>--type</code> <em>&lt;type&gt;</em> argument will apply
+to each listed config value. If the value does not successfully parse in that
+format, then it will be omitted from the list.</p>
+</div>
 </li>
 </ul>
 </div>
@@ -2001,15 +2006,67 @@ setting is in use.</p>
 </div>
 </dd>
 <dt class="hdlist1">alias.*</dt>
+<dt class="hdlist1">alias.*.command</dt>
 <dd>
-<p>Command aliases for the <a href="git.html">git(1)</a> command wrapper - e.g.
-after defining <code>alias.last</code> <code>=</code> <code>cat-file</code> <code>commit</code> <code>HEAD</code>, the invocation
-<code>git</code> <code>last</code> is equivalent to <code>git</code> <code>cat-file</code> <code>commit</code> <code>HEAD</code>. To avoid
-confusion and troubles with script usage, aliases that
+<p>Command aliases for the <a href="git.html">git(1)</a> command wrapper. Aliases
+can be defined using two syntaxes:</p>
+<div class="openblock">
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Without a subsection, e.g., [<code>alias</code>] <code>co</code> <code>=</code> <code>checkout</code>. The alias
+name ("co" in this example) is
+limited to ASCII alphanumeric characters and <code>-</code>,
+and is matched case-insensitively.</p>
+</li>
+<li>
+<p>With a subsection, e.g., [<code>alias</code> "co"] <code>command</code> <code>=</code> <code>checkout</code>. The
+alias name can contain any characters (except for newlines and NUL bytes),
+including UTF-8, and is matched case-sensitively as raw bytes.
+You define the action of the alias in the <code>command</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Without subsection (ASCII alphanumeric and dash only)
+[alias]
+    co = checkout
+    st = status
+
+# With subsection (allows any characters, including UTF-8)
+[alias "hämta"]
+    command = fetch
+[alias "rätta till"]
+    command = commit --amend</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With a Git alias defined, e.g.,</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ git config --global alias.last "cat-file commit HEAD"
+# Which is equivalent to
+$ git config --global alias.last.command "cat-file commit HEAD"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>git</code> <code>last</code> is equivalent to <code>git</code> <code>cat-file</code> <code>commit</code> <code>HEAD</code>.</p>
+</div>
+<div class="paragraph">
+<p>To avoid confusion and troubles with script usage, aliases that
 hide existing Git commands are ignored except for deprecated
 commands.  Arguments are split by
 spaces, the usual shell quoting and escaping are supported.
 A quote pair or a backslash can be used to quote them.</p>
+</div>
 <div class="paragraph">
 <p>Note that the first word of an alias does not necessarily have to be a
 command. It can be a command-line option that will be passed into the
@@ -2069,20 +2126,27 @@ your alias.</p>
 </dd>
 <dt class="hdlist1">am.keepcr</dt>
 <dd>
-<p>If true, git-am will call git-mailsplit for patches in mbox format
-with parameter <code>--keep-cr</code>. In this case git-mailsplit will
+<p>If true, <a href="git-am.html">git-am(1)</a> will call <a href="git-mailsplit.html">git-mailsplit(1)</a>
+for patches in mbox format with parameter <code>--keep-cr</code>. In this
+case <a href="git-mailsplit.html">git-mailsplit(1)</a> will
 not remove <code>\r</code> from lines ending with <code>\r\n</code>. Can be overridden
-by giving <code>--no-keep-cr</code> from the command line.
-See <a href="git-am.html">git-am(1)</a>, <a href="git-mailsplit.html">git-mailsplit(1)</a>.</p>
+by giving <code>--no-keep-cr</code> from the command line.</p>
 </dd>
 <dt class="hdlist1">am.threeWay</dt>
 <dd>
-<p>By default, <code>git</code> <code>am</code> will fail if the patch does not apply cleanly. When
-set to true, this setting tells <code>git</code> <code>am</code> to fall back on 3-way merge if
-the patch records the identity of blobs it is supposed to apply to and
-we have those blobs available locally (equivalent to giving the <code>--3way</code>
-option from the command line). Defaults to <code>false</code>.
-See <a href="git-am.html">git-am(1)</a>.</p>
+<p>By default, <a href="git-am.html">git-am(1)</a> will fail if the patch does not
+apply cleanly. When set to true, this setting tells
+<a href="git-am.html">git-am(1)</a> to fall back on 3-way merge if the patch
+records the identity of blobs it is supposed to apply to and we
+have those blobs available locally (equivalent to giving the
+<code>--3way</code> option from the command line). Defaults to <code>false</code>.</p>
+</dd>
+<dt class="hdlist1">am.messageId</dt>
+<dd>
+<p>Add a <code>Message-ID</code> trailer based on the email header to the
+commit when using <a href="git-am.html">git-am(1)</a> (see
+<a href="git-interpret-trailers.html">git-interpret-trailers(1)</a>). See also the <code>--message-id</code>
+and <code>--no-message-id</code> options.</p>
 </dd>
 <dt class="hdlist1">apply.ignoreWhitespace</dt>
 <dd>
@@ -3426,6 +3490,19 @@ read-only snapshot of the same index to a location different from the
 repository&#8217;s usual working tree).</p>
 </div>
 </dd>
+<dt class="hdlist1">core.lockfilePid</dt>
+<dd>
+<p>If true, Git will create a PID file alongside lock files. When a
+lock acquisition fails and a PID file exists, Git can provide
+additional diagnostic information about the process holding the
+lock, including whether it is still running. Defaults to <code>false</code>.</p>
+<div class="paragraph">
+<p>The PID file is named by inserting <code>~pid</code> before the .<code>lock</code> suffix.
+For example, if the lock file is <code>index.lock</code>, the PID file will be
+<code>index~pid.lock</code>. The file contains a single line in the format
+<code>pid</code> <em>&lt;value&gt;</em> followed by a newline.</p>
+</div>
+</dd>
 <dt class="hdlist1">core.logAllRefUpdates</dt>
 <dd>
 <p>Enable the reflog. Updates to a ref &lt;ref&gt; is logged to the file
@@ -4639,19 +4716,43 @@ be fetched from it in the future.</p>
 </dd>
 <dt class="hdlist1">refStorage</dt>
 <dd>
-<p>Specify the ref storage format to use. The acceptable values are:</p>
+<p>Specify the ref storage format and a corresponding payload. The value
+can be either a format name or a URI:</p>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><code>files</code> for loose files with packed-refs. This is the default.</p>
+<p>A format name alone (e.g., <code>reftable</code> or <code>files</code>).</p>
 </li>
 <li>
-<p><code>reftable</code> for the reftable format. This format is experimental and its
-internals are subject to change.</p>
+<p>A URI format <em>&lt;format&gt;</em><code>://</code><em>&lt;payload&gt;</em> explicitly specifies both the
+format and payload (e.g., <code>reftable:///foo/bar</code>).</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Supported format names are:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>files</code></dt>
+<dd>
+<p>for loose files with packed-refs. This is the default.</p>
+</dd>
+<dt class="hdlist1"><code>reftable</code></dt>
+<dd>
+<p>for the reftable format. This format is experimental and its
+internals are subject to change.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The payload is passed directly to the reference backend. For the files and
+reftable backends, this must be a filesystem path where the references will
+be stored. Defaulting to the commondir when no payload is provided. Relative
+paths are resolved relative to the <code>$GIT_DIR</code>. Future backends may support
+other payload schemes, e.g., postgres://127.0.0.1:5432?database=myrepo.</p>
 </div>
 </div>
 </div>
@@ -4667,6 +4768,49 @@ work and will produce hard-to-diagnose issues.</p>
 relative paths. Automatically set if a worktree has been created or
 repaired with either the <code>--relative-paths</code> option or with the
 <code>worktree.useRelativePaths</code> config set to <code>true</code>.</p>
+</dd>
+<dt class="hdlist1">submodulePathConfig</dt>
+<dd>
+<p>This extension is for the minority of users who:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Encounter errors like <code>refusing</code> <code>to</code> <code>create</code> <code>...</code> <code>in</code> <code>another</code> <code>submodule</code>'s <code>git</code> <code>dir</code>
+due to a number of reasons, like case-insensitive filesystem conflicts when
+creating modules named <code>foo</code> and <code>Foo</code>.</p>
+</li>
+<li>
+<p>Require more flexible submodule layouts, for example due to nested names like
+<code>foo</code>, <code>foo/bar</code> and <code>foo/baz</code> not supported by the default gitdir mechanism
+which uses .<code>git/modules/</code><em>&lt;plain-name&gt;</em> locations, causing further conflicts.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>When <code>extensions.submodulePathConfig</code> is enabled, the <code>submodule.</code><em>&lt;name&gt;</em><code>.gitdir</code>
+config becomes the single source of truth for all submodule gitdir paths and is
+automatically set for all new submodules both during clone and init operations.</p>
+</div>
+<div class="paragraph">
+<p>Git will error out if a module does not have a corresponding
+<code>submodule.</code><em>&lt;name&gt;</em><code>.gitdir</code> set.</p>
+</div>
+<div class="paragraph">
+<p>Existing (pre-extension) submodules need to be migrated by adding the missing
+config entries. This can be done manually, e.g. for each submodule:
+<code>git</code> <code>config</code> <code>submodule.</code><em>&lt;name&gt;</em><code>.gitdir</code> <code>.git/modules/</code><em>&lt;name&gt;</em>, or via the
+<code>git</code> <code>submodule--helper</code> <code>migrate-gitdir-configs</code> command which iterates over all
+submodules and attempts to migrate them.</p>
+</div>
+<div class="paragraph">
+<p>The extension can be enabled automatically for new repositories by setting
+<code>init.defaultSubmodulePathConfig</code> to <code>true</code>, for example by running
+<code>git</code> <code>config</code> <code>--global</code> <code>init.defaultSubmodulePathConfig</code> <code>true</code>.</p>
+</div>
 </dd>
 <dt class="hdlist1">worktreeConfig</dt>
 <dd>
@@ -6206,6 +6350,12 @@ authenticating with PKCS#11 tokens, with a PKCS#11 URL in sslCert option.
 See also libcurl <code>CURLOPT_SSLKEYTYPE</code>. Can be overridden by the
 <code>GIT_SSL_KEY_TYPE</code> environment variable.</p>
 </dd>
+<dt class="hdlist1">http.allowNTLMAuth</dt>
+<dd>
+<p>Whether or not to allow NTLM authentication. While very convenient to set
+up, and therefore still used in many on-prem scenarios, NTLM is a weak
+authentication method and therefore deprecated. Defaults to "false".</p>
+</dd>
 <dt class="hdlist1">http.schannelCheckRevoke</dt>
 <dd>
 <p>Used to enforce or disable certificate revocation checks in cURL
@@ -6309,6 +6459,35 @@ environment variable.</p>
 and terminating the connection (if supported by the OS). If
 unset, curl&#8217;s default value is used. Can be overridden by the
 <code>GIT_HTTP_KEEPALIVE_COUNT</code> environment variable.</p>
+</dd>
+<dt class="hdlist1">http.retryAfter</dt>
+<dd>
+<p>Default wait time in seconds before retrying when a server returns
+HTTP 429 (Too Many Requests) without a Retry-After header.
+Defaults to 0 (retry immediately). When a Retry-After header is
+present, its value takes precedence over this setting; however,
+automatic use of the server-provided <code>Retry-After</code> header requires
+libcurl 7.66.0 or later. On older versions, configure this setting
+manually to control the retry delay. Can be overridden by the
+<code>GIT_HTTP_RETRY_AFTER</code> environment variable.
+See also <code>http.maxRetries</code> and <code>http.maxRetryTime</code>.</p>
+</dd>
+<dt class="hdlist1">http.maxRetries</dt>
+<dd>
+<p>Maximum number of times to retry after receiving HTTP 429 (Too Many
+Requests) responses. Set to 0 (the default) to disable retries.
+Can be overridden by the <code>GIT_HTTP_MAX_RETRIES</code> environment variable.
+See also <code>http.retryAfter</code> and <code>http.maxRetryTime</code>.</p>
+</dd>
+<dt class="hdlist1">http.maxRetryTime</dt>
+<dd>
+<p>Maximum time in seconds to wait for a single retry attempt when
+handling HTTP 429 (Too Many Requests) responses. If the server
+requests a delay (via Retry-After header) or if <code>http.retryAfter</code>
+is configured with a value that exceeds this maximum, Git will fail
+immediately rather than waiting. Default is 300 seconds (5 minutes).
+Can be overridden by the <code>GIT_HTTP_MAX_RETRY_TIME</code> environment
+variable. See also <code>http.retryAfter</code> and <code>http.maxRetries</code>.</p>
 </dd>
 <dt class="hdlist1">http.noEPSV</dt>
 <dd>
@@ -6556,6 +6735,13 @@ See <code>--ref-format=</code> in <a href="git-init.html">git-init(1)</a>. Both 
 option and the <code>GIT_DEFAULT_REF_FORMAT</code> environment variable take
 precedence over this config.</p>
 </dd>
+<dt class="hdlist1">init.defaultSubmodulePathConfig</dt>
+<dd>
+<p>A boolean that specifies if <code>git</code> <code>init</code> and <code>git</code> <code>clone</code> should
+automatically set <code>extensions.submodulePathConfig</code> to <code>true</code>. This
+allows all new repositories to automatically use the submodule path
+extension. Defaults to <code>false</code> when unset.</p>
+</dd>
 <dt class="hdlist1">instaweb.browser</dt>
 <dd>
 <p>Specify the program that will be used to browse your working
@@ -6778,8 +6964,7 @@ values are used instead of the defaults provided by <code>maintenance.strategy</
 strategy for scheduled maintenance.</p>
 </li>
 <li>
-<p><code>gc</code>: This strategy runs the <code>gc</code> task. This is the default strategy for
-manual maintenance.</p>
+<p><code>gc</code>: This strategy runs the <code>gc</code> task.</p>
 </li>
 <li>
 <p><code>geometric</code>: This strategy performs geometric repacking of packfiles and
@@ -6790,7 +6975,8 @@ the strategy generates a cruft pack for all unreachable objects. Objects that
 are already part of a cruft pack will be expired.</p>
 <div class="paragraph">
 <p>This repacking strategy is a full replacement for the <code>gc</code> strategy and is
-recommended for large repositories.</p>
+recommended for large repositories. This is the default strategy for manual
+maintenance.</p>
 </div>
 </li>
 <li>
@@ -7648,12 +7834,13 @@ processes. See <a href="git-pack-objects.html">git-pack-objects(1)</a> for full 
 </dd>
 <dt class="hdlist1">pack.preferBitmapTips</dt>
 <dd>
-<p>When selecting which commits will receive bitmaps, prefer a
-commit at the tip of any reference that is a suffix of any value
-of this configuration over any other commits in the "selection
-window".</p>
+<p>Specifies a ref hierarchy (e.g., "refs/heads/"); can be
+given multiple times to specify more than one hierarchies.
+When selecting which commits will receive bitmaps, prefer a
+commit at the tip of a reference that is contained in any of
+the configured hierarchies.</p>
 <div class="paragraph">
-<p>Note that setting this configuration to <code>refs/foo</code> does not mean that
+<p>Note that setting this configuration to <code>refs/foo/</code> does not mean that
 the commits at the tips of <code>refs/foo/bar</code> and <code>refs/foo/baz</code> will
 necessarily be selected. This is because commits are selected for
 bitmaps from within a series of windows of variable length.</p>
@@ -7843,6 +8030,46 @@ set to "None", this config variable has no effect. See
 </div>
 </li>
 </ol>
+</div>
+</dd>
+<dt class="hdlist1">promisor.storeFields</dt>
+<dd>
+<p>A comma or space separated list of additional remote related
+field names. If a client accepts an advertised remote, the
+client will store the values associated with these field names
+taken from the remote advertisement into its configuration,
+and then reload its remote configuration. Currently,
+"partialCloneFilter" and "token" are the only supported field
+names.</p>
+<div class="paragraph">
+<p>For example if a server advertises "partialCloneFilter=blob:limit=20k"
+for remote "foo", and that remote is accepted, then "blob:limit=20k"
+will be stored for the "remote.foo.partialCloneFilter" configuration
+variable.</p>
+</div>
+<div class="paragraph">
+<p>If the new field value from an advertised remote is the same as the
+existing field value for that remote on the client side, then no
+change is made to the client configuration though.</p>
+</div>
+<div class="paragraph">
+<p>When a new value is stored, a message is printed to standard error to
+let users know about this.</p>
+</div>
+<div class="paragraph">
+<p>Note that for security reasons, if the remote is not already
+configured on the client side, nothing will be stored for that
+remote. In any case, no new remote will be created and no URL will be
+stored.</p>
+</div>
+<div class="paragraph">
+<p>Before storing a partial clone filter, it&#8217;s parsed to check it&#8217;s
+valid. If it&#8217;s not, a warning is emitted and it&#8217;s not stored.</p>
+</div>
+<div class="paragraph">
+<p>Before storing a token, a check is performed to ensure it contains no
+control character. If the check fails, a warning is emitted and it&#8217;s
+not stored.</p>
 </div>
 </dd>
 <dt class="hdlist1">protocol.allow</dt>
@@ -8829,6 +9056,24 @@ setting is not subject to the <code>identity</code> mechanism.</p>
 <p>Path to ca-certificates (either a directory or a single file).
 Set it to an empty string to disable certificate verification.</p>
 </dd>
+<dt class="hdlist1">sendemail.smtpSSLClientCert</dt>
+<dd>
+<p>Path to the client certificate file to present if requested by the
+server. This is required when the server is set up to verify client
+certificates. If the corresponding private key is not included in the
+file, it must be supplied using <code>sendemail.smtpSSLClientKey</code> or the
+<code>--smtp-ssl-client-key</code> option.</p>
+</dd>
+<dt class="hdlist1">sendemail.smtpSSLClientKey</dt>
+<dd>
+<p>Path to the client private key file that corresponds to the client
+certificate. To avoid misconfiguration, this configuration must be used
+in conjunction with <code>sendemail.smtpSSLClientKey</code> or the
+<code>--smtp-ssl-client-cert</code> option. If the client key is included in the
+client certificate, the choice of private key depends on the format of
+the certificate. Visit <a href="https://metacpan.org/pod/IO::Socket::SSL" class="bare">https://metacpan.org/pod/IO::Socket::SSL</a> for more
+details.</p>
+</dd>
 <dt class="hdlist1">sendemail.&lt;identity&gt;.*</dt>
 <dd>
 <p>Identity-specific versions of the <code>sendemail.*</code> parameters
@@ -9183,6 +9428,37 @@ The option --no-branch takes precedence over this variable.</p>
 <code>--no-ahead-behind</code> by default in <a href="git-status.html">git-status(1)</a> for
 non-porcelain status formats.  Defaults to true.</p>
 </dd>
+<dt class="hdlist1">status.compareBranches</dt>
+<dd>
+<p>A space-separated list of branch comparison specifiers to use in
+<a href="git-status.html">git-status(1)</a>. Currently, only <code>@</code>{upstream} and <code>@</code>{push}
+are supported. They are interpreted as <code>branch@</code>{upstream} and
+<code>branch@</code>{push} for the current branch.</p>
+<div class="paragraph">
+<p>If not set, the default behavior is equivalent to <code>@</code>{upstream}, which
+compares against the configured upstream tracking branch.</p>
+</div>
+<div class="paragraph">
+<p>The entries are shown in the order they appear in the configuration.
+Duplicate entries that resolve to the same ref are suppressed after
+their first occurrence, so <code>@</code>{push} <code>@</code>{upstream} <code>@</code>{push} shows at
+most two comparisons.  When <code>@</code>{upstream} and <code>@</code>{push} resolve to
+the same remote-tracking branch, only one comparison is shown.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[status]
+        compareBranches = @{upstream} @{push}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This would show comparisons against both the configured upstream and push
+tracking branches for the current branch.</p>
+</div>
+</dd>
 <dt class="hdlist1">status.displayCommentPrefix</dt>
 <dd>
 <p>If set to true, <a href="git-status.html">git-status(1)</a> will insert a comment
@@ -9301,15 +9577,16 @@ file.</p>
 <dt class="hdlist1">submodule.&lt;name&gt;.ignore</dt>
 <dd>
 <p>Defines under what circumstances "git status" and the diff family show
-a submodule as modified. When set to "all", it will never be considered
-modified (but it will nonetheless show up in the output of status and
-commit when it has been staged), "dirty" will ignore all changes
-to the submodule&#8217;s work tree and
+a submodule as modified.
+When set to "all" will never consider the submodule modified. It can
+nevertheless be staged using the option --force and it will then show up
+in the output of status.
+When set to "dirty" will ignore all changes to the submodule&#8217;s work tree and
 takes only differences between the HEAD of the submodule and the commit
 recorded in the superproject into account. "untracked" will additionally
 let submodules with modified tracked files in their work tree show up.
-Using "none" (the default when this option is not set) also shows
-submodules that have untracked files in their work tree as changed.
+When set to "none"(default) It also show submodules as changed if they have
+untracked files in their work tree.
 This setting overrides any setting made in .gitmodules for this submodule,
 both settings can be overridden on the command line by using the
 "--ignore-submodules" option. The <em>git submodule</em> commands are not
@@ -9321,6 +9598,14 @@ affected by this setting.</p>
 commands.  This config option takes precedence over the
 submodule.active config option. See <a href="gitsubmodules.html">gitsubmodules(7)</a> for
 details.</p>
+</dd>
+<dt class="hdlist1">submodule.&lt;name&gt;.gitdir</dt>
+<dd>
+<p>This sets the gitdir path for submodule &lt;name&gt;. This configuration is
+respected when <code>extensions.submodulePathConfig</code> is enabled, otherwise it
+has no effect. When enabled, this config becomes the single source of
+truth for submodule gitdir paths and Git will error if it is missing.
+See <a href="git-config.html">git-config(1)</a> for details.</p>
 </dd>
 <dt class="hdlist1">submodule.active</dt>
 <dd>
@@ -9565,11 +9850,11 @@ write additional traces if doing so would exceed this many files. Instead,
 write a sentinel file that will block further tracing to this
 directory. Defaults to 0, which disables this check.</p>
 </dd>
-<dt class="hdlist1">trailer.separators</dt>
+<dt class="hdlist1"><code>trailer.separators</code></dt>
 <dd>
 <p>This option tells which characters are recognized as trailer
-separators. By default only <em>:</em> is recognized as a trailer
-separator, except that <em>=</em> is always accepted on the command
+separators. By default only <code>:</code> is recognized as a trailer
+separator, except that <code>=</code> is always accepted on the command
 line for compatibility with other git commands.</p>
 <div class="paragraph">
 <p>The first character given by this option will be the default character
@@ -9577,15 +9862,15 @@ used when another separator is not specified in the config for this
 trailer.</p>
 </div>
 <div class="paragraph">
-<p>For example, if the value for this option is "%=$", then only lines
-using the format <em>&lt;key&gt;&lt;sep&gt;&lt;value&gt;</em> with &lt;sep&gt; containing <em>%</em>, <em>=</em>
-or <em>$</em> and then spaces will be considered trailers. And <em>%</em> will be
+<p>For example, if the value for this option is <code>%=$</code>, then only lines
+using the format <em>&lt;key&gt;&lt;sep&gt;&lt;value&gt;</em> with <em>&lt;sep&gt;</em> containing <code>%</code>, <code>=</code>
+or <code>$</code> and then spaces will be considered trailers. And <code>%</code> will be
 the default separator used, so by default trailers will appear like:
-<em>&lt;key&gt;% &lt;value&gt;</em> (one percent sign and one space will appear between
+<em>&lt;key&gt;</em><code>%</code> <em>&lt;value&gt;</em> (one percent sign and one space will appear between
 the key and the value).</p>
 </div>
 </dd>
-<dt class="hdlist1">trailer.where</dt>
+<dt class="hdlist1"><code>trailer.where</code></dt>
 <dd>
 <p>This option tells where a new trailer will be added.</p>
 <div class="paragraph">
@@ -9601,51 +9886,51 @@ instead of the end, of the existing trailers.</p>
 </div>
 <div class="paragraph">
 <p>If it is <code>after</code>, then each new trailer will appear just after the
-last trailer with the same &lt;key&gt;.</p>
+last trailer with the same <em>&lt;key&gt;</em>.</p>
 </div>
 <div class="paragraph">
 <p>If it is <code>before</code>, then each new trailer will appear just before the
-first trailer with the same &lt;key&gt;.</p>
+first trailer with the same <em>&lt;key&gt;</em>.</p>
 </div>
 </dd>
-<dt class="hdlist1">trailer.ifexists</dt>
+<dt class="hdlist1"><code>trailer.ifexists</code></dt>
 <dd>
 <p>This option makes it possible to choose what action will be
 performed when there is already at least one trailer with the
-same &lt;key&gt; in the input.</p>
+same <em>&lt;key&gt;</em> in the input.</p>
 <div class="paragraph">
 <p>The valid values for this option are: <code>addIfDifferentNeighbor</code> (this
 is the default), <code>addIfDifferent</code>, <code>add</code>, <code>replace</code> or <code>doNothing</code>.</p>
 </div>
 <div class="paragraph">
 <p>With <code>addIfDifferentNeighbor</code>, a new trailer will be added only if no
-trailer with the same (&lt;key&gt;, &lt;value&gt;) pair is above or below the line
+trailer with the same (<em>&lt;key&gt;</em>, <em>&lt;value&gt;</em>) pair is above or below the line
 where the new trailer will be added.</p>
 </div>
 <div class="paragraph">
 <p>With <code>addIfDifferent</code>, a new trailer will be added only if no trailer
-with the same (&lt;key&gt;, &lt;value&gt;) pair is already in the input.</p>
+with the same (<em>&lt;key&gt;</em>, <em>&lt;value&gt;</em>) pair is already in the input.</p>
 </div>
 <div class="paragraph">
 <p>With <code>add</code>, a new trailer will be added, even if some trailers with
-the same (&lt;key&gt;, &lt;value&gt;) pair are already in the input.</p>
+the same (<em>&lt;key&gt;</em>, <em>&lt;value&gt;</em>) pair are already in the input.</p>
 </div>
 <div class="paragraph">
-<p>With <code>replace</code>, an existing trailer with the same &lt;key&gt; will be
+<p>With <code>replace</code>, an existing trailer with the same <em>&lt;key&gt;</em> will be
 deleted and the new trailer will be added. The deleted trailer will be
-the closest one (with the same &lt;key&gt;) to the place where the new one
+the closest one (with the same <em>&lt;key&gt;</em>) to the place where the new one
 will be added.</p>
 </div>
 <div class="paragraph">
 <p>With <code>doNothing</code>, nothing will be done; that is no new trailer will be
-added if there is already one with the same &lt;key&gt; in the input.</p>
+added if there is already one with the same <em>&lt;key&gt;</em> in the input.</p>
 </div>
 </dd>
-<dt class="hdlist1">trailer.ifmissing</dt>
+<dt class="hdlist1"><code>trailer.ifmissing</code></dt>
 <dd>
 <p>This option makes it possible to choose what action will be
 performed when there is not yet any trailer with the same
-&lt;key&gt; in the input.</p>
+<em>&lt;key&gt;</em> in the input.</p>
 <div class="paragraph">
 <p>The valid values for this option are: <code>add</code> (this is the default) and
 <code>doNothing</code>.</p>
@@ -9657,17 +9942,17 @@ performed when there is not yet any trailer with the same
 <p>With <code>doNothing</code>, nothing will be done.</p>
 </div>
 </dd>
-<dt class="hdlist1">trailer.&lt;keyAlias&gt;.key</dt>
+<dt class="hdlist1"><code>trailer.</code><em>&lt;key-alias&gt;</em><code>.key</code></dt>
 <dd>
-<p>Defines a &lt;keyAlias&gt; for the &lt;key&gt;. The &lt;keyAlias&gt; must be a
-prefix (case does not matter) of the &lt;key&gt;. For example, in <code>git</code>
-<code>config</code> <code>trailer.ack.key</code> "Acked-by" the "Acked-by" is the &lt;key&gt; and
-the "ack" is the &lt;keyAlias&gt;. This configuration allows the shorter
+<p>Defines a <em>&lt;key-alias&gt;</em> for the <em>&lt;key&gt;</em>. The <em>&lt;key-alias&gt;</em> must be a
+prefix (case does not matter) of the <em>&lt;key&gt;</em>. For example, in <code>git</code>
+<code>config</code> <code>trailer.ack.key</code> "Acked-by" the <code>Acked-by</code> is the <em>&lt;key&gt;</em> and
+the <code>ack</code> is the <em>&lt;key-alias&gt;</em>. This configuration allows the shorter
 <code>--trailer</code> "ack:<code>...</code>" invocation on the command line using the "ack"
-&lt;keyAlias&gt; instead of the longer <code>--trailer</code> "Acked-by:<code>...</code>".</p>
+<em>&lt;key-alias&gt;</em> instead of the longer <code>--trailer</code> "Acked-by:<code>...</code>".</p>
 <div class="paragraph">
-<p>At the end of the &lt;key&gt;, a separator can appear and then some
-space characters. By default the only valid separator is <em>:</em>,
+<p>At the end of the <em>&lt;key&gt;</em>, a separator can appear and then some
+space characters. By default the only valid separator is <code>:</code>,
 but this can be changed using the <code>trailer.separators</code> config
 variable.</p>
 </div>
@@ -9676,62 +9961,63 @@ variable.</p>
 separator when adding the trailer.</p>
 </div>
 </dd>
-<dt class="hdlist1">trailer.&lt;keyAlias&gt;.where</dt>
+<dt class="hdlist1"><code>trailer.</code><em>&lt;key-alias&gt;</em><code>.where</code></dt>
 <dd>
-<p>This option takes the same values as the <em>trailer.where</em>
+<p>This option takes the same values as the <code>trailer.where</code>
 configuration variable and it overrides what is specified by
-that option for trailers with the specified &lt;keyAlias&gt;.</p>
+that option for trailers with the specified <em>&lt;key-alias&gt;</em>.</p>
 </dd>
-<dt class="hdlist1">trailer.&lt;keyAlias&gt;.ifexists</dt>
+<dt class="hdlist1"><code>trailer.</code><em>&lt;key-alias&gt;</em><code>.ifexists</code></dt>
 <dd>
-<p>This option takes the same values as the <em>trailer.ifexists</em>
+<p>This option takes the same values as the <code>trailer.ifexists</code>
 configuration variable and it overrides what is specified by
-that option for trailers with the specified &lt;keyAlias&gt;.</p>
+that option for trailers with the specified <em>&lt;key-alias&gt;</em>.</p>
 </dd>
-<dt class="hdlist1">trailer.&lt;keyAlias&gt;.ifmissing</dt>
+<dt class="hdlist1"><code>trailer.</code><em>&lt;key-alias&gt;</em><code>.ifmissing</code></dt>
 <dd>
-<p>This option takes the same values as the <em>trailer.ifmissing</em>
+<p>This option takes the same values as the <code>trailer.ifmissing</code>
 configuration variable and it overrides what is specified by
-that option for trailers with the specified &lt;keyAlias&gt;.</p>
+that option for trailers with the specified <em>&lt;key-alias&gt;</em>.</p>
 </dd>
-<dt class="hdlist1">trailer.&lt;keyAlias&gt;.command</dt>
+<dt class="hdlist1"><code>trailer.</code><em>&lt;key-alias&gt;</em><code>.command</code></dt>
 <dd>
-<p>Deprecated in favor of <em>trailer.&lt;keyAlias&gt;.cmd</em>.
-This option behaves in the same way as <em>trailer.&lt;keyAlias&gt;.cmd</em>, except
+<p>Deprecated in favor of <code>trailer.</code><em>&lt;key-alias&gt;</em><code>.cmd</code>.
+This option behaves in the same way as <code>trailer.</code><em>&lt;key-alias&gt;</em><code>.cmd</code>, except
 that it doesn&#8217;t pass anything as argument to the specified command.
-Instead the first occurrence of substring $ARG is replaced by the
-&lt;value&gt; that would be passed as argument.</p>
+Instead the first occurrence of substring <code>$ARG</code> is replaced by the
+<em>&lt;value&gt;</em> that would be passed as argument.</p>
 <div class="paragraph">
-<p>Note that $ARG in the user&#8217;s command is
-only replaced once and that the original way of replacing $ARG is not safe.</p>
+<p>Note that <code>$ARG</code> in the user&#8217;s command is
+only replaced once and that the original way of replacing <code>$ARG</code> is not safe.</p>
 </div>
 <div class="paragraph">
-<p>When both <em>trailer.&lt;keyAlias&gt;.cmd</em> and <em>trailer.&lt;keyAlias&gt;.command</em> are given
-for the same &lt;keyAlias&gt;, <em>trailer.&lt;keyAlias&gt;.cmd</em> is used and
-<em>trailer.&lt;keyAlias&gt;.command</em> is ignored.</p>
+<p>When both <code>trailer.</code><em>&lt;key-alias&gt;</em><code>.cmd</code> and <code>trailer.</code><em>&lt;key-alias&gt;</em><code>.command</code> are given
+for the same <em>&lt;key-alias&gt;</em>, <code>trailer.</code><em>&lt;key-alias&gt;</em><code>.cmd</code> is used and
+<code>trailer.</code><em>&lt;key-alias&gt;</em><code>.command</code> is ignored.</p>
 </div>
 </dd>
-<dt class="hdlist1">trailer.&lt;keyAlias&gt;.cmd</dt>
+<dt class="hdlist1"><code>trailer.</code><em>&lt;key-alias&gt;</em><code>.cmd</code></dt>
 <dd>
 <p>This option can be used to specify a shell command that will be called
-once to automatically add a trailer with the specified &lt;keyAlias&gt;, and then
-called each time a <em>--trailer &lt;keyAlias&gt;=&lt;value&gt;</em> argument is specified to
-modify the &lt;value&gt; of the trailer that this option would produce.</p>
+once to automatically add a trailer with the specified <em>&lt;key-alias&gt;</em>, and then
+called each time a <code>--trailer</code> <em>&lt;key-alias&gt;</em><code>=</code><em>&lt;value&gt;</em> argument is specified to
+modify the <em>&lt;value&gt;</em> of the trailer that this option would produce.</p>
 <div class="paragraph">
 <p>When the specified command is first called to add a trailer
-with the specified &lt;keyAlias&gt;, the behavior is as if a special
-<em>--trailer &lt;keyAlias&gt;=&lt;value&gt;</em> argument was added at the beginning
-of the "git interpret-trailers" command, where &lt;value&gt;
-is taken to be the standard output of the command with any
-leading and trailing whitespace trimmed off.</p>
+with the specified <em>&lt;key-alias&gt;</em>, the behavior is as if a special
+<code>--trailer</code> <em>&lt;key-alias&gt;</em><code>=</code><em>&lt;value&gt;</em> argument was added at the beginning
+of <a href="git-interpret-trailers.html">git-interpret-trailers(1)</a>, where <em>&lt;value&gt;</em> is taken to be the
+standard output of the command with any leading and trailing whitespace
+trimmed off.</p>
 </div>
 <div class="paragraph">
-<p>If some <em>--trailer &lt;keyAlias&gt;=&lt;value&gt;</em> arguments are also passed
+<p>If some <code>--trailer</code> <em>&lt;key-alias&gt;</em><code>=</code><em>&lt;value&gt;</em> arguments are also passed
 on the command line, the command is called again once for each
-of these arguments with the same &lt;keyAlias&gt;. And the &lt;value&gt; part
+of these arguments with the same <em>&lt;key-alias&gt;</em>. And the <em>&lt;value&gt;</em> part
 of these arguments, if any, will be passed to the command as its
-first argument. This way the command can produce a &lt;value&gt; computed
-from the &lt;value&gt; passed in the <em>--trailer &lt;keyAlias&gt;=&lt;value&gt;</em> argument.</p>
+first argument. This way the command can produce a <em>&lt;value&gt;</em> computed
+from the <em>&lt;value&gt;</em> passed in the <code>--trailer</code> <em>&lt;key-alias&gt;</em><code>=</code><em>&lt;value&gt;</em>
+argument.</p>
 </div>
 </dd>
 <dt class="hdlist1">transfer.credentialsInUrl</dt>
@@ -10207,7 +10493,7 @@ looks like</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

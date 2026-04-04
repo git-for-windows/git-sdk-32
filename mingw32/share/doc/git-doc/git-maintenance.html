@@ -1038,8 +1038,7 @@ values are used instead of the defaults provided by <code>maintenance.strategy</
 strategy for scheduled maintenance.</p>
 </li>
 <li>
-<p><code>gc</code>: This strategy runs the <code>gc</code> task. This is the default strategy for
-manual maintenance.</p>
+<p><code>gc</code>: This strategy runs the <code>gc</code> task.</p>
 </li>
 <li>
 <p><code>geometric</code>: This strategy performs geometric repacking of packfiles and
@@ -1050,7 +1049,8 @@ the strategy generates a cruft pack for all unreachable objects. Objects that
 are already part of a cruft pack will be expired.</p>
 <div class="paragraph">
 <p>This repacking strategy is a full replacement for the <code>gc</code> strategy and is
-recommended for large repositories.</p>
+recommended for large repositories. This is the default strategy for manual
+maintenance.</p>
 </div>
 </li>
 <li>
@@ -1176,7 +1176,7 @@ prunable worktrees exceeds the value. The default value is 1.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-04 08:40:27 UTC
+Last updated 2026-04-03 05:44:03 UTC
 </div>
 </div>
 </body>

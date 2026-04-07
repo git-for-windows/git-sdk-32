@@ -1751,6 +1751,8 @@ mingw32/include/windows.graphics.capture.interop.h
 mingw32/include/windows.graphics.capture.interop.idl
 mingw32/include/windows.graphics.directx.direct3d11.h
 mingw32/include/windows.graphics.directx.direct3d11.idl
+mingw32/include/windows.graphics.directx.direct3d11.interop.h
+mingw32/include/windows.graphics.directx.direct3d11.interop.idl
 mingw32/include/windows.graphics.directx.h
 mingw32/include/windows.graphics.directx.idl
 mingw32/include/windows.graphics.display.h

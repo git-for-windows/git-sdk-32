@@ -2,7 +2,7 @@
 mingw-w64-i686-crt
 
 %VERSION%
-14.0.0.r2.g61ed21910-1
+14.0.0.r3.g5356cf297-1
 
 %BASE%
 mingw-w64-crt
@@ -17,13 +17,13 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1775449676
+1775465355
 
 %INSTALLDATE%
-1775538471
+1775624988
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/ce84121b/24018568143)
+CI (msys2/msys2-autobuild/ce84121b/24025306890)
 
 %SIZE%
 134429650
@@ -48,7 +48,7 @@ mingw-w64-i686-headers
 mingw-w64-i686-crt-git
 
 %PROVIDES%
-mingw-w64-i686-crt-git=14.0.0.r2.g61ed21910
+mingw-w64-i686-crt-git=14.0.0.r3.g5356cf297
 
 %XDATA%
 pkgtype=pkg

@@ -109,6 +109,21 @@ UI, Workflows & Features
  * "git repo info -h" and "git repo structure -h" limit their help output
    to the part that is specific to the subcommand.
 
+ * "git format-patch --cover-letter" learns to use a simpler format
+   instead of the traditional shortlog format to list its commits with
+   a new --commit-list-format option and format.commitListFormat
+   configuration variable.
+
+ * `git backfill` learned to accept revision and pathspec arguments.
+
+ * "git replay" (experimental) learns, in addition to "pick" and
+   "replay", a new operating mode "revert".
+
+ * git replay now supports replaying down to the root commit.
+
+ * Handling of signed commits and tags in fast-import has been made more
+   configurable.
+
 
 Performance, Internal Implementation, Development Support etc.
 --------------------------------------------------------------
@@ -266,6 +281,40 @@ Performance, Internal Implementation, Development Support etc.
 
  * In case homebrew breaks REG_ENHANCED again, leave a in-code comment
    to suggest use of our replacement regex as a workaround.
+
+ * MinGW build updates.
+
+ * The way dash 0.5.13 handles non-ASCII contents in here-doc
+   is buggy and breaks our existing tests, which unfortunately
+   have been rewritten to avoid triggering the bug.
+
+ * Object name handling (disambiguation and abbreviation) has been
+   refactored to be backend-generic, moving logic into the respective
+   object database backends.
+
+ * pack-objects's --stdin-packs=follow mode learns to handle
+   excluded-but-open packs.
+
+ * A few code paths that spawned child processes for network
+   connection weren't wait(2)ing for their children and letting "init"
+   reap them instead; they have been tightened.
+
+ * Adjust the codebase for C23 that changes functions like strchr()
+   that discarded constness when they return a pointer into a const
+   string to preserve constness.
+
+ * A handful of inappropriate uses of the_repository have been
+   rewritten to use the right repository structure instance in the
+   read-cache.c codepath.
+
+ * Internals of "git fsck" have been refactored to not depend on the
+   global `the_repository` variable.
+
+ * Reduce dependency on `the_repository` in add-patch.c file.
+
+ * The way the "git log -L<range>:<file>" feature is bolted onto the
+   log/diff machinery is being reworked a bit to make the feature
+   compatible with more diff options, like -S/G.
 
 
 Fixes since v2.53
@@ -445,6 +494,21 @@ Fixes since v2.53
    refspec is a single-object refspec, which has been corrected.
    (merge 4e5dc601dd kj/refspec-parsing-outside-repository later to maint).
 
+ * Fix a regression in writing the commit-graph where commits with dates
+   exceeding 34 bits (beyond year 2514) could cause an underflow and
+   crash Git during the generation data overflow chunk writing.
+
+ * The value of a wrong pointer variable was referenced in an error
+   message that reported that it shouldn't be NULL.
+   (merge 753ecf4205 yc/path-walk-fix-error-reporting later to maint).
+
+ * The check in "receive-pack" to prevent a checked out branch from
+   getting updated via updateInstead mechanism has been corrected.
+
+ * "git backfill" is capable of auto-detecting a sparsely checked out
+   working tree, which was broken.
+   (merge 339eba65a7 th/backfill-auto-detect-sparseness-fix later to maint).
+
  * Other code cleanup, docfix, build fix, etc.
    (merge d79fff4a11 jk/remote-tracking-ref-leakfix later to maint).
    (merge 7a747f972d dd/t5403-modernise later to maint).
@@ -495,3 +559,7 @@ Fixes since v2.53
    (merge fc8a4f15e7 gi/doc-boolean-config-typofix later to maint).
    (merge 37182267a0 kh/doc-interpret-trailers-1 later to maint).
    (merge f64c50e768 jc/rerere-modern-strbuf-handling later to maint).
+   (merge 699248d89e th/t8003-unhide-git-failures later to maint).
+   (merge d8e34f971b za/t2000-modernise later to maint).
+   (merge 849988bc74 th/t6101-unhide-git-failures later to maint).
+   (merge 0f0ce07625 sp/doc-gitignore-oowt later to maint).

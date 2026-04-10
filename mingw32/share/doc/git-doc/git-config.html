@@ -5212,6 +5212,12 @@ format-patch is invoked, but in addition can be set to "auto", to
 generate a cover-letter only when there&#8217;s more than one patch.
 Default is false.</p>
 </dd>
+<dt class="hdlist1">format.commitListFormat</dt>
+<dd>
+<p>When the <code>--cover-letter-format</code> option is not given, <code>format-patch</code>
+uses the value of this variable to decide how to format the entry of
+each commit. Defaults to <code>shortlog</code>.</p>
+</dd>
 <dt class="hdlist1">format.outputDirectory</dt>
 <dd>
 <p>Set a custom directory to store the resulting files instead of the
@@ -10493,7 +10499,7 @@ looks like</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-03 05:44:03 UTC
+Last updated 2026-04-09 06:26:17 UTC
 </div>
 </div>
 </body>

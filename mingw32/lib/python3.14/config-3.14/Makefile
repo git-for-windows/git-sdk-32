@@ -29,9 +29,9 @@ MODLIBS=           $(LOCALMODLIBS) $(BASEMODLIBS)
 
 # === Variables set by configure
 VERSION=	3.14
-srcdir=		../Python-3.14.3
-VPATH=		../Python-3.14.3
-abs_srcdir=	/d/W/B/src/build-MINGW32/../Python-3.14.3
+srcdir=		../Python-3.14.4
+VPATH=		../Python-3.14.4
+abs_srcdir=	/d/W/B/src/build-MINGW32/../Python-3.14.4
 abs_builddir=	/d/W/B/src/build-MINGW32
 
 
@@ -49,7 +49,7 @@ LIBPYTHON=-lpython3.14
 GITVERSION=	
 GITTAG=		
 GITBRANCH=	
-PGO_PROF_GEN_FLAG=-fprofile-generate
+PGO_PROF_GEN_FLAG=-fprofile-generate -fprofile-update=atomic
 PGO_PROF_USE_FLAG=-fprofile-use -fprofile-correction
 LLVM_PROF_MERGER=true
 LLVM_PROF_FILE=
@@ -131,7 +131,7 @@ PY_CORE_CFLAGS=	$(PY_STDMODULE_CFLAGS) -DPy_BUILD_CORE
 PY_CORE_LDFLAGS=$(PY_LDFLAGS) $(PY_LDFLAGS_NODIST)
 # Strict or non-strict aliasing flags used to compile dtoa.c, see above
 CFLAGS_ALIASING=-fno-strict-aliasing
-RCFLAGS= -DFIELD3=3150 -O COFF --target=pe-i386
+RCFLAGS= -DFIELD3=4150 -O COFF --target=pe-i386
 
 
 # Machine-dependent subdirectories
@@ -158,8 +158,8 @@ host_exec_prefix= 	${exec_prefix}
 datarootdir=    ${prefix}/share
 
 # Locations needed for semi-native fixup of sysconfig.
-srcdir_b2h=		D:/W/B/src/Python-3.14.3
-abs_srcdir_b2h=		D:/W/B/src/Python-3.14.3
+srcdir_b2h=		D:/W/B/src/Python-3.14.4
+abs_srcdir_b2h=		D:/W/B/src/Python-3.14.4
 abs_builddir_b2h=	D:/W/B/src/build-MINGW32
 prefix_b2h=		D:/M/msys64/mingw32
 
@@ -341,11 +341,11 @@ MODULE__CTYPES_CFLAGS=-fno-strict-overflow
 MODULE__CTYPES_LDFLAGS=-LD:/M/msys64/mingw32/lib/../lib -lffi -lole32 -loleaut32 -luuid
 MODULE__CURSES_STATE=yes
 MODULE__CURSES_CFLAGS=-DNCURSES_WIDECHAR -ID:/M/msys64/mingw32/include/ncursesw
-MODULE__CURSES_LDFLAGS=-lncursesw -lsystre -ltre -lintl -liconv
+MODULE__CURSES_LDFLAGS=-lncursesw -lsystre -ltre -lintl -liconv -lpcre2-posix
 
 MODULE__CURSES_PANEL_STATE=yes
 MODULE__CURSES_PANEL_CFLAGS=-ID:/M/msys64/mingw32/include/ncursesw -DNCURSES_WIDECHAR -DNCURSES_WIDECHAR -ID:/M/msys64/mingw32/include/ncursesw
-MODULE__CURSES_PANEL_LDFLAGS=-lpanelw -lncursesw -lsystre -ltre -lintl -liconv
+MODULE__CURSES_PANEL_LDFLAGS=-lpanelw -lncursesw -lsystre -ltre -lintl -liconv -lpcre2-posix
 
 MODULE__DECIMAL_STATE=yes
 MODULE__DECIMAL_CFLAGS=
@@ -1310,7 +1310,7 @@ $(ABI3DLLLIBRARY) $(ABI3LDLIBRARY): python3dll_nt.o $(srcdir)/PC/launcher.c
 
 # wasm32-emscripten browser web example
 
-EMSCRIPTEN_DIR=$(srcdir)/Tools/wasm/emscripten
+EMSCRIPTEN_DIR=$(srcdir)/Platforms/emscripten
 WEBEX_DIR=$(EMSCRIPTEN_DIR)/web_example/
 
 ZIP_STDLIB=python$(VERSION)$(ABI_THREAD).zip
@@ -3346,7 +3346,7 @@ Python/emscripten_trampoline_inner.wasm: $(srcdir)/Python/emscripten_trampoline_
 	$$(dirname $$(dirname $(CC)))/bin/clang -o $@ $< -mgc -O2 -Wl,--no-entry -Wl,--import-table -Wl,--import-memory -target wasm32-unknown-unknown -nostdlib
 
 Python/emscripten_trampoline_wasm.c: Python/emscripten_trampoline_inner.wasm
-	$(PYTHON_FOR_REGEN) $(srcdir)/Tools/wasm/emscripten/prepare_external_wasm.py $< $@ getWasmTrampolineModule
+	$(PYTHON_FOR_REGEN) $(srcdir)/Platforms/emscripten/prepare_external_wasm.py $< $@ getWasmTrampolineModule
 
 JIT_DEPS = \
 		$(srcdir)/Tools/jit/*.c \

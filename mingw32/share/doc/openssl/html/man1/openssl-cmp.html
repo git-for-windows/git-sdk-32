@@ -569,7 +569,9 @@
 <dt id="no_cache_extracerts"><b>-no_cache_extracerts</b></dt>
 <dd>
 
-<p>Do not cache certificates in the extraCerts field of CMP messages received. By default, they are kept as they may be helful for validating further messages. This option applies to both CMP clients and the mock server.</p>
+<p>Do not cache certificates in the extraCerts field of CMP messages received. By default, they are kept as they may be helpful for validating further messages. This option applies to both CMP clients and the mock server.</p>
+
+<p>In any case, after successfully validating an incoming message, its protection certificate (if any) is cached for reuse with validation of subsequent messages. This is done not only for efficiency but also to eliminate the need for the sender to include its certificate and related chain in the extraCerts field of subsequent messages of the same transaction.</p>
 
 </dd>
 <dt id="srvcertout-filename"><b>-srvcertout</b> <i>filename</i></dt>
@@ -1319,7 +1321,7 @@ openssl cmp -cmd kur -newkey cl_key_new.pem</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2007-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2007-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

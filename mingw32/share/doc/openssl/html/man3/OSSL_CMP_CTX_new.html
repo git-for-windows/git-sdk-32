@@ -287,6 +287,8 @@ OSSL_CRMF_POPO_KEYENC     - decrypt the encrypted certificate
 
 <p>Do not cache certificates received in the extraCerts CMP message field. Otherwise they are stored to potentially help validate further messages.</p>
 
+<p>In any case, after successfully validating an incoming message, its protection certificate (if any) is cached for reuse with validation of subsequent messages. This is done not only for efficiency but also to eliminate the need for the sender to include its certificate and related chain in the extraCerts field of subsequent messages of the same transaction.</p>
+
 </dd>
 </dl>
 
@@ -539,13 +541,13 @@ sk_OSSL_CMP_ITAV_pop_free(itavs, OSSL_CMP_ITAV_free);</code></pre>
 
 <p>OSSL_CMP_CTX_set1_serialNumber(), OSSL_CMP_CTX_get0_libctx(), OSSL_CMP_CTX_get0_propq(), and OSSL_CMP_CTX_get0_validatedSrvCert() were added in OpenSSL 3.2.</p>
 
-<p>OSSL_CMP_CTX_get0_geninfo_ITAVs() was added in OpenSSL 3.3.</p>
+<p>OSSL_CMP_CTX_get0_geninfo_ITAVs() and the <b>OSSL_CMP_OPT_NO_CACHE_EXTRACERTS</b> option were added in OpenSSL 3.3.</p>
 
 <p>Support for central key generation, requested via <b>OSSL_CRMF_POPO_NONE</b>, was added in OpenSSL 3.5.</p>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2007-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2007-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

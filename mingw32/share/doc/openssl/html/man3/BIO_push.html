@@ -39,7 +39,7 @@ void BIO_set_next(BIO *b, BIO *next);</code></pre>
 
 <p>BIO_push() pushes <i>b</i> on <i>next</i>. If <i>b</i> is NULL the function does nothing and returns <i>next</i>. Otherwise it prepends <i>b</i>, which may be a single BIO or a chain of BIOs, to <i>next</i> (unless <i>next</i> is NULL). It then makes a control call on <i>b</i> and returns <i>b</i>.</p>
 
-<p>BIO_pop() removes the BIO <i>b</i> from any chain is is part of. If <i>b</i> is NULL the function does nothing and returns NULL. Otherwise it makes a control call on <i>b</i> and returns the next BIO in the chain, or NULL if there is no next BIO. The removed BIO becomes a single BIO with no association with the original chain, it can thus be freed or be made part of a different chain.</p>
+<p>BIO_pop() removes the BIO <i>b</i> from any chain it is part of. If <i>b</i> is NULL the function does nothing and returns NULL. Otherwise it makes a control call on <i>b</i> and returns the next BIO in the chain, or NULL if there is no next BIO. The removed BIO becomes a single BIO with no association with the original chain, it can thus be freed or be made part of a different chain.</p>
 
 <p>BIO_set_next() replaces the existing next BIO in a chain with the BIO pointed to by <i>next</i>. The new chain may include some of the same BIOs from the old chain or it may be completely different.</p>
 
@@ -88,7 +88,7 @@ BIO_push(md1, md2);</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2021 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

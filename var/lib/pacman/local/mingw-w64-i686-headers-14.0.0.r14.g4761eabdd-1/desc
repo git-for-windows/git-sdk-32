@@ -2,7 +2,7 @@
 mingw-w64-i686-headers
 
 %VERSION%
-14.0.0.r11.g01f73779b-1
+14.0.0.r14.g4761eabdd-1
 
 %BASE%
 mingw-w64-headers
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1775926244
+1776110743
 
 %INSTALLDATE%
-1776058784
+1776183425
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/5dbc5ed2/24287030134)
+CI (msys2/msys2-autobuild/5dbc5ed2/24364150242)
 
 %SIZE%
-95631395
+95631551
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -45,7 +45,7 @@ mingw-w64-i686-headers-git
 mingw-w64-i686-headers-git
 
 %PROVIDES%
-mingw-w64-i686-headers-git=14.0.0.r11.g01f73779b
+mingw-w64-i686-headers-git=14.0.0.r14.g4761eabdd
 
 %XDATA%
 pkgtype=pkg

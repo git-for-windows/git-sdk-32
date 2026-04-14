@@ -94,7 +94,7 @@
 <p>Create a PKCS#12 file containing the user certificate, private key and CA certificate. It expects the user certificate and private key to be in the file <i>newcert.pem</i> and the CA certificate to be in the file <i>demoCA/cacert.pem</i>, it creates a file <i>newcert.p12</i>. This command can thus be called after the <b>-sign</b> option. The PKCS#12 file can be imported directly into a browser. If there is an additional argument on the command line it will be used as the &quot;friendly name&quot; for the certificate (which is typically displayed in the browser list box), otherwise the name &quot;My Certificate&quot; is used. Delegates work to <a href="../man1/openssl-pkcs12.html">openssl-pkcs12(1)</a>.</p>
 
 </dd>
-<dt id="sign--signcert--xsign"><b>-sign</b>, <b>-signcert</b>, <b>-xsign</b></dt>
+<dt id="sign--xsign"><b>-sign</b>, <b>-xsign</b></dt>
 <dd>
 
 <p>Calls the <a href="../man1/openssl-ca.html">openssl-ca(1)</a> command to sign a certificate request. It expects the request to be in the file <i>newreq.pem</i>. The new certificate is written to the file <i>newcert.pem</i> except in the case of the <b>-xsign</b> option when it is written to standard output.</p>
@@ -163,7 +163,7 @@ CA.pl -pkcs12 &quot;My Test Certificate&quot;</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

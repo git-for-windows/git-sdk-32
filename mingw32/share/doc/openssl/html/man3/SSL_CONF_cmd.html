@@ -173,11 +173,9 @@ int SSL_CONF_cmd_value_type(SSL_CONF_CTX *ctx, const char *option);</code></pre>
 <pre><code>$ openssl list -tls1_2 -tls-groups
 $ openssl list -tls1_3 -tls-groups</code></pre>
 
-<p>The recommended groups (in order of decreasing performance) for TLS 1.3 are presently:</p>
+<p>The recommended groups for TLS 1.3 are presently documented in the default TLS group list in the OpenSSL code base. Starting with OpenSSL 3.5, the hybrid algorithm <b>X25519MLKEM768</b> is first in this default list. It mitigates against threats from future quantum computers while still providing state-of-the-art classical key exchange protection.</p>
 
-<p><b>x25519</b>, <b>secp256r1</b>, <b>x448</b>, and <b>secp384r1</b>.</p>
-
-<p>The stronger security margins of the last two, come at a significant performance penalty.</p>
+<p>Further details regarding post-quantum algorithm considerations are documented in the HISTORY section below.</p>
 
 <p>An enriched alternative syntax, that enables clients to send multiple keyshares and allows servers to prioritise some groups over others, is described in <a href="../man3/SSL_CTX_set1_groups_list.html">SSL_CTX_set1_groups_list(3)</a>. Since TLS 1.2 has neither keyshares nor a hello retry mechanism, with TLS 1.2 the enriched syntax is ultimately equivalent to just a simple ordered list of groups, as with the simple form above.</p>
 
@@ -668,7 +666,7 @@ SSL_CONF_cmd(ctx, &quot;MaxProtocol&quot;, &quot;TLSv1.2&quot;);</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2012-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2012-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

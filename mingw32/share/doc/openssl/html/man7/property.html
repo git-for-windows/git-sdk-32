@@ -24,6 +24,7 @@
       <li><a href="#Global-and-Local">Global and Local</a></li>
     </ul>
   </li>
+  <li><a href="#PREDEFINED-NAMES">PREDEFINED NAMES</a></li>
   <li><a href="#SYNTAX">SYNTAX</a></li>
   <li><a href="#HISTORY">HISTORY</a></li>
   <li><a href="#COPYRIGHT">COPYRIGHT</a></li>
@@ -98,6 +99,44 @@
 
 <p>However, if the setting of the &quot;fips&quot; property is irrelevant to the operations being performed, the local property query can include the clause &quot;-fips&quot;. Note that the local property query could not use &quot;fips=no&quot; because that would disallow any implementations with &quot;fips=yes&quot; rather than not caring about the setting.</p>
 
+<h1 id="PREDEFINED-NAMES">PREDEFINED NAMES</h1>
+
+<p>Currently known predefined names are:</p>
+
+<dl>
+
+<dt id="provider"><code>provider</code></dt>
+<dd>
+
+<p>The conventional property value is the provider&#39;s name. This may be different from the name returned by <a href="../man3/OSSL_PROVIDER_get0_name.html">OSSL_PROVIDER_get0_name(3)</a>.</p>
+
+<p>It is a convention among OpenSSL provider implementations to define a property with this name. It is not mandatory to do this.</p>
+
+</dd>
+<dt id="version"><code>version</code></dt>
+<dd>
+
+<p>The conventional property value is the provider&#39;s version.</p>
+
+<p>OpenSSL provider implementations do not define a property with this name.</p>
+
+</dd>
+<dt id="fips"><code>fips</code></dt>
+<dd>
+
+<p>The conventional property value is boolean (<code>&quot;yes&quot;</code> or <code>&quot;no&quot;</code>), indication whether the implementation conforms to FIPS standards or not.</p>
+
+<p>It is a convention among OpenSSL provider implementations to define a property with this name where applicable. It is not mandatory to do this, but is strongly recommended.</p>
+
+</dd>
+<dt id="output-input-structure"><code>output</code>, <code>input</code>, <code>structure</code></dt>
+<dd>
+
+<p>Properties with these names are used by encoders (see <a href="../man7/provider-encoder.html">provider-encoder(7)</a>) and decoders (see <a href="../man7/provider-decoder.html">provider-decoder(7)</a>).</p>
+
+</dd>
+</dl>
+
 <h1 id="SYNTAX">SYNTAX</h1>
 
 <p>The lexical syntax in EBNF is given by:</p>
@@ -122,7 +161,7 @@ PropertyName   ::= [A-Za-z] [A-Za-z0-9_]* ( &#39;.&#39; [A-Za-z] [A-Za-z0-9_]* )
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2019-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2019-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

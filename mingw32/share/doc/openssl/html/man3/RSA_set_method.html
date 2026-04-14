@@ -135,7 +135,7 @@ RSA *RSA_new_method(ENGINE *engine);</code></pre>
 
 <p>RSA_set_default_method() returns no value.</p>
 
-<p>RSA_set_method() returns a pointer to the old RSA_METHOD implementation that was replaced. However, this return value should probably be ignored because if it was supplied by an ENGINE, the pointer could be invalidated at any time if the ENGINE is unloaded (in fact it could be unloaded as a result of the RSA_set_method() function releasing its handle to the ENGINE). For this reason, the return type may be replaced with a <b>void</b> declaration in a future release.</p>
+<p>RSA_set_method() returns 1 for success. It always succeeds.</p>
 
 <p>RSA_new_method() returns NULL and sets an error code that can be obtained by <a href="../man3/ERR_get_error.html">ERR_get_error(3)</a> if the allocation fails. Otherwise it returns a pointer to the newly allocated structure.</p>
 
@@ -155,7 +155,7 @@ RSA *RSA_new_method(ENGINE *engine);</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2020 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

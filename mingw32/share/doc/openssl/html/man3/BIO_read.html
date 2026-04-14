@@ -53,7 +53,7 @@ int BIO_puts(BIO *b, const char *buf);</code></pre>
 
 <p>BIO_write() attempts to write <i>len</i> bytes from <i>buf</i> to BIO <i>b</i>.</p>
 
-<p>BIO_puts() attempts to write a NUL-terminated string <i>buf</i> to BIO <i>b</i>.</p>
+<p>BIO_puts() attempts to write a NUL-terminated string <i>buf</i> to BIO <i>b</i>, without the terminating NUL byte and without appending &#39;\n&#39; (so, similar to fputs(3), and not puts(3)).</p>
 
 <h1 id="RETURN-VALUES">RETURN VALUES</h1>
 
@@ -91,7 +91,7 @@ int BIO_puts(BIO *b, const char *buf);</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2023 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

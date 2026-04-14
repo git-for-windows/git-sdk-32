@@ -53,7 +53,7 @@ char *SSL_get_shared_ciphers(const SSL *s, char *buf, int size);</code></pre>
 
 <p>SSL_get_cipher_list() returns a pointer to the name of the SSL_CIPHER listed for <b>ssl</b> with <b>priority</b>. If <b>ssl</b> is NULL, no ciphers are available, or there are less ciphers than <b>priority</b> available, NULL is returned.</p>
 
-<p>SSL_get_shared_ciphers() creates a colon separated and NUL terminated list of SSL_CIPHER names that are available in both the client and the server. <b>buf</b> is the buffer that should be populated with the list of names and <b>size</b> is the size of that buffer. A pointer to <b>buf</b> is returned on success or NULL on error. If the supplied buffer is not large enough to contain the complete list of names then a truncated list of names will be returned. Note that just because a ciphersuite is available (i.e. it is configured in the cipher list) and shared by both the client and the server it does not mean that it is enabled (see the description of SSL_get1_supported_ciphers() above). This function will return available shared ciphersuites whether or not they are enabled. This is a server side function only and must only be called after the completion of the initial handshake.</p>
+<p>SSL_get_shared_ciphers() creates a colon separated and NUL terminated list of SSL_CIPHER names that are available in both the client and the server. <b>buf</b> is the buffer that should be populated with the list of names and <b>size</b> is the size of that buffer. A pointer to <b>buf</b> is returned on success or NULL on error. If the supplied buffer is not large enough to contain the complete list of names then a truncated list of names will be returned. Note that just because a ciphersuite is available (i.e. it is configured in the cipher list) and shared by both the client and the server it does not mean that it is enabled (see the description of SSL_get1_supported_ciphers() above). This function will return available shared ciphersuites whether or not they are enabled. This is a server side function only and must only be called after the completion of the initial handshake. The function sets an empty string when <b>ssl</b> fails the handshake due to the absence of shared ciphers.</p>
 
 <h1 id="NOTES">NOTES</h1>
 
@@ -77,7 +77,7 @@ char *SSL_get_shared_ciphers(const SSL *s, char *buf, int size);</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2000-2018 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2000-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

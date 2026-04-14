@@ -97,7 +97,7 @@ int CRYPTO_mem_debug_pop(void);</code></pre>
 
 <p>OPENSSL_aligned_alloc() operates just as OPENSSL_malloc does, but it allows for the caller to specify an alignment value, for instances in which the default alignment of malloc is insufficient for the callers needs. Note, the alignment value must be a power of 2, and the size specified must be a multiple of the alignment. NOTE: The call to OPENSSL_aligned_alloc() accepts a 3rd argument, <i>freeptr</i> which must point to a void pointer. On some platforms, there is no available library call to obtain memory allocations greater than what malloc provides. In this case, OPENSSL_aligned_alloc implements its own alignment routine, allocating additional memory and offsetting the returned pointer to be on the requested alignment boundary. In order to safely free allocations made by this method, the caller must return the value in the <i>freeptr</i> variable, rather than the returned pointer.</p>
 
-<p>OPENSSL_clear_realloc() and OPENSSL_clear_free() should be used when the buffer at <b>addr</b> holds sensitive information. The old buffer is filled with zero&#39;s by calling OPENSSL_cleanse() before ultimately calling OPENSSL_free(). If the argument to OPENSSL_free() is NULL, nothing is done.</p>
+<p>OPENSSL_clear_realloc() and OPENSSL_clear_free() should be used when the buffer at <b>addr</b> holds sensitive information. The old buffer is filled with zero&#39;s by calling OPENSSL_cleanse() before ultimately calling OPENSSL_free(). If the argument to OPENSSL_clear_free() is NULL, nothing is done.</p>
 
 <p>OPENSSL_cleanse() fills <b>ptr</b> of size <b>len</b> with a string of 0&#39;s. It is useful in cases when it is needed to ensure that memory (that contains sensitive information) is overwritten (for example, before it is reclaimed, or when it is stored on stack), and such operation is not optimised out by compiler optimisations such as dead store elimination (as memset(3) may be). Use OPENSSL_cleanse() with care if the memory is a mapping of a file. If the storage controller uses write compression, then it&#39;s possible that sensitive tail bytes will survive zeroization because the block of zeros will be compressed. If the storage controller uses wear leveling, then the old sensitive data will not be overwritten; rather, a block of 0&#39;s will be written at a new physical location.</p>
 
@@ -160,7 +160,7 @@ export OPENSSL_MALLOC_FD
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2016-2024 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2016-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

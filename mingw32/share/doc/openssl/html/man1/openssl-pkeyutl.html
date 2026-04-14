@@ -194,7 +194,7 @@
 <dt id="encap"><b>-encap</b></dt>
 <dd>
 
-<p>Use a Key Encapsulation Mechanism (<b>KEM</b>) to <b>encapsulate</b> a shared-secret to a peer&#39;s <b>public</b> key. The encapsulated result (or ciphertext, non-text binary data) is written to standard output by default, or else to the file specified with <i>-out</i>. The <i>-secret</i> option must also be provided to specify the output file for the derived shared-secret value generated in the encapsulation process. Encapsulation is supported with a number of public key algorithms, currently: <a href="../man7/EVP_PKEY-ML-KEM.html">ML-KEM</a>, <a href="../man7/EVP_KEM-X25519.html">X25519</a>, <a href="../man7/EVP_KEM-X448.html">X449</a>, and <a href="../man7/EVP_KEM-EC.html">EC</a>. The ECX and EC algorithms use the <a href="https://www.rfc-editor.org/rfc/rfc9180">RFC9180</a> DHKEM construction. Encapsulation is also supported with <a href="../man7/EVP_KEM-RSA.html">RSA</a> keys via the <b>RSASVE</b> construction.</p>
+<p>Use a Key Encapsulation Mechanism (<b>KEM</b>) to <b>encapsulate</b> a shared-secret to a peer&#39;s <b>public</b> key. The encapsulated result (or ciphertext, non-text binary data) is written to standard output by default, or else to the file specified with <i>-out</i>. The <i>-secret</i> option must also be provided to specify the output file for the derived shared-secret value generated in the encapsulation process. Encapsulation is supported with a number of public key algorithms, currently: <a href="../man7/EVP_PKEY-ML-KEM.html">ML-KEM</a>, <a href="../man7/EVP_KEM-X25519.html">X25519</a>, <a href="../man7/EVP_KEM-X448.html">X448</a>, and <a href="../man7/EVP_KEM-EC.html">EC</a>. The ECX and EC algorithms use the <a href="https://www.rfc-editor.org/rfc/rfc9180">RFC9180</a> DHKEM construction. Encapsulation is also supported with <a href="../man7/EVP_KEM-RSA.html">RSA</a> keys via the <b>RSASVE</b> construction.</p>
 
 <p>At the API level, encapsulation and decapsulation are also supported for a few hybrid ECDHE (no DHKEM) plus <b>ML-KEM</b> algorithms, but these are intended primarily for use with TLS and should not be used standalone. There are in any case no standard public and private key formats for the hybrid algorithms, so it is not possible to provide the required key material.</p>
 
@@ -627,7 +627,7 @@ $ openssl pkeyutl -sign -in file.txt -inkey slh-dsa.pem -out sig</code></pre>
 
 <h1 id="COPYRIGHT">COPYRIGHT</h1>
 
-<p>Copyright 2006-2025 The OpenSSL Project Authors. All Rights Reserved.</p>
+<p>Copyright 2006-2026 The OpenSSL Project Authors. All Rights Reserved.</p>
 
 <p>Licensed under the Apache License 2.0 (the &quot;License&quot;). You may not use this file except in compliance with the License. You can obtain a copy in the file LICENSE in the source distribution or at <a href="https://www.openssl.org/source/license.html">https://www.openssl.org/source/license.html</a>.</p>
 

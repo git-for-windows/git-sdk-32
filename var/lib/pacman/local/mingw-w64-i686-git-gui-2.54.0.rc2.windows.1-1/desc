@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-gitk
+mingw-w64-i686-git-gui
 
 %VERSION%
-2.54.0.rc1.windows.1-1
+2.54.0.rc2.windows.1-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Git repository browser (mingw-w64)
+Git GUI tool (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1775715977
+1776194502
 
 %INSTALLDATE%
-1775798620
+1776230597
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-957305
+1455619
 
 %REASON%
 1
@@ -39,7 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.54.0.rc1.windows.1
+mingw-w64-i686-git=2.54.0.rc2.windows.1
 mingw-w64-i686-tcl
 mingw-w64-i686-tk
 

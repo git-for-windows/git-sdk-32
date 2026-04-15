@@ -124,6 +124,9 @@ UI, Workflows & Features
  * Handling of signed commits and tags in fast-import has been made more
    configurable.
 
+ * "git config list" is the official way to spell "git config -l" and
+   "git config --list".  Use it to update the documentation.
+
 
 Performance, Internal Implementation, Development Support etc.
 --------------------------------------------------------------
@@ -315,6 +318,14 @@ Performance, Internal Implementation, Development Support etc.
  * The way the "git log -L<range>:<file>" feature is bolted onto the
    log/diff machinery is being reworked a bit to make the feature
    compatible with more diff options, like -S/G.
+
+ * Further work to adjust the codebase for C23 that changes functions
+   like strchr() that discarded constness when they return a pointer into
+   a const string to preserve constness.
+
+ * "git rev-list --maximal-only" has been optimized by borrowing the
+   logic used by "git show-branch --independent", which computes the
+   same kind of information much more efficiently.
 
 
 Fixes since v2.53
@@ -508,6 +519,18 @@ Fixes since v2.53
  * "git backfill" is capable of auto-detecting a sparsely checked out
    working tree, which was broken.
    (merge 339eba65a7 th/backfill-auto-detect-sparseness-fix later to maint).
+
+ * add_files_to_cache() used diff_files() to detect only the paths that
+   are different between the index and the working tree and add them,
+   which does not need rename detection, which interfered with unnecessary
+   conflicts.
+   (merge c0ce43376b ng/add-files-to-cache-wo-rename later to maint).
+
+ * Doc mark-up update for entries in the glossary with bulleted lists.
+   (merge a65cbd87ea jk/doc-markup-sub-list-indentation later to maint).
+
+ * CI dependency updates.
+   (merge 4bdb17e3a8 jc/ci-github-actions-use-checkout-v5 later to maint).
 
  * Other code cleanup, docfix, build fix, etc.
    (merge d79fff4a11 jk/remote-tracking-ref-leakfix later to maint).

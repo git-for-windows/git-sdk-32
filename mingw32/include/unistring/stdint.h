@@ -1,5 +1,8 @@
 /* DO NOT EDIT! GENERATED AUTOMATICALLY! */
 #include <stddef.h>
+#if __cplusplus >= 201103
+#include <cstdint>
+#else
 #if __GLIBC__ >= 2
 #include <stdint.h>
 #else
@@ -129,4 +132,5 @@ typedef unsigned int unistring_uint32_t;
 
 #endif /* _UNISTRING_STDINT_H */
 #endif /* !defined _UNISTRING_STDINT_H && !defined _GL_JUST_INCLUDE_SYSTEM_STDINT_H */
+#endif
 #endif

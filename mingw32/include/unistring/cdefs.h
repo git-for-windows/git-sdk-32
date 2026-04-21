@@ -1,5 +1,5 @@
 /* Common macro definitions for C include files.
-   Copyright (C) 2008-2023 Free Software Foundation, Inc.
+   Copyright (C) 2008-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or
    modify it under the terms of either:
@@ -42,6 +42,10 @@
 /* _GL_ATTRIBUTE_MAYBE_UNUSED likewise.  */
 #ifndef _GL_ATTRIBUTE_MAYBE_UNUSED
 # define _GL_ATTRIBUTE_MAYBE_UNUSED _UC_ATTRIBUTE_MAYBE_UNUSED
+#endif
+/* _GL_UNNAMED serves the same purpose.  */
+#ifndef _GL_UNNAMED
+# define _GL_UNNAMED _UC_UNNAMED
 #endif
 
 #ifndef _GL_ATTRIBUTE_MALLOC
@@ -133,6 +137,13 @@
 # define _UC_ATTRIBUTE_UNUSED __attribute__ ((__unused__))
 #else
 # define _UC_ATTRIBUTE_UNUSED
+#endif
+
+#if ((defined __STDC_VERSION__ ? __STDC_VERSION__ : 0) < 202311 \
+     && !defined __cplusplus)
+# define _UC_UNNAMED(id) unnamed_##id _UC_ATTRIBUTE_UNUSED
+#else
+# define _UC_UNNAMED(id)
 #endif
 
 #endif /* _UNISTRING_CDEFS_H */

@@ -50,7 +50,7 @@ jobs:
       - build-installers-artifact
     steps:
       - name: download build-installers artifacts
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v8
         with:
           name: build-installers
           path: ${{github.workspace}}

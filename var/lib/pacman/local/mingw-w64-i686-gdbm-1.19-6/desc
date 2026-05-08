@@ -2,7 +2,7 @@
 mingw-w64-i686-gdbm
 
 %VERSION%
-1.19-5
+1.19-6
 
 %BASE%
 mingw-w64-gdbm
@@ -17,16 +17,16 @@ https://www.gnu.org/software/gdbm/gdbm.html
 any
 
 %BUILDDATE%
-1759589761
+1777924480
 
 %INSTALLDATE%
-1759807790
+1778218132
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/c6213b4d/18245774916)
+CI (msys2/msys2-autobuild/actions/runs/25339803465/job/74294074325)
 
 %SIZE%
-795376
+805342
 
 %REASON%
 1

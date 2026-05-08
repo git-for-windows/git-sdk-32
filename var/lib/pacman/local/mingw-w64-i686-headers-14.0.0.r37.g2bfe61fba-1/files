@@ -219,6 +219,7 @@ mingw32/include/control.h
 mingw32/include/control.idl
 mingw32/include/cor.h
 mingw32/include/corecrt.h
+mingw32/include/corecrt_memory.h
 mingw32/include/corecrt_startup.h
 mingw32/include/corecrt_stdio_config.h
 mingw32/include/corecrt_wconio.h

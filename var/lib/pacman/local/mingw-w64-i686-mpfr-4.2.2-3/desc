@@ -2,7 +2,7 @@
 mingw-w64-i686-mpfr
 
 %VERSION%
-4.2.2-2
+4.2.2-3
 
 %BASE%
 mingw-w64-mpfr
@@ -17,16 +17,16 @@ https://www.mpfr.org
 any
 
 %BUILDDATE%
-1777924102
+1778326298
 
 %INSTALLDATE%
-1778218132
+1778566425
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/actions/runs/25339803465/job/74294074325)
+CI (msys2/msys2-autobuild/actions/runs/25596580255/job/75143438366)
 
 %SIZE%
-2408514
+2428952
 
 %REASON%
 1

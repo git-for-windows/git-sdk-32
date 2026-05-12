@@ -2,7 +2,7 @@
 mingw-w64-i686-mpdecimal
 
 %VERSION%
-4.0.1-2
+4.0.1-3
 
 %BASE%
 mingw-w64-mpdecimal
@@ -17,16 +17,16 @@ https://www.bytereef.org/mpdecimal/index.html
 any
 
 %BUILDDATE%
-1777925425
+1778328532
 
 %INSTALLDATE%
-1778218132
+1778566428
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/actions/runs/25340823639/job/74297345313)
+CI (msys2/msys2-autobuild/actions/runs/25600690989/job/75153930539)
 
 %SIZE%
-1012269
+1011037
 
 %REASON%
 1

@@ -1618,7 +1618,7 @@ namespace __gnu_cxx
 #define _GLIBCXX98_USE_C99_WCHAR 1
 
 /* Define if the compiler supports native atomics for _Atomic_word. */
-/* #undef _GLIBCXX_ATOMIC_WORD_BUILTINS */
+#define _GLIBCXX_ATOMIC_WORD_BUILTINS 1
 
 /* Define if global objects can be aligned to
    std::hardware_destructive_interference_size. */

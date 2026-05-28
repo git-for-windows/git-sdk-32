@@ -2,7 +2,7 @@
 mingw-w64-i686-jansson
 
 %VERSION%
-2.15.0-1
+2.15.0-2
 
 %BASE%
 mingw-w64-jansson
@@ -17,16 +17,16 @@ https://www.digip.org/jansson/
 any
 
 %BUILDDATE%
-1769387711
+1779780213
 
 %INSTALLDATE%
-1769486826
+1779951236
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/cd5d4ff2/21342379862)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/26438332665/job/77826305062)
 
 %SIZE%
-446906
+442333
 
 %LICENSE%
 spdx:MIT

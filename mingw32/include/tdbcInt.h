@@ -46,10 +46,23 @@
 #endif
 
 /*
+ * Bunch of Tcl8 and Tcl9 compatibility definitions.
+ */
+#ifndef TCL_INDEX_NONE
+# define TCL_INDEX_NONE (-1)
+#endif
+
+#if TCL_MAJOR_VERSION < 9
+  typedef Tcl_ObjCmdProc Tcl_ObjCmdProc2;
+# define Tcl_CreateObjCommand2 Tcl_CreateObjCommand
+# undef Tcl_Size
+  typedef int Tcl_Size;
+#endif
+
+/*
  * Linkage to procedures not exported from this module
  */
 
-MODULE_SCOPE int TdbcTokenizeObjCmd(void *clientData, Tcl_Interp* interp,
-				    int objc, Tcl_Obj *const objv[]);
+MODULE_SCOPE Tcl_ObjCmdProc2 TdbcTokenizeObjCmd;
 
 #endif

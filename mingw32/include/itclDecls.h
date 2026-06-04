@@ -15,14 +15,17 @@ ITCLAPI const char *Itcl_InitStubs(
 
 #endif
 
-#if (TCL_MAJOR_VERSION < 9) && defined(TCL_MINOR_VERSION) && (TCL_MINOR_VERSION < 7)
+#if TCL_MAJOR_VERSION < 9
 # define Tcl_ObjCmdProc2 Tcl_ObjCmdProc
+#elif defined(TCL_NO_DEPRECATED)
+#   define Tcl_ObjCmdProc void
+#   define Tcl_CmdProc void
 #endif
 
 /* !BEGIN!: Do not edit below this line. */
 
 #define ITCL_STUBS_EPOCH 0
-#define ITCL_STUBS_REVISION 157
+#define ITCL_STUBS_REVISION 159
 
 #ifdef __cplusplus
 extern "C" {
@@ -215,15 +218,61 @@ extern const ItclStubs *itclStubsPtr;
 
 /* !END!: Do not edit above this line. */
 
-#if (TCL_MAJOR_VERSION < 9)
-# if defined(TCL_MINOR_VERSION) && (TCL_MINOR_VERSION < 7)
-#   undef Tcl_ObjCmdProc2
-# endif
+#if TCL_MAJOR_VERSION < 9
+# undef Tcl_ObjCmdProc2
 # undef Itcl_RegisterObjC2
 # define Itcl_RegisterObjC2 Itcl_RegisterObjC
 # undef Itcl_FindC2
 # define Itcl_FindC2(interp, name, objProcPtr, cDataPtr) \
 	Itcl_FindC(interp, name, NULL, objProcPtr, cDataPtr)
+#else
+#if defined(__STDC_VERSION__) && (__STDC_VERSION__ >= 201112L) && (TCL_MAJOR_VERSION > 8)
+#ifdef USE_ITCL_STUBS
+#undef Itcl_RegisterObjC
+#define Itcl_RegisterObjC(interp, name, objProcPtr, clientData, delProc) _Generic( (objProcPtr), \
+    Tcl_ObjCmdProc2*: Itcl_RegisterObjC2, \
+    default: (itclStubsPtr->itcl_RegisterObjC) \
+) ((interp), (name), (objProcPtr), (clientData), (delProc))
+static inline int ItclFindC(Tcl_Interp *interp, const char *name,
+	Tcl_CmdProc **argProcPtr, Tcl_ObjCmdProc2 **objProcPtr, void **cDataPtr) {
+    Tcl_ObjCmdProc *objProcPtr1;
+    if (argProcPtr) {
+	itclStubsPtr->itcl_FindC(interp, name, argProcPtr, &objProcPtr1, cDataPtr);
+    }
+    return Itcl_FindC2(interp, name, objProcPtr, cDataPtr);
+}
+#undef Itcl_FindC
+#define Itcl_FindC(interp, name, argProcPtr, objProcPtr, cDataPtr) _Generic( (*objProcPtr), \
+    Tcl_ObjCmdProc2*: ItclFindC, \
+    default: (itclStubsPtr->itcl_FindC) \
+) ((interp), (name), (argProcPtr), (objProcPtr), (cDataPtr))
+#else /* USE_ITCL_STUBS */
+#define Itcl_RegisterObjC(interp, name, objProcPtr, clientData, delProc) _Generic( (objProcPtr), \
+    Tcl_ObjCmdProc2*: Itcl_RegisterObjC2, \
+    default: (Itcl_RegisterObjC) \
+) ((interp), (name), (objProcPtr), (clientData), (delProc))
+static inline int ItclFindC(Tcl_Interp *interp, const char *name,
+	Tcl_CmdProc **argProcPtr, Tcl_ObjCmdProc2 **objProcPtr, void **cDataPtr) {
+    Tcl_ObjCmdProc *objProcPtr1;
+    if (argProcPtr) {
+	Itcl_FindC(interp, name, argProcPtr, &objProcPtr1, cDataPtr);
+    }
+    return Itcl_FindC2(interp, name, objProcPtr, cDataPtr);
+}
+#undef Itcl_FindC
+#define Itcl_FindC(interp, name, argProcPtr, objProcPtr, cDataPtr) _Generic( (*objProcPtr), \
+    Tcl_ObjCmdProc2*: ItclFindC, \
+    default: (Itcl_FindC) \
+) ((interp), (name), (argProcPtr), (objProcPtr), (cDataPtr))
+#endif /* USE_ITCL_STUBS */
+#endif
+#if defined(TCL_NO_DEPRECATED)
+# undef Tcl_ObjCmdProc
+# undef Tcl_CmdProc
+# undef Itcl_RegisterC
+# undef Itcl_RegisterObjC
+# undef Itcl_FindC
+#endif
 #endif
 
 #endif /* _ITCLDECLS */

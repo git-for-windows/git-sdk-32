@@ -553,6 +553,7 @@ AC_DEFUN([SC_CONFIG_CFLAGS], [
 	AC_DEFINE(MODULE_SCOPE, [extern], [No need to mark inidividual symbols as hidden])
 
     AC_CHECK_PROG(CYGPATH, cygpath, cygpath -m, echo)
+    AC_CHECK_PROG(WINE, wine, wine,)
 
     SHLIB_SUFFIX=".dll"
 
@@ -805,10 +806,6 @@ AC_DEFUN([SC_CONFIG_CFLAGS], [
 	    arm64|aarch64)
 		MACHINE="ARM64"
 		AC_MSG_RESULT([   Using ARM64 $MACHINE mode])
-		;;
-	    arm64)
-		MACHINE="ARM64"
-		AC_MSG_RESULT([   Using 64-bit $MACHINE mode])
 		;;
 	    ia64)
 		MACHINE="IA64"

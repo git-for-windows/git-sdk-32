@@ -1,17 +1,16 @@
-This is gnutls.info, produced by makeinfo version 7.0.3 from
-gnutls.texi.
+This is gnutls.info, produced by makeinfo version 7.2 from gnutls.texi.
 
-This manual is last updated 18 January 2024 for version 3.8.4 of GnuTLS.
+This manual is last updated 29 April 2026 for version 3.8.13 of GnuTLS.
 
-Copyright © 2001-2024 Free Software Foundation, Inc.\\ Copyright ©
-2001-2024 Nikos Mavrogiannopoulos
+Copyright © 2001-2026 Free Software Foundation, Inc.\\ Copyright ©
+2001-2026 Nikos Mavrogiannopoulos
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
      Version 1.3 or any later version published by the Free Software
      Foundation; with no Invariant Sections, no Front-Cover Texts, and
      no Back-Cover Texts.  A copy of the license is included in the
-     section entitled “GNU Free Documentation License”.
+     section entitled "GNU Free Documentation License".
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * GnuTLS: (gnutls).		GNU Transport Layer Security Library.
@@ -46,7 +45,7 @@ gnutls_dtls_cookie_send
 
      CLIENT_DATA: contains data identifying the client (i.e.  address)
 
-     CLIENT_DATA_SIZE: The size of client’s data
+     CLIENT_DATA_SIZE: The size of client's data
 
      PRESTATE: The previous cookie returned by
      ‘gnutls_dtls_cookie_verify()’
@@ -79,7 +78,7 @@ gnutls_dtls_cookie_verify
 
      CLIENT_DATA: contains data identifying the client (i.e.  address)
 
-     CLIENT_DATA_SIZE: The size of client’s data
+     CLIENT_DATA_SIZE: The size of client's data
 
      _MSG: An incoming message that initiates a connection.
 
@@ -152,7 +151,7 @@ gnutls_dtls_prestate_set
           gnutls_dtls_prestate_st * PRESTATE)
      SESSION: a new session
 
-     PRESTATE: contains the client’s prestate
+     PRESTATE: contains the client's prestate
 
      This function will associate the prestate acquired by the cookie
      authentication with the client, with the newly established session.
@@ -356,8 +355,8 @@ gnutls_pkcs8_info
      set on supported structures.
 
      *Returns:* ‘GNUTLS_E_INVALID_REQUEST’ if the provided structure
-     isn’t an encrypted key, ‘GNUTLS_E_UNKNOWN_CIPHER_TYPE’ if the
-     structure’s encryption isn’t supported, or another negative error
+     isn't an encrypted key, ‘GNUTLS_E_UNKNOWN_CIPHER_TYPE’ if the
+     structure's encryption isn't supported, or another negative error
      code in case of a failure.  Zero on success.
 
      *Since:* 3.4.0
@@ -402,11 +401,11 @@ gnutls_session_set_verify_output_function
 
      FUNC: is the callback function
 
-     This function sets a callback to be called when the peer’s
+     This function sets a callback to be called when the peer's
      certificate chain has to be verified and full path to the trusted
      root has to be printed.
 
-     The callback’s function prototype is defined in ‘x509.h’: int
+     The callback's function prototype is defined in 'x509.h': int
      (*callback)( gnutls_x509_crt_t cert, gnutls_x509_crt_t issuer,
      gnutls_x509_crl_t crl, unsigned int verification_output);
 
@@ -718,7 +717,7 @@ gnutls_x509_cidr_to_rfc5280
      CIDR_RFC5280: CIDR range converted to RFC5280 format
 
      This function will convert text CIDR range with prefix (such as
-     ’10.0.0.0/8’) to RFC5280 (IP address in network byte order followed
+     '10.0.0.0/8') to RFC5280 (IP address in network byte order followed
      by its network mask).  Works for both IPv4 and IPv6.
 
      The resulting object is directly usable for IP name constraints
@@ -932,7 +931,7 @@ gnutls_x509_crl_get_authority_key_id
      CRITICAL: will be non-zero if the extension is marked as critical
      (may be null)
 
-     This function will return the CRL authority’s key identifier.  This
+     This function will return the CRL authority's key identifier.  This
      is obtained by the X.509 Authority Key identifier extension field
      (2.5.29.35).  Note that this function only returns the
      keyIdentifier field of the extension and
@@ -995,7 +994,7 @@ gnutls_x509_crl_get_dn_oid
 
      OID: a pointer to store the OID (may be null)
 
-     SIZEOF_OID: initially holds the size of ’oid’
+     SIZEOF_OID: initially holds the size of 'oid'
 
      This function will extract the requested OID of the name of the CRL
      issuer, specified by the given index.
@@ -1125,7 +1124,7 @@ gnutls_x509_crl_get_issuer_dn
           char * BUF, size_t * SIZEOF_BUF)
      CRL: should contain a gnutls_x509_crl_t type
 
-     BUF: a pointer to a structure to hold the peer’s name (may be null)
+     BUF: a pointer to a structure to hold the peer's name (may be null)
 
      SIZEOF_BUF: initially holds the size of ‘buf’
 
@@ -1207,7 +1206,7 @@ gnutls_x509_crl_get_issuer_dn_by_oid
 
      RAW_FLAG: If non-zero returns the raw DER data of the DN part.
 
-     BUF: a pointer to a structure to hold the peer’s name (may be null)
+     BUF: a pointer to a structure to hold the peer's name (may be null)
 
      SIZEOF_BUF: initially holds the size of ‘buf’
 
@@ -1218,8 +1217,8 @@ gnutls_x509_crl_get_issuer_dn_by_oid
 
      Some helper macros with popular OIDs can be found in gnutls/x509.h
      If raw flag is (0), this function will only return known OIDs as
-     text.  Other OIDs will be DER encoded, as described in RFC4514 – in
-     hex format with a ’#’ prefix.  You can check about known OIDs using
+     text.  Other OIDs will be DER encoded, as described in RFC4514 - in
+     hex format with a '#' prefix.  You can check about known OIDs using
      ‘gnutls_x509_dn_oid_known()’ .
 
      If buf is null then only the size will be filled.
@@ -1367,7 +1366,7 @@ gnutls_x509_crl_import
 
      This function will convert the given DER or PEM encoded CRL to the
      native ‘gnutls_x509_crl_t’ format.  The output will be stored in
-     ’crl’.
+     'crl'.
 
      If the CRL is PEM encoded it should have a header of "X509 CRL".
 
@@ -1384,7 +1383,7 @@ gnutls_x509_crl_init
      Certificate Revocation List.  A revocation list usually contains
      lists of certificate serial numbers that have been revoked by an
      Authority.  The revocation lists are always signed with the
-     authority’s private key.
+     authority's private key.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
      otherwise a negative error value.
@@ -1447,7 +1446,7 @@ gnutls_x509_crl_list_import
 
      FORMAT: One of DER or PEM.
 
-     FLAGS: must be (0) or an OR’d sequence of
+     FLAGS: must be (0) or an OR'd sequence of
      gnutls_certificate_import_flags.
 
      This function will convert the given CRL list to the native
@@ -1476,7 +1475,7 @@ gnutls_x509_crl_list_import2
 
      FORMAT: One of DER or PEM.
 
-     FLAGS: must be (0) or an OR’d sequence of
+     FLAGS: must be (0) or an OR'd sequence of
      gnutls_certificate_import_flags.
 
      This function will convert the given CRL list to the native
@@ -1522,7 +1521,7 @@ gnutls_x509_crl_set_authority_key_id
 
      ID_SIZE: Holds the size of the serial field.
 
-     This function will set the CRL’s authority key ID extension.  Only
+     This function will set the CRL's authority key ID extension.  Only
      the keyIdentifier field can be set with this function.  This may be
      used by an authority that holds multiple private keys, to
      distinguish the used key.
@@ -1544,7 +1543,7 @@ gnutls_x509_crl_set_crt
 
      REVOCATION_TIME: The time this certificate was revoked
 
-     This function will set a revoked certificate’s serial number to the
+     This function will set a revoked certificate's serial number to the
      CRL.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -1558,13 +1557,13 @@ gnutls_x509_crl_set_crt_serial
           REVOCATION_TIME)
      CRL: should contain a gnutls_x509_crl_t type
 
-     SERIAL: The revoked certificate’s serial number
+     SERIAL: The revoked certificate's serial number
 
      SERIAL_SIZE: Holds the size of the serial field.
 
      REVOCATION_TIME: The time this certificate was revoked
 
-     This function will set a revoked certificate’s serial number to the
+     This function will set a revoked certificate's serial number to the
      CRL.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -1600,7 +1599,7 @@ gnutls_x509_crl_set_number
 
      NR_SIZE: Holds the size of the nr field.
 
-     This function will set the CRL’s number extension.  This is to be
+     This function will set the CRL's number extension.  This is to be
      used as a unique and monotonic number assigned to the CRL by the
      authority.
 
@@ -1648,12 +1647,12 @@ gnutls_x509_crl_sign
 
      ISSUER: is the certificate of the certificate issuer
 
-     ISSUER_KEY: holds the issuer’s private key
+     ISSUER_KEY: holds the issuer's private key
 
      This function is the same a ‘gnutls_x509_crl_sign2()’ with no
      flags, and an appropriate hash algorithm.  The hash algorithm used
      may vary between versions of GnuTLS, and it is tied to the security
-     level of the issuer’s public key.
+     level of the issuer's public key.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
      otherwise a negative error value.
@@ -1668,15 +1667,15 @@ gnutls_x509_crl_sign2
 
      ISSUER: is the certificate of the certificate issuer
 
-     ISSUER_KEY: holds the issuer’s private key
+     ISSUER_KEY: holds the issuer's private key
 
      DIG: The message digest to use.  GNUTLS_DIG_SHA256 is the safe
-     choice unless you know what you’re doing.
+     choice unless you know what you're doing.
 
      FLAGS: must be 0
 
-     This function will sign the CRL with the issuer’s private key, and
-     will copy the issuer’s information into the CRL.
+     This function will sign the CRL with the issuer's private key, and
+     will copy the issuer's information into the CRL.
 
      This must be the last step in a certificate CRL since all the
      previously set parameters are now signed.
@@ -1893,7 +1892,7 @@ gnutls_x509_crq_get_basic_constraints
      pathLenConstraint field and the actual value, -1 indicate that the
      field is absent.
 
-     This function will read the certificate’s basic constraints, and
+     This function will read the certificate's basic constraints, and
      return the certificates CA status.  It reads the basicConstraints
      X.509 extension (2.5.29.19).
 
@@ -2024,8 +2023,8 @@ gnutls_x509_crq_get_dn_by_oid
 
      Some helper macros with popular OIDs can be found in gnutls/x509.h
      If raw flag is (0), this function will only return known OIDs as
-     text.  Other OIDs will be DER encoded, as described in RFC2253 – in
-     hex format with a ’\#’ prefix.  You can check about known OIDs
+     text.  Other OIDs will be DER encoded, as described in RFC2253 - in
+     hex format with a '\#' prefix.  You can check about known OIDs
      using ‘gnutls_x509_dn_oid_known()’ .
 
      *Returns:* ‘GNUTLS_E_SHORT_MEMORY_BUFFER’ if the provided buffer is
@@ -2267,7 +2266,7 @@ gnutls_x509_crq_get_key_rsa_raw
 
      E: will hold the public exponent
 
-     This function will export the RSA public key’s parameters found in
+     This function will export the RSA public key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -2287,7 +2286,7 @@ gnutls_x509_crq_get_key_usage
 
      CRITICAL: will be non-zero if the extension is marked as critical
 
-     This function will return certificate’s key usage, by reading the
+     This function will return certificate's key usage, by reading the
      keyUsage X.509 extension (2.5.29.15).  The key usage value will
      ORed values of the: ‘GNUTLS_KEY_DIGITAL_SIGNATURE’ ,
      ‘GNUTLS_KEY_NON_REPUDIATION’ , ‘GNUTLS_KEY_KEY_ENCIPHERMENT’ ,
@@ -2310,7 +2309,7 @@ gnutls_x509_crq_get_pk_algorithm
      CRQ: should contain a ‘gnutls_x509_crq_t’ type
 
      BITS: if bits is non-‘NULL’ it will hold the size of the
-     parameters’ in bits
+     parameters' in bits
 
      This function will return the public key algorithm of a PKCS‘10’
      certificate request.
@@ -2822,7 +2821,7 @@ gnutls_x509_crq_set_spki
 
      FLAGS: must be zero
 
-     This function will set the certificate request’s subject public key
+     This function will set the certificate request's subject public key
      information explicitly.  This is intended to be used in the cases
      where a single public key (e.g., RSA) can be used for multiple
      signature algorithms (RSA PKCS1-1.5, and RSA-PSS).
@@ -2898,7 +2897,7 @@ gnutls_x509_crq_set_tlsfeatures
      FEATURES: If the function succeeds, the features will be added to
      the certificate request.
 
-     This function will set the certificate request’s X.509 TLS
+     This function will set the certificate request's X.509 TLS
      extension from the given structure.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -2933,7 +2932,7 @@ gnutls_x509_crq_sign
      This function is the same a ‘gnutls_x509_crq_sign2()’ with no
      flags, and an appropriate hash algorithm.  The hash algorithm used
      may vary between versions of GnuTLS, and it is tied to the security
-     level of the issuer’s public key.
+     level of the issuer's public key.
 
      A known limitation of this function is, that a newly-signed request
      will not be fully functional (e.g., for signature verification),
@@ -2974,7 +2973,7 @@ gnutls_x509_crq_sign2
 
      *Returns:* ‘GNUTLS_E_SUCCESS’ on success, otherwise a negative
      error code.  ‘GNUTLS_E_ASN1_VALUE_NOT_FOUND’ is returned if you
-     didn’t set all information in the certificate request (e.g., the
+     didn't set all information in the certificate request (e.g., the
      version using ‘gnutls_x509_crq_set_version()’ ).
 
 gnutls_x509_crq_verify
@@ -3008,7 +3007,7 @@ gnutls_x509_crt_check_email
 
      FLAGS: should be zero
 
-     This function will check if the given certificate’s subject matches
+     This function will check if the given certificate's subject matches
      the given email address.
 
      *Returns:* non-zero for a successful match, and zero on failure.
@@ -3022,7 +3021,7 @@ gnutls_x509_crt_check_hostname
 
      HOSTNAME: A null terminated string that contains a DNS name
 
-     This function will check if the given certificate’s subject matches
+     This function will check if the given certificate's subject matches
      the given hostname.  This is a basic implementation of the matching
      described in RFC6125, and takes into account wildcards, and the
      DNSName/IPAddress subject alternative name PKIX extension.
@@ -3043,7 +3042,7 @@ gnutls_x509_crt_check_hostname2
 
      FLAGS: gnutls_certificate_verify_flags
 
-     This function will check if the given certificate’s subject matches
+     This function will check if the given certificate's subject matches
      the given hostname.  This is a basic implementation of the matching
      described in RFC6125, and takes into account wildcards, and the
      DNSName/IPAddress subject alternative name PKIX extension.
@@ -3087,7 +3086,7 @@ gnutls_x509_crt_check_ip
      FLAGS: should be zero
 
      This function will check if the IP allowed IP addresses in the
-     certificate’s subject alternative name match the provided IP
+     certificate's subject alternative name match the provided IP
      address.
 
      *Returns:* non-zero for a successful match, and zero on failure.
@@ -3127,7 +3126,7 @@ gnutls_x509_crt_check_key_purpose
      ‘GNUTLS_KP_FLAG_ALLOW_ANY’ then it a certificate marked for any
      purpose will not match.
 
-     *Returns:* zero if the key purpose doesn’t match, and non-zero
+     *Returns:* zero if the key purpose doesn't match, and non-zero
      otherwise.
 
      *Since:* 3.5.6
@@ -3398,7 +3397,7 @@ gnutls_x509_crt_get_authority_key_id
      CRITICAL: will be non-zero if the extension is marked as critical
      (may be null)
 
-     This function will return the X.509v3 certificate authority’s key
+     This function will return the X.509v3 certificate authority's key
      identifier.  This is obtained by the X.509 Authority Key identifier
      extension field (2.5.29.35).  Note that this function only returns
      the keyIdentifier field of the extension and
@@ -3428,7 +3427,7 @@ gnutls_x509_crt_get_basic_constraints
      pathLenConstraint field and the actual value, -1 indicate that the
      field is absent.
 
-     This function will read the certificate’s basic constraints, and
+     This function will read the certificate's basic constraints, and
      return the certificates CA status.  It reads the basicConstraints
      X.509 extension (2.5.29.19).
 
@@ -3598,8 +3597,8 @@ gnutls_x509_crt_get_dn_by_oid
 
      Some helper macros with popular OIDs can be found in gnutls/x509.h
      If raw flag is (0), this function will only return known OIDs as
-     text.  Other OIDs will be DER encoded, as described in RFC4514 – in
-     hex format with a ’#’ prefix.  You can check about known OIDs using
+     text.  Other OIDs will be DER encoded, as described in RFC4514 - in
+     hex format with a '#' prefix.  You can check about known OIDs using
      ‘gnutls_x509_dn_oid_known()’ .
 
      If ‘buf’ is null then only the size will be filled.  If the
@@ -3830,7 +3829,7 @@ gnutls_x509_crt_get_fingerprint
 
      BUF_SIZE: initially holds the size of ‘buf’
 
-     This function will calculate and copy the certificate’s fingerprint
+     This function will calculate and copy the certificate's fingerprint
      in the provided buffer.  The fingerprint is a hash of the
      DER-encoded data of the certificate.
 
@@ -3853,7 +3852,7 @@ gnutls_x509_crt_get_inhibit_anypolicy
 
      CRITICAL: will be non-zero if the extension is marked as critical
 
-     This function will return certificate’s value of the SkipCerts,
+     This function will return certificate's value of the SkipCerts,
      i.e., the Inhibit anyPolicy X.509 extension (2.5.29.54).
 
      The returned value is the number of additional certificates that
@@ -3876,7 +3875,7 @@ gnutls_x509_crt_get_issuer
 
      DN: output variable with pointer to uint8_t DN
 
-     Return the Certificate’s Issuer DN as a ‘gnutls_x509_dn_t’ data
+     Return the Certificate's Issuer DN as a ‘gnutls_x509_dn_t’ data
      type, that can be decoded using ‘gnutls_x509_dn_get_rdn_ava()’ .
 
      Note that ‘dn’ should be treated as constant.  Because it points
@@ -3908,7 +3907,7 @@ gnutls_x509_crt_get_issuer_alt_name
      Extensions.
 
      When the SAN type is otherName, it will extract the data in the
-     otherName’s value field, and ‘GNUTLS_SAN_OTHERNAME’ is returned.
+     otherName's value field, and ‘GNUTLS_SAN_OTHERNAME’ is returned.
      You may use ‘gnutls_x509_crt_get_subject_alt_othername_oid()’ to
      get the corresponding OID and the "virtual" SAN types (e.g.,
      ‘GNUTLS_SAN_OTHERNAME_XMPP’ ).
@@ -4108,8 +4107,8 @@ gnutls_x509_crt_get_issuer_dn_by_oid
 
      Some helper macros with popular OIDs can be found in gnutls/x509.h
      If raw flag is (0), this function will only return known OIDs as
-     text.  Other OIDs will be DER encoded, as described in RFC4514 – in
-     hex format with a ’#’ prefix.  You can check about known OIDs using
+     text.  Other OIDs will be DER encoded, as described in RFC4514 - in
+     hex format with a '#' prefix.  You can check about known OIDs using
      ‘gnutls_x509_dn_oid_known()’ .
 
      If ‘buf’ is null then only the size will be filled.  If the
@@ -4244,7 +4243,7 @@ gnutls_x509_crt_get_key_usage
 
      CRITICAL: will be non-zero if the extension is marked as critical
 
-     This function will return certificate’s key usage, by reading the
+     This function will return certificate's key usage, by reading the
      keyUsage X.509 extension (2.5.29.15).  The key usage value will
      ORed values of the: ‘GNUTLS_KEY_DIGITAL_SIGNATURE’ ,
      ‘GNUTLS_KEY_NON_REPUDIATION’ , ‘GNUTLS_KEY_KEY_ENCIPHERMENT’ ,
@@ -4273,7 +4272,7 @@ gnutls_x509_crt_get_name_constraints
      This function will return an intermediate type containing the name
      constraints of the provided CA certificate.  That structure can be
      used in combination with ‘gnutls_x509_name_constraints_check()’ to
-     verify whether a server’s name is in accordance with the
+     verify whether a server's name is in accordance with the
      constraints.
 
      When the ‘flags’ is set to ‘GNUTLS_EXT_FLAG_APPEND’ , then if the
@@ -4298,7 +4297,7 @@ gnutls_x509_crt_get_pk_algorithm
           CERT, unsigned int * BITS)
      CERT: should contain a ‘gnutls_x509_crt_t’ type
 
-     BITS: if bits is non null it will hold the size of the parameters’
+     BITS: if bits is non null it will hold the size of the parameters'
      in bits
 
      This function will return the public key algorithm of an X.509
@@ -4329,7 +4328,7 @@ gnutls_x509_crt_get_pk_dsa_raw
 
      Y: will hold the y
 
-     This function will export the DSA public key’s parameters found in
+     This function will export the DSA public key's parameters found in
      the given certificate.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4350,7 +4349,7 @@ gnutls_x509_crt_get_pk_ecc_raw
 
      Y: will hold the y-coordinate
 
-     This function will export the ECC public key’s parameters found in
+     This function will export the ECC public key's parameters found in
      the given certificate.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4381,7 +4380,7 @@ gnutls_x509_crt_get_pk_gost_raw
 
      Y: will hold the y-coordinate
 
-     This function will export the GOST public key’s parameters found in
+     This function will export the GOST public key's parameters found in
      the given certificate.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4420,7 +4419,7 @@ gnutls_x509_crt_get_pk_rsa_raw
 
      E: will hold the public exponent
 
-     This function will export the RSA public key’s parameters found in
+     This function will export the RSA public key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4513,7 +4512,7 @@ gnutls_x509_crt_get_raw_dn
      DN: will hold the starting point of the DN
 
      This function will return a pointer to the DER encoded DN structure
-     and the length.  This points to allocated data that must be free’d
+     and the length.  This points to allocated data that must be free'd
      using ‘gnutls_free()’ .
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -4530,7 +4529,7 @@ gnutls_x509_crt_get_raw_issuer_dn
      DN: will hold the starting point of the DN
 
      This function will return a pointer to the DER encoded DN structure
-     and the length.  This points to allocated data that must be free’d
+     and the length.  This points to allocated data that must be free'd
      using ‘gnutls_free()’ .
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -4547,7 +4546,7 @@ gnutls_x509_crt_get_serial
 
      RESULT_SIZE: Holds the size of the result field.
 
-     This function will return the X.509 certificate’s serial number.
+     This function will return the X.509 certificate's serial number.
      This is obtained by the X509 Certificate serialNumber field.
      Serial is not always a 32 or 64bit number.  Some CAs use large
      serial numbers, thus it may be wise to handle it as something
@@ -4635,7 +4634,7 @@ gnutls_x509_crt_get_subject
 
      DN: output variable with pointer to uint8_t DN.
 
-     Return the Certificate’s Subject DN as a ‘gnutls_x509_dn_t’ data
+     Return the Certificate's Subject DN as a ‘gnutls_x509_dn_t’ data
      type, that can be decoded using ‘gnutls_x509_dn_get_rdn_ava()’ .
 
      Note that ‘dn’ should be treated as constant.  Because it points
@@ -4666,7 +4665,7 @@ gnutls_x509_crt_get_subject_alt_name
      in the given certificate in the X509v3 Certificate Extensions.
 
      When the SAN type is otherName, it will extract the data in the
-     otherName’s value field, and ‘GNUTLS_SAN_OTHERNAME’ is returned.
+     otherName's value field, and ‘GNUTLS_SAN_OTHERNAME’ is returned.
      You may use ‘gnutls_x509_crt_get_subject_alt_othername_oid()’ to
      get the corresponding OID and the "virtual" SAN types (e.g.,
      ‘GNUTLS_SAN_OTHERNAME_XMPP’ ).
@@ -4772,7 +4771,7 @@ gnutls_x509_crt_get_subject_key_id
      CRITICAL: will be non-zero if the extension is marked as critical
      (may be null)
 
-     This function will return the X.509v3 certificate’s subject key
+     This function will return the X.509v3 certificate's subject key
      identifier.  This is obtained by the X.509 Subject Key identifier
      extension field (2.5.29.14).
 
@@ -4922,7 +4921,7 @@ gnutls_x509_crt_list_import
 
      FORMAT: One of DER or PEM.
 
-     FLAGS: must be (0) or an OR’d sequence of
+     FLAGS: must be (0) or an OR'd sequence of
      gnutls_certificate_import_flags.
 
      This function will convert the given PEM encoded certificate list
@@ -4956,7 +4955,7 @@ gnutls_x509_crt_list_import2
 
      FORMAT: One of DER or PEM.
 
-     FLAGS: must be (0) or an OR’d sequence of
+     FLAGS: must be (0) or an OR'd sequence of
      gnutls_certificate_import_flags.
 
      This function will convert the given PEM encoded certificate list
@@ -5038,12 +5037,12 @@ gnutls_x509_crt_list_verify
      return its status.  The details of the verification are the same as
      in ‘gnutls_x509_trust_list_verify_crt2()’ .
 
-     You must check the peer’s name in order to check if the verified
+     You must check the peer's name in order to check if the verified
      certificate belongs to the actual peer.
 
      The certificate verification output will be put in ‘verify’ and
      will be one or more of the gnutls_certificate_status_t enumerated
-     elements bitwise or’d.  For a more detailed verification status use
+     elements bitwise or'd.  For a more detailed verification status use
      ‘gnutls_x509_crt_verify()’ per list element.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -5126,7 +5125,7 @@ gnutls_x509_crt_set_authority_key_id
 
      ID_SIZE: Holds the size of the key ID field.
 
-     This function will set the X.509 certificate’s authority key ID
+     This function will set the X.509 certificate's authority key ID
      extension.  Only the keyIdentifier field can be set with this
      function.
 
@@ -5503,7 +5502,7 @@ gnutls_x509_crt_set_issuer_dn_by_oid
      and call this function with ‘raw_flag’ set.
 
      Normally you do not need to call this function, since the signing
-     operation will copy the signer’s name as the issuer of the
+     operation will copy the signer's name as the issuer of the
      certificate.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -5520,7 +5519,7 @@ gnutls_x509_crt_set_issuer_unique_id
 
      ID_SIZE: Holds the size of the unique ID.
 
-     This function will set the X.509 certificate’s issuer unique ID
+     This function will set the X.509 certificate's issuer unique ID
      field.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -5702,7 +5701,7 @@ gnutls_x509_crt_set_proxy_dn
 
      SIZEOF_NAME: holds the size of ‘name’
 
-     This function will set the subject in ‘crt’ to the end entity’s
+     This function will set the subject in ‘crt’ to the end entity's
      ‘eecrt’ subject name, and add a single Common Name component ‘name’
      of size ‘sizeof_name’ .  This corresponds to the required proxy
      certificate naming style.  Note that if ‘name’ is ‘NULL’ , you MUST
@@ -5722,7 +5721,7 @@ gnutls_x509_crt_set_serial
 
      SERIAL_SIZE: Holds the size of the serial field.
 
-     This function will set the X.509 certificate’s serial number.
+     This function will set the X.509 certificate's serial number.
      While the serial number is an integer, it is often handled as an
      opaque field by several CAs.  For this reason this function accepts
      any kind of data as a serial number.  To be consistent with the
@@ -5748,7 +5747,7 @@ gnutls_x509_crt_set_spki
 
      FLAGS: must be zero
 
-     This function will set the certificate’s subject public key
+     This function will set the certificate's subject public key
      information explicitly.  This is intended to be used in the cases
      where a single public key (e.g., RSA) can be used for multiple
      signature algorithms (RSA PKCS1-1.5, and RSA-PSS).
@@ -5860,7 +5859,7 @@ gnutls_x509_crt_set_subject_key_id
 
      ID_SIZE: Holds the size of the subject key ID field.
 
-     This function will set the X.509 certificate’s subject key ID
+     This function will set the X.509 certificate's subject key ID
      extension.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -5877,7 +5876,7 @@ gnutls_x509_crt_set_subject_unique_id
 
      ID_SIZE: Holds the size of the unique ID.
 
-     This function will set the X.509 certificate’s subject unique ID
+     This function will set the X.509 certificate's subject unique ID
      field.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -5934,12 +5933,12 @@ gnutls_x509_crt_sign
 
      ISSUER: is the certificate of the certificate issuer
 
-     ISSUER_KEY: holds the issuer’s private key
+     ISSUER_KEY: holds the issuer's private key
 
      This function is the same a ‘gnutls_x509_crt_sign2()’ with no
      flags, and an appropriate hash algorithm.  The hash algorithm used
      may vary between versions of GnuTLS, and it is tied to the security
-     level of the issuer’s public key.
+     level of the issuer's public key.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
      otherwise a negative error value.
@@ -5954,15 +5953,15 @@ gnutls_x509_crt_sign2
 
      ISSUER: is the certificate of the certificate issuer
 
-     ISSUER_KEY: holds the issuer’s private key
+     ISSUER_KEY: holds the issuer's private key
 
      DIG: The message digest to use, ‘GNUTLS_DIG_SHA256’ is a safe
      choice
 
      FLAGS: must be 0
 
-     This function will sign the certificate with the issuer’s private
-     key, and will copy the issuer’s information into the certificate.
+     This function will sign the certificate with the issuer's private
+     key, and will copy the issuer's information into the certificate.
 
      This must be the last step in a certificate generation since all
      the previously set parameters are now signed.
@@ -6059,7 +6058,7 @@ gnutls_x509_ct_sct_get
      This function will return a specific SCT (Signed Certificate
      Timestamp) stored in the SCT list ‘scts’ .
 
-     The datums holding the SCT’s LogId and signature will be allocated
+     The datums holding the SCT's LogId and signature will be allocated
      using ‘gnutls_malloc()’ .
 
      *Returns:* ‘GNUTLS_E_SUCCESS’ (0) will be returned on success,
@@ -6084,8 +6083,8 @@ gnutls_x509_ct_sct_get_version
 
      Return : ‘GNUTLS_E_SUCCESS’ (0) is returned on success,
      ‘GNUTLS_E_REQUESTED_DATA_NOT_AVAILABLE’ if ‘idx’ exceeds the number
-     of SCTs in the list and ‘GNUTLS_E_INVALID_REQUEST’ if the SCT’s
-     version is different than 1, as that’s currently the only defined
+     of SCTs in the list and ‘GNUTLS_E_INVALID_REQUEST’ if the SCT's
+     version is different than 1, as that's currently the only defined
      version.
 
 gnutls_x509_dn_deinit
@@ -6758,7 +6757,7 @@ gnutls_x509_ext_import_inhibit_anypolicy
      SKIPCERTS: will hold the number of certificates after which
      anypolicy is no longer acceptable.
 
-     This function will return certificate’s value of SkipCerts, by
+     This function will return certificate's value of SkipCerts, by
      reading the DER data of the Inhibit anyPolicy X.509 extension
      (2.5.29.54).
 
@@ -6802,7 +6801,7 @@ gnutls_x509_ext_import_key_usage
 
      KEY_USAGE: where the key usage bits will be stored
 
-     This function will return certificate’s key usage, by reading the
+     This function will return certificate's key usage, by reading the
      DER data of the keyUsage X.509 extension (2.5.29.15).  The key
      usage value will ORed values of the: ‘GNUTLS_KEY_DIGITAL_SIGNATURE’
      , ‘GNUTLS_KEY_NON_REPUDIATION’ , ‘GNUTLS_KEY_KEY_ENCIPHERMENT’ ,
@@ -6832,7 +6831,7 @@ gnutls_x509_ext_import_name_constraints
      This function will return an intermediate type containing the name
      constraints of the provided NameConstraints extension.  That can be
      used in combination with ‘gnutls_x509_name_constraints_check()’ to
-     verify whether a server’s name is in accordance with the
+     verify whether a server's name is in accordance with the
      constraints.
 
      When the ‘flags’ is set to ‘GNUTLS_NAME_CONSTRAINTS_FLAG_APPEND’ ,
@@ -7164,7 +7163,7 @@ gnutls_x509_name_constraints_check_crt
 
      This function will check the provided certificate names against the
      constraints in ‘nc’ using the RFC5280 rules.  It will traverse all
-     the certificate’s names and alternative names.
+     the certificate's names and alternative names.
 
      Currently this function is limited to DNS names and emails (of type
      ‘GNUTLS_SAN_DNSNAME’ and ‘GNUTLS_SAN_RFC822NAME’ ).
@@ -7203,7 +7202,7 @@ gnutls_x509_name_constraints_get_excluded
      This function will return an intermediate type containing the name
      constraints of the provided CA certificate.  That structure can be
      used in combination with ‘gnutls_x509_name_constraints_check()’ to
-     verify whether a server’s name is in accordance with the
+     verify whether a server's name is in accordance with the
      constraints.
 
      The name should be treated as constant and valid for the lifetime
@@ -7233,7 +7232,7 @@ gnutls_x509_name_constraints_get_permitted
      This function will return an intermediate type containing the name
      constraints of the provided CA certificate.  That structure can be
      used in combination with ‘gnutls_x509_name_constraints_check()’ to
-     verify whether a server’s name is in accordance with the
+     verify whether a server's name is in accordance with the
      constraints.
 
      The name should be treated as constant and valid for the lifetime
@@ -7495,7 +7494,7 @@ gnutls_x509_privkey_export_dsa_raw
 
      X: will hold the x
 
-     This function will export the DSA private key’s parameters found in
+     This function will export the DSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -7518,7 +7517,7 @@ gnutls_x509_privkey_export_ecc_raw
 
      K: will hold the private key
 
-     This function will export the ECC private key’s parameters found in
+     This function will export the ECC private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -7552,7 +7551,7 @@ gnutls_x509_privkey_export_gost_raw
 
      K: will hold the private key
 
-     This function will export the GOST private key’s parameters found
+     This function will export the GOST private key's parameters found
      in the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -7625,7 +7624,7 @@ gnutls_x509_privkey_export_rsa_raw
 
      U: will hold the coefficient
 
-     This function will export the RSA private key’s parameters found in
+     This function will export the RSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -7658,7 +7657,7 @@ gnutls_x509_privkey_export_rsa_raw2
 
      E2: will hold e2 = d mod (q-1)
 
-     This function will export the RSA private key’s parameters found in
+     This function will export the RSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -8015,7 +8014,7 @@ gnutls_x509_privkey_import_gost_raw
 
      K: holds the k (private key)
 
-     This function will convert the given GOST private key’s parameters
+     This function will convert the given GOST private key's parameters
      to the native ‘gnutls_x509_privkey_t’ format.  The output will be
      stored in ‘key’ .  ‘digest’ should be one of GNUTLS_DIG_GOSR_94,
      GNUTLS_DIG_STREEBOG_256 or GNUTLS_DIG_STREEBOG_512.  If ‘paramset’
@@ -8296,7 +8295,7 @@ gnutls_x509_privkey_verify_seed
 
      This function will verify that the given private key was generated
      from the provided seed.  If ‘seed’ is ‘NULL’ then the seed stored
-     in the ‘key’ ’s structure will be used for verification.
+     in the ‘key’ 's structure will be used for verification.
 
      *Returns:* In case of a verification failure
      ‘GNUTLS_E_PRIVKEY_VERIFICATION_ERROR’ is returned, and zero or
@@ -8311,7 +8310,7 @@ gnutls_x509_rdn_get
           * BUF, size_t * BUF_SIZE)
      IDN: should contain a DER encoded RDN sequence
 
-     BUF: a pointer to a structure to hold the peer’s name
+     BUF: a pointer to a structure to hold the peer's name
 
      BUF_SIZE: holds the size of ‘buf’
 
@@ -8366,7 +8365,7 @@ gnutls_x509_rdn_get_by_oid
 
      RAW_FLAG: If non-zero then the raw DER data are returned.
 
-     BUF: a pointer to a structure to hold the peer’s name
+     BUF: a pointer to a structure to hold the peer's name
 
      BUF_SIZE: holds the size of ‘buf’
 
@@ -8388,7 +8387,7 @@ gnutls_x509_rdn_get_oid
 
      INDX: Indicates which OID to return.  Use 0 for the first one.
 
-     BUF: a pointer to a structure to hold the peer’s name OID
+     BUF: a pointer to a structure to hold the peer's name OID
 
      BUF_SIZE: holds the size of ‘buf’
 
@@ -8710,7 +8709,7 @@ gnutls_x509_trust_list_add_system_trust
      TL_VFLAGS: gnutls_certificate_verify_flags if flags specifies
      GNUTLS_TL_VERIFY_CRL
 
-     This function adds the system’s default trusted certificate
+     This function adds the system's default trusted certificate
      authorities to the trusted list.  Note that on unsupported systems
      this function returns ‘GNUTLS_E_UNIMPLEMENTED_FEATURE’ .
 
@@ -8864,7 +8863,7 @@ gnutls_x509_trust_list_get_issuer_by_dn
           gnutls_x509_crt_t * ISSUER, unsigned int FLAGS)
      LIST: The list
 
-     DN: is the issuer’s DN
+     DN: is the issuer's DN
 
      ISSUER: Will hold the issuer if any.  Should be deallocated after
      use.
@@ -8889,7 +8888,7 @@ gnutls_x509_trust_list_get_issuer_by_subject_key_id
           unsigned int FLAGS)
      LIST: The list
 
-     DN: is the issuer’s DN (may be ‘NULL’ )
+     DN: is the issuer's DN (may be ‘NULL’ )
 
      SPKI: is the subject key ID
 
@@ -9061,12 +9060,12 @@ gnutls_x509_trust_list_set_getissuer_function
 
      FUNC: is the callback function
 
-     This function sets a callback to be called when the peer’s
+     This function sets a callback to be called when the peer's
      certificate chain is incomplete due a missing intermediate
      certificate.  The callback may provide the missing certificate for
      use during verification.
 
-     The callback’s function prototype is defined in gnutls/x509.h as:
+     The callback's function prototype is defined in gnutls/x509.h as:
 
      int (*callback)(gnutls_x509_trust_list_t list, const
      gnutls_x509_crt_t cert, gnutls_x509_crt_t **issuers, unsigned int
@@ -9078,18 +9077,18 @@ gnutls_x509_trust_list_set_getissuer_function
      URI from which to attempt to download the missing issuer
      certificate, if available.
 
-     On a successful call, the callback shall set ’*issuers’ and
-     ’*issuers_size’ even if the result is empty; in that case
-     ’*issuers’ will point to ‘NULL’ and ’*issuers_size’ will be 0.
-     Otherwise, the ’*issuers’ array shall be allocated using
+     On a successful call, the callback shall set '*issuers' and
+     '*issuers_size' even if the result is empty; in that case
+     '*issuers' will point to ‘NULL’ and '*issuers_size' will be 0.
+     Otherwise, the '*issuers' array shall be allocated using
      ‘gnutls_x509_crt_list_import2()’ .  The ownership of both the array
      and the elements is transferred to the caller and thus the
      application does not need to maintain the memory after the call.
 
      The callback function should return 0 if the attempt to retrieve
-     the issuer certificates for ’crt’ succeeded, or non-zero to
+     the issuer certificates for 'crt' succeeded, or non-zero to
      indicate any error occurred during the attempt.  In the latter
-     case, ’*issuers’ and ’*issuers_size’ are not set.
+     case, '*issuers' and '*issuers_size' are not set.
 
      *Since:* 3.7.0
 
@@ -9131,7 +9130,7 @@ gnutls_x509_trust_list_verify_crt
      with the output.
 
      This function will try to verify the given certificate and return
-     its status.  The ‘voutput’ parameter will hold an OR’ed sequence of
+     its status.  The ‘voutput’ parameter will hold an OR'ed sequence of
      ‘gnutls_certificate_status_t’ flags.
 
      The details of the verification are the same as in
@@ -9169,7 +9168,7 @@ gnutls_x509_trust_list_verify_crt2
      with the output.
 
      This function will attempt to verify the given certificate chain
-     and return its status.  The ‘voutput’ parameter will hold an OR’ed
+     and return its status.  The ‘voutput’ parameter will hold an OR'ed
      sequence of ‘gnutls_certificate_status_t’ flags.
 
      When a certificate chain of ‘cert_list_size’ with more than one
@@ -9217,9 +9216,9 @@ gnutls_x509_trust_list_verify_named_crt
 
      CERT: is the certificate to be verified
 
-     NAME: is the certificate’s name
+     NAME: is the certificate's name
 
-     NAME_SIZE: is the certificate’s name size
+     NAME_SIZE: is the certificate's name size
 
      FLAGS: Flags that may be used to change the verification algorithm.
      Use OR of the gnutls_certificate_verify_flags enumerations.
@@ -9230,10 +9229,10 @@ gnutls_x509_trust_list_verify_named_crt
      with the output.
 
      This function will try to find a certificate that is associated
-     with the provided name –see
+     with the provided name -see
      ‘gnutls_x509_trust_list_add_named_crt()’ .  If a match is found the
      certificate is considered valid.  In addition to that this function
-     will also check CRLs.  The ‘voutput’ parameter will hold an OR’ed
+     will also check CRLs.  The ‘voutput’ parameter will hold an OR'ed
      sequence of ‘gnutls_certificate_status_t’ flags.
 
      Additionally a certificate verification profile can be specified

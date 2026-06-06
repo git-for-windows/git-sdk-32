@@ -1,17 +1,16 @@
-This is gnutls.info, produced by makeinfo version 7.0.3 from
-gnutls.texi.
+This is gnutls.info, produced by makeinfo version 7.2 from gnutls.texi.
 
-This manual is last updated 18 January 2024 for version 3.8.4 of GnuTLS.
+This manual is last updated 29 April 2026 for version 3.8.13 of GnuTLS.
 
-Copyright © 2001-2024 Free Software Foundation, Inc.\\ Copyright ©
-2001-2024 Nikos Mavrogiannopoulos
+Copyright © 2001-2026 Free Software Foundation, Inc.\\ Copyright ©
+2001-2026 Nikos Mavrogiannopoulos
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
      Version 1.3 or any later version published by the Free Software
      Foundation; with no Invariant Sections, no Front-Cover Texts, and
      no Back-Cover Texts.  A copy of the license is included in the
-     section entitled “GNU Free Documentation License”.
+     section entitled "GNU Free Documentation License".
 INFO-DIR-SECTION Software libraries
 START-INFO-DIR-ENTRY
 * GnuTLS: (gnutls).		GNU Transport Layer Security Library.
@@ -71,9 +70,9 @@ gnutls_ocsp_req_add_cert_id
 
      DIGEST: hash algorithm, a ‘gnutls_digest_algorithm_t’ value
 
-     ISSUER_NAME_HASH: hash of issuer’s DN
+     ISSUER_NAME_HASH: hash of issuer's DN
 
-     ISSUER_KEY_HASH: hash of issuer’s public key
+     ISSUER_KEY_HASH: hash of issuer's public key
 
      SERIAL_NUMBER: serial number of certificate to check
 
@@ -84,10 +83,10 @@ gnutls_ocsp_req_add_cert_id
 
      The information needed corresponds to the CertID structure:
 
-     <informalexample><programlisting> CertID	::= SEQUENCE {
-     hashAlgorithm AlgorithmIdentifier, issuerNameHash OCTET STRING, –
-     Hash of Issuer’s DN issuerKeyHash OCTET STRING, – Hash of Issuers
-     public key serialNumber	CertificateSerialNumber }
+     <informalexample><programlisting> CertID ::= SEQUENCE {
+     hashAlgorithm AlgorithmIdentifier, issuerNameHash OCTET STRING, -
+     Hash of Issuer's DN issuerKeyHash OCTET STRING, - Hash of Issuers
+     public key serialNumber CertificateSerialNumber }
      </programlisting></informalexample>
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -130,21 +129,21 @@ gnutls_ocsp_req_get_cert_id
      DIGEST: output variable with ‘gnutls_digest_algorithm_t’ hash
      algorithm
 
-     ISSUER_NAME_HASH: output buffer with hash of issuer’s DN
+     ISSUER_NAME_HASH: output buffer with hash of issuer's DN
 
-     ISSUER_KEY_HASH: output buffer with hash of issuer’s public key
+     ISSUER_KEY_HASH: output buffer with hash of issuer's public key
 
      SERIAL_NUMBER: output buffer with serial number of certificate to
      check
 
      This function will return the certificate information of the ‘indx’
-     ’ed request in the OCSP request.  The information returned
+     'ed request in the OCSP request.  The information returned
      corresponds to the CertID structure:
 
-     <informalexample><programlisting> CertID	::= SEQUENCE {
-     hashAlgorithm AlgorithmIdentifier, issuerNameHash OCTET STRING, –
-     Hash of Issuer’s DN issuerKeyHash OCTET STRING, – Hash of Issuers
-     public key serialNumber	CertificateSerialNumber }
+     <informalexample><programlisting> CertID ::= SEQUENCE {
+     hashAlgorithm AlgorithmIdentifier, issuerNameHash OCTET STRING, -
+     Hash of Issuer's DN issuerKeyHash OCTET STRING, - Hash of Issuers
+     public key serialNumber CertificateSerialNumber }
      </programlisting></informalexample>
 
      Each of the pointers to output variables may be NULL to indicate
@@ -640,9 +639,9 @@ gnutls_ocsp_resp_get_single
      DIGEST: output variable with ‘gnutls_digest_algorithm_t’ hash
      algorithm
 
-     ISSUER_NAME_HASH: output buffer with hash of issuer’s DN
+     ISSUER_NAME_HASH: output buffer with hash of issuer's DN
 
-     ISSUER_KEY_HASH: output buffer with hash of issuer’s public key
+     ISSUER_KEY_HASH: output buffer with hash of issuer's public key
 
      SERIAL_NUMBER: output buffer with serial number of certificate to
      check
@@ -662,7 +661,7 @@ gnutls_ocsp_resp_get_single
      enum.
 
      This function will return the certificate information of the ‘indx’
-     ’ed response in the Basic OCSP Response ‘resp’ .  The information
+     'ed response in the Basic OCSP Response ‘resp’ .  The information
      returned corresponds to the OCSP SingleResponse structure except
      the final singleExtensions.
 
@@ -761,7 +760,7 @@ gnutls_ocsp_resp_list_import2
 
      FORMAT: One of ‘GNUTLS_X509_FMT_PEM’ or ‘GNUTLS_X509_FMT_DER’
 
-     FLAGS: must be (0) or an OR’d sequence of
+     FLAGS: must be (0) or an OR'd sequence of
      gnutls_certificate_import_flags.
 
      This function will convert the given PEM encoded OCSP response list
@@ -937,9 +936,9 @@ gnutls_pkcs12_bag_enc_info
      ‘gnutls_free()’ .  The other variables are only set on supported
      structures.
 
-     *Returns:* ‘GNUTLS_E_INVALID_REQUEST’ if the provided bag isn’t
-     encrypted, ‘GNUTLS_E_UNKNOWN_CIPHER_TYPE’ if the structure’s
-     encryption isn’t supported, or another negative error code in case
+     *Returns:* ‘GNUTLS_E_INVALID_REQUEST’ if the provided bag isn't
+     encrypted, ‘GNUTLS_E_UNKNOWN_CIPHER_TYPE’ if the structure's
+     encryption isn't supported, or another negative error code in case
      of a failure.  Zero on success.
 
 gnutls_pkcs12_bag_encrypt
@@ -952,7 +951,7 @@ gnutls_pkcs12_bag_encrypt
      PASS: The password used for encryption, must be ASCII
 
      FLAGS: should be one of ‘gnutls_pkcs_encrypt_flags_t’ elements
-     bitwise or’d
+     bitwise or'd
 
      This function will encrypt the given bag.
 
@@ -980,9 +979,9 @@ gnutls_pkcs12_bag_get_data
 
      INDX: The element of the bag to get the data from
 
-     DATA: where the bag’s data will be.  Should be treated as constant.
+     DATA: where the bag's data will be.  Should be treated as constant.
 
-     This function will return the bag’s data.  The data is a constant
+     This function will return the bag's data.  The data is a constant
      that is stored into the bag.  Should not be accessed after the bag
      is deleted.
 
@@ -996,7 +995,7 @@ gnutls_pkcs12_bag_get_friendly_name
           (gnutls_pkcs12_bag_t BAG, unsigned INDX, char ** NAME)
      BAG: The bag
 
-     INDX: The bag’s element to add the id
+     INDX: The bag's element to add the id
 
      NAME: will hold a pointer to the name (to be treated as const)
 
@@ -1015,7 +1014,7 @@ gnutls_pkcs12_bag_get_key_id
           unsigned INDX, gnutls_datum_t * ID)
      BAG: The bag
 
-     INDX: The bag’s element to add the id
+     INDX: The bag's element to add the id
 
      ID: where the ID will be copied (to be treated as const)
 
@@ -1036,7 +1035,7 @@ gnutls_pkcs12_bag_get_type
 
      INDX: The element of the bag to get the type
 
-     This function will return the bag’s type.
+     This function will return the bag's type.
 
      *Returns:* On error a negative error value or one of the
      ‘gnutls_pkcs12_bag_type_t’ enumerations.
@@ -1091,7 +1090,7 @@ gnutls_pkcs12_bag_set_data
           gnutls_pkcs12_bag_type_t TYPE, const gnutls_datum_t * DATA)
      BAG: The bag
 
-     TYPE: The data’s type
+     TYPE: The data's type
 
      DATA: the data to be copied.
 
@@ -1108,13 +1107,13 @@ gnutls_pkcs12_bag_set_friendly_name
           (gnutls_pkcs12_bag_t BAG, unsigned INDX, const char * NAME)
      BAG: The bag
 
-     INDX: The bag’s element to add the id
+     INDX: The bag's element to add the id
 
      NAME: the name
 
      This function will add the given key friendly name, to the
      specified, by the index, bag element.  The name will be encoded as
-     a ’Friendly name’ bag attribute, which is usually used to set a
+     a 'Friendly name' bag attribute, which is usually used to set a
      user name to the local private key and the certificate pair.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -1128,13 +1127,13 @@ gnutls_pkcs12_bag_set_key_id
           unsigned INDX, const gnutls_datum_t * ID)
      BAG: The bag
 
-     INDX: The bag’s element to add the id
+     INDX: The bag's element to add the id
 
      ID: the ID
 
      This function will add the given key ID, to the specified, by the
-     index, bag element.  The key ID will be encoded as a ’Local key
-     identifier’ bag attribute, which is usually used to distinguish the
+     index, bag element.  The key ID will be encoded as a 'Local key
+     identifier' bag attribute, which is usually used to distinguish the
      local private key and the certificate pair.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -1154,7 +1153,7 @@ gnutls_pkcs12_bag_set_privkey
      PASSWORD: the password to protect the key with (may be ‘NULL’ )
 
      FLAGS: should be one of ‘gnutls_pkcs_encrypt_flags_t’ elements
-     bitwise or’d
+     bitwise or'd
 
      This function will insert the given private key into the bag.  This
      is just a wrapper over ‘gnutls_pkcs12_bag_set_data()’ .
@@ -1252,6 +1251,28 @@ gnutls_pkcs12_generate_mac2
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
      otherwise a negative error value.
 
+gnutls_pkcs12_generate_mac3
+---------------------------
+
+ -- Function: int gnutls_pkcs12_generate_mac3 (gnutls_pkcs12_t PKCS12,
+          gnutls_mac_algorithm_t MAC, const char * PASS, unsigned int
+          FLAGS)
+     PKCS12: A pkcs12 type
+
+     MAC: the MAC algorithm to use
+
+     PASS: The password for the MAC
+
+     FLAGS: an ORed sequence of gnutls_pkcs12_flags_t
+
+     This function will generate a MAC for the PKCS12 structure.
+
+     If ‘flags’ contains ‘GNUTLS_PKCS12_USE_PBMAC1’ , it uses PBMAC1 key
+     derivation function instead of the PKCS‘12’ one.
+
+     *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
+     otherwise a negative error value.
+
 gnutls_pkcs12_get_bag
 ---------------------
 
@@ -1288,7 +1309,7 @@ gnutls_pkcs12_import
 
      This function will convert the given DER or PEM encoded PKCS12 to
      the native gnutls_pkcs12_t format.  The output will be stored in
-     ’pkcs12’.
+     'pkcs12'.
 
      If the PKCS12 is PEM encoded it should have a header of "PKCS12".
 
@@ -1337,8 +1358,8 @@ gnutls_pkcs12_mac_info
      structures.
 
      *Returns:* ‘GNUTLS_E_INVALID_REQUEST’ if the provided structure
-     doesn’t contain a MAC, ‘GNUTLS_E_UNKNOWN_HASH_ALGORITHM’ if the
-     structure’s MAC isn’t supported, or another negative error code in
+     doesn't contain a MAC, ‘GNUTLS_E_UNKNOWN_HASH_ALGORITHM’ if the
+     structure's MAC isn't supported, or another negative error code in
      case of a failure.  Zero on success.
 
 gnutls_pkcs12_set_bag
@@ -1409,7 +1430,7 @@ gnutls_pkcs12_simple_parse
      provided then this function returns ‘GNUTLS_E_DECRYPTION_FAILED’ .
 
      Note that normally the chain constructed does not include self
-     signed certificates, to comply with TLS’ requirements.  If,
+     signed certificates, to comply with TLS' requirements.  If,
      however, the flag ‘GNUTLS_PKCS12_SP_INCLUDE_SELF_SIGNED’ is
      specified then self signed certificates will be included in the
      chain.
@@ -1459,7 +1480,7 @@ gnutls_pkcs11_add_provider
      used for PKCS 11 operations.
 
      When loading a module to be used for certificate verification, use
-     the string ’trusted’ as ‘params’ .
+     the string 'trusted' as ‘params’ .
 
      Note that this function is not thread safe.
 
@@ -1837,7 +1858,7 @@ gnutls_pkcs11_init
      ‘gnutls_pkcs11_add_provider()’ if ‘GNUTLS_PKCS11_FLAG_MANUAL’ is
      specified.
 
-     You don’t need to call this function since GnuTLS 3.3.0 because it
+     You don't need to call this function since GnuTLS 3.3.0 because it
      is being called during the first request PKCS 11 operation.  That
      call will assume the ‘GNUTLS_PKCS11_FLAG_AUTO’ flag.  If another
      flags are required then it must be called independently prior to
@@ -2031,13 +2052,34 @@ gnutls_pkcs11_obj_get_info
      and return ‘GNUTLS_E_SHORT_MEMORY_BUFFER’ .
 
      In versions previously to 3.6.0 this function included the null
-     terminator to ‘output_size’ .  After 3.6.0 the output size doesn’t
+     terminator to ‘output_size’ .  After 3.6.0 the output size doesn't
      include the terminator character.
 
      *Returns:* ‘GNUTLS_E_SUCCESS’ (0) on success or a negative error
      code on error.
 
      *Since:* 2.12.0
+
+gnutls_pkcs11_obj_get_pk_algorithm
+----------------------------------
+
+ -- Function: int gnutls_pkcs11_obj_get_pk_algorithm
+          (gnutls_pkcs11_obj_t OBJ, unsigned int * BITS)
+     OBJ: The pkcs11 object
+
+     BITS: Will hold the rsa/dsa bit count or the ecc curve This
+     function given a pkcs11 object with privkey_type initialized, will
+     return the algorithm type on success , and will store the number of
+     bits if the algo type is ‘GNUTLS_PK_RSA’ or ‘GNUTLS_PK_DSA’ , or
+     the curve if the algo type is ‘GNUTLS_PK_ECDSA’ .
+
+     The return value needs to be checked to determine if bits
+     represents the ecc curve or the number of bits.
+
+     *Returns:* The private key algorithm associated with the object on
+     success or a an error code otherwise.
+
+     *Since:* 3.8.13
 
 gnutls_pkcs11_obj_get_ptr
 -------------------------
@@ -2142,7 +2184,7 @@ gnutls_pkcs11_obj_list_import_url3
      which has * ‘n_list’ elements, and that value will be updated to
      the actual number of present objects.  The ‘p_list’ objects will be
      initialized and set by this function.  To obtain a list of all
-     available objects use a ‘url’ of ’pkcs11:’.
+     available objects use a ‘url’ of 'pkcs11:'.
 
      All returned objects must be deinitialized using
      ‘gnutls_pkcs11_obj_deinit()’ .
@@ -2183,7 +2225,7 @@ gnutls_pkcs11_obj_list_import_url4
      This function will enumerate all the objects specified by the
      PKCS‘11’ URL provided.  It will initialize and set values to the
      object pointer list ( ‘p_list’ ) provided.  To obtain a list of all
-     available objects use a ‘url’ of ’pkcs11:’.
+     available objects use a ‘url’ of 'pkcs11:'.
 
      All returned objects must be deinitialized using
      ‘gnutls_pkcs11_obj_deinit()’ , and ‘p_list’ must be deinitialized
@@ -2363,7 +2405,7 @@ gnutls_pkcs11_privkey_generate2
 
      PUBKEY: will hold the public key (may be ‘NULL’ )
 
-     FLAGS: zero or an OR’ed sequence of ‘GNUTLS_PKCS11_OBJ_FLAGs’
+     FLAGS: zero or an OR'ed sequence of ‘GNUTLS_PKCS11_OBJ_FLAGs’
 
      This function will generate a private key in the specified by the
      ‘url’ token.  The private key will be generate within the token and
@@ -2404,7 +2446,7 @@ gnutls_pkcs11_privkey_generate3
 
      KEY_USAGE: One of GNUTLS_KEY_*
 
-     FLAGS: zero or an OR’ed sequence of ‘GNUTLS_PKCS11_OBJ_FLAGs’
+     FLAGS: zero or an OR'ed sequence of ‘GNUTLS_PKCS11_OBJ_FLAGs’
 
      This function will generate a private key in the specified by the
      ‘url’ token.  The private key will be generate within the token and
@@ -2454,7 +2496,7 @@ gnutls_pkcs11_privkey_get_pk_algorithm
           (gnutls_pkcs11_privkey_t KEY, unsigned int * BITS)
      KEY: should contain a ‘gnutls_pkcs11_privkey_t’ type
 
-     BITS: if bits is non null it will hold the size of the parameters’
+     BITS: if bits is non null it will hold the size of the parameters'
      in bits
 
      This function will return the public key algorithm of a private
@@ -2740,13 +2782,13 @@ gnutls_pkcs11_token_init
           const char * SO_PIN, const char * LABEL)
      TOKEN_URL: A PKCS ‘11’ URL specifying a token
 
-     SO_PIN: Security Officer’s PIN
+     SO_PIN: Security Officer's PIN
 
-     LABEL: A name to be used for the token
+     LABEL: A name to be used for the token, at most 32 characters
 
      This function will initialize (format) a token.  If the token is at
-     a factory defaults state the security officer’s PIN given will be
-     set to be the default.  Otherwise it should match the officer’s
+     a factory defaults state the security officer's PIN given will be
+     set to be the default.  Otherwise it should match the officer's
      PIN.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
@@ -2759,15 +2801,15 @@ gnutls_pkcs11_token_set_pin
           const char * OLDPIN, const char * NEWPIN, unsigned int FLAGS)
      TOKEN_URL: A PKCS ‘11’ URL specifying a token
 
-     OLDPIN: old user’s PIN
+     OLDPIN: old user's PIN
 
-     NEWPIN: new user’s PIN
+     NEWPIN: new user's PIN
 
      FLAGS: one of ‘gnutls_pin_flag_t’ .
 
-     This function will modify or set a user or administrator’s PIN for
+     This function will modify or set a user or administrator's PIN for
      the given token.  If it is called to set a PIN for first time the
-     oldpin must be ‘NULL’ .  When setting the admin’s PIN with the
+     oldpin must be ‘NULL’ .  When setting the admin's PIN with the
      ‘GNUTLS_PIN_SO’ flag, the ‘oldpin’ value must be provided (this
      requirement is relaxed after GnuTLS 3.6.5 since which the PIN will
      be requested if missing).
@@ -2931,7 +2973,7 @@ gnutls_tpm_privkey_generate
 
      This function will generate a private key in the TPM chip.  The
      private key will be generated within the chip and will be exported
-     in a wrapped with TPM’s master key form.  Furthermore the wrapped
+     in a wrapped with TPM's master key form.  Furthermore the wrapped
      key can be protected with the provided ‘password’ .
 
      Note that bits in TPM is quantized value.  If the input value is
@@ -3019,7 +3061,7 @@ gnutls_certificate_set_retrieve_function2
      certificate to be used in the handshake.  The callback will take
      control only if a certificate is requested by the peer.
 
-     The callback’s function prototype is: int
+     The callback's function prototype is: int
      (*callback)(gnutls_session_t, const gnutls_datum_t* req_ca_dn, int
      nreqs, const gnutls_pk_algorithm_t* pk_algos, int pk_algos_length,
      gnutls_pcert_st** pcert, unsigned int *pcert_length,
@@ -3032,8 +3074,8 @@ gnutls_certificate_set_retrieve_function2
      encoded.  To get a more meaningful value use the function
      ‘gnutls_x509_rdn_get()’ .
 
-     ‘pk_algos’ contains a list with server’s acceptable public key
-     algorithms.  The certificate returned should support the server’s
+     ‘pk_algos’ contains a list with server's acceptable public key
+     algorithms.  The certificate returned should support the server's
      given algorithms.
 
      ‘pcert’ should contain a single certificate and public key or a
@@ -3074,7 +3116,7 @@ gnutls_certificate_set_retrieve_function3
      will be called only if the peer requests a certificate either
      during handshake or during post-handshake authentication.
 
-     The callback’s function prototype is defined in ‘abstract.h’:
+     The callback's function prototype is defined in 'abstract.h':
 
      int gnutls_certificate_retrieve_function3( gnutls_session_t, const
      struct gnutls_cert_retr_st *info, gnutls_pcert_st **certs, unsigned
@@ -3086,9 +3128,9 @@ gnutls_certificate_set_retrieve_function3
      a hint and typically the client should send a certificate that is
      signed by one of these CAs.  These names, when available, are DER
      encoded.  To get a more meaningful value use the function
-     ‘gnutls_x509_rdn_get()’ .  ‘pk_algos’ contains a list with server’s
+     ‘gnutls_x509_rdn_get()’ .  ‘pk_algos’ contains a list with server's
      acceptable public key algorithms.  The certificate returned should
-     support the server’s given algorithms.
+     support the server's given algorithms.
 
      The callback should fill-in the following values:
 
@@ -3367,7 +3409,7 @@ gnutls_pcert_list_import_x509_file
      This function will always return a sorted certificate chain.
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
-     otherwise a negative error value; if the ‘pcert’ list doesn’t have
+     otherwise a negative error value; if the ‘pcert’ list doesn't have
      enough space ‘GNUTLS_E_SHORT_MEMORY_BUFFER’ will be returned.
 
      *Since:* 3.6.3
@@ -3389,7 +3431,7 @@ gnutls_pcert_list_import_x509_raw
 
      FORMAT: One of DER or PEM.
 
-     FLAGS: must be (0) or an OR’d sequence of
+     FLAGS: must be (0) or an OR'd sequence of
      gnutls_certificate_import_flags.
 
      This function will import the provided DER or PEM encoded
@@ -3402,7 +3444,7 @@ gnutls_pcert_list_import_x509_raw
      CERTIFICATE", or "CERTIFICATE".
 
      *Returns:* On success, ‘GNUTLS_E_SUCCESS’ (0) is returned,
-     otherwise a negative error value; if the ‘pcert’ list doesn’t have
+     otherwise a negative error value; if the ‘pcert’ list doesn't have
      enough space ‘GNUTLS_E_SHORT_MEMORY_BUFFER’ will be returned.
 
      *Since:* 3.0
@@ -3484,7 +3526,7 @@ gnutls_privkey_derive_secret
      FLAGS: must be zero
 
      This function will calculate a shared secret from our ‘privkey’ and
-     peer’s ‘pubkey’ .  The result will be stored in ‘secret’ , whose
+     peer's ‘pubkey’ .  The result will be stored in ‘secret’ , whose
      data member should be freed after use using ‘gnutls_free()’ .
      ‘privkey’ and ‘pubkey’ must be backed by the X.509 keys.
 
@@ -3541,7 +3583,7 @@ gnutls_privkey_export_dsa_raw
 
      X: will hold the x
 
-     This function will export the DSA private key’s parameters found in
+     This function will export the DSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -3570,7 +3612,7 @@ gnutls_privkey_export_dsa_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the DSA private key’s parameters found in
+     This function will export the DSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -3595,7 +3637,7 @@ gnutls_privkey_export_ecc_raw
 
      K: will hold the private key
 
-     This function will export the ECC private key’s parameters found in
+     This function will export the ECC private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -3625,7 +3667,7 @@ gnutls_privkey_export_ecc_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the ECC private key’s parameters found in
+     This function will export the ECC private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -3660,7 +3702,7 @@ gnutls_privkey_export_gost_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the GOST private key’s parameters found
+     This function will export the GOST private key's parameters found
      in the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -3732,7 +3774,7 @@ gnutls_privkey_export_rsa_raw
 
      E2: will hold e2 = d mod (q-1)
 
-     This function will export the RSA private key’s parameters found in
+     This function will export the RSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.  For
      EdDSA keys, the ‘y’ value should be ‘NULL’ .
@@ -3769,7 +3811,7 @@ gnutls_privkey_export_rsa_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the RSA private key’s parameters found in
+     This function will export the RSA private key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4249,7 +4291,7 @@ gnutls_privkey_import_gost_raw
 
      K: holds the k (private key)
 
-     This function will convert the given GOST private key’s parameters
+     This function will convert the given GOST private key's parameters
      to the native ‘gnutls_privkey_t’ format.  The output will be stored
      in ‘key’ .  ‘digest’ should be one of GNUTLS_DIG_GOSR_94,
      GNUTLS_DIG_STREEBOG_256 or GNUTLS_DIG_STREEBOG_512.  If ‘paramset’
@@ -4658,7 +4700,7 @@ gnutls_privkey_sign_hash
  -- Function: int gnutls_privkey_sign_hash (gnutls_privkey_t SIGNER,
           gnutls_digest_algorithm_t HASH_ALGO, unsigned int FLAGS, const
           gnutls_datum_t * HASH_DATA, gnutls_datum_t * SIGNATURE)
-     SIGNER: Holds the signer’s key
+     SIGNER: Holds the signer's key
 
      HASH_ALGO: The hash algorithm used
 
@@ -4697,7 +4739,7 @@ gnutls_privkey_sign_hash2
  -- Function: int gnutls_privkey_sign_hash2 (gnutls_privkey_t SIGNER,
           gnutls_sign_algorithm_t ALGO, unsigned int FLAGS, const
           gnutls_datum_t * HASH_DATA, gnutls_datum_t * SIGNATURE)
-     SIGNER: Holds the signer’s key
+     SIGNER: Holds the signer's key
 
      ALGO: The signature algorithm used
 
@@ -4913,7 +4955,7 @@ gnutls_pubkey_export_dsa_raw
 
      Y: will hold the y (may be ‘NULL’ )
 
-     This function will export the DSA public key’s parameters found in
+     This function will export the DSA public key's parameters found in
      the given certificate.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4942,7 +4984,7 @@ gnutls_pubkey_export_dsa_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the DSA public key’s parameters found in
+     This function will export the DSA public key's parameters found in
      the given certificate.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4967,7 +5009,7 @@ gnutls_pubkey_export_ecc_raw
 
      Y: will hold y-coordinate (may be ‘NULL’ )
 
-     This function will export the ECC public key’s parameters found in
+     This function will export the ECC public key's parameters found in
      the given key.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -4997,7 +5039,7 @@ gnutls_pubkey_export_ecc_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the ECC public key’s parameters found in
+     This function will export the ECC public key's parameters found in
      the given key.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -5022,7 +5064,7 @@ gnutls_pubkey_export_ecc_x962
 
      ECPOINT: DER encoding of ANSI X9.62 ECPoint
 
-     This function will export the ECC public key’s parameters found in
+     This function will export the ECC public key's parameters found in
      the given certificate.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -5052,7 +5094,7 @@ gnutls_pubkey_export_gost_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the GOST public key’s parameters found in
+     This function will export the GOST public key's parameters found in
      the given key.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -5076,7 +5118,7 @@ gnutls_pubkey_export_rsa_raw
 
      E: will hold the public exponent (may be ‘NULL’ )
 
-     This function will export the RSA public key’s parameters found in
+     This function will export the RSA public key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -5100,7 +5142,7 @@ gnutls_pubkey_export_rsa_raw2
 
      FLAGS: flags from ‘gnutls_abstract_export_flags_t’
 
-     This function will export the RSA public key’s parameters found in
+     This function will export the RSA public key's parameters found in
      the given structure.  The new parameters will be allocated using
      ‘gnutls_malloc()’ and will be stored in the appropriate datum.
 
@@ -5377,7 +5419,7 @@ gnutls_pubkey_import_gost_raw
 
      Y: holds the y-coordinate
 
-     This function will convert the given GOST public key’s parameters
+     This function will convert the given GOST public key's parameters
      to a ‘gnutls_pubkey_t’ .  The output will be stored in ‘key’ .
      ‘digest’ should be one of GNUTLS_DIG_GOSR_94,
      GNUTLS_DIG_STREEBOG_256 or GNUTLS_DIG_STREEBOG_512.  If ‘paramset’
@@ -5921,15 +5963,15 @@ gnutls_x509_crl_privkey_sign
 
      ISSUER: is the certificate of the certificate issuer
 
-     ISSUER_KEY: holds the issuer’s private key
+     ISSUER_KEY: holds the issuer's private key
 
      DIG: The message digest to use.  GNUTLS_DIG_SHA256 is the safe
-     choice unless you know what you’re doing.
+     choice unless you know what you're doing.
 
      FLAGS: must be 0
 
-     This function will sign the CRL with the issuer’s private key, and
-     will copy the issuer’s information into the CRL.
+     This function will sign the CRL with the issuer's private key, and
+     will copy the issuer's information into the CRL.
 
      This must be the last step in a certificate CRL since all the
      previously set parameters are now signed.
@@ -5979,7 +6021,7 @@ gnutls_x509_crq_privkey_sign
 
      *Returns:* ‘GNUTLS_E_SUCCESS’ on success, otherwise a negative
      error code.  ‘GNUTLS_E_ASN1_VALUE_NOT_FOUND’ is returned if you
-     didn’t set all information in the certificate request (e.g., the
+     didn't set all information in the certificate request (e.g., the
      version using ‘gnutls_x509_crq_set_version()’ ).
 
      *Since:* 2.12.0
@@ -6011,15 +6053,15 @@ gnutls_x509_crt_privkey_sign
 
      ISSUER: is the certificate of the certificate issuer
 
-     ISSUER_KEY: holds the issuer’s private key
+     ISSUER_KEY: holds the issuer's private key
 
      DIG: The message digest to use, ‘GNUTLS_DIG_SHA256’ is a safe
      choice
 
      FLAGS: must be 0
 
-     This function will sign the certificate with the issuer’s private
-     key, and will copy the issuer’s information into the certificate.
+     This function will sign the certificate with the issuer's private
+     key, and will copy the issuer's information into the certificate.
 
      This must be the last step in a certificate generation since all
      the previously set parameters are now signed.
@@ -6068,7 +6110,7 @@ gnutls_transport_set_fastopen
           CONNECT_ADDRLEN, unsigned int FLAGS)
      SESSION: is a ‘gnutls_session_t’ type.
 
-     FD: is the session’s socket descriptor
+     FD: is the session's socket descriptor
 
      CONNECT_ADDR: is the address we want to connect to
 
@@ -6078,12 +6120,12 @@ gnutls_transport_set_fastopen
 
      Enables TCP Fast Open (TFO) for the specified TLS client session.
      That means that TCP connection establishment and the transmission
-     of the first TLS client hello packet are combined.  The peer’s
+     of the first TLS client hello packet are combined.  The peer's
      address must be specified in ‘connect_addr’ and ‘connect_addrlen’ ,
      and the socket specified by ‘fd’ should not be connected.
 
      TFO only works for TCP sockets of type AF_INET and AF_INET6.  If
-     the OS doesn’t support TCP fast open this function will result to
+     the OS doesn't support TCP fast open this function will result to
      gnutls using ‘connect()’ transparently during the first write.
 
      *Note:* This function overrides all the transport callback
@@ -6101,7 +6143,7 @@ gnutls_transport_set_fastopen
      *Since:* 3.5.3
 
 
-File: gnutls.info,  Node: DANE API,  Next: Cryptographic API,  Prev: Socket specific API,  Up: API reference
+File: gnutls.info,  Node: DANE API,  Next: HPKE API,  Prev: Socket specific API,  Up: API reference
 
 E.11 DANE API
 =============
@@ -6343,7 +6385,7 @@ dane_verification_status_print
      FLAGS: should be zero
 
      This function will pretty print the status of a verification
-     process – eg.  the one obtained by ‘dane_verify_crt()’ .
+     process - eg.  the one obtained by ‘dane_verify_crt()’ .
 
      The output ‘out’ needs to be deallocated using ‘gnutls_free()’ .
 
@@ -6374,10 +6416,10 @@ dane_verify_crt
 
      SFLAGS: Flags for the initialization of ‘s’ (if NULL)
 
-     VFLAGS: Verification flags; an OR’ed list of ‘dane_verify_flags_t’
+     VFLAGS: Verification flags; an OR'ed list of ‘dane_verify_flags_t’
      .
 
-     VERIFY: An OR’ed list of ‘dane_verify_status_t’ .
+     VERIFY: An OR'ed list of ‘dane_verify_status_t’ .
 
      This function will verify the given certificate chain against the
      CA constrains and/or the certificate available via DANE. If no
@@ -6423,10 +6465,10 @@ dane_verify_crt_raw
 
      SFLAGS: Flags for the initialization of ‘s’ (if NULL)
 
-     VFLAGS: Verification flags; an OR’ed list of ‘dane_verify_flags_t’
+     VFLAGS: Verification flags; an OR'ed list of ‘dane_verify_flags_t’
      .
 
-     VERIFY: An OR’ed list of ‘dane_verify_status_t’ .
+     VERIFY: An OR'ed list of ‘dane_verify_status_t’ .
 
      This is the low-level function of ‘dane_verify_crt()’ .  See the
      high level function for documentation.
@@ -6459,12 +6501,12 @@ dane_verify_session_crt
 
      SFLAGS: Flags for the initialization of ‘s’ (if NULL)
 
-     VFLAGS: Verification flags; an OR’ed list of ‘dane_verify_flags_t’
+     VFLAGS: Verification flags; an OR'ed list of ‘dane_verify_flags_t’
      .
 
-     VERIFY: An OR’ed list of ‘dane_verify_status_t’ .
+     VERIFY: An OR'ed list of ‘dane_verify_status_t’ .
 
-     This function will verify session’s certificate chain against the
+     This function will verify session's certificate chain against the
      CA constrains and/or the certificate available via DANE. See
      ‘dane_verify_crt()’ for more information.
 
@@ -6479,9 +6521,319 @@ dane_verify_session_crt
      ‘DANE_E_REQUESTED_DATA_NOT_AVAILABLE’ will be returned.
 
 
-File: gnutls.info,  Node: Cryptographic API,  Next: Compatibility API,  Prev: DANE API,  Up: API reference
+File: gnutls.info,  Node: HPKE API,  Next: Cryptographic API,  Prev: DANE API,  Up: API reference
 
-E.12 Cryptographic API
+E.12 HPKE API
+=============
+
+The following functions are to be used for HPKE structures handling.
+Their prototypes lie in ‘gnutls/hpke.h’.
+
+gnutls_hpke_decap
+-----------------
+
+ -- Function: int gnutls_hpke_decap (gnutls_hpke_context_t CTX, const
+          gnutls_datum_t * INFO, const gnutls_datum_t * ENC, const
+          gnutls_privkey_t RECEIVER_PRIVKEY, const gnutls_pubkey_t
+          SENDER_PUBKEY, const gnutls_datum_t * PSK, const
+          gnutls_datum_t * PSK_ID)
+     CTX: The HPKE context to use for decapsulation.
+
+     INFO: The application-specific information that was included in the
+     key schedule (optional).
+
+     ENC: A pointer to a gnutls_datum_t structure containing the
+     encapsulated key received from the sender.
+
+     RECEIVER_PRIVKEY: The receiver's private key to use for
+     decapsulation.
+
+     SENDER_PUBKEY: The sender's public key for AuthDecap operation
+     (optional).
+
+     PSK: The pre-shared key (optional).
+
+     PSK_ID: The pre-shared key identifier (optional).
+
+     This function performs the decapsulation operation of HPKE. It
+     takes the encapsulated key ( ‘enc’ ) received from the sender and
+     uses it along with the receiver's private key to derive the shared
+     secret.  It then uses this shared secret along with any provided
+     application-specific information ( ‘info’ ) to set up the necessary
+     keys and nonces in the HPKE context for subsequent sealing and
+     opening operations.
+
+     This function must be used once per HPKE context and before any
+     calls to ‘gnutls_hpke_open()’ .
+
+     ‘enc’ should be the same encapsulated key that was generated by
+     ‘gnutls_hpke_encap()’ on the sender's side.
+
+     ‘receiver_privkey’ must be a valid private key that is compatible
+     with the KEM algorithm specified in the HPKE context and that
+     corresponds to the receiver's public key used during encapsulation.
+
+     For ‘GNUTLS_HPKE_MODE_AUTH’ or ‘GNUTLS_HPKE_MODE_AUTH_PSK’ ,
+     ‘sender_pubkey’ must be a valid public key that can be used for
+     authentication.  For ‘GNUTLS_HPKE_MODE_PSK’ or
+     ‘GNUTLS_HPKE_MODE_AUTH_PSK’ , a pre-shared key ( ‘psk’ ) and its
+     identifier ( ‘psk_id’ ) must be supplied.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+gnutls_hpke_deinit
+------------------
+
+ -- Function: int gnutls_hpke_deinit (gnutls_hpke_context_t CTX)
+     CTX: The HPKE context to deinitialize.
+
+     This function deinitializes the HPKE context and securely erases
+     any sensitive information contained within it, such as keys and
+     secrets.  It is important to call this function when the HPKE
+     context is no longer needed to prevent sensitive data from
+     lingering in memory.
+
+     *Returns:* 0 on success, or a negative error code on failure.
+
+     *Since:* 3.8.13
+
+gnutls_hpke_derive_keypair
+--------------------------
+
+ -- Function: int gnutls_hpke_derive_keypair (gnutls_hpke_kem_t KEM,
+          const gnutls_datum_t * IKM, gnutls_privkey_t PRIVKEY,
+          gnutls_pubkey_t PUBKEY)
+     KEM: The KEM algorithm to use for key pair generation.
+
+     IKM: A pointer to a gnutls_datum_t structure containing the input
+     key material (IKM) to be used for key pair generation.
+
+     PRIVKEY: An initialized private key.
+
+     PUBKEY: An initialized public key.
+
+     This function derives a key pair (private key and public key) for
+     the specified KEM algorithm from the provided input key material (
+     ‘ikm’ ).
+
+     ‘ikm’ is used as a seed for the key generation process, allowing
+     for deterministic key pair generation if the same IKM is used.  The
+     function checks that the provided parameters are valid and that the
+     KEM algorithm is supported.
+
+     ‘ikm’ should be a non-empty byte string that serves as the seed for
+     key pair generation.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+gnutls_hpke_encap
+-----------------
+
+ -- Function: int gnutls_hpke_encap (gnutls_hpke_context_t CTX, const
+          gnutls_datum_t * INFO, gnutls_datum_t * ENC, const
+          gnutls_pubkey_t RECEIVER_PUBKEY, const gnutls_privkey_t
+          SENDER_PRIVKEY, const gnutls_datum_t * PSK, const
+          gnutls_datum_t * PSK_ID)
+     CTX: The HPKE context to use for encapsulation.
+
+     INFO: The application-specific information to be included in the
+     key schedule (optional).
+
+     ENC: A pointer to a gnutls_datum_t structure where the encapsulated
+     key will be stored.
+
+     RECEIVER_PUBKEY: The receiver's public key to use for
+     encapsulation.
+
+     SENDER_PRIVKEY: The sender's private key needed for AuthEncap
+     operation (optional).
+
+     PSK: The pre-shared key (optional).
+
+     PSK_ID: The pre-shared key identifier (optional).
+
+     This function performs the encapsulation operation of HPKE. It
+     generates an encapsulated key ( ‘enc’ ) that can be sent to the
+     receiver, who can then use it to derive the shared secret.
+
+     The function checks that the context is properly initialized and
+     that the provided parameters are valid.  It also checks that the
+     context is in the correct role (‘GNUTLS_HPKE_ROLE_SENDER’ ) for
+     encapsulation.
+
+     This function must be used once per HPKE context and before any
+     calls to ‘gnutls_hpke_seal()’ .
+
+     The function will allocate memory for ‘enc’ , and the caller is
+     responsible for freeing this memory using ‘gnutls_free()’ when it
+     is no longer needed.
+
+     ‘receiver_pubkey’ must be a valid public key that is compatible
+     with the KEM algorithm specified in the HPKE context.
+
+     For ‘GNUTLS_HPKE_MODE_AUTH’ or ‘GNUTLS_HPKE_MODE_AUTH_PSK’ ,
+     ‘sender_privkey’ must be a valid private key that can be used for
+     authentication.  For ‘GNUTLS_HPKE_MODE_PSK’ or
+     ‘GNUTLS_HPKE_MODE_AUTH_PSK’ , a pre-shared key ( ‘psk’ ) and its
+     identifier ( ‘psk_id’ ) must be supplied.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+gnutls_hpke_export
+------------------
+
+ -- Function: int gnutls_hpke_export (gnutls_hpke_context_t CTX, const
+          gnutls_datum_t * EXPORTER_CONTEXT, size_t LENGTH,
+          gnutls_datum_t * SECRET)
+     CTX: The HPKE context to use for exporting the secret.
+
+     EXPORTER_CONTEXT: The application-specific context to be included
+     in the export.
+
+     LENGTH: The requested length in bytes of the secret to be exported.
+
+     SECRET: A pointer to a gnutls_datum_t structure where the exported
+     secret will be stored.
+
+     This function performs the export operation of HPKE. It derives a
+     secret of ‘length’ bytes from the exporter secret in the HPKE
+     context, using the provided application-specific context and the
+     KDF specified in the context.  The resulting secret is stored in
+     ‘secret’ .  The function checks that the provided parameters are
+     valid and that the context is properly initialized and that there
+     is an exporter secret available in the context.
+
+     ‘length’ should be a positive integer that does not exceed the
+     maximum allowed size for HPKE exports.
+
+     The function will allocate memory for ‘secret’ , and the caller is
+     responsible for freeing this memory using ‘gnutls_free()’ when it
+     is no longer needed.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+gnutls_hpke_init
+----------------
+
+ -- Function: int gnutls_hpke_init (gnutls_hpke_context_t * CTX,
+          gnutls_hpke_mode_t MODE, gnutls_hpke_role_t ROLE,
+          gnutls_hpke_kem_t KEM, gnutls_hpke_kdf_t KDF,
+          gnutls_hpke_aead_t AEAD)
+     CTX: A pointer to the HPKE context to initialize.
+
+     MODE: The HPKE mode to use (Base, PSK, Auth, or AuthPSK).
+
+     ROLE: The role of the context (Sender or Receiver).
+
+     KEM: The KEM algorithm to use (e.g., DHKEM(X25519)).
+
+     KDF: The KDF algorithm to use (e.g., HKDF-SHA256).
+
+     AEAD: The AEAD algorithm to use (e.g., AES-128-GCM).
+
+     This function initializes the HPKE context with the specified
+     parameters.  It allocates memory for the context and sets the
+     initial values for the fields based on the provided parameters.
+
+     The context must be deinitialized using ‘gnutls_hpke_deinit()’ when
+     it is no longer needed to free any allocated resources and securely
+     erase sensitive information.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+gnutls_hpke_open
+----------------
+
+ -- Function: int gnutls_hpke_open (gnutls_hpke_context_t CTX, const
+          gnutls_datum_t * AAD, const gnutls_datum_t * CIPHERTEXT,
+          gnutls_datum_t * PLAINTEXT)
+     CTX: The HPKE context to use for opening.
+
+     AAD: The associated data (AAD) that was authenticated during
+     sealing.
+
+     CIPHERTEXT: The ciphertext received from the sender.
+
+     PLAINTEXT: A pointer to a gnutls_datum_t structure where the
+     resulting plaintext will be stored.
+
+     This function performs the opening operation of HPKE. It takes the
+     ciphertext received from the sender and uses the keys and nonces
+     set up in the HPKE context (after decapsulation) to decrypt the
+     ciphertext and verify the authentication tag.  If the decryption
+     and authentication are successful, the resulting plaintext is
+     stored in ‘plaintext’ .  If the decryption or authentication fails,
+     the function securely erases any allocated plaintext and returns an
+     error code.
+
+     This function can be used multiple times with the same HPKE
+     context, but the decapsulation function (‘gnutls_hpke_decap()’ )
+     must be called once before the first call to this function.
+
+     ‘aad’ should be the same AAD that was provided to
+     ‘gnutls_hpke_seal()’ on the sender's side.
+
+     ‘ciphertext’ should be the same ciphertext that was generated by
+     ‘gnutls_hpke_seal()’ on the sender's side.
+
+     The function will allocate memory for the ‘plaintext’ , and the
+     caller is responsible for freeing this memory using ‘gnutls_free()’
+     when it is no longer needed.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+gnutls_hpke_seal
+----------------
+
+ -- Function: int gnutls_hpke_seal (gnutls_hpke_context_t CTX, const
+          gnutls_datum_t * AAD, const gnutls_datum_t * PLAINTEXT,
+          gnutls_datum_t * CIPHERTEXT)
+     CTX: The HPKE context to use for sealing.
+
+     AAD: The associated data (AAD) to be authenticated but not
+     encrypted.
+
+     PLAINTEXT: The plaintext data to be encrypted and authenticated.
+
+     CIPHERTEXT: A pointer to a gnutls_datum_t structure where the
+     resulting ciphertext will be stored.
+
+     This function performs the sealing operation of HPKE. It encrypts
+     the plaintext and computes an authentication tag using the AEAD
+     algorithm specified in the HPKE context.  The resulting ciphertext
+     includes both the encrypted plaintext and the authentication tag.
+
+     This function can be used multiple times with the same HPKE
+     context, but the encapsulation function (‘gnutls_hpke_encap()’ )
+     must be called once before the first call to this function to set
+     up the necessary keys and nonces in the context.  Each call to this
+     function will increment the sequence number in the context, which
+     is used to derive unique nonces for each encryption operation.
+
+     The function will allocate memory for the ‘ciphertext’ , and the
+     caller is responsible for freeing this memory using ‘gnutls_free()’
+     when it is no longer needed.
+
+     *Returns:* 0 on success, or a negative error code on failure
+
+     *Since:* 3.8.13
+
+
+File: gnutls.info,  Node: Cryptographic API,  Next: Compatibility API,  Prev: HPKE API,  Up: API reference
+
+E.13 Cryptographic API
 ======================
 
 The following functions are to be used for low-level cryptographic
@@ -7419,9 +7771,36 @@ gnutls_hash_output
      DIGEST: is the output value of the hash
 
      This function will output the current hash value and reset the
+     state of the hash.  If ‘digest’ is ‘NULL’ , it only resets the
      state of the hash.
 
      *Since:* 2.10.0
+
+gnutls_hash_squeeze
+-------------------
+
+ -- Function: int gnutls_hash_squeeze (gnutls_hash_hd_t HANDLE, void *
+          OUTPUT, size_t LENGTH)
+     HANDLE: a ‘gnutls_hash_hd_t’
+
+     OUTPUT: destination to store the output; must be equal to or larger
+     than ‘length’
+
+     LENGTH: length of ‘output’
+
+     This function will extract digest output of ‘length’ bytes.  The
+     ‘handle’ must be initialized with ‘gnutls_hash_init()’ as an
+     extended output function (XOF), such as ‘GNUTLS_DIG_SHAKE_128’ or
+     ‘GNUTLS_DIG_SHAKE_256’ .
+
+     This function can be called multiple times.  To reset the state of
+     ‘handle’ , call ‘gnutls_hash_deinit()’ with ‘NULL’ as the digest
+     argument.
+
+     *Returns:* ‘GNUTLS_E_SUCCESS’ (0) on success; negative error code
+     otherwise.
+
+     *Since:* 3.8.6
 
 gnutls_hkdf_expand
 ------------------
@@ -7704,7 +8083,7 @@ gnutls_rnd_refresh
 
 File: gnutls.info,  Node: Compatibility API,  Prev: Cryptographic API,  Up: API reference
 
-E.13 Compatibility API
+E.14 Compatibility API
 ======================
 
 The following functions are carried over from old GnuTLS released.  They
@@ -7766,7 +8145,7 @@ gnutls_global_set_mem_functions
           SECURE_ALLOC_FUNC, gnutls_is_secure_function IS_SECURE_FUNC,
           gnutls_realloc_function REALLOC_FUNC, gnutls_free_function
           FREE_FUNC)
-     ALLOC_FUNC: it’s the default memory allocation function.  Like
+     ALLOC_FUNC: it's the default memory allocation function.  Like
      ‘malloc()’ .
 
      SECURE_ALLOC_FUNC: This is the memory allocation function that will
@@ -7784,7 +8163,7 @@ gnutls_global_set_mem_functions
      internally used memory allocation functions
 
      This is the function where you set the memory allocation functions
-     gnutls is going to use.  By default the libc’s allocation functions
+     gnutls is going to use.  By default the libc's allocation functions
      (‘malloc()’ , ‘free()’ ), are used by gnutls, to allocate both
      sensitive and not sensitive data.  This function is provided to set
      the memory allocation functions to something other than the
@@ -7879,7 +8258,7 @@ gnutls_x509_privkey_sign_hash
      Deprecated in: 2.12.0
 
 
-File: gnutls.info,  Node: Copying Information,  Next: Bibliography,  Prev: API reference,  Up: Top
+File: gnutls.info,  Node: Copying Information,  Next: Additional Features,  Prev: API reference,  Up: Top
 
 Appendix F Copying Information
 ******************************
@@ -7905,7 +8284,7 @@ GNU Free Documentation License
      author and publisher a way to get credit for their work, while not
      being considered responsible for modifications made by others.
 
-     This License is a kind of “copyleft”, which means that derivative
+     This License is a kind of "copyleft", which means that derivative
      works of the document must themselves be free in the same sense.
      It complements the GNU General Public License, which is a copyleft
      license designed for free software.
@@ -7926,18 +8305,18 @@ GNU Free Documentation License
      be distributed under the terms of this License.  Such a notice
      grants a world-wide, royalty-free license, unlimited in duration,
      to use that work under the conditions stated herein.  The
-     “Document”, below, refers to any such manual or work.  Any member
-     of the public is a licensee, and is addressed as “you”.  You accept
+     "Document", below, refers to any such manual or work.  Any member
+     of the public is a licensee, and is addressed as "you".  You accept
      the license if you copy, modify or distribute the work in a way
      requiring permission under copyright law.
 
-     A “Modified Version” of the Document means any work containing the
+     A "Modified Version" of the Document means any work containing the
      Document or a portion of it, either copied verbatim, or with
      modifications and/or translated into another language.
 
-     A “Secondary Section” is a named appendix or a front-matter section
+     A "Secondary Section" is a named appendix or a front-matter section
      of the Document that deals exclusively with the relationship of the
-     publishers or authors of the Document to the Document’s overall
+     publishers or authors of the Document to the Document's overall
      subject (or to related matters) and contains nothing that could
      fall directly within that overall subject.  (Thus, if the Document
      is in part a textbook of mathematics, a Secondary Section may not
@@ -7946,7 +8325,7 @@ GNU Free Documentation License
      of legal, commercial, philosophical, ethical or political position
      regarding them.
 
-     The “Invariant Sections” are certain Secondary Sections whose
+     The "Invariant Sections" are certain Secondary Sections whose
      titles are designated, as being those of Invariant Sections, in the
      notice that says that the Document is released under this License.
      If a section does not fit the above definition of Secondary then it
@@ -7954,13 +8333,13 @@ GNU Free Documentation License
      contain zero Invariant Sections.  If the Document does not identify
      any Invariant Sections then there are none.
 
-     The “Cover Texts” are certain short passages of text that are
+     The "Cover Texts" are certain short passages of text that are
      listed, as Front-Cover Texts or Back-Cover Texts, in the notice
      that says that the Document is released under this License.  A
      Front-Cover Text may be at most 5 words, and a Back-Cover Text may
      be at most 25 words.
 
-     A “Transparent” copy of the Document means a machine-readable copy,
+     A "Transparent" copy of the Document means a machine-readable copy,
      represented in a format whose specification is available to the
      general public, that is suitable for revising the document
      straightforwardly with generic text editors or (for images composed
@@ -7972,7 +8351,7 @@ GNU Free Documentation License
      been arranged to thwart or discourage subsequent modification by
      readers is not Transparent.  An image format is not Transparent if
      used for any substantial amount of text.  A copy that is not
-     “Transparent” is called “Opaque”.
+     "Transparent" is called "Opaque".
 
      Examples of suitable formats for Transparent copies include plain
      ASCII without markup, Texinfo input format, LaTeX input format,
@@ -7985,23 +8364,23 @@ GNU Free Documentation License
      the machine-generated HTML, PostScript or PDF produced by some word
      processors for output purposes only.
 
-     The “Title Page” means, for a printed book, the title page itself,
+     The "Title Page" means, for a printed book, the title page itself,
      plus such following pages as are needed to hold, legibly, the
      material this License requires to appear in the title page.  For
-     works in formats which do not have any title page as such, “Title
-     Page” means the text near the most prominent appearance of the
-     work’s title, preceding the beginning of the body of the text.
+     works in formats which do not have any title page as such, "Title
+     Page" means the text near the most prominent appearance of the
+     work's title, preceding the beginning of the body of the text.
 
-     The “publisher” means any person or entity that distributes copies
+     The "publisher" means any person or entity that distributes copies
      of the Document to the public.
 
-     A section “Entitled XYZ” means a named subunit of the Document
+     A section "Entitled XYZ" means a named subunit of the Document
      whose title either is precisely XYZ or contains XYZ in parentheses
      following text that translates XYZ in another language.  (Here XYZ
      stands for a specific section name mentioned below, such as
-     “Acknowledgements”, “Dedications”, “Endorsements”, or “History”.)
-     To “Preserve the Title” of such a section when you modify the
-     Document means that it remains a section “Entitled XYZ” according
+     "Acknowledgements", "Dedications", "Endorsements", or "History".)
+     To "Preserve the Title" of such a section when you modify the
+     Document means that it remains a section "Entitled XYZ" according
      to this definition.
 
      The Document may include Warranty Disclaimers next to the notice
@@ -8031,7 +8410,7 @@ GNU Free Documentation License
 
      If you publish printed copies (or copies in media that commonly
      have printed covers) of the Document, numbering more than 100, and
-     the Document’s license notice requires Cover Texts, you must
+     the Document's license notice requires Cover Texts, you must
      enclose the copies in covers that carry, clearly and legibly, all
      these Cover Texts: Front-Cover Texts on the front cover, and
      Back-Cover Texts on the back cover.  Both covers must also clearly
@@ -8103,15 +8482,15 @@ GNU Free Documentation License
           the Addendum below.
 
        G. Preserve in that license notice the full lists of Invariant
-          Sections and required Cover Texts given in the Document’s
+          Sections and required Cover Texts given in the Document's
           license notice.
 
        H. Include an unaltered copy of this License.
 
-       I. Preserve the section Entitled “History”, Preserve its Title,
+       I. Preserve the section Entitled "History", Preserve its Title,
           and add to it an item stating at least the title, year, new
           authors, and publisher of the Modified Version as given on the
-          Title Page.  If there is no section Entitled “History” in the
+          Title Page.  If there is no section Entitled "History" in the
           Document, create one stating the title, year, authors, and
           publisher of the Document as given on its Title Page, then add
           an item describing the Modified Version as stated in the
@@ -8121,12 +8500,12 @@ GNU Free Documentation License
           for public access to a Transparent copy of the Document, and
           likewise the network locations given in the Document for
           previous versions it was based on.  These may be placed in the
-          “History” section.  You may omit a network location for a work
+          "History" section.  You may omit a network location for a work
           that was published at least four years before the Document
           itself, or if the original publisher of the version it refers
           to gives permission.
 
-       K. For any section Entitled “Acknowledgements” or “Dedications”,
+       K. For any section Entitled "Acknowledgements" or "Dedications",
           Preserve the Title of the section, and preserve in the section
           all the substance and tone of each of the contributor
           acknowledgements and/or dedications given therein.
@@ -8135,11 +8514,11 @@ GNU Free Documentation License
           in their text and in their titles.  Section numbers or the
           equivalent are not considered part of the section titles.
 
-       M. Delete any section Entitled “Endorsements”.  Such a section
+       M. Delete any section Entitled "Endorsements".  Such a section
           may not be included in the Modified Version.
 
        N. Do not retitle any existing section to be Entitled
-          “Endorsements” or to conflict in title with any Invariant
+          "Endorsements" or to conflict in title with any Invariant
           Section.
 
        O. Preserve any Warranty Disclaimers.
@@ -8148,15 +8527,15 @@ GNU Free Documentation License
      appendices that qualify as Secondary Sections and contain no
      material copied from the Document, you may at your option designate
      some or all of these sections as invariant.  To do this, add their
-     titles to the list of Invariant Sections in the Modified Version’s
+     titles to the list of Invariant Sections in the Modified Version's
      license notice.  These titles must be distinct from any other
      section titles.
 
-     You may add a section Entitled “Endorsements”, provided it contains
+     You may add a section Entitled "Endorsements", provided it contains
      nothing but endorsements of your Modified Version by various
-     parties—for example, statements of peer review or that the text has
-     been approved by an organization as the authoritative definition of
-     a standard.
+     parties--for example, statements of peer review or that the text
+     has been approved by an organization as the authoritative
+     definition of a standard.
 
      You may add a passage of up to five words as a Front-Cover Text,
      and a passage of up to 25 words as a Back-Cover Text, to the end of
@@ -8194,10 +8573,10 @@ GNU Free Documentation License
      combined work.
 
      In the combination, you must combine any sections Entitled
-     “History” in the various original documents, forming one section
-     Entitled “History”; likewise combine any sections Entitled
-     “Acknowledgements”, and any sections Entitled “Dedications”.  You
-     must delete all sections Entitled “Endorsements.”
+     "History" in the various original documents, forming one section
+     Entitled "History"; likewise combine any sections Entitled
+     "Acknowledgements", and any sections Entitled "Dedications".  You
+     must delete all sections Entitled "Endorsements."
 
   6. COLLECTIONS OF DOCUMENTS
 
@@ -8218,16 +8597,16 @@ GNU Free Documentation License
 
      A compilation of the Document or its derivatives with other
      separate and independent documents or works, in or on a volume of a
-     storage or distribution medium, is called an “aggregate” if the
+     storage or distribution medium, is called an "aggregate" if the
      copyright resulting from the compilation is not used to limit the
-     legal rights of the compilation’s users beyond what the individual
+     legal rights of the compilation's users beyond what the individual
      works permit.  When the Document is included in an aggregate, this
      License does not apply to the other works in the aggregate which
      are not themselves derivative works of the Document.
 
      If the Cover Text requirement of section 3 is applicable to these
      copies of the Document, then if the Document is less than one half
-     of the entire aggregate, the Document’s Cover Texts may be placed
+     of the entire aggregate, the Document's Cover Texts may be placed
      on covers that bracket the Document within the aggregate, or the
      electronic equivalent of covers if the Document is in electronic
      form.  Otherwise they must appear on printed covers that bracket
@@ -8249,8 +8628,8 @@ GNU Free Documentation License
      this License or a notice or disclaimer, the original version will
      prevail.
 
-     If a section in the Document is Entitled “Acknowledgements”,
-     “Dedications”, or “History”, the requirement (section 4) to
+     If a section in the Document is Entitled "Acknowledgements",
+     "Dedications", or "History", the requirement (section 4) to
      Preserve its Title (section 1) will typically require changing the
      actual title.
 
@@ -8291,7 +8670,7 @@ GNU Free Documentation License
 
      Each version of the License is given a distinguishing version
      number.  If the Document specifies that a particular numbered
-     version of this License “or any later version” applies to it, you
+     version of this License "or any later version" applies to it, you
      have the option of following the terms and conditions either of
      that specified version or of any later version that has been
      published (not as a draft) by the Free Software Foundation.  If the
@@ -8299,29 +8678,29 @@ GNU Free Documentation License
      choose any version ever published (not as a draft) by the Free
      Software Foundation.  If the Document specifies that a proxy can
      decide which future versions of this License can be used, that
-     proxy’s public statement of acceptance of a version permanently
+     proxy's public statement of acceptance of a version permanently
      authorizes you to choose that version for the Document.
 
   11. RELICENSING
 
-     “Massive Multiauthor Collaboration Site” (or “MMC Site”) means any
+     "Massive Multiauthor Collaboration Site" (or "MMC Site") means any
      World Wide Web server that publishes copyrightable works and also
      provides prominent facilities for anybody to edit those works.  A
      public wiki that anybody can edit is an example of such a server.
-     A “Massive Multiauthor Collaboration” (or “MMC”) contained in the
+     A "Massive Multiauthor Collaboration" (or "MMC") contained in the
      site means any set of copyrightable works thus published on the MMC
      site.
 
-     “CC-BY-SA” means the Creative Commons Attribution-Share Alike 3.0
+     "CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
      license published by Creative Commons Corporation, a not-for-profit
      corporation with a principal place of business in San Francisco,
      California, as well as future copyleft versions of that license
      published by that same organization.
 
-     “Incorporate” means to publish or republish a Document, in whole or
+     "Incorporate" means to publish or republish a Document, in whole or
      in part, as part of another Document.
 
-     An MMC is “eligible for relicensing” if it is licensed under this
+     An MMC is "eligible for relicensing" if it is licensed under this
      License, and if all works that were first published under this
      License somewhere other than this MMC, and subsequently
      incorporated in whole or in part into the MMC, (1) had no cover
@@ -8348,7 +8727,7 @@ notices just after the title page:
        Free Documentation License''.
 
 If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-replace the “with...Texts.” line with this:
+replace the "with...Texts." line with this:
 
          with the Invariant Sections being LIST THEIR TITLES, with
          the Front-Cover Texts being LIST, and with the Back-Cover Texts

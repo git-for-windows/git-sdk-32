@@ -19,6 +19,7 @@ mingw32/include/gnutls/crypto.h
 mingw32/include/gnutls/dtls.h
 mingw32/include/gnutls/gnutls.h
 mingw32/include/gnutls/gnutlsxx.h
+mingw32/include/gnutls/hpke.h
 mingw32/include/gnutls/ocsp.h
 mingw32/include/gnutls/openpgp.h
 mingw32/include/gnutls/openssl.h
@@ -187,6 +188,9 @@ mingw32/share/man/man3/gnutls_anti_replay_init.3
 mingw32/share/man/man3/gnutls_anti_replay_set_add_function.3
 mingw32/share/man/man3/gnutls_anti_replay_set_ptr.3
 mingw32/share/man/man3/gnutls_anti_replay_set_window.3
+mingw32/share/man/man3/gnutls_audit_current_context.3
+mingw32/share/man/man3/gnutls_audit_pop_context.3
+mingw32/share/man/man3/gnutls_audit_push_context.3
 mingw32/share/man/man3/gnutls_auth_client_get_type.3
 mingw32/share/man/man3/gnutls_auth_get_type.3
 mingw32/share/man/man3/gnutls_auth_server_get_type.3
@@ -404,6 +408,7 @@ mingw32/share/man/man3/gnutls_handshake_set_random.3
 mingw32/share/man/man3/gnutls_handshake_set_read_function.3
 mingw32/share/man/man3/gnutls_handshake_set_secret_function.3
 mingw32/share/man/man3/gnutls_handshake_set_timeout.3
+mingw32/share/man/man3/gnutls_handshake_update_receiving_key.3
 mingw32/share/man/man3/gnutls_handshake_write.3
 mingw32/share/man/man3/gnutls_hash.3
 mingw32/share/man/man3/gnutls_hash_copy.3
@@ -412,6 +417,7 @@ mingw32/share/man/man3/gnutls_hash_fast.3
 mingw32/share/man/man3/gnutls_hash_get_len.3
 mingw32/share/man/man3/gnutls_hash_init.3
 mingw32/share/man/man3/gnutls_hash_output.3
+mingw32/share/man/man3/gnutls_hash_squeeze.3
 mingw32/share/man/man3/gnutls_heartbeat_allowed.3
 mingw32/share/man/man3/gnutls_heartbeat_enable.3
 mingw32/share/man/man3/gnutls_heartbeat_get_timeout.3
@@ -434,6 +440,14 @@ mingw32/share/man/man3/gnutls_hmac_get_len.3
 mingw32/share/man/man3/gnutls_hmac_init.3
 mingw32/share/man/man3/gnutls_hmac_output.3
 mingw32/share/man/man3/gnutls_hmac_set_nonce.3
+mingw32/share/man/man3/gnutls_hpke_decap.3
+mingw32/share/man/man3/gnutls_hpke_deinit.3
+mingw32/share/man/man3/gnutls_hpke_derive_keypair.3
+mingw32/share/man/man3/gnutls_hpke_encap.3
+mingw32/share/man/man3/gnutls_hpke_export.3
+mingw32/share/man/man3/gnutls_hpke_init.3
+mingw32/share/man/man3/gnutls_hpke_open.3
+mingw32/share/man/man3/gnutls_hpke_seal.3
 mingw32/share/man/man3/gnutls_idna_map.3
 mingw32/share/man/man3/gnutls_idna_reverse_map.3
 mingw32/share/man/man3/gnutls_init.3
@@ -553,6 +567,7 @@ mingw32/share/man/man3/gnutls_pkcs11_obj_flags_get_str.3
 mingw32/share/man/man3/gnutls_pkcs11_obj_get_exts.3
 mingw32/share/man/man3/gnutls_pkcs11_obj_get_flags.3
 mingw32/share/man/man3/gnutls_pkcs11_obj_get_info.3
+mingw32/share/man/man3/gnutls_pkcs11_obj_get_pk_algorithm.3
 mingw32/share/man/man3/gnutls_pkcs11_obj_get_ptr.3
 mingw32/share/man/man3/gnutls_pkcs11_obj_get_type.3
 mingw32/share/man/man3/gnutls_pkcs11_obj_import_url.3
@@ -608,6 +623,7 @@ mingw32/share/man/man3/gnutls_pkcs12_export.3
 mingw32/share/man/man3/gnutls_pkcs12_export2.3
 mingw32/share/man/man3/gnutls_pkcs12_generate_mac.3
 mingw32/share/man/man3/gnutls_pkcs12_generate_mac2.3
+mingw32/share/man/man3/gnutls_pkcs12_generate_mac3.3
 mingw32/share/man/man3/gnutls_pkcs12_get_bag.3
 mingw32/share/man/man3/gnutls_pkcs12_import.3
 mingw32/share/man/man3/gnutls_pkcs12_init.3
@@ -726,7 +742,9 @@ mingw32/share/man/man3/gnutls_protocol_get_version.3
 mingw32/share/man/man3/gnutls_protocol_list.3
 mingw32/share/man/man3/gnutls_protocol_set_enabled.3
 mingw32/share/man/man3/gnutls_psk_allocate_client_credentials.3
+mingw32/share/man/man3/gnutls_psk_allocate_client_credentials2.3
 mingw32/share/man/man3/gnutls_psk_allocate_server_credentials.3
+mingw32/share/man/man3/gnutls_psk_allocate_server_credentials2.3
 mingw32/share/man/man3/gnutls_psk_client_get_hint.3
 mingw32/share/man/man3/gnutls_psk_format_imported_identity.3
 mingw32/share/man/man3/gnutls_psk_free_client_credentials.3
@@ -803,6 +821,7 @@ mingw32/share/man/man3/gnutls_record_discard_queued.3
 mingw32/share/man/man3/gnutls_record_get_direction.3
 mingw32/share/man/man3/gnutls_record_get_discarded.3
 mingw32/share/man/man3/gnutls_record_get_max_early_data_size.3
+mingw32/share/man/man3/gnutls_record_get_max_send_size.3
 mingw32/share/man/man3/gnutls_record_get_max_size.3
 mingw32/share/man/man3/gnutls_record_get_state.3
 mingw32/share/man/man3/gnutls_record_overhead_size.3

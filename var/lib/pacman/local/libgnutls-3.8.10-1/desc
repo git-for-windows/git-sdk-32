@@ -2,7 +2,7 @@
 libgnutls
 
 %VERSION%
-3.8.4-2
+3.8.10-1
 
 %BASE%
 gnutls
@@ -17,16 +17,16 @@ https://www.gnutls.org/
 i686
 
 %BUILDDATE%
-1739521148
+1752172101
 
 %INSTALLDATE%
-1739589538
+1780727359
 
 %PACKAGER%
-Johannes Schindelin <johannes.schindelin@gmx.de>
+Unknown Packager
 
 %SIZE%
-3183526
+3266385
 
 %REASON%
 1
@@ -35,11 +35,10 @@ Johannes Schindelin <johannes.schindelin@gmx.de>
 libraries
 
 %LICENSE%
-GPL3
-LGPL2.1
+spdx:GPL-3.0-or-later
+spdx:LGPL-2.1-or-later
 
 %VALIDATION%
-sha256
 pgp
 
 %DEPENDS%

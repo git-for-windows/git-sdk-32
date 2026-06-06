@@ -10,7 +10,7 @@
 .ds B-Font B
 .ds I-Font I
 .ds R-Font R
-.TH certtool 1 "19 Mar 2024" "3.8.4" "User Commands"
+.TH certtool 1 "29 Apr 2026" "3.8.13" "User Commands"
 .SH NAME
 \f\*[B-Font]certtool\fP
 \- GnuTLS certificate tool
@@ -159,6 +159,10 @@ The name to be used for the primary certificate and private key in a PKCS #12 fi
 Generate a PKCS #12 structure.
 .sp
 It requires a certificate, a private key and possibly a CA certificate to be specified.
+.TP
+.NOP \f\*[B-Font]\-\-pbmac1\f[]
+Use PBMAC1 in a PKCS #12 structure.
+.sp
 .SS "Private key related options"
 .TP
 .NOP \f\*[B-Font]\-k\f[], \f\*[B-Font]\-\-key\-info\f[]
@@ -191,6 +195,12 @@ This option can be combined with \-\-generate\-privkey, to specify
 the key type to be generated. Valid options are, 'rsa', 'rsa\-pss', 'rsa\-oaep', 'dsa', 'ecdsa', 'ed25519, 'ed448', 'x25519', and 'x448'.'.
 When combined with certificate generation it can be used to specify an
 RSA\-PSS certificate when an RSA key is given.
+.TP
+.NOP \f\*[B-Font]\-\-key\-format\f[]=\f\*[I-Font]str\f[]
+Specify the key format to use on key generation.
+.sp
+This option can be combined with \-\-generate\-privkey, to specify
+the key format to be generated, when the key type is ML\-DSA. Valid options are, 'seed', 'expanded', and 'both'.
 .TP
 .NOP \f\*[B-Font]\-\-bits\f[]=\f\*[I-Font]num\f[]
 Specify the number of bits for key generation.

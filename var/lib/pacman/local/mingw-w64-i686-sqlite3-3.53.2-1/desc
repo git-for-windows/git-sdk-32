@@ -2,7 +2,7 @@
 mingw-w64-i686-sqlite3
 
 %VERSION%
-3.53.1-1
+3.53.2-1
 
 %BASE%
 mingw-w64-sqlite3
@@ -17,13 +17,13 @@ https://www.sqlite.org/
 any
 
 %BUILDDATE%
-1778175394
+1780679456
 
 %INSTALLDATE%
-1778305640
+1780727361
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/actions/runs/25511939555/job/74872737089)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/27029001337/job/79776291034)
 
 %SIZE%
 23226593
@@ -52,8 +52,8 @@ mingw-w64-i686-tcl: for sqlite3_analyzer
 mingw-w64-i686-sqlite-analyzer
 
 %PROVIDES%
-mingw-w64-i686-sqlite=3.53.1
-mingw-w64-i686-sqlite-analyzer=3.53.1
+mingw-w64-i686-sqlite=3.53.2
+mingw-w64-i686-sqlite-analyzer=3.53.2
 
 %XDATA%
 pkgtype=pkg

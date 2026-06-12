@@ -1911,7 +1911,7 @@ mingw32/lib/python3.14/ensurepip/__pycache__/_uninstall.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/ensurepip/__pycache__/_uninstall.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/ensurepip/__pycache__/_uninstall.cpython-314.pyc
 mingw32/lib/python3.14/ensurepip/_bundled/
-mingw32/lib/python3.14/ensurepip/_bundled/pip-26.1.1-py3-none-any.whl
+mingw32/lib/python3.14/ensurepip/_bundled/pip-26.1.2-py3-none-any.whl
 mingw32/lib/python3.14/ensurepip/_uninstall.py
 mingw32/lib/python3.14/enum.py
 mingw32/lib/python3.14/EXTERNALLY-MANAGED
@@ -5303,6 +5303,9 @@ mingw32/lib/python3.14/test/test_capi/__pycache__/test_unicode.cpython-314.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_watchers.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_watchers.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_watchers.cpython-314.pyc
+mingw32/lib/python3.14/test/test_capi/__pycache__/test_weakref.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/test_capi/__pycache__/test_weakref.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/test_capi/__pycache__/test_weakref.cpython-314.pyc
 mingw32/lib/python3.14/test/test_capi/check_config.py
 mingw32/lib/python3.14/test/test_capi/test_abstract.py
 mingw32/lib/python3.14/test/test_capi/test_bytearray.py
@@ -5340,6 +5343,7 @@ mingw32/lib/python3.14/test/test_capi/test_tuple.py
 mingw32/lib/python3.14/test/test_capi/test_type.py
 mingw32/lib/python3.14/test/test_capi/test_unicode.py
 mingw32/lib/python3.14/test/test_capi/test_watchers.py
+mingw32/lib/python3.14/test/test_capi/test_weakref.py
 mingw32/lib/python3.14/test/test_cext/
 mingw32/lib/python3.14/test/test_cext/__init__.py
 mingw32/lib/python3.14/test/test_cext/__pycache__/
@@ -6000,6 +6004,9 @@ mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dbm_gnu.cpython
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dict.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dict.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dict.cpython-314.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dict_watcher.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dict_watcher.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_dict_watcher.cpython-314.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_enumerate.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_enumerate.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_enumerate.cpython-314.pyc
@@ -6042,6 +6049,9 @@ mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_mmap.cpython-31
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_monitoring.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_monitoring.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_monitoring.cpython-314.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_pickle.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_pickle.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_pickle.cpython-314.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_races.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_races.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_races.cpython-314.pyc
@@ -6083,6 +6093,7 @@ mingw32/lib/python3.14/test/test_free_threading/test_cprofile.py
 mingw32/lib/python3.14/test/test_free_threading/test_csv.py
 mingw32/lib/python3.14/test/test_free_threading/test_dbm_gnu.py
 mingw32/lib/python3.14/test/test_free_threading/test_dict.py
+mingw32/lib/python3.14/test/test_free_threading/test_dict_watcher.py
 mingw32/lib/python3.14/test/test_free_threading/test_enumerate.py
 mingw32/lib/python3.14/test/test_free_threading/test_frame.py
 mingw32/lib/python3.14/test/test_free_threading/test_func_annotations.py
@@ -6097,6 +6108,7 @@ mingw32/lib/python3.14/test/test_free_threading/test_list.py
 mingw32/lib/python3.14/test/test_free_threading/test_methodcaller.py
 mingw32/lib/python3.14/test/test_free_threading/test_mmap.py
 mingw32/lib/python3.14/test/test_free_threading/test_monitoring.py
+mingw32/lib/python3.14/test/test_free_threading/test_pickle.py
 mingw32/lib/python3.14/test/test_free_threading/test_races.py
 mingw32/lib/python3.14/test/test_free_threading/test_re.py
 mingw32/lib/python3.14/test/test_free_threading/test_resource.py

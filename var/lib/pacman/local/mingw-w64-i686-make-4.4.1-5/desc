@@ -2,7 +2,7 @@
 mingw-w64-i686-make
 
 %VERSION%
-4.4.1-4
+4.4.1-5
 
 %BASE%
 mingw-w64-make
@@ -17,16 +17,16 @@ https://www.gnu.org/software/make
 any
 
 %BUILDDATE%
-1763715577
+1781533052
 
 %INSTALLDATE%
-1763782620
+1781599504
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/8cbb808c/19565251950)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/27552563382/job/81442633838)
 
 %SIZE%
-343070
+348343
 
 %GROUPS%
 mingw-w64-i686-toolchain

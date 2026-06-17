@@ -2,7 +2,7 @@
 mingw-w64-i686-xpdf-tools
 
 %VERSION%
-4.00-1
+4.06-1
 
 %BASE%
 mingw-w64-xpdf-tools
@@ -11,29 +11,33 @@ mingw-w64-xpdf-tools
 Utilities for PDF files (mingw-w64)
 
 %URL%
-http://foolabs.com/xpdf/
+https://www.xpdfreader.com/
 
 %ARCH%
 any
 
 %BUILDDATE%
-1526683529
+1781611026
 
 %INSTALLDATE%
-1526683835
+1781684840
 
 %PACKAGER%
-Git for Windows Build Agent <ci@git-for-windows.build>
+Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-8688640
+10886595
 
 %LICENSE%
-GPL2+
+spdx:GPL-2.0-only OR GPL-3.0-only
 
 %VALIDATION%
+sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-zlib
+mingw-w64-i686-cc-libs
+
+%XDATA%
+pkgtype=pkg
 

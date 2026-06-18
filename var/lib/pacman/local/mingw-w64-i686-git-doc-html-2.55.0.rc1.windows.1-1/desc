@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-svn
+mingw-w64-i686-git-doc-html
 
 %VERSION%
-2.55.0.rc0.windows.1-1
+2.55.0.rc1.windows.1-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Subversion support for Git (mingw-w64)
+The fast distributed version control system (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,19 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1781264332
+1781763054
 
 %INSTALLDATE%
-1781333888
+1781770016
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-377625
-
-%REASON%
-1
+18567897
 
 %LICENSE%
 GPL2
@@ -37,11 +34,6 @@ GPL2
 %VALIDATION%
 sha256
 pgp
-
-%DEPENDS%
-mingw-w64-i686-git=2.55.0.rc0.windows.1
-mingw-w64-i686-git-perl=2.55.0.rc0.windows.1
-subversion
 
 %XDATA%
 pkgtype=split

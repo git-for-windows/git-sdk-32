@@ -2,7 +2,7 @@
 mingw-w64-i686-xxhash
 
 %VERSION%
-0.8.3-1
+0.8.3-2
 
 %BASE%
 mingw-w64-xxhash
@@ -17,25 +17,27 @@ https://xxhash.com/
 any
 
 %BUILDDATE%
-1736327379
+1782074800
 
 %INSTALLDATE%
-1736393829
+1782197403
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/35ff0b71/12667355343)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/27916904621/job/82603721321)
 
 %SIZE%
-572832
+623738
 
 %REASON%
 1
 
 %LICENSE%
-spdx:BSD-2-Clause
-spdx:GPL-2.0-or-later
+spdx:BSD-2-Clause AND GPL-2.0-or-later
 
 %VALIDATION%
 sha256
 pgp
+
+%XDATA%
+pkgtype=pkg
 

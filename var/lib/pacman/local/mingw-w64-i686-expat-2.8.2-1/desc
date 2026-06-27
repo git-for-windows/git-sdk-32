@@ -2,7 +2,7 @@
 mingw-w64-i686-expat
 
 %VERSION%
-2.8.1-2
+2.8.2-1
 
 %BASE%
 mingw-w64-expat
@@ -17,16 +17,16 @@ https://libexpat.github.io/
 any
 
 %BUILDDATE%
-1781121643
+1782466816
 
 %INSTALLDATE%
-1781163218
+1782541738
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/27302513020/job/80651724171)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/28230035492/job/83631263941)
 
 %SIZE%
-831345
+841165
 
 %LICENSE%
 spdx:MIT

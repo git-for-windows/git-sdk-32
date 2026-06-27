@@ -2,7 +2,7 @@
 mingw-w64-i686-tools
 
 %VERSION%
-14.0.0.r98.g19f5121a2-1
+14.0.0.r147.g31bd54ab7-1
 
 %BASE%
 mingw-w64-tools
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1781512323
+1782469074
 
 %INSTALLDATE%
-1781599504
+1782541738
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/27532990656/job/81375370444)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/28231472686/job/83636002978)
 
 %SIZE%
-1116673
+1142786
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -48,7 +48,7 @@ mingw-w64-i686-cc-libs
 mingw-w64-i686-tools-git
 
 %PROVIDES%
-mingw-w64-i686-tools-git=14.0.0.r98.g19f5121a2
+mingw-w64-i686-tools-git=14.0.0.r147.g31bd54ab7
 
 %XDATA%
 pkgtype=pkg

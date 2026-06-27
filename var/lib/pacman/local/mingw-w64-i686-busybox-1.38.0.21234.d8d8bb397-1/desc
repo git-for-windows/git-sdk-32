@@ -2,7 +2,7 @@
 mingw-w64-i686-busybox
 
 %VERSION%
-1.38.0.21232.f4dc52910-1
+1.38.0.21234.d8d8bb397-1
 
 %BASE%
 mingw-w64-busybox
@@ -17,16 +17,16 @@ https://github.com/git-for-windows/busybox-w32
 any
 
 %BUILDDATE%
-1782541103
+1782573776
 
 %INSTALLDATE%
-1782541735
+1782579330
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-674830
+790542
 
 %LICENSE%
 GPL2

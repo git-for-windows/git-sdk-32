@@ -16,9 +16,14 @@ mingw32/include/isl/ctx.h
 mingw32/include/isl/fixed_box.h
 mingw32/include/isl/flow.h
 mingw32/include/isl/hash.h
+mingw32/include/isl/hbase.h
+mingw32/include/isl/hbase_templ.c
 mingw32/include/isl/hmap.h
 mingw32/include/isl/hmap_templ.c
+mingw32/include/isl/hset.h
+mingw32/include/isl/hset_templ.c
 mingw32/include/isl/id.h
+mingw32/include/isl/id_set.h
 mingw32/include/isl/id_to_ast_expr.h
 mingw32/include/isl/id_to_id.h
 mingw32/include/isl/id_to_pw_aff.h
@@ -72,4 +77,7 @@ mingw32/lib/libisl.dll.a
 mingw32/lib/libisl.dll.a-gdb.py
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/isl.pc
+mingw32/share/
+mingw32/share/aclocal/
+mingw32/share/aclocal/isl_detect_clang.m4
 

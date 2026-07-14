@@ -2,7 +2,7 @@
 mingw-w64-i686-isl
 
 %VERSION%
-0.27-1
+0.28-1
 
 %BASE%
 mingw-w64-isl
@@ -17,22 +17,22 @@ https://libisl.sourceforge.io/
 any
 
 %BUILDDATE%
-1725545199
+1783893455
 
 %INSTALLDATE%
-1725592616
+1784002979
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/22f1e5ad/10721982488)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/29210489686/job/86697296730)
 
 %SIZE%
-13513255
+14024264
 
 %REASON%
 1
 
 %LICENSE%
-MIT
+spdx:MIT
 
 %VALIDATION%
 sha256
@@ -40,4 +40,7 @@ pgp
 
 %DEPENDS%
 mingw-w64-i686-gmp
+
+%XDATA%
+pkgtype=pkg
 

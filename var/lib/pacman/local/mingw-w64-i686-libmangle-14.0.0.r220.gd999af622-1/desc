@@ -2,7 +2,7 @@
 mingw-w64-i686-libmangle
 
 %VERSION%
-14.0.0.r190.g96fb1bff7-1
+14.0.0.r220.gd999af622-1
 
 %BASE%
 mingw-w64-libmangle
@@ -17,13 +17,13 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1783987024
+1784624015
 
 %INSTALLDATE%
-1784093333
+1784785899
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/29293726638/job/86962661484)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/29815022351/job/88584261679)
 
 %SIZE%
 56263
@@ -45,7 +45,7 @@ mingw-w64-i686-libmangle-git
 mingw-w64-i686-libmangle-git
 
 %PROVIDES%
-mingw-w64-i686-libmangle-git=14.0.0.r190.g96fb1bff7
+mingw-w64-i686-libmangle-git=14.0.0.r220.gd999af622
 
 %XDATA%
 pkgtype=pkg

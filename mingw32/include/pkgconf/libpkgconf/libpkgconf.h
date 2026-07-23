@@ -71,8 +71,8 @@ typedef struct pkgconf_license_ pkgconf_license_t;
 #define PKGCONF_FOREACH_LIST_ENTRY_REVERSE(tail, value) \
 	for ((value) = (tail); (value) != NULL; (value) = (value)->prev)
 
-#define LIBPKGCONF_VERSION	30003
-#define LIBPKGCONF_VERSION_STR	"3.0.3"
+#define LIBPKGCONF_VERSION	30004
+#define LIBPKGCONF_VERSION_STR	"3.0.4"
 
 struct pkgconf_queue_ {
 	pkgconf_node_t iter;
@@ -592,6 +592,7 @@ PKGCONF_API size_t pkgconf_path_build_from_registry(pkgconf_client_t *client, /*
 PKGCONF_API bool pkgconf_path_match_list(const char *path, const pkgconf_list_t *dirlist);
 PKGCONF_API void pkgconf_path_free(pkgconf_list_t *dirlist);
 PKGCONF_API bool pkgconf_path_relocate(pkgconf_buffer_t *buf);
+PKGCONF_API void pkgconf_path_normalize_separators(char *path);
 PKGCONF_API void pkgconf_path_copy_list(pkgconf_list_t *dst, const pkgconf_list_t *src);
 PKGCONF_API void pkgconf_path_prepend_list(pkgconf_list_t *dst, const pkgconf_list_t *src);
 PKGCONF_API bool pkgconf_path_is_plausible(const pkgconf_buffer_t *buf);

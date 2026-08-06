@@ -21,12 +21,6 @@
 extern "C" {
 #endif
 
-#ifndef _CONST_RETURN
-#define _CONST_RETURN
-#endif
-
-#define _WConst_return _CONST_RETURN
-
 #ifndef _CRT_MEMORY_DEFINED
 #define _CRT_MEMORY_DEFINED
   _CRTIMP void *__cdecl _memccpy(void *_Dst,const void *_Src,int _Val,size_t _MaxCount);
@@ -54,4 +48,10 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
+
+#ifdef __cplusplus
+extern "C++" inline void* memchr(void* __s, int __c, size_t __n)
+{ return const_cast<void*>(memchr(const_cast<const void*>(__s), __c, __n)); }
+#endif
+
 #endif

@@ -151,6 +151,17 @@ typedef __time64_t time_t;
 #endif
 #endif
 
+#ifndef _CONST_RETURN
+#ifdef __cplusplus
+#define _CONST_RETURN const
+#define _CRT_CONST_CORRECT_OVERLOADS
+#else
+#define _CONST_RETURN
+#endif
+#endif
+
+#define _WConst_return _CONST_RETURN
+
 #ifdef _DEBUG
 _CRTIMP void __cdecl _invalid_parameter(const wchar_t *expression, const wchar_t *function_name, const wchar_t *file_name, unsigned int line_number, __UINTPTR_TYPE__ reserved);
 #endif

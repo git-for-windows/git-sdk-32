@@ -14,15 +14,6 @@
 #define __USE_MINGW_STRTOX 1
 #endif
 
-#if defined(__LIBMSVCRT__)
-/* When building mingw-w64, this should be blank.  */
-#define _SECIMP
-#else
-#ifndef _SECIMP
-#define _SECIMP __declspec(dllimport)
-#endif /* _SECIMP */
-#endif /* defined(__LIBMSVCRT__) */
-
 #pragma pack(push,_CRT_PACKING)
 
 #ifdef __cplusplus
@@ -54,9 +45,6 @@ extern "C" {
 #endif
 #endif
 
-#ifndef _DIV_T_DEFINED
-#define _DIV_T_DEFINED
-
   typedef struct _div_t {
     int quot;
     int rem;
@@ -66,7 +54,6 @@ extern "C" {
     long quot;
     long rem;
   } ldiv_t;
-#endif
 
 #ifndef _CRT_DOUBLE_DEC
 #define _CRT_DOUBLE_DEC

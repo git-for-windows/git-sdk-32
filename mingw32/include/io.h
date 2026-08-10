@@ -9,15 +9,6 @@
 #include <crtdefs.h>
 #include <string.h>
 
-#if defined(__LIBMSVCRT__)
-/* When building mingw-w64, this should be blank.  */
-#define _SECIMP
-#else
-#ifndef _SECIMP
-#define _SECIMP __declspec(dllimport)
-#endif /* _SECIMP */
-#endif /* defined(__LIBMSVCRT__) */
-
 #pragma pack(push,_CRT_PACKING)
 
 #ifdef __cplusplus
@@ -37,8 +28,6 @@ _CRTIMP char* __cdecl _getcwd (char*, int);
   typedef unsigned long _fsize_t;
 #define _FSIZE_T_DEFINED
 #endif
-
-#ifndef _FINDDATA_T_DEFINED
 
   struct _finddata32_t {
     unsigned attrib;
@@ -99,9 +88,6 @@ _CRTIMP char* __cdecl _getcwd (char*, int);
 #define _findnexti64 _findnext64
 #endif /* _USE_32BIT_TIME_T */
 #endif /* _CRTBLD */
-
-#define _FINDDATA_T_DEFINED
-#endif /* _FINDDATA_T_DEFINED */
 
 #ifndef _WFINDDATA_T_DEFINED
 

@@ -225,8 +225,12 @@ mingw32/include/corecrt_startup.h
 mingw32/include/corecrt_stdio_config.h
 mingw32/include/corecrt_wconio.h
 mingw32/include/corecrt_wctype.h
+mingw32/include/corecrt_wio.h
+mingw32/include/corecrt_wprocess.h
+mingw32/include/corecrt_wstdio.h
 mingw32/include/corecrt_wstdlib.h
 mingw32/include/corecrt_wstring.h
+mingw32/include/corecrt_wtime.h
 mingw32/include/corerror.h
 mingw32/include/corhdr.h
 mingw32/include/correg.h

@@ -1,8 +1,8 @@
 %NAME%
-mingw-w64-i686-libwinpthread
+mingw-w64-i686-winpthreads
 
 %VERSION%
-14.0.0.r262.g5ea8e9fac-1
+14.0.0.r283.ga7cb47123-1
 
 %BASE%
 mingw-w64-winpthreads
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1786241213
+1786949669
 
 %INSTALLDATE%
-1786336076
+1787024506
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/31289226800/job/93183463535)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/32002642566/job/95305827104)
 
 %SIZE%
-85235
+470286
 
 %GROUPS%
 mingw-w64-i686-toolchain
@@ -39,13 +39,17 @@ sha256
 pgp
 
 %REPLACES%
-mingw-w64-i686-libwinpthread-git
+mingw-w64-i686-winpthreads-git
+
+%DEPENDS%
+mingw-w64-i686-crt
+mingw-w64-i686-libwinpthread=14.0.0.r283.ga7cb47123
 
 %CONFLICTS%
-mingw-w64-i686-libwinpthread-git
+mingw-w64-i686-winpthreads-git
 
 %PROVIDES%
-mingw-w64-i686-libwinpthread-git
+mingw-w64-i686-winpthreads-git
 
 %XDATA%
 pkgtype=split

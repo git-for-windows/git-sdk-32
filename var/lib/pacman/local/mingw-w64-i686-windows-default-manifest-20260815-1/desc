@@ -2,7 +2,7 @@
 mingw-w64-i686-windows-default-manifest
 
 %VERSION%
-6.4-4
+20260815-1
 
 %BASE%
 mingw-w64-windows-default-manifest
@@ -11,29 +11,33 @@ mingw-w64-windows-default-manifest
 Default Windows application manifest (mingw-w64)
 
 %URL%
-https://cygwin.com/
+
 
 %ARCH%
 any
 
 %BUILDDATE%
-1644954123
+1786872645
 
 %INSTALLDATE%
-1645067764
+1787024506
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/8b9b746c/1848961611)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/31939173638/job/95145742449)
 
 %SIZE%
-1348
+892
 
 %REASON%
 1
 
 %LICENSE%
-BSD
+custom:Public Domain
 
 %VALIDATION%
+sha256
 pgp
+
+%XDATA%
+pkgtype=pkg
 

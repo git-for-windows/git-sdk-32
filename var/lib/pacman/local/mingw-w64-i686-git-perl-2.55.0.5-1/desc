@@ -2,7 +2,7 @@
 mingw-w64-i686-git-perl
 
 %VERSION%
-2.55.0.4-1
+2.55.0.5-1
 
 %BASE%
 mingw-w64-git
@@ -17,10 +17,10 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1784723179
+1787240892
 
 %INSTALLDATE%
-1786510002
+1787284097
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
@@ -39,7 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.55.0.4
+mingw-w64-i686-git=2.55.0.5
 perl>=5.14.0
 perl-Error
 perl-libwww

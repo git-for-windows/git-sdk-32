@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-send-email
+mingw-w64-i686-git-gui
 
 %VERSION%
-2.55.0.4-1
+2.55.0.5-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Send patch emails with git (mingw-w64)
+Git GUI tool (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1784723179
+1787240892
 
 %INSTALLDATE%
-1786510002
+1787284097
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-194740
+1457082
 
 %REASON%
 1
@@ -39,11 +39,9 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.55.0.4
-mingw-w64-i686-git-perl=2.55.0.4
-perl-Authen-SASL
-perl-MIME-tools
-perl-Net-SMTP-SSL
+mingw-w64-i686-git=2.55.0.5
+mingw-w64-i686-tcl
+mingw-w64-i686-tk
 
 %XDATA%
 pkgtype=split

@@ -2,7 +2,7 @@
 mingw-w64-i686-git-for-windows-addons
 
 %VERSION%
-2.55.0.4-1
+2.55.0.5-1
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1784723179
+1787240892
 
 %INSTALLDATE%
-1786510002
+1787284097
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1156895
+1084174
 
 %LICENSE%
 GPL2
@@ -36,7 +36,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.55.0.4
+mingw-w64-i686-git=2.55.0.5
 mingw-w64-i686-git-subtree
 mingw-w64-i686-git-credential-wincred
 mingw-w64-i686-git-send-email

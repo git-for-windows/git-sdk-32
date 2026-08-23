@@ -225,6 +225,7 @@ mingw32/include/corecrt_startup.h
 mingw32/include/corecrt_stdio_config.h
 mingw32/include/corecrt_wconio.h
 mingw32/include/corecrt_wctype.h
+mingw32/include/corecrt_wdirect.h
 mingw32/include/corecrt_wio.h
 mingw32/include/corecrt_wprocess.h
 mingw32/include/corecrt_wstdio.h
@@ -1113,6 +1114,8 @@ mingw32/include/newapis.h
 mingw32/include/newdev.h
 mingw32/include/nldef.h
 mingw32/include/nmsupp.h
+mingw32/include/notificationactivationcallback.h
+mingw32/include/notificationactivationcallback.idl
 mingw32/include/npapi.h
 mingw32/include/nsemail.h
 mingw32/include/nserror.h

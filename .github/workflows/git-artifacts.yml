@@ -142,7 +142,7 @@ jobs:
     needs: [build]
     strategy:
       matrix:
-        artifact: [portable, mingit]
+        artifact: [mingit]
       fail-fast: false
     steps:
       - name: Download pkg-${{env.ARCH_NAME}}

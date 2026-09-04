@@ -174,6 +174,32 @@ typedef __time64_t time_t;
 
 #define _WConst_return _CONST_RETURN
 
+#ifndef _STATIC_ASSERT
+#if (defined(__cpp_static_assert) && __cpp_static_assert >= 201411L) || (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 202311L)
+#define _STATIC_ASSERT(expr) static_assert(expr)
+#elif defined(__cpp_static_assert)
+#define _STATIC_ASSERT(expr) static_assert(expr, #expr)
+#elif defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
+#define _STATIC_ASSERT(expr) _Static_assert(expr, #expr)
+#elif defined(_MSC_VER)
+#define _STATIC_ASSERT(expr) typedef char __static_assert_t[(expr)]
+#else
+#define _STATIC_ASSERT(expr) extern void __static_assert_t(int [(expr)?1:-1])
+#endif
+#endif
+
+#ifndef NULL
+#ifdef __cplusplus
+#ifndef _WIN64
+#define NULL 0
+#else
+#define NULL 0LL
+#endif  /* W64 */
+#else
+#define NULL ((void *)0)
+#endif
+#endif
+
 #if defined(__LIBMSVCRT__)
 /* When building mingw-w64, this should be blank.  */
 #define _SECIMP

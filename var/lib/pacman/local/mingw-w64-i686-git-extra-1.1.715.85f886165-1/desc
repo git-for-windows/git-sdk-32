@@ -2,7 +2,7 @@
 mingw-w64-i686-git-extra
 
 %VERSION%
-1.1.713.cd940aab6-1
+1.1.715.85f886165-1
 
 %BASE%
 mingw-w64-git-extra
@@ -17,16 +17,16 @@ https://github.com/git-for-windows/build-extra
 any
 
 %BUILDDATE%
-1781872234
+1789080979
 
 %INSTALLDATE%
-1789026777
+1789113075
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-548021
+522722
 
 %GROUPS%
 VCS

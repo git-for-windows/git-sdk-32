@@ -519,6 +519,7 @@ mingw32/share/doc/openssl/html/man3/i2d_PKCS7_bio_stream.html
 mingw32/share/doc/openssl/html/man3/i2d_re_X509_tbs.html
 mingw32/share/doc/openssl/html/man3/MD5.html
 mingw32/share/doc/openssl/html/man3/MDC2_Init.html
+mingw32/share/doc/openssl/html/man3/NAME_CONSTRAINTS_check.html
 mingw32/share/doc/openssl/html/man3/NCONF_new_ex.html
 mingw32/share/doc/openssl/html/man3/o2i_SCT_LIST.html
 mingw32/share/doc/openssl/html/man3/OBJ_nid2obj.html
@@ -530,6 +531,7 @@ mingw32/share/doc/openssl/html/man3/OCSP_response_status.html
 mingw32/share/doc/openssl/html/man3/OCSP_sendreq_new.html
 mingw32/share/doc/openssl/html/man3/OpenSSL_add_all_algorithms.html
 mingw32/share/doc/openssl/html/man3/OPENSSL_Applink.html
+mingw32/share/doc/openssl/html/man3/OPENSSL_armcap.html
 mingw32/share/doc/openssl/html/man3/OPENSSL_config.html
 mingw32/share/doc/openssl/html/man3/OPENSSL_FILE.html
 mingw32/share/doc/openssl/html/man3/OPENSSL_fork_prepare.html
@@ -4169,6 +4171,8 @@ mingw32/share/man/man3/MDC2.3ossl.gz
 mingw32/share/man/man3/MDC2_Final.3ossl.gz
 mingw32/share/man/man3/MDC2_Init.3ossl.gz
 mingw32/share/man/man3/MDC2_Update.3ossl.gz
+mingw32/share/man/man3/NAME_CONSTRAINTS_check.3ossl.gz
+mingw32/share/man/man3/NAME_CONSTRAINTS_check_CN.3ossl.gz
 mingw32/share/man/man3/NAME_CONSTRAINTS_free.3ossl.gz
 mingw32/share/man/man3/NAME_CONSTRAINTS_new.3ossl.gz
 mingw32/share/man/man3/NAMING_AUTHORITY.3ossl.gz
@@ -4300,6 +4304,7 @@ mingw32/share/man/man3/OpenSSL_add_all_digests.3ossl.gz
 mingw32/share/man/man3/OpenSSL_add_ssl_algorithms.3ossl.gz
 mingw32/share/man/man3/OPENSSL_aligned_alloc.3ossl.gz
 mingw32/share/man/man3/OPENSSL_Applink.3ossl.gz
+mingw32/share/man/man3/OPENSSL_armcap.3ossl.gz
 mingw32/share/man/man3/OPENSSL_atexit.3ossl.gz
 mingw32/share/man/man3/OPENSSL_buf2hexstr.3ossl.gz
 mingw32/share/man/man3/OPENSSL_buf2hexstr_ex.3ossl.gz
@@ -6632,6 +6637,7 @@ mingw32/share/man/man3/SSL_VALUE_EVENT_HANDLING_MODE_EXPLICIT.3ossl.gz
 mingw32/share/man/man3/SSL_VALUE_EVENT_HANDLING_MODE_IMPLICIT.3ossl.gz
 mingw32/share/man/man3/SSL_VALUE_EVENT_HANDLING_MODE_INHERIT.3ossl.gz
 mingw32/share/man/man3/SSL_VALUE_QUIC_IDLE_TIMEOUT.3ossl.gz
+mingw32/share/man/man3/SSL_VALUE_QUIC_MAX_PENDING_CONNS.3ossl.gz
 mingw32/share/man/man3/SSL_VALUE_QUIC_STREAM_BIDI_LOCAL_AVAIL.3ossl.gz
 mingw32/share/man/man3/SSL_VALUE_QUIC_STREAM_BIDI_REMOTE_AVAIL.3ossl.gz
 mingw32/share/man/man3/SSL_VALUE_QUIC_STREAM_UNI_LOCAL_AVAIL.3ossl.gz

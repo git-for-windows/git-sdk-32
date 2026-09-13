@@ -220,6 +220,7 @@ mingw32/include/control.h
 mingw32/include/control.idl
 mingw32/include/cor.h
 mingw32/include/corecrt.h
+mingw32/include/corecrt_malloc.h
 mingw32/include/corecrt_memory.h
 mingw32/include/corecrt_startup.h
 mingw32/include/corecrt_stdio_config.h
@@ -1464,7 +1465,6 @@ mingw32/include/subauth.h
 mingw32/include/subsmgr.h
 mingw32/include/svcguid.h
 mingw32/include/svrapi.h
-mingw32/include/swprintf.inl
 mingw32/include/synchapi.h
 mingw32/include/sys/
 mingw32/include/sys/cdefs.h

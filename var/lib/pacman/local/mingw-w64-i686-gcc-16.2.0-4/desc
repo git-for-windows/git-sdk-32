@@ -2,13 +2,13 @@
 mingw-w64-i686-gcc
 
 %VERSION%
-16.2.0-3
+16.2.0-4
 
 %BASE%
 mingw-w64-gcc
 
 %DESC%
-GNU Compiler Collection (C,C++,OpenMP) for MinGW-w64
+The GNU Compiler Collection - C and C++ frontends (mingw-w64)
 
 %URL%
 https://gcc.gnu.org
@@ -17,22 +17,22 @@ https://gcc.gnu.org
 any
 
 %BUILDDATE%
-1786260187
+1789924939
 
 %INSTALLDATE%
-1786336078
+1789979742
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/31300124490/job/93211454448)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/35525563387/job/106116993347)
 
 %SIZE%
-193775741
+189038233
 
 %GROUPS%
 mingw-w64-i686-toolchain
 
 %LICENSE%
-spdx:GPL-3.0-or-later
+spdx:GPL-3.0-or-later WITH GCC-exception-3.1 AND GFDL-1.3-or-later
 
 %VALIDATION%
 sha256
@@ -46,24 +46,29 @@ mingw-w64-i686-isl
 mingw-w64-i686-gmp
 mingw-w64-i686-mpfr
 mingw-w64-i686-mpc
-mingw-w64-i686-gcc-libs=16.2.0-3
+mingw-w64-i686-libgcc=16.2.0-4
+mingw-w64-i686-libstdc++=16.2.0-4
 mingw-w64-i686-windows-default-manifest
 mingw-w64-i686-winpthreads
 mingw-w64-i686-zlib
 mingw-w64-i686-zstd
 
+%OPTDEPENDS%
+mingw-w64-i686-libatomic
+mingw-w64-i686-libgomp: OpenMP
+mingw-w64-i686-libquadmath: Quad Math
+
 %CONFLICTS%
-mingw-w64-i686-gcc-base
-mingw-w64-i686-gcc-objc
 mingw-w64-i686-gcc-ada
-mingw-w64-i686-gcc-rust
-mingw-w64-i686-gcc-plugin
-mingw-w64-i686-libgccjit
-mingw-w64-i686-gcc-libgfortran
 mingw-w64-i686-gcc-fortran
+mingw-w64-i686-gcc-libgfortran
+mingw-w64-i686-libgfortran
+mingw-w64-i686-libgccjit
+mingw-w64-i686-gcc-objc
+mingw-w64-i686-gcc-plugin
+mingw-w64-i686-gcc-rust
 
 %PROVIDES%
-mingw-w64-i686-gcc-base
 mingw-w64-i686-cc
 
 %XDATA%

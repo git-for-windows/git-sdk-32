@@ -9,6 +9,7 @@ mingw32/bin/gcc-ar.exe
 mingw32/bin/gcc-nm.exe
 mingw32/bin/gcc-ranlib.exe
 mingw32/bin/gcc.exe
+mingw32/bin/gcov-dump.exe
 mingw32/bin/gcov-tool.exe
 mingw32/bin/gcov.exe
 mingw32/bin/i686-w64-mingw32-c++.exe
@@ -19,6 +20,7 @@ mingw32/bin/i686-w64-mingw32-gcc-ar.exe
 mingw32/bin/i686-w64-mingw32-gcc-nm.exe
 mingw32/bin/i686-w64-mingw32-gcc-ranlib.exe
 mingw32/bin/i686-w64-mingw32-gcc.exe
+mingw32/bin/libstdc++-6.dll-gdb.py
 mingw32/etc/
 mingw32/etc/gdbinit
 mingw32/include/
@@ -1109,14 +1111,11 @@ mingw32/lib/libatomic.a
 mingw32/lib/libatomic.dll.a
 mingw32/lib/libatomic_asneeded.a
 mingw32/lib/libgcc_s.a
-mingw32/lib/libgomp.a
-mingw32/lib/libgomp.dll.a
 mingw32/lib/libgomp.spec
 mingw32/lib/libquadmath.a
 mingw32/lib/libquadmath.dll.a
 mingw32/lib/libstdc++.a
 mingw32/lib/libstdc++.dll.a
-mingw32/lib/libstdc++.dll.a-gdb.py
 mingw32/lib/libstdc++.modules.json
 mingw32/lib/libstdc++exp.a
 mingw32/lib/libstdc++fs.a
@@ -1146,8 +1145,11 @@ mingw32/share/info/cppinternals.info.gz
 mingw32/share/info/gcc.info.gz
 mingw32/share/info/gccinstall.info.gz
 mingw32/share/info/gccint.info.gz
-mingw32/share/info/libgomp.info.gz
 mingw32/share/info/libquadmath.info.gz
+mingw32/share/licenses/
+mingw32/share/licenses/gcc/
+mingw32/share/licenses/gcc/COPYING.RUNTIME
+mingw32/share/licenses/gcc/COPYING3
 mingw32/share/man/
 mingw32/share/man/man1/
 mingw32/share/man/man1/cpp.1.gz

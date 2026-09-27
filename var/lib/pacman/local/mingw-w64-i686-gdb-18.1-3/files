@@ -84,6 +84,7 @@ mingw32/share/gdb/syscalls/mips-o32-linux.xml
 mingw32/share/gdb/syscalls/netbsd.xml
 mingw32/share/gdb/syscalls/ppc-linux.xml
 mingw32/share/gdb/syscalls/ppc64-linux.xml
+mingw32/share/gdb/syscalls/riscv-linux.xml
 mingw32/share/gdb/syscalls/s390-linux.xml
 mingw32/share/gdb/syscalls/s390x-linux.xml
 mingw32/share/gdb/syscalls/sparc-linux.xml
@@ -103,7 +104,6 @@ mingw32/share/info/gdb.info-7.gz
 mingw32/share/info/gdb.info-8.gz
 mingw32/share/info/gdb.info-9.gz
 mingw32/share/info/gdb.info.gz
-mingw32/share/info/stabs.info.gz
 mingw32/share/locale/
 mingw32/share/locale/da/
 mingw32/share/locale/da/LC_MESSAGES/
@@ -143,6 +143,7 @@ mingw32/share/locale/ja/LC_MESSAGES/bfd.mo
 mingw32/share/locale/ka/
 mingw32/share/locale/ka/LC_MESSAGES/
 mingw32/share/locale/ka/LC_MESSAGES/bfd.mo
+mingw32/share/locale/ka/LC_MESSAGES/opcodes.mo
 mingw32/share/locale/ms/
 mingw32/share/locale/ms/LC_MESSAGES/
 mingw32/share/locale/ms/LC_MESSAGES/bfd.mo

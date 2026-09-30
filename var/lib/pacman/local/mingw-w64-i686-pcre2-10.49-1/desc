@@ -2,7 +2,7 @@
 mingw-w64-i686-pcre2
 
 %VERSION%
-10.48-3
+10.49-1
 
 %BASE%
 mingw-w64-pcre2
@@ -17,16 +17,16 @@ https://pcre.org/
 any
 
 %BUILDDATE%
-1788368055
+1790689032
 
 %INSTALLDATE%
-1788507773
+1790759980
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/33656119631/job/100334982851)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/36575950950/job/109431498275)
 
 %SIZE%
-7431682
+7435691
 
 %LICENSE%
 spdx:BSD-3-Clause

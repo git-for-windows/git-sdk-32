@@ -2,7 +2,7 @@
 openssl
 
 %VERSION%
-3.5.8-1
+3.5.9-1
 
 %BASE%
 openssl
@@ -17,16 +17,16 @@ https://www.openssl.org
 i686
 
 %BUILDDATE%
-1789140045
+1790757333
 
 %INSTALLDATE%
-1789198872
+1790759980
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1491114
+1491240
 
 %REASON%
 1

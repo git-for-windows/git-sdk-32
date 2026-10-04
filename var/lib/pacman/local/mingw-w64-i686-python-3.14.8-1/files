@@ -2399,9 +2399,6 @@ mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zoomheight.cpython-314
 mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zzdummy.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zzdummy.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zzdummy.cpython-314.pyc
-mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zzdummy_user.cpython-314.opt-1.pyc
-mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zzdummy_user.cpython-314.opt-2.pyc
-mingw32/lib/python3.14/idlelib/idle_test/__pycache__/test_zzdummy_user.cpython-314.pyc
 mingw32/lib/python3.14/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-314.pyc
@@ -2471,7 +2468,6 @@ mingw32/lib/python3.14/idlelib/idle_test/test_warning.py
 mingw32/lib/python3.14/idlelib/idle_test/test_window.py
 mingw32/lib/python3.14/idlelib/idle_test/test_zoomheight.py
 mingw32/lib/python3.14/idlelib/idle_test/test_zzdummy.py
-mingw32/lib/python3.14/idlelib/idle_test/test_zzdummy_user.py
 mingw32/lib/python3.14/idlelib/idle_test/tkinter_testing_utils.py
 mingw32/lib/python3.14/idlelib/iomenu.py
 mingw32/lib/python3.14/idlelib/macosx.py
@@ -5302,6 +5298,9 @@ mingw32/lib/python3.14/test/test_capi/__pycache__/test_run.cpython-314.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_set.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_set.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_set.cpython-314.pyc
+mingw32/lib/python3.14/test/test_capi/__pycache__/test_slice.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/test_capi/__pycache__/test_slice.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/test_capi/__pycache__/test_slice.cpython-314.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_structmembers.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_structmembers.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_capi/__pycache__/test_structmembers.cpython-314.pyc
@@ -5357,6 +5356,7 @@ mingw32/lib/python3.14/test/test_capi/test_opt.py
 mingw32/lib/python3.14/test/test_capi/test_pyatomic.py
 mingw32/lib/python3.14/test/test_capi/test_run.py
 mingw32/lib/python3.14/test/test_capi/test_set.py
+mingw32/lib/python3.14/test/test_capi/test_slice.py
 mingw32/lib/python3.14/test/test_capi/test_structmembers.py
 mingw32/lib/python3.14/test/test_capi/test_sys.py
 mingw32/lib/python3.14/test/test_capi/test_time.py
@@ -6013,6 +6013,9 @@ mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_code.cpython-31
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_collections.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_collections.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_collections.cpython-314.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_context.cpython-314.opt-1.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_context.cpython-314.opt-2.pyc
+mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_context.cpython-314.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_cprofile.cpython-314.opt-1.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_cprofile.cpython-314.opt-2.pyc
 mingw32/lib/python3.14/test/test_free_threading/__pycache__/test_cprofile.cpython-314.pyc
@@ -6134,6 +6137,7 @@ mingw32/lib/python3.14/test/test_free_threading/test_bisect.py
 mingw32/lib/python3.14/test/test_free_threading/test_capi.py
 mingw32/lib/python3.14/test/test_free_threading/test_code.py
 mingw32/lib/python3.14/test/test_free_threading/test_collections.py
+mingw32/lib/python3.14/test/test_free_threading/test_context.py
 mingw32/lib/python3.14/test/test_free_threading/test_cprofile.py
 mingw32/lib/python3.14/test/test_free_threading/test_csv.py
 mingw32/lib/python3.14/test/test_free_threading/test_dbm_gnu.py

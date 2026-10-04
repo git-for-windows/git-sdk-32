@@ -2,7 +2,7 @@
 mingw-w64-i686-python
 
 %VERSION%
-3.14.7-1
+3.14.8-1
 
 %BASE%
 mingw-w64-python
@@ -17,16 +17,16 @@ https://www.python.org/
 any
 
 %BUILDDATE%
-1786241541
+1790954132
 
 %INSTALLDATE%
-1786336091
+1791105601
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/31289226800/job/93183463535)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/37025486896/job/110898937384)
 
 %SIZE%
-226052354
+227559508
 
 %REASON%
 1

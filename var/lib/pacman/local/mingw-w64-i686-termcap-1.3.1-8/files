@@ -9,4 +9,8 @@ mingw32/lib/libtermcap.a
 mingw32/lib/libtermcap.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/termcap.pc
+mingw32/share/
+mingw32/share/licenses/
+mingw32/share/licenses/termcap/
+mingw32/share/licenses/termcap/LICENSE
 

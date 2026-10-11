@@ -18,9 +18,9 @@ mingw32/lib/libsqlite3.a
 mingw32/lib/libsqlite3.dll.a
 mingw32/lib/pkgconfig/
 mingw32/lib/pkgconfig/sqlite3.pc
-mingw32/lib/sqlite3.53.4/
-mingw32/lib/sqlite3.53.4/libsqlite3.53.4.dll
-mingw32/lib/sqlite3.53.4/pkgIndex.tcl
+mingw32/lib/sqlite3.54.0/
+mingw32/lib/sqlite3.54.0/libsqlite3.54.0.dll
+mingw32/lib/sqlite3.54.0/pkgIndex.tcl
 mingw32/share/
 mingw32/share/licenses/
 mingw32/share/licenses/sqlite3/
@@ -42,8 +42,6 @@ mingw32/share/sqlite/extensions/base85.c
 mingw32/share/sqlite/extensions/base85.dll
 mingw32/share/sqlite/extensions/basexx.c
 mingw32/share/sqlite/extensions/basexx.dll
-mingw32/share/sqlite/extensions/blobio.c
-mingw32/share/sqlite/extensions/blobio.dll
 mingw32/share/sqlite/extensions/btreeinfo.c
 mingw32/share/sqlite/extensions/btreeinfo.dll
 mingw32/share/sqlite/extensions/cksumvfs.c
@@ -60,6 +58,8 @@ mingw32/share/sqlite/extensions/dbdump.c
 mingw32/share/sqlite/extensions/dbdump.dll
 mingw32/share/sqlite/extensions/decimal.c
 mingw32/share/sqlite/extensions/decimal.dll
+mingw32/share/sqlite/extensions/diskused.c
+mingw32/share/sqlite/extensions/diskused.dll
 mingw32/share/sqlite/extensions/eval.c
 mingw32/share/sqlite/extensions/eval.dll
 mingw32/share/sqlite/extensions/explain.c
@@ -113,6 +113,8 @@ mingw32/share/sqlite/extensions/stmt.c
 mingw32/share/sqlite/extensions/stmt.dll
 mingw32/share/sqlite/extensions/stmtrand.c
 mingw32/share/sqlite/extensions/stmtrand.dll
+mingw32/share/sqlite/extensions/strdup.c
+mingw32/share/sqlite/extensions/strdup.dll
 mingw32/share/sqlite/extensions/templatevtab.c
 mingw32/share/sqlite/extensions/templatevtab.dll
 mingw32/share/sqlite/extensions/tmstmpvfs.c

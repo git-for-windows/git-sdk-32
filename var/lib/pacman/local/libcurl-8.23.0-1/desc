@@ -1,14 +1,14 @@
 %NAME%
-curl
+libcurl
 
 %VERSION%
-8.22.0-1
+8.23.0-1
 
 %BASE%
 curl
 
 %DESC%
-Multi-protocol file transfer utility
+Multi-protocol file transfer library (runtime)
 
 %URL%
 https://curl.se/
@@ -17,22 +17,22 @@ https://curl.se/
 i686
 
 %BUILDDATE%
-1788429469
+1792079263
 
 %INSTALLDATE%
-1788507771
+1792083377
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-1069536
+1129575
 
 %REASON%
 1
 
 %GROUPS%
-base
+libraries
 
 %LICENSE%
 spdx:MIT
@@ -43,10 +43,11 @@ pgp
 
 %DEPENDS%
 ca-certificates
-libcurl
 libxcrypt
+libidn2
 libnghttp2
 libpsl
+libssh2
 openssl
 zlib
 

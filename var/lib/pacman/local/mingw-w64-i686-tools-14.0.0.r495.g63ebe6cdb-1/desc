@@ -2,7 +2,7 @@
 mingw-w64-i686-tools
 
 %VERSION%
-14.0.0.r426.g4564ee4b5-2
+14.0.0.r495.g63ebe6cdb-1
 
 %BASE%
 mingw-w64-tools
@@ -17,16 +17,16 @@ https://www.mingw-w64.org/
 any
 
 %BUILDDATE%
-1791969787
+1792237772
 
 %INSTALLDATE%
-1792051195
+1792309621
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/38541229386/job/115776220061)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/39029277109/job/117386291196)
 
 %SIZE%
-1137456
+1136980
 
 %LICENSE%
 spdx:GPL-3.0-or-later AND LGPL-2.1-or-later
@@ -45,7 +45,7 @@ mingw-w64-i686-cc-libs
 mingw-w64-i686-tools-git
 
 %PROVIDES%
-mingw-w64-i686-tools-git=14.0.0.r426.g4564ee4b5
+mingw-w64-i686-tools-git=14.0.0.r495.g63ebe6cdb
 
 %XDATA%
 pkgtype=pkg

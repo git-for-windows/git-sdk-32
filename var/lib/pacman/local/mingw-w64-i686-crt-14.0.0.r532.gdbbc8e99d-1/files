@@ -20,6 +20,7 @@ mingw32/lib/crt1u.o
 mingw32/lib/crt2.o
 mingw32/lib/crt2u.o
 mingw32/lib/CRT_fp10.o
+mingw32/lib/CRT_fp4.o
 mingw32/lib/CRT_fp8.o
 mingw32/lib/CRT_glob.o
 mingw32/lib/CRT_noglob.o

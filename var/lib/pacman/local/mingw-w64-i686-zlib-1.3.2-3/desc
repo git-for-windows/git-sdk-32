@@ -2,7 +2,7 @@
 mingw-w64-i686-zlib
 
 %VERSION%
-1.3.2-2
+1.3.2-3
 
 %BASE%
 mingw-w64-zlib
@@ -17,16 +17,16 @@ https://www.zlib.net/
 any
 
 %BUILDDATE%
-1772701666
+1792736186
 
 %INSTALLDATE%
-1772857250
+1792828450
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/ad23bc5d/22710411548)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/39910343722/job/120271643572)
 
 %SIZE%
-435965
+433587
 
 %REASON%
 1
@@ -37,6 +37,9 @@ spdx:Zlib
 %VALIDATION%
 sha256
 pgp
+
+%DEPENDS%
+mingw-w64-i686-libgcc
 
 %XDATA%
 pkgtype=split

@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git-subtree
+mingw-w64-i686-git-credential-wincred
 
 %VERSION%
-2.56.0.3-1
+2.56.0.4-1
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-Subtree support for Git (mingw-w64)
+Git credential helper for Windows Credential Manager (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1792681858
+1792995011
 
 %INSTALLDATE%
-1792696845
+1793003560
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-25817
+68296
 
 %REASON%
 1
@@ -39,7 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-git=2.56.0.3
+mingw-w64-i686-git=2.56.0.4
 
 %XDATA%
 pkgtype=split

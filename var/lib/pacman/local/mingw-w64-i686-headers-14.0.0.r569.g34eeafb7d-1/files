@@ -275,6 +275,7 @@ mingw32/include/d3d10.idl
 mingw32/include/d3d10_1.h
 mingw32/include/d3d10_1.idl
 mingw32/include/d3d10_1shader.h
+mingw32/include/d3d10_1shader.idl
 mingw32/include/d3d10effect.h
 mingw32/include/d3d10effect.idl
 mingw32/include/d3d10misc.h

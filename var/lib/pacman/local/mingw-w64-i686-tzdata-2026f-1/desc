@@ -2,7 +2,7 @@
 mingw-w64-i686-tzdata
 
 %VERSION%
-2026e-1
+2026f-1
 
 %BASE%
 mingw-w64-tzdata
@@ -17,16 +17,16 @@ https://www.iana.org/time-zones
 any
 
 %BUILDDATE%
-1790795852
+1793194321
 
 %INSTALLDATE%
-1790847980
+1793438197
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/36764411853/job/110054828513)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/40697003676/job/122846372768)
 
 %SIZE%
-1568443
+1568375
 
 %REASON%
 1

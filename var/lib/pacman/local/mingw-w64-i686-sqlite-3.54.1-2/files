@@ -23,8 +23,8 @@ mingw32/lib/sqlite3.54.1/libsqlite3.54.1.dll
 mingw32/lib/sqlite3.54.1/pkgIndex.tcl
 mingw32/share/
 mingw32/share/licenses/
-mingw32/share/licenses/sqlite3/
-mingw32/share/licenses/sqlite3/LICENSE
+mingw32/share/licenses/sqlite/
+mingw32/share/licenses/sqlite/LICENSE
 mingw32/share/man/
 mingw32/share/man/man1/
 mingw32/share/man/man1/sqlite3.1.gz

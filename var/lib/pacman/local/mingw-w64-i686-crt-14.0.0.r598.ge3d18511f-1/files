@@ -393,6 +393,7 @@ mingw32/lib/libtdh.a
 mingw32/lib/libtdi.a
 mingw32/lib/libtxfw32.a
 mingw32/lib/libucrt.a
+mingw32/lib/libucrt_vcruntime140.a
 mingw32/lib/libucrtapp.a
 mingw32/lib/libucrtbase.a
 mingw32/lib/libucrtbased.a
@@ -410,6 +411,9 @@ mingw32/lib/libuuid.a
 mingw32/lib/libuxtheme.a
 mingw32/lib/libvcruntime140.a
 mingw32/lib/libvcruntime140_app.a
+mingw32/lib/libvcruntime140_threads.a
+mingw32/lib/libvcruntime140_threads_app.a
+mingw32/lib/libvcruntime140_threadsd.a
 mingw32/lib/libvcruntime140d.a
 mingw32/lib/libvdmdbg.a
 mingw32/lib/libversion.a

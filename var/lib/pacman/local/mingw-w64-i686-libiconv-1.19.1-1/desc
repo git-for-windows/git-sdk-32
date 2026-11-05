@@ -2,7 +2,7 @@
 mingw-w64-i686-libiconv
 
 %VERSION%
-1.19-1
+1.19.1-1
 
 %BASE%
 mingw-w64-libiconv
@@ -17,16 +17,16 @@ https://www.gnu.org/software/libiconv/
 any
 
 %BUILDDATE%
-1773477934
+1793850139
 
 %INSTALLDATE%
-1773551053
+1793873960
 
 %PACKAGER%
-CI (msys2/msys2-autobuild/5e407709/23084514348)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/41963051835/job/127033663374)
 
 %SIZE%
-2551688
+2556172
 
 %REASON%
 1

@@ -2,7 +2,7 @@
 mingw-w64-i686-git-for-windows-addons
 
 %VERSION%
-2.56.1.1-1
+2.56.1.1-2
 
 %BASE%
 mingw-w64-git
@@ -17,16 +17,16 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1793039703
+1794488289
 
 %INSTALLDATE%
-1794392411
+1794565834
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-971560
+840412
 
 %LICENSE%
 GPL2

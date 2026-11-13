@@ -1,14 +1,14 @@
 %NAME%
-mingw-w64-i686-git
+mingw-w64-i686-git-credential-wincred
 
 %VERSION%
-2.56.1.1-1
+2.56.1.1-2
 
 %BASE%
 mingw-w64-git
 
 %DESC%
-The fast distributed version control system (mingw-w64)
+Git credential helper for Windows Credential Manager (mingw-w64)
 
 %URL%
 https://gitforwindows.org/
@@ -17,16 +17,19 @@ https://gitforwindows.org/
 any
 
 %BUILDDATE%
-1793039703
+1794488289
 
 %INSTALLDATE%
-1794392410
+1794565833
 
 %PACKAGER%
 Johannes Schindelin <johannes.schindelin@gmx.de>
 
 %SIZE%
-45817098
+57238
+
+%REASON%
+1
 
 %LICENSE%
 GPL2
@@ -36,12 +39,7 @@ sha256
 pgp
 
 %DEPENDS%
-mingw-w64-i686-curl
-mingw-w64-i686-ca-certificates
-mingw-w64-i686-expat>=2.0
-mingw-w64-i686-openssl
-mingw-w64-i686-pcre2
-vim
+mingw-w64-i686-git=2.56.1.1
 
 %XDATA%
 pkgtype=split

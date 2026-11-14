@@ -47,7 +47,7 @@ build_time_vars = {
     'CONFIGURE_LDFLAGS': '-Wl,--no-seh -Wl,--large-address-aware',
     'CONFIGURE_LDFLAGS_NODIST': '-fno-semantic-interposition',
     'CONFIGURE_LDFLAGS_NOLTO': '',
-    'CONFIG_ARGS': "'--prefix=/mingw32' '--host=i686-w64-mingw32' '--build=i686-w64-mingw32' '--enable-shared' '--with-system-expat' '--with-system-ffi' '--with-system-libmpdec' '--without-ensurepip' '--enable-loadable-sqlite-extensions' '--with-tzpath=/mingw32/share/zoneinfo' '--enable-optimizations' 'build_alias=i686-w64-mingw32' 'host_alias=i686-w64-mingw32' 'PKG_CONFIG_PATH=/mingw32/lib/pkgconfig:/mingw32/share/pkgconfig' 'CC=gcc' 'CFLAGS=-march=pentium4 -mtune=generic -O2 -pipe -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wp,-D__USE_MINGW_ANSI_STDIO=1 -O3' 'LDFLAGS=-Wl,--no-seh -Wl,--large-address-aware' 'CPPFLAGS='",
+    'CONFIG_ARGS': "'--prefix=/mingw32' '--enable-shared' '--with-system-expat' '--with-system-libmpdec' '--without-ensurepip' '--enable-loadable-sqlite-extensions' '--with-tzpath=/mingw32/share/zoneinfo' '--enable-optimizations' 'PKG_CONFIG_PATH=/mingw32/lib/pkgconfig:/mingw32/share/pkgconfig' 'CC=gcc' 'CFLAGS=-march=pentium4 -mtune=generic -O2 -pipe -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector-strong -Wp,-D__USE_MINGW_ANSI_STDIO=1 -O3' 'LDFLAGS=-Wl,--no-seh -Wl,--large-address-aware' 'CPPFLAGS='",
     'CONFINCLUDEDIR': '/mingw32/include',
     'CONFINCLUDEPY': '/mingw32/include/python3.14',
     'COREPYTHONPATH': '',

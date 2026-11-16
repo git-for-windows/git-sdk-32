@@ -2,13 +2,13 @@
 mingw-w64-i686-pkgconf
 
 %VERSION%
-1~3.0.10-1
+1~3.0.11-2
 
 %BASE%
 mingw-w64-pkgconf
 
 %DESC%
-pkg-config compatible utility which does not depend on glib
+package compiler and linker metadata toolkit (mingw-w64)
 
 %URL%
 https://pkgconf.org
@@ -17,19 +17,16 @@ https://pkgconf.org
 any
 
 %BUILDDATE%
-1792428864
+1794760078
 
 %INSTALLDATE%
-1792483818
+1794825456
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/39289320372/job/118185523697)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/43735476723/job/132877014948)
 
 %SIZE%
-955355
-
-%GROUPS%
-mingw-w64-i686-toolchain
+675678
 
 %LICENSE%
 spdx:ISC

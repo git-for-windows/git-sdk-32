@@ -2,7 +2,7 @@
 mingw-w64-i686-ca-certificates
 
 %VERSION%
-20260816-3
+20260816-5
 
 %BASE%
 mingw-w64-ca-certificates
@@ -17,16 +17,16 @@ https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/
 any
 
 %BUILDDATE%
-1792569336
+1795110298
 
 %INSTALLDATE%
-1792657283
+1795172040
 
 %PACKAGER%
-CI (https://github.com/msys2/msys2-autobuild/actions/runs/39565289845/job/119105989344)
+CI (https://github.com/msys2/msys2-autobuild/actions/runs/44580250011/job/135758656229)
 
 %SIZE%
-1077603
+1065127
 
 %REASON%
 1
